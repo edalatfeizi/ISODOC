@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="IsoDoc">
+</Property><Property Name="Solution File" Value="D:\farvardin projects\IsoDoc\IsoDoc.sln">
+</Property><Property Name="Date" Value="2008/09/15">
+</Property><Property Name="Time" Value="11:09:53 ق.ظ">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\Activities.vbproj" Description="Project file successfully backed up as D:\farvardin projects\IsoDoc\Backup1\Activities.vbproj">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\Activities.vbproj.user" Description="Project user file successfully backed up as D:\farvardin projects\IsoDoc\Backup1\Activities.vbproj.user">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\AssemblyInfo.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\ClsDataAccessS.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\ClsDataAccessS.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\DatabaseUtil.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\DatabaseUtil.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmActApplication.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmActApplication.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmActivitiesEdit.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmActivitiesEdit.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmActivityUser.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmActivityUser.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmApplication.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmApplication.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmDocTitles.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmDocTitles.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmFarayand.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmFarayand.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmGroupActSelect.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmGroupActSelect.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmGroupDataEntry.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmGroupDataEntry.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmGroups.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmGroups.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmMain.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmMain.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmMembers.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmMembers.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmSearchActivity.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmSearchActivity.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmShowDoc.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmShowDoc.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmUserActReprts.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmUserActReprts.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\ModMain.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\ModMain.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\NSPActivities.vb" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\NSPActivities.vb">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmActApplication.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmActApplication.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmActivitiesEdit.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmActivitiesEdit.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmActivityUser.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmActivityUser.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmApplication.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmApplication.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmDocTitles.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmDocTitles.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmFarayand.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmFarayand.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmGroupActSelect.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmGroupActSelect.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmGroupDataEntry.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmGroupDataEntry.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmGroups.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmGroups.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmMain.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmMain.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmMembers.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmMembers.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\frmSearchActivity.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\frmSearchActivity.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmShowDoc.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmShowDoc.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\FrmUserActReprts.resx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\FrmUserActReprts.resx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\licenses.licx" Description="File successfully backed up as D:\farvardin projects\IsoDoc\Backup1\licenses.licx">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\Activities.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Activities" Source="..\..\MIS\Activities\Activities.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Activities" Source="..\..\MIS\Activities\Activities.vbproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

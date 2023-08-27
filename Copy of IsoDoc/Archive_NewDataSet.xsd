@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Archive_NewDataSet" targetNamespace="http://tempuri.org/Archive_NewDataSet.xsd" xmlns:mstns="http://tempuri.org/Archive_NewDataSet.xsd" xmlns="http://tempuri.org/Archive_NewDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Archive_NewConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="Archive_NewConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IsoDoc.My.MySettings.GlobalReference.Default.Archive_NewConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VwAch_BookTableAdapter" GeneratorDataComponentClassName="VwAch_BookTableAdapter" Name="VwAch_Book" UserDataComponentName="VwAch_BookTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Archive_NewConnectionString (MySettings)" DbObjectName="Archive_New.dbo.VwAch_Book" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>SELECT DocTypeID, MainID, DocName, RegistNum, EnterDate, Explain, Designer, Publisher, DocDate, Cnt, Translator, FilePath, BookTypeTxt, CommodTxt, DoctypeName, FloorTxt, FileTypeTxt, TrustStateTxt, softTxt, TrustExistTxt, LanguagTxt, IsoDocViewTxt, DocumentTypetxt, TrustRefTxt, DocumentTypeID, IsoDocViewID, FileTypeID, DocRegistID, FloorID, CommodID, TrustStateID, SoftTypeID, BookTypeID, LanguageID, TrustExistID, TrustRefID, DocRegisttxt, ReviewNum, ReviewDate FROM dbo.VwAch_Book</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DocTypeID" DataSetColumn="DocTypeID" />
+              <Mapping SourceColumn="MainID" DataSetColumn="MainID" />
+              <Mapping SourceColumn="DocName" DataSetColumn="DocName" />
+              <Mapping SourceColumn="RegistNum" DataSetColumn="RegistNum" />
+              <Mapping SourceColumn="EnterDate" DataSetColumn="EnterDate" />
+              <Mapping SourceColumn="Explain" DataSetColumn="Explain" />
+              <Mapping SourceColumn="Designer" DataSetColumn="Designer" />
+              <Mapping SourceColumn="Publisher" DataSetColumn="Publisher" />
+              <Mapping SourceColumn="DocDate" DataSetColumn="DocDate" />
+              <Mapping SourceColumn="Cnt" DataSetColumn="Cnt" />
+              <Mapping SourceColumn="Translator" DataSetColumn="Translator" />
+              <Mapping SourceColumn="FilePath" DataSetColumn="FilePath" />
+              <Mapping SourceColumn="BookTypeTxt" DataSetColumn="BookTypeTxt" />
+              <Mapping SourceColumn="CommodTxt" DataSetColumn="CommodTxt" />
+              <Mapping SourceColumn="DoctypeName" DataSetColumn="DoctypeName" />
+              <Mapping SourceColumn="FloorTxt" DataSetColumn="FloorTxt" />
+              <Mapping SourceColumn="FileTypeTxt" DataSetColumn="FileTypeTxt" />
+              <Mapping SourceColumn="TrustStateTxt" DataSetColumn="TrustStateTxt" />
+              <Mapping SourceColumn="softTxt" DataSetColumn="softTxt" />
+              <Mapping SourceColumn="TrustExistTxt" DataSetColumn="TrustExistTxt" />
+              <Mapping SourceColumn="LanguagTxt" DataSetColumn="LanguagTxt" />
+              <Mapping SourceColumn="IsoDocViewTxt" DataSetColumn="IsoDocViewTxt" />
+              <Mapping SourceColumn="DocumentTypetxt" DataSetColumn="DocumentTypetxt" />
+              <Mapping SourceColumn="TrustRefTxt" DataSetColumn="TrustRefTxt" />
+              <Mapping SourceColumn="DocumentTypeID" DataSetColumn="DocumentTypeID" />
+              <Mapping SourceColumn="IsoDocViewID" DataSetColumn="IsoDocViewID" />
+              <Mapping SourceColumn="FileTypeID" DataSetColumn="FileTypeID" />
+              <Mapping SourceColumn="DocRegistID" DataSetColumn="DocRegistID" />
+              <Mapping SourceColumn="FloorID" DataSetColumn="FloorID" />
+              <Mapping SourceColumn="CommodID" DataSetColumn="CommodID" />
+              <Mapping SourceColumn="TrustStateID" DataSetColumn="TrustStateID" />
+              <Mapping SourceColumn="SoftTypeID" DataSetColumn="SoftTypeID" />
+              <Mapping SourceColumn="BookTypeID" DataSetColumn="BookTypeID" />
+              <Mapping SourceColumn="LanguageID" DataSetColumn="LanguageID" />
+              <Mapping SourceColumn="TrustExistID" DataSetColumn="TrustExistID" />
+              <Mapping SourceColumn="TrustRefID" DataSetColumn="TrustRefID" />
+              <Mapping SourceColumn="DocRegisttxt" DataSetColumn="DocRegisttxt" />
+              <Mapping SourceColumn="ReviewNum" DataSetColumn="ReviewNum" />
+              <Mapping SourceColumn="ReviewDate" DataSetColumn="ReviewDate" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Archive_NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Archive_NewDataSet" msprop:Generator_DataSetName="Archive_NewDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VwAch_Book" msprop:Generator_UserTableName="VwAch_Book" msprop:Generator_RowDeletedName="VwAch_BookRowDeleted" msprop:Generator_TableClassName="VwAch_BookDataTable" msprop:Generator_RowChangedName="VwAch_BookRowChanged" msprop:Generator_RowClassName="VwAch_BookRow" msprop:Generator_RowChangingName="VwAch_BookRowChanging" msprop:Generator_RowEvArgName="VwAch_BookRowChangeEvent" msprop:Generator_RowEvHandlerName="VwAch_BookRowChangeEventHandler" msprop:Generator_TablePropName="VwAch_Book" msprop:Generator_TableVarName="tableVwAch_Book" msprop:Generator_RowDeletingName="VwAch_BookRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DocTypeID" msprop:Generator_UserColumnName="DocTypeID" msprop:Generator_ColumnPropNameInRow="DocTypeID" msprop:Generator_ColumnVarNameInTable="columnDocTypeID" msprop:Generator_ColumnPropNameInTable="DocTypeIDColumn" type="xs:short" />
+              <xs:element name="MainID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="MainID" msprop:Generator_ColumnPropNameInRow="MainID" msprop:Generator_ColumnVarNameInTable="columnMainID" msprop:Generator_ColumnPropNameInTable="MainIDColumn" type="xs:int" />
+              <xs:element name="DocName" msprop:Generator_UserColumnName="DocName" msprop:Generator_ColumnPropNameInRow="DocName" msprop:Generator_ColumnVarNameInTable="columnDocName" msprop:Generator_ColumnPropNameInTable="DocNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegistNum" msprop:Generator_UserColumnName="RegistNum" msprop:Generator_ColumnPropNameInRow="RegistNum" msprop:Generator_ColumnVarNameInTable="columnRegistNum" msprop:Generator_ColumnPropNameInTable="RegistNumColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EnterDate" msprop:Generator_UserColumnName="EnterDate" msprop:Generator_ColumnPropNameInRow="EnterDate" msprop:Generator_ColumnVarNameInTable="columnEnterDate" msprop:Generator_ColumnPropNameInTable="EnterDateColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Explain" msprop:Generator_UserColumnName="Explain" msprop:Generator_ColumnPropNameInRow="Explain" msprop:Generator_ColumnVarNameInTable="columnExplain" msprop:Generator_ColumnPropNameInTable="ExplainColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Designer" msprop:Generator_UserColumnName="Designer" msprop:Generator_ColumnPropNameInRow="Designer" msprop:Generator_ColumnVarNameInTable="columnDesigner" msprop:Generator_ColumnPropNameInTable="DesignerColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Publisher" msprop:Generator_UserColumnName="Publisher" msprop:Generator_ColumnPropNameInRow="Publisher" msprop:Generator_ColumnVarNameInTable="columnPublisher" msprop:Generator_ColumnPropNameInTable="PublisherColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DocDate" msprop:Generator_UserColumnName="DocDate" msprop:Generator_ColumnPropNameInRow="DocDate" msprop:Generator_ColumnVarNameInTable="columnDocDate" msprop:Generator_ColumnPropNameInTable="DocDateColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cnt" msprop:Generator_UserColumnName="Cnt" msprop:Generator_ColumnPropNameInRow="Cnt" msprop:Generator_ColumnVarNameInTable="columnCnt" msprop:Generator_ColumnPropNameInTable="CntColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="Translator" msprop:Generator_UserColumnName="Translator" msprop:Generator_ColumnPropNameInRow="Translator" msprop:Generator_ColumnVarNameInTable="columnTranslator" msprop:Generator_ColumnPropNameInTable="TranslatorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FilePath" msprop:Generator_UserColumnName="FilePath" msprop:Generator_ColumnPropNameInRow="FilePath" msprop:Generator_ColumnVarNameInTable="columnFilePath" msprop:Generator_ColumnPropNameInTable="FilePathColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BookTypeTxt" msprop:Generator_UserColumnName="BookTypeTxt" msprop:Generator_ColumnPropNameInRow="BookTypeTxt" msprop:Generator_ColumnVarNameInTable="columnBookTypeTxt" msprop:Generator_ColumnPropNameInTable="BookTypeTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CommodTxt" msprop:Generator_UserColumnName="CommodTxt" msprop:Generator_ColumnPropNameInRow="CommodTxt" msprop:Generator_ColumnVarNameInTable="columnCommodTxt" msprop:Generator_ColumnPropNameInTable="CommodTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DoctypeName" msprop:Generator_UserColumnName="DoctypeName" msprop:Generator_ColumnPropNameInRow="DoctypeName" msprop:Generator_ColumnVarNameInTable="columnDoctypeName" msprop:Generator_ColumnPropNameInTable="DoctypeNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FloorTxt" msprop:Generator_UserColumnName="FloorTxt" msprop:Generator_ColumnPropNameInRow="FloorTxt" msprop:Generator_ColumnVarNameInTable="columnFloorTxt" msprop:Generator_ColumnPropNameInTable="FloorTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FileTypeTxt" msprop:Generator_UserColumnName="FileTypeTxt" msprop:Generator_ColumnPropNameInRow="FileTypeTxt" msprop:Generator_ColumnVarNameInTable="columnFileTypeTxt" msprop:Generator_ColumnPropNameInTable="FileTypeTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TrustStateTxt" msprop:Generator_UserColumnName="TrustStateTxt" msprop:Generator_ColumnPropNameInRow="TrustStateTxt" msprop:Generator_ColumnVarNameInTable="columnTrustStateTxt" msprop:Generator_ColumnPropNameInTable="TrustStateTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="softTxt" msprop:Generator_UserColumnName="softTxt" msprop:Generator_ColumnPropNameInRow="softTxt" msprop:Generator_ColumnVarNameInTable="columnsoftTxt" msprop:Generator_ColumnPropNameInTable="softTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TrustExistTxt" msprop:Generator_UserColumnName="TrustExistTxt" msprop:Generator_ColumnPropNameInRow="TrustExistTxt" msprop:Generator_ColumnVarNameInTable="columnTrustExistTxt" msprop:Generator_ColumnPropNameInTable="TrustExistTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LanguagTxt" msprop:Generator_UserColumnName="LanguagTxt" msprop:Generator_ColumnPropNameInRow="LanguagTxt" msprop:Generator_ColumnVarNameInTable="columnLanguagTxt" msprop:Generator_ColumnPropNameInTable="LanguagTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsoDocViewTxt" msprop:Generator_UserColumnName="IsoDocViewTxt" msprop:Generator_ColumnPropNameInRow="IsoDocViewTxt" msprop:Generator_ColumnVarNameInTable="columnIsoDocViewTxt" msprop:Generator_ColumnPropNameInTable="IsoDocViewTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DocumentTypetxt" msprop:Generator_UserColumnName="DocumentTypetxt" msprop:Generator_ColumnPropNameInRow="DocumentTypetxt" msprop:Generator_ColumnVarNameInTable="columnDocumentTypetxt" msprop:Generator_ColumnPropNameInTable="DocumentTypetxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TrustRefTxt" msprop:Generator_UserColumnName="TrustRefTxt" msprop:Generator_ColumnPropNameInRow="TrustRefTxt" msprop:Generator_ColumnVarNameInTable="columnTrustRefTxt" msprop:Generator_ColumnPropNameInTable="TrustRefTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DocumentTypeID" msprop:Generator_UserColumnName="DocumentTypeID" msprop:Generator_ColumnPropNameInRow="DocumentTypeID" msprop:Generator_ColumnVarNameInTable="columnDocumentTypeID" msprop:Generator_ColumnPropNameInTable="DocumentTypeIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="IsoDocViewID" msprop:Generator_UserColumnName="IsoDocViewID" msprop:Generator_ColumnPropNameInRow="IsoDocViewID" msprop:Generator_ColumnVarNameInTable="columnIsoDocViewID" msprop:Generator_ColumnPropNameInTable="IsoDocViewIDColumn" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="FileTypeID" msprop:Generator_UserColumnName="FileTypeID" msprop:Generator_ColumnPropNameInRow="FileTypeID" msprop:Generator_ColumnVarNameInTable="columnFileTypeID" msprop:Generator_ColumnPropNameInTable="FileTypeIDColumn" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DocRegistID" msprop:Generator_UserColumnName="DocRegistID" msprop:Generator_ColumnPropNameInRow="DocRegistID" msprop:Generator_ColumnVarNameInTable="columnDocRegistID" msprop:Generator_ColumnPropNameInTable="DocRegistIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="FloorID" msprop:Generator_UserColumnName="FloorID" msprop:Generator_ColumnPropNameInRow="FloorID" msprop:Generator_ColumnVarNameInTable="columnFloorID" msprop:Generator_ColumnPropNameInTable="FloorIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="CommodID" msprop:Generator_UserColumnName="CommodID" msprop:Generator_ColumnPropNameInRow="CommodID" msprop:Generator_ColumnVarNameInTable="columnCommodID" msprop:Generator_ColumnPropNameInTable="CommodIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="TrustStateID" msprop:Generator_UserColumnName="TrustStateID" msprop:Generator_ColumnPropNameInRow="TrustStateID" msprop:Generator_ColumnVarNameInTable="columnTrustStateID" msprop:Generator_ColumnPropNameInTable="TrustStateIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="SoftTypeID" msprop:Generator_UserColumnName="SoftTypeID" msprop:Generator_ColumnPropNameInRow="SoftTypeID" msprop:Generator_ColumnVarNameInTable="columnSoftTypeID" msprop:Generator_ColumnPropNameInTable="SoftTypeIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="BookTypeID" msprop:Generator_UserColumnName="BookTypeID" msprop:Generator_ColumnPropNameInRow="BookTypeID" msprop:Generator_ColumnVarNameInTable="columnBookTypeID" msprop:Generator_ColumnPropNameInTable="BookTypeIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="LanguageID" msprop:Generator_UserColumnName="LanguageID" msprop:Generator_ColumnPropNameInRow="LanguageID" msprop:Generator_ColumnVarNameInTable="columnLanguageID" msprop:Generator_ColumnPropNameInTable="LanguageIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="TrustExistID" msprop:Generator_UserColumnName="TrustExistID" msprop:Generator_ColumnPropNameInRow="TrustExistID" msprop:Generator_ColumnVarNameInTable="columnTrustExistID" msprop:Generator_ColumnPropNameInTable="TrustExistIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="TrustRefID" msprop:Generator_UserColumnName="TrustRefID" msprop:Generator_ColumnPropNameInRow="TrustRefID" msprop:Generator_ColumnVarNameInTable="columnTrustRefID" msprop:Generator_ColumnPropNameInTable="TrustRefIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="DocRegisttxt" msprop:Generator_UserColumnName="DocRegisttxt" msprop:Generator_ColumnPropNameInRow="DocRegisttxt" msprop:Generator_ColumnVarNameInTable="columnDocRegisttxt" msprop:Generator_ColumnPropNameInTable="DocRegisttxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReviewNum" msprop:Generator_UserColumnName="ReviewNum" msprop:Generator_ColumnPropNameInRow="ReviewNum" msprop:Generator_ColumnVarNameInTable="columnReviewNum" msprop:Generator_ColumnPropNameInTable="ReviewNumColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReviewDate" msprop:Generator_UserColumnName="ReviewDate" msprop:Generator_ColumnPropNameInRow="ReviewDate" msprop:Generator_ColumnVarNameInTable="columnReviewDate" msprop:Generator_ColumnPropNameInTable="ReviewDateColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VwAch_Book" />
+      <xs:field xpath="mstns:MainID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

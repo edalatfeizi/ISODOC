@@ -1,0 +1,15 @@
+Janus.Windows.EditControls.UIRadioButton, Janus.Windows.UI.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+DevExpress.XtraBars.Docking.DockManager, DevExpress.XtraBars.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraLayout.LayoutControl, DevExpress.XtraLayout.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraTreeList.TreeList, DevExpress.XtraTreeList.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraEditors.Repository.RepositoryItemTextEdit, DevExpress.XtraEditors.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraCharts.ChartControl, DevExpress.XtraCharts.v7.1.UI, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraBars.Ribbon.RibbonControl, DevExpress.XtraBars.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraNavBar.NavBarControl, DevExpress.XtraNavBar.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+Janus.Windows.EditControls.UIGroupBox, Janus.Windows.UI.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+DevExpress.XtraReports.UserDesigner.XRDesignBarManager, DevExpress.XtraReports.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraEditors.XtraScrollableControl, DevExpress.Utils.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraBars.BarManager, DevExpress.XtraBars.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraPivotGrid.PivotGridControl, DevExpress.XtraPivotGrid.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraTabbedMdi.XtraTabbedMdiManager, DevExpress.XtraBars.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
+DevExpress.XtraEditors.ButtonEdit, DevExpress.XtraEditors.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4

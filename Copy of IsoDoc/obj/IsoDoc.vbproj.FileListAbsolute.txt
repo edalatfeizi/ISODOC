@@ -1,0 +1,2031 @@
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.xml
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Activities.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Archive.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\IraniDate.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\JFrameWork.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Persistent.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\FacHR.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\FacPlanning.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\FacRollCall.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\IkidRUP.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSHierarchicalFlexGridLib.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Coding.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\FacInOut.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.xml
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.xml
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.xml
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Interop.Acrobat.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Interop.DIFFMERGECTLLib.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.AgentObjects.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.DIFFMERGECTLLib.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.RichTextLib.dll
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\Interop.Acrobat.dll
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\Interop.DIFFMERGECTLLib.dll
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\AxInterop.AgentObjects.dll
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\AxInterop.DIFFMERGECTLLib.dll
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\AxInterop.RichTextLib.dll
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmFileUpload.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+D:\MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\DailyReport.dll
+D:\MIS\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.xml
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Activities.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Archive.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\IraniDate.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\JFrameWork.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Persistent.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\FacHR.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\FacPlanning.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\FacRollCall.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\IkidRUP.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSHierarchicalFlexGridLib.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Coding.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\PaletSCS.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Interop.Acrobat.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Interop.DIFFMERGECTLLib.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.AgentObjects.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.DIFFMERGECTLLib.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.RichTextLib.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\Interop.Acrobat.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\Interop.DIFFMERGECTLLib.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\AxInterop.AgentObjects.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\AxInterop.DIFFMERGECTLLib.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\AxInterop.RichTextLib.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\CaculateNetTime.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\DailyReport.dll
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IKID MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Ribbon.v3.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v3.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v3.dll
+D:\IKID MIS\IsoDoc\IsoDoc\bin\Debug\PM.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\IsoDoc.pdb
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\IsoDoc.xml
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Activities.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\AppFrameWork.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Archive.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\IKIDSecurity.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\IKIDUtility.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\IraniDate.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\JFrameWork.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\JobClasification.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Persistent.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Personely.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\DailyReport.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\CaculateNetTime.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\IkidRUP.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\FacHR.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\FacPlanning.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\FacRollCall.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.MSMask.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSHierarchicalFlexGridLib.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Coding.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\PaletSCS.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.Acrobat.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.Excel.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\Interop.Acrobat.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\Interop.Acrobat.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\Interop.AgentObjects.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\Interop.Excel.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\Interop.RichTextLib.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.ResolveComReference.cache
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartKoli.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartPerMdep.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptStatisticOfDoc.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptLifeSheet.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptMasterList.rpt
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmInsOutsideDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmLifeSheet.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTazminReports.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTransfer.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmMasterReport.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoFarvorites.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmReportView.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmUserMessage.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoAbout.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDepartDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDocShow.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoHistoryShow.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoImportandDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoInsertHistory.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMain.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoBasicSetting.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.Resources.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMaster.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoOtherDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoRegistDocument.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoSearch.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIso_TechnicalDoc.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.SplashScreen1.resources
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.GenerateResource.Cache
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\IsoDoc.exe.config
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\IsoDoc.exe
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\IsoDoc.pdb
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\IsoDoc.xml
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Activities.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\AppFrameWork.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Archive.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\IKIDSecurity.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\IKIDUtility.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\IraniDate.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Janus.Windows.ButtonBar.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Janus.Windows.Common.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Janus.Windows.ExplorerBar.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Janus.Windows.GridEX.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Janus.Windows.UI.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\JFrameWork.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\JobClasification.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Persistent.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Personely.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\SqlManager.QExport.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\WLFormGlobalCtrl_DT.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\DailyReport.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\FacJobClasification.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\CaculateNetTime.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\InfoServices.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\JanusFrameWork.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\IkidRUP.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\FacHR.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\FacPlanning.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\SqlManager.Xls.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\FacRollCall.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\CrystalSystem.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\WLFormGlobalCtrl.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Interop.MSMask.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\PrdStockControl.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\AxInterop.MSHierarchicalFlexGridLib.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Interop.DateDLLMain.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Coding.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\SqlManager.QExport.Localization.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\PaletSCS.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\PrdPMDie.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\WLFormGlobalCtrl_OLEDB.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\AxInterop.MSMask.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.xml
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.xml
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Interop.Acrobat.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Interop.AgentObjects.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Interop.Excel.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\bin\Release\Interop.RichTextLib.dll
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.xml
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.pdb
+C:\Documents and Settings\1908\Desktop\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe.licenses
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\IsoDoc.exe.config
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.xml
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.pdb
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\ResolveAssemblyReference.cache
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\Interop.Acrobat.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\Interop.AgentObjects.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\Interop.Excel.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\Interop.RichTextLib.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartKoli.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartPerMdep.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptLifeSheet.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptMasterList.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmLifeSheet.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTazminReports.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTransfer.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmMasterReport.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmReportView.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmUserMessage.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoAbout.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDocShow.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMain.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.Resources.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMaster.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoSearch.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.SplashScreen1.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe.licenses
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\IsoDoc.exe
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\IsoDoc.pdb
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\IsoDoc.xml
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Activities.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\AppFrameWork.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Archive.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\DevExpress.Data.v7.1.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\DevExpress.Utils.v7.1.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\DevExpress.XtraBars.v7.1.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\DevExpress.XtraEditors.v7.1.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\IKIDSecurity.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\IKIDUtility.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\IraniDate.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Janus.Windows.ButtonBar.v2.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Janus.Windows.Common.v2.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Janus.Windows.ExplorerBar.v2.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Janus.Windows.GridEX.v2.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Janus.Windows.UI.v2.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\JFrameWork.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Persistent.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\SqlManager.QExport.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\WLFormGlobalCtrl_DT.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\DailyReport.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\FacJobClasification.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\CaculateNetTime.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\InfoServices.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\JanusFrameWork.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\IkidRUP.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\FacHR.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\FacPlanning.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\SqlManager.Xls.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\FacRollCall.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\CrystalSystem.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\WLFormGlobalCtrl.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Interop.MSMask.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\PrdStockControl.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\AxInterop.MSHierarchicalFlexGridLib.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Interop.DateDLLMain.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Coding.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\IrisSkin.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\SqlManager.QExport.Localization.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\PaletSCS.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\PrdPMDie.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\WLFormGlobalCtrl_OLEDB.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\AxInterop.MSMask.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.xml
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.xml
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Interop.Acrobat.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Interop.AgentObjects.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Interop.Excel.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Release\Interop.RichTextLib.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\Interop.Acrobat.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID_MIS\Hamed Project\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\IsoDoc.exe.config
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.xml
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.pdb
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\IsoDoc.exe
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\IsoDoc.pdb
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\IsoDoc.xml
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Activities.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\AppFrameWork.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Archive.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\DevExpress.Data.v7.1.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\DevExpress.Utils.v7.1.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\DevExpress.XtraBars.v7.1.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\DevExpress.XtraEditors.v7.1.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\IKIDSecurity.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\IKIDUtility.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\IraniDate.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Janus.Windows.ButtonBar.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Janus.Windows.Common.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Janus.Windows.ExplorerBar.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Janus.Windows.GridEX.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Janus.Windows.UI.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\JFrameWork.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Persistent.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\SqlManager.QExport.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\WLFormGlobalCtrl_DT.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\DailyReport.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\FacJobClasification.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\CaculateNetTime.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\InfoServices.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\JanusFrameWork.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\IkidRUP.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\FacHR.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\FacPlanning.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\SqlManager.Xls.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\FacRollCall.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\CrystalSystem.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\WLFormGlobalCtrl.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Interop.MSMask.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\PrdStockControl.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\AxInterop.MSHierarchicalFlexGridLib.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Interop.DateDLLMain.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Coding.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\IrisSkin.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\SqlManager.QExport.Localization.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\PaletSCS.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\PrdPMDie.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\WLFormGlobalCtrl_OLEDB.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\AxInterop.MSMask.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.xml
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.xml
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Interop.AgentObjects.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Interop.Excel.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Release\Interop.RichTextLib.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\ResolveAssemblyReference.cache
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\Interop.AgentObjects.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\Interop.Excel.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\Interop.RichTextLib.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartKoli.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartPerMdep.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptLifeSheet.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptMasterList.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmLifeSheet.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTazminReports.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTransfer.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmMasterReport.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmReportView.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmUserMessage.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoAbout.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDocShow.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMain.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.Resources.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMaster.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoSearch.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.SplashScreen1.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe.licenses
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.xml
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Activities.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Archive.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\IraniDate.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\JFrameWork.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Persistent.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\DailyReport.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\CaculateNetTime.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\IkidRUP.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\FacHR.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\FacPlanning.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\FacRollCall.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSHierarchicalFlexGridLib.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Coding.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\IrisSkin.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\PaletSCS.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\Interop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\Interop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc\IsoDoc\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.exe
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.xml
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Activities.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Archive.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\IraniDate.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\JFrameWork.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Persistent.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\DailyReport.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\CaculateNetTime.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\InfoServices.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\IkidRUP.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\FacHR.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\FacPlanning.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\FacRollCall.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Coding.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\IrisSkin.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\PaletSCS.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.PdfLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.PdfLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.PdfLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\AxInterop.PdfLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmSaveLinks.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\DevComponents.DotNetBar2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\IsoDoc.exe.config
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\IsoDoc.exe
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\IsoDoc.pdb
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\IsoDoc.xml
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Activities.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\AppFrameWork.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Archive.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\DevComponents.DotNetBar2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\IKIDSecurity.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\IKIDUtility.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\IraniDate.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.ButtonBar.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.Common.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.ExplorerBar.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.GridEX.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.UI.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\JFrameWork.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Persistent.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\SqlManager.QExport.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\WLFormGlobalCtrl_DT.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\DailyReport.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\CaculateNetTime.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\InfoServices.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\FacJobClasification.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\JanusFrameWork.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\FacHR.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\FacPlanning.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\SqlManager.Xls.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\FacRollCall.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\CrystalSystem.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\WLFormGlobalCtrl.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\WLFormGlobalCtrl_OLEDB.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Interop.MSMask.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\IkidRUP.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\PrdStockControl.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Interop.DateDLLMain.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Coding.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\IrisSkin.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\SqlManager.QExport.Localization.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\PaletSCS.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\PrdPMDie.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\AxInterop.MSMask.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.xml
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.xml
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Interop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Interop.AgentObjects.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Interop.Excel.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Interop.PdfLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\Interop.RichTextLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\AxInterop.PdfLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\ResolveAssemblyReference.cache
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\Interop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\Interop.AgentObjects.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\Interop.Excel.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\Interop.PdfLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\Interop.RichTextLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\AxInterop.PdfLib.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptChartKoli.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptChartPerMdep.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptLifeSheet.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptMasterList.rpt
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBase.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmLifeSheet.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmSaveLinks.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmShowPDF.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmTazminReports.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmTest.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmTransfer.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmMasterReport.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmReportView.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmUserMessage.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoAbout.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoDocShow.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoMain.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.Resources.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoMaster.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoSearch.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.SplashScreen1.resources
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.exe.licenses
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.exe
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.xml
+D:\IKID_MIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.pdb
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Release\PM.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\IsoDoc.exe.config
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.exe
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.xml
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.pdb
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.exe
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.xml
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Activities.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Archive.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\DevComponents.DotNetBar2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\IraniDate.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\JFrameWork.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Persistent.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\DailyReport.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\FacInOut.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\CaculateNetTime.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\InfoServices.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\FacHR.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\FacPlanning.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\FacRollCall.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\IkidRUP.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Coding.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\IrisSkin.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\PaletSCS.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Interop.AcroPDFLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Interop.PdfLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.PdfLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\Interop.AcroPDFLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\Interop.PdfLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\AxInterop.PdfLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmSaveLinks.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\IsoDoc.exe
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\IsoDoc.pdb
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\IsoDoc.xml
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Activities.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\AppFrameWork.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Archive.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\DevComponents.DotNetBar2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\IKIDSecurity.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\IKIDUtility.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\IraniDate.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.ButtonBar.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.Common.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.ExplorerBar.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.GridEX.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.UI.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\JFrameWork.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Persistent.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\SqlManager.QExport.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\WLFormGlobalCtrl_DT.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\DailyReport.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\FacJobClasification.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\FacInOut.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\CaculateNetTime.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\InfoServices.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\JanusFrameWork.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\FacHR.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\FacPlanning.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\SqlManager.Xls.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\FacRollCall.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\CrystalSystem.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\WLFormGlobalCtrl.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Interop.MSMask.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\IkidRUP.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\PrdStockControl.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Interop.DateDLLMain.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Coding.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\IrisSkin.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\SqlManager.QExport.Localization.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\PaletSCS.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\PrdPMDie.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\WLFormGlobalCtrl_OLEDB.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\AxInterop.MSMask.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.TimeLine.v2.xml
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Janus.Windows.CalendarCombo.v2.xml
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Interop.AcroPDFLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Interop.AgentObjects.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Interop.Excel.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Interop.PdfLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\Interop.RichTextLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\bin\Release\AxInterop.PdfLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\ResolveAssemblyReference.cache
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\Interop.AcroPDFLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\Interop.AgentObjects.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\Interop.Excel.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\Interop.PdfLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\Interop.RichTextLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\AxInterop.AcroPDFLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\AxInterop.PdfLib.dll
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptChartKoli.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptChartPerMdep.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptLifeSheet.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptMasterList.rpt
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBase.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmLifeSheet.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmSaveLinks.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmShowPDF.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmTazminReports.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmTest.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmTransfer.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmMasterReport.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmReportView.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmUserMessage.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoAbout.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoDocShow.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoMain.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.Resources.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoMaster.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoSearch.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.SplashScreen1.resources
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID_MIS\Other team Prj\Sahab\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.exe.licenses
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\FacInOut.dll
+D:\IKID_MIS\IsoDoc_New\IsoDoc\bin\Debug\PM.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\Interop.AcroPDFLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\Interop.PdfLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\AxInterop.PdfLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmSaveLinks.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\ResolveAssemblyReference.cache
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\Interop.AcroPDFLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\Interop.AgentObjects.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\Interop.Excel.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\Interop.PdfLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\Interop.RichTextLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\AxInterop.AcroPDFLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\AxInterop.PdfLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptChartKoli.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptChartPerMdep.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptLifeSheet.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptMasterList.rpt
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBase.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmLifeSheet.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmSaveLinks.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmShowPDF.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmTazminReports.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmTest.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmTransfer.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmMasterReport.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoFarvorites.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmReportView.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmUserMessage.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoAbout.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoDocShow.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoMain.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.Resources.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoMaster.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoSearch.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.SplashScreen1.resources
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.exe.licenses
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.exe
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.xml
+D:\IKID mis\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.pdb
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.exe
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.xml
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Activities.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Archive.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\DevComponents.DotNetBar2.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\IraniDate.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\JFrameWork.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Persistent.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\DailyReport.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\CaculateNetTime.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\InfoServices.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\FacHR.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\IrisSkin.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\FacPlanning.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\PM.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\FacRollCall.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\IkidRUP.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Coding.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\FacInOut.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\PaletSCS.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\ActiveReports.Viewer.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Interop.AcroPDFLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Interop.PdfLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\IKID mis\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.PdfLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.exe
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\IsoDoc.xml
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Activities.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Archive.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\DevComponents.DotNetBar2.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\IraniDate.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\JFrameWork.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Persistent.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\DailyReport.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\CaculateNetTime.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\InfoServices.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\FacHR.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\IrisSkin.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\FacPlanning.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\PM.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\FacRollCall.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\IkidRUP.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Coding.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\FacInOut.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\PaletSCS.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\ActiveReports.Viewer.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.AcroPDFLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.PdfLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\bin\Debug\AxInterop.PdfLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.AcroPDFLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.PdfLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\AxInterop.PdfLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmSaveLinks.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\ResolveAssemblyReference.cache
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\Interop.AcroPDFLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\Interop.AgentObjects.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\Interop.Excel.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\Interop.PdfLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\Interop.RichTextLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\AxInterop.AcroPDFLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\AxInterop.PdfLib.dll
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptChartKoli.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptChartPerMdep.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptLifeSheet.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.RptMasterList.rpt
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBase.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmLifeSheet.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmSaveLinks.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmShowPDF.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmTazminReports.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.frmTest.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmTransfer.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmMasterReport.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoFarvorites.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmReportView.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmUserMessage.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoAbout.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoDocShow.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoMain.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.Resources.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoMaster.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIsoSearch.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.SplashScreen1.resources
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.exe.licenses
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.exe
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.xml
+D:\IKIDMIS\IsoDoc_New\IsoDoc\obj\Release\IsoDoc.pdb
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmSaveLinks.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.pdb
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.xml
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Activities.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\AppFrameWork.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Archive.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevComponents.DotNetBar2.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevExpress.Data.v7.1.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevExpress.Utils.v7.1.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraBars.v7.1.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraEditors.v7.1.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IKIDSecurity.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IKIDUtility.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IraniDate.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\JFrameWork.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Persistent.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DailyReport.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\CaculateNetTime.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\FacHR.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IrisSkin.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\FacPlanning.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PM.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\FacRollCall.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.MSMask.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IkidRUP.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Coding.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\FacInOut.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PaletSCS.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.Excel.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.PdfLib.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.PdfLib.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\Interop.PdfLib.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\AxInterop.PdfLib.dll
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmSaveLinks.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+\\s1000\d$\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTedadBazdid.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\IsoDoc.pdb
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\IsoDoc.xml
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Activities.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\AppFrameWork.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Archive.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\DevExpress.Data.v7.1.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\DevExpress.Utils.v7.1.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraBars.v7.1.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraEditors.v7.1.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\IKIDSecurity.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\IKIDUtility.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\IraniDate.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\JFrameWork.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\JobClasification.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Persistent.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Personely.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\DailyReport.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\CaculateNetTime.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\FacPlanning.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\PM.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.MSMask.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\IkidRUP.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\FacInOut.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Coding.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\PaletSCS.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.AcroPDFLib.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.Excel.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.PdfLib.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\AxInterop.PdfLib.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\Interop.AcroPDFLib.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTedadBazdid.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmSaveLinks.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmPDF.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\O2S.Components.PDFView4NET.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmPrint.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\Interop.AcroPDFLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\Interop.PdfLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\AxInterop.PdfLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmPDF.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmPrint.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTedadBazdid.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmSaveLinks.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\IsoDoc.xml
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Activities.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Archive.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\DevComponents.DotNetBar2.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\DevExpress.Data.v7.1.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\DevExpress.Utils.v7.1.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraBars.v7.1.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraEditors.v7.1.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\IraniDate.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\JFrameWork.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Persistent.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\DailyReport.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\CaculateNetTime.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\FacPlanning.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\PM.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\FacRollCall.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\IkidRUP.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\FacInOut.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Coding.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\PaletSCS.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Interop.AcroPDFLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Interop.PdfLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\bin\Debug\AxInterop.PdfLib.dll
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IKIDMIS\Other App\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmPDF.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmPrint.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmNewmaghale.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.xml
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Activities.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Archive.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevComponents.DotNetBar2.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IraniDate.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\JFrameWork.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Persistent.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DailyReport.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\CaculateNetTime.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\FacPlanning.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IkidRUP.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\FacInOut.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Coding.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.PdfLib.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.PdfLib.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\ResolveAssemblyReference.cache
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\Interop.AcroPDFLib.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\Interop.AgentObjects.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\Interop.Excel.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\Interop.RichTextLib.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\AxInterop.AcroPDFLib.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.ResolveComReference.cache
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartKoli.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartPerMdep.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptStatisticOfDoc.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptLifeSheet.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptMasterList.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmNewmaghale.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmPDF.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmPrint.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTedadBazdid.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBaseview.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmInsOutsideDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDepartDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBase.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmLifeSheet.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmSaveLinks.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmShowPDF.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTazminReports.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmTest.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTransfer.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmMasterReport.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoFarvorites.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmReportView.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmUserMessage.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoAbout.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDocShow.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoHistoryShow.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoImportandDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoInsertHistory.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMain.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoBasicSetting.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.Resources.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMaster.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoOtherDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoRegistDocument.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoSearch.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.SplashScreen1.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.GenerateResource.Cache
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.xml
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.pdb
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmISORoozshomar.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmISORoozshomar.resources
+D:\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IsoDoc\IsoDoc\obj\Debug\ResolveAssemblyReference.cache
+D:\IsoDoc\IsoDoc\obj\Debug\Interop.AcroPDFLib.dll
+D:\IsoDoc\IsoDoc\obj\Debug\Interop.AgentObjects.dll
+D:\IsoDoc\IsoDoc\obj\Debug\Interop.Excel.dll
+D:\IsoDoc\IsoDoc\obj\Debug\Interop.RichTextLib.dll
+D:\IsoDoc\IsoDoc\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.ResolveComReference.cache
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartKoli.rpt
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptChartPerMdep.rpt
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptStatisticOfDoc.rpt
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptLifeSheet.rpt
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptMasterList.rpt
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmISORoozshomar.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmNewmaghale.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmPDF.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmPrint.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTedadBazdid.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBaseview.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmInsOutsideDoc.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDepartDoc.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmKnowledgeBase.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmLifeSheet.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmSaveLinks.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmShowPDF.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTazminReports.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.frmTest.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmTransfer.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmMasterReport.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoFarvorites.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmReportView.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmUserMessage.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoAbout.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoDocShow.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoHistoryShow.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoImportandDoc.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoInsertHistory.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMain.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoBasicSetting.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Resources.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoMaster.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoOtherDoc.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoRegistDocument.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIsoSearch.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.SplashScreen1.resources
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.vbproj.GenerateResource.Cache
+D:\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe
+D:\IsoDoc\IsoDoc\bin\Debug\IsoDoc.pdb
+D:\IsoDoc\IsoDoc\bin\Debug\IsoDoc.xml
+D:\IsoDoc\IsoDoc\bin\Debug\Activities.dll
+D:\IsoDoc\IsoDoc\bin\Debug\AppFrameWork.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Archive.dll
+D:\IsoDoc\IsoDoc\bin\Debug\AxInterop.PdfLib.dll
+D:\IsoDoc\IsoDoc\bin\Debug\DevComponents.DotNetBar2.dll
+D:\IsoDoc\IsoDoc\bin\Debug\DevExpress.Data.v7.1.dll
+D:\IsoDoc\IsoDoc\bin\Debug\DevExpress.Utils.v7.1.dll
+D:\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraBars.v7.1.dll
+D:\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraEditors.v7.1.dll
+D:\IsoDoc\IsoDoc\bin\Debug\IKIDSecurity.dll
+D:\IsoDoc\IsoDoc\bin\Debug\IKIDUtility.dll
+D:\IsoDoc\IsoDoc\bin\Debug\IraniDate.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.Common.v2.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.dll
+D:\IsoDoc\IsoDoc\bin\Debug\JFrameWork.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Persistent.dll
+D:\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.dll
+D:\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_DT.dll
+D:\IsoDoc\IsoDoc\bin\Debug\DailyReport.dll
+D:\IsoDoc\IsoDoc\bin\Debug\CaculateNetTime.dll
+D:\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
+D:\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
+D:\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
+D:\IsoDoc\IsoDoc\bin\Debug\FacPlanning.dll
+D:\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
+D:\IsoDoc\IsoDoc\bin\Debug\PM.dll
+D:\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
+D:\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl.dll
+D:\IsoDoc\IsoDoc\bin\Debug\WLFormGlobalCtrl_OLEDB.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Interop.MSMask.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Interop.PdfLib.dll
+D:\IsoDoc\IsoDoc\bin\Debug\IkidRUP.dll
+D:\IsoDoc\IsoDoc\bin\Debug\FacInOut.dll
+D:\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Coding.dll
+D:\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
+D:\IsoDoc\IsoDoc\bin\Debug\PaletSCS.dll
+D:\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
+D:\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
+D:\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.CalendarCombo.v2.xml
+D:\IsoDoc\IsoDoc\bin\Debug\Interop.AcroPDFLib.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Interop.AgentObjects.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Interop.Excel.dll
+D:\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
+D:\IsoDoc\IsoDoc\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\IsoDoc\IsoDoc\obj\Release\ResolveAssemblyReference.cache
+D:\IsoDoc\IsoDoc\obj\Release\Interop.AcroPDFLib.dll
+D:\IsoDoc\IsoDoc\obj\Release\Interop.AgentObjects.dll
+D:\IsoDoc\IsoDoc\obj\Release\Interop.Excel.dll
+D:\IsoDoc\IsoDoc\obj\Release\Interop.RichTextLib.dll
+D:\IsoDoc\IsoDoc\obj\Release\AxInterop.AcroPDFLib.dll
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.ResolveComReference.cache
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartKoli.rpt
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptChartPerMdep.rpt
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptStatisticOfDoc.rpt
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptLifeSheet.rpt
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptMasterList.rpt
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmISORoozshomar.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmNewmaghale.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmPDF.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmPrint.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTedadBazdid.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBaseview.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmInsOutsideDoc.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDepartDoc.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmKnowledgeBase.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmLifeSheet.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmSaveLinks.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmShowPDF.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTazminReports.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.frmTest.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmTransfer.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmMasterReport.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoFarvorites.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmReportView.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmUserMessage.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoAbout.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoDocShow.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoHistoryShow.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoImportandDoc.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoInsertHistory.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMain.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoBasicSetting.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.Resources.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoMaster.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoOtherDoc.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoRegistDocument.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIsoSearch.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.FrmIso_TechnicalDoc.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.SplashScreen1.resources
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.vbproj.GenerateResource.Cache
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe.licenses
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.xml
+D:\IsoDoc\IsoDoc\obj\Release\IsoDoc.pdb
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.RptFormChapi.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptFormChapi.rpt
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Release\IsoDoc.exe.licenses
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IrisSkin.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PaletSCS.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\RollCall.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\bin\Debug\IrisSkin.dll
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.RptFormChapi.rpt
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmISORoozshomar.resources
+C:\Documents and Settings\1967\Desktop\IsoDoc\IsoDoc\obj\Debug\IsoDoc.FrmNewmaghale.resources
+E:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\IsoDoc.exe.config
+E:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
+E:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
+E:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevExpress.Data.v7.1.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevExpress.Utils.v7.1.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraBars.v7.1.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\DevExpress.XtraEditors.v7.1.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\RollCall.dll
+D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe.licenses
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PM.dll

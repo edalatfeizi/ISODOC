@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Archive_NewDataSet1" targetNamespace="http://tempuri.org/Archive_NewDataSet1.xsd" xmlns:mstns="http://tempuri.org/Archive_NewDataSet1.xsd" xmlns="http://tempuri.org/Archive_NewDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Archive_NewConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="Archive_NewConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IsoDoc.My.MySettings.GlobalReference.Default.Archive_NewConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VwAch_DieMapsTableAdapter" GeneratorDataComponentClassName="VwAch_DieMapsTableAdapter" Name="VwAch_DieMaps" UserDataComponentName="VwAch_DieMapsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Archive_NewConnectionString (MySettings)" DbObjectName="Archive_New.dbo.VwAch_DieMaps" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>SELECT MapID, CheckerPersonID, DocTypeID, DoctypeName, RegistTypeID, ReviewDate, ReviewNum, PgTypeID, DocumentTypeID, IsoDocViewID, DocStateID, FilePath, FileTypeID, Explain, MapStateID, DesignDate, SheetNum, EnterDate, DocumentTypetxt, PgTypeTxt, IsoDocViewTxt, MapStateTxt, PersonID, DesignerPersonID, DesignerName, ChekerName, DocRegisttxt, StateTxt, StateID, TrustExistID, PanelID, OKDate, FileTypeTxt, DieID, ProjectID FROM dbo.VwAch_DieMaps</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MapID" DataSetColumn="MapID" />
+              <Mapping SourceColumn="CheckerPersonID" DataSetColumn="CheckerPersonID" />
+              <Mapping SourceColumn="DocTypeID" DataSetColumn="DocTypeID" />
+              <Mapping SourceColumn="DoctypeName" DataSetColumn="DoctypeName" />
+              <Mapping SourceColumn="RegistTypeID" DataSetColumn="RegistTypeID" />
+              <Mapping SourceColumn="ReviewDate" DataSetColumn="ReviewDate" />
+              <Mapping SourceColumn="ReviewNum" DataSetColumn="ReviewNum" />
+              <Mapping SourceColumn="PgTypeID" DataSetColumn="PgTypeID" />
+              <Mapping SourceColumn="DocumentTypeID" DataSetColumn="DocumentTypeID" />
+              <Mapping SourceColumn="IsoDocViewID" DataSetColumn="IsoDocViewID" />
+              <Mapping SourceColumn="DocStateID" DataSetColumn="DocStateID" />
+              <Mapping SourceColumn="FilePath" DataSetColumn="FilePath" />
+              <Mapping SourceColumn="FileTypeID" DataSetColumn="FileTypeID" />
+              <Mapping SourceColumn="Explain" DataSetColumn="Explain" />
+              <Mapping SourceColumn="MapStateID" DataSetColumn="MapStateID" />
+              <Mapping SourceColumn="DesignDate" DataSetColumn="DesignDate" />
+              <Mapping SourceColumn="SheetNum" DataSetColumn="SheetNum" />
+              <Mapping SourceColumn="EnterDate" DataSetColumn="EnterDate" />
+              <Mapping SourceColumn="DocumentTypetxt" DataSetColumn="DocumentTypetxt" />
+              <Mapping SourceColumn="PgTypeTxt" DataSetColumn="PgTypeTxt" />
+              <Mapping SourceColumn="IsoDocViewTxt" DataSetColumn="IsoDocViewTxt" />
+              <Mapping SourceColumn="MapStateTxt" DataSetColumn="MapStateTxt" />
+              <Mapping SourceColumn="PersonID" DataSetColumn="PersonID" />
+              <Mapping SourceColumn="DesignerPersonID" DataSetColumn="DesignerPersonID" />
+              <Mapping SourceColumn="DesignerName" DataSetColumn="DesignerName" />
+              <Mapping SourceColumn="ChekerName" DataSetColumn="ChekerName" />
+              <Mapping SourceColumn="DocRegisttxt" DataSetColumn="DocRegisttxt" />
+              <Mapping SourceColumn="StateTxt" DataSetColumn="StateTxt" />
+              <Mapping SourceColumn="StateID" DataSetColumn="StateID" />
+              <Mapping SourceColumn="TrustExistID" DataSetColumn="TrustExistID" />
+              <Mapping SourceColumn="PanelID" DataSetColumn="PanelID" />
+              <Mapping SourceColumn="OKDate" DataSetColumn="OKDate" />
+              <Mapping SourceColumn="FileTypeTxt" DataSetColumn="FileTypeTxt" />
+              <Mapping SourceColumn="DieID" DataSetColumn="DieID" />
+              <Mapping SourceColumn="ProjectID" DataSetColumn="ProjectID" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Archive_NewDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Archive_NewDataSet1" msprop:Generator_DataSetName="Archive_NewDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VwAch_DieMaps" msprop:Generator_UserTableName="VwAch_DieMaps" msprop:Generator_RowDeletedName="VwAch_DieMapsRowDeleted" msprop:Generator_TableClassName="VwAch_DieMapsDataTable" msprop:Generator_RowChangedName="VwAch_DieMapsRowChanged" msprop:Generator_RowClassName="VwAch_DieMapsRow" msprop:Generator_RowChangingName="VwAch_DieMapsRowChanging" msprop:Generator_RowEvArgName="VwAch_DieMapsRowChangeEvent" msprop:Generator_RowEvHandlerName="VwAch_DieMapsRowChangeEventHandler" msprop:Generator_TablePropName="VwAch_DieMaps" msprop:Generator_TableVarName="tableVwAch_DieMaps" msprop:Generator_RowDeletingName="VwAch_DieMapsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MapID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="MapID" msprop:Generator_ColumnPropNameInRow="MapID" msprop:Generator_ColumnVarNameInTable="columnMapID" msprop:Generator_ColumnPropNameInTable="MapIDColumn" type="xs:long" />
+              <xs:element name="CheckerPersonID" msprop:Generator_UserColumnName="CheckerPersonID" msprop:Generator_ColumnPropNameInRow="CheckerPersonID" msprop:Generator_ColumnVarNameInTable="columnCheckerPersonID" msprop:Generator_ColumnPropNameInTable="CheckerPersonIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DocTypeID" msprop:Generator_UserColumnName="DocTypeID" msprop:Generator_ColumnPropNameInRow="DocTypeID" msprop:Generator_ColumnVarNameInTable="columnDocTypeID" msprop:Generator_ColumnPropNameInTable="DocTypeIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="DoctypeName" msprop:Generator_UserColumnName="DoctypeName" msprop:Generator_ColumnPropNameInRow="DoctypeName" msprop:Generator_ColumnVarNameInTable="columnDoctypeName" msprop:Generator_ColumnPropNameInTable="DoctypeNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegistTypeID" msprop:Generator_UserColumnName="RegistTypeID" msprop:Generator_ColumnPropNameInRow="RegistTypeID" msprop:Generator_ColumnVarNameInTable="columnRegistTypeID" msprop:Generator_ColumnPropNameInTable="RegistTypeIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="ReviewDate" msprop:Generator_UserColumnName="ReviewDate" msprop:Generator_ColumnPropNameInRow="ReviewDate" msprop:Generator_ColumnVarNameInTable="columnReviewDate" msprop:Generator_ColumnPropNameInTable="ReviewDateColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReviewNum" msprop:Generator_UserColumnName="ReviewNum" msprop:Generator_ColumnPropNameInRow="ReviewNum" msprop:Generator_ColumnVarNameInTable="columnReviewNum" msprop:Generator_ColumnPropNameInTable="ReviewNumColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PgTypeID" msprop:Generator_UserColumnName="PgTypeID" msprop:Generator_ColumnPropNameInRow="PgTypeID" msprop:Generator_ColumnVarNameInTable="columnPgTypeID" msprop:Generator_ColumnPropNameInTable="PgTypeIDColumn" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DocumentTypeID" msprop:Generator_UserColumnName="DocumentTypeID" msprop:Generator_ColumnPropNameInRow="DocumentTypeID" msprop:Generator_ColumnVarNameInTable="columnDocumentTypeID" msprop:Generator_ColumnPropNameInTable="DocumentTypeIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="IsoDocViewID" msprop:Generator_UserColumnName="IsoDocViewID" msprop:Generator_ColumnPropNameInRow="IsoDocViewID" msprop:Generator_ColumnVarNameInTable="columnIsoDocViewID" msprop:Generator_ColumnPropNameInTable="IsoDocViewIDColumn" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DocStateID" msprop:Generator_UserColumnName="DocStateID" msprop:Generator_ColumnPropNameInRow="DocStateID" msprop:Generator_ColumnVarNameInTable="columnDocStateID" msprop:Generator_ColumnPropNameInTable="DocStateIDColumn" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="FilePath" msprop:Generator_UserColumnName="FilePath" msprop:Generator_ColumnPropNameInRow="FilePath" msprop:Generator_ColumnVarNameInTable="columnFilePath" msprop:Generator_ColumnPropNameInTable="FilePathColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FileTypeID" msprop:Generator_UserColumnName="FileTypeID" msprop:Generator_ColumnPropNameInRow="FileTypeID" msprop:Generator_ColumnVarNameInTable="columnFileTypeID" msprop:Generator_ColumnPropNameInTable="FileTypeIDColumn" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Explain" msprop:Generator_UserColumnName="Explain" msprop:Generator_ColumnPropNameInRow="Explain" msprop:Generator_ColumnVarNameInTable="columnExplain" msprop:Generator_ColumnPropNameInTable="ExplainColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MapStateID" msprop:Generator_UserColumnName="MapStateID" msprop:Generator_ColumnPropNameInRow="MapStateID" msprop:Generator_ColumnVarNameInTable="columnMapStateID" msprop:Generator_ColumnPropNameInTable="MapStateIDColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="DesignDate" msprop:Generator_UserColumnName="DesignDate" msprop:Generator_ColumnPropNameInRow="DesignDate" msprop:Generator_ColumnVarNameInTable="columnDesignDate" msprop:Generator_ColumnPropNameInTable="DesignDateColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SheetNum" msprop:Generator_UserColumnName="SheetNum" msprop:Generator_ColumnPropNameInRow="SheetNum" msprop:Generator_ColumnVarNameInTable="columnSheetNum" msprop:Generator_ColumnPropNameInTable="SheetNumColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="EnterDate" msprop:Generator_UserColumnName="EnterDate" msprop:Generator_ColumnPropNameInRow="EnterDate" msprop:Generator_ColumnVarNameInTable="columnEnterDate" msprop:Generator_ColumnPropNameInTable="EnterDateColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DocumentTypetxt" msprop:Generator_UserColumnName="DocumentTypetxt" msprop:Generator_ColumnPropNameInRow="DocumentTypetxt" msprop:Generator_ColumnVarNameInTable="columnDocumentTypetxt" msprop:Generator_ColumnPropNameInTable="DocumentTypetxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PgTypeTxt" msprop:Generator_UserColumnName="PgTypeTxt" msprop:Generator_ColumnPropNameInRow="PgTypeTxt" msprop:Generator_ColumnVarNameInTable="columnPgTypeTxt" msprop:Generator_ColumnPropNameInTable="PgTypeTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsoDocViewTxt" msprop:Generator_UserColumnName="IsoDocViewTxt" msprop:Generator_ColumnPropNameInRow="IsoDocViewTxt" msprop:Generator_ColumnVarNameInTable="columnIsoDocViewTxt" msprop:Generator_ColumnPropNameInTable="IsoDocViewTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MapStateTxt" msprop:Generator_UserColumnName="MapStateTxt" msprop:Generator_ColumnPropNameInRow="MapStateTxt" msprop:Generator_ColumnVarNameInTable="columnMapStateTxt" msprop:Generator_ColumnPropNameInTable="MapStateTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PersonID" msprop:Generator_UserColumnName="PersonID" msprop:Generator_ColumnPropNameInRow="PersonID" msprop:Generator_ColumnVarNameInTable="columnPersonID" msprop:Generator_ColumnPropNameInTable="PersonIDColumn" type="xs:int" />
+              <xs:element name="DesignerPersonID" msprop:Generator_UserColumnName="DesignerPersonID" msprop:Generator_ColumnPropNameInRow="DesignerPersonID" msprop:Generator_ColumnVarNameInTable="columnDesignerPersonID" msprop:Generator_ColumnPropNameInTable="DesignerPersonIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DesignerName" msdata:ReadOnly="true" msprop:Generator_UserColumnName="DesignerName" msprop:Generator_ColumnPropNameInRow="DesignerName" msprop:Generator_ColumnVarNameInTable="columnDesignerName" msprop:Generator_ColumnPropNameInTable="DesignerNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="56" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChekerName" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ChekerName" msprop:Generator_ColumnPropNameInRow="ChekerName" msprop:Generator_ColumnVarNameInTable="columnChekerName" msprop:Generator_ColumnPropNameInTable="ChekerNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="56" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DocRegisttxt" msprop:Generator_UserColumnName="DocRegisttxt" msprop:Generator_ColumnPropNameInRow="DocRegisttxt" msprop:Generator_ColumnVarNameInTable="columnDocRegisttxt" msprop:Generator_ColumnPropNameInTable="DocRegisttxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StateTxt" msprop:Generator_UserColumnName="StateTxt" msprop:Generator_ColumnPropNameInRow="StateTxt" msprop:Generator_ColumnVarNameInTable="columnStateTxt" msprop:Generator_ColumnPropNameInTable="StateTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StateID" msprop:Generator_UserColumnName="StateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" type="xs:unsignedByte" />
+              <xs:element name="TrustExistID" msprop:Generator_UserColumnName="TrustExistID" msprop:Generator_ColumnPropNameInRow="TrustExistID" msprop:Generator_ColumnVarNameInTable="columnTrustExistID" msprop:Generator_ColumnPropNameInTable="TrustExistIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PanelID" msprop:Generator_UserColumnName="PanelID" msprop:Generator_ColumnPropNameInRow="PanelID" msprop:Generator_ColumnVarNameInTable="columnPanelID" msprop:Generator_ColumnPropNameInTable="PanelIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OKDate" msprop:Generator_UserColumnName="OKDate" msprop:Generator_ColumnPropNameInRow="OKDate" msprop:Generator_ColumnVarNameInTable="columnOKDate" msprop:Generator_ColumnPropNameInTable="OKDateColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="19" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FileTypeTxt" msprop:Generator_UserColumnName="FileTypeTxt" msprop:Generator_ColumnPropNameInRow="FileTypeTxt" msprop:Generator_ColumnVarNameInTable="columnFileTypeTxt" msprop:Generator_ColumnPropNameInTable="FileTypeTxtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DieID" msprop:Generator_UserColumnName="DieID" msprop:Generator_ColumnPropNameInRow="DieID" msprop:Generator_ColumnVarNameInTable="columnDieID" msprop:Generator_ColumnPropNameInTable="DieIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectID" msprop:Generator_UserColumnName="ProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

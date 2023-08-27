@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="IsoDoc.Bus_AienName" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_AienName.vb</FileName>
+      <HashCode>AAQAAEAAAAAAAAIAAAAAAAAAAAEAAAAAAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_Certificate" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_Certificate.vb</FileName>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_ControlPlan" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_ControlPlan.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_Dastor" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_Dastor.vb</FileName>
+      <HashCode>AAQAAEAAAAAAAAIAAAAAAAAAAAEAAAAAAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_DocType" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_DocType.vb</FileName>
+      <HashCode>AAAIAgAAAAAAAAQAAAAgAAAAAgAAAAAAAAABAAACAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_Document" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_Document.vb</FileName>
+      <HashCode>AAQCAEEAAAABAAoAAAEEgAIARiGAACAAAhBAgAIAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_FlowChart" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_FlowChart.vb</FileName>
+      <HashCode>AAQAAEAAAAAAAAIAAAAAAAAAAAEAAAAAAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_Forms" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_Forms.vb</FileName>
+      <HashCode>AAQAAEAAAAAAAAIAAAAAAAAAAAEAAAAAAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_ImportandDoc" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_ImportandDoc.vb</FileName>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAgAAAAAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_MdepDoc" Collapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_MdepDoc.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAABAAAAAAAAAAQAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_NemodarGardesh" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_NemodarGardesh.vb</FileName>
+      <HashCode>AAQAAEAAAAAAAAIAAAAAAAAAAAEAAAAAAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_OthersDoc" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_OthersDoc.vb</FileName>
+      <HashCode>ACAAAAAAAABIAAAAAAAAAAAgAAEAAAAAAAABAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_OutsideDoc" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_OutsideDoc.vb</FileName>
+      <HashCode>AAAAAAAAAAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_PostIdentification" Collapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_PostIdentification.vb</FileName>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_ProcessIdentification" Collapsed="true">
+    <Position X="19.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_ProcessIdentification.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_RaveshEjraie" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_RaveshEjraie.vb</FileName>
+      <HashCode>AAQAAEAAAAAAAAIAAAAAAAAAAAEAAAAAAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_ResponsibleExplain" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_ResponsibleExplain.vb</FileName>
+      <HashCode>AAAACAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_StartegicPlan" Collapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_StartegicPlan.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Bus_TechnicalDoc" Collapsed="true">
+    <Position X="23" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BusinessLayer\Bus_TechnicalDoc.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAgAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Dac_Certificate">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DataAccessLayer\Dac_Certificate.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="IsoDoc.Dac_ControlPlan" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DataAccessLayer\Dac_ControlPlan.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Dac_Document" Collapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DataAccessLayer\Dac_Document.vb</FileName>
+      <HashCode>AAQIAkAAAQAIAAAAAAAAAAAAAAEAAAACAAAAAAACAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Dac_ImportandDoc" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DataAccessLayer\Dac_ImportandDoc.vb</FileName>
+      <HashCode>EAAIAAAABAABAAQAAAEAgAAABjCAIAAAAABAgAZAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Dac_MdepDoc" Collapsed="true">
+    <Position X="21.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DataAccessLayer\Dac_MdepDoc.vb</FileName>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Dac_OthersDoc" Collapsed="true">
+    <Position X="23" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DataAccessLayer\Dac_OthersDoc.vb</FileName>
+      <HashCode>ACQCAEEAAAABAAgAAAEEgAIARiGAACAAAhBAgAIAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Dac_OutsideDoc" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DataAccessLayer\Dac_OutsideDoc.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Dac_StrategicPlan" Collapsed="true">
+    <Position X="16" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DataAccessLayer\Dac_StrategicPlan.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Dac_TechnicalDoc" Collapsed="true">
+    <Position X="17.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DataAccessLayer\Dac_TechnicalDoc.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Isodoc_NewDataSet" Collapsed="true">
+    <Position X="21.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAEAwgAAAJABAAAQAAAAAgCQBgAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.FrmIso_TechnicalDoc" Collapsed="true">
+    <Position X="19.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PresentationLayer\FrmIso_TechnicalDoc.vb</FileName>
+      <HashCode>AAAEoCCACCAAKQEAYACAAWACEAABAAEAAgYQEAkMAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.FrmIsoBasicSetting" Collapsed="true">
+    <Position X="21.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PresentationLayer\FrmIsoBasicSetting.vb</FileName>
+      <HashCode>AgGQAADAECACASIAQAOAIAcCBAAAAAAAOgKAAAABAEk=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.FrmIsoDocument" Collapsed="true">
+    <Position X="23" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PresentationLayer\FrmIsoDocument.vb</FileName>
+      <HashCode>DiCJA+PwoiYFsgWrwEGAmiejaABlIAHKE8iQR0s0D0E=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.FrmIsoImportandDoc" Collapsed="true">
+    <Position X="14.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PresentationLayer\FrmIsoImportandDoc.vb</FileName>
+      <HashCode>AACAgICAECAgAIcIQAGKAAACEEBFgAACGAEEQAgQAQY=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.FrmIsoMain" Collapsed="true">
+    <Position X="16" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PresentationLayer\FrmIsoMain.vb</FileName>
+      <HashCode>CGRIYNKItKIJAlALWQiOBCWn1+1lH0vQ5dykSC9CZNk=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.FrmIsoMaster" Collapsed="true">
+    <Position X="17.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PresentationLayer\FrmIsoMaster.vb</FileName>
+      <HashCode>AAAIgCCAACDAKYMAYALAAGAKkAABAEECECAAAAkEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.FrmIsoRegistDocument" Collapsed="true">
+    <Position X="19.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PresentationLayer\FrmIsoRegistDocument.vb</FileName>
+      <HashCode>eGvK8NP7Huev0vjVzHmozn8H/P3//T+n//pzf/7bHWc=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.Isodoc_NewDataSetTableAdapters.tbISODocNameTableAdapter" Collapsed="true">
+    <Position X="16" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAGAAEAAAAAMAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.My.MyApplication" Collapsed="true">
+    <Position X="23" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IsoDoc.My.MySettings" Collapsed="true">
+    <Position X="14.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAAAQAABAAICAABAABAAAAAAAAAABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Module Name="IsoDoc.MdlMain" Collapsed="true">
+    <Position X="14.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Modules\MdlMain.vb</FileName>
+      <HashCode>WIIAAAAARgAAAAEgACAACAQEAAAAACEBACBHCIAABAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="IsoDoc.My.MySettingsProperty" Collapsed="true">
+    <Position X="16" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="IsoDoc.My.Resources.Resources" Collapsed="true">
+    <Position X="17.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+</ClassDiagram>
