@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91A2FF3A-0E19-4075-B217-1D3EB2198644}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>IsoDoc.My.MyApplication</StartupObject>
+    <RootNamespace>IsoDoc</RootNamespace>
+    <AssemblyName>IsoDoc</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>icon1.ico</ApplicationIcon>
+    <PublishUrl>http://localhost/IsoDoc/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>IsoDoc.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>IsoDoc.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="&quot;CrystalDecisions.ReportSource &quot;, Version=9.1.5000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\CrystalDecisions.ReportSource .dll</HintPath>
+    </Reference>
+    <Reference Include="Activities, Version=1.0.5052.18582, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\Activities.dll</HintPath>
+    </Reference>
+    <Reference Include="AppFrameWork, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\AppFrameWork.dll</HintPath>
+    </Reference>
+    <Reference Include="Archive, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\Archive.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.PdfLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\AxInterop.PdfLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=9.1.5000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=9.1.5000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=9.1.5000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.4.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\DevExpress.Data.v7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\DevExpress.Utils.v7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\DevExpress.XtraBars.v7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\DevExpress.XtraEditors.v7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="IKIDSecurity, Version=1.0.2501.20695, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\IKIDSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="IKIDUtility, Version=1.0.3203.18538, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\IKIDUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="IraniDate, Version=1.0.2619.14909, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\IraniDate.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.ButtonBar.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\Janus.Windows.ButtonBar.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\Janus.Windows.Common.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.ExplorerBar.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\Janus.Windows.ExplorerBar.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.GridEX.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\Janus.Windows.GridEX.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.UI.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\Janus.Windows.UI.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="JFrameWork, Version=1.0.3256.27594, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\JFrameWork.dll</HintPath>
+    </Reference>
+    <Reference Include="JFrameWork_Last, Version=1.0.4791.23028, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\JFrameWork_Last.dll</HintPath>
+    </Reference>
+    <Reference Include="JobClasification, Version=1.0.2668.32289, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\IkidSystems\JobClasification.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="O2S.Components.PDFView4NET, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\IkidSystems\O2S.Components.PDFView4NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Persistent, Version=1.0.3167.20573, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\Persistent.dll</HintPath>
+    </Reference>
+    <Reference Include="Personely, Version=1.0.3075.16077, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\IkidSystems\Personely.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlManager.QExport, Version=1.0.2.5, Culture=neutral, PublicKeyToken=16878acd3bf5608d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\SqlManager.QExport.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="WLFormGlobalCtrl_DT, Version=1.0.3103.28849, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\IkidSystems\WLFormGlobalCtrl_DT.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Archive_NewDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Archive_NewDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Archive_NewDataSet.vb">
+      <DependentUpon>Archive_NewDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Archive_NewDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Archive_NewDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLayer\Bus_AienName.vb" />
+    <Compile Include="BusinessLayer\Bus_BasicSetting.vb" />
+    <Compile Include="BusinessLayer\Bus_EqualStandard.vb" />
+    <Compile Include="BusinessLayer\Bus_Favorites.vb" />
+    <Compile Include="BusinessLayer\Bus_History.vb" />
+    <Compile Include="BusinessLayer\Bus_Important.vb" />
+    <Compile Include="BusinessLayer\Bus_MessageHandler.vb" />
+    <Compile Include="BusinessLayer\Bus_ProcessDesc.vb" />
+    <Compile Include="BusinessLayer\Bus_Shenasnamefarayand.vb" />
+    <Compile Include="BusinessLayer\Bus_TechnicalDoc.vb" />
+    <Compile Include="BusinessLayer\Bus_Certificate.vb" />
+    <Compile Include="BusinessLayer\Bus_ControlPlan.vb" />
+    <Compile Include="BusinessLayer\Bus_Dastor.vb" />
+    <Compile Include="BusinessLayer\Bus_DocType.vb" />
+    <Compile Include="BusinessLayer\Bus_Document.vb" />
+    <Compile Include="BusinessLayer\Bus_FlowChart.vb" />
+    <Compile Include="BusinessLayer\Bus_Forms.vb" />
+    <Compile Include="BusinessLayer\Bus_ImportandDoc.vb" />
+    <Compile Include="BusinessLayer\Bus_MdepDoc.vb" />
+    <Compile Include="BusinessLayer\Bus_NemodarGardesh.vb" />
+    <Compile Include="BusinessLayer\Bus_OthersDoc.vb" />
+    <Compile Include="BusinessLayer\Bus_OutsideDoc.vb" />
+    <Compile Include="BusinessLayer\Bus_PostIdentification.vb" />
+    <Compile Include="BusinessLayer\Bus_ProcessIdentification.vb" />
+    <Compile Include="BusinessLayer\Bus_RaveshEjraie.vb" />
+    <Compile Include="BusinessLayer\Bus_ResponsibleExplain.vb" />
+    <Compile Include="BusinessLayer\Bus_StartegicPlan.vb" />
+    <Compile Include="BusinessLayer\Bus_UserMessage.vb" />
+    <Compile Include="BusinessLayer\Bus_TransferDoc.vb" />
+    <Compile Include="DataAccessLayer\Dac_BasicSetting.vb" />
+    <Compile Include="DataAccessLayer\Dac_Favorites.vb" />
+    <Compile Include="DataAccessLayer\Dac_History.vb" />
+    <Compile Include="DataAccessLayer\Dac_Important.vb" />
+    <Compile Include="DataAccessLayer\Dac_PostIdentification.vb" />
+    <Compile Include="DataAccessLayer\Dac_ProcessDesc.vb" />
+    <Compile Include="DataAccessLayer\Dac_ResponsibleExplain.vb" />
+    <Compile Include="DataAccessLayer\Dac_TechnicalDoc.vb" />
+    <Compile Include="DataAccessLayer\Dac_Certificate.vb" />
+    <Compile Include="DataAccessLayer\Dac_ControlPlan.vb" />
+    <Compile Include="DataAccessLayer\Dac_Document.vb" />
+    <Compile Include="DataAccessLayer\Dac_ImportandDoc.vb" />
+    <Compile Include="DataAccessLayer\Dac_MdepDoc.vb" />
+    <Compile Include="DataAccessLayer\Dac_OthersDoc.vb" />
+    <Compile Include="DataAccessLayer\Dac_OutsideDoc.vb" />
+    <Compile Include="DataAccessLayer\Dac_StrategicPlan.vb" />
+    <Compile Include="DataAccessLayer\Dac_TransferDoc.vb" />
+    <Compile Include="DataAccessLayer\Dac_UserMessage.vb" />
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmISORoozshomar.Designer.vb">
+      <DependentUpon>FrmISORoozshomar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmISORoozshomar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmNewmaghale.Designer.vb">
+      <DependentUpon>FrmNewmaghale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmNewmaghale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmPDF.Designer.vb">
+      <DependentUpon>frmPDF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frmPDF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmPrint.Designer.vb">
+      <DependentUpon>frmPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frmPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmTedadBazdid.Designer.vb">
+      <DependentUpon>FrmTedadBazdid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmTedadBazdid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\MdlMain.vb" />
+    <Compile Include="PresentationLayer\frmKnowledgeBaseView.Designer.vb">
+      <DependentUpon>frmKnowledgeBaseView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frmKnowledgeBaseView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmInsOutsideDoc.Designer.vb">
+      <DependentUpon>FrmInsOutsideDoc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmInsOutsideDoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoDepartDoc.Designer.vb">
+      <DependentUpon>FrmIsoDepartDoc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoDepartDoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmKnowledgeBase.Designer.vb">
+      <DependentUpon>frmKnowledgeBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frmKnowledgeBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmLifeSheet.Designer.vb">
+      <DependentUpon>FrmLifeSheet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmLifeSheet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmSaveLinks.Designer.vb">
+      <DependentUpon>frmSaveLinks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frmSaveLinks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmShowPDF.Designer.vb">
+      <DependentUpon>frmShowPDF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frmShowPDF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmTazminReports.Designer.vb">
+      <DependentUpon>FrmTazminReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmTazminReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmTest.Designer.vb">
+      <DependentUpon>frmTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frmTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmTransfer.Designer.vb">
+      <DependentUpon>FrmTransfer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmTransfer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmMasterReport.Designer.vb">
+      <DependentUpon>FrmMasterReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmMasterReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoFarvorites.Designer.vb">
+      <DependentUpon>FrmIsoFarvorites.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoFarvorites.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmReportView.Designer.vb">
+      <DependentUpon>FrmReportView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmReportView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmUserMessage.Designer.vb">
+      <DependentUpon>FrmUserMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmUserMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoAbout.Designer.vb">
+      <DependentUpon>FrmIsoAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoDocShow.Designer.vb">
+      <DependentUpon>FrmIsoDocShow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoDocShow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoHistoryShow.Designer.vb">
+      <DependentUpon>FrmIsoHistoryShow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoHistoryShow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoImportandDoc.Designer.vb">
+      <DependentUpon>FrmIsoImportandDoc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoImportandDoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoInsertHistory.Designer.vb">
+      <DependentUpon>FrmIsoInsertHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoInsertHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoMain.Designer.vb">
+      <DependentUpon>FrmIsoMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoBasicSetting.Designer.vb">
+      <DependentUpon>FrmIsoBasicSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoBasicSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoMaster.Designer.vb">
+      <DependentUpon>FrmIsoMaster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoOtherDoc.Designer.vb">
+      <DependentUpon>FrmIsoOtherDoc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoOtherDoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoRegistDocument.Designer.vb">
+      <DependentUpon>FrmIsoRegistDocument.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoRegistDocument.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoSearch.Designer.vb">
+      <DependentUpon>FrmIsoSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIsoSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIso_TechnicalDoc.Designer.vb">
+      <DependentUpon>FrmIso_TechnicalDoc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmIso_TechnicalDoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicClasses\Cls_JanusGrid.vb" />
+    <Compile Include="PublicClasses\StartSystem.vb" />
+    <Compile Include="Reports\RptChartKoli.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptChartKoli.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RptChartPerMdep.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptChartPerMdep.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RptFormChapi.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptFormChapi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RptStatisticOfDoc.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptStatisticOfDoc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RptLifeSheet.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptLifeSheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RptMasterList.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptMasterList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="PresentationLayer\FrmISORoozshomar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmISORoozshomar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmNewmaghale.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmNewmaghale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmPDF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPDF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmPrint.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmTedadBazdid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmTedadBazdid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmKnowledgeBaseView.resx">
+      <DependentUpon>frmKnowledgeBaseView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmInsOutsideDoc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmInsOutsideDoc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoDepartDoc.resx">
+      <DependentUpon>FrmIsoDepartDoc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmKnowledgeBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmKnowledgeBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmLifeSheet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmLifeSheet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmSaveLinks.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSaveLinks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmShowPDF.resx">
+      <DependentUpon>frmShowPDF.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmTazminReports.resx">
+      <DependentUpon>FrmTazminReports.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmTest.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmTransfer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmTransfer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmMasterReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmMasterReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoFarvorites.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoFarvorites.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmReportView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmReportView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmUserMessage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmUserMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoDocShow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoDocShow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoHistoryShow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoHistoryShow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoImportandDoc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoImportandDoc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoInsertHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoInsertHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoBasicSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoBasicSetting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoMaster.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoOtherDoc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoOtherDoc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoRegistDocument.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoRegistDocument.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIsoSearch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIsoSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmIso_TechnicalDoc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmIso_TechnicalDoc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\SplashScreen1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptChartKoli.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptChartKoli.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptChartPerMdep.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptChartPerMdep.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptFormChapi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptFormChapi.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptStatisticOfDoc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptStatisticOfDoc.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptLifeSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptLifeSheet.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptMasterList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptMasterList.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Archive_NewDataSet.xsc">
+      <DependentUpon>Archive_NewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Archive_NewDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Archive_NewDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Archive_NewDataSet.xss">
+      <DependentUpon>Archive_NewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Archive_NewDataSet1.xsc">
+      <DependentUpon>Archive_NewDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Archive_NewDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Archive_NewDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Archive_NewDataSet1.xss">
+      <DependentUpon>Archive_NewDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Edit.ico" />
+    <Content Include="icon1.ico" />
+    <None Include="Resources\folder-blue-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>9</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="RichTextLib">
+      <Guid>{3B7C8863-D78F-101B-B9B5-04021C009402}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

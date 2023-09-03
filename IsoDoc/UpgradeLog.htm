@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+ <html xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><meta content="en-us" http-equiv="Content-Language" /><meta content="text/html; charset=utf-16" http-equiv="Content-Type" /><title _locID="ConversionReport0">
+          Migration Report
+        </title><style> 
+                    /* Body style, for the entire document */
+                    body
+                    {
+                        background: #F3F3F4;
+                        color: #1E1E1F;
+                        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    /* Header1 style, used for the main title */
+                    h1
+                    {
+                        padding: 10px 0px 10px 10px;
+                        font-size: 21pt;
+                        background-color: #E2E2E2;
+                        border-bottom: 1px #C1C1C2 solid; 
+                        color: #201F20;
+                        margin: 0;
+                        font-weight: normal;
+                    }
+
+                    /* Header2 style, used for "Overview" and other sections */
+                    h2
+                    {
+                        font-size: 18pt;
+                        font-weight: normal;
+                        padding: 15px 0 5px 0;
+                        margin: 0;
+                    }
+
+                    /* Header3 style, used for sub-sections, such as project name */
+                    h3
+                    {
+                        font-weight: normal;
+                        font-size: 15pt;
+                        margin: 0;
+                        padding: 15px 0 5px 0;
+                        background-color: transparent;
+                    }
+
+                    /* Color all hyperlinks one color */
+                    a
+                    {
+                        color: #1382CE;
+                    }
+
+                    /* Table styles */ 
+                    table
+                    {
+                        border-spacing: 0 0;
+                        border-collapse: collapse;
+                        font-size: 10pt;
+                    }
+
+                    table th
+                    {
+                        background: #E7E7E8;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: normal;
+                        padding: 3px 6px 3px 6px;
+                    }
+
+                    table td
+                    {
+                        vertical-align: top;
+                        padding: 3px 6px 5px 5px;
+                        margin: 0px;
+                        border: 1px solid #E7E7E8;
+                        background: #F7F7F8;
+                    }
+
+                    /* Local link is a style for hyperlinks that link to file:/// content, there are lots so color them as 'normal' text until the user mouse overs */
+                    .localLink
+                    {
+                        color: #1E1E1F;
+                        background: #EEEEED;
+                        text-decoration: none;
+                    }
+
+                    .localLink:hover
+                    {
+                        color: #1382CE;
+                        background: #FFFF99;
+                        text-decoration: none;
+                    }
+
+                    /* Center text, used in the over views cells that contain message level counts */ 
+                    .textCentered
+                    {
+                        text-align: center;
+                    }
+
+                    /* The message cells in message tables should take up all avaliable space */
+                    .messageCell
+                    {
+                        width: 100%;
+                    }
+
+                    /* Padding around the content after the h1 */ 
+                    #content 
+                    {
+	                    padding: 0px 12px 12px 12px; 
+                    }
+
+                    /* The overview table expands to width, with a max width of 97% */ 
+                    #overview table
+                    {
+                        width: auto;
+                        max-width: 75%; 
+                    }
+
+                    /* The messages tables are always 97% width */
+                    #messages table
+                    {
+                        width: 97%;
+                    }
+
+                    /* All Icons */
+                    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded
+                    {
+                        min-width:18px;
+                        min-height:18px; 
+                        background-repeat:no-repeat;
+                        background-position:center;
+                    }
+
+                    /* Success icon encoded */
+                    .IconSuccessEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABcElEQVR4Xq2TsUsCURzHv15g8ZJcBWlyiYYgCIWcb9DFRRwMW5TA2c0/QEFwFkxxUQdxVlBwCYWOi6IhWgQhBLHJUCkhLr/BW8S7gvrAg+N+v8/v+x68Z8MGy+XSCyABQAXgBgHGALoASkIIDWSLeLBetdHryMjd5IxQPWT4rn1c/P7+xxp72Cs9m5SZ0Bq2vPnbPFafK2zDvmNHypdC0BPkLlQhxJsCAhQoZwdZU5mwxh720qGo8MzTxTTKZDPCx2HoVzp6lz0Q9tKhyx0kGs8Ny+TkWRKk8lCROwEduhyg9l/6lunOPSfmH3NUH6uQ0KHLAe7JYvJjevm+DAMGJHToKtigE+vwvIidxLamb8IBY9e+C5LiXREkfho3TSd06HJA13/oh6T51MTsfQbHrsMynQ5dDihFjiK8JJAU9AKIWTp76dCVN7HWHrajmUEGvyF9nkbAE6gLIS7kTUyuf2gscLoJrElZo/Mvj+nPz/kLTmfnEwP3tB0AAAAASUVORK5CYII=);
+                    }
+
+                    /* Information icon encoded */
+                    .IconInfoEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+                    }
+
+                    /* Warning icon encoded */
+                    .IconWarningEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+                    }
+
+                    /* Error icon encoded */
+                    .IconErrorEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+                    }
+                 </style><script type="text/javascript" language="javascript"> 
+          
+            // Startup 
+            // Hook up the the loaded event for the document/window, to linkify the document content
+            var startupFunction = function() { linkifyElement("messages"); };
+            
+            if(window.attachEvent)
+            {
+              window.attachEvent('onload', startupFunction);
+            }
+            else if (window.addEventListener) 
+            {
+              window.addEventListener('load', startupFunction, false);
+            }
+            else 
+            {
+              document.addEventListener('load', startupFunction, false);
+            } 
+            
+            // Toggles the visibility of table rows with the specified name 
+            function toggleTableRowsByName(name)
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  if(!!currentName && currentName.indexOf(name) == 0)
+                  {
+                      var isVisible = allRows[i].style.display == ''; 
+                      isVisible ? allRows[i].style.display = 'none' : allRows[i].style.display = '';
+                  }
+               }
+            }
+            
+            function scrollToFirstVisibleRow(name) 
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  var isVisible = allRows[i].style.display == ''; 
+                  if(!!currentName && currentName.indexOf(name) == 0 && isVisible)
+                  {
+                     allRows[i].scrollIntoView(true); 
+                     return true; 
+                  }
+               }
+               
+               return false;
+            }
+            
+            // Linkifies the specified text content, replaces candidate links with html links 
+            function linkify(text)
+            {
+                 if(!text || 0 === text.length)
+                 {
+                     return text; 
+                 }
+
+                 // Find http, https and ftp links and replace them with hyper links 
+                 var urlLink = /(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\/\\\+&%\$#\=~;\{\}])*/gi;
+                 
+                 return text.replace(urlLink, '<a href="$&">$&</a>') ;
+            }
+            
+            // Linkifies the specified element by ID
+            function linkifyElement(id)
+            {
+                var element = document.getElementById(id);
+                if(!!element)
+                {
+                  element.innerHTML = linkify(element.innerHTML); 
+                }
+            }
+            
+            function ToggleMessageVisibility(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              toggleTableRowsByName("MessageRowClass" + projectName);
+              toggleTableRowsByName('MessageRowHeaderShow' + projectName);
+              toggleTableRowsByName('MessageRowHeaderHide' + projectName); 
+            }
+            
+            function ScrollToFirstVisibleMessage(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              // First try the 'Show messages' row
+              if(!scrollToFirstVisibleRow('MessageRowHeaderShow' + projectName))
+              {
+                // Failed to find a visible row for 'Show messages', try an actual message row 
+                scrollToFirstVisibleRow('MessageRowClass' + projectName); 
+              }
+            }
+           </script></head><body><h1 _locID="ConversionReport">
+          Migration Report - IsoDoc</h1><div id="content"><h2 _locID="OverviewTitle">Overview</h2><div id="overview"><table><tr><th></th><th _locID="ProjectTableHeader">Project</th><th _locID="PathTableHeader">Path</th><th _locID="ErrorsTableHeader">Errors</th><th _locID="WarningsTableHeader">Warnings</th><th _locID="MessagesTableHeader">Messages</th></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#Solution"><span _locID="OverviewSolutionSpan">Solution</span></a></strong></td><td>IsoDoc.sln</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#SolutionWarning">1</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('Solution'); return false;">2</a></td></tr><tr><td class="IconSuccessEncoded" /><td><strong><a href="#IsoDoc">IsoDoc</a></strong></td><td>IsoDoc.vbproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('IsoDoc'); return false;">188</a></td></tr></table></div><h2 _locID="SolutionAndProjectsTitle">Solution and projects</h2><div id="messages"><a name="Solution" /><h3 _locID="ProjectDisplayNameHeader">Solution</h3><table><tr id="SolutionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassSolution"><td class="IconWarningEncoded"><a name="SolutionWarning" /></td><td class="messageCell"><strong>IsoDoc.sln:
+        </strong><span>Visual Studio needs to make non-functional changes to this project in order to enable the project to open in released versions of Visual Studio newer than Visual Studio 2010 SP1 without impacting project behavior.</span></td></tr><tr name="MessageRowHeaderShowSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>IsoDoc.sln:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\IsoDoc.sln</span></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>IsoDoc.sln:
+        </strong><span>Solution migrated successfully</span></td></tr><tr style="display: none" name="MessageRowHeaderHideSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="IsoDoc" /><h3>IsoDoc</h3><table><tr id="IsoDocHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="MessageRowHeaderShowIsoDoc"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="IsoDocMessage" onclick="ToggleMessageVisibility('IsoDoc'); return false;">
+          Show 188 additional messages
+        </a></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>IsoDoc.vbproj:
+        </strong><span>Project file successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\IsoDoc.vbproj</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>IsoDoc.vbproj.user:
+        </strong><span>Project user file successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\IsoDoc.vbproj.user</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Archive_NewDataSet.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Archive_NewDataSet.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Archive_NewDataSet.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Archive_NewDataSet.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Archive_NewDataSet1.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Archive_NewDataSet1.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_AienName.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_AienName.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_BasicSetting.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_BasicSetting.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_EqualStandard.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_EqualStandard.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_Favorites.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_Favorites.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_History.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_History.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_Important.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_Important.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_MessageHandler.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_MessageHandler.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_ProcessDesc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_ProcessDesc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_Shenasnamefarayand.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_Shenasnamefarayand.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_TechnicalDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_TechnicalDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_Certificate.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_Certificate.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_ControlPlan.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_ControlPlan.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_Dastor.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_Dastor.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_DocType.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_DocType.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_Document.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_Document.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_FlowChart.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_FlowChart.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_Forms.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_Forms.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_ImportandDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_ImportandDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_MdepDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_MdepDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_NemodarGardesh.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_NemodarGardesh.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_OthersDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_OthersDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_OutsideDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_OutsideDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_PostIdentification.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_PostIdentification.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_ProcessIdentification.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_ProcessIdentification.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_RaveshEjraie.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_RaveshEjraie.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_ResponsibleExplain.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_ResponsibleExplain.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_StartegicPlan.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_StartegicPlan.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_UserMessage.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_UserMessage.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>BusinessLayer\Bus_TransferDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\BusinessLayer\Bus_TransferDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_BasicSetting.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_BasicSetting.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_Favorites.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_Favorites.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_History.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_History.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_Important.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_Important.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_PostIdentification.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_PostIdentification.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_ProcessDesc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_ProcessDesc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_ResponsibleExplain.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_ResponsibleExplain.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_TechnicalDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_TechnicalDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_Certificate.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_Certificate.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_ControlPlan.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_ControlPlan.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_Document.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_Document.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_ImportandDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_ImportandDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_MdepDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_MdepDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_OthersDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_OthersDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_OutsideDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_OutsideDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_StrategicPlan.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_StrategicPlan.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_TransferDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_TransferDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataAccessLayer\Dac_UserMessage.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataAccessLayer\Dac_UserMessage.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataSet1.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataSet1.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmISORoozshomar.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmISORoozshomar.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmISORoozshomar.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmISORoozshomar.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmNewmaghale.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmNewmaghale.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmNewmaghale.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmNewmaghale.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmPDF.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmPDF.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmPDF.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmPDF.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmPrint.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmPrint.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmPrint.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmPrint.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmTedadBazdid.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmTedadBazdid.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmTedadBazdid.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmTedadBazdid.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Modules\MdlMain.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Modules\MdlMain.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmKnowledgeBaseView.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmKnowledgeBaseView.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmKnowledgeBaseView.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmKnowledgeBaseView.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmInsOutsideDoc.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmInsOutsideDoc.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmInsOutsideDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmInsOutsideDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoDepartDoc.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoDepartDoc.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoDepartDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoDepartDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmKnowledgeBase.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmKnowledgeBase.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmKnowledgeBase.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmKnowledgeBase.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmLifeSheet.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmLifeSheet.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmLifeSheet.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmLifeSheet.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmSaveLinks.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmSaveLinks.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmSaveLinks.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmSaveLinks.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmShowPDF.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmShowPDF.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmShowPDF.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmShowPDF.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmTazminReports.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmTazminReports.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmTazminReports.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmTazminReports.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmTest.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmTest.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmTest.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmTest.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmTransfer.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmTransfer.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmTransfer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmTransfer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmMasterReport.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmMasterReport.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmMasterReport.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmMasterReport.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoFarvorites.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoFarvorites.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoFarvorites.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoFarvorites.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmReportView.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmReportView.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmReportView.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmReportView.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmUserMessage.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmUserMessage.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmUserMessage.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmUserMessage.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoAbout.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoAbout.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoAbout.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoAbout.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoDocShow.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoDocShow.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoDocShow.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoDocShow.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoHistoryShow.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoHistoryShow.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoHistoryShow.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoHistoryShow.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoImportandDoc.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoImportandDoc.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoImportandDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoImportandDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoInsertHistory.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoInsertHistory.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoInsertHistory.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoInsertHistory.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoMain.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoMain.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoMain.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoMain.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoBasicSetting.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoBasicSetting.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoBasicSetting.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoBasicSetting.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>My Project\AssemblyInfo.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\My Project\AssemblyInfo.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>My Project\Application.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\My Project\Application.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>My Project\Resources.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\My Project\Resources.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>My Project\Settings.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\My Project\Settings.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoMaster.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoMaster.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoMaster.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoMaster.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoOtherDoc.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoOtherDoc.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoOtherDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoOtherDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoRegistDocument.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoRegistDocument.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoRegistDocument.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoRegistDocument.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoSearch.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoSearch.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoSearch.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoSearch.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIso_TechnicalDoc.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIso_TechnicalDoc.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIso_TechnicalDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIso_TechnicalDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\SplashScreen1.Designer.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\SplashScreen1.Designer.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\SplashScreen1.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\SplashScreen1.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PublicClasses\Cls_JanusGrid.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PublicClasses\Cls_JanusGrid.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PublicClasses\StartSystem.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PublicClasses\StartSystem.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptChartKoli.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptChartKoli.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptChartPerMdep.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptChartPerMdep.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptFormChapi.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptFormChapi.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptStatisticOfDoc.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptStatisticOfDoc.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptLifeSheet.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptLifeSheet.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptMasterList.vb:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptMasterList.vb</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>app.config:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\app.config</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Archive_NewDataSet.xsc:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Archive_NewDataSet.xsc</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Archive_NewDataSet.xsd:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Archive_NewDataSet.xsd</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Archive_NewDataSet.xss:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Archive_NewDataSet.xss</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Archive_NewDataSet1.xsc:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Archive_NewDataSet1.xsc</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Archive_NewDataSet1.xsd:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Archive_NewDataSet1.xsd</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Archive_NewDataSet1.xss:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Archive_NewDataSet1.xss</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>ClassDiagram1.cd:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\ClassDiagram1.cd</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataSet1.xsc:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataSet1.xsc</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataSet1.xsd:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataSet1.xsd</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>DataSet1.xss:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\DataSet1.xss</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>My Project\Application.myapp:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\My Project\Application.myapp</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>My Project\Settings.settings:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\My Project\Settings.settings</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Resources\folder-blue-icon.png:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Resources\folder-blue-icon.png</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Edit.ico:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Edit.ico</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>icon1.ico:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\icon1.ico</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>My Project\licenses.licx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\My Project\licenses.licx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmISORoozshomar.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmISORoozshomar.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmNewmaghale.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmNewmaghale.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmPDF.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmPDF.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmPrint.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmPrint.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmTedadBazdid.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmTedadBazdid.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmKnowledgeBaseView.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmKnowledgeBaseView.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmInsOutsideDoc.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmInsOutsideDoc.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoDepartDoc.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoDepartDoc.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmKnowledgeBase.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmKnowledgeBase.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmLifeSheet.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmLifeSheet.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmSaveLinks.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmSaveLinks.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmShowPDF.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmShowPDF.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmTazminReports.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmTazminReports.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\frmTest.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\frmTest.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmTransfer.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmTransfer.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmMasterReport.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmMasterReport.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoFarvorites.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoFarvorites.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmReportView.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmReportView.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmUserMessage.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmUserMessage.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoAbout.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoAbout.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoDocShow.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoDocShow.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoHistoryShow.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoHistoryShow.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoImportandDoc.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoImportandDoc.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoInsertHistory.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoInsertHistory.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoMain.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoMain.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoBasicSetting.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoBasicSetting.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>My Project\Resources.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\My Project\Resources.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoMaster.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoMaster.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoOtherDoc.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoOtherDoc.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoRegistDocument.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoRegistDocument.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIsoSearch.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIsoSearch.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\FrmIso_TechnicalDoc.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\FrmIso_TechnicalDoc.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>PresentationLayer\SplashScreen1.resx:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\PresentationLayer\SplashScreen1.resx</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptChartKoli.rpt:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptChartKoli.rpt</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptChartPerMdep.rpt:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptChartPerMdep.rpt</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptFormChapi.rpt:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptFormChapi.rpt</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptStatisticOfDoc.rpt:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptStatisticOfDoc.rpt</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptLifeSheet.rpt:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptLifeSheet.rpt</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>Reports\RptMasterList.rpt:
+        </strong><span>File successfully backed up as C:\Users\3850\source\repos\IsoDoc\IsoDoc\Backup\Reports\RptMasterList.rpt</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>IsoDoc.vbproj:
+        </strong><span>Project migrated successfully</span></td></tr><tr name="MessageRowClassIsoDoc" style="display: none"><td class="IconInfoEncoded"><a name="IsoDocMessage" /></td><td class="messageCell"><strong>IsoDoc.vbproj:
+        </strong><span>Scan complete: Migration not required for project files.</span></td></tr><tr style="display: none" name="MessageRowHeaderHideIsoDoc"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="IsoDocMessage" onclick="ToggleMessageVisibility('IsoDoc'); return false;">
+          Hide 188 additional messages
+        </a></td></tr></table></div></div></body></html>
