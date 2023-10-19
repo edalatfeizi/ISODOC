@@ -5,6 +5,9 @@ Public Enum x
 
 End Enum
 Module MdlMain
+    Public dt As New DataTable
+    Public DocumentCode As String
+
     Friend app As New APPFrameWork.DataGridViewHelper.MakeDataGridView2
     Friend ds As New System.Windows.Forms.BindingSource
     Friend persist1 As New Persistent.DataAccess.DataAccess
@@ -46,5 +49,25 @@ Module MdlMain
     Friend flgIsLink As Boolean = False
 
     Public UserInfo As New IKIDSecurity.Information.LoginInfo
+    Public Function CheckUserAccess(ByVal LoginID As Integer, ByVal AppID As Integer, ByVal ActivityCode As Integer) As Boolean
+        SqlStr =
+ "SELECT     GeneralObjects.dbo.tbGen_AppActLogin.ActAppLogCode " &
+ "FROM         GeneralObjects.dbo.tbGen_Logins INNER JOIN " &
+ "                      GeneralObjects.dbo.tbGen_AppActLogin ON GeneralObjects.dbo.tbGen_Logins.LoginID = GeneralObjects.dbo.tbGen_AppActLogin.LoginID INNER JOIN " &
+ "                      GeneralObjects.dbo.tbGen_ActivityApplication ON  " &
+ "                      GeneralObjects.dbo.tbGen_AppActLogin.AppActCode = GeneralObjects.dbo.tbGen_ActivityApplication.AppActCode INNER JOIN " &
+ "                      GeneralObjects.dbo.tbGen_Applications ON  " &
+ "                      GeneralObjects.dbo.tbGen_ActivityApplication.AppCode = GeneralObjects.dbo.tbGen_Applications.AppCode " &
+ "WHERE     (GeneralObjects.dbo.tbGen_Logins.LoginID =" & LoginID & ") AND (GeneralObjects.dbo.tbGen_ActivityApplication.ActivityCode =" & ActivityCode & ") AND  " &
+ "                      (GeneralObjects.dbo.tbGen_Applications.AppID =" & AppID & ")"
+        Dim dt As New DataTable
+        dt = persist1.GetDataTable(CnnString, SqlStr)
+        If dt.DefaultView.Count <> 0 Then
+            CheckUserAccess = True
+        Else
+            CheckUserAccess = False
 
+        End If
+
+    End Function
 End Module

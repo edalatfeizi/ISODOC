@@ -22,7 +22,7 @@ Public Class FrmInsOutsideDoc
     Private Sub UiButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UiButton1.Click
         OpenFileDialog1.Filter = "All Files|*.*"
         OpenFileDialog1.InitialDirectory = "\\srv05si\iso"
-        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
             txtFilePath.Text = OpenFileDialog1.FileName
         End If
     End Sub

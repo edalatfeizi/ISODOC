@@ -176,7 +176,7 @@ Public Class frmKnowledgeBase
         OpenFileDialog1.Filter = "All Files|*.*"
         'OpenFileDialog1.InitialDirectory = "\\Nt_dbms\mis\iso\Quality"
         OpenFileDialog1.InitialDirectory = "\\nt_dbms\Knowledge Managment\Training"
-        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
             txtAddress.Text = OpenFileDialog1.FileName
         End If
     End Sub

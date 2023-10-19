@@ -6,7 +6,7 @@ Public Class FrmIsoInsertHistory
     Dim FilePath As String
     Dim DateHist As String = Mdate1.GetIrani8DateStr_CurDate
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If MessageBox.Show("¬Ì« „ÿ„∆‰ Â” Ìœø", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("¬Ì« „ÿ„∆‰ Â” Ìœø", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign) = DialogResult.Yes Then
             Try
                 FileInfo = FileIO.FileSystem.GetFileInfo(lblFilePath.Text)
                 DocName = FileInfo.Name

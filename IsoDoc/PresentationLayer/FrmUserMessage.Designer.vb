@@ -19,21 +19,21 @@ Partial Class FrmUserMessage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmUserMessage))
-        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.UiGroupBox2 = New Janus.Windows.EditControls.UIGroupBox
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
-        Me.btnCancel = New DevExpress.XtraEditors.SimpleButton
-        Me.btnShow = New DevExpress.XtraEditors.SimpleButton
-        Me.PicShow = New System.Windows.Forms.PictureBox
-        Me.dg = New Janus.Windows.GridEX.GridEX
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.lblCount = New System.Windows.Forms.Label
-        Me.lbl = New System.Windows.Forms.Label
+        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox()
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.UiGroupBox2 = New Janus.Windows.EditControls.UIGroupBox()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnCancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnShow = New DevExpress.XtraEditors.SimpleButton()
+        Me.PicShow = New System.Windows.Forms.PictureBox()
+        Me.dg = New Janus.Windows.GridEX.GridEX()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblCount = New System.Windows.Forms.Label()
+        Me.lbl = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.UiGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiGroupBox1.SuspendLayout()

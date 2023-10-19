@@ -130,6 +130,7 @@ Public Class Dac_OthersDoc
         persist1.Sp_AddParam("@DocSettingPath_7", SqlDbType.VarChar, FileSettingPath, ParameterDirection.Input)
         persist1.Sp_AddParam("@HistorySave_8 ", SqlDbType.VarChar, HistorySave, ParameterDirection.Input)
         persist1.Sp_AddParam("@MdepartID_9 ", SqlDbType.NVarChar, MdepCode, ParameterDirection.Input)
+
         persist1.Sp_Exe("Sp_OtherDoc_upd", CnnString, False)
         persist1.ClearParameter()
     End Sub

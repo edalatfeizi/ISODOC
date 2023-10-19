@@ -158,7 +158,7 @@ Public Class FrmIsoDepartDoc
     End Sub
 
     Private Sub dg_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles dg.MouseDown
-        If e.Button = Windows.Forms.MouseButtons.Right Then
+        If e.Button = MouseButtons.Right Then
             Me.ContextMenuStrip1.Show(Me, New System.Drawing.Point(MousePosition.X, MousePosition.Y - 50))
         End If
     End Sub

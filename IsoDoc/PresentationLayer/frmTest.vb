@@ -101,7 +101,7 @@ Public Class frmTest
 
             OpenFileDialog1.InitialDirectory = a
 
-            If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            If OpenFileDialog1.ShowDialog = DialogResult.OK Then
                 Image = saveAttach()
             Else
                 Dim z(0) As Byte

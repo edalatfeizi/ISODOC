@@ -18,7 +18,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <PublishUrl>http://localhost/IsoDoc/</PublishUrl>
     <Install>true</Install>
@@ -100,9 +100,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\IkidSystems\DevExpress.XtraEditors.v7.1.dll</HintPath>
     </Reference>
-    <Reference Include="IKIDSecurity, Version=1.0.2501.20695, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="IKIDSecurity, Version=1.0.6785.18279, Culture=neutral">
       <HintPath>C:\IkidSystems\IKIDSecurity.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="IKIDUtility, Version=1.0.3203.18538, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
@@ -461,6 +462,12 @@
     <Compile Include="PresentationLayer\FrmIso_TechnicalDoc.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PresentationLayer\Frm_SetAccessForViewDoc.Designer.vb">
+      <DependentUpon>Frm_SetAccessForViewDoc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Frm_SetAccessForViewDoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PresentationLayer\SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
@@ -637,6 +644,9 @@
     <EmbeddedResource Include="PresentationLayer\FrmIso_TechnicalDoc.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmIso_TechnicalDoc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Frm_SetAccessForViewDoc.resx">
+      <DependentUpon>Frm_SetAccessForViewDoc.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\SplashScreen1.resx">
       <SubType>Designer</SubType>

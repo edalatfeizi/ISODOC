@@ -64,14 +64,15 @@ Public Class Dac_Document
         persist1.ClearParameter()
     End Sub
     Friend Function GetDocumentInfo() As DataTable
-
+        ' MessageBox.Show(UserInfo.LoginPersonID)
         'SqlStr = "select DISTINCT  * from VwAllDocument "
         If (act1.CheckUserAccess(27, 629, LoginID) Or act1.CheckUserAccess(27, 1098, LoginID)) Then
             SqlStr = "select DISTINCT  * from VwIso_Documents  "
         Else
 
-            SqlStr = "select DISTINCT  * from VwIso_Documents where MdepartID ='" & UserInfo.LoginMDepartID & "'"
 
+            SqlStr = "select DISTINCT  * from VwIso_Documents where MdepartID ='" & UserInfo.LoginMDepartID & "' or personcode='" & UserInfo.LoginPersonID & "' or IsShowPublic=1"
+            '     MessageBox.Show(SqlStr)
         End If
 
         GetDocumentInfo = persist1.GetDataTable(CnnString, SqlStr)
@@ -81,7 +82,7 @@ Public Class Dac_Document
             SqlStr = "select DISTINCT  * from VwAllDocument where    " & Filter
         Else
 
-            SqlStr = "select DISTINCT  * from VwAllDocument where (MdepartID ='" & UserInfo.LoginMDepartID & "' or mdepartid='PublicTechnicalDocuments') and   " & Filter & " and (MdepartID ='" & UserInfo.LoginMDepartID & "' or mdepartid='PublicTechnicalDocuments') or IsShowPublic=1 "
+            SqlStr = "select DISTINCT  * from VwAllDocument where (MdepartID ='" & UserInfo.LoginMDepartID & "' or mdepartid='PublicTechnicalDocuments') and   " & Filter & " and (MdepartID ='" & UserInfo.LoginMDepartID & "' or mdepartid='PublicTechnicalDocuments') or IsShowPublic=1 or   personcode='" & UserInfo.UserCode & "'"
 
         End If
 
