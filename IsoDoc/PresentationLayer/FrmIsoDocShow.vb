@@ -37,7 +37,7 @@ Public Class FrmIsoDocShow
         Cls_JanusGrid1.setMyJGrid(dt, dg, "MainID", "ﬂœ", 0, , , False)
         Cls_JanusGrid1.setMyJGrid(dt, dg, "DocTypeID", "DocTypeID", 0, , , False)
         Cls_JanusGrid1.setMyJGrid(dt, dg, "CertificateName", "‰«„ ”‰œ", 600)
-        Cls_JanusGrid1.setMyJGrid(dt, dg, "certificatepath", "certificatepath", 0, , , False)
+        Cls_JanusGrid1.setMyJGrid(dt, dg, "DocPath", "DocPath", 0, , , False)
     End Sub
     Private Sub FillImportant()
         dt = Bus_ImportandDoc1.GetImportandDocInfo
@@ -47,7 +47,7 @@ Public Class FrmIsoDocShow
         Cls_JanusGrid1.setMyJGrid(dt, dg, "MainID", "ﬂœ", 0, , , False)
         Cls_JanusGrid1.setMyJGrid(dt, dg, "DocTypeID", "DocTypeID", 0, , , False)
         Cls_JanusGrid1.setMyJGrid(dt, dg, "DocName", "‰«„ ”‰œ", 600)
-        Cls_JanusGrid1.setMyJGrid(dt, dg, "DocPathNew", "DocPathNew", 0, , , False)
+        Cls_JanusGrid1.setMyJGrid(dt, dg, "DocPath", "DocPath", 0, , , False)
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick

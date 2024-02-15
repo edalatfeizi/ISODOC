@@ -19,14 +19,14 @@ Partial Class FrmIsoDocShow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmIsoDocShow))
-        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox
-        Me.UiGroupBox2 = New Janus.Windows.EditControls.UIGroupBox
-        Me.btnCancel = New DevExpress.XtraEditors.SimpleButton
-        Me.btnShow = New DevExpress.XtraEditors.SimpleButton
-        Me.PicShow = New System.Windows.Forms.PictureBox
-        Me.dg = New Janus.Windows.GridEX.GridEX
+        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox()
+        Me.UiGroupBox2 = New Janus.Windows.EditControls.UIGroupBox()
+        Me.btnCancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnShow = New DevExpress.XtraEditors.SimpleButton()
+        Me.PicShow = New System.Windows.Forms.PictureBox()
+        Me.dg = New Janus.Windows.GridEX.GridEX()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.UiGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiGroupBox1.SuspendLayout()

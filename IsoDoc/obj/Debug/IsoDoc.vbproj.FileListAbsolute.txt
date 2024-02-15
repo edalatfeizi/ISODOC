@@ -181,7 +181,6 @@ D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.Xls.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\SqlManager.QExport.Localization.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\AxInterop.MSMask.dll
-D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PrdStockControl.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\FacJobClasification.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PrdPMDie.dll
@@ -192,19 +191,12 @@ D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.DateDLLMain.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\CrystalSystem.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\CaculateNetTime.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\InfoServices.dll
-D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PM.dll
-D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PaletSCS.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\JanusFrameWork.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.Microsoft.Office.Core.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Microsoft.Office.Interop.Excel.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\RollCall.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\office.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Microsoft.Vbe.Interop.dll
-D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ButtonBar.v2.xml
-D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.ExplorerBar.v2.xml
-D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.GridEX.v2.xml
-D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.UI.v2.xml
-D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Janus.Windows.TimeLine.v2.xml
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\office.xml
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.Microsoft.Office.Interop.Excel.dll
 D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\Interop.RichTextLib.dll
@@ -253,3 +245,4 @@ D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.exe
 D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.xml
 D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.pdb
 D:\IKIDMIS\IsoDoc\IsoDoc\obj\Debug\IsoDoc.Frm_SetAccessForViewDoc.resources
+D:\IKIDMIS\IsoDoc\IsoDoc\bin\Debug\PaletSCS.exe
