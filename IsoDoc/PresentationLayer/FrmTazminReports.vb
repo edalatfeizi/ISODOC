@@ -1,5 +1,5 @@
 Public Class FrmTazminReports
-    Friend CnnString As String = "Persist Security Info=False;User ID=sa;PWD=afarinesh;Connect Timeout=100;Initial Catalog=Isodoc_New;Data Source=SQLSRV"
+    Friend CnnString As String = MdlMain.CnnString
     Dim dr As SqlClient.SqlDataReader
     Dim CntOdPos As Integer
 
@@ -18,7 +18,7 @@ Public Class FrmTazminReports
         SqlStr = _
            "SELECT     fnTazminKeyfiyatReport.* " & _
            "FROM         dbo.fnTazminKeyfiyatReport('" & MskFromDate.Text & "', '" & MskToDate.Text & "') fnTazminKeyfiyatReport"
-        persist1.OpenRecordSet(dr, SqlStr, "Persist Security Info=False;User ID=sa;PWD=afarinesh;Connect Timeout=100;Initial Catalog=Production;Data Source=SQLSRV")
+        persist1.OpenRecordSet(dr, SqlStr, MdlMain.CnnStringProduction)
         dr.Read()
         CntOdPos = dr("PosCount")
         lblCntOfDie.Text = dr("CountOfDie")
@@ -43,7 +43,7 @@ Public Class FrmTazminReports
            "UNION " & _
            "SELECT     SUM(DStop) AS Expr1, 'Mechanize' AS type " & _
            "FROM         dbo.fnPLN_ProdMontlyStops_PS_Rpt('" & MskFromDate.Text & "', '" & MskToDate.Text & "') fnPLN_ProdMontlyStops_PS_Rpt"
-        persist1.OpenRecordSet(dr1, SqlStr, "Persist Security Info=False;User ID=sa;PWD=afarinesh;Connect Timeout=100;Initial Catalog=Production;Data Source=SQLSRV")
+        persist1.OpenRecordSet(dr1, SqlStr, MdlMain.CnnStringProduction)
 
         While dr1.Read
             SumStops += dr1("DStop")
@@ -58,7 +58,7 @@ Public Class FrmTazminReports
         Dim dt As New DataTable
         Dim sqlstr As String
         Dim cn As String
-        cn = "Persist Security Info=False;User ID=sa;PWD=afarinesh;Connect Timeout=100;Initial Catalog=Training;Data Source=SQLSRV"
+        cn = MdlMain.CnnStringTraining
         ''''»—ê“«— ‘œÂ Â«
         sqlstr = _
         "SELECT     COUNT(dbo.tbTRNCrsLocation.InstituteID) AS dd " & _

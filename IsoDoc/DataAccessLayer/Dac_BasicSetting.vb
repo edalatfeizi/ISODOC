@@ -11,12 +11,12 @@ Public Class Dac_BasicSetting
     Friend Sub Insert(ByVal UserCode As Integer)
         persist1.Sp_AddParam("@UserCode_1", SqlDbType.Int, UserCode, ParameterDirection.Input)
         persist1.Sp_AddParam("@AppCode_2", SqlDbType.Int, 2, ParameterDirection.Input)
-        persist1.Sp_Exe("insert_tbGen_UserApplication", "Persist Security Info=False;User ID=sa;PWD=afarinesh;Connect Timeout=100;Initial Catalog=GeneralObjects;Data Source=SQLSRV", False)
+        persist1.Sp_Exe("insert_tbGen_UserApplication", MdlMain.CnnStringGeneralObject, False)
         persist1.ClearParameter()
     End Sub
     Friend Sub Delete(ByVal UserAppCode As Integer)
         persist1.Sp_AddParam("@UserAppCode_1", SqlDbType.Int, UserAppCode, ParameterDirection.Input)
-        persist1.Sp_Exe("delete_tbGen_UserApplication", "Persist Security Info=False;User ID=sa;PWD=afarinesh;Connect Timeout=100;Initial Catalog=GeneralObjects;Data Source=SQLSRV", False)
+        persist1.Sp_Exe("delete_tbGen_UserApplication", MdlMain.CnnStringGeneralObject, False)
         persist1.ClearParameter()
     End Sub
 End Class
