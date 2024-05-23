@@ -4,11 +4,11 @@ Public Class StartSystem
         Pasw = newPasw
         LogType = newLogType
 
-        If newLogType = "False" Then
-            CnnString = "packet size=4096;integrated security=SSPI;data source=SQLSRV;persist security info=False;initial catalog=Isodoc_New" '860917'
-        ElseIf newLogType = "True" Then
-            CnnString = "packet size=4096;user id=" & newLogID.Trim & ";data source=SQLSRV;persist security info=False;" & "PWD=" & newPasw & ";initial catalog=Isodoc_New"
-        End If
+        'If newLogType = "False" Then
+        '    CnnString = "packet size=4096;integrated security=SSPI;data source=SQLSRV;persist security info=False;initial catalog=Isodoc_New" '860917'
+        'ElseIf newLogType = "True" Then
+        '    CnnString = "packet size=4096;user id=" & newLogID.Trim & ";data source=SQLSRV;persist security info=False;" & "PWD=" & newPasw & ";initial catalog=Isodoc_New"
+        'End If
         LogID = Val(newLogID)
 
 

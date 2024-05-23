@@ -39,7 +39,7 @@ Public Class FrmLifeSheet
             If dsReports.Tables.Count > 0 Then
                 dsReports.Tables(LastRepName).Clear()
             End If
-            DA1 = persist1.GetDataAccess(wstr, 1, "Persist Security Info=False;User ID=sa;PWD=afarinesh;Connect Timeout=100;Initial Catalog=Isodoc_New;Data Source=SQLSRV", ReportName, dsReports)
+            DA1 = persist1.GetDataAccess(wstr, 1, MdlMain.CnnString, ReportName, dsReports)
             Dim f1 As New FrmReportView
             f1.Show()
         Catch ex As Exception

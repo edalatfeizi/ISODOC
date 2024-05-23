@@ -19,30 +19,30 @@ Partial Class FrmIso_TechnicalDoc
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
-        Dim ExplorerBarGroup1 As Janus.Windows.ExplorerBar.ExplorerBarGroup = New Janus.Windows.ExplorerBar.ExplorerBarGroup
-        Dim ExplorerBarItem1 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem
-        Dim ExplorerBarItem2 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem
-        Dim ExplorerBarItem3 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem
-        Dim ExplorerBarGroup2 As Janus.Windows.ExplorerBar.ExplorerBarGroup = New Janus.Windows.ExplorerBar.ExplorerBarGroup
-        Dim ExplorerBarItem4 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem
-        Dim ExplorerBarGroup3 As Janus.Windows.ExplorerBar.ExplorerBarGroup = New Janus.Windows.ExplorerBar.ExplorerBarGroup
-        Dim ExplorerBarItem5 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem
-        Dim ExplorerBarItem6 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem
-        Dim ExplorerBarGroup4 As Janus.Windows.ExplorerBar.ExplorerBarGroup = New Janus.Windows.ExplorerBar.ExplorerBarGroup
-        Dim ExplorerBarItem7 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem
-        Dim ExplorerBarItem8 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem
-        Dim ExplorerBarItem9 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem
+        Me.components = New System.ComponentModel.Container()
+        Dim ExplorerBarGroup1 As Janus.Windows.ExplorerBar.ExplorerBarGroup = New Janus.Windows.ExplorerBar.ExplorerBarGroup()
+        Dim ExplorerBarItem1 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem()
+        Dim ExplorerBarItem2 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem()
+        Dim ExplorerBarItem3 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem()
+        Dim ExplorerBarGroup2 As Janus.Windows.ExplorerBar.ExplorerBarGroup = New Janus.Windows.ExplorerBar.ExplorerBarGroup()
+        Dim ExplorerBarItem4 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem()
+        Dim ExplorerBarGroup3 As Janus.Windows.ExplorerBar.ExplorerBarGroup = New Janus.Windows.ExplorerBar.ExplorerBarGroup()
+        Dim ExplorerBarItem5 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem()
+        Dim ExplorerBarItem6 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem()
+        Dim ExplorerBarGroup4 As Janus.Windows.ExplorerBar.ExplorerBarGroup = New Janus.Windows.ExplorerBar.ExplorerBarGroup()
+        Dim ExplorerBarItem7 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem()
+        Dim ExplorerBarItem8 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem()
+        Dim ExplorerBarItem9 As Janus.Windows.ExplorerBar.ExplorerBarItem = New Janus.Windows.ExplorerBar.ExplorerBarItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmIso_TechnicalDoc))
-        Me.lblFilePath = New System.Windows.Forms.Label
-        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox
-        Me.ExplorerBar1 = New Janus.Windows.ExplorerBar.ExplorerBar
-        Me.lblExecute = New System.Windows.Forms.Label
-        Me.PicShow = New System.Windows.Forms.PictureBox
-        Me.dg = New Janus.Windows.GridEX.GridEX
+        Me.lblFilePath = New System.Windows.Forms.Label()
+        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox()
+        Me.ExplorerBar1 = New Janus.Windows.ExplorerBar.ExplorerBar()
+        Me.lblExecute = New System.Windows.Forms.Label()
+        Me.PicShow = New System.Windows.Forms.PictureBox()
+        Me.dg = New Janus.Windows.GridEX.GridEX()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.GridEXPrintDocument1 = New Janus.Windows.GridEX.GridEXPrintDocument
-        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog
+        Me.GridEXPrintDocument1 = New Janus.Windows.GridEX.GridEXPrintDocument()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         CType(Me.UiGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiGroupBox1.SuspendLayout()
         CType(Me.ExplorerBar1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,8 +65,8 @@ Partial Class FrmIso_TechnicalDoc
         'UiGroupBox1
         '
         Me.UiGroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UiGroupBox1.BackgroundStyle = Janus.Windows.EditControls.BackgroundStyle.ExplorerBarBackground
         Me.UiGroupBox1.Controls.Add(Me.ExplorerBar1)
         Me.UiGroupBox1.Controls.Add(Me.dg)
@@ -79,7 +79,7 @@ Partial Class FrmIso_TechnicalDoc
         'ExplorerBar1
         '
         Me.ExplorerBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ExplorerBar1.Controls.Add(Me.lblExecute)
         Me.ExplorerBar1.Controls.Add(Me.PicShow)
         Me.ExplorerBar1.Cursor = System.Windows.Forms.Cursors.Hand
@@ -114,7 +114,6 @@ Partial Class FrmIso_TechnicalDoc
         ExplorerBarGroup2.TagString = "-1"
         ExplorerBarGroup2.Text = "Ã” ÃÊ "
         ExplorerBarGroup2.TextAlignment = Janus.Windows.ExplorerBar.Alignment.Center
-        ExplorerBarGroup3.Expanded = False
         ExplorerBarGroup3.FormatStyle.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         ExplorerBarItem5.FormatStyle.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         ExplorerBarItem5.Icon = CType(resources.GetObject("ExplorerBarItem5.Icon"), System.Drawing.Icon)
@@ -129,7 +128,6 @@ Partial Class FrmIso_TechnicalDoc
         ExplorerBarGroup3.TagString = "-1"
         ExplorerBarGroup3.Text = "⁄·«ﬁÂ „‰œÌ Â«"
         ExplorerBarGroup3.TextAlignment = Janus.Windows.ExplorerBar.Alignment.Center
-        ExplorerBarGroup4.Expanded = False
         ExplorerBarGroup4.FormatStyle.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         ExplorerBarItem7.FormatStyle.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         ExplorerBarItem7.Key = "btnEditBasic"
@@ -199,8 +197,8 @@ Partial Class FrmIso_TechnicalDoc
         Me.dg.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
         Me.dg.AlternatingColors = True
         Me.dg.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dg.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         Me.dg.GroupMode = Janus.Windows.GridEX.GroupMode.Collapsed
         Me.dg.Location = New System.Drawing.Point(8, 14)

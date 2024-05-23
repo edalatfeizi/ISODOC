@@ -34,7 +34,12 @@ Module MdlMain
     Public wstr As String
     Friend SqlStr As String
     Friend Janus1 As New JFrameWork.JanusGrid
-    Friend CnnString As String = " Persist Security Info=False;User ID=sa;PWD=afarinesh;Connect Timeout=100;Initial Catalog=Isodoc_New;Data Source=SQLSRV  "
+    'Friend CnnString As String = " Persist Security Info=False;User ID=sa;PWD=afarinesh;Connect Timeout=100;Initial Catalog=Isodoc_New;Data Source=SQLSRV  "
+    Friend CnnString As String = ""
+    Friend CnnStringArchiveNew As String = ""
+    Friend CnnStringProduction As String = ""
+    Friend CnnStringTraining As String = ""
+    Friend CnnStringGeneralObject As String = ""
     ' Friend Cnnstring As String = "Provider=SQLOLEDB.1;Password=afarinesh;Persist Security Info=True;User ID=sa;Initial Catalog=Isodoc_New;Data Source=SQLSRV"
     Friend IraniDate1 As New APPFrameWork.IraniDateAdaptee
 

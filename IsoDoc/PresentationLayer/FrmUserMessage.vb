@@ -9,6 +9,9 @@ Imports System.IO
 Imports System.Windows.Forms.Clipboard
 Imports System.Windows.Forms.Form
 Imports System.Collections
+Imports IKIDCSHelper.Models
+Imports System.Linq
+Imports System.Threading.Tasks
 
 Public Class FrmUserMessage
     Private Bus_UserMessage1 As New Bus_UserMessage
@@ -41,7 +44,59 @@ Public Class FrmUserMessage
 
     End Sub
 
-    Private Sub FrmUserMessage_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+
+    Public Shared ReadOnly Property DebugMode As Boolean
+        Get
+#If DEBUG Then
+            Return True
+#Else
+        Return False
+#End If
+        End Get
+    End Property
+
+    Private Async Function SetupConnectionStrings() As Task
+        Try
+            Dim IsoDocCsList As List(Of AppConnStrDto) = Await CSHelper.CSRepo.GetConnectionStringsAsync(DebugMode, "IsoDoc")
+            Dim ArchiveCS = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-Archive_New").FirstOrDefault()
+            Dim IsodocCS = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-Isodoc_New").FirstOrDefault()
+            Dim ProductionCS = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-Production").FirstOrDefault()
+            Dim TrainingCS = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-Training").FirstOrDefault()
+            Dim GeneralCs = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-GeneralObjects").FirstOrDefault()
+
+            MdlMain.CnnStringArchiveNew = ArchiveCS.Value
+            MdlMain.CnnString = IsodocCS.Value
+            MdlMain.CnnStringProduction = ProductionCS.Value
+            MdlMain.CnnStringTraining = TrainingCS.Value
+            MdlMain.CnnStringGeneralObject = GeneralCs.Value
+        Catch ex As Exception
+            Dim InnerException As String = " "
+            If ex.InnerException IsNot Nothing Then
+                InnerException = ex.InnerException.Message
+            End If
+
+            Dim constr As String = "Data Source=sqlsrv;Initial Catalog=IkidGeneral;Connect Timeout=0;User Id=exlog;Password=afarinesh;"
+            Dim query As String = "insert into Tb_Exception (ExceptionTitle,AppId,Message,InnerException,ExceptionTime,UserName) values ('IsoDoc Exception','22','" & ex.Message.Replace("'", "") & "','" & InnerException.Replace("'", "") & "','" & DateTime.Now.ToString() & "','" & Environment.UserName & "')"
+            persist1.ExecuteNoneQuery(query, constr)
+
+
+        End Try
+    End Function
+
+
+
+    Private Async Sub FrmUserMessage_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Await SetupConnectionStrings()
+        My.Settings.Archive_NewConnectionString = MdlMain.CnnStringArchiveNew
+        My.Settings.Isodoc_NewConnectionString = MdlMain.CnnString
+        Dim adapter As New Archive_NewDataSetTableAdapters.VwAch_BookTableAdapter
+        adapter.Connection.ConnectionString = MdlMain.CnnStringArchiveNew
+        Dim adapter1 As New Archive_NewDataSet1TableAdapters.VwAch_DieMapsTableAdapter
+        adapter1.Connection.ConnectionString = MdlMain.CnnStringArchiveNew
+        Dim adapter2 As New DataSet1TableAdapters.tb_TelTableAdapter
+        adapter2.Connection.ConnectionString = MdlMain.CnnString
+
 
         RepairPDF()
 
