@@ -19,21 +19,21 @@ Partial Class FrmIsoDepartDoc
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmIsoDepartDoc))
-        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox
-        Me.btnCancel = New DevExpress.XtraEditors.SimpleButton
-        Me.btnShow = New DevExpress.XtraEditors.SimpleButton
-        Me.PicShow = New System.Windows.Forms.PictureBox
-        Me.btnRegister = New DevExpress.XtraEditors.SimpleButton
-        Me.lblWait = New System.Windows.Forms.Label
-        Me.LstMdep = New System.Windows.Forms.ListBox
-        Me.LstDocName = New System.Windows.Forms.ListBox
-        Me.dg = New Janus.Windows.GridEX.GridEX
+        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox()
+        Me.btnCancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnShow = New DevExpress.XtraEditors.SimpleButton()
+        Me.PicShow = New System.Windows.Forms.PictureBox()
+        Me.btnRegister = New DevExpress.XtraEditors.SimpleButton()
+        Me.lblWait = New System.Windows.Forms.Label()
+        Me.LstMdep = New System.Windows.Forms.ListBox()
+        Me.LstDocName = New System.Windows.Forms.ListBox()
+        Me.dg = New Janus.Windows.GridEX.GridEX()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.UiGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiGroupBox1.SuspendLayout()
         CType(Me.PicShow, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,8 +44,8 @@ Partial Class FrmIsoDepartDoc
         'UiGroupBox1
         '
         Me.UiGroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UiGroupBox1.BackgroundStyle = Janus.Windows.EditControls.BackgroundStyle.ExplorerBarBackground
         Me.UiGroupBox1.Controls.Add(Me.btnCancel)
         Me.UiGroupBox1.Controls.Add(Me.btnShow)
@@ -120,7 +120,7 @@ Partial Class FrmIsoDepartDoc
         'LstMdep
         '
         Me.LstMdep.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LstMdep.BackColor = System.Drawing.Color.AliceBlue
         Me.LstMdep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LstMdep.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
@@ -147,8 +147,8 @@ Partial Class FrmIsoDepartDoc
         Me.dg.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
         Me.dg.AlternatingColors = True
         Me.dg.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dg.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         Me.dg.GroupByBoxVisible = False
         Me.dg.Location = New System.Drawing.Point(10, 215)
@@ -166,20 +166,20 @@ Partial Class FrmIsoDepartDoc
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem, Me.„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(216, 48)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(206, 48)
         '
         '«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem
         '
         Me.«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem.Image = CType(resources.GetObject("«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem.Image"), System.Drawing.Image)
         Me.«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem.Name = "«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem"
-        Me.«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
         Me.«›“Êœ‰”‰œ»Â·Ì” ⁄·«ﬁÂÂ«ToolStripMenuItem.Text = "«›“Êœ‰ ”‰œ »Â ·Ì”  ⁄·«ﬁÂ Â«"
         '
         '„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem
         '
         Me.„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem.Image = CType(resources.GetObject("„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem.Image"), System.Drawing.Image)
         Me.„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem.Name = "„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem"
-        Me.„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
         Me.„‘«ÂœÂ·Ì” ⁄·«ﬁÂToolStripMenuItem.Text = "„‘«ÂœÂ ·Ì”  ⁄·«ﬁÂ"
         '
         'FrmIsoDepartDoc
