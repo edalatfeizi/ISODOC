@@ -2,3 +2,4 @@ Janus.Windows.ExplorerBar.ExplorerBar, Janus.Windows.ExplorerBar.v2, Version=2.0
 Janus.Windows.GridEX.GridEX, Janus.Windows.GridEX.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
 Janus.Windows.EditControls.UIButton, Janus.Windows.UI.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
 Janus.Windows.EditControls.UIGroupBox, Janus.Windows.UI.v2, Version=2.0.1142.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+DevExpress.XtraTab.XtraTabControl, DevExpress.XtraEditors.v7.1, Version=7.1.1.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4
