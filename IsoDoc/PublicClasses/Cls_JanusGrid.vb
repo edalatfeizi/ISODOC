@@ -6,6 +6,7 @@ Public Class Cls_JanusGrid
         Dim myConnection As New SqlClient.SqlConnection(cnnstr)
 
         Try
+
             myConnection.Open()
         Catch ex As Exception
             MsgBox(ex.Message)
