@@ -1,9 +1,3 @@
-Public Enum x
-    ali = 1
-    reza = 2
-    mamad = 3
-
-End Enum
 Module MdlMain
     Public dt As New DataTable
     Public DocumentCode As String

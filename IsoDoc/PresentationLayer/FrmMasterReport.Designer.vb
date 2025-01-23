@@ -20,15 +20,15 @@ Partial Class FrmMasterReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMasterReport))
-        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox
-        Me.IkidFormToolbar1 = New WLFormGlobalCtrl_DT.IKIDFormToolbar
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
-        Me.dgdShowInfo = New System.Windows.Forms.DataGrid
-        Me.btnCancel = New DevExpress.XtraEditors.SimpleButton
-        Me.btnShow = New DevExpress.XtraEditors.SimpleButton
-        Me.DgSelectDoc = New IKIDUtility.DgSelect
-        Me.dgdMDepart = New System.Windows.Forms.DataGrid
-        Me.dgdDocName = New System.Windows.Forms.DataGrid
+        Me.UiGroupBox1 = New Janus.Windows.EditControls.UIGroupBox()
+        Me.IkidFormToolbar1 = New WLFormGlobalCtrl_DT.IKIDFormToolbar()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.dgdShowInfo = New System.Windows.Forms.DataGrid()
+        Me.btnCancel = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnShow = New DevExpress.XtraEditors.SimpleButton()
+        Me.DgSelectDoc = New IKIDUtility.DgSelect()
+        Me.dgdMDepart = New System.Windows.Forms.DataGrid()
+        Me.dgdDocName = New System.Windows.Forms.DataGrid()
         CType(Me.UiGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiGroupBox1.SuspendLayout()
         CType(Me.dgdShowInfo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,8 +39,8 @@ Partial Class FrmMasterReport
         'UiGroupBox1
         '
         Me.UiGroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UiGroupBox1.BackgroundStyle = Janus.Windows.EditControls.BackgroundStyle.ExplorerBarBackground
         Me.UiGroupBox1.Controls.Add(Me.IkidFormToolbar1)
         Me.UiGroupBox1.Controls.Add(Me.SimpleButton1)
@@ -68,7 +68,7 @@ Partial Class FrmMasterReport
         '
         Me.SimpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.SimpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
         Me.SimpleButton1.Location = New System.Drawing.Point(378, 23)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(68, 19)
@@ -78,21 +78,21 @@ Partial Class FrmMasterReport
         'dgdShowInfo
         '
         Me.dgdShowInfo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdShowInfo.DataMember = ""
         Me.dgdShowInfo.HeaderForeColor = System.Drawing.SystemColors.ControlText
         Me.dgdShowInfo.Location = New System.Drawing.Point(11, 45)
         Me.dgdShowInfo.Name = "dgdShowInfo"
         Me.dgdShowInfo.ReadOnly = True
-        Me.dgdShowInfo.Size = New System.Drawing.Size(540, 526)
+        Me.dgdShowInfo.Size = New System.Drawing.Size(521, 526)
         Me.dgdShowInfo.TabIndex = 32
         '
         'btnCancel
         '
         Me.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnCancel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
-        Me.btnCancel.Image = CType(resources.GetObject("btnCancel.Image"), System.Drawing.Image)
+        Me.btnCancel.ImageOptions.Image = CType(resources.GetObject("btnCancel.ImageOptions.Image"), System.Drawing.Image)
         Me.btnCancel.Location = New System.Drawing.Point(238, 23)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(68, 19)
@@ -103,7 +103,7 @@ Partial Class FrmMasterReport
         '
         Me.btnShow.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnShow.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
-        Me.btnShow.Image = CType(resources.GetObject("btnShow.Image"), System.Drawing.Image)
+        Me.btnShow.ImageOptions.Image = CType(resources.GetObject("btnShow.ImageOptions.Image"), System.Drawing.Image)
         Me.btnShow.Location = New System.Drawing.Point(308, 23)
         Me.btnShow.Name = "btnShow"
         Me.btnShow.Size = New System.Drawing.Size(68, 19)
@@ -122,12 +122,12 @@ Partial Class FrmMasterReport
         'dgdMDepart
         '
         Me.dgdMDepart.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdMDepart.DataMember = ""
         Me.dgdMDepart.HeaderForeColor = System.Drawing.SystemColors.ControlText
-        Me.dgdMDepart.Location = New System.Drawing.Point(557, 304)
+        Me.dgdMDepart.Location = New System.Drawing.Point(538, 304)
         Me.dgdMDepart.Name = "dgdMDepart"
-        Me.dgdMDepart.Size = New System.Drawing.Size(227, 267)
+        Me.dgdMDepart.Size = New System.Drawing.Size(246, 267)
         Me.dgdMDepart.TabIndex = 1
         '
         'dgdDocName
@@ -135,9 +135,9 @@ Partial Class FrmMasterReport
         Me.dgdDocName.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgdDocName.DataMember = ""
         Me.dgdDocName.HeaderForeColor = System.Drawing.SystemColors.ControlText
-        Me.dgdDocName.Location = New System.Drawing.Point(557, 45)
+        Me.dgdDocName.Location = New System.Drawing.Point(538, 45)
         Me.dgdDocName.Name = "dgdDocName"
-        Me.dgdDocName.Size = New System.Drawing.Size(228, 253)
+        Me.dgdDocName.Size = New System.Drawing.Size(247, 253)
         Me.dgdDocName.TabIndex = 0
         '
         'FrmMasterReport

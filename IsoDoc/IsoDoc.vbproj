@@ -60,13 +60,14 @@
       <HintPath>C:\IkidSystem+\Activities.dll</HintPath>
     </Reference>
     <Reference Include="AppFrameWork">
-      <HintPath>C:\IkidSystem+\AppFrameWork.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\IkidSystems\AppFrameWork.dll</HintPath>
     </Reference>
     <Reference Include="Archive">
-      <HintPath>C:\IkidSystem+\Archive.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\IkidSystems\Archive.dll</HintPath>
     </Reference>
-    <Reference Include="AxInterop.PdfLib">
-      <HintPath>C:\IkidSystem+\AxInterop.PdfLib.dll</HintPath>
+    <Reference Include="AxInterop.PdfLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\IkidSystems\AxInterop.PdfLib.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -158,10 +159,10 @@
       <HintPath>C:\IkidSystem+\JFrameWork.dll</HintPath>
     </Reference>
     <Reference Include="JFrameWork_Last">
-      <HintPath>C:\IkidSystem+\JFrameWork_Last.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\IkidSystems\JFrameWork_Last.dll</HintPath>
     </Reference>
     <Reference Include="JobClasification">
-      <HintPath>C:\IkidSystem+\JobClasification.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\IkidSystems\JobClasification.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Newtonsoft.Json, Version=13.0.1.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -169,13 +170,13 @@
       <HintPath>C:\IkidSystem+\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="O2S.Components.PDFView4NET">
-      <HintPath>C:\IkidSystem+\O2S.Components.PDFView4NET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\IkidSystems\O2S.Components.PDFView4NET.dll</HintPath>
     </Reference>
     <Reference Include="Persistent">
       <HintPath>C:\IkidSystem+\Persistent.dll</HintPath>
     </Reference>
     <Reference Include="Personely">
-      <HintPath>C:\IkidSystem+\Personely.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\IkidSystems\Personely.dll</HintPath>
     </Reference>
     <Reference Include="SqlManager.QExport">
       <HintPath>C:\IkidSystem+\SqlManager.QExport.dll</HintPath>
@@ -281,10 +282,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmLoanedDocs.Designer.vb">
+      <DependentUpon>FrmLoanedDocs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoanedDocs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\DataGridHelper.vb" />
     <Compile Include="PresentationLayer\FrmISORoozshomar.Designer.vb">
       <DependentUpon>FrmISORoozshomar.vb</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\FrmISORoozshomar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmLendingDocs.Designer.vb">
+      <DependentUpon>FrmLendingDocs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmLendingDocs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\FrmNewmaghale.Designer.vb">
@@ -536,10 +550,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmLoanedDocs.resx">
+      <DependentUpon>FrmLoanedDocs.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="PresentationLayer\FrmISORoozshomar.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmISORoozshomar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmLendingDocs.resx">
+      <DependentUpon>FrmLendingDocs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\FrmNewmaghale.resx">
       <SubType>Designer</SubType>

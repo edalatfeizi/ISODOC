@@ -7,7 +7,8 @@ Public Class FrmIsoSearch
     Private Sub FillDocument()
         persist1.SetMyGridStyle = True
         persist1.GetBindGrid_Dt(dgdSearch, CnnString, dt)
-        Dim ts1 As New System.Windows.Forms.DataGridTableStyle
+        Dim ts1 As New DataGridTableStyle
+        AddRowNumberToGrid(persist1, dt, ts1, dgdSearch)
         persist1.SetGridStyle_Dt(ts1, Persistent.DataAccess.TxtBol.Text, dt, dgdSearch, "DocumentCode", "ﬂœ ”‰œ", 100, False, False)
         persist1.SetGridStyle_Dt(ts1, Persistent.DataAccess.TxtBol.Text, dt, dgdSearch, "DocumentName", "‰«„ ”‰œ", 300, False, False)
         persist1.SetGridStyle_Dt(ts1, Persistent.DataAccess.TxtBol.Text, dt, dgdSearch, "DocName", "‰Ê⁄ ”‰œ", 100, False, False)

@@ -22,9 +22,9 @@ Partial Class Frm_SetAccessForViewDoc
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridEXLayout13 As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
+        Dim GridEXLayout1 As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_SetAccessForViewDoc))
-        Dim GridEXLayout14 As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
+        Dim GridEXLayout2 As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
         Me.Btn_Search = New DevComponents.DotNetBar.ButtonX()
         Me.Txt_searchSelectedPerson = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -72,8 +72,8 @@ Partial Class Frm_SetAccessForViewDoc
         '
         Me.GrdSelectedPerson.ColumnSetNavigation = Janus.Windows.GridEX.ColumnSetNavigation.ColumnSet
         Me.GrdSelectedPerson.ControlStyle.ButtonAppearance = Janus.Windows.GridEX.ButtonAppearance.Regular
-        GridEXLayout13.LayoutString = resources.GetString("GridEXLayout13.LayoutString")
-        Me.GrdSelectedPerson.DesignTimeLayout = GridEXLayout13
+        GridEXLayout1.LayoutString = resources.GetString("GridEXLayout1.LayoutString")
+        Me.GrdSelectedPerson.DesignTimeLayout = GridEXLayout1
         Me.GrdSelectedPerson.EditorsControlStyle.ButtonAppearance = Janus.Windows.GridEX.ButtonAppearance.Regular
         Me.GrdSelectedPerson.Font = New System.Drawing.Font("B Nazanin", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         Me.GrdSelectedPerson.GroupByBoxVisible = False
@@ -87,8 +87,8 @@ Partial Class Frm_SetAccessForViewDoc
         '
         Me.GrdMain.ColumnSetNavigation = Janus.Windows.GridEX.ColumnSetNavigation.ColumnSet
         Me.GrdMain.ControlStyle.ButtonAppearance = Janus.Windows.GridEX.ButtonAppearance.Regular
-        GridEXLayout14.LayoutString = resources.GetString("GridEXLayout14.LayoutString")
-        Me.GrdMain.DesignTimeLayout = GridEXLayout14
+        GridEXLayout2.LayoutString = resources.GetString("GridEXLayout2.LayoutString")
+        Me.GrdMain.DesignTimeLayout = GridEXLayout2
         Me.GrdMain.EditorsControlStyle.ButtonAppearance = Janus.Windows.GridEX.ButtonAppearance.Regular
         Me.GrdMain.Font = New System.Drawing.Font("B Nazanin", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
         Me.GrdMain.GroupByBoxVisible = False
