@@ -76,7 +76,7 @@ Public Class FrmIsoSearch
 
             Try
                 lblFilePath.Text = dgdSearch.Item(dgdSearch.CurrentCell.RowNumber, 5)
-                System.Diagnostics.Process.Start(LTrim(RTrim(lblFilePath.Text)))
+                Process.Start(LTrim(RTrim(lblFilePath.Text)))
             Catch ex As Exception
                 Dim Bus_MessageHandler1 As New Bus_MessageHandler
                 Dim fileType As String

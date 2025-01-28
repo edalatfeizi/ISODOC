@@ -234,6 +234,7 @@
     <Compile Include="BusinessLayer\Bus_BasicSetting.vb" />
     <Compile Include="BusinessLayer\Bus_EqualStandard.vb" />
     <Compile Include="BusinessLayer\Bus_Favorites.vb" />
+    <Compile Include="BusinessLayer\Bus_NewDocRequest.vb" />
     <Compile Include="BusinessLayer\Bus_History.vb" />
     <Compile Include="BusinessLayer\Bus_Important.vb" />
     <Compile Include="BusinessLayer\Bus_MessageHandler.vb" />
@@ -259,7 +260,11 @@
     <Compile Include="BusinessLayer\Bus_StartegicPlan.vb" />
     <Compile Include="BusinessLayer\Bus_UserMessage.vb" />
     <Compile Include="BusinessLayer\Bus_TransferDoc.vb" />
+    <Compile Include="CustomControls\NumericTextbox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataAccessLayer\Dac_BasicSetting.vb" />
+    <Compile Include="DataAccessLayer\Dac_NewDocRequest.vb" />
     <Compile Include="DataAccessLayer\Dac_Favorites.vb" />
     <Compile Include="DataAccessLayer\Dac_History.vb" />
     <Compile Include="DataAccessLayer\Dac_Important.vb" />
@@ -289,6 +294,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Helpers\DataGridHelper.vb" />
+    <Compile Include="Models\DocRequest.vb" />
     <Compile Include="PresentationLayer\FrmISORoozshomar.Designer.vb">
       <DependentUpon>FrmISORoozshomar.vb</DependentUpon>
     </Compile>
@@ -299,6 +305,12 @@
       <DependentUpon>FrmLendingDocs.vb</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\FrmLendingDocs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmNewDocRequest.Designer.vb">
+      <DependentUpon>FrmNewDocRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmNewDocRequest.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\FrmNewmaghale.Designer.vb">
@@ -561,6 +573,9 @@
     <EmbeddedResource Include="PresentationLayer\FrmLendingDocs.resx">
       <DependentUpon>FrmLendingDocs.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmNewDocRequest.resx">
+      <DependentUpon>FrmNewDocRequest.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\FrmNewmaghale.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmNewmaghale.vb</DependentUpon>
@@ -806,6 +821,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -206,7 +206,7 @@
         5QQZS1/gT9FySwDxs05ALgDqm9Fk+QB+znHQpuQfE4EcEkSiB0LWiwsINUQAADsAAAAAAAAAAAA=
 </value>
   </data>
-  <data name="ExplorerBarItem1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExplorerBarItem25.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAQAAEABAAoAQAANgAAABAQAAABAAgAaAUAAF4BAAAQEAAAAQAgAGgEAADGBgAAKAAAABAA
         AAAgAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAACAgACAAAAAgACAAICA
@@ -258,7 +258,7 @@
         AgKAfwICgD8CAoQfAgKODwIC/wcCAv+DAgL/wwIC/+MCAv//AgL//wIC
 </value>
   </data>
-  <data name="ExplorerBarItem2.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExplorerBarItem26.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAQAAEABAAoAQAANgAAABAQAAABAAgAaAUAAF4BAAAQEAAAAQAgAGgEAADGBgAAKAAAABAA
         AAAgAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAACAgACAAAAAgACAAICA
@@ -310,7 +310,7 @@
         AgKAfwICgD8CAoQfAgKODwIC/wcCAv+DAgL/wwIC/+MCAv//AgL//wIC
 </value>
   </data>
-  <data name="ExplorerBarItem3.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExplorerBarItem27.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAD///8v////3///////////////////////////////////////////////////////////////////
@@ -334,7 +334,7 @@
         AAAAAAAAAAAAAA==
 </value>
   </data>
-  <data name="ExplorerBarItem4.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExplorerBarItem28.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAQAAEABAAoAQAANgAAABAQAAABAAgAaAUAAF4BAAAQEAAAAQAgAGgEAADGBgAAKAAAABAA
         AAAgAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAACAgACAAAAAgACAAICA
@@ -386,7 +386,7 @@
         AADgAAAA8AAAAPAAAADwAAAA8AAAAPAAAAD4AAAA+AAAAPwAAAD+AQAA
 </value>
   </data>
-  <data name="ExplorerBarItem5.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExplorerBarItem29.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAB
         AAAAAAAAAAAAAE9FQwBIREMAWFFPAFhJQwBaSkMAXlBKAE5EPwAAAAAAl/7/AI37/wCR/P8AlP3/AKn9
@@ -414,7 +414,7 @@
         AACAAwAA+D8AAPg/AAD8fwAA/H8AAP7/AAA=
 </value>
   </data>
-  <data name="ExplorerBarItem6.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExplorerBarItem30.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAQAAEABAAoAQAANgAAABAQAAABAAgAaAUAAF4BAAAQEAAAAQAgAGgEAADGBgAAKAAAABAA
         AAAgAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAACAgACAAAAAgACAAICA
@@ -466,7 +466,7 @@
         AgKAfwICgD8CAoQfAgKODwIC/wcCAv+DAgL/wwIC/+MCAv//AgL//wIC
 </value>
   </data>
-  <data name="ExplorerBarItem9.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExplorerBarItem33.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAIAEBAAAAEACABoBQAAJgAAABAQAAABACAAaAQAAI4FAAAoAAAAEAAAACAAAAABAAgAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wC5hoYA8uzsALOysgD5z8YA69jRAOLZ1gDUu7AA9cGiAP/P
