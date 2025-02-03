@@ -1,6 +1,6 @@
 ﻿Public Class DocRequest
     Public Property Id As Integer 'PK'
-    Public Property RequesterDepId As Integer
+    Public Property RequesterDepCode As String
     Public Property RequesterDepName As String
     Public Property Title As String
     Public Property DocumentCode As String
@@ -21,13 +21,13 @@
     Public Property OkDocOwnerDepAdminDateTime As String
     Public Property RegDateTime As String
     Public Property ReqDateTime As String
+    Public Property Attachment As Byte()
 
     Public Sub New()
     End Sub
 
     Public Sub New(
-                  id As Integer,
-                  requesterDepId As Integer,
+                  requesterDepCode As String,
                   requesterDepName As String,
                   title As String,
                   documentCode As String,
@@ -47,10 +47,10 @@
                   okDocOwnerDepAdmin As Boolean,
                   okDocOwnerDepAdminDateTime As String,
                   regDateTime As String,
-                  reqDateTime As String
+                  reqDateTime As String,
+                  attachment As Byte()
               )
-        Me.Id = id
-        Me.RequesterDepId = requesterDepId
+        Me.RequesterDepCode = requesterDepCode
         Me.RequesterDepName = requesterDepName
         Me.Title = title
         Me.DocumentCode = documentCode
@@ -71,5 +71,6 @@
         Me.OkDocOwnerDepAdminDateTime = okDocOwnerDepAdminDateTime
         Me.RegDateTime = regDateTime
         Me.ReqDateTime = reqDateTime
+        Me.Attachment = attachment
     End Sub
 End Class
