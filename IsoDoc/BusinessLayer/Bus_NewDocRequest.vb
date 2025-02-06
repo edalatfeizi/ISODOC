@@ -18,4 +18,17 @@ Public Class Bus_NewDocRequest
     Friend Function GetMaxRequestId() As DataTable
         GetMaxRequestId = Dac_NewDocRequest.GetMaxRequestId()
     End Function
+
+    Friend Function GetDepAdmins(depCode As String) As DataTable
+        GetDepAdmins = Dac_NewDocRequest.GetDepAdmins(depCode)
+    End Function
+
+    Friend Function GetDepsList() As DataTable
+        GetDepsList = Dac_NewDocRequest.GetDepsList()
+    End Function
+
+    Friend Function GetDocRequests() As DataTable
+        GetDocRequests = Dac_NewDocRequest.GetDocRequests()
+
+    End Function
 End Class

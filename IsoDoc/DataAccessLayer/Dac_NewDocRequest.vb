@@ -16,6 +16,7 @@ Public Class Dac_NewDocRequest
         persist1.Sp_AddParam("@OffererName", SqlDbType.NVarChar, docReq.OffererName, ParameterDirection.Input)
         persist1.Sp_AddParam("@ReqDateTime", SqlDbType.VarChar, docReq.ReqDateTime, ParameterDirection.Input)
         persist1.Sp_AddParam("@Attachment", SqlDbType.VarBinary, docReq.Attachment, ParameterDirection.Input)
+        persist1.Sp_AddParam("@OffererPersonCode", SqlDbType.VarChar, docReq.OffererPersonCode, ParameterDirection.Input)
 
         ' Execute the stored procedure
         persist1.Sp_Exe("SP_InsertDocRequest", CnnString, False)
@@ -51,5 +52,21 @@ Public Class Dac_NewDocRequest
     Friend Function GetMaxRequestId() As DataTable
         SqlStr = "select MAX(Id) as MaxReqId from [Isodoc_New].[dbo].tbDocRequests"
         GetMaxRequestId = persist1.GetDataTable(CnnString, SqlStr)
+    End Function
+
+    Friend Function GetDepAdmins(depCode As String) As DataTable
+        SqlStr = "SELECT *
+                    FROM Personely.dbo.Vw_AllPersonWithDepartName where DepartCode = '" + depCode + "' and (PostTypeID = '3' or PostTypeID = '27')"
+        GetDepAdmins = persist1.GetDataTable(CnnString, SqlStr)
+    End Function
+
+    Friend Function GetDepsList() As DataTable
+        SqlStr = "select MDepartName as '‰«„ Ê«Õœ',MDepartCode as 'òœ Ê«Õœ' from Personely.dbo.VwHR_MDepart where MDepartCode <> '0'  order by DepartID"
+        GetDepsList = persist1.GetDataTable(CnnString, SqlStr)
+    End Function
+
+    Friend Function GetDocRequests() As DataTable
+        SqlStr = "select * from [Isodoc_New].[dbo].[tbDocRequests]"
+        GetDocRequests = persist1.GetDataTable(CnnString, SqlStr)
     End Function
 End Class

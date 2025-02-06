@@ -1,11 +1,12 @@
 ﻿Imports System.IO
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
-Imports DevExpress.Xpo.DB
+Imports DevExpress.XtraEditors
+
 
 Public Class FrmNewDocRequest
     Private Bus_NewDocRequest As New Bus_NewDocRequest
     Private Mdepart As New Personely.FacadJobClassification.FacMDepart
-    Private dt_MDepart As DataTable
+    Private dtDeps As DataTable
+    Private dtDocRequests As DataTable
     Dim docRequest As New DocRequest()
     Private Sub FrmNewDocRequest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FillDepsCombo()
@@ -17,13 +18,18 @@ Public Class FrmNewDocRequest
         'set new request id
         Dim dtMaxReqId = Bus_NewDocRequest.GetMaxRequestId()
         Dim maxReqId = dtMaxReqId.DefaultView.Item(0).Item("MaxReqId")
-        lblReqId.Text = maxReqId + 1
+        txtReqCode.Text = maxReqId + 1
     End Sub
     Private Sub FillDepsCombo()
-        dt_MDepart = Mdepart.GetMDepartList()
-        cmbDeps.DataSource = dt_MDepart
-        cmbDeps.DisplayMember = "MDepName" ' Column to display
-        cmbDeps.ValueMember = "MDepID"
+        dtDeps = Bus_NewDocRequest.GetDepsList()
+        cmbDeps.DataSource = dtDeps
+        cmbDeps.DisplayMember = "نام واحد" ' Column to display
+        cmbDeps.ValueMember = "کد واحد"
+
+        ' Now, bind the list to the LookUpEdit control
+        cmbDocOwnerDep.Properties.DataSource = dtDeps
+        cmbDocOwnerDep.Properties.DisplayMember = "نام واحد"
+        cmbDocOwnerDep.Properties.ValueMember = "کد واحد"
 
         Dim userName = SystemInformation.UserName.ToString()
         Dim dtUserInfo = Bus_NewDocRequest.GetUserInfo(userName)
@@ -37,14 +43,41 @@ Public Class FrmNewDocRequest
         docRequest.RequesterDepCode = depCode
         docRequest.RequesterDepName = depName
         docRequest.OffererName = userFirstName + " " + userLastName
+        docRequest.EditOrReview = False
+        docRequest.EditNo = ""
+        docRequest.OkSysOfficeBoss = False
+        docRequest.OkSysOfficeBossDateTime = ""
+        docRequest.OkSysAdmin = False
+        docRequest.OkSysAdminDateTime = ""
+        docRequest.OkDocOwnerDepAdmin = False
+        docRequest.OkDocOwnerDepAdminDateTime = ""
+        docRequest.RegDateTime = ""
+        docRequest.OffererPersonCode = dtUserInfo.DefaultView.Item(0).Item("PersonCode")
+        docRequest.SysOfficeBossComment = ""
+        docRequest.SysAdminComment = ""
+        docRequest.SysAdminComment = ""
+        docRequest.RequesterDepBossOrAdminComment = ""
+        docRequest.DocOwnerDepBossOrAdminComment = ""
+
         docRequest.Attachment = Nothing
 
+        'if user is sys office boss get all doc requests
+
+        'if user is admin then get user's own doc requests and also all doc requests belongs to his/her dep
+
+        'if user is not an admin or sys office boss then get user's own doc requests
+
+        dtDocRequests = Bus_NewDocRequest.GetDocRequests()
+        grdDocRequests.DataSource = dtDocRequests
         'get systems office boss info
         'Dim dtSysOfficeBossInfo = Bus_NewDocRequest.GetPostUserInfo(270) '270 is the id of systems office boss post
         'Dim sysOfficeBossFName = dtUserInfo.DefaultView.Item(0).Item("FirstName")
         'Dim sysOfficeBossLName = dtUserInfo.DefaultView.Item(0).Item("LastName")
         'docRequest.SystemsOfficeBossName = sysOfficeBossFName + " " + sysOfficeBossLName
 
+
+        'Get dep admins
+        'Dim depAdminsDt = Bus_NewDocRequest.GetDepAdmins("SI000") 'get systems dep admins
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
@@ -83,7 +116,7 @@ Public Class FrmNewDocRequest
         docRequest.Changes = txtChanges.Text
         docRequest.UpdateOrNewDocReason = txtReason.Text
         docRequest.ReqDateTime = PersianCalender.GetSelectedDateInPersianDateTime().ToShortDateString()
-
+        'docRequest.DocOwnerDepCode =
         Bus_NewDocRequest.Insert(docRequest)
         MessageBox.Show("عملیات مورد نظر با موفقیت انجام شد", "عملیات موفقیت آمیز")
         ClearData()
@@ -156,6 +189,27 @@ Public Class FrmNewDocRequest
             docRequest.Attachment = Nothing
             btnFileName.Visible = False
             Return
+        End If
+    End Sub
+
+    Private Sub txtDocNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDocNo.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub cmbDocOwnerDep_EditValueChanged(sender As Object, e As EventArgs) Handles cmbDocOwnerDep.EditValueChanged
+        docRequest.DocOwnerDepName = cmbDocOwnerDep.SelectedText
+        docRequest.DocOwnerDepCode = cmbDocOwnerDep.EditValue.ToString()
+    End Sub
+
+    Private Sub cmbReqTypes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReqTypes.SelectedIndexChanged
+        If cmbReqTypes.SelectedIndex = 1 Or cmbReqTypes.SelectedIndex = 2 Then
+            lblDocNoStar.Visible = True
+
+        Else
+            lblDocNoStar.Visible = False
+
         End If
     End Sub
 End Class
