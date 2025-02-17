@@ -10,18 +10,19 @@
     Public Property UpdateOrNewDocReason As String
     Public Property OffererName As String
     Public Property SysOfficeBossName As String
-    Public Property EditOrReview As Boolean
+    Public Property EditOrReview As String
     Public Property SysAdminName As String
     Public Property EditNo As String
-    Public Property OkSysOfficeBoss As Boolean
+    Public Property OkSysOfficeBoss As String
     Public Property OkSysOfficeBossDateTime As String
-    Public Property OkSysAdmin As Boolean
+    Public Property OkSysAdmin As String
     Public Property OkSysAdminDateTime As String
-    Public Property OkDocOwnerDepAdmin As Boolean
+    Public Property OkDocOwnerDepAdmin As String
     Public Property OkDocOwnerDepAdminDateTime As String
     Public Property RegDateTime As String
     Public Property ReqDateTime As String
     Public Property Attachment As Byte()
+    Public Property FileExtension As String
     Public Property OffererPersonCode As String
     Public Property SysOfficeBossComment As String
     Public Property SysAdminComment As String
@@ -29,69 +30,75 @@
     Public Property DocOwnerDepBossOrAdminComment As String
     Public Property DocOwnerDepCode As String
     Public Property DocOwnerDepName As String
+    Public Property Active As Boolean
 
     Public Sub New()
     End Sub
 
     Public Sub New(
-                  requesterDepCode As String,
-                  requesterDepName As String,
-                  title As String,
-                  documentCode As String,
-                  requestType As String,
-                  storeDuration As String,
-                  changes As String,
-                  updateOrNewDocReason As String,
-                  offererName As String,
-                  sysOfficeBossName As String,
-                  editOrReview As Boolean,
-                  sysAdminName As String,
-                  editNo As String,
-                  okSysOfficeBoss As Boolean,
-                  okSysOfficeBossDateTime As String,
-                  okSysAdmin As Boolean,
-                  okSysAdminDateTime As String,
-                  okDocOwnerDepAdmin As Boolean,
-                  okDocOwnerDepAdminDateTime As String,
-                  regDateTime As String,
-                  reqDateTime As String,
-                  attachment As Byte(),
-                  offererPersonCode As String,
-                  sysOfficeBossComment As String,
-                  sysAdminComment As String,
-                  requesterDepBossOrAdminComment As String,
-                  docOwnerDepBossOrAdminComment As String,
-                  docOwnerDepCode As String,
-                  docOwnerDepName As String
+                  RequesterDepCode As String,
+                  RequesterDepName As String,
+                  Title As String,
+                  DocumentCode As String,
+                  RequestType As String,
+                  StoreDuration As String,
+                  Changes As String,
+                  UpdateOrNewDocReason As String,
+                  OffererName As String,
+                  SysOfficeBossName As String,
+                  EditOrReview As Boolean,
+                  SysAdminName As String,
+                  EditNo As String,
+                  OkSysOfficeBoss As Boolean,
+                  OkSysOfficeBossDateTime As String,
+                  OkSysAdmin As Boolean,
+                  OkSysAdminDateTime As String,
+                  OkDocOwnerDepAdmin As Boolean,
+                  OkDocOwnerDepAdminDateTime As String,
+                  RegDateTime As String,
+                  ReqDateTime As String,
+                  Attachment As Byte(),
+                  FileExtension As String,
+                  OffererPersonCode As String,
+                  SysOfficeBossComment As String,
+                  SysAdminComment As String,
+                  RequesterDepBossOrAdminComment As String,
+                  DocOwnerDepBossOrAdminComment As String,
+                  DocOwnerDepCode As String,
+                  DocOwnerDepName As String,
+                  Active As Boolean,
+                  Optional Id As Integer = 0
               )
-        Me.RequesterDepCode = requesterDepCode
-        Me.RequesterDepName = requesterDepName
-        Me.Title = title
-        Me.DocumentCode = documentCode
-        Me.RequestType = requestType
-        Me.StoreDuration = storeDuration
-        Me.Changes = changes
-        Me.UpdateOrNewDocReason = updateOrNewDocReason
-        Me.OffererName = offererName
-        Me.SysOfficeBossName = sysOfficeBossName
-        Me.EditOrReview = editOrReview
-        Me.SysAdminName = sysAdminName
-        Me.EditNo = editNo
-        Me.OkSysOfficeBoss = okSysOfficeBoss
-        Me.OkSysOfficeBossDateTime = okSysOfficeBossDateTime
-        Me.OkSysAdmin = okSysAdmin
-        Me.OkSysAdminDateTime = okSysAdminDateTime
-        Me.OkDocOwnerDepAdmin = okDocOwnerDepAdmin
-        Me.OkDocOwnerDepAdminDateTime = okDocOwnerDepAdminDateTime
-        Me.RegDateTime = regDateTime
-        Me.ReqDateTime = reqDateTime
-        Me.Attachment = attachment
-        Me.OffererPersonCode = offererPersonCode
-        Me.SysOfficeBossComment = sysOfficeBossComment
-        Me.SysAdminComment = sysAdminComment
-        Me.RequesterDepBossOrAdminComment = requesterDepBossOrAdminComment
-        Me.DocOwnerDepBossOrAdminComment = docOwnerDepBossOrAdminComment
-        Me.DocOwnerDepCode = docOwnerDepCode
-        Me.DocOwnerDepName = docOwnerDepName
+        Me.RequesterDepCode = RequesterDepCode
+        Me.RequesterDepName = RequesterDepName
+        Me.Title = Title
+        Me.DocumentCode = DocumentCode
+        Me.RequestType = RequestType
+        Me.StoreDuration = StoreDuration
+        Me.Changes = Changes
+        Me.UpdateOrNewDocReason = UpdateOrNewDocReason
+        Me.OffererName = OffererName
+        Me.SysOfficeBossName = SysOfficeBossName
+        Me.EditOrReview = EditOrReview
+        Me.SysAdminName = SysAdminName
+        Me.EditNo = EditNo
+        Me.OkSysOfficeBoss = OkSysOfficeBoss
+        Me.OkSysOfficeBossDateTime = OkSysOfficeBossDateTime
+        Me.OkSysAdmin = OkSysAdmin
+        Me.OkSysAdminDateTime = OkSysAdminDateTime
+        Me.OkDocOwnerDepAdmin = OkDocOwnerDepAdmin
+        Me.OkDocOwnerDepAdminDateTime = OkDocOwnerDepAdminDateTime
+        Me.RegDateTime = RegDateTime
+        Me.ReqDateTime = ReqDateTime
+        Me.Attachment = Attachment
+        Me.FileExtension = FileExtension
+        Me.OffererPersonCode = OffererPersonCode
+        Me.SysOfficeBossComment = SysOfficeBossComment
+        Me.SysAdminComment = SysAdminComment
+        Me.RequesterDepBossOrAdminComment = RequesterDepBossOrAdminComment
+        Me.DocOwnerDepBossOrAdminComment = DocOwnerDepBossOrAdminComment
+        Me.DocOwnerDepCode = DocOwnerDepCode
+        Me.DocOwnerDepName = DocOwnerDepName
+        Me.Active = Active
     End Sub
 End Class

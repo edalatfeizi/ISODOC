@@ -15,6 +15,12 @@ Public Class Bus_NewDocRequest
     Friend Sub Insert(docReq As DocRequest)
         Dac_NewDocRequest.Insert(docReq)
     End Sub
+    Friend Sub Update(docReq As DocRequest)
+        Dac_NewDocRequest.Update(docReq)
+    End Sub
+    Friend Sub DeleteDocRequestAttachment(docReqId As Integer)
+        Dac_NewDocRequest.DeleteDocRequestAttachment(docReqId)
+    End Sub
     Friend Function GetMaxRequestId() As DataTable
         GetMaxRequestId = Dac_NewDocRequest.GetMaxRequestId()
     End Function
@@ -27,8 +33,12 @@ Public Class Bus_NewDocRequest
         GetDepsList = Dac_NewDocRequest.GetDepsList()
     End Function
 
-    Friend Function GetDocRequests() As DataTable
-        GetDocRequests = Dac_NewDocRequest.GetDocRequests()
+    Friend Function GetDocRequests(filter As String) As DataTable
+        GetDocRequests = Dac_NewDocRequest.GetDocRequests(filter)
+
+    End Function
+    Friend Function GetAllDocsInfo() As DataTable
+        GetAllDocsInfo = Dac_NewDocRequest.GetAllDocsInfo()
 
     End Function
 End Class
