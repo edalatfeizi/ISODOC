@@ -138,32 +138,32 @@ Public Class FrmNewDocRequest
         ' Assign the repository item to the column.
         GridView1.Columns("RequestType").ColumnEdit = RequestTypeEdit
 #End Region
-#Region "config download attachment"
+        '#Region "config download attachment"
 
-        ' Configure the button:
-        ' - Use a glyph (icon) button.
-        ' - Assign an image to represent “download”. You can use an embedded resource or an image from your project.
-        btnDownload.Buttons(0).Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph
-        btnDownload.Buttons(0).Image = My.Resources.im_download_32  ' Replace with your download icon.
-        btnDownload.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        '        ' Configure the button:
+        '        ' - Use a glyph (icon) button.
+        '        ' - Assign an image to represent “download”. You can use an embedded resource or an image from your project.
+        '        btnDownload.Buttons(0).Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph
+        '        btnDownload.Buttons(0).Image = My.Resources.im_download_32  ' Replace with your download icon.
+        '        btnDownload.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
 
-        ' Optionally, adjust appearance settings if needed (e.g., button size).
-        ' Add the repository item to your grid control's RepositoryItems collection.
-        grdDocRequests.RepositoryItems.Add(btnDownload)
-#End Region
-#Region "config no attachment button"
+        '        ' Optionally, adjust appearance settings if needed (e.g., button size).
+        '        ' Add the repository item to your grid control's RepositoryItems collection.
+        '        grdDocRequests.RepositoryItems.Add(btnDownload)
+        '#End Region
+        '#Region "config no attachment button"
 
-        ' Configure the button:
-        ' - Use a glyph (icon) button.
-        ' - Assign an image to represent “download”. You can use an embedded resource or an image from your project.
-        btnNoAttachment.Buttons(0).Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph
-        btnNoAttachment.Buttons(0).Image = My.Resources.DeleteLarge  ' Replace with your download icon.
-        btnNoAttachment.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        '        ' Configure the button:
+        '        ' - Use a glyph (icon) button.
+        '        ' - Assign an image to represent “download”. You can use an embedded resource or an image from your project.
+        '        btnNoAttachment.Buttons(0).Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph
+        '        btnNoAttachment.Buttons(0).Image = My.Resources.DeleteLarge  ' Replace with your download icon.
+        '        btnNoAttachment.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
 
-        ' Optionally, adjust appearance settings if needed (e.g., button size).
-        ' Add the repository item to your grid control's RepositoryItems collection.
-        grdDocRequests.RepositoryItems.Add(btnNoAttachment)
-#End Region
+        '        ' Optionally, adjust appearance settings if needed (e.g., button size).
+        '        ' Add the repository item to your grid control's RepositoryItems collection.
+        '        grdDocRequests.RepositoryItems.Add(btnNoAttachment)
+        '#End Region
 
 
     End Sub
@@ -201,16 +201,31 @@ Public Class FrmNewDocRequest
         docRequest.DocOwnerDepBossOrAdminComment = ""
 
         docRequest.Attachment = Nothing
+        'userPersonCode = "14033956"
+
+        Dim dtUserRequests As DataTable = GetRequests("where OffererPersonCode = '" + userPersonCode.ToString() + " '")
+        If dtUserRequests.Rows.Count > 0 Then
+
+            ToggleColumnEditing(GridView1, "Title", True)
+            ToggleColumnEditing(GridView1, "DocumentCode", True)
+            ToggleColumnEditing(GridView1, "StoreDuration", True)
+            ToggleColumnEditing(GridView1, "Changes", True)
+            ToggleColumnEditing(GridView1, "UpdateOrNewDocReason", True)
+            ToggleColumnEditing(GridView1, "RequestType", True)
+            HighlightColumns("Title", "DocumentCode", "StoreDuration", "Changes", "UpdateOrNewDocReason", "RequestType")
+
+        End If
 #Region "Systems office boss"
         'get systems office boss info
 
         Dim dtSysOfficeBossInfo = Bus_NewDocRequest.GetPostUserInfo(270) '270 is the id of systems office boss depart id
         Dim sysBossPCode = dtSysOfficeBossInfo.DefaultView.Item(0).Item("PersonCode")
-        sysBossPCode = "14023910"
+        'sysBossPCode = "14023910"
         If sysBossPCode = userPersonCode Then
             userType = UserTypes.SysOfficeBoss
             'this user is sys office boss
-            Dim dtSysBossRequests = GetRequests()
+            Dim dtSysBossRequests = GetRequests("where OkDocOwnerDepAdmin = N'تایید'")
+            dtUserRequests.Merge(dtSysBossRequests)
             ToggleColumnEditing(GridView1, "EditOrReview", True)
             ToggleColumnEditing(GridView1, "EditNo", True)
             ToggleColumnEditing(GridView1, "RegDateTime", True)
@@ -219,7 +234,7 @@ Public Class FrmNewDocRequest
 
             HighlightColumns("EditOrReview", "EditNo", "RegDateTime", "OkSysOfficeBoss", "SysOfficeBossComment")
 
-            FillGrid(dtSysBossRequests)
+            FillGrid(dtUserRequests)
             Return
 
         End If
@@ -239,13 +254,14 @@ Public Class FrmNewDocRequest
         If adminPersonCodes.Contains(userPersonCode) Then
             userType = UserTypes.SysAdmin
 
-            Dim dtSysAdminRequests = GetRequests()
+            Dim dtSysAdminRequests = GetRequests("where OkSysOfficeBoss = N'تایید'")
+            dtUserRequests.Merge(dtSysAdminRequests)
 
             ToggleColumnEditing(GridView1, "SysAdminComment", True)
             ToggleColumnEditing(GridView1, "OkSysAdmin", True)
             HighlightColumns("SysAdminComment", "OkSysAdmin")
 
-            FillGrid(dtSysAdminRequests)
+            FillGrid(dtUserRequests)
             Return
         End If
 #End Region
@@ -254,42 +270,35 @@ Public Class FrmNewDocRequest
 
         'Get dep admins
 
-        Dim dtUserRequests As DataTable = GetRequests("where OffererPersonCode = '" + userPersonCode.ToString() + " '")
-        If dtUserRequests.Rows.Count > 0 Then
+        'userDepCode = "HC0855"
 
-            ToggleColumnEditing(GridView1, "Title", True)
-            ToggleColumnEditing(GridView1, "DocumentCode", True)
-            ToggleColumnEditing(GridView1, "StoreDuration", True)
-            ToggleColumnEditing(GridView1, "Changes", True)
-            ToggleColumnEditing(GridView1, "UpdateOrNewDocReason", True)
-            ToggleColumnEditing(GridView1, "RequestType", True)
-            HighlightColumns("Title", "DocumentCode", "StoreDuration", "Changes", "UpdateOrNewDocReason", "RequestType")
-
-        End If
         Dim depAdminsDt = Bus_NewDocRequest.GetDepAdmins(userDepCode) 'get systems dep admins
-        Dim depAdminPersonCodes As New List(Of String)
-
+        'Dim depAdminPersonCodes As New List(Of String)
+        adminPersonCodes.Clear()
         ' Loop through each DataRow in the DataTable.
-        For Each dr As DataRow In sysAdminsDt.Rows
+        For Each dr As DataRow In depAdminsDt.Rows
             ' Replace "YourColumnName" with the actual name of the column you want.
             adminPersonCodes.Add(dr("PersonCode").ToString())
         Next
         'userPersonCode = "14033956"
+        'userDepartCode = "HC0855"
         If adminPersonCodes.Contains(userPersonCode) Then
             userType = UserTypes.DepAdmin
-
             'get doc requests related to dep 
             Dim depRequests = GetRequests("where DocOwnerDepCode = '" + userDepartCode + " '")
+            'Dim dt
             dtUserRequests.Merge(depRequests)
 
             ToggleColumnEditing(GridView1, "DocOwnerDepBossOrAdminComment", True)
             ToggleColumnEditing(GridView1, "OkDocOwnerDepAdmin", True)
             HighlightColumns("DocOwnerDepBossOrAdminComment", "OkDocOwnerDepAdmin")
 
-        End If
-        userType = UserTypes.SysOfficeBoss
 
+        End If
         FillGrid(dtUserRequests)
+
+        ' userType = UserTypes.SysOfficeBoss
+
 
 #End Region
     End Sub
@@ -345,6 +354,10 @@ Public Class FrmNewDocRequest
             Return
         End If
 
+        If docRequest.Attachment Is Nothing Then
+            MessageBox.Show("لطفا فایل پیوست را انتخاب کنید", "تکمیل اطلاعات")
+            Return
+        End If
         SaveDocRequest()
 
 
@@ -420,7 +433,7 @@ Public Class FrmNewDocRequest
         AttachFile(docRequest, True)
     End Sub
 
-    Private Sub AttachFile(docRequest As DocRequest, showFileName As Boolean)
+    Private Function AttachFile(docRequest As DocRequest, showFileName As Boolean) As Boolean
         Dim openFileDialog As New OpenFileDialog()
         openFileDialog.Filter = "Word Files|*.docx;*.doc|Excel Files|*.xlsx;*.xls"
         openFileDialog.Title = "فایل پیوست مورد نظر را انتخاب کنید"
@@ -435,9 +448,11 @@ Public Class FrmNewDocRequest
                 btnFileName.Visible = True
                 btnFileName.Text = openFileDialog.SafeFileName
             End If
-
+            Return True
+        Else
+            Return False
         End If
-    End Sub
+    End Function
 
     Private Sub btnFileName_Click(sender As Object, e As EventArgs) Handles btnFileName.Click
         If docRequest.Attachment IsNot Nothing Then
@@ -481,6 +496,12 @@ Public Class FrmNewDocRequest
                     e.DisplayText = "غیر فعال"
                 End If
 
+            End If
+        ElseIf e.Column.FieldName = "Attachment" Then
+            If e.Value Is Nothing OrElse IsDBNull(e.Value) Then
+                e.DisplayText = "ندارد"
+            Else
+                e.DisplayText = "دارد"
             End If
         End If
         'If e.Column.FieldName = "OkDocOwnerDepAdmin" Or e.Column.FieldName = "OkSysAdmin" Or e.Column.FieldName = "OkSysOfficeBoss" Then
@@ -567,15 +588,15 @@ Public Class FrmNewDocRequest
 
             Select Case userType
                 Case UserTypes.EndUser
-                    updatedDocReq.Title = row("Title")
-                    updatedDocReq.DocumentCode = row("DocumentCode")
-                    updatedDocReq.StoreDuration = row("StoreDuration")
-                    updatedDocReq.Changes = row("Changes")
-                    updatedDocReq.UpdateOrNewDocReason = row("UpdateOrNewDocReason")
-                    updatedDocReq.RequestType = row("RequestType")
+                    updatedDocReq.Title = If(Convert.IsDBNull(row("Title")), "", row("Title").ToString())
+                    updatedDocReq.DocumentCode = If(Convert.IsDBNull(row("DocumentCode")), "", row("DocumentCode").ToString())
+                    updatedDocReq.StoreDuration = If(Convert.IsDBNull(row("StoreDuration")), "", row("StoreDuration").ToString())
+                    updatedDocReq.Changes = If(Convert.IsDBNull(row("Changes")), "", row("Changes").ToString())
+                    updatedDocReq.UpdateOrNewDocReason = If(Convert.IsDBNull(row("UpdateOrNewDocReason")), "", row("UpdateOrNewDocReason").ToString())
+                    updatedDocReq.RequestType = If(Convert.IsDBNull(row("RequestType")), "", row("RequestType").ToString())
 
                 Case UserTypes.SysOfficeBoss
-                    updatedDocReq.EditOrReview = If(row("EditOrReview"), "")
+                    updatedDocReq.EditOrReview = If(Convert.IsDBNull(row("EditOrReview")), "", row("EditOrReview").ToString())
                     updatedDocReq.EditNo = If(Convert.IsDBNull(row("EditNo")), "", row("EditNo").ToString())
                     updatedDocReq.RegDateTime = If(Convert.IsDBNull(row("RegDateTime")), "", row("RegDateTime").ToString())
                     updatedDocReq.OkSysOfficeBoss = If(Convert.IsDBNull(row("OkSysOfficeBoss")), "", row("OkSysOfficeBoss").ToString())
@@ -584,13 +605,13 @@ Public Class FrmNewDocRequest
 
 
                 Case UserTypes.SysAdmin
-                    updatedDocReq.SysAdminComment = row("SysAdminComment")
-                    updatedDocReq.OkSysAdmin = row("OkSysAdmin")
+                    updatedDocReq.SysAdminComment = If(Convert.IsDBNull(row("SysAdminComment")), "", row("SysAdminComment").ToString())
+                    updatedDocReq.OkSysAdmin = If(Convert.IsDBNull(row("OkSysAdmin")), "", row("OkSysAdmin").ToString())
                     updatedDocReq.OkSysAdminDateTime = PersianCalender.GetSelectedDateInPersianDateTime().ToShortDateString()
 
                 Case UserTypes.DepAdmin
-                    updatedDocReq.DocOwnerDepBossOrAdminComment = row("DocOwnerDepBossOrAdminComment")
-                    updatedDocReq.OkDocOwnerDepAdmin = row("OkDocOwnerDepAdmin")
+                    updatedDocReq.DocOwnerDepBossOrAdminComment = If(Convert.IsDBNull(row("DocOwnerDepBossOrAdminComment")), "", row("DocOwnerDepBossOrAdminComment").ToString())
+                    updatedDocReq.OkDocOwnerDepAdmin = If(Convert.IsDBNull(row("OkDocOwnerDepAdmin")), "", row("OkDocOwnerDepAdmin").ToString())
                     updatedDocReq.OkDocOwnerDepAdminDateTime = PersianCalender.GetSelectedDateInPersianDateTime().ToShortDateString()
 
             End Select
@@ -639,11 +660,13 @@ Public Class FrmNewDocRequest
     Private Sub mnuUploadAttachment_Click(sender As Object, e As EventArgs) Handles mnuUploadAttachment.Click
         Dim updatedDocReq As New DocRequest()
         updatedDocReq.Id = GetSelectedDocReqId()
-        AttachFile(updatedDocReq, False)
+        Dim isAttached = AttachFile(updatedDocReq, False)
+        If isAttached Then
+            Bus_NewDocRequest.Update(updatedDocReq)
+            MessageBox.Show("فایل پیوست با موفقیت ذخیره شد.", "عملیات موفقیت آمیز")
+            FillData()
+        End If
 
-        Bus_NewDocRequest.Update(updatedDocReq)
-        MessageBox.Show("فایل پیوست با موفقیت ذخیره شد.", "عملیات موفقیت آمیز")
-        FillData()
     End Sub
 
     Private Sub mnuOpenAttachment_Click(sender As Object, e As EventArgs) Handles mnuOpenAttachment.Click
@@ -717,4 +740,8 @@ Public Class FrmNewDocRequest
         Dim docReqId As Integer = Convert.ToInt32(idObj)
         Return docReqId
     End Function
+
+    Private Sub GridView1_ShowingEditor(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles GridView1.ShowingEditor
+
+    End Sub
 End Class
