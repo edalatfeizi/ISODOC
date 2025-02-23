@@ -9,8 +9,8 @@ Public Class Bus_NewDocRequest
     Friend Function GetUserInfo(ByVal userCardNo As String) As DataTable
         GetUserInfo = Dac_NewDocRequest.GetUserInfo(userCardNo)
     End Function
-    Friend Function GetPostUserInfo(ByVal postId As String) As DataTable
-        GetPostUserInfo = Dac_NewDocRequest.GetPostUserInfo(postId)
+    Friend Function GetSystemsUsers(ByVal officeCode As String) As DataTable
+        GetSystemsUsers = Dac_NewDocRequest.GetSystemsUsers(officeCode)
     End Function
     Friend Sub Insert(docReq As DocRequest)
         Dac_NewDocRequest.Insert(docReq)

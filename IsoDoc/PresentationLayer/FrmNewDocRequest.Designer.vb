@@ -57,6 +57,7 @@ Partial Class FrmNewDocRequest
         Me.PersianCalender = New BehComponents.MonthCalendarX()
         Me.grdDocRequests = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.RowNumber = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RequesterDepName = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.OffererName = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -136,7 +137,7 @@ Partial Class FrmNewDocRequest
         '
         'LabelControl6
         '
-        Me.LabelControl6.Location = New System.Drawing.Point(734, 33)
+        Me.LabelControl6.Location = New System.Drawing.Point(734, 38)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(64, 13)
         Me.LabelControl6.TabIndex = 102
@@ -242,7 +243,7 @@ Partial Class FrmNewDocRequest
         Me.GroupBox1.Size = New System.Drawing.Size(1224, 284)
         Me.GroupBox1.TabIndex = 120
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "درخواست تغییر/ایجاد مستندات"
+        Me.GroupBox1.Text = "ثبت درخواست تغییر/ایجاد مستندات"
         '
         'f
         '
@@ -353,7 +354,7 @@ Partial Class FrmNewDocRequest
         Me.BtnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnSave.Font = New System.Drawing.Font("Nazanin", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnSave.Location = New System.Drawing.Point(6, 219)
+        Me.BtnSave.Location = New System.Drawing.Point(6, 212)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10)
         Me.BtnSave.Size = New System.Drawing.Size(226, 34)
@@ -367,20 +368,20 @@ Partial Class FrmNewDocRequest
         Me.btnAttachFiles.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground
         Me.btnAttachFiles.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAttachFiles.Font = New System.Drawing.Font("Nazanin", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnAttachFiles.Location = New System.Drawing.Point(6, 179)
+        Me.btnAttachFiles.Location = New System.Drawing.Point(6, 175)
         Me.btnAttachFiles.Name = "btnAttachFiles"
         Me.btnAttachFiles.Shape = New DevComponents.DotNetBar.RoundRectangleShapeDescriptor(10)
         Me.btnAttachFiles.Size = New System.Drawing.Size(226, 34)
         Me.btnAttachFiles.TabIndex = 125
-        Me.btnAttachFiles.Text = "پیوست سند"
+        Me.btnAttachFiles.Text = "پیوست فایل"
         '
         'pbAttachFiles
         '
         Me.pbAttachFiles.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbAttachFiles.Image = Global.IsoDoc.My.Resources.Resources.attach_files2
-        Me.pbAttachFiles.Location = New System.Drawing.Point(6, 22)
+        Me.pbAttachFiles.Location = New System.Drawing.Point(6, 33)
         Me.pbAttachFiles.Name = "pbAttachFiles"
-        Me.pbAttachFiles.Size = New System.Drawing.Size(226, 150)
+        Me.pbAttachFiles.Size = New System.Drawing.Size(226, 139)
         Me.pbAttachFiles.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbAttachFiles.TabIndex = 123
         Me.pbAttachFiles.TabStop = False
@@ -403,7 +404,7 @@ Partial Class FrmNewDocRequest
         Me.LabelControl13.Appearance.ForeColor = System.Drawing.Color.Red
         Me.LabelControl13.Appearance.Options.UseFont = True
         Me.LabelControl13.Appearance.Options.UseForeColor = True
-        Me.LabelControl13.Location = New System.Drawing.Point(804, 34)
+        Me.LabelControl13.Location = New System.Drawing.Point(804, 39)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(8, 17)
         Me.LabelControl13.TabIndex = 120
@@ -515,12 +516,22 @@ Partial Class FrmNewDocRequest
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.Id, Me.RequesterDepName, Me.OffererName, Me.Title, Me.DocumentCode, Me.RequestType, Me.StoreDuration, Me.Changes, Me.UpdateOrNewDocReason, Me.RegDateTime, Me.ReqDateTime, Me.FileExtension, Me.Attachment, Me.EditNo, Me.EditOrReview, Me.RequesterDepBossOrAdminComment, Me.OkDocOwnerDepAdmin, Me.DocOwnerDepBossOrAdminComment, Me.OkSysOfficeBoss, Me.SysOfficeBossComment, Me.DocOwnerDepName, Me.OkSysAdmin, Me.SysAdminComment, Me.Active})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.RowNumber, Me.Id, Me.RequesterDepName, Me.OffererName, Me.Title, Me.DocumentCode, Me.RequestType, Me.StoreDuration, Me.Changes, Me.UpdateOrNewDocReason, Me.RegDateTime, Me.ReqDateTime, Me.FileExtension, Me.Attachment, Me.EditNo, Me.EditOrReview, Me.RequesterDepBossOrAdminComment, Me.OkDocOwnerDepAdmin, Me.DocOwnerDepBossOrAdminComment, Me.OkSysOfficeBoss, Me.SysOfficeBossComment, Me.DocOwnerDepName, Me.OkSysAdmin, Me.SysAdminComment, Me.Active})
         Me.GridView1.GridControl = Me.grdDocRequests
         Me.GridView1.HorzScrollStep = 1
         Me.GridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.ShowFooter = True
+        '
+        'RowNumber
+        '
+        Me.RowNumber.Caption = "ردیف"
+        Me.RowNumber.FieldName = "RowNumber"
+        Me.RowNumber.Name = "RowNumber"
+        Me.RowNumber.OptionsColumn.AllowEdit = False
+        Me.RowNumber.UnboundDataType = GetType(Integer)
+        Me.RowNumber.Visible = True
+        Me.RowNumber.VisibleIndex = 0
         '
         'Id
         '
@@ -530,7 +541,7 @@ Partial Class FrmNewDocRequest
         Me.Id.Name = "Id"
         Me.Id.OptionsColumn.AllowEdit = False
         Me.Id.Visible = True
-        Me.Id.VisibleIndex = 0
+        Me.Id.VisibleIndex = 1
         Me.Id.Width = 92
         '
         'RequesterDepName
@@ -540,7 +551,7 @@ Partial Class FrmNewDocRequest
         Me.RequesterDepName.Name = "RequesterDepName"
         Me.RequesterDepName.OptionsColumn.AllowEdit = False
         Me.RequesterDepName.Visible = True
-        Me.RequesterDepName.VisibleIndex = 2
+        Me.RequesterDepName.VisibleIndex = 3
         Me.RequesterDepName.Width = 81
         '
         'OffererName
@@ -550,7 +561,7 @@ Partial Class FrmNewDocRequest
         Me.OffererName.Name = "OffererName"
         Me.OffererName.OptionsColumn.AllowEdit = False
         Me.OffererName.Visible = True
-        Me.OffererName.VisibleIndex = 3
+        Me.OffererName.VisibleIndex = 4
         Me.OffererName.Width = 36
         '
         'Title
@@ -560,7 +571,7 @@ Partial Class FrmNewDocRequest
         Me.Title.Name = "Title"
         Me.Title.OptionsColumn.AllowEdit = False
         Me.Title.Visible = True
-        Me.Title.VisibleIndex = 5
+        Me.Title.VisibleIndex = 6
         Me.Title.Width = 56
         '
         'DocumentCode
@@ -570,7 +581,7 @@ Partial Class FrmNewDocRequest
         Me.DocumentCode.Name = "DocumentCode"
         Me.DocumentCode.OptionsColumn.AllowEdit = False
         Me.DocumentCode.Visible = True
-        Me.DocumentCode.VisibleIndex = 8
+        Me.DocumentCode.VisibleIndex = 9
         Me.DocumentCode.Width = 52
         '
         'RequestType
@@ -580,7 +591,7 @@ Partial Class FrmNewDocRequest
         Me.RequestType.Name = "RequestType"
         Me.RequestType.OptionsColumn.AllowEdit = False
         Me.RequestType.Visible = True
-        Me.RequestType.VisibleIndex = 4
+        Me.RequestType.VisibleIndex = 5
         Me.RequestType.Width = 38
         '
         'StoreDuration
@@ -590,7 +601,7 @@ Partial Class FrmNewDocRequest
         Me.StoreDuration.Name = "StoreDuration"
         Me.StoreDuration.OptionsColumn.AllowEdit = False
         Me.StoreDuration.Visible = True
-        Me.StoreDuration.VisibleIndex = 9
+        Me.StoreDuration.VisibleIndex = 10
         Me.StoreDuration.Width = 36
         '
         'Changes
@@ -600,7 +611,7 @@ Partial Class FrmNewDocRequest
         Me.Changes.Name = "Changes"
         Me.Changes.OptionsColumn.AllowEdit = False
         Me.Changes.Visible = True
-        Me.Changes.VisibleIndex = 6
+        Me.Changes.VisibleIndex = 7
         Me.Changes.Width = 52
         '
         'UpdateOrNewDocReason
@@ -610,7 +621,7 @@ Partial Class FrmNewDocRequest
         Me.UpdateOrNewDocReason.Name = "UpdateOrNewDocReason"
         Me.UpdateOrNewDocReason.OptionsColumn.AllowEdit = False
         Me.UpdateOrNewDocReason.Visible = True
-        Me.UpdateOrNewDocReason.VisibleIndex = 7
+        Me.UpdateOrNewDocReason.VisibleIndex = 8
         Me.UpdateOrNewDocReason.Width = 65
         '
         'RegDateTime
@@ -620,7 +631,7 @@ Partial Class FrmNewDocRequest
         Me.RegDateTime.Name = "RegDateTime"
         Me.RegDateTime.OptionsColumn.AllowEdit = False
         Me.RegDateTime.Visible = True
-        Me.RegDateTime.VisibleIndex = 11
+        Me.RegDateTime.VisibleIndex = 13
         Me.RegDateTime.Width = 41
         '
         'ReqDateTime
@@ -630,7 +641,7 @@ Partial Class FrmNewDocRequest
         Me.ReqDateTime.Name = "ReqDateTime"
         Me.ReqDateTime.OptionsColumn.AllowEdit = False
         Me.ReqDateTime.Visible = True
-        Me.ReqDateTime.VisibleIndex = 1
+        Me.ReqDateTime.VisibleIndex = 2
         Me.ReqDateTime.Width = 41
         '
         'FileExtension
@@ -640,7 +651,7 @@ Partial Class FrmNewDocRequest
         Me.FileExtension.Name = "FileExtension"
         Me.FileExtension.OptionsColumn.AllowEdit = False
         Me.FileExtension.Visible = True
-        Me.FileExtension.VisibleIndex = 20
+        Me.FileExtension.VisibleIndex = 12
         '
         'Attachment
         '
@@ -649,7 +660,7 @@ Partial Class FrmNewDocRequest
         Me.Attachment.Name = "Attachment"
         Me.Attachment.OptionsColumn.AllowEdit = False
         Me.Attachment.Visible = True
-        Me.Attachment.VisibleIndex = 10
+        Me.Attachment.VisibleIndex = 11
         Me.Attachment.Width = 62
         '
         'EditNo
@@ -669,7 +680,7 @@ Partial Class FrmNewDocRequest
         Me.EditOrReview.Name = "EditOrReview"
         Me.EditOrReview.OptionsColumn.AllowEdit = False
         Me.EditOrReview.Visible = True
-        Me.EditOrReview.VisibleIndex = 12
+        Me.EditOrReview.VisibleIndex = 14
         Me.EditOrReview.Width = 55
         '
         'RequesterDepBossOrAdminComment
@@ -679,7 +690,7 @@ Partial Class FrmNewDocRequest
         Me.RequesterDepBossOrAdminComment.Name = "RequesterDepBossOrAdminComment"
         Me.RequesterDepBossOrAdminComment.OptionsColumn.AllowEdit = False
         Me.RequesterDepBossOrAdminComment.Visible = True
-        Me.RequesterDepBossOrAdminComment.VisibleIndex = 21
+        Me.RequesterDepBossOrAdminComment.VisibleIndex = 22
         Me.RequesterDepBossOrAdminComment.Width = 87
         '
         'OkDocOwnerDepAdmin
@@ -689,7 +700,7 @@ Partial Class FrmNewDocRequest
         Me.OkDocOwnerDepAdmin.Name = "OkDocOwnerDepAdmin"
         Me.OkDocOwnerDepAdmin.OptionsColumn.AllowEdit = False
         Me.OkDocOwnerDepAdmin.Visible = True
-        Me.OkDocOwnerDepAdmin.VisibleIndex = 18
+        Me.OkDocOwnerDepAdmin.VisibleIndex = 20
         Me.OkDocOwnerDepAdmin.Width = 35
         '
         'DocOwnerDepBossOrAdminComment
@@ -699,7 +710,7 @@ Partial Class FrmNewDocRequest
         Me.DocOwnerDepBossOrAdminComment.Name = "DocOwnerDepBossOrAdminComment"
         Me.DocOwnerDepBossOrAdminComment.OptionsColumn.AllowEdit = False
         Me.DocOwnerDepBossOrAdminComment.Visible = True
-        Me.DocOwnerDepBossOrAdminComment.VisibleIndex = 19
+        Me.DocOwnerDepBossOrAdminComment.VisibleIndex = 21
         Me.DocOwnerDepBossOrAdminComment.Width = 52
         '
         'OkSysOfficeBoss
@@ -709,7 +720,7 @@ Partial Class FrmNewDocRequest
         Me.OkSysOfficeBoss.Name = "OkSysOfficeBoss"
         Me.OkSysOfficeBoss.OptionsColumn.AllowEdit = False
         Me.OkSysOfficeBoss.Visible = True
-        Me.OkSysOfficeBoss.VisibleIndex = 13
+        Me.OkSysOfficeBoss.VisibleIndex = 15
         Me.OkSysOfficeBoss.Width = 50
         '
         'SysOfficeBossComment
@@ -719,7 +730,7 @@ Partial Class FrmNewDocRequest
         Me.SysOfficeBossComment.Name = "SysOfficeBossComment"
         Me.SysOfficeBossComment.OptionsColumn.AllowEdit = False
         Me.SysOfficeBossComment.Visible = True
-        Me.SysOfficeBossComment.VisibleIndex = 14
+        Me.SysOfficeBossComment.VisibleIndex = 16
         Me.SysOfficeBossComment.Width = 33
         '
         'DocOwnerDepName
@@ -729,7 +740,7 @@ Partial Class FrmNewDocRequest
         Me.DocOwnerDepName.Name = "DocOwnerDepName"
         Me.DocOwnerDepName.OptionsColumn.AllowEdit = False
         Me.DocOwnerDepName.Visible = True
-        Me.DocOwnerDepName.VisibleIndex = 17
+        Me.DocOwnerDepName.VisibleIndex = 19
         Me.DocOwnerDepName.Width = 58
         '
         'OkSysAdmin
@@ -739,7 +750,7 @@ Partial Class FrmNewDocRequest
         Me.OkSysAdmin.Name = "OkSysAdmin"
         Me.OkSysAdmin.OptionsColumn.AllowEdit = False
         Me.OkSysAdmin.Visible = True
-        Me.OkSysAdmin.VisibleIndex = 15
+        Me.OkSysAdmin.VisibleIndex = 17
         Me.OkSysAdmin.Width = 92
         '
         'SysAdminComment
@@ -749,7 +760,7 @@ Partial Class FrmNewDocRequest
         Me.SysAdminComment.Name = "SysAdminComment"
         Me.SysAdminComment.OptionsColumn.AllowEdit = False
         Me.SysAdminComment.Visible = True
-        Me.SysAdminComment.VisibleIndex = 16
+        Me.SysAdminComment.VisibleIndex = 18
         Me.SysAdminComment.Width = 40
         '
         'Active
@@ -759,8 +770,6 @@ Partial Class FrmNewDocRequest
         Me.Active.Name = "Active"
         Me.Active.OptionsColumn.AllowEdit = False
         Me.Active.OptionsColumn.AllowFocus = False
-        Me.Active.Visible = True
-        Me.Active.VisibleIndex = 22
         '
         'RepositoryItemImageComboBox1
         '
@@ -829,7 +838,7 @@ Partial Class FrmNewDocRequest
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "درخواست تغییر یا ایجاد مستندات"
+        Me.Text = "مدیریت درخواست ها"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.cmbDocTitle.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -911,4 +920,5 @@ Partial Class FrmNewDocRequest
     Friend WithEvents mnuOpenAttachment As ToolStripMenuItem
     Friend WithEvents mnuDeleteAttachment As ToolStripMenuItem
     Friend WithEvents FileExtension As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RowNumber As DevExpress.XtraGrid.Columns.GridColumn
 End Class

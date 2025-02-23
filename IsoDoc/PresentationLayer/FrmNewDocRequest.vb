@@ -215,13 +215,21 @@ Public Class FrmNewDocRequest
             HighlightColumns("Title", "DocumentCode", "StoreDuration", "Changes", "UpdateOrNewDocReason", "RequestType")
 
         End If
+        Dim adminPersonCodes As New List(Of String)
+
 #Region "Systems office boss"
         'get systems office boss info
 
-        Dim dtSysOfficeBossInfo = Bus_NewDocRequest.GetPostUserInfo(270) '270 is the id of systems office boss depart id
-        Dim sysBossPCode = dtSysOfficeBossInfo.DefaultView.Item(0).Item("PersonCode")
+        Dim dtSysOfficePersons = Bus_NewDocRequest.GetSystemsUsers("SI300") '270 is the id of systems office boss depart id
+        'Dim sysBossPCode = dtSysOfficeBossInfo.DefaultView.Item(0).Item("PersonCode")
         'sysBossPCode = "14023910"
-        If sysBossPCode = userPersonCode Then
+        adminPersonCodes.Clear()
+        ' Loop through each DataRow in the DataTable.
+        For Each dr As DataRow In dtSysOfficePersons.Rows
+            ' Replace "YourColumnName" with the actual name of the column you want.
+            adminPersonCodes.Add(dr("PersonCode").ToString())
+        Next
+        If adminPersonCodes.Contains(userPersonCode) Then
             userType = UserTypes.SysOfficeBoss
             'this user is sys office boss
             Dim dtSysBossRequests = GetRequests("where OkDocOwnerDepAdmin = N'تایید'")
@@ -243,7 +251,7 @@ Public Class FrmNewDocRequest
 
         'Get dep admins
         Dim sysAdminsDt = Bus_NewDocRequest.GetDepAdmins("SI000") 'get systems dep admins
-        Dim adminPersonCodes As New List(Of String)
+        adminPersonCodes.Clear()
 
         ' Loop through each DataRow in the DataTable.
         For Each dr As DataRow In sysAdminsDt.Rows
@@ -435,7 +443,7 @@ Public Class FrmNewDocRequest
 
     Private Function AttachFile(docRequest As DocRequest, showFileName As Boolean) As Boolean
         Dim openFileDialog As New OpenFileDialog()
-        openFileDialog.Filter = "Word Files|*.docx;*.doc|Excel Files|*.xlsx;*.xls"
+        openFileDialog.Filter = "Word Files|*.docx;*.doc|Excel Files|*.xlsx;*.xls|PDF Files|*.pdf"
         openFileDialog.Title = "فایل پیوست مورد نظر را انتخاب کنید"
 
         If openFileDialog.ShowDialog() = DialogResult.OK Then
@@ -743,5 +751,11 @@ Public Class FrmNewDocRequest
 
     Private Sub GridView1_ShowingEditor(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles GridView1.ShowingEditor
 
+    End Sub
+
+    Private Sub GridView1_CustomUnboundColumnData(sender As Object, e As DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs) Handles GridView1.CustomUnboundColumnData
+        If e.Column.FieldName = "RowNumber" AndAlso e.IsGetData Then
+            e.Value = e.ListSourceRowIndex + 1
+        End If
     End Sub
 End Class

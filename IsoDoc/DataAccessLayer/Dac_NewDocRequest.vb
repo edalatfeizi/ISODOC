@@ -88,10 +88,10 @@
                     FROM Personely.dbo.Vw_AllPersonWithDepartName where CardNumber = '" + userCardNo + "'"
         GetUserInfo = persist1.GetDataTable(CnnString, SqlStr)
     End Function
-    Friend Function GetPostUserInfo(departId As String) As DataTable
+    Friend Function GetSystemsUsers(officeCode As String) As DataTable
         SqlStr = "SELECT *
-                    FROM Personely.dbo.Vw_AllPersonWithDepartName where DepartId = '" + departId + "'"
-        GetPostUserInfo = persist1.GetDataTable(CnnString, SqlStr)
+                    FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = '" + officeCode + "'"
+        GetSystemsUsers = persist1.GetDataTable(CnnString, SqlStr)
     End Function
     Friend Function GetMaxRequestId() As DataTable
         SqlStr = "select MAX(Id) as MaxReqId from [Isodoc_New].[dbo].tbDocRequests"
@@ -115,7 +115,7 @@
     End Function
 
     Friend Function GetAllDocsInfo() As DataTable
-        SqlStr = "select DISTINCT  DocumentName as 'عنوان سند', DocumentCode as 'کد سند', HistorySave as 'مدت زمان نگه داری'  from VwIso_Documents"
+        SqlStr = "select DISTINCT MainId as DocId, DocumentName as Title, DocumentCode as 'کد سند', HistorySave as 'مدت زمان نگه داری'  from VwIso_Documents"
         GetAllDocsInfo = persist1.GetDataTable(CnnString, SqlStr)
     End Function
 
