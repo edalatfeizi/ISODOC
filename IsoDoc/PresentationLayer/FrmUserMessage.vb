@@ -12,6 +12,12 @@ Imports System.Collections
 Imports IKIDCSHelper.Models
 Imports System.Linq
 Imports System.Threading.Tasks
+Imports IsoDocApp
+Imports Microsoft.Extensions.DependencyInjection
+Imports IsoDoc.Domain.Interfaces.Repositories
+Imports IsoDoc.Domain.Interfaces.Services
+Imports IsoDoc.Domain.Services
+Imports IsoDoc.Infrastructure.Repositories
 
 Public Class FrmUserMessage
     Private Bus_UserMessage1 As New Bus_UserMessage
@@ -19,7 +25,7 @@ Public Class FrmUserMessage
     Dim LogID As String
     Dim counter As Integer
     Dim dt As New DataTable
-
+    Dim isoDocCnnStr As String = ""
     Private Sub FillGrid()
         LogID = SystemInformation.UserName
 
@@ -64,6 +70,7 @@ Public Class FrmUserMessage
             Dim ProductionCS = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-Production").FirstOrDefault()
             Dim TrainingCS = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-Training").FirstOrDefault()
             Dim GeneralCs = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-GeneralObjects").FirstOrDefault()
+            isoDocCnnStr = IsodocCS.value
 
             MdlMain.CnnStringArchiveNew = ArchiveCS.Value
             MdlMain.CnnString = IsodocCS.Value
@@ -88,6 +95,14 @@ Public Class FrmUserMessage
 
     Private Async Sub FrmUserMessage_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Await SetupConnectionStrings()
+
+        'Configure DI for IsoDocApp, IsoDoc.Domain, IsoDoc.Infrastructure projects
+        Dim services As New ServiceCollection()
+        ConfigureServices(services, isoDocCnnStr)
+        Dim serviceProvider As IServiceProvider = services.BuildServiceProvider()
+        MdlMain.frmManageDocReqs = serviceProvider.GetRequiredService(Of FrmManageDocReqs)()
+        'End configure DI
+
         My.Settings.Archive_NewConnectionString = MdlMain.CnnStringArchiveNew
         My.Settings.Isodoc_NewConnectionString = MdlMain.CnnString
         Dim adapter As New Archive_NewDataSetTableAdapters.VwAch_BookTableAdapter
@@ -103,7 +118,13 @@ Public Class FrmUserMessage
         FillGrid()
 
     End Sub
-
+    Private Sub ConfigureServices(services As IServiceCollection, connStr As String)
+        ' Register your dependencies here
+        services.AddScoped(Of IDbConnection)(Function(sp) New SqlConnection(connStr))
+        services.AddSingleton(Of IManageDocReqsRepository, ManageDocReqRepository)()
+        services.AddSingleton(Of IManageDocReqsService, ManageDocReqsService)()
+        services.AddSingleton(Of FrmManageDocReqs)()
+    End Sub
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         PicShow.Visible = True
         counter = counter + 1

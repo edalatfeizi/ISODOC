@@ -1,4 +1,8 @@
+Imports IsoDocApp
+
 Module MdlMain
+    Public frmManageDocReqs As FrmManageDocReqs
+
     Public dt As New DataTable
     Public DocumentCode As String
 
