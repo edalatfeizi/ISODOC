@@ -122,7 +122,9 @@ Public Class FrmUserMessage
         ' Register your dependencies here
         services.AddScoped(Of IDbConnection)(Function(sp) New SqlConnection(connStr))
         services.AddSingleton(Of IManageDocReqsRepository, ManageDocReqRepository)()
+        services.AddSingleton(Of IPersonelyRepository, PersonelyRepository)()
         services.AddSingleton(Of IManageDocReqsService, ManageDocReqsService)()
+        services.AddSingleton(Of IPersonelyService, PersonelyService)()
         services.AddSingleton(Of FrmManageDocReqs)()
     End Sub
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick

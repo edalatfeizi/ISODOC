@@ -21,9 +21,15 @@ namespace IsoDoc.Domain.Services
             throw new NotImplementedException();
         }
 
-        public Task<List<DocRequest>> GetAll()
+        public async Task<List<DocRequest>> GetAll()
         {
-            return manageDocReqsRepo.GetAll();
+            return await manageDocReqsRepo.GetAll();
+        }
+
+        public async Task<int> GetLastDocReqId()
+        {
+            return await manageDocReqsRepo.GetLastDocReqId();
+
         }
     }
 }

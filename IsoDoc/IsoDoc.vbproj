@@ -313,12 +313,6 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Enums\UserTypes.vb" />
-    <Compile Include="FrmLoanedDocs.Designer.vb">
-      <DependentUpon>FrmLoanedDocs.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmLoanedDocs.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Helpers\DataGridHelper.vb" />
     <Compile Include="Models\DocRequest.vb" />
     <Compile Include="PresentationLayer\FrmISORoozshomar.Designer.vb">
@@ -594,9 +588,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmLoanedDocs.resx">
-      <DependentUpon>FrmLoanedDocs.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="PresentationLayer\FrmISORoozshomar.resx">
       <SubType>Designer</SubType>

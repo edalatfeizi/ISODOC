@@ -24,6 +24,8 @@ namespace IsoDoc.Infrastructure.Repositories
             return new DocRequest();
         }
 
+      
+
         public async Task<List<DocRequest>> GetAll()
         {
             connection.Open();
@@ -32,6 +34,25 @@ namespace IsoDoc.Infrastructure.Repositories
             var docRequests = await connection.QueryAsync<DocRequest>(docRequestsQuery);
             connection.Close();
             return docRequests.ToList();
+        }
+
+        public async Task<int> GetLastDocReqId()
+        {
+            try
+            {
+                connection.Open();
+                var maxDocReqIdQuery = "select MAX(Id) as MaxReqId from DocRequests";
+
+                var maxDocReqId = await connection.QueryAsync<int>(maxDocReqIdQuery);
+                connection.Close();
+                return maxDocReqId.First();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                Console.WriteLine(ex);
+            }
+           return 0; 
         }
     }
 }

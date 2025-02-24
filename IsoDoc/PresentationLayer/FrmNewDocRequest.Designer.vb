@@ -22,7 +22,6 @@ Partial Class FrmNewDocRequest
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNewDocRequest))
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
@@ -85,8 +84,8 @@ Partial Class FrmNewDocRequest
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager(Me.components)
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
         Me.mnuUploadAttachment = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuOpenAttachment = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDeleteAttachment = New System.Windows.Forms.ToolStripMenuItem()
@@ -107,7 +106,7 @@ Partial Class FrmNewDocRequest
         '
         Me.LabelControl1.Location = New System.Drawing.Point(1139, 183)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(54, 13)
+        Me.LabelControl1.Size = New System.Drawing.Size(50, 19)
         Me.LabelControl1.TabIndex = 89
         Me.LabelControl1.Text = "عنوان سند:"
         '
@@ -115,7 +114,7 @@ Partial Class FrmNewDocRequest
         '
         Me.LabelControl3.Location = New System.Drawing.Point(1130, 107)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(67, 13)
+        Me.LabelControl3.Size = New System.Drawing.Size(63, 19)
         Me.LabelControl3.TabIndex = 94
         Me.LabelControl3.Text = "نوع درخواست:"
         '
@@ -123,7 +122,7 @@ Partial Class FrmNewDocRequest
         '
         Me.LabelControl4.Location = New System.Drawing.Point(1106, 71)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(100, 13)
+        Me.LabelControl4.Size = New System.Drawing.Size(96, 19)
         Me.LabelControl4.TabIndex = 96
         Me.LabelControl4.Text = "واحد درخواست کننده:"
         '
@@ -131,7 +130,7 @@ Partial Class FrmNewDocRequest
         '
         Me.LabelControl5.Location = New System.Drawing.Point(1082, 220)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(124, 13)
+        Me.LabelControl5.Size = New System.Drawing.Size(116, 19)
         Me.LabelControl5.TabIndex = 98
         Me.LabelControl5.Text = "مدت زمان نگهداری سوابق:"
         '
@@ -139,7 +138,7 @@ Partial Class FrmNewDocRequest
         '
         Me.LabelControl6.Location = New System.Drawing.Point(734, 38)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(64, 13)
+        Me.LabelControl6.Size = New System.Drawing.Size(59, 19)
         Me.LabelControl6.TabIndex = 102
         Me.LabelControl6.Text = "شرح تغییرات:"
         '
@@ -156,7 +155,7 @@ Partial Class FrmNewDocRequest
         '
         Me.LabelControl7.Location = New System.Drawing.Point(699, 148)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(99, 13)
+        Me.LabelControl7.Size = New System.Drawing.Size(94, 19)
         Me.LabelControl7.TabIndex = 104
         Me.LabelControl7.Text = "علت تغییر/ایجاد سند:"
         '
@@ -192,7 +191,7 @@ Partial Class FrmNewDocRequest
         '
         Me.LabelControl9.Location = New System.Drawing.Point(1030, 260)
         Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(45, 13)
+        Me.LabelControl9.Size = New System.Drawing.Size(46, 19)
         Me.LabelControl9.TabIndex = 112
         Me.LabelControl9.Text = "تاریخ ثبت:"
         Me.LabelControl9.Visible = False
@@ -201,7 +200,7 @@ Partial Class FrmNewDocRequest
         '
         Me.LabelControl10.Location = New System.Drawing.Point(1123, 35)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(82, 13)
+        Me.LabelControl10.Size = New System.Drawing.Size(74, 19)
         Me.LabelControl10.TabIndex = 114
         Me.LabelControl10.Text = "شماره درخواست:"
         '
@@ -324,7 +323,7 @@ Partial Class FrmNewDocRequest
         '
         Me.LabelControl8.Location = New System.Drawing.Point(1116, 145)
         Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(81, 13)
+        Me.LabelControl8.Size = New System.Drawing.Size(74, 19)
         Me.LabelControl8.TabIndex = 128
         Me.LabelControl8.Text = "واحد متولی سند:"
         '

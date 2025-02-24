@@ -9,6 +9,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
 {
     public interface IManageDocReqsRepository
     {
+        Task<int> GetLastDocReqId();
         Task<DocRequest> CreateNewDocRequest(DocRequest docRequest);
         Task<List<DocRequest>> GetAll();
     }

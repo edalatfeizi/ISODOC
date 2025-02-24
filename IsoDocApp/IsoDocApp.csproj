@@ -35,11 +35,19 @@
     <Reference Include="DevExpress.BonusSkins.v21.2" />
     <Reference Include="DevExpress.Data.Desktop.v21.2" />
     <Reference Include="DevExpress.Data.v21.2" />
+    <Reference Include="DevExpress.Images.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v21.2.Core" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.2" />
     <Reference Include="DevExpress.XtraBars.v21.2" />
     <Reference Include="DevExpress.Sparkline.v21.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v21.2" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="IKIDCSHelper">
       <HintPath>..\..\..\..\..\..\IkidSystem+\IKIDCSHelper.dll</HintPath>
     </Reference>
@@ -68,16 +76,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmManageDocReqs.cs">
+    <Compile Include="ManageDocRequests\FrmManageDocReqs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmManageDocReqs.Designer.cs">
+    <Compile Include="ManageDocRequests\FrmManageDocReqs.Designer.cs">
       <DependentUpon>FrmManageDocReqs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDocRequests\FrmNewDocReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageDocRequests\FrmNewDocReq.Designer.cs">
+      <DependentUpon>FrmNewDocReq.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmManageDocReqs.resx">
+    <EmbeddedResource Include="ManageDocRequests\FrmManageDocReqs.resx">
       <DependentUpon>FrmManageDocReqs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageDocRequests\FrmNewDocReq.resx">
+      <DependentUpon>FrmNewDocReq.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
