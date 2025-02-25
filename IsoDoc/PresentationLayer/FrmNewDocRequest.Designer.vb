@@ -22,6 +22,7 @@ Partial Class FrmNewDocRequest
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNewDocRequest))
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
@@ -84,8 +85,8 @@ Partial Class FrmNewDocRequest
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.mnuUploadAttachment = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuOpenAttachment = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDeleteAttachment = New System.Windows.Forms.ToolStripMenuItem()
@@ -256,7 +257,7 @@ Partial Class FrmNewDocRequest
         '
         'txtNewDocTitle
         '
-        Me.txtNewDocTitle.Location = New System.Drawing.Point(816, 178)
+        Me.txtNewDocTitle.Location = New System.Drawing.Point(766, 244)
         Me.txtNewDocTitle.Multiline = True
         Me.txtNewDocTitle.Name = "txtNewDocTitle"
         Me.txtNewDocTitle.Size = New System.Drawing.Size(258, 34)

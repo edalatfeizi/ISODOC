@@ -1,6 +1,7 @@
 ﻿using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
+using IsoDoc.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,11 @@ namespace IsoDoc.Domain.Services
         public async Task<List<DocRequest>> GetAll()
         {
             return await manageDocReqsRepo.GetAll();
+        }
+
+        public async Task<List<Document>> GetDocuments()
+        {
+            return await manageDocReqsRepo.GetDocuments();  
         }
 
         public async Task<int> GetLastDocReqId()

@@ -1,4 +1,5 @@
 ﻿using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         Task<int> GetLastDocReqId();
         Task<DocRequest> CreateNewDocRequest(DocRequest docRequest);
         Task<List<DocRequest>> GetAll();
+        Task<List<Document>> GetDocuments();
     }
 }

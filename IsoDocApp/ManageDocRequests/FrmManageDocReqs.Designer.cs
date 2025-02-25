@@ -117,7 +117,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 940);
             this.Controls.Add(this.ribbonControl1);
-            this.Font = new System.Drawing.Font("Vazirmatn", 8.25F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox = false;
             this.Name = "FrmManageDocReqs";

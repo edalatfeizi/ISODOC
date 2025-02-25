@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Interfaces.Repositories;
+using IsoDoc.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -34,6 +35,16 @@ namespace IsoDoc.Infrastructure.Repositories
             var docRequests = await connection.QueryAsync<DocRequest>(docRequestsQuery);
             connection.Close();
             return docRequests.ToList();
+        }
+
+        public async Task<List<Document>> GetDocuments()
+        {
+            connection.Open();
+            var documentsQuery = "select DISTINCT MainId as DocId, DocumentName, DocumentCode, HistorySave from VwIso_Documents";
+
+            var documents = await connection.QueryAsync<Document>(documentsQuery);
+            connection.Close();
+            return documents.ToList();
         }
 
         public async Task<int> GetLastDocReqId()

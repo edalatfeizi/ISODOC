@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace IsoDoc.Infrastructure.Repositories
@@ -21,7 +22,7 @@ namespace IsoDoc.Infrastructure.Repositories
         public async Task<List<Department>> GetDepartments()
         {
             connection.Open();
-            var depsQuery = "select MDepartName from Personely.dbo.VwHR_MDepart where MDepartCode <> '0'  order by DepartID"; //,MDepartCode 
+            var depsQuery = "select MDepartName ,MDepartCode  from Personely.dbo.VwHR_MDepart where MDepartCode <> '0'  order by DepartID";
 
             var deps = await connection.QueryAsync<Department>(depsQuery);
             connection.Close();

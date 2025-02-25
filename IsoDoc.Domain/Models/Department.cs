@@ -11,7 +11,7 @@ namespace IsoDoc.Domain.Models
     {
         [Display(Name = "نام واحد")] // used to show as column caption in LookupEdit components  
         public string MDepartName { get; set; }
-        //[Display(Name = "کد واحد")]
-        //public string MDepartCode { get; set; }
+        [Display(Name = "کد واحد")]
+        public string MDepartCode { get; set; }
     }
 }

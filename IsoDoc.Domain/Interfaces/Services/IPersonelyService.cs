@@ -13,6 +13,5 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<Person?> GetUserInfo(string userCardNumber);
         Task<List<Department>> GetDepartments();
 
-
     }
 }
