@@ -2,10 +2,7 @@
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace IsoDoc.Domain.Services
@@ -17,9 +14,21 @@ namespace IsoDoc.Domain.Services
         {
             manageDocReqsRepo = manageDocReqsRepository;
         }
-        public Task<DocRequest> CreateNewDocRequest(DocRequest docRequest)
+
+        public async Task<DocRequestStep> AddNewDocRequestStepAsync(DocRequestStep docRequestStep)
         {
-            throw new NotImplementedException();
+            return await manageDocReqsRepo.AddNewDocRequestStepAsync(docRequestStep);
+        }
+
+        public async Task<DocRequestAttachment> AttachFileAsync(DocRequestAttachment docRequestAttachment)
+        {
+            return await manageDocReqsRepo.AttachFileAsync(docRequestAttachment);
+        }
+
+        public async Task<DocRequest> CreateNewDocRequest(DocRequest docRequest)
+        {
+
+            return await manageDocReqsRepo.CreateNewDocRequest(docRequest);
         }
 
         public async Task<List<DocRequest>> GetAll()
@@ -27,9 +36,14 @@ namespace IsoDoc.Domain.Services
             return await manageDocReqsRepo.GetAll();
         }
 
-        public async Task<List<Document>> GetDocuments()
+        public async Task<List<DocType>> GetDocTypes()
         {
-            return await manageDocReqsRepo.GetDocuments();  
+            return await manageDocReqsRepo.GetDocTypes();
+        }
+
+        public async Task<List<Document>> GetDocuments(string depCode)
+        {
+            return await manageDocReqsRepo.GetDocuments(depCode);  
         }
 
         public async Task<int> GetLastDocReqId()

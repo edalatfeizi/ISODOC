@@ -151,6 +151,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to درخواست تغییر سند .
+        /// </summary>
+        internal static string ChangeDocReq {
+            get {
+                return ResourceManager.GetString("ChangeDocReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تایید.
         /// </summary>
         internal static string Confirm {
@@ -187,11 +196,47 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to درخواست حذف سند .
+        /// </summary>
+        internal static string DeleteDocReq {
+            get {
+                return ResourceManager.GetString("DeleteDocReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to واحد.
+        /// </summary>
+        internal static string Dep {
+            get {
+                return ResourceManager.GetString("Dep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خالی بودن مقادیر.
         /// </summary>
         internal static string EmptyValues {
             get {
                 return ResourceManager.GetString("EmptyValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطا در پردازش اطلاعات.
+        /// </summary>
+        internal static string ErrorProccessingData {
+            get {
+                return ResourceManager.GetString("ErrorProccessingData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطا در پردازش اطلاعات.
+        /// </summary>
+        internal static string ExceptionThrown {
+            get {
+                return ResourceManager.GetString("ExceptionThrown", resourceCulture);
             }
         }
         
@@ -205,11 +250,47 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to برای.
+        /// </summary>
+        internal static string For {
+            get {
+                return ResourceManager.GetString("For", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درخواست ایجاد سند جدید.
+        /// </summary>
+        internal static string NewCreateDocReq {
+            get {
+                return ResourceManager.GetString("NewCreateDocReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خیر.
         /// </summary>
         internal static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to انتخاب مدت زمان نگهداری سند.
+        /// </summary>
+        internal static string SelectDocKeepDuration {
+            get {
+                return ResourceManager.GetString("SelectDocKeepDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to با عنوان.
+        /// </summary>
+        internal static string WithTitle {
+            get {
+                return ResourceManager.GetString("WithTitle", resourceCulture);
             }
         }
         

@@ -147,6 +147,9 @@
   <data name="Change" xml:space="preserve">
     <value>تغییر</value>
   </data>
+  <data name="ChangeDocReq" xml:space="preserve">
+    <value>درخواست تغییر سند </value>
+  </data>
   <data name="Confirm" xml:space="preserve">
     <value>تایید</value>
   </data>
@@ -159,14 +162,38 @@
   <data name="DeleteAttachedFile" xml:space="preserve">
     <value>حذف فایل پیوست</value>
   </data>
+  <data name="DeleteDocReq" xml:space="preserve">
+    <value>درخواست حذف سند </value>
+  </data>
+  <data name="Dep" xml:space="preserve">
+    <value>واحد</value>
+  </data>
   <data name="EmptyValues" xml:space="preserve">
     <value>خالی بودن مقادیر</value>
+  </data>
+  <data name="ErrorProccessingData" xml:space="preserve">
+    <value>خطا در پردازش اطلاعات</value>
+  </data>
+  <data name="ExceptionThrown" xml:space="preserve">
+    <value>خطا در پردازش اطلاعات</value>
   </data>
   <data name="FillAllValues" xml:space="preserve">
     <value>لطفا همه مقادیر را وارد کنید</value>
   </data>
+  <data name="For" xml:space="preserve">
+    <value>برای</value>
+  </data>
+  <data name="NewCreateDocReq" xml:space="preserve">
+    <value>درخواست ایجاد سند جدید</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>خیر</value>
+  </data>
+  <data name="SelectDocKeepDuration" xml:space="preserve">
+    <value>انتخاب مدت زمان نگهداری سند</value>
+  </data>
+  <data name="WithTitle" xml:space="preserve">
+    <value>با عنوان</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>بله</value>

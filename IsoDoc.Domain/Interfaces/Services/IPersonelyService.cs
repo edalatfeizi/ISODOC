@@ -1,9 +1,5 @@
-﻿using IsoDoc.Domain.Entities;
-using IsoDoc.Domain.Models;
-using System;
+﻿using IsoDoc.Domain.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace IsoDoc.Domain.Interfaces.Services
@@ -12,6 +8,7 @@ namespace IsoDoc.Domain.Interfaces.Services
     {
         Task<Person?> GetUserInfo(string userCardNumber);
         Task<List<Department>> GetDepartments();
-
+        Task<List<Colleague>> GetUserColleagues(string userDepCode, string userManagerDepCode);
+        Task<Person> GetUserManager(string userManagerDepCode);
     }
 }

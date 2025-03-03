@@ -14,6 +14,7 @@ namespace IsoDoc.Domain.Models
         public string PostTypeID { get; set; }
         public string DepartID { get; set; }
         public string PostID { get; set; }
+        public string UpperCode { get; set; }
 
     }
 }

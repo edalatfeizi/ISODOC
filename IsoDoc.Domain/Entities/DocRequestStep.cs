@@ -17,7 +17,7 @@ namespace IsoDoc.Domain.Entities
         public string ReceiverUserFullName { get; set; }
         public string ReceiverUserPost { get; set; }
         public string Description { get; set; }
-        public string IsApproved { get; set; }
+        public bool IsApproved { get; set; } = false;
 
         //public int ParentDocRequestId { get; set; }
         //[ForeignKey("ParentDocRequestId")]

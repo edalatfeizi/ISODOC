@@ -33,8 +33,10 @@
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.lblMessage = new DevExpress.XtraEditors.LabelControl();
             this.grpMessage = new DevExpress.XtraEditors.GroupControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.grpMessage)).BeginInit();
             this.grpMessage.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConfirm
@@ -45,7 +47,7 @@
             this.btnConfirm.Appearance.Options.UseFont = true;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.ImageOptions.Image")));
-            this.btnConfirm.Location = new System.Drawing.Point(0, 107);
+            this.btnConfirm.Location = new System.Drawing.Point(7, 13);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -62,7 +64,7 @@
             this.btnCancel.Appearance.Options.UseFont = true;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(135, 107);
+            this.btnCancel.Location = new System.Drawing.Point(142, 13);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -75,13 +77,14 @@
             // 
             this.lblMessage.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.lblMessage.Appearance.Options.UseFont = true;
+            this.lblMessage.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.lblMessage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblMessage.Location = new System.Drawing.Point(508, 33);
+            this.lblMessage.Location = new System.Drawing.Point(0, 33);
             this.lblMessage.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(48, 24);
+            this.lblMessage.Size = new System.Drawing.Size(556, 96);
             this.lblMessage.TabIndex = 26;
-            this.lblMessage.Text = "متن پیام";
+            this.lblMessage.Text = resources.GetString("lblMessage.Text");
             // 
             // grpMessage
             // 
@@ -92,15 +95,26 @@
             this.grpMessage.AppearanceCaption.BackColor = System.Drawing.SystemColors.Menu;
             this.grpMessage.AppearanceCaption.Options.UseBackColor = true;
             this.grpMessage.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.grpMessage.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
+            this.grpMessage.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpMessage.CaptionImageOptions.Image")));
             this.grpMessage.Controls.Add(this.lblMessage);
             this.grpMessage.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpMessage.GroupStyle = DevExpress.Utils.GroupStyle.Card;
             this.grpMessage.Location = new System.Drawing.Point(0, 0);
             this.grpMessage.Name = "grpMessage";
-            this.grpMessage.Size = new System.Drawing.Size(558, 101);
+            this.grpMessage.Size = new System.Drawing.Size(558, 169);
             this.grpMessage.TabIndex = 28;
             this.grpMessage.Text = "لبیلیبل";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnConfirm);
+            this.groupBox1.Controls.Add(this.btnCancel);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 162);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(558, 71);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
             // 
             // FrmMessageBox
             // 
@@ -108,11 +122,10 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 163);
+            this.ClientSize = new System.Drawing.Size(558, 233);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpMessage);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnConfirm);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -124,7 +137,7 @@
             this.Load += new System.EventHandler(this.FrmMessageBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMessage)).EndInit();
             this.grpMessage.ResumeLayout(false);
-            this.grpMessage.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -134,5 +147,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.LabelControl lblMessage;
         private DevExpress.XtraEditors.GroupControl grpMessage;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
