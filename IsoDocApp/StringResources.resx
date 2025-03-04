@@ -171,6 +171,9 @@
   <data name="EmptyValues" xml:space="preserve">
     <value>خالی بودن مقادیر</value>
   </data>
+  <data name="ErrorAttachFile" xml:space="preserve">
+    <value>لطفا سند مورد نظر خود را پیوست کنید.</value>
+  </data>
   <data name="ErrorProccessingData" xml:space="preserve">
     <value>خطا در پردازش اطلاعات</value>
   </data>

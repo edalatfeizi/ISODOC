@@ -77,12 +77,15 @@
             // 
             this.lblMessage.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.lblMessage.Appearance.Options.UseFont = true;
-            this.lblMessage.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lblMessage.Appearance.Options.UseTextOptions = true;
+            this.lblMessage.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblMessage.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblMessage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.lblMessage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblMessage.Location = new System.Drawing.Point(0, 33);
+            this.lblMessage.Location = new System.Drawing.Point(-1364, 33);
             this.lblMessage.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(556, 96);
+            this.lblMessage.Size = new System.Drawing.Size(1920, 24);
             this.lblMessage.TabIndex = 26;
             this.lblMessage.Text = resources.GetString("lblMessage.Text");
             // 
@@ -137,6 +140,7 @@
             this.Load += new System.EventHandler(this.FrmMessageBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMessage)).EndInit();
             this.grpMessage.ResumeLayout(false);
+            this.grpMessage.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

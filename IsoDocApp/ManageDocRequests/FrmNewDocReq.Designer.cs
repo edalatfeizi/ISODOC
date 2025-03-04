@@ -460,7 +460,7 @@
             // 
             this.toastNotificationsManager1.ApplicationId = "336d853b-db33-40b1-b4d4-6bb2b17cc2b8";
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("2ac05d1e-a6ac-4d98-8785-94f8fb42de06", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "عملیات موفقیت آمیز", "اطلاعات با موفقیت ذخیره شده.", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("2ac05d1e-a6ac-4d98-8785-94f8fb42de06", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "عملیات موفقیت آمیز", "ثبت درخواست جدید با موفقیت انجام شد.", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
             // 
             // FrmNewDocReq
             // 

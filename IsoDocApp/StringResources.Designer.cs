@@ -223,6 +223,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لطفا سند مورد نظر خود را پیوست کنید..
+        /// </summary>
+        internal static string ErrorAttachFile {
+            get {
+                return ResourceManager.GetString("ErrorAttachFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خطا در پردازش اطلاعات.
         /// </summary>
         internal static string ErrorProccessingData {

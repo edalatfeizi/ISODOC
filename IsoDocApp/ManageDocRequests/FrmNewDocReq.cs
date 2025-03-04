@@ -25,6 +25,7 @@ using IsoDocApp.Extensions;
 using DevExpress.XtraPrinting.Native.WebClientUIControl;
 using System.Xml;
 using Newtonsoft.Json;
+using System.Linq.Expressions;
 namespace IsoDocApp.ManageDocRequests
 {
     public partial class FrmNewDocReq : DevExpress.XtraEditors.XtraForm
@@ -195,81 +196,25 @@ namespace IsoDocApp.ManageDocRequests
         private async void btnSave_Click(object sender, EventArgs e)
         {
             var frmMsgBox = new FrmMessageBox();
+
             try
             {
 
                 if (!string.IsNullOrEmpty(cmbReqTypes.EditValue.ToString()))
                 {
-                    if (cmbReqTypes.EditValue.ToString() == StringResources.Create)
+                    if (cmbReqTypes.EditValue.ToString() == StringResources.Create && ValidateControls<BaseEdit>(cmbReqTypes, txtTitle, txtReason, cmbDocOwnerDep, cmbDocTypes, cmbKeepDurations))
                     {
-                        //validate controls
-                        if (hasEmptyValues(txtTitle, txtReason, cmbDocOwnerDep, cmbDocTypes, cmbKeepDurations))
-                        {
-                            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
-                            {
-                                Title = StringResources.EmptyValues,
-                                Message = StringResources.FillAllValues,
-                                ConfirmButtonText = StringResources.Confirm,
-                                DevExpressIconId = "warning",
-                                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
-                            });
-                            frmMsgBox.ShowDialog();
-                        }
-                        else
-                        {
-                            newDocReq = new DocRequest
-                            {
-                                DocRequestType = (DocRequestType)cmbReqTypes.ItemIndex,
-
-                                Title = txtTitle.Text.Trim(),
-                                CreateReason = txtReason.Text.Trim(),
-                                KeepDuration = cmbKeepDurations.Text.Trim(),
-                                DocOwnerDep = cmbDocOwnerDep.Text.Trim(),
-                                DocType = cmbDocTypes.Text.Trim(),
-                                CreatorDep = cmbDeps.Text.Trim(),
-                                CreatedBy = userInfo.PersonCode,
-                                ModifiedBy = userInfo.PersonCode
-                            };
-
-                            ShowProgressBar(true);
-                            var docReq = await manageDocReqsService.CreateNewDocRequest(newDocReq);
-
-                            docRequestStep = new DocRequestStep
-                            {
-                                DocRequestId = docReq.Id,
-                                SenderUserPersonCode = userInfo.PersonCode,
-                                SenderUserPost = userInfo.Posttxt,
-                                SenderUserFullName = $"{userInfo.FirstName} {userInfo.LastName}",
-
-                                ReceiverUserPersonCode = userManagerInfo.PersonCode,
-                                ReceiverUserPost = userManagerInfo.Posttxt,
-                                ReceiverUserFullName = $"{userManagerInfo.FirstName} {userManagerInfo.LastName}",
-                                Description = $"{StringResources.NewCreateDocReq} {StringResources.For} {StringResources.Dep} {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {txtTitle.Text}",
-                               
-                                CreatedBy = userInfo.PersonCode,
-                                ModifiedBy = userInfo.PersonCode,
-                            };
-
-                            var docReqStep = await manageDocReqsService.AddNewDocRequestStepAsync(docRequestStep);
-
-                            if (docReqAttachment != null)
-                            {
-                                docReqAttachment.DocRequestId  = docReq.Id;
-                                docReqAttachment.CreatedBy = userInfo.PersonCode;
-                                docReqAttachment.ModifiedBy = userInfo.PersonCode;
-
-                                await manageDocReqsService.AttachFileAsync(docReqAttachment);
-                            }
-                            ShowProgressBar(false);
-                            //TODO: send sms to receiver user
-
-                            //toastNotificationsManager1.ShowNotification()
-                            toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
-
-                        }
-
+                        if(CheckAttachment())
+                            AddNewDocRequest(DocRequestType.Create);
+                    }
+                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Change && ValidateControls<BaseEdit>(cmbReqTypes, cmbDocOwnerDep, cmbDocs, txtReason, txtChanges ))
+                    {
+                        if (CheckAttachment())
+                            AddNewDocRequest(DocRequestType.Update);
+                    }
+                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Delete && ValidateControls<BaseEdit>(cmbReqTypes, cmbDocOwnerDep, cmbDocs, txtReason))
+                    {
+                        AddNewDocRequest(DocRequestType.Delete);
 
                     }
                 }
@@ -293,15 +238,101 @@ namespace IsoDocApp.ManageDocRequests
         
 
         }
-        private bool hasEmptyValues<T>(params T[] types)
+        private async void AddNewDocRequest(DocRequestType docRequestType)
+        {
+
+            var newDocReq = new DocRequest
+            {
+                DocRequestType = docRequestType,
+                CreateReason = txtReason.Text.Trim(),
+                ChangeSummary = txtChanges.Text.Trim(),
+                DocOwnerDep = cmbDocOwnerDep.Text.Trim(),
+                DocCode = !string.IsNullOrEmpty(cmbDocs.Text) ? documents.Where(x => x.DocumentName == cmbDocs.Text).First().DocumentCode : "",
+                DocType = cmbDocTypes.Text.Trim(),
+                KeepDuration = cmbKeepDurations.Text.Trim(),
+                CreatorDep = cmbDeps.Text.Trim(),
+                CreatedBy = userInfo.PersonCode,
+                ModifiedBy = userInfo.PersonCode,
+
+                
+            };
+            var desc = "";
+            switch (docRequestType)
+            {
+                case DocRequestType.Create:
+                    
+                    newDocReq.Title = $"{StringResources.NewCreateDocReq} {StringResources.WithTitle} : {txtTitle.Text.Trim()}";
+                    newDocReq.ChangeSummary = "";
+                    newDocReq.DocCode = "";
+
+                    desc = $"{StringResources.NewCreateDocReq} {StringResources.For} {StringResources.Dep} {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {txtTitle.Text}";
+                    break;
+                case DocRequestType.Update:
+
+                    newDocReq.Title = $"{StringResources.ChangeDocReq} {StringResources.WithTitle} : {cmbDocs.Text}";
+                    newDocReq.DocType = "";
+                    newDocReq.KeepDuration = "";
+
+                    desc = $"{StringResources.ChangeDocReq} {StringResources.For} {StringResources.Dep} {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {cmbDocs.Text}";
+
+                    break;
+                case DocRequestType.Delete:
+                    newDocReq.Title = $"{StringResources.DeleteDocReq} {StringResources.WithTitle} : {cmbDocs.Text}";
+                    newDocReq.ChangeSummary = "";
+                    newDocReq.DocType = "";
+                    newDocReq.KeepDuration = "";
+
+                    desc = $"{StringResources.DeleteDocReq} {StringResources.For} {StringResources.Dep} {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {cmbDocs.Text}";
+
+                    break;
+            }
+            ShowProgressBar(true);
+            var docReq = await manageDocReqsService.CreateNewDocRequest(newDocReq);
+
+            docRequestStep = new DocRequestStep
+            {
+                DocRequestId = docReq.Id,
+                SenderUserPersonCode = userInfo.PersonCode,
+                SenderUserPost = userInfo.Posttxt,
+                SenderUserFullName = $"{userInfo.FirstName} {userInfo.LastName}",
+
+                ReceiverUserPersonCode = userManagerInfo.PersonCode,
+                ReceiverUserPost = userManagerInfo.Posttxt,
+                ReceiverUserFullName = $"{userManagerInfo.FirstName} {userManagerInfo.LastName}",
+                Description = desc,
+
+                CreatedBy = userInfo.PersonCode,
+                ModifiedBy = userInfo.PersonCode,
+            };
+
+            var docReqStep = await manageDocReqsService.AddNewDocRequestStepAsync(docRequestStep);
+
+            if (docReqAttachment != null)
+            {
+                docReqAttachment.DocRequestId = docReq.Id;
+                docReqAttachment.CreatedBy = userInfo.PersonCode;
+                docReqAttachment.ModifiedBy = userInfo.PersonCode;
+
+                await manageDocReqsService.AttachFileAsync(docReqAttachment);
+            }
+            ShowProgressBar(false);
+            //TODO: send sms to receiver user
+
+            //toastNotificationsManager1.ShowNotification()
+            toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+        private bool HasEmptyValues<T>(params T[] types)
         {
             var isEmpty = false;
             try
             {
                 foreach (var type in types)
                 {
-                    var control = type is TextEdit ? type as TextEdit : type as LookUpEdit;
-                    if (control.Enabled && string.IsNullOrEmpty(control.Text))
+
+                    var control = type as BaseEdit;
+                    if (type is BaseEdit && control.Enabled && string.IsNullOrEmpty(control.Text))
                         isEmpty = true;
                 }
             }
@@ -322,6 +353,44 @@ namespace IsoDocApp.ManageDocRequests
             }
             return isEmpty;
           
+        }
+        private bool ValidateControls<T>(params T[] types)
+        {
+            var frmMsgBox = new FrmMessageBox();
+
+            if (HasEmptyValues(types))
+            {
+                frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+                {
+                    Title = StringResources.EmptyValues,
+                    Message = StringResources.FillAllValues,
+                    ConfirmButtonText = StringResources.Confirm,
+                    DevExpressIconId = "warning",
+                    DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+                });
+                frmMsgBox.ShowDialog();
+                return false;
+            }
+            return true;
+
+        }
+        private bool CheckAttachment()
+        {
+            if (docReqAttachment == null)
+            {
+                var frmMsgBox = new FrmMessageBox();
+                frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+                {
+                    Title = StringResources.ErrorProccessingData,
+                    Message = $"{StringResources.ErrorAttachFile}",
+                    ConfirmButtonText = StringResources.Confirm,
+                    DevExpressIconId = "cancel",
+                    DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+                });
+                frmMsgBox.ShowDialog();
+                return false;
+            }
+            return true;
         }
         private void cmbReqTypes_EditValueChanged(object sender, EventArgs e)
         {
