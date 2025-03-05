@@ -15,8 +15,9 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         Task<DocRequestStep> AddNewDocRequestStepAsync(DocRequestStep docRequestStep);
         Task<DocRequestAttachment> AttachFileAsync(DocRequestAttachment docRequestAttachment);
 
-        Task<List<DocRequest>> GetAll();
+        Task<List<DocRequest>> GetAll(string creatorPersonCode = null, bool active = true);
         Task<List<Document>> GetDocuments(string depCode);
         Task<List<DocType>> GetDocTypes();
+        Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId);
     }
 }

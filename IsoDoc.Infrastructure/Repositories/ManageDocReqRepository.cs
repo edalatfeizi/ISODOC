@@ -80,9 +80,9 @@ namespace IsoDoc.Infrastructure.Repositories
             {
                 connection.Open();
                 var docRequestsQuery = $@"
-                    INSERT INTO DocRequests (DocOwnerDep, DocCode, Title, KeepDuration, ChangeSummary, CreateReason, DocRequestType, DocType, CreatorDep, {baseEntityInsertProps})
+                    INSERT INTO DocRequests (DocId, DocOwnerDep, DocCode, Title, KeepDuration, ChangeSummary, CreateReason, DocRequestType, DocType, CreatorDep, {baseEntityInsertProps})
                     OUTPUT INSERTED.Id
-                    VALUES (@DocOwnerDep, @DocCode, @Title, @KeepDuration, @ChangeSummary, @CreateReason, @DocRequestType, @DocType, @CreatorDep, {baseEntityInsertPropsValues});";
+                    VALUES (@DocId, @DocOwnerDep, @DocCode, @Title, @KeepDuration, @ChangeSummary, @CreateReason, @DocRequestType, @DocType, @CreatorDep, {baseEntityInsertPropsValues});";
 
 
                 var newDocReqId = await connection.QuerySingleAsync<int>(docRequestsQuery, docRequest);
@@ -102,12 +102,20 @@ namespace IsoDoc.Infrastructure.Repositories
 
 
 
-        public async Task<List<DocRequest>> GetAll()
+        public async Task<List<DocRequest>> GetAll(string creatorPersonCode = null, bool active = true)
         {
             try
             {
                 connection.Open();
-                var docRequestsQuery = "select * from DocRequests";
+                var docRequestsQuery = "SELECT   DR.*, CASE WHEN DRA.DocRequestId IS NOT NULL THEN 1" +
+                                       " ELSE 0 END AS HasAttachment FROM DocRequests DR LEFT JOIN  DocRequestAttachments DRA ON DR.Id = DRA.DocRequestId GROUP BY  DR.Id;";
+                if (creatorPersonCode != null)
+                {
+                    docRequestsQuery += $"where CreatedBy = '{creatorPersonCode}'";
+                }
+                docRequestsQuery += $" and Active = '{active}' ";
+
+                docRequestsQuery += $" order by Id desc ";
 
                 var docRequests = await connection.QueryAsync<DocRequest>(docRequestsQuery);
                 connection.Close();
@@ -119,6 +127,25 @@ namespace IsoDoc.Infrastructure.Repositories
                 throw ex;
             }
       
+        }
+
+        public async Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId)
+        {
+            try
+            {
+                connection.Open();
+                var docRequestStepsQuery = $"select * from DocRequestSteps where DocRequestId = '{docReqId}' and Active = '1' order by Id";
+               
+
+                var docRequestSteps = await connection.QueryAsync<DocRequestStep>(docRequestStepsQuery);
+                connection.Close();
+                return docRequestSteps.ToList();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                throw ex;
+            }
         }
 
         public async Task<List<DocType>> GetDocTypes()

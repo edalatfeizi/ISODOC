@@ -240,7 +240,6 @@ namespace IsoDocApp.ManageDocRequests
         }
         private async void AddNewDocRequest(DocRequestType docRequestType)
         {
-
             var newDocReq = new DocRequest
             {
                 DocRequestType = docRequestType,
@@ -248,6 +247,7 @@ namespace IsoDocApp.ManageDocRequests
                 ChangeSummary = txtChanges.Text.Trim(),
                 DocOwnerDep = cmbDocOwnerDep.Text.Trim(),
                 DocCode = !string.IsNullOrEmpty(cmbDocs.Text) ? documents.Where(x => x.DocumentName == cmbDocs.Text).First().DocumentCode : "",
+                DocId = !string.IsNullOrEmpty(cmbDocs.Text) ? documents.Where(x => x.DocumentName == cmbDocs.Text).First().DocId : 0,
                 DocType = cmbDocTypes.Text.Trim(),
                 KeepDuration = cmbKeepDurations.Text.Trim(),
                 CreatorDep = cmbDeps.Text.Trim(),

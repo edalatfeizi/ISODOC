@@ -1,4 +1,5 @@
-﻿using IsoDoc.Domain.Models;
+﻿using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -10,5 +11,7 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<List<Department>> GetDepartments();
         Task<List<Colleague>> GetUserColleagues(string userDepCode, string userManagerDepCode);
         Task<Person> GetUserManager(string userManagerDepCode);
+
+
     }
 }

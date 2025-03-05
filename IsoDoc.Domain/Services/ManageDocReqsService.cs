@@ -31,9 +31,14 @@ namespace IsoDoc.Domain.Services
             return await manageDocReqsRepo.CreateNewDocRequest(docRequest);
         }
 
-        public async Task<List<DocRequest>> GetAll()
+        public async Task<List<DocRequest>> GetAll(string creatorPersonCode = null, bool active = true)
         {
-            return await manageDocReqsRepo.GetAll();
+            return await manageDocReqsRepo.GetAll(creatorPersonCode);
+        }
+
+        public async Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId)
+        {
+            return await manageDocReqsRepo.GetDocRequestSteps(docReqId);
         }
 
         public async Task<List<DocType>> GetDocTypes()
