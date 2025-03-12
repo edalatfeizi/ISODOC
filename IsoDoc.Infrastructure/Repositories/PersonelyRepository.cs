@@ -50,7 +50,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
                 connection.Close();
 
-                return userManagers.Union(userEmployees).Select(x => new Colleague { PersonCode = x.PersonCode, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt }).ToList();
+                return userManagers.Union(userEmployees).Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt }).ToList();
             }
             catch (Exception ex)
             {

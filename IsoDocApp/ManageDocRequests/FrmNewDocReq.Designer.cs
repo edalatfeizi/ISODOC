@@ -199,9 +199,9 @@
             this.labelControl17.Appearance.Options.UseFont = true;
             this.labelControl17.Location = new System.Drawing.Point(813, 229);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(46, 24);
+            this.labelControl17.Size = new System.Drawing.Size(50, 24);
             this.labelControl17.TabIndex = 131;
-            this.labelControl17.Text = "نوع سند";
+            this.labelControl17.Text = "نوع سند:";
             // 
             // cmbDocs
             // 
@@ -228,9 +228,9 @@
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Location = new System.Drawing.Point(793, 153);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(65, 24);
+            this.labelControl15.Size = new System.Drawing.Size(69, 24);
             this.labelControl15.TabIndex = 128;
-            this.labelControl15.Text = "انتخاب سند";
+            this.labelControl15.Text = "انتخاب سند:";
             // 
             // btnFileName
             // 

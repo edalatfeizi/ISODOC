@@ -26,6 +26,7 @@ using DevExpress.XtraPrinting.Native.WebClientUIControl;
 using System.Xml;
 using Newtonsoft.Json;
 using System.Linq.Expressions;
+using IsoDocApp.Helpers;
 namespace IsoDocApp.ManageDocRequests
 {
     public partial class FrmNewDocReq : DevExpress.XtraEditors.XtraForm
@@ -34,7 +35,6 @@ namespace IsoDocApp.ManageDocRequests
         private readonly IPersonelyService personelyService;
         private Person userInfo;
         private Person userManagerInfo;
-        //private List<Colleague> userColleagues;
         private List<Department> departments;
         private List<Document> documents;
         private List<DocType> docTypes;
@@ -60,7 +60,6 @@ namespace IsoDocApp.ManageDocRequests
             userInfo = await personelyService.GetUserInfo(userName);
             userManagerInfo = await personelyService.GetUserManager(userInfo.UpperCode);
             departments = await personelyService.GetDepartments();
-            //userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
             //documents = await manageDocReqsService.GetDocuments("B1100");
             //cmbDocs.Properties.DataSource = documents;
 
@@ -202,17 +201,17 @@ namespace IsoDocApp.ManageDocRequests
 
                 if (!string.IsNullOrEmpty(cmbReqTypes.EditValue.ToString()))
                 {
-                    if (cmbReqTypes.EditValue.ToString() == StringResources.Create && ValidateControls<BaseEdit>(cmbReqTypes, txtTitle, txtReason, cmbDocOwnerDep, cmbDocTypes, cmbKeepDurations))
+                    if (cmbReqTypes.EditValue.ToString() == StringResources.Create && Validators.ValidateControls<BaseEdit>(cmbReqTypes, txtTitle, txtReason, cmbDocOwnerDep, cmbDocTypes, cmbKeepDurations))
                     {
                         if(CheckAttachment())
                             AddNewDocRequest(DocRequestType.Create);
                     }
-                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Change && ValidateControls<BaseEdit>(cmbReqTypes, cmbDocOwnerDep, cmbDocs, txtReason, txtChanges ))
+                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Change && Validators.ValidateControls<BaseEdit>(cmbReqTypes, cmbDocOwnerDep, cmbDocs, txtReason, txtChanges ))
                     {
                         if (CheckAttachment())
                             AddNewDocRequest(DocRequestType.Update);
                     }
-                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Delete && ValidateControls<BaseEdit>(cmbReqTypes, cmbDocOwnerDep, cmbDocs, txtReason))
+                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Delete && Validators.ValidateControls<BaseEdit>(cmbReqTypes, cmbDocOwnerDep, cmbDocs, txtReason))
                     {
                         AddNewDocRequest(DocRequestType.Delete);
 
@@ -250,6 +249,7 @@ namespace IsoDocApp.ManageDocRequests
                 DocId = !string.IsNullOrEmpty(cmbDocs.Text) ? documents.Where(x => x.DocumentName == cmbDocs.Text).First().DocId : 0,
                 DocType = cmbDocTypes.Text.Trim(),
                 KeepDuration = cmbKeepDurations.Text.Trim(),
+                DocRequestStatus = DocRequestStatus.InProgress,
                 CreatorDep = cmbDeps.Text.Trim(),
                 CreatedBy = userInfo.PersonCode,
                 ModifiedBy = userInfo.PersonCode,
@@ -323,57 +323,7 @@ namespace IsoDocApp.ManageDocRequests
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-        private bool HasEmptyValues<T>(params T[] types)
-        {
-            var isEmpty = false;
-            try
-            {
-                foreach (var type in types)
-                {
-
-                    var control = type as BaseEdit;
-                    if (type is BaseEdit && control.Enabled && string.IsNullOrEmpty(control.Text))
-                        isEmpty = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                var frmMsgBox = new FrmMessageBox();
-
-                frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
-                {
-                    Title = StringResources.ExceptionThrown,
-                    Message = $"{ex.Message} : {ex.InnerException}",
-                    ConfirmButtonText = StringResources.Confirm,
-                    DevExpressIconId = "cancel",
-                    DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
-                });
-                frmMsgBox.ShowDialog();
-                isEmpty = false;
-            }
-            return isEmpty;
-          
-        }
-        private bool ValidateControls<T>(params T[] types)
-        {
-            var frmMsgBox = new FrmMessageBox();
-
-            if (HasEmptyValues(types))
-            {
-                frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
-                {
-                    Title = StringResources.EmptyValues,
-                    Message = StringResources.FillAllValues,
-                    ConfirmButtonText = StringResources.Confirm,
-                    DevExpressIconId = "warning",
-                    DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
-                });
-                frmMsgBox.ShowDialog();
-                return false;
-            }
-            return true;
-
-        }
+   
         private bool CheckAttachment()
         {
             if (docReqAttachment == null)

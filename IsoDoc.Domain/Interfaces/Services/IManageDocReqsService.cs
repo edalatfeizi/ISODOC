@@ -14,11 +14,14 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<DocRequestStep> AddNewDocRequestStepAsync(DocRequestStep docRequestStep);
         Task<DocRequestAttachment> AttachFileAsync(DocRequestAttachment docRequestAttachment);
 
-        Task<List<DocRequest>> GetAll(string creatorPersonCode = null, bool active = true);
+        Task<List<DocRequest>> FilterDocRequests(FilterDocRequests filterDocRequests);
         Task<int> GetLastDocReqId();
         Task<List<Document>> GetDocuments(string depCode);
         Task<List<DocType>> GetDocTypes();
         Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId);
+        Task<DocRequestAttachment?> GetDocRequestAttachment(int docReqId);
+        Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode);
+
 
     }
 }

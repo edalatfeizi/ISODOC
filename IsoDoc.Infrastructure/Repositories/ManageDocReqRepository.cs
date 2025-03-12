@@ -102,22 +102,54 @@ namespace IsoDoc.Infrastructure.Repositories
 
 
 
-        public async Task<List<DocRequest>> GetAll(string creatorPersonCode = null, bool active = true)
+        public async Task<List<DocRequest>> FilterDocRequests(FilterDocRequests filterDocRequests)
         {
             try
             {
                 connection.Open();
-                var docRequestsQuery = "SELECT   DR.*, CASE WHEN DRA.DocRequestId IS NOT NULL THEN 1" +
-                                       " ELSE 0 END AS HasAttachment FROM DocRequests DR LEFT JOIN  DocRequestAttachments DRA ON DR.Id = DRA.DocRequestId GROUP BY  DR.Id;";
-                if (creatorPersonCode != null)
+
+                var docRequestsQuery = @"
+                                        SELECT 
+                                            DR.*,
+                                            CASE 
+                                                WHEN DRA.DocRequestID IS NOT NULL THEN 'دارد'
+                                                ELSE 'ندارد'
+                                            END AS HasAttachments
+                                            FROM 
+                                                DocRequests DR
+                                            LEFT JOIN 
+                                                DocRequestAttachments DRA ON DR.Id = DRA.DocRequestId
+                                           ";
+                docRequestsQuery += @" where DR.Active = @Active ";
+
+                if (!string.IsNullOrEmpty(filterDocRequests.CreatorPersonCode))
                 {
-                    docRequestsQuery += $"where CreatedBy = '{creatorPersonCode}'";
+                    docRequestsQuery += " and DR.CreatedBy = @CreatorPersonCode ";
                 }
-                docRequestsQuery += $" and Active = '{active}' ";
+                if (!string.IsNullOrEmpty(filterDocRequests.ReceiverPersonCode))
+                {
+                    var receivedDocReqs = $"select DocRequestId from DocRequestSteps where ReceiverUserPersonCode = '{filterDocRequests.ReceiverPersonCode}' and IsApproved = 'false' and active = '1' group by DocRequestId";
 
-                docRequestsQuery += $" order by Id desc ";
+                    docRequestsQuery += $" and DR.Id in ({receivedDocReqs}) ";
+                }
 
-                var docRequests = await connection.QueryAsync<DocRequest>(docRequestsQuery);
+                if (!string.IsNullOrEmpty(filterDocRequests.SenderPersonCode))
+                {
+                    var receivedDocReqs = $"select DocRequestId from DocRequestSteps where SenderUserPersonCode = '{filterDocRequests.SenderPersonCode}' and active = '1' group by DocRequestId";
+
+                    docRequestsQuery += $" and DR.Id in ({receivedDocReqs}) ";
+                }
+
+                docRequestsQuery += " ORDER BY DR.Id DESC ";
+
+                var parameters = new
+                {
+                    Active = filterDocRequests.Active,
+                    CreatorPersonCode = filterDocRequests.CreatorPersonCode,
+                };
+
+                var docRequests = await connection.QueryAsync<DocRequest>(docRequestsQuery, parameters);
+
                 connection.Close();
                 return docRequests.ToList();
             }
@@ -126,7 +158,25 @@ namespace IsoDoc.Infrastructure.Repositories
                 connection.Close();
                 throw ex;
             }
-      
+        }
+
+        public async Task<DocRequestAttachment?> GetDocRequestAttachment(int docReqId)
+        {
+            try
+            {
+                connection.Open();
+                var docRequestStepsQuery = $"select * from DocRequestAttachments where DocRequestId = '{docReqId}' and Active = '1' ";
+
+
+                var docRequestAttachments = await connection.QueryAsync<DocRequestAttachment>(docRequestStepsQuery);
+                connection.Close();
+                return docRequestAttachments.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                throw ex;
+            }
         }
 
         public async Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId)
@@ -200,9 +250,34 @@ namespace IsoDoc.Infrastructure.Repositories
             catch (Exception ex)
             {
                 connection.Close();
-                Console.WriteLine(ex);
+
+                throw ex;
             }
-            return 0;
+        }
+
+        public async Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode)
+        {
+            try
+            {
+                connection.Open();
+
+                var updateQuery = @"
+                                    UPDATE DocRequestSteps
+                                        SET IsApproved = 'true'
+                                        WHERE DocRequestId = @DocReqId and ReceiverUserPersonCode = @ReceiverUserPersonCode";
+
+                var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, ReceiverUserPersonCode = userPersonCode });
+
+                connection.Close();
+
+                return affectedRows > 0;
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                throw ex;
+            }
+
         }
     }
 }

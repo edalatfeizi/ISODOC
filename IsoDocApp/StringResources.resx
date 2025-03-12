@@ -144,11 +144,17 @@
   <data name="Cancel" xml:space="preserve">
     <value>انصراف</value>
   </data>
+  <data name="Canceled" xml:space="preserve">
+    <value>لغو شده</value>
+  </data>
   <data name="Change" xml:space="preserve">
     <value>تغییر</value>
   </data>
   <data name="ChangeDocReq" xml:space="preserve">
     <value>درخواست تغییر سند </value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>تکمیل شده</value>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>تایید</value>
@@ -185,6 +191,9 @@
   </data>
   <data name="For" xml:space="preserve">
     <value>برای</value>
+  </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>در حال انجام</value>
   </data>
   <data name="NewCreateDocReq" xml:space="preserve">
     <value>درخواست ایجاد سند جدید</value>

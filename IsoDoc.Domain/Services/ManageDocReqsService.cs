@@ -31,9 +31,14 @@ namespace IsoDoc.Domain.Services
             return await manageDocReqsRepo.CreateNewDocRequest(docRequest);
         }
 
-        public async Task<List<DocRequest>> GetAll(string creatorPersonCode = null, bool active = true)
+        public async Task<List<DocRequest>> FilterDocRequests(FilterDocRequests filterDocRequests)
         {
-            return await manageDocReqsRepo.GetAll(creatorPersonCode);
+            return await manageDocReqsRepo.FilterDocRequests(filterDocRequests);
+        }
+
+        public async Task<DocRequestAttachment?> GetDocRequestAttachment(int docReqId)
+        {
+            return await manageDocReqsRepo.GetDocRequestAttachment(docReqId);
         }
 
         public async Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId)
@@ -55,6 +60,11 @@ namespace IsoDoc.Domain.Services
         {
             return await manageDocReqsRepo.GetLastDocReqId();
 
+        }
+
+        public async Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode)
+        {
+            return await manageDocReqsRepo.SetDocRequestStepApproved(docReqId, userPersonCode);
         }
     }
 }

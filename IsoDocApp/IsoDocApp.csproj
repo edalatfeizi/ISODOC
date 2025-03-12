@@ -79,12 +79,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\DocRequestsHelper.cs" />
+    <Compile Include="Extensions\StepProgressBarExtension.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="FrmMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMessageBox.Designer.cs">
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Validators.cs" />
+    <Compile Include="ManageDocRequests\FrmForwardDocReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageDocRequests\FrmForwardDocReq.Designer.cs">
+      <DependentUpon>FrmForwardDocReq.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageDocRequests\FrmManageDocReqs.cs">
       <SubType>Form</SubType>
@@ -98,12 +107,6 @@
     <Compile Include="ManageDocRequests\FrmNewDocReq.Designer.cs">
       <DependentUpon>FrmNewDocReq.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageDocRequests\XtraForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageDocRequests\XtraForm1.Designer.cs">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringResources.Designer.cs">
@@ -113,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="FrmMessageBox.resx">
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageDocRequests\FrmForwardDocReq.resx">
+      <DependentUpon>FrmForwardDocReq.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageDocRequests\FrmManageDocReqs.resx">
       <DependentUpon>FrmManageDocReqs.cs</DependentUpon>

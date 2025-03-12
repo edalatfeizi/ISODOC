@@ -142,6 +142,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لغو شده.
+        /// </summary>
+        internal static string Canceled {
+            get {
+                return ResourceManager.GetString("Canceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تغییر.
         /// </summary>
         internal static string Change {
@@ -156,6 +165,15 @@ namespace IsoDocApp {
         internal static string ChangeDocReq {
             get {
                 return ResourceManager.GetString("ChangeDocReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تکمیل شده.
+        /// </summary>
+        internal static string Completed {
+            get {
+                return ResourceManager.GetString("Completed", resourceCulture);
             }
         }
         
@@ -264,6 +282,15 @@ namespace IsoDocApp {
         internal static string For {
             get {
                 return ResourceManager.GetString("For", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to در حال انجام.
+        /// </summary>
+        internal static string InProgress {
+            get {
+                return ResourceManager.GetString("InProgress", resourceCulture);
             }
         }
         
