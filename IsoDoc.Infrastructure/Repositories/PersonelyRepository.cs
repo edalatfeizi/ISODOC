@@ -79,25 +79,25 @@ namespace IsoDoc.Infrastructure.Repositories
                 throw ex;
             }
         }
-        public async Task<Person?> GetUserManager( string userManagerDepCode)
-        {
-            try
-            {
-                connection.Open();
-                var userManagerQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = '{userManagerDepCode}'";
+        //public async Task<Person?> GetUserManager( string userManagerDepCode)
+        //{
+        //    try
+        //    {
+        //        connection.Open();
+        //        var userManagerQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = '{userManagerDepCode}' and PostTypeID in (27,3) order by PostTypeID";
 
-                var userManager = await connection.QueryAsync<Person>(userManagerQuery);
+        //        var userManager = await connection.QueryAsync<Person>(userManagerQuery);
 
-                connection.Close();
+        //        connection.Close();
 
-                return userManager.FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
-        }
+        //        return userManager.FirstOrDefault();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        connection.Close();
+        //        throw ex;
+        //    }
+        //}
 
         public async Task<Person?> GetUserInfo(string userCardNumber)
         {

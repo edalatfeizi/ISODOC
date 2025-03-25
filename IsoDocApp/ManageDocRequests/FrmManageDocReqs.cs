@@ -48,12 +48,7 @@ namespace IsoDocApp
 
                 FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
             }
-            if (userInfo != null && (userInfo.CardNumber == "3910" || userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
-            {
-                tabAllDocRequests.Visible = true;
-            }
-            else
-                tabAllDocRequests.Visible = false;
+
 
 
         }
@@ -62,13 +57,21 @@ namespace IsoDocApp
         {
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName.ToString();
-            //userName = "3134";
+            //userName = "1270";
 
             userInfo = await personelyService.GetUserInfo(userName);
             // RibbonPage selectedPage = ribbonControl1.Pages[0];
             // ribbonControl1.SelectedPage = selectedPage;
             //if(userInfo != null)
             //GetUserDocRequests();
+
+            if (userInfo != null && (userInfo.CardNumber == "3910" || userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
+            {
+                tabAllDocRequests.Visible = true;
+            }
+            else
+                tabAllDocRequests.Visible = false;
+
             FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
 
         }
@@ -307,20 +310,23 @@ namespace IsoDocApp
             // Check if the row handle is valid (not the group row or empty space)
             RibbonPage selectedPage = ribbonControl1.SelectedPage;
             var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
-
-            if (selectedPage.Name == "tabReceivedRequests")
+            if (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
-                if (e.Button == MouseButtons.Right && isAdmin)
+                if (selectedPage.Name == "tabReceivedRequests")
                 {
-                    // Show the ContextMenuStrip at the mouse position
-                    ContextMenuStrip1.Show(grdUserDocRequests, e.Location);
+                    if (e.Button == MouseButtons.Right)
+                    {
+                        // Show the ContextMenuStrip at the mouse position
+                        ContextMenuStrip1.Show(grdUserDocRequests, e.Location);
+                    }
                 }
-            }
-            else if (e.Button == MouseButtons.Right && selectedPage.Name == "tabAllDocRequests" && SysOfficeAdmins.GetSysOfficeAdmins().Contains(Convert.ToInt32(userInfo.DepartID)))
-            {
-                ContextMenuStrip1.Show(grdUserDocRequests, e.Location);
+                //else if (e.Button == MouseButtons.Right && selectedPage.Name == "tabAllDocRequests" && SysOfficeAdmins.GetSysOfficeAdmins().Contains(Convert.ToInt32(userInfo.DepartID)))
+                //{
+                //    ContextMenuStrip1.Show(grdUserDocRequests, e.Location);
 
+                //}
             }
+          
 
         }
 

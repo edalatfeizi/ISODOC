@@ -34,6 +34,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNewDocReqId = new DevExpress.XtraEditors.TextEdit();
             this.panel = new DevExpress.XtraEditors.PanelControl();
+            this.cmbUserColleagues = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.progressBar = new DevExpress.XtraWaitForm.ProgressPanel();
             this.cmbDocTypes = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
@@ -57,11 +59,10 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
-            this.cmbUserColleagues = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtNewDocReqId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel)).BeginInit();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbUserColleagues.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDocTypes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDocs.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAttachFile.Properties)).BeginInit();
@@ -73,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbReqTypes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDeps.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbUserColleagues.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -154,6 +154,34 @@
             this.panel.Size = new System.Drawing.Size(903, 476);
             this.panel.TabIndex = 9;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // cmbUserColleagues
+            // 
+            this.cmbUserColleagues.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbUserColleagues.Location = new System.Drawing.Point(345, 115);
+            this.cmbUserColleagues.Name = "cmbUserColleagues";
+            this.cmbUserColleagues.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.cmbUserColleagues.Properties.Appearance.Options.UseFont = true;
+            this.cmbUserColleagues.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.cmbUserColleagues.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cmbUserColleagues.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbUserColleagues.Properties.NullText = "";
+            this.cmbUserColleagues.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.cmbUserColleagues.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cmbUserColleagues.Size = new System.Drawing.Size(347, 28);
+            this.cmbUserColleagues.TabIndex = 134;
+            this.cmbUserColleagues.EditValueChanged += new System.EventHandler(this.cmbUserColleagues_EditValueChanged);
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(764, 114);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(95, 24);
+            this.labelControl9.TabIndex = 135;
+            this.labelControl9.Text = "گیرنده درخواست:";
             // 
             // progressBar
             // 
@@ -467,33 +495,6 @@
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("2ac05d1e-a6ac-4d98-8785-94f8fb42de06", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "عملیات موفقیت آمیز", "ثبت درخواست جدید با موفقیت انجام شد.", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
             // 
-            // cmbUserColleagues
-            // 
-            this.cmbUserColleagues.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbUserColleagues.Location = new System.Drawing.Point(345, 115);
-            this.cmbUserColleagues.Name = "cmbUserColleagues";
-            this.cmbUserColleagues.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
-            this.cmbUserColleagues.Properties.Appearance.Options.UseFont = true;
-            this.cmbUserColleagues.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Vazirmatn", 10F);
-            this.cmbUserColleagues.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.cmbUserColleagues.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbUserColleagues.Properties.NullText = "";
-            this.cmbUserColleagues.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
-            this.cmbUserColleagues.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.cmbUserColleagues.Size = new System.Drawing.Size(347, 28);
-            this.cmbUserColleagues.TabIndex = 134;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(764, 114);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(95, 24);
-            this.labelControl9.TabIndex = 135;
-            this.labelControl9.Text = "گیرنده درخواست:";
-            // 
             // FrmNewDocReq
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Menu;
@@ -521,6 +522,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbUserColleagues.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDocTypes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDocs.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAttachFile.Properties)).EndInit();
@@ -532,7 +534,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbReqTypes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDeps.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbUserColleagues.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

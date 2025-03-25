@@ -8,24 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using IsoDoc.Domain.Enums;
-using System.Security.Cryptography;
-using DevExpress.XtraBars.ToastNotifications;
-using System.Globalization;
-using DevExpress.XtraRichEdit.Model;
-using IsoDocApp.Extensions;
-using DevExpress.XtraPrinting.Native.WebClientUIControl;
-using System.Xml;
-using Newtonsoft.Json;
-using System.Linq.Expressions;
 using IsoDocApp.Helpers;
 namespace IsoDocApp.ManageDocRequests
 {
@@ -42,7 +28,7 @@ namespace IsoDocApp.ManageDocRequests
         private DocRequestStep docRequestStep;
         private DocRequestAttachment docReqAttachment;
         private List<Colleague> userColleagues;
-
+        private Colleague receiverColleague;
         private int lastDocReqId = 0;
         public FrmNewDocReq(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService)
         {
@@ -58,11 +44,11 @@ namespace IsoDocApp.ManageDocRequests
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";
 
             var userName = SystemInformation.UserName.ToString();
-            //userName = "3134";
+            //userName = "3536";
             userInfo = await personelyService.GetUserInfo(userName);
-            userManagerInfo = await personelyService.GetUserManager(userInfo.UpperCode);
-            if(userManagerInfo == null)
-                userManagerInfo = await personelyService.GetUserManager(userInfo.DepartCode);
+            //userManagerInfo = await personelyService.GetUserManager(userInfo.UpperCode);
+            //if(userManagerInfo == null)
+               // userManagerInfo = await personelyService.GetUserManager(userInfo.DepartCode);
 
             departments = await personelyService.GetDepartments();
             //documents = await manageDocReqsService.GetDocuments("B1100");
@@ -85,13 +71,23 @@ namespace IsoDocApp.ManageDocRequests
                 userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
 
             var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
-            if (isAdmin)
+            if (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
                 var admins = await personelyService.GetUserColleagues(null, null, true);
-                //remove user itself from admins list
-                userColleagues.AddRange(admins.Where(x=> x.CardNumber.ToString() != userName));
+                userColleagues.AddRange(admins);
             }
-            cmbUserColleagues.Properties.DataSource = userColleagues;
+            else if (isAdmin)
+            {
+                var admins = await personelyService.GetUserColleagues(null, null, false, true);
+                userColleagues.AddRange(admins);
+            }
+
+            //remove user itself from admins list
+            userColleagues = userColleagues.Where(x => x.CardNumber.ToString() != userName).ToList();
+
+            cmbUserColleagues.Properties.DataSource = userColleagues.GroupBy(c => c.PersonCode)
+            .Select(g => g.First())
+            .ToList();
 
             panel.Enabled = true;
             ShowProgressBar(false);
@@ -314,9 +310,9 @@ namespace IsoDocApp.ManageDocRequests
                 SenderUserPost = userInfo.Posttxt,
                 SenderUserFullName = $"{userInfo.FirstName} {userInfo.LastName}",
 
-                ReceiverUserPersonCode = userManagerInfo.PersonCode,
-                ReceiverUserPost = userManagerInfo.Posttxt,
-                ReceiverUserFullName = $"{userManagerInfo.FirstName} {userManagerInfo.LastName}",
+                ReceiverUserPersonCode = receiverColleague.PersonCode,
+                ReceiverUserPost = receiverColleague.Post,
+                ReceiverUserFullName = $"{receiverColleague.Name}",
                 Description = desc,
 
                 CreatedBy = userInfo.PersonCode,
@@ -441,6 +437,13 @@ namespace IsoDocApp.ManageDocRequests
             else
                 cmbDocs.Enabled = false;
 
+        }
+
+        private void cmbUserColleagues_EditValueChanged(object sender, EventArgs e)
+        {
+            receiverColleague = userColleagues.Where(x => x.PersonCode.ToString() == cmbUserColleagues.EditValue.ToString()).FirstOrDefault();
+
+          
         }
     }
 }

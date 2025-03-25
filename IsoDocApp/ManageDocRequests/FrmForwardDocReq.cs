@@ -64,24 +64,28 @@ namespace IsoDocApp.ManageDocRequests
             txtDocReqId.Text = docReqId.ToString();
 
             var userName = SystemInformation.UserName.ToString();
-            //userName = "3134";
+            //userName = "3536";
             userInfo = await personelyService.GetUserInfo(userName);
 
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
             var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
             if (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
-                var admins = await personelyService.GetUserColleagues(null,null,true);
-                //remove user itself from admins list
-                userColleagues.AddRange(admins.Where(x => x.CardNumber.ToString() != userName));
-            }else if (isAdmin)
+                var admins = await personelyService.GetUserColleagues(null, null, true);
+                userColleagues.AddRange(admins);
+            }
+            else if (isAdmin)
             {
-                var admins = await personelyService.GetUserColleagues(null, null, false,true);
-                //remove user itself from admins list
-                userColleagues.AddRange(admins.Where(x => x.CardNumber.ToString() != userName));
+                var admins = await personelyService.GetUserColleagues(null, null, false, true);
+                userColleagues.AddRange(admins);
             }
 
-            cmbUserColleagues.Properties.DataSource = userColleagues;
+            //remove user itself from admins list
+            userColleagues = userColleagues.Where(x => x.CardNumber.ToString() != userName).ToList();
+
+            cmbUserColleagues.Properties.DataSource = userColleagues.GroupBy(c => c.PersonCode)
+            .Select(g => g.First())
+            .ToList();
 
             await GetDocReqSteps(docReqId);
 
@@ -144,7 +148,7 @@ namespace IsoDocApp.ManageDocRequests
                 });
                 frmMsgBox.ShowDialog();
             }
-        
+
         }
 
         private async void cmbUserColleagues_EditValueChanged(object sender, System.EventArgs e)

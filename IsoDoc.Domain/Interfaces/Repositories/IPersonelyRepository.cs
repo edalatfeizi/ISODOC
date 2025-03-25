@@ -11,7 +11,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
     {
         Task<Person?> GetUserInfo(string userCardNumber);
         Task<List<Colleague>> GetUserColleagues(string userDepCode = null, string userManagerDepCode = null, bool adminOnly = false, bool sysOfficeOnly = false);
-        Task<Person?> GetUserManager(string userManagerDepCode);
+        //Task<Person?> GetUserManager(string userManagerDepCode);
         Task<List<Department>> GetDepartments();
 
     }

@@ -29,9 +29,9 @@ namespace IsoDoc.Domain.Services
             return await personelyRepo.GetUserInfo(userCardNumber);
         }
 
-        public async Task<Person?> GetUserManager(string userManagerDepCode)
-        {
-            return await personelyRepo.GetUserManager(userManagerDepCode);
-        }
+        //public async Task<Person?> GetUserManager(string userManagerDepCode)
+        //{
+        //    return await personelyRepo.GetUserManager(userManagerDepCode);
+        //}
     }
 }
