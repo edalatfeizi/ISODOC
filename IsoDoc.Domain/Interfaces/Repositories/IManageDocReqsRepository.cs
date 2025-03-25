@@ -1,4 +1,5 @@
 ﻿using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId);
         Task<DocRequestAttachment?> GetDocRequestAttachment(int docReqId);
         Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode);
+        Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc);
 
         //Task<DocRequest> UpdateDocRequest(int docReqId);
 

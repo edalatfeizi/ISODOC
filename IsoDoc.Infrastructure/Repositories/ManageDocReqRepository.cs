@@ -279,5 +279,29 @@ namespace IsoDoc.Infrastructure.Repositories
             }
 
         }
+
+        public async Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc)
+        {
+            try
+            {
+                connection.Open();
+
+                var updateQuery = @$"
+                                    UPDATE DocRequests
+                                        SET DocRequestStatus = @docRequestStatus, CancelDesc = @cancelDesc
+                                        WHERE Id = @DocReqId ";
+
+                var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, DocRequestStatus = docRequestStatus, cancelDesc = cancelDesc });
+
+                connection.Close();
+
+                return affectedRows > 0;
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                throw ex;
+            }
+        }
     }
 }

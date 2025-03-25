@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
@@ -63,12 +64,26 @@ namespace IsoDocApp.ManageDocRequests
             txtDocReqId.Text = docReqId.ToString();
 
             var userName = SystemInformation.UserName.ToString();
+            //userName = "3134";
             userInfo = await personelyService.GetUserInfo(userName);
 
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
+            var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
+            if (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
+            {
+                var admins = await personelyService.GetUserColleagues(null,null,true);
+                //remove user itself from admins list
+                userColleagues.AddRange(admins.Where(x => x.CardNumber.ToString() != userName));
+            }else if (isAdmin)
+            {
+                var admins = await personelyService.GetUserColleagues(null, null, false,true);
+                //remove user itself from admins list
+                userColleagues.AddRange(admins.Where(x => x.CardNumber.ToString() != userName));
+            }
+
             cmbUserColleagues.Properties.DataSource = userColleagues;
 
-             await GetDocReqSteps(docReqId);
+            await GetDocReqSteps(docReqId);
 
 
         }

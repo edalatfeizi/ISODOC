@@ -509,29 +509,31 @@
             // 
             // ContextMenuStrip1
             // 
+            this.ContextMenuStrip1.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSetDocReqCompleted,
             this.mnuSetDocReqCanceled});
             this.ContextMenuStrip1.Name = "ContextMenuStrip1";
             this.ContextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ContextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.ContextMenuStrip1.Size = new System.Drawing.Size(160, 56);
             // 
             // mnuSetDocReqCompleted
             // 
-            this.mnuSetDocReqCompleted.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuSetDocReqCompleted.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuSetDocReqCompleted.Image = ((System.Drawing.Image)(resources.GetObject("mnuSetDocReqCompleted.Image")));
             this.mnuSetDocReqCompleted.Name = "mnuSetDocReqCompleted";
-            this.mnuSetDocReqCompleted.Size = new System.Drawing.Size(180, 22);
+            this.mnuSetDocReqCompleted.Size = new System.Drawing.Size(159, 26);
             this.mnuSetDocReqCompleted.Text = "تکمیل درخواست";
             this.mnuSetDocReqCompleted.Click += new System.EventHandler(this.mnuSetDocReqCompleted_Click);
             // 
             // mnuSetDocReqCanceled
             // 
-            this.mnuSetDocReqCanceled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuSetDocReqCanceled.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuSetDocReqCanceled.Image = ((System.Drawing.Image)(resources.GetObject("mnuSetDocReqCanceled.Image")));
             this.mnuSetDocReqCanceled.Name = "mnuSetDocReqCanceled";
-            this.mnuSetDocReqCanceled.Size = new System.Drawing.Size(180, 22);
+            this.mnuSetDocReqCanceled.Size = new System.Drawing.Size(159, 26);
             this.mnuSetDocReqCanceled.Text = "لغو درخواست";
+            this.mnuSetDocReqCanceled.Click += new System.EventHandler(this.mnuSetDocReqCanceled_Click);
             // 
             // FrmManageDocReqs
             // 

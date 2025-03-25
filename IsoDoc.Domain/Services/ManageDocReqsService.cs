@@ -1,4 +1,5 @@
 ﻿using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
@@ -65,6 +66,11 @@ namespace IsoDoc.Domain.Services
         public async Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode)
         {
             return await manageDocReqsRepo.SetDocRequestStepApproved(docReqId, userPersonCode);
+        }
+
+        public async Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc)
+        {
+            return await manageDocReqsRepo.UpdateDocRequestStatus(docReqId,docRequestStatus, cancelDesc);
         }
     }
 }

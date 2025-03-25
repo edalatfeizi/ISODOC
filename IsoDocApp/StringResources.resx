@@ -147,6 +147,9 @@
   <data name="Canceled" xml:space="preserve">
     <value>لغو شده</value>
   </data>
+  <data name="CancelReason" xml:space="preserve">
+    <value>لغو درخواست</value>
+  </data>
   <data name="Change" xml:space="preserve">
     <value>تغییر</value>
   </data>
@@ -176,6 +179,9 @@
   </data>
   <data name="EmptyValues" xml:space="preserve">
     <value>خالی بودن مقادیر</value>
+  </data>
+  <data name="EnterCancelReason" xml:space="preserve">
+    <value>لطفا علت لغو درخواست را وارد نمایید</value>
   </data>
   <data name="ErrorAttachFile" xml:space="preserve">
     <value>لطفا سند مورد نظر خود را پیوست کنید.</value>

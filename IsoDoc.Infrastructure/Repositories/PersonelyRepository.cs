@@ -37,20 +37,41 @@ namespace IsoDoc.Infrastructure.Repositories
             }
         }
 
-        public async Task<List<Colleague>> GetUserColleagues(string userDepCode, string userManagerDepCode)
+        public async Task<List<Colleague>> GetUserColleagues(string userDepCode = null, string userManagerDepCode = null, bool adminOnly = false, bool sysOfficeOnly = false)
         {
             try
             {
                 connection.Open();
-                var userManagerQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = '{userManagerDepCode}'";
-                var userEmployeesQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where UpperCode = '{userDepCode}'";
+                if (adminOnly)
+                {
+                    var adminsQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PostTypeID in (26,27,3)";
+                    var admins = await connection.QueryAsync<Person>(adminsQuery);
+                    connection.Close();
+                    return admins.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt }).ToList();
 
-                var userManagers = await connection.QueryAsync<Person>(userManagerQuery);
-                var userEmployees = await connection.QueryAsync<Person>(userEmployeesQuery);
+                } else if (sysOfficeOnly)
+                {
+                    var sysOfficeQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = 'SI300' or UpperCode ='SI300'";
+                    var sysOfficeEmps = await connection.QueryAsync<Person>(sysOfficeQuery);
+                    connection.Close();
+                    return sysOfficeEmps.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt }).ToList();
 
+                }
+                else
+                {
+                    var userManagerQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = '{userManagerDepCode}'";
+                    var userEmployeesQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where UpperCode = '{userDepCode}'";
+
+                    var userManagers = await connection.QueryAsync<Person>(userManagerQuery);
+                    var userEmployees = await connection.QueryAsync<Person>(userEmployeesQuery);
                 connection.Close();
 
-                return userManagers.Union(userEmployees).Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt }).ToList();
+                    return userManagers.Union(userEmployees).Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt }).ToList();
+
+
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -58,7 +79,7 @@ namespace IsoDoc.Infrastructure.Repositories
                 throw ex;
             }
         }
-        public async Task<Person> GetUserManager( string userManagerDepCode)
+        public async Task<Person?> GetUserManager( string userManagerDepCode)
         {
             try
             {
@@ -69,7 +90,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
                 connection.Close();
 
-                return userManager.First();
+                return userManager.FirstOrDefault();
             }
             catch (Exception ex)
             {

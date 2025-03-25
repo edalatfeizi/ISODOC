@@ -41,7 +41,8 @@ namespace IsoDocApp.ManageDocRequests
         private DocRequest newDocReq = new DocRequest();
         private DocRequestStep docRequestStep;
         private DocRequestAttachment docReqAttachment;
-  
+        private List<Colleague> userColleagues;
+
         private int lastDocReqId = 0;
         public FrmNewDocReq(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService)
         {
@@ -57,8 +58,12 @@ namespace IsoDocApp.ManageDocRequests
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";
 
             var userName = SystemInformation.UserName.ToString();
+            //userName = "3134";
             userInfo = await personelyService.GetUserInfo(userName);
             userManagerInfo = await personelyService.GetUserManager(userInfo.UpperCode);
+            if(userManagerInfo == null)
+                userManagerInfo = await personelyService.GetUserManager(userInfo.DepartCode);
+
             departments = await personelyService.GetDepartments();
             //documents = await manageDocReqsService.GetDocuments("B1100");
             //cmbDocs.Properties.DataSource = documents;
@@ -74,6 +79,19 @@ namespace IsoDocApp.ManageDocRequests
 
             cmbDocOwnerDep.Properties.DataSource = departments;
             cmbDocTypes.Properties.DataSource = docTypes;
+
+            userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
+            if(userColleagues.Count == 0) // incase if user has no direct colleagues like boss or he/she has no employees  
+                userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
+
+            var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
+            if (isAdmin)
+            {
+                var admins = await personelyService.GetUserColleagues(null, null, true);
+                //remove user itself from admins list
+                userColleagues.AddRange(admins.Where(x=> x.CardNumber.ToString() != userName));
+            }
+            cmbUserColleagues.Properties.DataSource = userColleagues;
 
             panel.Enabled = true;
             ShowProgressBar(false);
@@ -94,8 +112,8 @@ namespace IsoDocApp.ManageDocRequests
             cmbDocTypes.Properties.DisplayMember = "DocName";
             cmbDocTypes.Properties.ValueMember = "DocId";
 
-            //cmbUserColleagues.Properties.DisplayMember = "Name";
-            //cmbUserColleagues.Properties.ValueMember = "PersonCode";
+            cmbUserColleagues.Properties.DisplayMember = "Name";
+            cmbUserColleagues.Properties.ValueMember = "PersonCode";
 
             var reqTypes = new List<string>() { StringResources.Create, StringResources.Change, StringResources.Delete };
             cmbReqTypes.Properties.DataSource = reqTypes;
@@ -201,17 +219,17 @@ namespace IsoDocApp.ManageDocRequests
 
                 if (!string.IsNullOrEmpty(cmbReqTypes.EditValue.ToString()))
                 {
-                    if (cmbReqTypes.EditValue.ToString() == StringResources.Create && Validators.ValidateControls<BaseEdit>(cmbReqTypes, txtTitle, txtReason, cmbDocOwnerDep, cmbDocTypes, cmbKeepDurations))
+                    if (cmbReqTypes.EditValue.ToString() == StringResources.Create && Validators.ValidateControls<BaseEdit>(cmbReqTypes,cmbUserColleagues, txtTitle, txtReason, cmbDocOwnerDep, cmbDocTypes, cmbKeepDurations))
                     {
                         if(CheckAttachment())
                             AddNewDocRequest(DocRequestType.Create);
                     }
-                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Change && Validators.ValidateControls<BaseEdit>(cmbReqTypes, cmbDocOwnerDep, cmbDocs, txtReason, txtChanges ))
+                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Change && Validators.ValidateControls<BaseEdit>(cmbReqTypes, cmbUserColleagues, cmbDocOwnerDep, cmbDocs, txtReason, txtChanges ))
                     {
                         if (CheckAttachment())
                             AddNewDocRequest(DocRequestType.Update);
                     }
-                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Delete && Validators.ValidateControls<BaseEdit>(cmbReqTypes, cmbDocOwnerDep, cmbDocs, txtReason))
+                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Delete && Validators.ValidateControls<BaseEdit>(cmbReqTypes, cmbUserColleagues, cmbDocOwnerDep, cmbDocs, txtReason))
                     {
                         AddNewDocRequest(DocRequestType.Delete);
 
@@ -422,11 +440,6 @@ namespace IsoDocApp.ManageDocRequests
             }
             else
                 cmbDocs.Enabled = false;
-
-        }
-
-        private void cmbUserColleagues_EditValueChanged(object sender, EventArgs e)
-        {
 
         }
     }

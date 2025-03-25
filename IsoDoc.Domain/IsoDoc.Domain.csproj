@@ -50,8 +50,10 @@
     <Compile Include="Entities\DocRequest.cs" />
     <Compile Include="Entities\DocRequestAttachment.cs" />
     <Compile Include="Entities\DocRequestStep.cs" />
+    <Compile Include="Enums\AdminTypes.cs" />
     <Compile Include="Enums\DocRequestStatus.cs" />
     <Compile Include="Enums\DocRequestType.cs" />
+    <Compile Include="Enums\SysOfficeAdmins.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Interfaces\Repositories\IDocRequestStepsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IManageDocReqsRepository.cs" />

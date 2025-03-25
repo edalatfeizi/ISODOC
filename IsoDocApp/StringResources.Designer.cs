@@ -151,6 +151,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لغو درخواست.
+        /// </summary>
+        internal static string CancelReason {
+            get {
+                return ResourceManager.GetString("CancelReason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تغییر.
         /// </summary>
         internal static string Change {
@@ -237,6 +246,15 @@ namespace IsoDocApp {
         internal static string EmptyValues {
             get {
                 return ResourceManager.GetString("EmptyValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا علت لغو درخواست را وارد نمایید.
+        /// </summary>
+        internal static string EnterCancelReason {
+            get {
+                return ResourceManager.GetString("EnterCancelReason", resourceCulture);
             }
         }
         

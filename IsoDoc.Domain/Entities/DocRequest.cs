@@ -49,12 +49,13 @@ namespace IsoDoc.Domain.Entities
         [Editable(false)]
         public string HasAttachments { get; set; }
 
+        [Display(Name = "علت لغو درخواست", Order = 11)]
+        [Editable(false)]
+        public string CancelDesc { get; set; }
+
         [Display(Name = "وضعیت درخواست", Order = 11)]
         [Editable(false)]
         public DocRequestStatus DocRequestStatus { get; set; }
-
-
-
         //public ICollection<DocRequestAttachment> DocRequestAttachments { get; set; }
     }
 }
