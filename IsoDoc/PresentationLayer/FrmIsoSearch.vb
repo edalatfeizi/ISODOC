@@ -63,33 +63,38 @@ Public Class FrmIsoSearch
 
     Private Sub btnShow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnShow.Click
         Dim DocTypeID As Integer
-        MainId = dgdSearch.Item(dgdSearch.CurrentCell.RowNumber, 7)
-        DocTypeID = dgdSearch.Item(dgdSearch.CurrentCell.RowNumber, 8)
-        If DocTypeID = 1 And MainId <> -1 Then
+        Try
+            MainId = dgdSearch.Item(dgdSearch.CurrentCell.RowNumber, 8)
+            DocTypeID = dgdSearch.Item(dgdSearch.CurrentCell.RowNumber, 9)
+            If DocTypeID = 1 And MainId <> -1 Then
 
-            Dim frm As New frmPDF
-            MainId = MainId
-            frm.ShowDialog()
-            Exit Sub
+                Dim frm As New frmPDF
+                MainId = MainId
+                frm.ShowDialog()
+                Exit Sub
 
-        Else
+            Else
 
-            Try
-                lblFilePath.Text = dgdSearch.Item(dgdSearch.CurrentCell.RowNumber, 5)
-                Process.Start(LTrim(RTrim(lblFilePath.Text)))
-            Catch ex As Exception
-                Dim Bus_MessageHandler1 As New Bus_MessageHandler
-                Dim fileType As String
-                fileType = Bus_MessageHandler1.GetFileExtension(lblFilePath.Text)
-                If fileType = "" Then
-                    ''''MsgBox("œ” —”Ì »Â ”‰œ „Ê—œ ‰Ÿ— «„ﬂ«‰ Å–Ì— ‰„Ì »«‘œ", MsgBoxStyle.Critical)
-                    MessageBox.Show("œ” —”Ì »Â ”‰œ „Ê—œ ‰Ÿ— «„ﬂ«‰ Å–Ì— ‰„Ì »«‘œ", "Œÿ«", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign)
-                Else
-                    MsgBox("œ«—Ìœ " + fileType + " »—«Ì „‘«ÂœÂ «Ì‰ ”‰œ ‰Ì«“ »Â ‰—„ «›“«—", MsgBoxStyle.Critical)
+                Try
+                    lblFilePath.Text = dgdSearch.Item(dgdSearch.CurrentCell.RowNumber, 6)
+                    Process.Start(LTrim(RTrim(lblFilePath.Text)))
+                Catch ex As Exception
+                    Dim Bus_MessageHandler1 As New Bus_MessageHandler
+                    Dim fileType As String
+                    fileType = Bus_MessageHandler1.GetFileExtension(lblFilePath.Text)
+                    If fileType = "" Then
+                        ''''MsgBox("œ” —”Ì »Â ”‰œ „Ê—œ ‰Ÿ— «„ﬂ«‰ Å–Ì— ‰„Ì »«‘œ", MsgBoxStyle.Critical)
+                        MessageBox.Show("œ” —”Ì »Â ”‰œ „Ê—œ ‰Ÿ— «„ﬂ«‰ Å–Ì— ‰„Ì »«‘œ", "Œÿ«", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign)
+                    Else
+                        MsgBox("œ«—Ìœ " + fileType + " »—«Ì „‘«ÂœÂ «Ì‰ ”‰œ ‰Ì«“ »Â ‰—„ «›“«—", MsgBoxStyle.Critical)
 
-                End If
-            End Try
-        End If
+                    End If
+                End Try
+            End If
+        Catch ex As Exception
+            Console.Write(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
