@@ -32,9 +32,19 @@ namespace IsoDoc.Domain.Services
             return await manageDocReqsRepo.CreateNewDocRequest(docRequest);
         }
 
+        public async Task<bool> SetDocRequestActive(int docReqId, string deleteDesc, bool isActive)
+        {
+            return await manageDocReqsRepo.SetDocRequestActive(docReqId, deleteDesc,isActive);
+        }
+
         public async Task<List<DocRequest>> FilterDocRequests(FilterDocRequests filterDocRequests)
         {
             return await manageDocReqsRepo.FilterDocRequests(filterDocRequests);
+        }
+
+        public async Task<DocRequest> GetDocRequest(int docReqId)
+        {
+            return await manageDocReqsRepo.GetDocRequest(docReqId);
         }
 
         public async Task<DocRequestAttachment?> GetDocRequestAttachment(int docReqId)

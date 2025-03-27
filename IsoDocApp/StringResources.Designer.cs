@@ -232,6 +232,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حذف درخواست.
+        /// </summary>
+        internal static string DeleteRequest {
+            get {
+                return ResourceManager.GetString("DeleteRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to واحد.
         /// </summary>
         internal static string Dep {
@@ -255,6 +264,15 @@ namespace IsoDocApp {
         internal static string EnterCancelReason {
             get {
                 return ResourceManager.GetString("EnterCancelReason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا علت حذف درخواست را وارد نمایید.
+        /// </summary>
+        internal static string EnterDeleteReason {
+            get {
+                return ResourceManager.GetString("EnterDeleteReason", resourceCulture);
             }
         }
         

@@ -10,7 +10,7 @@ namespace IsoDoc.Domain.Enums
     {
         public static List<AdminType> GetAdminTypes()
         {
-            return new List<AdminType>() { AdminType.TopManager, AdminType.VP, AdminType.MidManager, AdminType.ViceManager };
+            return new List<AdminType>() { AdminType.TopManager, AdminType.VP, AdminType.MidManager, AdminType.SuperVisor, AdminType.ViceManager };
         }
   
     }
@@ -20,6 +20,7 @@ namespace IsoDoc.Domain.Enums
         TopManager = 2,
         VP = 49,
         MidManager = 3,
-        ViceManager = 26 | 27
+        SuperVisor = 26,
+        ViceManager = 27
     }
 }

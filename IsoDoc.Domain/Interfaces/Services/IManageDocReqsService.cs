@@ -13,6 +13,7 @@ namespace IsoDoc.Domain.Interfaces.Services
     {
         Task<DocRequest> CreateNewDocRequest(DocRequest docRequest);
         Task<DocRequestStep> AddNewDocRequestStepAsync(DocRequestStep docRequestStep);
+        Task<DocRequest> GetDocRequest(int docReqId);
         Task<DocRequestAttachment> AttachFileAsync(DocRequestAttachment docRequestAttachment);
 
         Task<List<DocRequest>> FilterDocRequests(FilterDocRequests filterDocRequests);
@@ -24,6 +25,7 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode);
 
         Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc);
+        Task<bool> SetDocRequestActive(int docReqId, string deleteDesc, bool isActive);
 
     }
 }

@@ -100,7 +100,29 @@ namespace IsoDoc.Infrastructure.Repositories
 
         }
 
+        public async Task<bool> SetDocRequestActive(int docReqId, string deleteDesc,bool isActive)
+        {
+            try
+            {
+                connection.Open();
 
+                var updateQuery = @$"
+                                    UPDATE DocRequests
+                                        SET Active = @Active, deleteDesc = @DeleteDesc
+                                        WHERE Id = @DocReqId ";
+
+                var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, Active = isActive, DeleteDesc = deleteDesc });
+
+                connection.Close();
+
+                return affectedRows > 0;
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                throw ex;
+            }
+        }
 
         public async Task<List<DocRequest>> FilterDocRequests(FilterDocRequests filterDocRequests)
         {
@@ -156,6 +178,25 @@ namespace IsoDoc.Infrastructure.Repositories
             catch (Exception ex)
             {
                 connection.Close();
+                throw ex;
+            }
+        }
+
+        public async Task<DocRequest> GetDocRequest(int docReqId)
+        {
+            try
+            {
+                connection.Open();
+                var docReqQuery = $"select * from DocRequests where Id = '{docReqId}'";
+
+                var docReqs = await connection.QueryAsync<DocRequest>(docReqQuery);
+                connection.Close();
+                return docReqs.First();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+
                 throw ex;
             }
         }

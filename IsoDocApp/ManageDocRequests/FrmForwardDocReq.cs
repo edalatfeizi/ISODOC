@@ -64,8 +64,8 @@ namespace IsoDocApp.ManageDocRequests
             txtDocReqId.Text = docReqId.ToString();
 
             var userName = SystemInformation.UserName.ToString();
-            //userName = "3536";
-            userInfo = await personelyService.GetUserInfo(userName);
+            userName = "3821";
+            userInfo = await personelyService.GetUserInfoByCardNumber(userName);
 
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
             var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
@@ -157,7 +157,7 @@ namespace IsoDocApp.ManageDocRequests
 
             var person = userColleagues.Where(x => x.PersonCode == personCode).First();
 
-            receiverUserInfo = await personelyService.GetUserInfo(person.CardNumber);
+            receiverUserInfo = await personelyService.GetUserInfoByCardNumber(person.CardNumber);
         }
     }
 }

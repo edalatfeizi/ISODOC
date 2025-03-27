@@ -1,4 +1,5 @@
 ﻿using IsoDoc.Domain.Enums;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace IsoDoc.Domain.Entities
@@ -49,13 +50,20 @@ namespace IsoDoc.Domain.Entities
         [Editable(false)]
         public string HasAttachments { get; set; }
 
-        [Display(Name = "علت لغو درخواست", Order = 11)]
+        [Display(Name = "علت لغو درخواست", Order = 12)]
         [Editable(false)]
         public string CancelDesc { get; set; }
 
-        [Display(Name = "وضعیت درخواست", Order = 11)]
+        [Display(Name = "علت حذف درخواست", Order = 13)]
+        [Editable(false)]
+        public string DeleteDesc { get; set; }
+
+        [Display(Name = "وضعیت درخواست", Order = 14)]
         [Editable(false)]
         public DocRequestStatus DocRequestStatus { get; set; }
+
+        [Browsable(false)]
+        public string CreatedBy { get; set; }
         //public ICollection<DocRequestAttachment> DocRequestAttachments { get; set; }
     }
 }

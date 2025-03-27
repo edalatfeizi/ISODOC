@@ -37,6 +37,7 @@
             this.tabReceivedRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tabForwardedDocRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tabAllDocRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.tabDeletedRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -58,6 +59,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -66,9 +68,11 @@
             this.btnForwardDocReq = new DevExpress.XtraEditors.SimpleButton();
             this.btnDownloadAttachment = new DevExpress.XtraEditors.SimpleButton();
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
-            this.ContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuSetDocReqCompleted = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSetDocReqCanceled = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuCompleteReq = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCancelReq = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDeleteReq = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEnableReq = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserDocRequests)).BeginInit();
@@ -79,13 +83,14 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
-            this.ContextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -104,7 +109,8 @@
             this.tabSentRequests,
             this.tabReceivedRequests,
             this.tabForwardedDocRequests,
-            this.tabAllDocRequests});
+            this.tabAllDocRequests,
+            this.tabDeletedRequests});
             this.ribbonControl1.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Right;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -151,6 +157,11 @@
             this.tabAllDocRequests.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabAllDocRequests.ImageOptions.Image")));
             this.tabAllDocRequests.Name = "tabAllDocRequests";
             this.tabAllDocRequests.Text = "همه درخواست ها";
+            // 
+            // tabDeletedRequests
+            // 
+            this.tabDeletedRequests.Name = "tabDeletedRequests";
+            this.tabDeletedRequests.Text = "درخواست های حذف شده";
             // 
             // ribbonPageGroup3
             // 
@@ -335,7 +346,7 @@
             this.progressBar.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.progressBar.Description = "لطفا کمی صبر کنید...";
             this.progressBar.LineAnimationElementHeight = 5;
-            this.progressBar.Location = new System.Drawing.Point(262, 205);
+            this.progressBar.Location = new System.Drawing.Point(262, 204);
             this.progressBar.Margin = new System.Windows.Forms.Padding(0);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(308, 58);
@@ -371,24 +382,43 @@
             // panelControl4
             // 
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl4.Controls.Add(this.textEdit4);
             this.panelControl4.Controls.Add(this.textEdit3);
             this.panelControl4.Controls.Add(this.textEdit2);
             this.panelControl4.Controls.Add(this.textEdit1);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl4.Location = new System.Drawing.Point(0, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(810, 43);
+            this.panelControl4.Size = new System.Drawing.Size(810, 42);
             this.panelControl4.TabIndex = 6;
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textEdit4.EditValue = "حذف شده";
+            this.textEdit4.Enabled = false;
+            this.textEdit4.Location = new System.Drawing.Point(43, 7);
+            this.textEdit4.MenuManager = this.ribbonControl1;
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Salmon;
+            this.textEdit4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.textEdit4.Properties.Appearance.Options.UseBackColor = true;
+            this.textEdit4.Properties.Appearance.Options.UseForeColor = true;
+            this.textEdit4.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEdit4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.textEdit4.Size = new System.Drawing.Size(95, 24);
+            this.textEdit4.TabIndex = 3;
             // 
             // textEdit3
             // 
             this.textEdit3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textEdit3.EditValue = "لغو شده";
             this.textEdit3.Enabled = false;
-            this.textEdit3.Location = new System.Drawing.Point(200, 7);
+            this.textEdit3.Location = new System.Drawing.Point(226, 7);
             this.textEdit3.MenuManager = this.ribbonControl1;
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Salmon;
+            this.textEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.textEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.textEdit3.Properties.Appearance.Options.UseBackColor = true;
             this.textEdit3.Properties.Appearance.Options.UseForeColor = true;
@@ -403,7 +433,7 @@
             this.textEdit2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textEdit2.EditValue = "تکمیل شده";
             this.textEdit2.Enabled = false;
-            this.textEdit2.Location = new System.Drawing.Point(380, 7);
+            this.textEdit2.Location = new System.Drawing.Point(428, 7);
             this.textEdit2.MenuManager = this.ribbonControl1;
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.Appearance.BackColor = System.Drawing.Color.YellowGreen;
@@ -421,7 +451,7 @@
             this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textEdit1.EditValue = "در حال انجام";
             this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(542, 7);
+            this.textEdit1.Location = new System.Drawing.Point(606, 7);
             this.textEdit1.MenuManager = this.ribbonControl1;
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Gold;
@@ -457,7 +487,7 @@
             this.btnReload.Appearance.Options.UseFont = true;
             this.btnReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
-            this.btnReload.Location = new System.Drawing.Point(122, 11);
+            this.btnReload.Location = new System.Drawing.Point(122, 12);
             this.btnReload.Margin = new System.Windows.Forms.Padding(4);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(150, 66);
@@ -474,7 +504,7 @@
             this.btnForwardDocReq.Appearance.Options.UseFont = true;
             this.btnForwardDocReq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnForwardDocReq.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnForwardDocReq.ImageOptions.Image")));
-            this.btnForwardDocReq.Location = new System.Drawing.Point(302, 11);
+            this.btnForwardDocReq.Location = new System.Drawing.Point(302, 12);
             this.btnForwardDocReq.Margin = new System.Windows.Forms.Padding(4);
             this.btnForwardDocReq.Name = "btnForwardDocReq";
             this.btnForwardDocReq.Size = new System.Drawing.Size(150, 66);
@@ -493,7 +523,7 @@
             this.btnDownloadAttachment.Appearance.Options.UseFont = true;
             this.btnDownloadAttachment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDownloadAttachment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDownloadAttachment.ImageOptions.Image")));
-            this.btnDownloadAttachment.Location = new System.Drawing.Point(487, 11);
+            this.btnDownloadAttachment.Location = new System.Drawing.Point(487, 12);
             this.btnDownloadAttachment.Margin = new System.Windows.Forms.Padding(4);
             this.btnDownloadAttachment.Name = "btnDownloadAttachment";
             this.btnDownloadAttachment.Size = new System.Drawing.Size(150, 66);
@@ -507,33 +537,53 @@
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("5064271b-6465-45af-93b2-6ba6b8d55777", null, "ذخیره فایل پیوست", "فایل پیوست با موفقیت ذخیره شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
             // 
-            // ContextMenuStrip1
+            // contextMenuStrip2
             // 
-            this.ContextMenuStrip1.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuSetDocReqCompleted,
-            this.mnuSetDocReqCanceled});
-            this.ContextMenuStrip1.Name = "ContextMenuStrip1";
-            this.ContextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ContextMenuStrip1.Size = new System.Drawing.Size(160, 56);
+            this.contextMenuStrip2.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCompleteReq,
+            this.mnuCancelReq,
+            this.mnuDeleteReq,
+            this.mnuEnableReq});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 130);
             // 
-            // mnuSetDocReqCompleted
+            // mnuCompleteReq
             // 
-            this.mnuSetDocReqCompleted.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuSetDocReqCompleted.Image = ((System.Drawing.Image)(resources.GetObject("mnuSetDocReqCompleted.Image")));
-            this.mnuSetDocReqCompleted.Name = "mnuSetDocReqCompleted";
-            this.mnuSetDocReqCompleted.Size = new System.Drawing.Size(159, 26);
-            this.mnuSetDocReqCompleted.Text = "تکمیل درخواست";
-            this.mnuSetDocReqCompleted.Click += new System.EventHandler(this.mnuSetDocReqCompleted_Click);
+            this.mnuCompleteReq.Enabled = false;
+            this.mnuCompleteReq.Image = global::IsoDocApp.Properties.Resources.Yes;
+            this.mnuCompleteReq.Name = "mnuCompleteReq";
+            this.mnuCompleteReq.Size = new System.Drawing.Size(167, 22);
+            this.mnuCompleteReq.Text = "تکمیل درخواست";
+            this.mnuCompleteReq.Click += new System.EventHandler(this.mnuCompleteReq_Click);
             // 
-            // mnuSetDocReqCanceled
+            // mnuCancelReq
             // 
-            this.mnuSetDocReqCanceled.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuSetDocReqCanceled.Image = ((System.Drawing.Image)(resources.GetObject("mnuSetDocReqCanceled.Image")));
-            this.mnuSetDocReqCanceled.Name = "mnuSetDocReqCanceled";
-            this.mnuSetDocReqCanceled.Size = new System.Drawing.Size(159, 26);
-            this.mnuSetDocReqCanceled.Text = "لغو درخواست";
-            this.mnuSetDocReqCanceled.Click += new System.EventHandler(this.mnuSetDocReqCanceled_Click);
+            this.mnuCancelReq.Enabled = false;
+            this.mnuCancelReq.Image = global::IsoDocApp.Properties.Resources.No;
+            this.mnuCancelReq.Name = "mnuCancelReq";
+            this.mnuCancelReq.Size = new System.Drawing.Size(167, 22);
+            this.mnuCancelReq.Text = "لغو درخواست";
+            this.mnuCancelReq.Click += new System.EventHandler(this.mnuCancelReq_Click);
+            // 
+            // mnuDeleteReq
+            // 
+            this.mnuDeleteReq.Enabled = false;
+            this.mnuDeleteReq.Image = global::IsoDocApp.Properties.Resources._1231;
+            this.mnuDeleteReq.Name = "mnuDeleteReq";
+            this.mnuDeleteReq.Size = new System.Drawing.Size(167, 22);
+            this.mnuDeleteReq.Text = "حذف درخواست";
+            this.mnuDeleteReq.Click += new System.EventHandler(this.mnuDeleteReq_Click);
+            // 
+            // mnuEnableReq
+            // 
+            this.mnuEnableReq.Enabled = false;
+            this.mnuEnableReq.Image = global::IsoDocApp.Properties.Resources.CheckBox_32x32;
+            this.mnuEnableReq.Name = "mnuEnableReq";
+            this.mnuEnableReq.Size = new System.Drawing.Size(167, 22);
+            this.mnuEnableReq.Text = "فعال کردن درخواست";
+            this.mnuEnableReq.Click += new System.EventHandler(this.mnuEnableReq_Click);
             // 
             // FrmManageDocReqs
             // 
@@ -560,13 +610,14 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
-            this.ContextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,9 +661,13 @@
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
-        internal System.Windows.Forms.ContextMenuStrip ContextMenuStrip1;
-        internal System.Windows.Forms.ToolStripMenuItem mnuSetDocReqCompleted;
-        internal System.Windows.Forms.ToolStripMenuItem mnuSetDocReqCanceled;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage tabDeletedRequests;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem mnuCompleteReq;
+        private System.Windows.Forms.ToolStripMenuItem mnuCancelReq;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeleteReq;
+        private System.Windows.Forms.ToolStripMenuItem mnuEnableReq;
     }
 }
 

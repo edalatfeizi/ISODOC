@@ -99,12 +99,30 @@ namespace IsoDoc.Infrastructure.Repositories
         //    }
         //}
 
-        public async Task<Person?> GetUserInfo(string userCardNumber)
+        public async Task<Person?> GetUserInfoByCardNumber(string userCardNumber)
         {
             try
             {
                 connection.Open();
                 var userInfoQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CardNumber = ${userCardNumber}";
+
+                var userInfo = await connection.QueryAsync<Person>(userInfoQuery);
+                connection.Close();
+                return userInfo.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                throw ex;
+            }
+        }
+
+        public async Task<Person> GetUserInfoByPersonCode(string personCode)
+        {
+            try
+            {
+                connection.Open();
+                var userInfoQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PersonCode = ${personCode}";
 
                 var userInfo = await connection.QueryAsync<Person>(userInfoQuery);
                 connection.Close();

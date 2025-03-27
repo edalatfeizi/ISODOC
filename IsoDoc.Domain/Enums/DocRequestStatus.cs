@@ -16,5 +16,7 @@ namespace IsoDoc.Domain.Enums
         Completed,
         [Display(Name = "لغو شده")]
         Canceled,
+        [Display(Name = "حذف شده")]
+        Deleted,
     }
 }
