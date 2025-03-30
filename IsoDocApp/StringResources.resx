@@ -165,6 +165,9 @@
   <data name="Create" xml:space="preserve">
     <value>ایجاد</value>
   </data>
+  <data name="CreateDateAndTime" xml:space="preserve">
+    <value>تاریخ و زمان ثبت:</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>حذف</value>
   </data>
@@ -180,14 +183,17 @@
   <data name="Dep" xml:space="preserve">
     <value>واحد</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>توضیحات:</value>
+  </data>
   <data name="EmptyValues" xml:space="preserve">
     <value>خالی بودن مقادیر</value>
   </data>
   <data name="EnterCancelReason" xml:space="preserve">
-    <value>لطفا علت لغو درخواست را وارد نمایید</value>
+    <value>لطفا علت لغو درخواست را وارد نمایید:</value>
   </data>
   <data name="EnterDeleteReason" xml:space="preserve">
-    <value>لطفا علت حذف درخواست را وارد نمایید</value>
+    <value>لطفا علت حذف درخواست را وارد نمایید:</value>
   </data>
   <data name="ErrorAttachFile" xml:space="preserve">
     <value>لطفا سند مورد نظر خود را پیوست کنید.</value>
@@ -205,7 +211,7 @@
     <value>برای</value>
   </data>
   <data name="InProgress" xml:space="preserve">
-    <value>در حال انجام</value>
+    <value>در حال بررسی</value>
   </data>
   <data name="NewCreateDocReq" xml:space="preserve">
     <value>درخواست ایجاد سند جدید</value>
@@ -215,6 +221,9 @@
   </data>
   <data name="SelectDocKeepDuration" xml:space="preserve">
     <value>انتخاب مدت زمان نگهداری سند</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>وضعیت:</value>
   </data>
   <data name="WithTitle" xml:space="preserve">
     <value>با عنوان</value>

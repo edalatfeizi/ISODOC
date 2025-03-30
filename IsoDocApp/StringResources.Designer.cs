@@ -205,6 +205,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ و زمان ثبت:.
+        /// </summary>
+        internal static string CreateDateAndTime {
+            get {
+                return ResourceManager.GetString("CreateDateAndTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to حذف.
         /// </summary>
         internal static string Delete {
@@ -250,6 +259,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to توضیحات:.
+        /// </summary>
+        internal static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خالی بودن مقادیر.
         /// </summary>
         internal static string EmptyValues {
@@ -259,7 +277,7 @@ namespace IsoDocApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to لطفا علت لغو درخواست را وارد نمایید.
+        ///   Looks up a localized string similar to لطفا علت لغو درخواست را وارد نمایید:.
         /// </summary>
         internal static string EnterCancelReason {
             get {
@@ -268,7 +286,7 @@ namespace IsoDocApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to لطفا علت حذف درخواست را وارد نمایید.
+        ///   Looks up a localized string similar to لطفا علت حذف درخواست را وارد نمایید:.
         /// </summary>
         internal static string EnterDeleteReason {
             get {
@@ -322,7 +340,7 @@ namespace IsoDocApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to در حال انجام.
+        ///   Looks up a localized string similar to در حال بررسی.
         /// </summary>
         internal static string InProgress {
             get {
@@ -354,6 +372,15 @@ namespace IsoDocApp {
         internal static string SelectDocKeepDuration {
             get {
                 return ResourceManager.GetString("SelectDocKeepDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وضعیت:.
+        /// </summary>
+        internal static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
             }
         }
         

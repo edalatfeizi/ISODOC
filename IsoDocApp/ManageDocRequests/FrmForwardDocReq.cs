@@ -24,13 +24,16 @@ namespace IsoDocApp.ManageDocRequests
         private Person userInfo;
         private Person receiverUserInfo;
         private List<DocRequestStep> selectedDocReqSteps = new List<DocRequestStep>();
-
-        public FrmForwardDocReq(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService,/* IDocRequestStepsService docRequestStepsService,*/ int docReqId, int lastDocReqStepId)
+        private bool isAdmin = false;
+        private DocRequestStatus requestStatus;
+        private string docReqStatusDsc = "";
+        public FrmForwardDocReq(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService,/* IDocRequestStepsService docRequestStepsService,*/ int docReqId, int lastDocReqStepId, DocRequestStatus docRequestStatus, string docReqStatusDsc)
         {
             this.manageDocReqsService = manageDocReqsService;
             this.personelyService = personelyService;
             this.docRequestStepsService = docRequestStepsService;
-
+            this.requestStatus = docRequestStatus;
+            this.docReqStatusDsc = docReqStatusDsc;
             this.docReqId = docReqId;
             this.lastDocReqStepId = lastDocReqStepId;
 
@@ -48,7 +51,7 @@ namespace IsoDocApp.ManageDocRequests
             docReqSteps.Items.Clear();
             selectedDocReqSteps = await manageDocReqsService.GetDocRequestSteps(docReqId);
 
-            var steps = await DocRequestsHelper.GetDocRequestProgressBarSteps(selectedDocReqSteps);
+            var steps = await DocRequestsHelper.GetDocRequestProgressBarSteps(selectedDocReqSteps, requestStatus, docReqStatusDsc);
             foreach (var step in steps)
             {
                 docReqSteps.Items.Add(step);
@@ -64,11 +67,11 @@ namespace IsoDocApp.ManageDocRequests
             txtDocReqId.Text = docReqId.ToString();
 
             var userName = SystemInformation.UserName.ToString();
-            userName = "3821";
+            userName = "3864";
             userInfo = await personelyService.GetUserInfoByCardNumber(userName);
 
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
-            var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
+            isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
             if (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
                 var admins = await personelyService.GetUserColleagues(null, null, true);
@@ -76,7 +79,10 @@ namespace IsoDocApp.ManageDocRequests
             }
             else if (isAdmin)
             {
+                userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare);
+
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
+
                 userColleagues.AddRange(admins);
             }
 

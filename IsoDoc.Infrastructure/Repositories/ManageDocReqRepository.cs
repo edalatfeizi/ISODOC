@@ -80,9 +80,9 @@ namespace IsoDoc.Infrastructure.Repositories
             {
                 connection.Open();
                 var docRequestsQuery = $@"
-                    INSERT INTO DocRequests (DocId, DocOwnerDep, DocCode, Title, KeepDuration, ChangeSummary, CreateReason, DocRequestType, DocType, CreatorDep, {baseEntityInsertProps})
+                    INSERT INTO DocRequests (DocId, DocOwnerDep, DocCode, Title, KeepDuration, ChangeSummary, CreateReason, DocRequestType,DocRequestStatus, DocType, CreatorDep, {baseEntityInsertProps})
                     OUTPUT INSERTED.Id
-                    VALUES (@DocId, @DocOwnerDep, @DocCode, @Title, @KeepDuration, @ChangeSummary, @CreateReason, @DocRequestType, @DocType, @CreatorDep, {baseEntityInsertPropsValues});";
+                    VALUES (@DocId, @DocOwnerDep, @DocCode, @Title, @KeepDuration, @ChangeSummary, @CreateReason, @DocRequestType,@DocRequestStatus, @DocType, @CreatorDep, {baseEntityInsertPropsValues});";
 
 
                 var newDocReqId = await connection.QuerySingleAsync<int>(docRequestsQuery, docRequest);
@@ -142,7 +142,7 @@ namespace IsoDoc.Infrastructure.Repositories
                                             LEFT JOIN 
                                                 DocRequestAttachments DRA ON DR.Id = DRA.DocRequestId
                                            ";
-                docRequestsQuery += @" where DR.Active = @Active ";
+                docRequestsQuery += filterDocRequests.DocRequestStatus != null ? @" where DR.Active = @Active and DR.DocRequestStatus = @DocRequestStatus " : filterDocRequests.Active != null ? " where DR.Active = @Active" : ""; // DocRequestStatus = 0 is DocRequest is InProgress
 
                 if (!string.IsNullOrEmpty(filterDocRequests.CreatorPersonCode))
                 {
@@ -168,6 +168,7 @@ namespace IsoDoc.Infrastructure.Repositories
                 {
                     Active = filterDocRequests.Active,
                     CreatorPersonCode = filterDocRequests.CreatorPersonCode,
+                    DocRequestStatus = filterDocRequests.DocRequestStatus,
                 };
 
                 var docRequests = await connection.QueryAsync<DocRequest>(docRequestsQuery, parameters);

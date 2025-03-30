@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmForwardDocReq));
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.docReqSteps = new DevExpress.XtraEditors.StepProgressBar();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.progressBar = new DevExpress.XtraWaitForm.ProgressPanel();
             this.txtDocReqStepDesc = new DevExpress.XtraEditors.MemoEdit();
@@ -41,13 +40,14 @@
             this.txtDocReqId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).BeginInit();
+            this.docReqSteps = new DevExpress.XtraEditors.StepProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocReqStepDesc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbUserColleagues.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocReqId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -65,43 +65,6 @@
             this.btnSave.TabIndex = 25;
             this.btnSave.Text = "ثبت ارجاع";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // docReqSteps
-            // 
-            this.docReqSteps.AllowHtmlText = DevExpress.Utils.DefaultBoolean.False;
-            this.docReqSteps.Appearances.CommonActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.docReqSteps.Appearances.CommonInactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.Caption.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.Description.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Dock = System.Windows.Forms.DockStyle.Left;
-            this.docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image")));
-            this.docReqSteps.Location = new System.Drawing.Point(0, 0);
-            this.docReqSteps.Name = "docReqSteps";
-            this.docReqSteps.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.docReqSteps.Size = new System.Drawing.Size(316, 450);
-            this.docReqSteps.TabIndex = 26;
             // 
             // panelControl1
             // 
@@ -228,6 +191,47 @@
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("bba561b0-42d8-408b-9c05-85d9d87f4052", null, "ارجاع درخواست", "ثبت ارجاع درخواست با موفقیت انجام شد.", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
             // 
+            // docReqSteps
+            // 
+            this.docReqSteps.AllowHtmlText = DevExpress.Utils.DefaultBoolean.False;
+            this.docReqSteps.Appearances.CommonActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.docReqSteps.Appearances.CommonInactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.Caption.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.Description.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseFont = true;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Font = new System.Drawing.Font("Vazirmatn SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseFont = true;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
+            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.docReqSteps.Dock = System.Windows.Forms.DockStyle.Left;
+            this.docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image")));
+            this.docReqSteps.Location = new System.Drawing.Point(0, 0);
+            this.docReqSteps.Name = "docReqSteps";
+            this.docReqSteps.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.docReqSteps.Size = new System.Drawing.Size(316, 450);
+            this.docReqSteps.TabIndex = 26;
+            // 
             // FrmForwardDocReq
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.Menu;
@@ -251,7 +255,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ارجاع درخواست";
             this.Load += new System.EventHandler(this.FrmForwardDocReq_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -259,13 +262,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbUserColleagues.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocReqId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private DevExpress.XtraEditors.SimpleButton btnSave;
-        private DevExpress.XtraEditors.StepProgressBar docReqSteps;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.TextEdit txtDocReqId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -275,5 +278,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraWaitForm.ProgressPanel progressBar;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
+        private DevExpress.XtraEditors.StepProgressBar docReqSteps;
     }
 }

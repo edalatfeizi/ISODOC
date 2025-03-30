@@ -44,7 +44,7 @@ namespace IsoDocApp.ManageDocRequests
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";
 
             var userName = SystemInformation.UserName.ToString();
-            userName = "3821";
+            userName = "3134";
             userInfo = await personelyService.GetUserInfoByCardNumber(userName);
             //userManagerInfo = await personelyService.GetUserManager(userInfo.UpperCode);
             //if(userManagerInfo == null)
@@ -78,6 +78,8 @@ namespace IsoDocApp.ManageDocRequests
             }
             else if (isAdmin)
             {
+                userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare);
+
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
                 userColleagues.AddRange(admins);
             }

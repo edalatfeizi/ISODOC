@@ -10,7 +10,7 @@ namespace IsoDoc.Domain.Enums
 {
     public enum DocRequestStatus
     {
-        [Display(Name = "در حال انجام")]
+        [Display(Name = "در حال بررسی")]
         InProgress,
         [Display(Name = "تکمیل شده")]
         Completed,

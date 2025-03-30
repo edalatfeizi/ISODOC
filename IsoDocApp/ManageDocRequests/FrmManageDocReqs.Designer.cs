@@ -329,6 +329,7 @@
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
+            this.gridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseUp);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // progressBar
@@ -547,14 +548,14 @@
             this.mnuEnableReq});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 130);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(180, 108);
             // 
             // mnuCompleteReq
             // 
             this.mnuCompleteReq.Enabled = false;
             this.mnuCompleteReq.Image = global::IsoDocApp.Properties.Resources.Yes;
             this.mnuCompleteReq.Name = "mnuCompleteReq";
-            this.mnuCompleteReq.Size = new System.Drawing.Size(167, 22);
+            this.mnuCompleteReq.Size = new System.Drawing.Size(179, 26);
             this.mnuCompleteReq.Text = "تکمیل درخواست";
             this.mnuCompleteReq.Click += new System.EventHandler(this.mnuCompleteReq_Click);
             // 
@@ -563,7 +564,7 @@
             this.mnuCancelReq.Enabled = false;
             this.mnuCancelReq.Image = global::IsoDocApp.Properties.Resources.No;
             this.mnuCancelReq.Name = "mnuCancelReq";
-            this.mnuCancelReq.Size = new System.Drawing.Size(167, 22);
+            this.mnuCancelReq.Size = new System.Drawing.Size(179, 26);
             this.mnuCancelReq.Text = "لغو درخواست";
             this.mnuCancelReq.Click += new System.EventHandler(this.mnuCancelReq_Click);
             // 
@@ -572,7 +573,7 @@
             this.mnuDeleteReq.Enabled = false;
             this.mnuDeleteReq.Image = global::IsoDocApp.Properties.Resources._1231;
             this.mnuDeleteReq.Name = "mnuDeleteReq";
-            this.mnuDeleteReq.Size = new System.Drawing.Size(167, 22);
+            this.mnuDeleteReq.Size = new System.Drawing.Size(179, 26);
             this.mnuDeleteReq.Text = "حذف درخواست";
             this.mnuDeleteReq.Click += new System.EventHandler(this.mnuDeleteReq_Click);
             // 
@@ -581,7 +582,7 @@
             this.mnuEnableReq.Enabled = false;
             this.mnuEnableReq.Image = global::IsoDocApp.Properties.Resources.CheckBox_32x32;
             this.mnuEnableReq.Name = "mnuEnableReq";
-            this.mnuEnableReq.Size = new System.Drawing.Size(167, 22);
+            this.mnuEnableReq.Size = new System.Drawing.Size(179, 26);
             this.mnuEnableReq.Text = "فعال کردن درخواست";
             this.mnuEnableReq.Click += new System.EventHandler(this.mnuEnableReq_Click);
             // 
