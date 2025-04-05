@@ -44,7 +44,7 @@ namespace IsoDocApp.ManageDocRequests
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";
 
             var userName = SystemInformation.UserName.ToString();
-            userName = "3134";
+            userName = "3636";
             userInfo = await personelyService.GetUserInfoByCardNumber(userName);
             //userManagerInfo = await personelyService.GetUserManager(userInfo.UpperCode);
             //if(userManagerInfo == null)
@@ -71,7 +71,7 @@ namespace IsoDocApp.ManageDocRequests
                 userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
 
             var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
-            if (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
+            if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
                 var admins = await personelyService.GetUserColleagues(null, null, true);
                 userColleagues.AddRange(admins);

@@ -59,7 +59,7 @@ namespace IsoDocApp
         {
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName.ToString();
-            userName = "3815";
+            userName = "3636";
 
             userInfo = await personelyService.GetUserInfoByCardNumber(userName);
             // RibbonPage selectedPage = ribbonControl1.Pages[0];
@@ -67,7 +67,7 @@ namespace IsoDocApp
             //if(userInfo != null)
             //GetUserDocRequests();
 
-            if (userInfo != null && (userInfo.CardNumber == "3910" || userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
+            if (userInfo != null && (userInfo.CardNumber == "3910" || userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
             {
                 tabAllDocRequests.Visible = true;
                 //tabDeletedRequests.Visible = true;
@@ -223,6 +223,7 @@ namespace IsoDocApp
             {
                 //docReqSteps.Items.Clear();
                 docReqSteps.Items.Clear();
+                grdUserDocRequests.DataSource = null;
                 // Check which page was clicked using the Name or Text property
                 switch (selectedPage.Name)
                 {
@@ -321,7 +322,7 @@ namespace IsoDocApp
         private void ForwardDocRequest()
         {
             RibbonPage selectedPage = ribbonControl1.SelectedPage;
-            if (selectedPage.Name == "tabReceivedRequests" && userDocReqs.Count > 0)
+            if (selectedPage.Name == tabReceivedRequests.Name && userDocReqs.Count > 0)
             {
                 var docReqId = int.Parse(GetGridViewCellValue("Id").ToString());
                 var lastDocReqStepId = selectedDocReqSteps.Last().Id;
@@ -353,7 +354,6 @@ namespace IsoDocApp
             var docReqId = int.Parse(GetGridViewCellValue("Id").ToString());
             ShowProgressBar(true);
             var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Completed, "");
-            //FilterDocRequests(new FilterDocRequests { Active = true });
             btnReload.PerformClick();
         }
 
@@ -368,7 +368,6 @@ namespace IsoDocApp
                 ShowProgressBar(true);
                 var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Canceled, cancelReason);
                 btnReload.PerformClick();
-                //FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
 
             }
         }
@@ -386,7 +385,6 @@ namespace IsoDocApp
                 await manageDocReqsService.SetDocRequestActive(docReqId, deleteReason, false);
                 btnReload.PerformClick();
 
-                //FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
             }
         }
 
@@ -400,7 +398,6 @@ namespace IsoDocApp
             await manageDocReqsService.SetDocRequestActive(docReqId, "", true);
             btnReload.PerformClick();
 
-            //FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.Deleted, Active = false });
         }
 
         private async void gridView1_MouseUp(object sender, MouseEventArgs e)
