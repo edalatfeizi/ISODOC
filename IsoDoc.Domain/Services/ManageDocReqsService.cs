@@ -47,10 +47,7 @@ namespace IsoDoc.Domain.Services
             return await manageDocReqsRepo.GetDocRequest(docReqId);
         }
 
-        public async Task<DocRequestAttachment?> GetDocRequestAttachment(int docReqId)
-        {
-            return await manageDocReqsRepo.GetDocRequestAttachment(docReqId);
-        }
+      
 
         public async Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId)
         {

@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\AttachmentsHelper.cs" />
     <Compile Include="Helpers\DocRequestsHelper.cs" />
     <Compile Include="Extensions\StepProgressBarExtension.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
@@ -88,12 +89,19 @@
     <Compile Include="FrmMessageBox.Designer.cs">
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GridViewHelper.cs" />
     <Compile Include="Helpers\Validators.cs" />
     <Compile Include="ManageDocRequests\FrmForwardDocReq.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageDocRequests\FrmForwardDocReq.Designer.cs">
       <DependentUpon>FrmForwardDocReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDocRequests\FrmManageAttachments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageDocRequests\FrmManageAttachments.Designer.cs">
+      <DependentUpon>FrmManageAttachments.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageDocRequests\FrmManageDocReqs.cs">
       <SubType>Form</SubType>
@@ -119,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageDocRequests\FrmForwardDocReq.resx">
       <DependentUpon>FrmForwardDocReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageDocRequests\FrmManageAttachments.resx">
+      <DependentUpon>FrmManageAttachments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageDocRequests\FrmManageDocReqs.resx">
       <DependentUpon>FrmManageDocReqs.cs</DependentUpon>

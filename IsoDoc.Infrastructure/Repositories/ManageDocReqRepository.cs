@@ -202,24 +202,7 @@ namespace IsoDoc.Infrastructure.Repositories
             }
         }
 
-        public async Task<DocRequestAttachment?> GetDocRequestAttachment(int docReqId)
-        {
-            try
-            {
-                connection.Open();
-                var docRequestStepsQuery = $"select * from DocRequestAttachments where DocRequestId = '{docReqId}' and Active = '1' ";
-
-
-                var docRequestAttachments = await connection.QueryAsync<DocRequestAttachment>(docRequestStepsQuery);
-                connection.Close();
-                return docRequestAttachments.FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
-        }
+       
 
         public async Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId)
         {

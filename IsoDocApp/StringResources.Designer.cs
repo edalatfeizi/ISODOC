@@ -367,6 +367,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to فایل پیوست مورد نظر را انتخاب کنید.
+        /// </summary>
+        internal static string SelectAttachment {
+            get {
+                return ResourceManager.GetString("SelectAttachment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to انتخاب مدت زمان نگهداری سند.
         /// </summary>
         internal static string SelectDocKeepDuration {

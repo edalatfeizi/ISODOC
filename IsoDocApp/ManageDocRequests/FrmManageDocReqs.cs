@@ -6,6 +6,7 @@ using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
+using IsoDocApp.Helpers;
 using IsoDocApp.ManageDocRequests;
 using System;
 using System.Collections.Generic;
@@ -24,15 +25,17 @@ namespace IsoDocApp
     {
         private readonly IManageDocReqsService manageDocReqsService;
         private readonly IPersonelyService personelyService;
+        private readonly IDocRequestAttachmentsService docRequestAttachmentsService;
         private List<DocRequest> userDocReqs = new List<DocRequest>();
         private Person userInfo;
         private string userName = "";
         private bool isAdmin = false;
         private List<DocRequestStep> selectedDocReqSteps = new List<DocRequestStep>();
-        public FrmManageDocReqs(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService)
+        public FrmManageDocReqs(IManageDocReqsService manageDocReqsService,IDocRequestAttachmentsService docRequestAttachmentsService, IPersonelyService personelyService)
         {
             this.manageDocReqsService = manageDocReqsService;
             this.personelyService = personelyService;
+            this.docRequestAttachmentsService = docRequestAttachmentsService;
             InitializeComponent();
 
         }
@@ -109,12 +112,12 @@ namespace IsoDocApp
 
 
                 await GetDocReqSteps(docId, docRequest.DocRequestStatus, GetDocRequestStatusDsc(docRequest));
-                var attachment = GetGridViewCellValue("HasAttachments");
+                var attachment = GridViewHelper.GetGridViewCellValue(gridView1,"HasAttachments");
                 var hasAttachments = attachment != null ? attachment.ToString() : null;
                 if (!string.IsNullOrEmpty(hasAttachments) && hasAttachments.ToString() == "دارد")
-                    btnDownloadAttachment.Enabled = true;
+                    btnShowAttachments.Enabled = true;
                 else
-                    btnDownloadAttachment.Enabled = false;
+                    btnShowAttachments.Enabled = false;
 
             }
         }
@@ -150,65 +153,22 @@ namespace IsoDocApp
             return true;
         }
 
-
-        private async void DownloadAttachment()
-        {
-            var docReqId = int.Parse(GetGridViewCellValue("Id").ToString());
-            var attachment = await manageDocReqsService.GetDocRequestAttachment(docReqId);
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = $"{attachment.Name}"; // File type filter
-            saveFileDialog.Filter = "All Files (*.*)|*.*"; // File type filter
-            saveFileDialog.Title = "ذخیره فایل پیوست"; // Dialog title
-            saveFileDialog.DefaultExt = attachment.ContentType; // Default file extension
-            saveFileDialog.AddExtension = true; // Automatically add the file extension
-
-            // Show the dialog and check if the user clicked "OK"
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // Get the selected file path
-                string filePath = saveFileDialog.FileName;
-
-                try
-                {
-                    // Save the byte array to the selected file path
-                    File.WriteAllBytes(filePath, attachment.FileContent);
-
-                    toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
-
-                }
-                catch (Exception ex)
-                {
-                    var frmMsgBox = new FrmMessageBox();
-
-                    frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
-                    {
-                        Title = StringResources.ErrorProccessingData,
-                        Message = $"{ex.Message} \n {ex.InnerException}",
-                        ConfirmButtonText = StringResources.Confirm,
-                        DevExpressIconId = "cancel",
-                        DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
-                    });
-                    frmMsgBox.ShowDialog();
-                }
-            }
-        }
-
-        private object GetGridViewCellValue(string columnName)
-        {
-            int rowHandle = gridView1.FocusedRowHandle;
-
-            if (rowHandle >= 0)
-            {
-                var value = gridView1.GetRowCellValue(rowHandle, columnName);
-                return value;
-            }
-            return null;
-        }
-
         private void btnDownloadAttachment_Click(object sender, EventArgs e)
         {
-            DownloadAttachment();
+            RibbonPage selectedPage = ribbonControl1.SelectedPage;
+            if (userDocReqs.Count > 0)
+            {
+                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+
+                var frmManageAttachments = new FrmManageAttachments(docRequestAttachmentsService, docReqId);
+                var result = frmManageAttachments.ShowDialog();
+
+
+                if (result == DialogResult.OK)
+                {
+                    FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
+                }
+            }
 
         }
 
@@ -233,6 +193,7 @@ namespace IsoDocApp
                             // docReqSteps.Items.Clear();
                             FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
                             btnForwardDocReq.Enabled = true;
+                            btnAddAttachment.Enabled = true;
                         }
 
                         break;
@@ -324,7 +285,7 @@ namespace IsoDocApp
             RibbonPage selectedPage = ribbonControl1.SelectedPage;
             if (selectedPage.Name == tabReceivedRequests.Name && userDocReqs.Count > 0)
             {
-                var docReqId = int.Parse(GetGridViewCellValue("Id").ToString());
+                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
                 var lastDocReqStepId = selectedDocReqSteps.Last().Id;
                 var docRequest = userDocReqs.Where(x => x.Id == docReqId).FirstOrDefault();
 
@@ -351,7 +312,7 @@ namespace IsoDocApp
 
         private async void mnuCompleteReq_Click(object sender, EventArgs e)
         {
-            var docReqId = int.Parse(GetGridViewCellValue("Id").ToString());
+            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
             ShowProgressBar(true);
             var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Completed, "");
             btnReload.PerformClick();
@@ -359,7 +320,7 @@ namespace IsoDocApp
 
         private async void mnuCancelReq_Click(object sender, EventArgs e)
         {
-            var docReqId = int.Parse(GetGridViewCellValue("Id").ToString());
+            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
             string cancelReason = XtraInputBox.Show(StringResources.EnterCancelReason, StringResources.CancelReason, "");
 
             // Check if the user clicked OK and the input is not empty
@@ -374,7 +335,7 @@ namespace IsoDocApp
 
         private async void mnuDeleteReq_Click(object sender, EventArgs e)
         {
-            var docReqId = int.Parse(GetGridViewCellValue("Id").ToString());
+            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
             string deleteReason = XtraInputBox.Show(StringResources.EnterDeleteReason, StringResources.DeleteRequest, "");
 
             // Check if the user clicked OK and the input is not empty
@@ -390,7 +351,7 @@ namespace IsoDocApp
 
         private async void mnuEnableReq_Click(object sender, EventArgs e)
         {
-            var docReqId = int.Parse(GetGridViewCellValue("Id").ToString());
+            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
 
 
             ShowProgressBar(true);
@@ -416,7 +377,7 @@ namespace IsoDocApp
                 {
                     if (isAdmin)
                     {
-                        var docReqId = int.Parse(GetGridViewCellValue("Id").ToString());
+                        var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
                         var docReq = await manageDocReqsService.GetDocRequest(docReqId);
                         var creatorUser = await personelyService.GetUserInfoByPersonCode(docReq.CreatedBy);
 
@@ -461,6 +422,21 @@ namespace IsoDocApp
             }
 
 
+        }
+
+        private async void btnAddAttachment_Click(object sender, EventArgs e)
+        {
+            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+            var docReqAttachment = AttachmentsHelper.AttachFile();
+            if (docReqAttachment != null)
+            {
+                docReqAttachment.DocRequestId = docReqId;
+                docReqAttachment.CreatedBy  = userInfo.PersonCode;
+                docReqAttachment.ModifiedBy = userInfo.PersonCode;
+                ShowProgressBar(true);
+                await manageDocReqsService.AttachFileAsync(docReqAttachment);
+                ShowProgressBar(false);
+            }
         }
     }
 }

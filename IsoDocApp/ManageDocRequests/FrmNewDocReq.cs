@@ -48,7 +48,7 @@ namespace IsoDocApp.ManageDocRequests
             userInfo = await personelyService.GetUserInfoByCardNumber(userName);
             //userManagerInfo = await personelyService.GetUserManager(userInfo.UpperCode);
             //if(userManagerInfo == null)
-               // userManagerInfo = await personelyService.GetUserManager(userInfo.DepartCode);
+            // userManagerInfo = await personelyService.GetUserManager(userInfo.DepartCode);
 
             departments = await personelyService.GetDepartments();
             //documents = await manageDocReqsService.GetDocuments("B1100");
@@ -67,7 +67,7 @@ namespace IsoDocApp.ManageDocRequests
             cmbDocTypes.Properties.DataSource = docTypes;
 
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
-            if(userColleagues.Count == 0) // incase if user has no direct colleagues like boss or he/she has no employees  
+            if (userColleagues.Count == 0) // incase if user has no direct colleagues like boss or he/she has no employees  
                 userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
 
             var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
@@ -121,37 +121,17 @@ namespace IsoDocApp.ManageDocRequests
 
 
         }
-        private bool AttachFile()
+        private void AttachFile()
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            docReqAttachment = AttachmentsHelper.AttachFile();
+            if (docReqAttachment != null)
             {
-                openFileDialog.Filter = "Word Files|*.docx;*.doc|Excel Files|*.xlsx;*.xls|PDF Files|*.pdf";
-                openFileDialog.Title = "فایل پیوست مورد نظر را انتخاب کنید";
+                btnFileName.Visible = true;
+                btnFileName.Text = docReqAttachment.Name;
+                ToggleAttachFileButtonView("cancel", StringResources.DeleteAttachedFile);
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string filePath = openFileDialog.FileName;
-                    var file = File.ReadAllBytes(filePath);
-                    string fileExtension = Path.GetExtension(filePath);
-
-                    btnFileName.Visible = true;
-                    btnFileName.Text = openFileDialog.SafeFileName;
-                    ToggleAttachFileButtonView("cancel", StringResources.DeleteAttachedFile);
-                    docReqAttachment = new DocRequestAttachment
-                    {
-                        Name = openFileDialog.SafeFileName,
-                        ContentType = fileExtension,
-                        Size = file.Length,
-                        FileContent = file
-                    };
-
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
             }
+
         }
 
         private void ShowProgressBar(bool isVisible)
@@ -176,7 +156,8 @@ namespace IsoDocApp.ManageDocRequests
 
         private void pbAttachFile_EditValueChanged(object sender, EventArgs e)
         {
-            AttachFile();
+          AttachFile();
+          
         }
 
         private void btnAttachFile_Click(object sender, EventArgs e)
@@ -217,12 +198,12 @@ namespace IsoDocApp.ManageDocRequests
 
                 if (!string.IsNullOrEmpty(cmbReqTypes.EditValue.ToString()))
                 {
-                    if (cmbReqTypes.EditValue.ToString() == StringResources.Create && Validators.ValidateControls<BaseEdit>(cmbReqTypes,cmbUserColleagues, txtTitle, txtReason, cmbDocOwnerDep, cmbDocTypes, cmbKeepDurations))
+                    if (cmbReqTypes.EditValue.ToString() == StringResources.Create && Validators.ValidateControls<BaseEdit>(cmbReqTypes, cmbUserColleagues, txtTitle, txtReason, cmbDocOwnerDep, cmbDocTypes, cmbKeepDurations))
                     {
-                        if(CheckAttachment())
+                        if (CheckAttachment())
                             AddNewDocRequest(DocRequestType.Create);
                     }
-                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Change && Validators.ValidateControls<BaseEdit>(cmbReqTypes, cmbUserColleagues, cmbDocOwnerDep, cmbDocs, txtReason, txtChanges ))
+                    else if (cmbReqTypes.EditValue.ToString() == StringResources.Change && Validators.ValidateControls<BaseEdit>(cmbReqTypes, cmbUserColleagues, cmbDocOwnerDep, cmbDocs, txtReason, txtChanges))
                     {
                         if (CheckAttachment())
                             AddNewDocRequest(DocRequestType.Update);
@@ -248,9 +229,9 @@ namespace IsoDocApp.ManageDocRequests
                 });
                 frmMsgBox.ShowDialog();
             }
-           
-            
-        
+
+
+
 
         }
         private async void AddNewDocRequest(DocRequestType docRequestType)
@@ -270,13 +251,13 @@ namespace IsoDocApp.ManageDocRequests
                 CreatedBy = userInfo.PersonCode,
                 ModifiedBy = userInfo.PersonCode,
 
-                
+
             };
             var desc = "";
             switch (docRequestType)
             {
                 case DocRequestType.Create:
-                    
+
                     newDocReq.Title = $"{StringResources.NewCreateDocReq} {StringResources.WithTitle} : {txtTitle.Text.Trim()}";
                     newDocReq.ChangeSummary = "";
                     newDocReq.DocCode = "";
@@ -339,7 +320,7 @@ namespace IsoDocApp.ManageDocRequests
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-   
+
         private bool CheckAttachment()
         {
             if (docReqAttachment == null)
@@ -386,7 +367,7 @@ namespace IsoDocApp.ManageDocRequests
 
                 pbAttachFile.Enabled = false;
                 btnAttachFile.Enabled = false;
-                
+
             }
             else //Change
             {
@@ -445,7 +426,7 @@ namespace IsoDocApp.ManageDocRequests
         {
             receiverColleague = userColleagues.Where(x => x.PersonCode.ToString() == cmbUserColleagues.EditValue.ToString()).FirstOrDefault();
 
-          
+
         }
     }
 }

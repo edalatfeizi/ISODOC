@@ -21,7 +21,6 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<List<Document>> GetDocuments(string depCode);
         Task<List<DocType>> GetDocTypes();
         Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId);
-        Task<DocRequestAttachment?> GetDocRequestAttachment(int docReqId);
         Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode);
 
         Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc);

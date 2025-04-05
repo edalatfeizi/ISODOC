@@ -6,6 +6,7 @@ using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Services;
 using IsoDoc.Infrastructure.Repositories;
+using IsoDocApp.ManageDocRequests;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -64,9 +65,13 @@ namespace IsoDocApp
             services.AddScoped<IDbConnection>(sp => new SqlConnection(connStr));
 
             services.AddSingleton<IManageDocReqsRepository, ManageDocReqRepository>();
+            services.AddSingleton<IDocRequestAttachmentsRepository, DocRequestAttachmentsRepository>();
+
             services.AddSingleton<IManageDocReqsService, ManageDocReqsService>();
+            services.AddSingleton<IDocRequestAttachmentsService, DocRequestAttachmentsService>();
 
             services.AddSingleton<FrmManageDocReqs>();
+            //services.AddSingleton<FrmManageAttachments>();
             //services.AddSingleton<FrmManageDocReqsFactory>(sp => () => sp.GetRequiredService<FrmManageDocReqs>());
 
         }
