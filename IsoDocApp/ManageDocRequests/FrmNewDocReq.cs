@@ -44,7 +44,7 @@ namespace IsoDocApp.ManageDocRequests
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";
 
             var userName = SystemInformation.UserName.ToString();
-            userName = "3636";
+            //userName = "3134";
             userInfo = await personelyService.GetUserInfoByCardNumber(userName);
             //userManagerInfo = await personelyService.GetUserManager(userInfo.UpperCode);
             //if(userManagerInfo == null)

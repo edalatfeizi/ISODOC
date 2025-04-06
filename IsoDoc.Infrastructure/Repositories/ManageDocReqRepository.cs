@@ -131,7 +131,7 @@ namespace IsoDoc.Infrastructure.Repositories
                 connection.Open();
 
                 var docRequestsQuery = @"
-                                        SELECT 
+                                        SELECT DISTINCT
                                             DR.*,
                                             CASE 
                                                 WHEN DRA.DocRequestID IS NOT NULL THEN 'دارد'

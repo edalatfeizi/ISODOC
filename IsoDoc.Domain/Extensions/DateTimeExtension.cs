@@ -18,5 +18,10 @@ namespace IsoDoc.Domain.Extensions
 
             return $"{year}/{month.ToString("00")}/{day.ToString("00")} {now.Hour}:{now.Minute}:{now.Second}";
         }
+
+        public static string FormatDateTime(this DateTime dateTime)
+        {
+            return $"{dateTime.Hour}:{dateTime.Minute} {dateTime.Year}/{dateTime.Month}/{dateTime.Day}";
+        }
     }
 }
