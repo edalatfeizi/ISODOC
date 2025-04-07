@@ -39,11 +39,11 @@ namespace IsoDoc.Domain.Entities
         public string KeepDuration { get; set; }
 
         [Display(Name = "شرح تغییرات", Order = 9)]
-        //[Editable(false)]
+        [Editable(false)]
         public string ChangeSummary { get; set; }
 
         [Display(Name = "علت تغییر/حذف/ایجاد سند", Order = 10)]
-        //[Editable(false)]
+        [Editable(false)]
         public string CreateReason { get; set; }
 
         [Display(Name = "فایل پیوست", Order = 11)]

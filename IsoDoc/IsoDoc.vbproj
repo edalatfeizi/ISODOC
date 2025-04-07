@@ -327,6 +327,12 @@
     <Compile Include="PresentationLayer\FrmLendingDocs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PresentationLayer\FrmMain.Designer.vb">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PresentationLayer\FrmNewDocRequest.Designer.vb">
       <DependentUpon>FrmNewDocRequest.vb</DependentUpon>
     </Compile>
@@ -596,6 +602,9 @@
     <EmbeddedResource Include="PresentationLayer\FrmLendingDocs.resx">
       <DependentUpon>FrmLendingDocs.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmMain.resx">
+      <DependentUpon>FrmMain.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\FrmNewDocRequest.resx">
       <DependentUpon>FrmNewDocRequest.vb</DependentUpon>
     </EmbeddedResource>
@@ -811,6 +820,10 @@
   <ItemGroup>
     <Content Include="Edit.ico" />
     <Content Include="icon1.ico" />
+    <None Include="Resources\organised-documents-references_23-2149396678.jpg" />
+    <None Include="Resources\organised-documents-references_23-2149396678 %281%29.jpg" />
+    <None Include="Resources\organised-documents-references_23-2149396678-original.jpg" />
+    <None Include="Resources\AdobeStock_551800135.jpg" />
     <None Include="packages.config" />
     <None Include="Resources\attachment.png" />
     <None Include="Resources\Learn-More.png" />

@@ -29,7 +29,7 @@ namespace IsoDoc.Infrastructure.Repositories
         {
             try
             {
-                
+
                 connection.Open();
                 var docRequestStepQuery = $@"
                     INSERT INTO DocRequestSteps (DocRequestId, SenderUserPersonCode, SenderUserFullName, SenderUserPost, ReceiverUserPersonCode, ReceiverUserFullName, ReceiverUserPost, Description, IsApproved, {baseEntityInsertProps})
@@ -47,7 +47,7 @@ namespace IsoDoc.Infrastructure.Repositories
                 connection.Close();
                 throw ex;
             }
-          
+
         }
 
         public async Task<DocRequestAttachment> AttachFileAsync(DocRequestAttachment docRequestAttachment)
@@ -71,7 +71,7 @@ namespace IsoDoc.Infrastructure.Repositories
                 connection.Close();
                 throw ex;
             }
-  
+
         }
 
         public async Task<DocRequest> CreateNewDocRequest(DocRequest docRequest)
@@ -100,7 +100,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
         }
 
-        public async Task<bool> SetDocRequestActive(int docReqId, string deleteDesc,bool isActive)
+        public async Task<bool> SetDocRequestActive(int docReqId, string deleteDesc, bool isActive)
         {
             try
             {
@@ -202,7 +202,7 @@ namespace IsoDoc.Infrastructure.Repositories
             }
         }
 
-       
+
 
         public async Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId)
         {
@@ -210,7 +210,7 @@ namespace IsoDoc.Infrastructure.Repositories
             {
                 connection.Open();
                 var docRequestStepsQuery = $"select * from DocRequestSteps where DocRequestId = '{docReqId}' and Active = '1' order by Id";
-               
+
 
                 var docRequestSteps = await connection.QueryAsync<DocRequestStep>(docRequestStepsQuery);
                 connection.Close();
@@ -257,7 +257,7 @@ namespace IsoDoc.Infrastructure.Repositories
                 connection.Close();
                 throw ex;
             }
-        
+
         }
 
 
@@ -268,9 +268,10 @@ namespace IsoDoc.Infrastructure.Repositories
                 connection.Open();
                 var maxDocReqIdQuery = "select MAX(Id) as MaxReqId from DocRequests";
 
-                var maxDocReqId = await connection.QueryAsync<int>(maxDocReqIdQuery);
+                var maxDocReqId = await connection.QueryAsync<int?>(maxDocReqIdQuery);
                 connection.Close();
-                return maxDocReqId.First();
+                return maxDocReqId.First() != null ? (int)maxDocReqId.First() : 0;
+
             }
             catch (Exception ex)
             {

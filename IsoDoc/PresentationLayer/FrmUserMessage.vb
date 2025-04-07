@@ -41,7 +41,7 @@ Public Class FrmUserMessage
             Cls_JanusGrid1.setMyJGrid(dt, dg, "MainId", "MainId", 0, , , False)
 
         Else
-            Dim FrmIsoMain1 As New FrmIsoMain
+            Dim FrmIsoMain1 As New FrmMain
 
             FrmIsoMain1.ShowDialog()
             Me.Close()

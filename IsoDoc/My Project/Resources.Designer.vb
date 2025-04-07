@@ -63,6 +63,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property AdobeStock_551800135() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AdobeStock_551800135", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property attach_files() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("attach-files", resourceCulture)
@@ -176,6 +186,36 @@ Namespace My.Resources
         Friend ReadOnly Property office_files() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("office-files", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property organised_documents_references_23_2149396678() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("organised-documents-references_23-2149396678", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property organised_documents_references_23_2149396678__1_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("organised-documents-references_23-2149396678 (1)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property organised_documents_references_23_2149396678_original() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("organised-documents-references_23-2149396678-original", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
