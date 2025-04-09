@@ -30,7 +30,9 @@ Partial Class FrmMain
         Me.btnExecutiveMethods = New DevExpress.XtraBars.BarSubItem()
         Me.mnuInstructions = New DevExpress.XtraBars.BarSubItem()
         Me.mnuFMEARisks = New DevExpress.XtraBars.BarSubItem()
+        Me.mnuRegulations = New DevExpress.XtraBars.BarSubItem()
         Me.mnuProcessMap = New DevExpress.XtraBars.BarSubItem()
+        Me.mnuPostIdentity = New DevExpress.XtraBars.BarSubItem()
         Me.mnuProcessIdentity = New DevExpress.XtraBars.BarSubItem()
         Me.mnuControlPlan = New DevExpress.XtraBars.BarSubItem()
         Me.mnuFlowChart = New DevExpress.XtraBars.BarSubItem()
@@ -85,43 +87,39 @@ Partial Class FrmMain
         Me.btnSearch = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAppHelp = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAuditCalendar = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnArchive = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnChangeDocsDep = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnAddLinks = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnTrack = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnPrintableForms = New DevExpress.XtraBars.BarSubItem()
+        Me.btnAbout = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnAddKnowledgeBaseData = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnShowKnowledgeBase = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup11 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage2 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup12 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup13 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage3 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup9 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup8 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPage4 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rpKnowledgeBase = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup14 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage5 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage6 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPage4 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpAuditCalendar = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPage8 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup15 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         Me.GalleryDropDown1 = New DevExpress.XtraBars.Ribbon.GalleryDropDown(Me.components)
-        Me.RibbonPageGroup13 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.btnArchive = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnChangeDocsDep = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnAddLinks = New DevExpress.XtraBars.BarButtonItem()
-        Me.mnuRegulations = New DevExpress.XtraBars.BarSubItem()
-        Me.mnuPostIdentity = New DevExpress.XtraBars.BarSubItem()
-        Me.btnTrack = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnPrintableForms = New DevExpress.XtraBars.BarSubItem()
-        Me.btnAbout = New DevExpress.XtraBars.BarButtonItem()
-        Me.rpKnowledgeBase = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup14 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.btnAddKnowledgeBaseData = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnShowKnowledgeBase = New DevExpress.XtraBars.BarButtonItem()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,7 +137,7 @@ Partial Class FrmMain
         Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonControl.MaxItemId = 85
         Me.RibbonControl.Name = "RibbonControl"
-        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.rpKnowledgeBase, Me.RibbonPage5, Me.RibbonPage6, Me.RibbonPage4, Me.rpAuditCalendar, Me.RibbonPage8})
+        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage4, Me.rpKnowledgeBase, Me.RibbonPage5, Me.RibbonPage6, Me.rpAuditCalendar})
         Me.RibbonControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.RibbonControl.Size = New System.Drawing.Size(1443, 177)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
@@ -148,7 +146,7 @@ Partial Class FrmMain
         '
         Me.btnShowDepDocs.Caption = "به تفکیک واحد"
         Me.btnShowDepDocs.Id = 3
-        Me.btnShowDepDocs.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem2.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnShowDepDocs.ImageOptions.SvgImage = CType(resources.GetObject("btnShowDepDocs.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btnShowDepDocs.Name = "btnShowDepDocs"
         '
         'BarSubItem1
@@ -202,12 +200,26 @@ Partial Class FrmMain
         Me.mnuFMEARisks.Id = 12
         Me.mnuFMEARisks.Name = "mnuFMEARisks"
         '
+        'mnuRegulations
+        '
+        Me.mnuRegulations.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
+        Me.mnuRegulations.Caption = "آیین نامه"
+        Me.mnuRegulations.Id = 78
+        Me.mnuRegulations.Name = "mnuRegulations"
+        '
         'mnuProcessMap
         '
         Me.mnuProcessMap.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuProcessMap.Caption = "نقشه فرآیند"
         Me.mnuProcessMap.Id = 13
         Me.mnuProcessMap.Name = "mnuProcessMap"
+        '
+        'mnuPostIdentity
+        '
+        Me.mnuPostIdentity.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
+        Me.mnuPostIdentity.Caption = "شناسنامه پست"
+        Me.mnuPostIdentity.Id = 79
+        Me.mnuPostIdentity.Name = "mnuPostIdentity"
         '
         'mnuProcessIdentity
         '
@@ -276,15 +288,15 @@ Partial Class FrmMain
         '
         Me.btnStandardCerts.Caption = "گواهی نامه های استاندارد"
         Me.btnStandardCerts.Id = 23
-        Me.btnStandardCerts.ImageOptions.Image = CType(resources.GetObject("BarButtonItem3.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnStandardCerts.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem3.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnStandardCerts.ImageOptions.Image = CType(resources.GetObject("btnStandardCerts.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnStandardCerts.ImageOptions.LargeImage = CType(resources.GetObject("btnStandardCerts.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnStandardCerts.Name = "btnStandardCerts"
         '
         'btnStrategicPlans
         '
         Me.btnStrategicPlans.Caption = "طرح های استراتژیک"
         Me.btnStrategicPlans.Id = 24
-        Me.btnStrategicPlans.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem4.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnStrategicPlans.ImageOptions.SvgImage = CType(resources.GetObject("btnStrategicPlans.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btnStrategicPlans.Name = "btnStrategicPlans"
         '
         'BarSubItem18
@@ -464,21 +476,21 @@ Partial Class FrmMain
         '
         Me.btnOutDocs.Caption = "مشاهده مستندات برون سازمانی"
         Me.btnOutDocs.Id = 55
-        Me.btnOutDocs.ImageOptions.Image = CType(resources.GetObject("BarButtonItem5.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnOutDocs.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem5.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnOutDocs.ImageOptions.Image = CType(resources.GetObject("btnOutDocs.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnOutDocs.ImageOptions.LargeImage = CType(resources.GetObject("btnOutDocs.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnOutDocs.Name = "btnOutDocs"
         '
         'btnOtherDocs
         '
         Me.btnOtherDocs.Caption = "مشاهده سایر مستندات"
         Me.btnOtherDocs.Id = 56
-        Me.btnOtherDocs.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem6.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnOtherDocs.ImageOptions.SvgImage = CType(resources.GetObject("btnOtherDocs.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btnOtherDocs.Name = "btnOtherDocs"
         '
         'btnShowKartable
         '
         Me.btnShowKartable.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
-        Me.btnShowKartable.Caption = "مشاهده کارتابل من"
+        Me.btnShowKartable.Caption = "مدیریت درخواست ها"
         Me.btnShowKartable.Id = 57
         Me.btnShowKartable.ImageOptions.Image = CType(resources.GetObject("btnShowKartable.ImageOptions.Image"), System.Drawing.Image)
         Me.btnShowKartable.ImageOptions.LargeImage = CType(resources.GetObject("btnShowKartable.ImageOptions.LargeImage"), System.Drawing.Image)
@@ -494,24 +506,24 @@ Partial Class FrmMain
         '
         Me.btnBaseInfo.Caption = "ثبت اطلاعات پایه"
         Me.btnBaseInfo.Id = 58
-        Me.btnBaseInfo.ImageOptions.Image = CType(resources.GetObject("BarButtonItem8.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnBaseInfo.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem8.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnBaseInfo.ImageOptions.Image = CType(resources.GetObject("btnBaseInfo.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnBaseInfo.ImageOptions.LargeImage = CType(resources.GetObject("btnBaseInfo.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnBaseInfo.Name = "btnBaseInfo"
         '
         'btnMainDocs
         '
         Me.btnMainDocs.Caption = "مستندات اصلی"
         Me.btnMainDocs.Id = 59
-        Me.btnMainDocs.ImageOptions.Image = CType(resources.GetObject("BarButtonItem9.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnMainDocs.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem9.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnMainDocs.ImageOptions.Image = CType(resources.GetObject("btnMainDocs.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnMainDocs.ImageOptions.LargeImage = CType(resources.GetObject("btnMainDocs.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnMainDocs.Name = "btnMainDocs"
         '
         'btnOutsideDocs
         '
         Me.btnOutsideDocs.Caption = "مستندات برون سازمانی"
         Me.btnOutsideDocs.Id = 61
-        Me.btnOutsideDocs.ImageOptions.Image = CType(resources.GetObject("BarButtonItem11.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnOutsideDocs.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem11.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnOutsideDocs.ImageOptions.Image = CType(resources.GetObject("btnOutsideDocs.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnOutsideDocs.ImageOptions.LargeImage = CType(resources.GetObject("btnOutsideDocs.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnOutsideDocs.Name = "btnOutsideDocs"
         '
         'BarSubItem41
@@ -548,52 +560,52 @@ Partial Class FrmMain
         '
         Me.btnSystemDocs.Caption = "لیست مستندات سیستمی"
         Me.btnSystemDocs.Id = 66
-        Me.btnSystemDocs.ImageOptions.Image = CType(resources.GetObject("BarButtonItem10.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSystemDocs.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem10.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnSystemDocs.ImageOptions.Image = CType(resources.GetObject("btnSystemDocs.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnSystemDocs.ImageOptions.LargeImage = CType(resources.GetObject("btnSystemDocs.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnSystemDocs.Name = "btnSystemDocs"
         '
         'btnCumulativeDocsReport
         '
         Me.btnCumulativeDocsReport.Caption = "گزارش تجمعی مستندات"
         Me.btnCumulativeDocsReport.Id = 67
-        Me.btnCumulativeDocsReport.ImageOptions.Image = CType(resources.GetObject("BarButtonItem12.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnCumulativeDocsReport.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem12.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnCumulativeDocsReport.ImageOptions.Image = CType(resources.GetObject("btnCumulativeDocsReport.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnCumulativeDocsReport.ImageOptions.LargeImage = CType(resources.GetObject("btnCumulativeDocsReport.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnCumulativeDocsReport.Name = "btnCumulativeDocsReport"
         '
         'btnDocsCountChart
         '
         Me.btnDocsCountChart.Caption = "نمودار تعداد مستندات"
         Me.btnDocsCountChart.Id = 68
-        Me.btnDocsCountChart.ImageOptions.Image = CType(resources.GetObject("BarButtonItem13.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnDocsCountChart.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem13.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnDocsCountChart.ImageOptions.Image = CType(resources.GetObject("btnDocsCountChart.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDocsCountChart.ImageOptions.LargeImage = CType(resources.GetObject("btnDocsCountChart.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnDocsCountChart.Name = "btnDocsCountChart"
         '
         'btnDepsDocsCountChart
         '
         Me.btnDepsDocsCountChart.Caption = "نمودار تعداد مستندات به تفکیک واحد"
         Me.btnDepsDocsCountChart.Id = 69
-        Me.btnDepsDocsCountChart.ImageOptions.Image = CType(resources.GetObject("BarButtonItem14.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnDepsDocsCountChart.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem14.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnDepsDocsCountChart.ImageOptions.Image = CType(resources.GetObject("btnDepsDocsCountChart.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnDepsDocsCountChart.ImageOptions.LargeImage = CType(resources.GetObject("btnDepsDocsCountChart.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnDepsDocsCountChart.Name = "btnDepsDocsCountChart"
         '
         'btnQAReports
         '
         Me.btnQAReports.Caption = "گزارشات تضمین کیفیت"
         Me.btnQAReports.Id = 70
-        Me.btnQAReports.ImageOptions.Image = CType(resources.GetObject("BarButtonItem15.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnQAReports.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem15.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnQAReports.ImageOptions.Image = CType(resources.GetObject("btnQAReports.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnQAReports.ImageOptions.LargeImage = CType(resources.GetObject("btnQAReports.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnQAReports.Name = "btnQAReports"
         '
         'btnWishList
         '
         Me.btnWishList.Caption = "مشاهده لیست علاقه مندی ها"
         Me.btnWishList.Id = 71
-        Me.btnWishList.ImageOptions.SvgImage = CType(resources.GetObject("BarButtonItem16.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnWishList.ImageOptions.SvgImage = CType(resources.GetObject("btnWishList.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btnWishList.Name = "btnWishList"
         '
         'btnSearch
         '
-        Me.btnSearch.Caption = "جستجو"
+        Me.btnSearch.Caption = "جستجوی اسناد"
         Me.btnSearch.Id = 72
         Me.btnSearch.ImageOptions.Image = CType(resources.GetObject("btnSearch.ImageOptions.Image"), System.Drawing.Image)
         Me.btnSearch.ImageOptions.LargeImage = CType(resources.GetObject("btnSearch.ImageOptions.LargeImage"), System.Drawing.Image)
@@ -603,17 +615,74 @@ Partial Class FrmMain
         '
         Me.btnAppHelp.Caption = "راهنمای کاربری نرم افزار"
         Me.btnAppHelp.Id = 73
-        Me.btnAppHelp.ImageOptions.Image = CType(resources.GetObject("BarButtonItem18.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnAppHelp.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem18.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnAppHelp.ImageOptions.Image = CType(resources.GetObject("btnAppHelp.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAppHelp.ImageOptions.LargeImage = CType(resources.GetObject("btnAppHelp.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnAppHelp.Name = "btnAppHelp"
         '
         'btnAuditCalendar
         '
         Me.btnAuditCalendar.Caption = "روزشمار ممیزی"
         Me.btnAuditCalendar.Id = 74
-        Me.btnAuditCalendar.ImageOptions.Image = CType(resources.GetObject("BarButtonItem19.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnAuditCalendar.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem19.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnAuditCalendar.ImageOptions.Image = CType(resources.GetObject("btnAuditCalendar.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnAuditCalendar.ImageOptions.LargeImage = CType(resources.GetObject("btnAuditCalendar.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnAuditCalendar.Name = "btnAuditCalendar"
+        '
+        'btnArchive
+        '
+        Me.btnArchive.Caption = "بایگانی"
+        Me.btnArchive.Id = 75
+        Me.btnArchive.ImageOptions.SvgImage = CType(resources.GetObject("btnArchive.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnArchive.Name = "btnArchive"
+        '
+        'btnChangeDocsDep
+        '
+        Me.btnChangeDocsDep.Caption = "تغییر واحد مستندات"
+        Me.btnChangeDocsDep.Id = 76
+        Me.btnChangeDocsDep.ImageOptions.SvgImage = CType(resources.GetObject("btnChangeDocsDep.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnChangeDocsDep.Name = "btnChangeDocsDep"
+        '
+        'btnAddLinks
+        '
+        Me.btnAddLinks.Caption = "ثبت لینک ها"
+        Me.btnAddLinks.Id = 77
+        Me.btnAddLinks.ImageOptions.SvgImage = CType(resources.GetObject("btnAddLinks.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnAddLinks.Name = "btnAddLinks"
+        '
+        'btnTrack
+        '
+        Me.btnTrack.Caption = "پیگیری"
+        Me.btnTrack.Id = 80
+        Me.btnTrack.ImageOptions.SvgImage = CType(resources.GetObject("btnTrack.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnTrack.Name = "btnTrack"
+        '
+        'btnPrintableForms
+        '
+        Me.btnPrintableForms.Caption = "لیست فرم های چاپی"
+        Me.btnPrintableForms.Id = 81
+        Me.btnPrintableForms.ImageOptions.SvgImage = CType(resources.GetObject("btnPrintableForms.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnPrintableForms.Name = "btnPrintableForms"
+        Me.btnPrintableForms.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'btnAbout
+        '
+        Me.btnAbout.Caption = "درباره نرم افزار"
+        Me.btnAbout.Id = 82
+        Me.btnAbout.ImageOptions.SvgImage = CType(resources.GetObject("btnAbout.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnAbout.Name = "btnAbout"
+        '
+        'btnAddKnowledgeBaseData
+        '
+        Me.btnAddKnowledgeBaseData.Caption = "ثبت اطلاعات پایگاه دانش"
+        Me.btnAddKnowledgeBaseData.Id = 83
+        Me.btnAddKnowledgeBaseData.ImageOptions.SvgImage = CType(resources.GetObject("btnAddKnowledgeBaseData.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnAddKnowledgeBaseData.Name = "btnAddKnowledgeBaseData"
+        '
+        'btnShowKnowledgeBase
+        '
+        Me.btnShowKnowledgeBase.Caption = "پایگاه دانش"
+        Me.btnShowKnowledgeBase.Id = 84
+        Me.btnShowKnowledgeBase.ImageOptions.SvgImage = CType(resources.GetObject("btnShowKnowledgeBase.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btnShowKnowledgeBase.Name = "btnShowKnowledgeBase"
         '
         'RibbonPage1
         '
@@ -651,6 +720,14 @@ Partial Class FrmMain
         Me.RibbonPageGroup12.ItemLinks.Add(Me.btnOutsideDocs)
         Me.RibbonPageGroup12.Name = "RibbonPageGroup12"
         Me.RibbonPageGroup12.Text = "ایجاد/اصلاح سند"
+        '
+        'RibbonPageGroup13
+        '
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.btnArchive)
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.btnTrack)
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.btnChangeDocsDep)
+        Me.RibbonPageGroup13.ItemLinks.Add(Me.btnAddLinks)
+        Me.RibbonPageGroup13.Name = "RibbonPageGroup13"
         '
         'RibbonPage3
         '
@@ -697,6 +774,36 @@ Partial Class FrmMain
         Me.RibbonPageGroup10.Name = "RibbonPageGroup10"
         Me.RibbonPageGroup10.Text = "سایر مستندات"
         '
+        'RibbonPage4
+        '
+        Me.RibbonPage4.Appearance.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RibbonPage4.Appearance.Options.UseFont = True
+        Me.RibbonPage4.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup4})
+        Me.RibbonPage4.ImageOptions.Image = CType(resources.GetObject("RibbonPage4.ImageOptions.Image"), System.Drawing.Image)
+        Me.RibbonPage4.Name = "RibbonPage4"
+        Me.RibbonPage4.Text = "جستجو"
+        '
+        'RibbonPageGroup4
+        '
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.btnSearch)
+        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
+        '
+        'rpKnowledgeBase
+        '
+        Me.rpKnowledgeBase.Appearance.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rpKnowledgeBase.Appearance.Options.UseFont = True
+        Me.rpKnowledgeBase.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup14})
+        Me.rpKnowledgeBase.ImageOptions.SvgImage = CType(resources.GetObject("rpKnowledgeBase.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.rpKnowledgeBase.Name = "rpKnowledgeBase"
+        Me.rpKnowledgeBase.Text = "پایگاه دانش"
+        Me.rpKnowledgeBase.Visible = False
+        '
+        'RibbonPageGroup14
+        '
+        Me.RibbonPageGroup14.ItemLinks.Add(Me.btnAddKnowledgeBaseData)
+        Me.RibbonPageGroup14.ItemLinks.Add(Me.btnShowKnowledgeBase)
+        Me.RibbonPageGroup14.Name = "RibbonPageGroup14"
+        '
         'RibbonPage5
         '
         Me.RibbonPage5.Appearance.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -730,26 +837,12 @@ Partial Class FrmMain
         Me.RibbonPageGroup6.ItemLinks.Add(Me.btnWishList)
         Me.RibbonPageGroup6.Name = "RibbonPageGroup6"
         '
-        'RibbonPage4
-        '
-        Me.RibbonPage4.Appearance.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RibbonPage4.Appearance.Options.UseFont = True
-        Me.RibbonPage4.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup4})
-        Me.RibbonPage4.ImageOptions.Image = CType(resources.GetObject("RibbonPage4.ImageOptions.Image"), System.Drawing.Image)
-        Me.RibbonPage4.Name = "RibbonPage4"
-        Me.RibbonPage4.Text = "جستجو"
-        '
-        'RibbonPageGroup4
-        '
-        Me.RibbonPageGroup4.ItemLinks.Add(Me.btnSearch)
-        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
-        '
         'rpAuditCalendar
         '
         Me.rpAuditCalendar.Appearance.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rpAuditCalendar.Appearance.Options.UseFont = True
         Me.rpAuditCalendar.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup7})
-        Me.rpAuditCalendar.ImageOptions.Image = CType(resources.GetObject("RibbonPage7.ImageOptions.Image"), System.Drawing.Image)
+        Me.rpAuditCalendar.ImageOptions.Image = CType(resources.GetObject("rpAuditCalendar.ImageOptions.Image"), System.Drawing.Image)
         Me.rpAuditCalendar.Name = "rpAuditCalendar"
         Me.rpAuditCalendar.Text = "روزشمار ممیزی"
         Me.rpAuditCalendar.Visible = False
@@ -758,21 +851,6 @@ Partial Class FrmMain
         '
         Me.RibbonPageGroup7.ItemLinks.Add(Me.btnAuditCalendar)
         Me.RibbonPageGroup7.Name = "RibbonPageGroup7"
-        '
-        'RibbonPage8
-        '
-        Me.RibbonPage8.Appearance.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RibbonPage8.Appearance.Options.UseFont = True
-        Me.RibbonPage8.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup15})
-        Me.RibbonPage8.ImageOptions.Image = CType(resources.GetObject("RibbonPage8.ImageOptions.Image"), System.Drawing.Image)
-        Me.RibbonPage8.Name = "RibbonPage8"
-        Me.RibbonPage8.Text = "راهنمای نرم افزار"
-        '
-        'RibbonPageGroup15
-        '
-        Me.RibbonPageGroup15.ItemLinks.Add(Me.btnAppHelp)
-        Me.RibbonPageGroup15.ItemLinks.Add(Me.btnAbout)
-        Me.RibbonPageGroup15.Name = "RibbonPageGroup15"
         '
         'RibbonStatusBar
         '
@@ -798,101 +876,6 @@ Partial Class FrmMain
         '
         Me.GalleryDropDown1.Name = "GalleryDropDown1"
         Me.GalleryDropDown1.Ribbon = Me.RibbonControl
-        '
-        'RibbonPageGroup13
-        '
-        Me.RibbonPageGroup13.ItemLinks.Add(Me.btnArchive)
-        Me.RibbonPageGroup13.ItemLinks.Add(Me.btnTrack)
-        Me.RibbonPageGroup13.ItemLinks.Add(Me.btnChangeDocsDep)
-        Me.RibbonPageGroup13.ItemLinks.Add(Me.btnAddLinks)
-        Me.RibbonPageGroup13.Name = "RibbonPageGroup13"
-        '
-        'btnArchive
-        '
-        Me.btnArchive.Caption = "بایگانی"
-        Me.btnArchive.Id = 75
-        Me.btnArchive.ImageOptions.SvgImage = CType(resources.GetObject("btnArchive.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnArchive.Name = "btnArchive"
-        '
-        'btnChangeDocsDep
-        '
-        Me.btnChangeDocsDep.Caption = "تغییر واحد مستندات"
-        Me.btnChangeDocsDep.Id = 76
-        Me.btnChangeDocsDep.ImageOptions.SvgImage = CType(resources.GetObject("btnChangeDocsDep.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnChangeDocsDep.Name = "btnChangeDocsDep"
-        '
-        'btnAddLinks
-        '
-        Me.btnAddLinks.Caption = "ثبت لینک ها"
-        Me.btnAddLinks.Id = 77
-        Me.btnAddLinks.ImageOptions.SvgImage = CType(resources.GetObject("btnAddLinks.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnAddLinks.Name = "btnAddLinks"
-        '
-        'mnuRegulations
-        '
-        Me.mnuRegulations.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
-        Me.mnuRegulations.Caption = "آیین نامه"
-        Me.mnuRegulations.Id = 78
-        Me.mnuRegulations.Name = "mnuRegulations"
-        '
-        'mnuPostIdentity
-        '
-        Me.mnuPostIdentity.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
-        Me.mnuPostIdentity.Caption = "شناسنامه پست"
-        Me.mnuPostIdentity.Id = 79
-        Me.mnuPostIdentity.Name = "mnuPostIdentity"
-        '
-        'btnTrack
-        '
-        Me.btnTrack.Caption = "پیگیری"
-        Me.btnTrack.Id = 80
-        Me.btnTrack.ImageOptions.SvgImage = CType(resources.GetObject("btnTrack.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnTrack.Name = "btnTrack"
-        '
-        'btnPrintableForms
-        '
-        Me.btnPrintableForms.Caption = "لیست فرم های چاپی"
-        Me.btnPrintableForms.Id = 81
-        Me.btnPrintableForms.ImageOptions.SvgImage = CType(resources.GetObject("btnPrintableForms.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnPrintableForms.Name = "btnPrintableForms"
-        Me.btnPrintableForms.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'btnAbout
-        '
-        Me.btnAbout.Caption = "درباره نرم افزار"
-        Me.btnAbout.Id = 82
-        Me.btnAbout.ImageOptions.SvgImage = CType(resources.GetObject("btnAbout.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnAbout.Name = "btnAbout"
-        '
-        'rpKnowledgeBase
-        '
-        Me.rpKnowledgeBase.Appearance.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rpKnowledgeBase.Appearance.Options.UseFont = True
-        Me.rpKnowledgeBase.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup14})
-        Me.rpKnowledgeBase.ImageOptions.SvgImage = CType(resources.GetObject("RibbonPage9.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.rpKnowledgeBase.Name = "rpKnowledgeBase"
-        Me.rpKnowledgeBase.Text = "پایگاه دانش"
-        Me.rpKnowledgeBase.Visible = False
-        '
-        'RibbonPageGroup14
-        '
-        Me.RibbonPageGroup14.ItemLinks.Add(Me.btnAddKnowledgeBaseData)
-        Me.RibbonPageGroup14.ItemLinks.Add(Me.btnShowKnowledgeBase)
-        Me.RibbonPageGroup14.Name = "RibbonPageGroup14"
-        '
-        'btnAddKnowledgeBaseData
-        '
-        Me.btnAddKnowledgeBaseData.Caption = "ثبت اطلاعات پایگاه دانش"
-        Me.btnAddKnowledgeBaseData.Id = 83
-        Me.btnAddKnowledgeBaseData.ImageOptions.SvgImage = CType(resources.GetObject("btnAddKnowledgeBaseData.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnAddKnowledgeBaseData.Name = "btnAddKnowledgeBaseData"
-        '
-        'btnShowKnowledgeBase
-        '
-        Me.btnShowKnowledgeBase.Caption = "پایگاه دانش"
-        Me.btnShowKnowledgeBase.Id = 84
-        Me.btnShowKnowledgeBase.ImageOptions.SvgImage = CType(resources.GetObject("btnShowKnowledgeBase.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btnShowKnowledgeBase.Name = "btnShowKnowledgeBase"
         '
         'LabelControl1
         '
@@ -1030,8 +1013,6 @@ Partial Class FrmMain
     Friend WithEvents btnQAReports As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnWishList As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnSearch As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RibbonPage8 As DevExpress.XtraBars.Ribbon.RibbonPage
-    Friend WithEvents RibbonPageGroup15 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btnAppHelp As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnAuditCalendar As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnArchive As DevExpress.XtraBars.BarButtonItem

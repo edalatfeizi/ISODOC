@@ -25,7 +25,6 @@ Public Class FrmUserMessage
     Dim LogID As String
     Dim counter As Integer
     Dim dt As New DataTable
-    Dim isoDocCnnStr As String = ""
     Private Sub FillGrid()
         LogID = SystemInformation.UserName
 
@@ -70,7 +69,7 @@ Public Class FrmUserMessage
             Dim ProductionCS = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-Production").FirstOrDefault()
             Dim TrainingCS = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-Training").FirstOrDefault()
             Dim GeneralCs = IsoDocCsList.Where(Function(p) p.Key = "SQLSRV-GeneralObjects").FirstOrDefault()
-            isoDocCnnStr = IsodocCS.value
+            MdlMain.isoDocCnnStr = IsodocCS.value
 
             MdlMain.CnnStringArchiveNew = ArchiveCS.Value
             MdlMain.CnnString = IsodocCS.Value
@@ -101,6 +100,7 @@ Public Class FrmUserMessage
         ConfigureServices(services, isoDocCnnStr)
         Dim serviceProvider As IServiceProvider = services.BuildServiceProvider()
         MdlMain.frmManageDocReqs = serviceProvider.GetRequiredService(Of FrmManageDocReqs)()
+        MdlMain.frmSearchDocs = serviceProvider.GetRequiredService(Of FrmSearchDocs)()
         'End configure DI
 
         My.Settings.Archive_NewConnectionString = MdlMain.CnnStringArchiveNew
@@ -124,10 +124,14 @@ Public Class FrmUserMessage
         services.AddSingleton(Of IManageDocReqsRepository, ManageDocReqRepository)()
         services.AddSingleton(Of IPersonelyRepository, PersonelyRepository)()
         services.AddSingleton(Of IDocRequestAttachmentsRepository, DocRequestAttachmentsRepository)()
+        services.AddSingleton(Of IDocsRepository, DocsRepository)()
         services.AddSingleton(Of IManageDocReqsService, ManageDocReqsService)()
         services.AddSingleton(Of IPersonelyService, PersonelyService)()
         services.AddSingleton(Of IDocRequestAttachmentsService, DocRequestAttachmentsService)()
+        services.AddSingleton(Of IDocsService, DocsService)()
         services.AddSingleton(Of FrmManageDocReqs)()
+        services.AddSingleton(Of FrmSearch)()
+        services.AddSingleton(Of FrmSearchDocs)()
     End Sub
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         PicShow.Visible = True
@@ -235,20 +239,20 @@ Public Class FrmUserMessage
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
         Bus_UserMessage1.UpdateAll(dt.DefaultView.Item(0).Item("UserID"))
         Me.Hide()
-        Dim b As New FrmIsoMain
+        Dim b As New FrmMain
         b.ShowDialog()
         Me.Close()
     End Sub
 
     Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
         Me.Hide()
-        Dim b1 As New FrmIsoMain
+        Dim b1 As New FrmMain
         b1.ShowDialog()
         Me.Close()
     End Sub
 
     Private Sub SimpleButton2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton2.Click
-        Dim b As New FrmIsoMain
+        Dim b As New FrmMain
         b.ShowDialog()
         Me.Close()
     End Sub

@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearch.Designer.cs">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\AttachmentsHelper.cs" />
     <Compile Include="Helpers\DocRequestsHelper.cs" />
     <Compile Include="Extensions\StepProgressBarExtension.cs" />
@@ -124,6 +130,9 @@
     </Compile>
     <EmbeddedResource Include="FrmMessageBox.resx">
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearch.resx">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageDocRequests\FrmForwardDocReq.resx">
       <DependentUpon>FrmForwardDocReq.cs</DependentUpon>

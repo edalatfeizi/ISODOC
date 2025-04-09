@@ -16,8 +16,11 @@ Public Class FrmMain
     End Sub
 
     Private Sub btnSearch_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnSearch.ItemClick
-        Dim b As New FrmIsoSearch
-        b.ShowDialog()
+        'MdlMain.frmSearch.ShowDialog()
+        'Dim b As New FrmSearchDocs
+        'b.ShowDialog()
+        MdlMain.frmSearchDocs.ShowDialog()
+
     End Sub
     Private Sub OpenFile(ByVal FilePath As String)
         Try

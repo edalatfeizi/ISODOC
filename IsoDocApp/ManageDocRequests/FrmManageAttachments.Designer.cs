@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageAttachments));
             this.grdAttachments = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.panelDownload = new DevExpress.XtraEditors.PanelControl();
             this.btnDownloadAttachment = new DevExpress.XtraEditors.SimpleButton();
             this.progressBar = new DevExpress.XtraWaitForm.ProgressPanel();
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grdAttachments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelDownload)).BeginInit();
+            this.panelDownload.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,18 +65,18 @@
             this.gridView1.GridControl = this.grdAttachments;
             this.gridView1.Name = "gridView1";
             // 
-            // panelControl2
+            // panelDownload
             // 
-            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelControl2.Appearance.Options.UseBackColor = true;
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl2.Controls.Add(this.btnDownloadAttachment);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 221);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(682, 57);
-            this.panelControl2.TabIndex = 7;
+            this.panelDownload.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelDownload.Appearance.Options.UseBackColor = true;
+            this.panelDownload.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelDownload.Controls.Add(this.btnDownloadAttachment);
+            this.panelDownload.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelDownload.Location = new System.Drawing.Point(0, 221);
+            this.panelDownload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelDownload.Name = "panelDownload";
+            this.panelDownload.Size = new System.Drawing.Size(682, 57);
+            this.panelDownload.TabIndex = 7;
             // 
             // btnDownloadAttachment
             // 
@@ -132,7 +132,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 278);
             this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.panelDownload);
             this.Controls.Add(this.grdAttachments);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -144,8 +144,8 @@
             this.Load += new System.EventHandler(this.FrmManageAttachments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdAttachments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelDownload)).EndInit();
+            this.panelDownload.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
 
@@ -155,7 +155,7 @@
 
         private DevExpress.XtraGrid.GridControl grdAttachments;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.PanelControl panelDownload;
         private DevExpress.XtraEditors.SimpleButton btnDownloadAttachment;
         private DevExpress.XtraWaitForm.ProgressPanel progressBar;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;

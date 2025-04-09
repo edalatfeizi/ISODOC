@@ -321,12 +321,6 @@
     <Compile Include="PresentationLayer\FrmISORoozshomar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PresentationLayer\FrmLendingDocs.Designer.vb">
-      <DependentUpon>FrmLendingDocs.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\FrmLendingDocs.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PresentationLayer\FrmMain.Designer.vb">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </Compile>
@@ -361,6 +355,12 @@
       <DependentUpon>frmPrint.vb</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\frmPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmSearchDocs.Designer.vb">
+      <DependentUpon>FrmSearchDocs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrmSearchDocs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\FrmTedadBazdid.Designer.vb">
@@ -599,9 +599,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmISORoozshomar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresentationLayer\FrmLendingDocs.resx">
-      <DependentUpon>FrmLendingDocs.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>
@@ -622,6 +619,9 @@
     <EmbeddedResource Include="PresentationLayer\frmPrint.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrmSearchDocs.resx">
+      <DependentUpon>FrmSearchDocs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\FrmTedadBazdid.resx">
       <SubType>Designer</SubType>

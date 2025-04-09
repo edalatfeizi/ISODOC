@@ -2,6 +2,8 @@ Imports IsoDocApp
 
 Module MdlMain
     Public frmManageDocReqs As FrmManageDocReqs
+    Public frmSearch As FrmSearch
+    Public frmSearchDocs As FrmSearchDocs
 
     Public dt As New DataTable
     Public DocumentCode As String
@@ -38,6 +40,7 @@ Module MdlMain
     Friend CnnStringProduction As String = ""
     Friend CnnStringTraining As String = ""
     Friend CnnStringGeneralObject As String = ""
+    Friend isoDocCnnStr As String = ""
     ' Friend Cnnstring As String = "Provider=SQLOLEDB.1;Password=afarinesh;Persist Security Info=True;User ID=sa;Initial Catalog=Isodoc_New;Data Source=SQLSRV"
     Friend IraniDate1 As New APPFrameWork.IraniDateAdaptee
 

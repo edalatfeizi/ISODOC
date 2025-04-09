@@ -85,7 +85,7 @@ Public Class Dac_Document
             SqlStr = "select DISTINCT  * from VwAllDocument where    " & Filter
         Else
 
-            SqlStr = "select DISTINCT  * from VwAllDocument where (MdepartID ='" & UserInfo.LoginMDepartID & "' or mdepartid='PublicTechnicalDocuments') and   " & Filter & " and (MdepartID ='" & UserInfo.LoginMDepartID & "' or mdepartid='PublicTechnicalDocuments') or IsShowPublic=1 or   personcode='" & UserInfo.UserCode & "'"
+            SqlStr = "select DISTINCT  * from VwAllDocument where (MdepartID ='" & UserInfo.LoginMDepartID & "' or mdepartid='PublicTechnicalDocuments') and   " & Filter & "  and IsShowPublic=1"
 
         End If
 
