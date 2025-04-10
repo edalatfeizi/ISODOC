@@ -73,7 +73,6 @@ namespace IsoDocApp
             services.AddSingleton<DocsService, DocsService>();
 
             services.AddSingleton<FrmManageDocReqs>();
-            services.AddSingleton<FrmSearch>();
             //services.AddSingleton<FrmManageAttachments>();
             //services.AddSingleton<FrmManageDocReqsFactory>(sp => () => sp.GetRequiredService<FrmManageDocReqs>());
 

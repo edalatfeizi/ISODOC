@@ -178,6 +178,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لطفا ابتدا نرم افزاری که در حال استفاده از فایل انتخاب شده می باشد را بسته و دوباره فایل مورد نظر را پیوست کنید..
+        /// </summary>
+        internal static string CloseAppAndAttachAgain {
+            get {
+                return ResourceManager.GetString("CloseAppAndAttachAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تکمیل شده.
         /// </summary>
         internal static string Completed {
@@ -313,11 +322,29 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to خطا در پیوست فایل.
+        /// </summary>
+        internal static string ErrorWhileAttachingFile {
+            get {
+                return ResourceManager.GetString("ErrorWhileAttachingFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خطا در پردازش اطلاعات.
         /// </summary>
         internal static string ExceptionThrown {
             get {
                 return ResourceManager.GetString("ExceptionThrown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فایل انتخاب شده توسط نرم افزار دیگری در حال استفاده است.
+        /// </summary>
+        internal static string FileInUse {
+            get {
+                return ResourceManager.GetString("FileInUse", resourceCulture);
             }
         }
         

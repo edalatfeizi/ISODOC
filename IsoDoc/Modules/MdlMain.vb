@@ -2,7 +2,6 @@ Imports IsoDocApp
 
 Module MdlMain
     Public frmManageDocReqs As FrmManageDocReqs
-    Public frmSearch As FrmSearch
     Public frmSearchDocs As FrmSearchDocs
 
     Public dt As New DataTable

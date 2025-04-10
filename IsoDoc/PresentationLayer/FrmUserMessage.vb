@@ -130,7 +130,6 @@ Public Class FrmUserMessage
         services.AddSingleton(Of IDocRequestAttachmentsService, DocRequestAttachmentsService)()
         services.AddSingleton(Of IDocsService, DocsService)()
         services.AddSingleton(Of FrmManageDocReqs)()
-        services.AddSingleton(Of FrmSearch)()
         services.AddSingleton(Of FrmSearchDocs)()
     End Sub
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick

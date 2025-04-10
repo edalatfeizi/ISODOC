@@ -1,15 +1,6 @@
 ﻿using DevExpress.Images;
-using DevExpress.Xpo.Logger;
-using DevExpress.XtraEditors;
 using IsoDoc.Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IsoDocApp
@@ -25,13 +16,6 @@ namespace IsoDocApp
 
         private void FrmMessageBox_Load(object sender, EventArgs e)
         {
-
-            //lblMsgTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            //lblMsgTitle.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-
-            lblMessage.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            lblMessage.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -49,7 +33,7 @@ namespace IsoDocApp
         public void SetMessageOptions(CustomMessageBoxOptions options)
         {
             //lblMsgTitle.Text = options.Title;
-            lblMessage.Text = options.Message;
+            txtMessage.Text = options.Message;
             grpMessage.Text = options.Title;
             grpMessage.CaptionImageOptions.Image = ImageResourceCache.Default.GetImageById(options.DevExpressIconId, DevExpress.Utils.Design.ImageSize.Size32x32, (DevExpress.Utils.Design.ImageType) options.DevExpressImageType);
 

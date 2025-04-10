@@ -156,6 +156,9 @@
   <data name="ChangeDocReq" xml:space="preserve">
     <value>درخواست تغییر سند </value>
   </data>
+  <data name="CloseAppAndAttachAgain" xml:space="preserve">
+    <value>لطفا ابتدا نرم افزاری که در حال استفاده از فایل انتخاب شده می باشد را بسته و دوباره فایل مورد نظر را پیوست کنید.</value>
+  </data>
   <data name="Completed" xml:space="preserve">
     <value>تکمیل شده</value>
   </data>
@@ -201,8 +204,14 @@
   <data name="ErrorProccessingData" xml:space="preserve">
     <value>خطا در پردازش اطلاعات</value>
   </data>
+  <data name="ErrorWhileAttachingFile" xml:space="preserve">
+    <value>خطا در پیوست فایل</value>
+  </data>
   <data name="ExceptionThrown" xml:space="preserve">
     <value>خطا در پردازش اطلاعات</value>
+  </data>
+  <data name="FileInUse" xml:space="preserve">
+    <value>فایل انتخاب شده توسط نرم افزار دیگری در حال استفاده است</value>
   </data>
   <data name="FillAllValues" xml:space="preserve">
     <value>لطفا همه مقادیر را وارد کنید</value>
