@@ -67,7 +67,7 @@ namespace IsoDocApp.ManageDocRequests
             txtDocReqId.Text = docReqId.ToString();
 
             var userName = SystemInformation.UserName.ToString();
-            userName = "3864";
+            //userName = "3864";
             userInfo = await personelyService.GetUserInfoByCardNumber(userName);
 
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);

@@ -62,7 +62,7 @@ namespace IsoDocApp
         {
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName.ToString();
-            userName = "3864";
+            //userName = "3864";
 
             userInfo = await personelyService.GetUserInfoByCardNumber(userName);
             // RibbonPage selectedPage = ribbonControl1.Pages[0];
