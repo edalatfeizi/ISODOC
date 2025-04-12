@@ -451,7 +451,7 @@
             // textEdit1
             // 
             this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit1.EditValue = "در حال انجام";
+            this.textEdit1.EditValue = "در حال بررسی";
             this.textEdit1.Enabled = false;
             this.textEdit1.Location = new System.Drawing.Point(606, 7);
             this.textEdit1.MenuManager = this.ribbonControl1;
@@ -494,7 +494,7 @@
             this.btnAddAttachment.Enabled = false;
             this.btnAddAttachment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAttachment.ImageOptions.Image")));
             this.btnAddAttachment.Location = new System.Drawing.Point(206, 18);
-            this.btnAddAttachment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddAttachment.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddAttachment.Name = "btnAddAttachment";
             this.btnAddAttachment.Size = new System.Drawing.Size(191, 66);
             this.btnAddAttachment.TabIndex = 15;
@@ -511,7 +511,7 @@
             this.btnReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.Location = new System.Drawing.Point(7, 18);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(4);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(191, 66);
             this.btnReload.TabIndex = 14;
@@ -529,7 +529,7 @@
             this.btnForwardDocReq.Enabled = false;
             this.btnForwardDocReq.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnForwardDocReq.ImageOptions.Image")));
             this.btnForwardDocReq.Location = new System.Drawing.Point(411, 18);
-            this.btnForwardDocReq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnForwardDocReq.Margin = new System.Windows.Forms.Padding(4);
             this.btnForwardDocReq.Name = "btnForwardDocReq";
             this.btnForwardDocReq.Size = new System.Drawing.Size(191, 66);
             this.btnForwardDocReq.TabIndex = 13;
@@ -548,7 +548,7 @@
             this.btnShowAttachments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAttachments.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowAttachments.ImageOptions.Image")));
             this.btnShowAttachments.Location = new System.Drawing.Point(615, 18);
-            this.btnShowAttachments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAttachments.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAttachments.Name = "btnShowAttachments";
             this.btnShowAttachments.Size = new System.Drawing.Size(191, 66);
             this.btnShowAttachments.TabIndex = 12;

@@ -79,5 +79,10 @@ namespace IsoDoc.Domain.Services
         {
             return await manageDocReqsRepo.UpdateDocRequestStatus(docReqId,docRequestStatus, cancelDesc);
         }
+
+        public async Task<bool> UpdateDocRequestEditOrReviewStatus(int docReqId, EditOrReviewStatus editOrReviewStatus, int editOrReviewNo)
+        {
+            return await manageDocReqsRepo.UpdateDocRequestEditOrReviewStatus(docReqId,editOrReviewStatus,editOrReviewNo);
+        }
     }
 }

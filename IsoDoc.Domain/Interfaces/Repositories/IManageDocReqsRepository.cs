@@ -22,6 +22,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId);
         Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode);
         Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc);
+        Task<bool> UpdateDocRequestEditOrReviewStatus(int docReqId, EditOrReviewStatus editOrReviewStatus, int editOrReviewNo);
         Task<bool> SetDocRequestActive(int docReqId, string deleteDesc, bool isActive);
 
         //Task<DocRequest> UpdateDocRequest(int docReqId);

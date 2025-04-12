@@ -17,7 +17,6 @@ namespace IsoDocApp.ManageDocRequests
     {
         private readonly IManageDocReqsService manageDocReqsService;
         private readonly IPersonelyService personelyService;
-        private readonly IDocRequestStepsService docRequestStepsService;
         private int docReqId = 0;
         private int lastDocReqStepId = 0;
         private List<Colleague> userColleagues;
@@ -27,11 +26,12 @@ namespace IsoDocApp.ManageDocRequests
         private bool isAdmin = false;
         private DocRequestStatus requestStatus;
         private string docReqStatusDsc = "";
+        private EditOrReviewStatus editOrReviewStatus = EditOrReviewStatus.None;
+        private int editOrReviewNo = 0;
         public FrmForwardDocReq(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService,/* IDocRequestStepsService docRequestStepsService,*/ int docReqId, int lastDocReqStepId, DocRequestStatus docRequestStatus, string docReqStatusDsc)
         {
             this.manageDocReqsService = manageDocReqsService;
             this.personelyService = personelyService;
-            this.docRequestStepsService = docRequestStepsService;
             this.requestStatus = docRequestStatus;
             this.docReqStatusDsc = docReqStatusDsc;
             this.docReqId = docReqId;
@@ -67,15 +67,17 @@ namespace IsoDocApp.ManageDocRequests
             txtDocReqId.Text = docReqId.ToString();
 
             var userName = SystemInformation.UserName.ToString();
-            //userName = "3864";
+            userName = "3864";
             userInfo = await personelyService.GetUserInfoByCardNumber(userName);
 
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
             isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
             if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
+                grpEditOrReview.Enabled = true;
                 var admins = await personelyService.GetUserColleagues(null, null, true);
                 userColleagues.AddRange(admins);
+
             }
             else if (isAdmin)
             {
@@ -108,7 +110,6 @@ namespace IsoDocApp.ManageDocRequests
 
         private async void btnSave_Click(object sender, System.EventArgs e)
         {
-            var frmMsgBox = new FrmMessageBox();
 
             try
             {
@@ -131,32 +132,73 @@ namespace IsoDocApp.ManageDocRequests
                         CreatedBy = userInfo.PersonCode,
                         ModifiedBy = userInfo.PersonCode
                     };
-                    var result = await manageDocReqsService.SetDocRequestStepApproved(docReqId, userInfo.PersonCode);
-                    await manageDocReqsService.AddNewDocRequestStepAsync(newStep);
 
-                    toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
+                    if (editOrReviewStatus != EditOrReviewStatus.None)
+                    {
+                        if (Validators.ValidateControls<BaseEdit>(txtEditOrReviewNo))
+                        {
+                            var isUpdated = await manageDocReqsService.UpdateDocRequestEditOrReviewStatus(docReqId, editOrReviewStatus, Convert.ToInt32(txtEditOrReviewNo.Text.Trim()));
+                            if (isUpdated)
+                            {
+                                switch (editOrReviewStatus)
+                                {
+                                    case EditOrReviewStatus.DoWithEdit:
+                                        newStep.Description += $"\n {StringResources.DoWithEdit} \n {StringResources.EditNo} ";
+                                        break;
+                                    case EditOrReviewStatus.DoWithReview:
+                                        newStep.Description += $"\n {StringResources.DoWithReview} \n {StringResources.ReviewNo} ";
+                                        break;
+                                }
+                                await AddNewDocRequestStep(newStep);
 
-                    DialogResult = DialogResult.OK;
-                    this.Close();
+                            }
+                        }
+
+                    }
+                    if (editOrReviewStatus == EditOrReviewStatus.None)
+                        await AddNewDocRequestStep(newStep);
+
                 }
             }
             catch (Exception ex)
             {
-                ShowProgressBar(false);
 
-                frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
-                {
-                    Title = StringResources.ErrorProccessingData,
-                    Message = $"{ex.Message} \n {ex.InnerException} \n {ex.StackTrace}",
-                    ConfirmButtonText = StringResources.Confirm,
-                    DevExpressIconId = "cancel",
-                    DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
-                });
-                frmMsgBox.ShowDialog();
+                ShowExceptionMessage(ex);
+
+
             }
 
         }
+        private void ShowExceptionMessage(Exception ex)
+        {
+            ShowProgressBar(false);
 
+            var frmMsgBox = new FrmMessageBox();
+
+            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+            {
+                Title = StringResources.ErrorProccessingData,
+                Message = $"{ex.Message} \n {ex.InnerException} \n {ex.StackTrace}",
+                ConfirmButtonText = StringResources.Confirm,
+                DevExpressIconId = "cancel",
+                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+            });
+            frmMsgBox.ShowDialog();
+
+        }
+        private async Task<bool> AddNewDocRequestStep(DocRequestStep newStep)
+        {
+            newStep.Description += txtEditOrReviewNo.Text;
+
+            var result = await manageDocReqsService.SetDocRequestStepApproved(docReqId, userInfo.PersonCode);
+            await manageDocReqsService.AddNewDocRequestStepAsync(newStep);
+
+            toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
+
+            DialogResult = DialogResult.OK;
+            this.Close();
+            return result;
+        }
         private async void cmbUserColleagues_EditValueChanged(object sender, System.EventArgs e)
         {
             var personCode = cmbUserColleagues.EditValue.ToString();
@@ -164,6 +206,18 @@ namespace IsoDocApp.ManageDocRequests
             var person = userColleagues.Where(x => x.PersonCode == personCode).First();
 
             receiverUserInfo = await personelyService.GetUserInfoByCardNumber(person.CardNumber);
+        }
+
+        private void rdbWithReview_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbWithReview.Checked)
+                editOrReviewStatus = EditOrReviewStatus.DoWithReview;
+        }
+
+        private void rdbWithEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbWithEdit.Checked)
+                editOrReviewStatus = EditOrReviewStatus.DoWithEdit;
         }
     }
 }

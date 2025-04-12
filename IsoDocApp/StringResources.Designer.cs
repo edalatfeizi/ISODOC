@@ -277,6 +277,33 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to با ویرایش انجام شود.
+        /// </summary>
+        internal static string DoWithEdit {
+            get {
+                return ResourceManager.GetString("DoWithEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to با بازنگری انجام شود.
+        /// </summary>
+        internal static string DoWithReview {
+            get {
+                return ResourceManager.GetString("DoWithReview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شماره ویرایش:.
+        /// </summary>
+        internal static string EditNo {
+            get {
+                return ResourceManager.GetString("EditNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خالی بودن مقادیر.
         /// </summary>
         internal static string EmptyValues {
@@ -304,11 +331,38 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لطفا شماره ویرایش یا بازنگری را وارد نمایید..
+        /// </summary>
+        internal static string EnterEditOrReviewNo {
+            get {
+                return ResourceManager.GetString("EnterEditOrReviewNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to لطفا سند مورد نظر خود را پیوست کنید..
         /// </summary>
         internal static string ErrorAttachFile {
             get {
                 return ResourceManager.GetString("ErrorAttachFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خالی بودن شماره ویرایش/بازنگری.
+        /// </summary>
+        internal static string ErrorEnterEditOrReviewNo {
+            get {
+                return ResourceManager.GetString("ErrorEnterEditOrReviewNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطایی در پردازش اطلاعات بوجود آمده است لطفا بعدا دوباره تلاش کنید..
+        /// </summary>
+        internal static string ErrorInProccessingDataTryAgain {
+            get {
+                return ResourceManager.GetString("ErrorInProccessingDataTryAgain", resourceCulture);
             }
         }
         
@@ -390,6 +444,15 @@ namespace IsoDocApp {
         internal static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شماره بازنگری:.
+        /// </summary>
+        internal static string ReviewNo {
+            get {
+                return ResourceManager.GetString("ReviewNo", resourceCulture);
             }
         }
         

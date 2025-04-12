@@ -329,5 +329,29 @@ namespace IsoDoc.Infrastructure.Repositories
                 throw ex;
             }
         }
+
+        public async Task<bool> UpdateDocRequestEditOrReviewStatus(int docReqId, EditOrReviewStatus editOrReviewStatus, int editOrReviewNo)
+        {
+            try
+            {
+                connection.Open();
+
+                var updateQuery = @$"
+                                    UPDATE DocRequests
+                                        SET EditOrReviewStatus = @editOrReviewStatus, EditOrReviewNo = @editOrReviewNo
+                                        WHERE Id = @DocReqId ";
+
+                var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, EditOrReviewStatus = editOrReviewStatus, EditOrReviewNo = editOrReviewNo });
+
+                connection.Close();
+
+                return affectedRows > 0;
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                throw ex;
+            }
+        }
     }
 }

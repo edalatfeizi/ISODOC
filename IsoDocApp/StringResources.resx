@@ -189,6 +189,15 @@
   <data name="Description" xml:space="preserve">
     <value>توضیحات:</value>
   </data>
+  <data name="DoWithEdit" xml:space="preserve">
+    <value>با ویرایش انجام شود</value>
+  </data>
+  <data name="DoWithReview" xml:space="preserve">
+    <value>با بازنگری انجام شود</value>
+  </data>
+  <data name="EditNo" xml:space="preserve">
+    <value>شماره ویرایش:</value>
+  </data>
   <data name="EmptyValues" xml:space="preserve">
     <value>خالی بودن مقادیر</value>
   </data>
@@ -198,8 +207,17 @@
   <data name="EnterDeleteReason" xml:space="preserve">
     <value>لطفا علت حذف درخواست را وارد نمایید:</value>
   </data>
+  <data name="EnterEditOrReviewNo" xml:space="preserve">
+    <value>لطفا شماره ویرایش یا بازنگری را وارد نمایید.</value>
+  </data>
   <data name="ErrorAttachFile" xml:space="preserve">
     <value>لطفا سند مورد نظر خود را پیوست کنید.</value>
+  </data>
+  <data name="ErrorEnterEditOrReviewNo" xml:space="preserve">
+    <value>خالی بودن شماره ویرایش/بازنگری</value>
+  </data>
+  <data name="ErrorInProccessingDataTryAgain" xml:space="preserve">
+    <value>خطایی در پردازش اطلاعات بوجود آمده است لطفا بعدا دوباره تلاش کنید.</value>
   </data>
   <data name="ErrorProccessingData" xml:space="preserve">
     <value>خطا در پردازش اطلاعات</value>
@@ -227,6 +245,9 @@
   </data>
   <data name="No" xml:space="preserve">
     <value>خیر</value>
+  </data>
+  <data name="ReviewNo" xml:space="preserve">
+    <value>شماره بازنگری:</value>
   </data>
   <data name="SelectAttachment" xml:space="preserve">
     <value>فایل پیوست مورد نظر را انتخاب کنید</value>

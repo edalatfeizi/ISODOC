@@ -46,19 +46,27 @@ namespace IsoDoc.Domain.Entities
         [Editable(false)]
         public string CreateReason { get; set; }
 
-        [Display(Name = "فایل پیوست", Order = 11)]
+        [Display(Name = "وضعیت ویرایش/بازنگری", Order = 11)]
+        [Editable(false)]
+        public EditOrReviewStatus EditOrReviewStatus { get; set; }
+
+        [Display(Name = "شماره ویرایش/بازنگری", Order = 12)]
+        [Editable(false)]
+        public int EditOrReviewNo { get; set; }
+
+        [Display(Name = "فایل پیوست", Order = 13)]
         [Editable(false)]
         public string HasAttachments { get; set; }
 
-        [Display(Name = "علت لغو درخواست", Order = 12)]
+        [Display(Name = "علت لغو درخواست", Order = 14)]
         [Editable(false)]
         public string CancelDesc { get; set; }
 
-        [Display(Name = "علت حذف درخواست", Order = 13)]
+        [Display(Name = "علت حذف درخواست", Order = 15)]
         [Editable(false)]
         public string DeleteDesc { get; set; }
 
-        [Display(Name = "وضعیت درخواست", Order = 14)]
+        [Display(Name = "وضعیت درخواست", Order = 16)]
         [Editable(false)]
         public DocRequestStatus DocRequestStatus { get; set; }
 

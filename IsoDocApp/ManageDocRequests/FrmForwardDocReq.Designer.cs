@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmForwardDocReq));
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.grpEditOrReview = new System.Windows.Forms.GroupBox();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtEditOrReviewNo = new DevExpress.XtraEditors.TextEdit();
+            this.rdbWithEdit = new System.Windows.Forms.RadioButton();
+            this.rdbWithReview = new System.Windows.Forms.RadioButton();
             this.progressBar = new DevExpress.XtraWaitForm.ProgressPanel();
             this.txtDocReqStepDesc = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -43,6 +48,8 @@
             this.docReqSteps = new DevExpress.XtraEditors.StepProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            this.grpEditOrReview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditOrReviewNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocReqStepDesc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbUserColleagues.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocReqId.Properties)).BeginInit();
@@ -58,7 +65,7 @@
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(20, 307);
+            this.btnSave.Location = new System.Drawing.Point(20, 437);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(329, 45);
@@ -71,6 +78,7 @@
             this.panelControl1.Appearance.BackColor = System.Drawing.SystemColors.Menu;
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.grpEditOrReview);
             this.panelControl1.Controls.Add(this.progressBar);
             this.panelControl1.Controls.Add(this.txtDocReqStepDesc);
             this.panelControl1.Controls.Add(this.labelControl7);
@@ -82,8 +90,79 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(316, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(482, 450);
+            this.panelControl1.Size = new System.Drawing.Size(482, 550);
             this.panelControl1.TabIndex = 27;
+            // 
+            // grpEditOrReview
+            // 
+            this.grpEditOrReview.Controls.Add(this.labelControl2);
+            this.grpEditOrReview.Controls.Add(this.txtEditOrReviewNo);
+            this.grpEditOrReview.Controls.Add(this.rdbWithEdit);
+            this.grpEditOrReview.Controls.Add(this.rdbWithReview);
+            this.grpEditOrReview.Enabled = false;
+            this.grpEditOrReview.Font = new System.Drawing.Font("Vazirmatn", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpEditOrReview.Location = new System.Drawing.Point(20, 297);
+            this.grpEditOrReview.Name = "grpEditOrReview";
+            this.grpEditOrReview.Size = new System.Drawing.Size(329, 125);
+            this.grpEditOrReview.TabIndex = 139;
+            this.grpEditOrReview.TabStop = false;
+            this.grpEditOrReview.Text = "ویرایش/بازنگری";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(198, 83);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(125, 24);
+            this.labelControl2.TabIndex = 140;
+            this.labelControl2.Text = "شماره ویرایش/بازنگری:";
+            // 
+            // txtEditOrReviewNo
+            // 
+            this.txtEditOrReviewNo.EditValue = "";
+            this.txtEditOrReviewNo.Location = new System.Drawing.Point(45, 81);
+            this.txtEditOrReviewNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEditOrReviewNo.Name = "txtEditOrReviewNo";
+            this.txtEditOrReviewNo.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEditOrReviewNo.Properties.Appearance.Options.UseFont = true;
+            this.txtEditOrReviewNo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtEditOrReviewNo.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txtEditOrReviewNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtEditOrReviewNo.Properties.MaskSettings.Set("mask", "d");
+            this.txtEditOrReviewNo.Properties.ShowNullValuePrompt = ((DevExpress.XtraEditors.ShowNullValuePromptOptions)(((DevExpress.XtraEditors.ShowNullValuePromptOptions.EmptyValue | DevExpress.XtraEditors.ShowNullValuePromptOptions.EditorFocused) 
+            | DevExpress.XtraEditors.ShowNullValuePromptOptions.EditorReadOnly)));
+            this.txtEditOrReviewNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtEditOrReviewNo.Size = new System.Drawing.Size(147, 28);
+            this.txtEditOrReviewNo.TabIndex = 140;
+            // 
+            // rdbWithEdit
+            // 
+            this.rdbWithEdit.AutoSize = true;
+            this.rdbWithEdit.BackColor = System.Drawing.Color.Transparent;
+            this.rdbWithEdit.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbWithEdit.Location = new System.Drawing.Point(66, 36);
+            this.rdbWithEdit.Name = "rdbWithEdit";
+            this.rdbWithEdit.Size = new System.Drawing.Size(126, 25);
+            this.rdbWithEdit.TabIndex = 139;
+            this.rdbWithEdit.TabStop = true;
+            this.rdbWithEdit.Text = "با ویرایش انجام شود";
+            this.rdbWithEdit.UseVisualStyleBackColor = false;
+            this.rdbWithEdit.CheckedChanged += new System.EventHandler(this.rdbWithEdit_CheckedChanged);
+            // 
+            // rdbWithReview
+            // 
+            this.rdbWithReview.AutoSize = true;
+            this.rdbWithReview.BackColor = System.Drawing.Color.Transparent;
+            this.rdbWithReview.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbWithReview.Location = new System.Drawing.Point(199, 36);
+            this.rdbWithReview.Name = "rdbWithReview";
+            this.rdbWithReview.Size = new System.Drawing.Size(124, 25);
+            this.rdbWithReview.TabIndex = 138;
+            this.rdbWithReview.TabStop = true;
+            this.rdbWithReview.Text = "با بازنگری انجام شود";
+            this.rdbWithReview.UseVisualStyleBackColor = false;
+            this.rdbWithReview.CheckedChanged += new System.EventHandler(this.rdbWithReview_CheckedChanged);
             // 
             // progressBar
             // 
@@ -229,7 +308,7 @@
             this.docReqSteps.Location = new System.Drawing.Point(0, 0);
             this.docReqSteps.Name = "docReqSteps";
             this.docReqSteps.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.docReqSteps.Size = new System.Drawing.Size(316, 450);
+            this.docReqSteps.Size = new System.Drawing.Size(316, 550);
             this.docReqSteps.TabIndex = 26;
             // 
             // FrmForwardDocReq
@@ -239,16 +318,16 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 450);
+            this.ClientSize = new System.Drawing.Size(798, 550);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.docReqSteps);
             this.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmForwardDocReq.IconOptions.Image")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(800, 482);
+            this.MaximumSize = new System.Drawing.Size(800, 582);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(800, 482);
+            this.MinimumSize = new System.Drawing.Size(800, 582);
             this.Name = "FrmForwardDocReq";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ShowInTaskbar = false;
@@ -258,6 +337,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            this.grpEditOrReview.ResumeLayout(false);
+            this.grpEditOrReview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditOrReviewNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocReqStepDesc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbUserColleagues.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocReqId.Properties)).EndInit();
@@ -279,5 +361,10 @@
         private DevExpress.XtraWaitForm.ProgressPanel progressBar;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
         private DevExpress.XtraEditors.StepProgressBar docReqSteps;
+        private System.Windows.Forms.RadioButton rdbWithReview;
+        private System.Windows.Forms.GroupBox grpEditOrReview;
+        private System.Windows.Forms.RadioButton rdbWithEdit;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        internal DevExpress.XtraEditors.TextEdit txtEditOrReviewNo;
     }
 }
