@@ -163,6 +163,10 @@ Partial Class FrmMain
         Me.mnuFormDocs.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuFormDocs.Caption = "فرم ها"
         Me.mnuFormDocs.Id = 7
+        Me.mnuFormDocs.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuFormDocs.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuFormDocs.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuFormDocs.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuFormDocs.Name = "mnuFormDocs"
         '
         'mnuChartDocs
@@ -170,6 +174,10 @@ Partial Class FrmMain
         Me.mnuChartDocs.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuChartDocs.Caption = "چارت سازمانی"
         Me.mnuChartDocs.Id = 8
+        Me.mnuChartDocs.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuChartDocs.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuChartDocs.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuChartDocs.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuChartDocs.Name = "mnuChartDocs"
         '
         'mnuDutyDesc
@@ -177,6 +185,10 @@ Partial Class FrmMain
         Me.mnuDutyDesc.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuDutyDesc.Caption = "شرح وظایف"
         Me.mnuDutyDesc.Id = 9
+        Me.mnuDutyDesc.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuDutyDesc.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuDutyDesc.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuDutyDesc.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuDutyDesc.Name = "mnuDutyDesc"
         '
         'btnExecutiveMethods
@@ -184,6 +196,10 @@ Partial Class FrmMain
         Me.btnExecutiveMethods.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.btnExecutiveMethods.Caption = "روش های اجرایی"
         Me.btnExecutiveMethods.Id = 10
+        Me.btnExecutiveMethods.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnExecutiveMethods.ItemAppearance.Normal.Options.UseFont = True
+        Me.btnExecutiveMethods.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnExecutiveMethods.ItemAppearance.Pressed.Options.UseFont = True
         Me.btnExecutiveMethods.Name = "btnExecutiveMethods"
         '
         'mnuInstructions
@@ -191,6 +207,10 @@ Partial Class FrmMain
         Me.mnuInstructions.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuInstructions.Caption = "دستورالعمل"
         Me.mnuInstructions.Id = 11
+        Me.mnuInstructions.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuInstructions.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuInstructions.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuInstructions.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuInstructions.Name = "mnuInstructions"
         '
         'mnuFMEARisks
@@ -198,6 +218,10 @@ Partial Class FrmMain
         Me.mnuFMEARisks.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuFMEARisks.Caption = "ریسک های فرآیندی (FMEA)"
         Me.mnuFMEARisks.Id = 12
+        Me.mnuFMEARisks.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuFMEARisks.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuFMEARisks.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuFMEARisks.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuFMEARisks.Name = "mnuFMEARisks"
         '
         'mnuRegulations
@@ -205,6 +229,10 @@ Partial Class FrmMain
         Me.mnuRegulations.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuRegulations.Caption = "آیین نامه"
         Me.mnuRegulations.Id = 78
+        Me.mnuRegulations.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuRegulations.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuRegulations.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuRegulations.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuRegulations.Name = "mnuRegulations"
         '
         'mnuProcessMap
@@ -212,6 +240,10 @@ Partial Class FrmMain
         Me.mnuProcessMap.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuProcessMap.Caption = "نقشه فرآیند"
         Me.mnuProcessMap.Id = 13
+        Me.mnuProcessMap.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuProcessMap.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuProcessMap.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuProcessMap.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuProcessMap.Name = "mnuProcessMap"
         '
         'mnuPostIdentity
@@ -219,6 +251,10 @@ Partial Class FrmMain
         Me.mnuPostIdentity.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuPostIdentity.Caption = "شناسنامه پست"
         Me.mnuPostIdentity.Id = 79
+        Me.mnuPostIdentity.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPostIdentity.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuPostIdentity.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPostIdentity.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuPostIdentity.Name = "mnuPostIdentity"
         '
         'mnuProcessIdentity
@@ -226,6 +262,10 @@ Partial Class FrmMain
         Me.mnuProcessIdentity.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuProcessIdentity.Caption = "شناسنامه فرآیند"
         Me.mnuProcessIdentity.Id = 14
+        Me.mnuProcessIdentity.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuProcessIdentity.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuProcessIdentity.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuProcessIdentity.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuProcessIdentity.Name = "mnuProcessIdentity"
         '
         'mnuControlPlan
@@ -233,6 +273,10 @@ Partial Class FrmMain
         Me.mnuControlPlan.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuControlPlan.Caption = "طرح کنترل"
         Me.mnuControlPlan.Id = 15
+        Me.mnuControlPlan.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuControlPlan.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuControlPlan.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuControlPlan.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuControlPlan.Name = "mnuControlPlan"
         '
         'mnuFlowChart
@@ -240,6 +284,10 @@ Partial Class FrmMain
         Me.mnuFlowChart.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuFlowChart.Caption = "فلوچارت"
         Me.mnuFlowChart.Id = 16
+        Me.mnuFlowChart.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuFlowChart.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuFlowChart.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuFlowChart.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuFlowChart.Name = "mnuFlowChart"
         '
         'mnuProcessDesc
@@ -247,6 +295,10 @@ Partial Class FrmMain
         Me.mnuProcessDesc.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuProcessDesc.Caption = "شرح فرآیند"
         Me.mnuProcessDesc.Id = 17
+        Me.mnuProcessDesc.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuProcessDesc.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuProcessDesc.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuProcessDesc.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuProcessDesc.Name = "mnuProcessDesc"
         '
         'mnuStandardsUnification
@@ -254,6 +306,10 @@ Partial Class FrmMain
         Me.mnuStandardsUnification.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuStandardsUnification.Caption = "یکسان سازی استانداردها"
         Me.mnuStandardsUnification.Id = 18
+        Me.mnuStandardsUnification.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuStandardsUnification.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuStandardsUnification.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuStandardsUnification.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuStandardsUnification.Name = "mnuStandardsUnification"
         '
         'mnuSoftwareIdentity
@@ -261,6 +317,10 @@ Partial Class FrmMain
         Me.mnuSoftwareIdentity.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuSoftwareIdentity.Caption = "شناسنامه نرم افزار"
         Me.mnuSoftwareIdentity.Id = 19
+        Me.mnuSoftwareIdentity.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSoftwareIdentity.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuSoftwareIdentity.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSoftwareIdentity.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuSoftwareIdentity.Name = "mnuSoftwareIdentity"
         '
         'mnuTable
@@ -268,6 +328,10 @@ Partial Class FrmMain
         Me.mnuTable.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuTable.Caption = "جدول"
         Me.mnuTable.Id = 20
+        Me.mnuTable.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuTable.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuTable.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuTable.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuTable.Name = "mnuTable"
         '
         'mnuProductDevDocs
@@ -275,6 +339,10 @@ Partial Class FrmMain
         Me.mnuProductDevDocs.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuProductDevDocs.Caption = "مدارک تکوین محصول"
         Me.mnuProductDevDocs.Id = 21
+        Me.mnuProductDevDocs.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuProductDevDocs.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuProductDevDocs.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuProductDevDocs.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuProductDevDocs.Name = "mnuProductDevDocs"
         '
         'btnImportantDocs
@@ -313,6 +381,10 @@ Partial Class FrmMain
         Me.mnuTechnicalDocs.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuTechnicalDocs.Caption = "مدارک فنی"
         Me.mnuTechnicalDocs.Id = 27
+        Me.mnuTechnicalDocs.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuTechnicalDocs.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuTechnicalDocs.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuTechnicalDocs.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuTechnicalDocs.Name = "mnuTechnicalDocs"
         '
         'mnuBooks
@@ -321,6 +393,10 @@ Partial Class FrmMain
         Me.mnuBooks.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuBooks.Caption = "کتاب"
         Me.mnuBooks.Id = 28
+        Me.mnuBooks.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuBooks.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuBooks.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuBooks.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuBooks.MenuAppearance.MenuCaption.Font = New System.Drawing.Font("Vazirmatn SemiBold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mnuBooks.MenuAppearance.MenuCaption.Options.UseFont = True
         Me.mnuBooks.Name = "mnuBooks"
@@ -330,6 +406,10 @@ Partial Class FrmMain
         Me.mnuCatalogs.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuCatalogs.Caption = "کاتالوگ"
         Me.mnuCatalogs.Id = 33
+        Me.mnuCatalogs.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCatalogs.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuCatalogs.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCatalogs.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuCatalogs.Name = "mnuCatalogs"
         '
         'mnuStandard
@@ -337,6 +417,10 @@ Partial Class FrmMain
         Me.mnuStandard.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuStandard.Caption = "استاندارد"
         Me.mnuStandard.Id = 34
+        Me.mnuStandard.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuStandard.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuStandard.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuStandard.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuStandard.Name = "mnuStandard"
         '
         'mnuSoftware
@@ -344,6 +428,10 @@ Partial Class FrmMain
         Me.mnuSoftware.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuSoftware.Caption = "نرم افزار"
         Me.mnuSoftware.Id = 35
+        Me.mnuSoftware.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSoftware.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuSoftware.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSoftware.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuSoftware.Name = "mnuSoftware"
         '
         'mnuReports
@@ -351,6 +439,10 @@ Partial Class FrmMain
         Me.mnuReports.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuReports.Caption = "گزارشات، جزوات، مجلات"
         Me.mnuReports.Id = 36
+        Me.mnuReports.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuReports.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuReports.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuReports.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuReports.Name = "mnuReports"
         '
         'mnuGallery
@@ -358,6 +450,10 @@ Partial Class FrmMain
         Me.mnuGallery.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuGallery.Caption = "آلبوم عکس"
         Me.mnuGallery.Id = 37
+        Me.mnuGallery.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuGallery.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuGallery.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuGallery.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuGallery.Name = "mnuGallery"
         '
         'mnuPanelMap
@@ -365,6 +461,10 @@ Partial Class FrmMain
         Me.mnuPanelMap.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuPanelMap.Caption = "نقشه پانل"
         Me.mnuPanelMap.Id = 38
+        Me.mnuPanelMap.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPanelMap.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuPanelMap.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPanelMap.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuPanelMap.Name = "mnuPanelMap"
         '
         'mnuCadData
@@ -372,6 +472,10 @@ Partial Class FrmMain
         Me.mnuCadData.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuCadData.Caption = "CAD Data"
         Me.mnuCadData.Id = 39
+        Me.mnuCadData.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCadData.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuCadData.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCadData.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuCadData.Name = "mnuCadData"
         '
         'mnuOperationSheets
@@ -379,6 +483,10 @@ Partial Class FrmMain
         Me.mnuOperationSheets.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuOperationSheets.Caption = "Operation Sheet"
         Me.mnuOperationSheets.Id = 40
+        Me.mnuOperationSheets.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuOperationSheets.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuOperationSheets.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuOperationSheets.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuOperationSheets.Name = "mnuOperationSheets"
         '
         'mnuDLMap
@@ -386,6 +494,10 @@ Partial Class FrmMain
         Me.mnuDLMap.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuDLMap.Caption = "نقشه D/L"
         Me.mnuDLMap.Id = 42
+        Me.mnuDLMap.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuDLMap.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuDLMap.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuDLMap.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuDLMap.Name = "mnuDLMap"
         '
         'mnuTemplateMap
@@ -393,6 +505,10 @@ Partial Class FrmMain
         Me.mnuTemplateMap.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuTemplateMap.Caption = "نقشه قالب"
         Me.mnuTemplateMap.Id = 43
+        Me.mnuTemplateMap.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuTemplateMap.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuTemplateMap.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuTemplateMap.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuTemplateMap.Name = "mnuTemplateMap"
         '
         'mnuCadPrograms
@@ -400,6 +516,10 @@ Partial Class FrmMain
         Me.mnuCadPrograms.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuCadPrograms.Caption = "برنامه های CAD"
         Me.mnuCadPrograms.Id = 44
+        Me.mnuCadPrograms.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCadPrograms.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuCadPrograms.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCadPrograms.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuCadPrograms.Name = "mnuCadPrograms"
         '
         'mnuCamPrograms
@@ -407,6 +527,10 @@ Partial Class FrmMain
         Me.mnuCamPrograms.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuCamPrograms.Caption = "برنامه های CAM"
         Me.mnuCamPrograms.Id = 45
+        Me.mnuCamPrograms.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCamPrograms.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuCamPrograms.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCamPrograms.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuCamPrograms.Name = "mnuCamPrograms"
         '
         'mnuPGMap
@@ -414,6 +538,10 @@ Partial Class FrmMain
         Me.mnuPGMap.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuPGMap.Caption = "نقشه PG"
         Me.mnuPGMap.Id = 46
+        Me.mnuPGMap.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPGMap.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuPGMap.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPGMap.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuPGMap.Name = "mnuPGMap"
         '
         'mnuCutCard
@@ -421,6 +549,10 @@ Partial Class FrmMain
         Me.mnuCutCard.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuCutCard.Caption = "کارت برش"
         Me.mnuCutCard.Id = 47
+        Me.mnuCutCard.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCutCard.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuCutCard.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCutCard.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuCutCard.Name = "mnuCutCard"
         '
         'mnuPressCard
@@ -428,6 +560,10 @@ Partial Class FrmMain
         Me.mnuPressCard.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuPressCard.Caption = "کارت پرس"
         Me.mnuPressCard.Id = 48
+        Me.mnuPressCard.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPressCard.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuPressCard.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPressCard.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuPressCard.Name = "mnuPressCard"
         '
         'mnuSparParts
@@ -435,6 +571,10 @@ Partial Class FrmMain
         Me.mnuSparParts.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuSparParts.Caption = "لیست قطعات یدکی"
         Me.mnuSparParts.Id = 49
+        Me.mnuSparParts.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSparParts.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuSparParts.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSparParts.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuSparParts.Name = "mnuSparParts"
         '
         'mnuPackagingPlan
@@ -442,6 +582,10 @@ Partial Class FrmMain
         Me.mnuPackagingPlan.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuPackagingPlan.Caption = "طرح بسته بندی"
         Me.mnuPackagingPlan.Id = 50
+        Me.mnuPackagingPlan.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPackagingPlan.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuPackagingPlan.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPackagingPlan.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuPackagingPlan.Name = "mnuPackagingPlan"
         '
         'mnuPaletMap
@@ -449,6 +593,10 @@ Partial Class FrmMain
         Me.mnuPaletMap.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuPaletMap.Caption = "نقشه پالت"
         Me.mnuPaletMap.Id = 51
+        Me.mnuPaletMap.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPaletMap.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuPaletMap.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuPaletMap.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuPaletMap.Name = "mnuPaletMap"
         '
         'mnuSurveyPlan
@@ -456,6 +604,10 @@ Partial Class FrmMain
         Me.mnuSurveyPlan.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuSurveyPlan.Caption = "Survey Plan"
         Me.mnuSurveyPlan.Id = 52
+        Me.mnuSurveyPlan.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSurveyPlan.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuSurveyPlan.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSurveyPlan.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuSurveyPlan.Name = "mnuSurveyPlan"
         '
         'mnuContracts
@@ -463,6 +615,10 @@ Partial Class FrmMain
         Me.mnuContracts.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuContracts.Caption = "قراردادها"
         Me.mnuContracts.Id = 53
+        Me.mnuContracts.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuContracts.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuContracts.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuContracts.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuContracts.Name = "mnuContracts"
         '
         'mnuSQADocs
@@ -470,6 +626,10 @@ Partial Class FrmMain
         Me.mnuSQADocs.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuSQADocs.Caption = "مدارک SQA"
         Me.mnuSQADocs.Id = 54
+        Me.mnuSQADocs.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSQADocs.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuSQADocs.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuSQADocs.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuSQADocs.Name = "mnuSQADocs"
         '
         'btnOutDocs
@@ -540,6 +700,10 @@ Partial Class FrmMain
         Me.mnuImportantDocs.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuImportantDocs.Caption = "مستندات مهم"
         Me.mnuImportantDocs.Id = 63
+        Me.mnuImportantDocs.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuImportantDocs.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuImportantDocs.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuImportantDocs.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuImportantDocs.Name = "mnuImportantDocs"
         '
         'mnuCertificates
@@ -547,6 +711,10 @@ Partial Class FrmMain
         Me.mnuCertificates.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuCertificates.Caption = "گواهی نامه ها"
         Me.mnuCertificates.Id = 64
+        Me.mnuCertificates.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCertificates.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuCertificates.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuCertificates.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuCertificates.Name = "mnuCertificates"
         '
         'mnuStrategicConcepts
@@ -554,6 +722,10 @@ Partial Class FrmMain
         Me.mnuStrategicConcepts.AllowDrawArrow = DevExpress.Utils.DefaultBoolean.[False]
         Me.mnuStrategicConcepts.Caption = "طرح های استراتژیک"
         Me.mnuStrategicConcepts.Id = 65
+        Me.mnuStrategicConcepts.ItemAppearance.Normal.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuStrategicConcepts.ItemAppearance.Normal.Options.UseFont = True
+        Me.mnuStrategicConcepts.ItemAppearance.Pressed.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.mnuStrategicConcepts.ItemAppearance.Pressed.Options.UseFont = True
         Me.mnuStrategicConcepts.Name = "mnuStrategicConcepts"
         '
         'btnSystemDocs
@@ -888,7 +1060,7 @@ Partial Class FrmMain
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(157, 22)
         Me.LabelControl1.TabIndex = 5
-        Me.LabelControl1.Text = "نرم افزار نظام مستندات کیفیت"
+        Me.LabelControl1.Text = "نرم افزار مستندات نظام کیفیت"
         '
         'LabelControl2
         '
@@ -901,7 +1073,7 @@ Partial Class FrmMain
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(70, 22)
         Me.LabelControl2.TabIndex = 6
-        Me.LabelControl2.Text = "نسخه: 1.4.5"
+        Me.LabelControl2.Text = "نسخه: 1.7.5"
         '
         'FrmMain
         '
@@ -919,7 +1091,7 @@ Partial Class FrmMain
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.StatusBar = Me.RibbonStatusBar
-        Me.Text = "سامانه نظام مستندات کیفیت"
+        Me.Text = "نرم افزار مستندات نظام کیفیت"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()

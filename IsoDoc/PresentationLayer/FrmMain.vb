@@ -45,8 +45,8 @@ Public Class FrmMain
         Dim Bus_UserMessage1 As New Bus_UserMessage
         ' SplashScreen1.Hide()
         Dim c As New FrmIsoMaster
-        'LogID = SystemInformation.UserDomainName + "\" + SystemInformation.UserName
-        LogID = "DM_PDC2\3020"
+        LogID = SystemInformation.UserDomainName + "\" + SystemInformation.UserName
+        'LogID = "DM_PDC2\3020"
         dt = persist1.GetDataTable(CnnString, SqlStr)
         'If dt.Rows.Count = 0 Then
         '    Me.Close()

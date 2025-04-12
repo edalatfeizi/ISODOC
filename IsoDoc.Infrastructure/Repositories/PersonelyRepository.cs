@@ -64,7 +64,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
                     var userManagers = await connection.QueryAsync<Person>(userManagerQuery);
                     var userEmployees = await connection.QueryAsync<Person>(userEmployeesQuery);
-                connection.Close();
+                    connection.Close();
 
                     return userManagers.Union(userEmployees).Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt }).ToList();
 

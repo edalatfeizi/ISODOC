@@ -93,6 +93,7 @@ namespace IsoDocApp
 
             userDocReqs = await manageDocReqsService.FilterDocRequests(filter);
             grdUserDocRequests.DataSource = userDocReqs;
+            //gridView1.Columns("DocumentCode").BestFit()
 
             ShowProgressBar(false);
         }

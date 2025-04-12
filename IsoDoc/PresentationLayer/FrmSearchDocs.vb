@@ -30,6 +30,8 @@ Public Class FrmSearchDocs
         txtSearch.MinimumSize = New Size(320, 36)
         txtSearch.MaximumSize = New Size(320, 36)
 
+
+
         userName = SystemInformation.UserName.ToString()
         'userName = "3015";
 
@@ -72,6 +74,12 @@ Public Class FrmSearchDocs
                 result = Await _docsService.FilterDocs(isAdmin, txtSearch.Text.Trim(), userInfo.DepartCode)
 
                 grdSearchResult.DataSource = result
+
+                gridView1.Columns("RowId").BestFit()
+                gridView1.Columns("DocumentName").BestFit()
+                gridView1.Columns("DocumentCode").BestFit()
+
+
             End If
 
         Catch ex As Exception

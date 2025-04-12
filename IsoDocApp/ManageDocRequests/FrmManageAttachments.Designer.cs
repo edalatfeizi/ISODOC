@@ -46,13 +46,11 @@
             // grdAttachments
             // 
             this.grdAttachments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdAttachments.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdAttachments.Location = new System.Drawing.Point(0, 0);
             this.grdAttachments.MainView = this.gridView1;
-            this.grdAttachments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdAttachments.Name = "grdAttachments";
             this.grdAttachments.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.grdAttachments.Size = new System.Drawing.Size(682, 278);
+            this.grdAttachments.Size = new System.Drawing.Size(682, 406);
             this.grdAttachments.TabIndex = 6;
             this.grdAttachments.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -61,9 +59,10 @@
             // 
             this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.DetailHeight = 239;
+            this.gridView1.DetailHeight = 349;
             this.gridView1.GridControl = this.grdAttachments;
             this.gridView1.Name = "gridView1";
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // panelDownload
             // 
@@ -72,10 +71,9 @@
             this.panelDownload.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelDownload.Controls.Add(this.btnDownloadAttachment);
             this.panelDownload.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelDownload.Location = new System.Drawing.Point(0, 221);
-            this.panelDownload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelDownload.Location = new System.Drawing.Point(0, 323);
             this.panelDownload.Name = "panelDownload";
-            this.panelDownload.Size = new System.Drawing.Size(682, 57);
+            this.panelDownload.Size = new System.Drawing.Size(682, 83);
             this.panelDownload.TabIndex = 7;
             // 
             // btnDownloadAttachment
@@ -89,12 +87,12 @@
             this.btnDownloadAttachment.Appearance.Options.UseFont = true;
             this.btnDownloadAttachment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDownloadAttachment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDownloadAttachment.ImageOptions.Image")));
-            this.btnDownloadAttachment.Location = new System.Drawing.Point(259, 9);
-            this.btnDownloadAttachment.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDownloadAttachment.Location = new System.Drawing.Point(259, 13);
+            this.btnDownloadAttachment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDownloadAttachment.Name = "btnDownloadAttachment";
-            this.btnDownloadAttachment.Size = new System.Drawing.Size(141, 45);
+            this.btnDownloadAttachment.Size = new System.Drawing.Size(141, 66);
             this.btnDownloadAttachment.TabIndex = 12;
-            this.btnDownloadAttachment.Text = "دانلود فایل پیوست ";
+            this.btnDownloadAttachment.Text = "مشاهده فایل پیوست ";
             this.btnDownloadAttachment.Click += new System.EventHandler(this.btnDownloadAttachment_Click);
             // 
             // progressBar
@@ -112,10 +110,10 @@
             this.progressBar.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.progressBar.Description = "لطفا کمی صبر کنید...";
             this.progressBar.LineAnimationElementHeight = 5;
-            this.progressBar.Location = new System.Drawing.Point(223, 101);
+            this.progressBar.Location = new System.Drawing.Point(223, 148);
             this.progressBar.Margin = new System.Windows.Forms.Padding(0);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(234, 42);
+            this.progressBar.Size = new System.Drawing.Size(234, 61);
             this.progressBar.TabIndex = 33;
             this.progressBar.Text = "progressPanel1";
             this.progressBar.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Ring;
@@ -128,16 +126,16 @@
             // 
             // FrmManageAttachments
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 278);
+            this.ClientSize = new System.Drawing.Size(682, 406);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.panelDownload);
             this.Controls.Add(this.grdAttachments);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmManageAttachments";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فایل های پیوست شده";

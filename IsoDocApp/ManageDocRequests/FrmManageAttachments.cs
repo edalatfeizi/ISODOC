@@ -4,6 +4,7 @@ using IsoDoc.Domain.Models;
 using IsoDocApp.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,57 +36,55 @@ namespace IsoDocApp.ManageDocRequests
             ShowProgressBar(false);
         }
 
-        private async Task<bool> DownloadAttachment()
+        private async Task<bool> OpenAttachment()
         {
             var attachmentId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
             var attachment = await docRequestAttachmentsService.GetDocRequestAttachment(attachmentId);
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = $"{attachment.Name}"; // File type filter
-            saveFileDialog.Filter = "All Files (*.*)|*.*"; // File type filter
-            saveFileDialog.Title = "ذخیره فایل پیوست"; // Dialog title
-            saveFileDialog.DefaultExt = attachment.ContentType; // Default file extension
-            saveFileDialog.AddExtension = true; // Automatically add the file extension
-
-            // Show the dialog and check if the user clicked "OK"
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                // Get the selected file path
-                string filePath = saveFileDialog.FileName;
+                // Create a temporary file path
+                string tempFilePath = Path.Combine(Path.GetTempPath(), attachment.Name);
 
-                try
+                // Save the byte array to the temporary file
+                File.WriteAllBytes(tempFilePath, attachment.FileContent);
+
+                // Create a new process to open the file
+                ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    // Save the byte array to the selected file path
-                    File.WriteAllBytes(filePath, attachment.FileContent);
+                    FileName = tempFilePath,
+                    UseShellExecute = true // This is important to use the default program
+                };
 
-                    toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    var frmMsgBox = new FrmMessageBox();
+                Process.Start(psi);
 
-                    frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
-                    {
-                        Title = StringResources.ErrorProccessingData,
-                        Message = $"{ex.Message} \n {ex.InnerException}",
-                        ConfirmButtonText = StringResources.Confirm,
-                        DevExpressIconId = "cancel",
-                        DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
-                    });
-                    frmMsgBox.ShowDialog();
-                    return false;
-                }
-
+                //toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
+                return true;
             }
-            
-            return false;
-
+            catch (Exception ex)
+            {
+                var frmMsgBox = new FrmMessageBox();
+                frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+                {
+                    Title = StringResources.ErrorProccessingData,
+                    Message = $"{ex.Message} \n {ex.InnerException}",
+                    ConfirmButtonText = StringResources.Confirm,
+                    DevExpressIconId = "cancel",
+                    DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+                });
+                frmMsgBox.ShowDialog();
+                return false;
+            }
         }
 
         private async void btnDownloadAttachment_Click(object sender, EventArgs e)
         {
-           await DownloadAttachment();
+           await OpenAttachment();
+        }
+
+        private async void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+           await OpenAttachment();
         }
     }
 }
