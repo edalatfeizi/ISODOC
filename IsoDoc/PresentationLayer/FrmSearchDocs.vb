@@ -79,15 +79,19 @@ Public Class FrmSearchDocs
                 gridView1.Columns("DocumentName").BestFit()
                 gridView1.Columns("DocumentCode").BestFit()
 
+                If result.Count > 0 Then
+                    btnShowDoc.Enabled = True
+                Else
+                    btnShowDoc.Enabled = False
 
+                End If
             End If
-
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         End Try
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Search()
     End Sub
 
@@ -100,38 +104,41 @@ Public Class FrmSearchDocs
     End Sub
 
     Private Sub ShowDoc()
-        Dim docTypeID = GridViewHelper.GetGridViewCellValue(gridView1, "DocTypeID").ToString()
-        Dim mainId = Convert.ToInt32(GridViewHelper.GetGridViewCellValue(gridView1, "MainId").ToString())
-        Dim docPath = GridViewHelper.GetGridViewCellValue(gridView1, "DocPath").ToString()
+        If result.Count > 0 Then
+            Dim docTypeID = GridViewHelper.GetGridViewCellValue(gridView1, "DocTypeID").ToString()
+            Dim mainId = Convert.ToInt32(GridViewHelper.GetGridViewCellValue(gridView1, "MainId").ToString())
+            Dim docPath = GridViewHelper.GetGridViewCellValue(gridView1, "DocPath").ToString()
 
-        Try
-            If docTypeID = 1 And mainId <> -1 Then
+            Try
+                If docTypeID = 1 And mainId <> -1 Then
 
-                Dim frm As New frmPDF
-                MdlMain.MainId = mainId
-                frm.ShowDialog()
-                Exit Sub
+                    Dim frm As New frmPDF
+                    MdlMain.MainId = mainId
+                    frm.ShowDialog()
+                    Exit Sub
 
-            Else
+                Else
 
-                Try
-                    Process.Start(LTrim(RTrim(docPath)))
-                Catch ex As Exception
-                    Dim Bus_MessageHandler1 As New Bus_MessageHandler
-                    Dim fileType As String
-                    fileType = Bus_MessageHandler1.GetFileExtension(docPath)
-                    If fileType = "" Then
-                        ''''MsgBox("دسترسي به سند مورد نظر امكان پذير نمي باشد", MsgBoxStyle.Critical)
-                        MessageBox.Show("دسترسي به سند مورد نظر امكان پذير نمي باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign)
-                    Else
-                        MsgBox("داريد " + fileType + " براي مشاهده اين سند نياز به نرم افزار", MsgBoxStyle.Critical)
+                    Try
+                        Process.Start(LTrim(RTrim(docPath)))
+                    Catch ex As Exception
+                        Dim Bus_MessageHandler1 As New Bus_MessageHandler
+                        Dim fileType As String
+                        fileType = Bus_MessageHandler1.GetFileExtension(docPath)
+                        If fileType = "" Then
+                            ''''MsgBox("دسترسي به سند مورد نظر امكان پذير نمي باشد", MsgBoxStyle.Critical)
+                            MessageBox.Show("دسترسي به سند مورد نظر امكان پذير نمي باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign)
+                        Else
+                            MsgBox("داريد " + fileType + " براي مشاهده اين سند نياز به نرم افزار", MsgBoxStyle.Critical)
 
-                    End If
-                End Try
-            End If
-        Catch ex As Exception
-            Console.Write(ex.Message)
-        End Try
+                        End If
+                    End Try
+                End If
+            Catch ex As Exception
+                Console.Write(ex.Message)
+            End Try
+        End If
+
     End Sub
 
     Private Sub gridView1_DoubleClick(sender As Object, e As EventArgs) Handles gridView1.DoubleClick

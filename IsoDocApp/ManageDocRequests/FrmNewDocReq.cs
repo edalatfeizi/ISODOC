@@ -45,7 +45,9 @@ namespace IsoDocApp.ManageDocRequests
 
             var userName = SystemInformation.UserName.ToString();
             //userName = "3134";
-            userInfo = await personelyService.GetUserInfoByCardNumber(userName);
+            var userPersonCode = "";
+            userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
+            userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
             //userManagerInfo = await personelyService.GetUserManager(userInfo.UpperCode);
             //if(userManagerInfo == null)
             // userManagerInfo = await personelyService.GetUserManager(userInfo.DepartCode);

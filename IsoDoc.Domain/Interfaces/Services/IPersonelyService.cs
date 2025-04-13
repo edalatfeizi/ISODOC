@@ -7,6 +7,8 @@ namespace IsoDoc.Domain.Interfaces.Services
 {
     public interface IPersonelyService
     {
+        Task<string> GetUserPersonCodeByLoginName(string loginName);
+
         Task<Person?> GetUserInfoByCardNumber(string userCardNumber);
         Task<Person?> GetUserInfoByPersonCode(string personCode);
         Task<List<Department>> GetDepartments();

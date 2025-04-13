@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -61,10 +62,13 @@ namespace IsoDocApp
         private async void FrmManageDocReqs_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            userName = SystemInformation.UserName.ToString();
+            userName = SystemInformation.UserName;
             //userName = "3864";
 
-            userInfo = await personelyService.GetUserInfoByCardNumber(userName);
+            var userPersonCode = "";
+            userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
+            userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
+
             // RibbonPage selectedPage = ribbonControl1.Pages[0];
             // ribbonControl1.SelectedPage = selectedPage;
             //if(userInfo != null)

@@ -134,6 +134,24 @@ namespace IsoDoc.Infrastructure.Repositories
                 throw ex;
             }
         }
+
+        public async Task<string> GetUserPersonCodeByLoginName(string loginName)
+        {
+            try
+            {
+                connection.Open();
+                var userPersonCodeQuery = $"SELECT TOP (100) PERCENT PersonID FROM  GeneralObjects.dbo.tbGen_User WHERE   (Is_Active = '1') AND (NetLoginName = '{loginName}')";
+
+                var personCode = await connection.QueryAsync<string>(userPersonCodeQuery);
+                connection.Close();
+                return personCode.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                throw ex;
+            }
+        }
     }
 
 }

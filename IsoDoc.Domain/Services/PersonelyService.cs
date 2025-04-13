@@ -35,6 +35,11 @@ namespace IsoDoc.Domain.Services
 
         }
 
+        public async Task<string> GetUserPersonCodeByLoginName(string loginName)
+        {
+            return await personelyRepo.GetUserPersonCodeByLoginName(loginName);
+        }
+
         //public async Task<Person?> GetUserManager(string userManagerDepCode)
         //{
         //    return await personelyRepo.GetUserManager(userManagerDepCode);

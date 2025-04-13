@@ -68,7 +68,9 @@ namespace IsoDocApp.ManageDocRequests
 
             var userName = SystemInformation.UserName.ToString();
             //userName = "3864";
-            userInfo = await personelyService.GetUserInfoByCardNumber(userName);
+            var userPersonCode = "";
+            userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
+            userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
 
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
             isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));

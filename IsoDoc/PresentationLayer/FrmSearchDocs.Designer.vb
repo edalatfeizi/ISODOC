@@ -21,7 +21,7 @@ Partial Class FrmSearchDocs
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSearchDocs))
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.btnSave = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnSearch = New DevExpress.XtraEditors.SimpleButton()
         Me.txtSearch = New DevExpress.XtraEditors.TextEdit()
         Me.panelShowDoc = New DevExpress.XtraEditors.PanelControl()
         Me.btnShowDoc = New DevExpress.XtraEditors.SimpleButton()
@@ -38,7 +38,7 @@ Partial Class FrmSearchDocs
         '
         'PanelControl1
         '
-        Me.PanelControl1.Controls.Add(Me.btnSave)
+        Me.PanelControl1.Controls.Add(Me.btnSearch)
         Me.PanelControl1.Controls.Add(Me.txtSearch)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl1.Location = New System.Drawing.Point(0, 0)
@@ -46,20 +46,20 @@ Partial Class FrmSearchDocs
         Me.PanelControl1.Size = New System.Drawing.Size(1106, 93)
         Me.PanelControl1.TabIndex = 12
         '
-        'btnSave
+        'btnSearch
         '
-        Me.btnSave.Appearance.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnSave.Appearance.Font = New System.Drawing.Font("Vazirmatn", 10.0!)
-        Me.btnSave.Appearance.Options.UseBackColor = True
-        Me.btnSave.Appearance.Options.UseFont = True
-        Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(648, 12)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(115, 35)
-        Me.btnSave.TabIndex = 26
-        Me.btnSave.Text = "جستجو"
+        Me.btnSearch.Appearance.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnSearch.Appearance.Font = New System.Drawing.Font("Vazirmatn", 10.0!)
+        Me.btnSearch.Appearance.Options.UseBackColor = True
+        Me.btnSearch.Appearance.Options.UseFont = True
+        Me.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSearch.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnSearch.Location = New System.Drawing.Point(648, 12)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(115, 35)
+        Me.btnSearch.TabIndex = 26
+        Me.btnSearch.Text = "جستجو"
         '
         'txtSearch
         '
@@ -158,7 +158,7 @@ Partial Class FrmSearchDocs
     End Sub
 
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
-    Private WithEvents btnSave As DevExpress.XtraEditors.SimpleButton
+    Private WithEvents btnSearch As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents txtSearch As DevExpress.XtraEditors.TextEdit
     Private WithEvents panelShowDoc As DevExpress.XtraEditors.PanelControl
     Private WithEvents btnShowDoc As DevExpress.XtraEditors.SimpleButton
