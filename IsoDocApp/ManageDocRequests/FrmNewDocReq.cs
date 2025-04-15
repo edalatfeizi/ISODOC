@@ -44,7 +44,7 @@ namespace IsoDocApp.ManageDocRequests
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";
 
             var userName = SystemInformation.UserName.ToString();
-            //userName = "3134";
+            //userName = "KREZAEE";
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
@@ -68,7 +68,18 @@ namespace IsoDocApp.ManageDocRequests
             cmbDocOwnerDep.Properties.DataSource = departments;
             cmbDocTypes.Properties.DataSource = docTypes;
 
-            userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
+            //this check for user KREZAEE should be removed when somebody assigned as an admin to Planning Control Dep 
+            if (userName == "KREZAEE")
+            {
+                userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
+                var admins = await personelyService.GetUserColleagues(null, null, false, true);
+                userColleagues.AddRange(admins);
+            }
+            else
+            {
+                userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
+
+            }
             if (userColleagues.Count == 0) // incase if user has no direct colleagues like boss or he/she has no employees  
                 userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
 
@@ -108,6 +119,9 @@ namespace IsoDocApp.ManageDocRequests
 
             cmbDocs.Properties.DisplayMember = "DocumentName";
             cmbDocs.Properties.ValueMember = "DocumentCode";
+
+           // cmbDocs.Properties. = false;
+            cmbDocs.Properties.ImmediatePopup = true;
 
             cmbDocTypes.Properties.DisplayMember = "DocName";
             cmbDocTypes.Properties.ValueMember = "DocId";
@@ -264,7 +278,7 @@ namespace IsoDocApp.ManageDocRequests
                     newDocReq.ChangeSummary = "";
                     newDocReq.DocCode = "";
 
-                    desc = $"{StringResources.NewCreateDocReq} {StringResources.For} {StringResources.Dep} {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {txtTitle.Text}";
+                    desc = $"{StringResources.NewCreateDocReq} {StringResources.For} {StringResources.Dep} : {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {txtTitle.Text}";
                     break;
                 case DocRequestType.Update:
 
@@ -272,7 +286,7 @@ namespace IsoDocApp.ManageDocRequests
                     newDocReq.DocType = "";
                     newDocReq.KeepDuration = "";
 
-                    desc = $"{StringResources.ChangeDocReq} {StringResources.For} {StringResources.Dep} {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {cmbDocs.Text}";
+                    desc = $"{StringResources.ChangeDocReq} {StringResources.For} {StringResources.Dep} : {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {cmbDocs.Text}";
 
                     break;
                 case DocRequestType.Delete:
@@ -281,7 +295,7 @@ namespace IsoDocApp.ManageDocRequests
                     newDocReq.DocType = "";
                     newDocReq.KeepDuration = "";
 
-                    desc = $"{StringResources.DeleteDocReq} {StringResources.For} {StringResources.Dep} {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {cmbDocs.Text}";
+                    desc = $"{StringResources.DeleteDocReq} {StringResources.For}  {StringResources.Dep}  : {cmbDocOwnerDep.Text} {StringResources.WithTitle} : {cmbDocs.Text}";
 
                     break;
             }

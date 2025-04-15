@@ -1071,9 +1071,9 @@ Partial Class FrmMain
         Me.LabelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.LabelControl2.Location = New System.Drawing.Point(0, 462)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(69, 22)
+        Me.LabelControl2.Size = New System.Drawing.Size(70, 22)
         Me.LabelControl2.TabIndex = 6
-        Me.LabelControl2.Text = "نسخه: 1.7.6"
+        Me.LabelControl2.Text = "نسخه: 1.7.7"
         '
         'FrmMain
         '
