@@ -2,6 +2,7 @@
 using DevExpress.UserSkins;
 using DevExpress.XtraWaitForm;
 using IKIDCSHelper.Models;
+using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Services;
@@ -47,7 +48,8 @@ namespace IsoDocApp
            
             var services = new ServiceCollection();
             var isoDocCnnStr = await GetConnectionString();
-            ConfigureServices(services, isoDocCnnStr);
+            //var smsConfig = new SMSConfig("irankhodro", "T0XFCS1KAtVC4TOB", "+9830004607");
+            ConfigureServices(services, isoDocCnnStr/*,smsConfig*/);
             IServiceProvider serviceProvider = services.BuildServiceProvider();
             DIContainer.ServiceProvider = serviceProvider;
             using (serviceProvider as IDisposable)
@@ -59,7 +61,7 @@ namespace IsoDocApp
 
         }
 
-        private static void ConfigureServices(IServiceCollection services, string connStr)
+        private static void ConfigureServices(IServiceCollection services, string connStr/*, SMSConfig config*/)
         {
             //services.AddSingleton(new SqlConnection(connStr));
             services.AddScoped<IDbConnection>(sp => new SqlConnection(connStr));
@@ -70,9 +72,10 @@ namespace IsoDocApp
 
             services.AddSingleton<IManageDocReqsService, ManageDocReqsService>();
             services.AddSingleton<IDocRequestAttachmentsService, DocRequestAttachmentsService>();
-            services.AddSingleton<DocsService, DocsService>();
+            services.AddSingleton<IDocsService, DocsService>();
 
             services.AddSingleton<FrmManageDocReqs>();
+            //services.AddSingleton(new MagfaSMSClient(config));
             //services.AddSingleton<FrmManageAttachments>();
             //services.AddSingleton<FrmManageDocReqsFactory>(sp => () => sp.GetRequiredService<FrmManageDocReqs>());
 

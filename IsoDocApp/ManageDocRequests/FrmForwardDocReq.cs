@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Repositories;
@@ -8,6 +9,7 @@ using IsoDocApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,7 +30,8 @@ namespace IsoDocApp.ManageDocRequests
         private string docReqStatusDsc = "";
         private EditOrReviewStatus editOrReviewStatus = EditOrReviewStatus.None;
         private int editOrReviewNo = 0;
-        public FrmForwardDocReq(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService,/* IDocRequestStepsService docRequestStepsService,*/ int docReqId, int lastDocReqStepId, DocRequestStatus docRequestStatus, string docReqStatusDsc)
+        private MagfaSMSClient smsClient;
+        public FrmForwardDocReq(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService,/* IDocRequestStepsService docRequestStepsService,*/ int docReqId, int lastDocReqStepId, DocRequestStatus docRequestStatus, string docReqStatusDsc, MagfaSMSClient magfaSMSClient)
         {
             this.manageDocReqsService = manageDocReqsService;
             this.personelyService = personelyService;
@@ -36,7 +39,7 @@ namespace IsoDocApp.ManageDocRequests
             this.docReqStatusDsc = docReqStatusDsc;
             this.docReqId = docReqId;
             this.lastDocReqStepId = lastDocReqStepId;
-
+            this.smsClient = magfaSMSClient;
             InitializeComponent();
         }
 
@@ -72,7 +75,7 @@ namespace IsoDocApp.ManageDocRequests
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
 
-            if (userName == "KREZAEE")
+            if (userName.ToLower() == "KREZAEE".ToLower())
             {
                 userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
@@ -84,13 +87,25 @@ namespace IsoDocApp.ManageDocRequests
 
             }
 
-            isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
+            isAdmin = UserHelper.CheckIsAdmin(userInfo.PostTypeID);
             if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
                 grpEditOrReview.Enabled = true;
                 var admins = await personelyService.GetUserColleagues(null, null, true);
                 userColleagues.AddRange(admins);
-
+                //KREZAEE added temporarily and should be removed
+                var krezaei = new Colleague
+                {
+                    PersonCode = "770265",
+                    CardNumber = "1265",
+                    Name = "کورش رضائی عباسی",
+                    Post = "رئیس برنامه ریزی پروژه ها و کنترل ساخت",
+                    Mobile = "09121017858",
+                    PostTypeID = "4",
+                    UpperCode = "ss0026",
+                    CodeEdare = "ss1031"
+                };
+                userColleagues.Add(krezaei);
             }
             else if (isAdmin)
             {
@@ -170,6 +185,12 @@ namespace IsoDocApp.ManageDocRequests
                     }
                     if (editOrReviewStatus == EditOrReviewStatus.None)
                         await AddNewDocRequestStep(newStep);
+
+                    if (UserHelper.CheckIsAdmin(receiverUserInfo.PostTypeID) || (receiverUserInfo.CodeEdare == "SI300" || receiverUserInfo.UpperCode == "SI300") || receiverUserInfo.PersonCode == "770265") //770265 is KREZAEE added temporarily
+                    {
+                        smsClient.SendSMS(receiverUserInfo.Mobile, $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
+
+                    }
 
                 }
             }

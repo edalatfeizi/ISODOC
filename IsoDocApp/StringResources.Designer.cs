@@ -421,6 +421,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to شرکت قالب های صنعتی ایران خودرو - آیکید.
+        /// </summary>
+        internal static string IKID {
+            get {
+                return ResourceManager.GetString("IKID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to در حال بررسی.
         /// </summary>
         internal static string InProgress {
@@ -435,6 +444,15 @@ namespace IsoDocApp {
         internal static string NewCreateDocReq {
             get {
                 return ResourceManager.GetString("NewCreateDocReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کاربر گرامی درخواست جدیدی در نرم افزار مستندات نظام کیفیت برای شما ارجاع شده است. .
+        /// </summary>
+        internal static string NewRequestSent {
+            get {
+                return ResourceManager.GetString("NewRequestSent", resourceCulture);
             }
         }
         

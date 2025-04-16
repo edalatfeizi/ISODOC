@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
@@ -32,18 +33,20 @@ namespace IsoDocApp
         private string userName = "";
         private bool isAdmin = false;
         private List<DocRequestStep> selectedDocReqSteps = new List<DocRequestStep>();
+        private MagfaSMSClient magfaSMSClient;
         public FrmManageDocReqs(IManageDocReqsService manageDocReqsService, IDocRequestAttachmentsService docRequestAttachmentsService, IPersonelyService personelyService)
         {
             this.manageDocReqsService = manageDocReqsService;
             this.personelyService = personelyService;
             this.docRequestAttachmentsService = docRequestAttachmentsService;
+            this.magfaSMSClient = new MagfaSMSClient(new SMSConfig("irankhodro", "T0XFCS1KAtVC4TOB", "+9830004607"));
             InitializeComponent();
 
         }
 
         private async void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frmNewDocReq = new FrmNewDocReq(manageDocReqsService, personelyService);
+            var frmNewDocReq = new FrmNewDocReq(manageDocReqsService, personelyService,magfaSMSClient);
             var result = frmNewDocReq.ShowDialog();
 
 
@@ -301,7 +304,7 @@ namespace IsoDocApp
                 var lastDocReqStepId = selectedDocReqSteps.Last().Id;
                 var docRequest = userDocReqs.Where(x => x.Id == docReqId).FirstOrDefault();
 
-                var frmForwardDocReq = new FrmForwardDocReq(manageDocReqsService, personelyService, docReqId, lastDocReqStepId, docRequest.DocRequestStatus, GetDocRequestStatusDsc(docRequest));
+                var frmForwardDocReq = new FrmForwardDocReq(manageDocReqsService, personelyService, docReqId, lastDocReqStepId, docRequest.DocRequestStatus, GetDocRequestStatusDsc(docRequest),magfaSMSClient);
                 var result = frmForwardDocReq.ShowDialog();
 
 

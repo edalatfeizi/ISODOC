@@ -13,6 +13,7 @@ using System.Linq;
 using System.Windows.Forms;
 using IsoDoc.Domain.Enums;
 using IsoDocApp.Helpers;
+using IKIDMagfaSMSClientWin;
 namespace IsoDocApp.ManageDocRequests
 {
     public partial class FrmNewDocReq : DevExpress.XtraEditors.XtraForm
@@ -30,10 +31,12 @@ namespace IsoDocApp.ManageDocRequests
         private List<Colleague> userColleagues;
         private Colleague receiverColleague;
         private int lastDocReqId = 0;
-        public FrmNewDocReq(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService)
+        private MagfaSMSClient smsClient;
+        public FrmNewDocReq(IManageDocReqsService manageDocReqsService, IPersonelyService personelyService, MagfaSMSClient magfaSMSClient)
         {
             this.manageDocReqsService = manageDocReqsService;
             this.personelyService = personelyService;
+            this.smsClient = magfaSMSClient;    
             InitializeComponent();
         }
 
@@ -44,7 +47,7 @@ namespace IsoDocApp.ManageDocRequests
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";
 
             var userName = SystemInformation.UserName.ToString();
-            //userName = "KREZAEE";
+            //userName = "3864";
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
@@ -69,7 +72,8 @@ namespace IsoDocApp.ManageDocRequests
             cmbDocTypes.Properties.DataSource = docTypes;
 
             //this check for user KREZAEE should be removed when somebody assigned as an admin to Planning Control Dep 
-            if (userName == "KREZAEE")
+            
+            if (userName.ToLower() == "KREZAEE".ToLower())
             {
                 userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
@@ -83,11 +87,24 @@ namespace IsoDocApp.ManageDocRequests
             if (userColleagues.Count == 0) // incase if user has no direct colleagues like boss or he/she has no employees  
                 userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
 
-            var isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
+            var isAdmin = UserHelper.CheckIsAdmin(userInfo.PostTypeID);
             if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
                 var admins = await personelyService.GetUserColleagues(null, null, true);
                 userColleagues.AddRange(admins);
+                //KREZAEE added temporarily and should be removed
+                var krezaei = new Colleague
+                {
+                    PersonCode = "770265",
+                    CardNumber = "1265",
+                    Name = "کورش رضائی عباسی",
+                    Post = "رئیس برنامه ریزی پروژه ها و کنترل ساخت",
+                    Mobile = "09121017858",
+                    PostTypeID = "4",
+                    UpperCode = "ss0026",
+                    CodeEdare = "ss1031"
+                };
+                userColleagues.Add(krezaei);
             }
             else if (isAdmin)
             {
@@ -109,6 +126,7 @@ namespace IsoDocApp.ManageDocRequests
 
 
         }
+      
         private void SetupControls()
         {
             cmbDeps.Properties.DisplayMember = "MDepartName";
@@ -332,6 +350,13 @@ namespace IsoDocApp.ManageDocRequests
             //TODO: send sms to receiver user
 
             //toastNotificationsManager1.ShowNotification()
+            //if receiver is a top manager or one of sys office staffs then notify them via an sms  
+            if (UserHelper.CheckIsAdmin(receiverColleague.PostTypeID) || receiverColleague.CodeEdare == "SI300" || receiverColleague.UpperCode == "SI300" || receiverColleague.PersonCode == "770265") //770265 is KREZAEE added temporarily
+            {
+                smsClient.SendSMS(receiverColleague.Mobile, $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
+
+            }
+
             toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
             this.DialogResult = DialogResult.OK;
             this.Close();

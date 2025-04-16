@@ -18,6 +18,7 @@ Imports IsoDoc.Domain.Interfaces.Repositories
 Imports IsoDoc.Domain.Interfaces.Services
 Imports IsoDoc.Domain.Services
 Imports IsoDoc.Infrastructure.Repositories
+Imports IKIDMagfaSMSClientWin
 
 Public Class FrmUserMessage
     Private Bus_UserMessage1 As New Bus_UserMessage
@@ -56,7 +57,7 @@ Public Class FrmUserMessage
 #If DEBUG Then
             Return True
 #Else
-        Return False
+            Return False
 #End If
         End Get
     End Property

@@ -18,5 +18,17 @@ namespace IsoDoc.Domain.Models
         [Display(Name = "پست")]
         public string Post { get; set; }
 
+        [Browsable(false)]
+        public string Mobile { get; set; }
+
+        [Browsable(false)]
+        public string PostTypeID { get; set; }
+
+        [Browsable(false)]
+        public string UpperCode { get; set; }
+
+        [Browsable(false)]
+        public string CodeEdare { get; set; }
+
     }
 }

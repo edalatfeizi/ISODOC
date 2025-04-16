@@ -53,6 +53,9 @@
     <Reference Include="IKIDCSHelper">
       <HintPath>..\..\..\..\..\..\IkidSystem+\IKIDCSHelper.dll</HintPath>
     </Reference>
+    <Reference Include="IKIDSMSClientWin">
+      <HintPath>..\..\..\..\..\..\IkidSystems\IKIDSMSClientWin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\IsoDoc\packages\Microsoft.Extensions.DependencyInjection.1.1.1\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
     </Reference>
@@ -90,6 +93,7 @@
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\GridViewHelper.cs" />
+    <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Helpers\Validators.cs" />
     <Compile Include="ManageDocRequests\FrmForwardDocReq.cs">
       <SubType>Form</SubType>

@@ -237,11 +237,17 @@
   <data name="For" xml:space="preserve">
     <value>برای</value>
   </data>
+  <data name="IKID" xml:space="preserve">
+    <value>شرکت قالب های صنعتی ایران خودرو - آیکید</value>
+  </data>
   <data name="InProgress" xml:space="preserve">
     <value>در حال بررسی</value>
   </data>
   <data name="NewCreateDocReq" xml:space="preserve">
     <value>درخواست ایجاد سند جدید</value>
+  </data>
+  <data name="NewRequestSent" xml:space="preserve">
+    <value>کاربر گرامی درخواست جدیدی در نرم افزار مستندات نظام کیفیت برای شما ارجاع شده است. </value>
   </data>
   <data name="No" xml:space="preserve">
     <value>خیر</value>
