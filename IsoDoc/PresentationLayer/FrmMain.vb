@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports DevExpress.XtraBars
+Imports DevExpress.XtraBars.Ribbon
 
 Public Class FrmMain
     Dim FrmIsoMaster1 As New FrmIsoMaster
@@ -207,18 +209,23 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuImportantDocs_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuImportantDocs.ItemClick
+        CloseMenus(sender)
         Dim b As New FrmIsoImportandDoc
         b.FillGrid("ImportandDoc")
         b.Show()
     End Sub
 
     Private Sub mnuCertificates_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuCertificates.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIsoImportandDoc
         b.FillGrid("Certificate")
         b.Show()
     End Sub
 
     Private Sub mnuStrategicConcepts_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuStrategicConcepts.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIsoImportandDoc
         b.FillGrid("Strategic")
         b.Show()
@@ -245,86 +252,120 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuFormDocs_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuFormDocs.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(9)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuChartDocs_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuChartDocs.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(1)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuDutyDesc_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuDutyDesc.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(2)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub btnExecutiveMethods_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExecutiveMethods.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(3)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuInstructions_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuInstructions.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(4)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuFMEARisks_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuFMEARisks.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(25)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuRegulations_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuRegulations.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(5)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuProcessMap_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuProcessMap.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(6)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuPostIdentity_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuPostIdentity.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(11)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuProcessIdentity_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuProcessIdentity.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(8)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuControlPlan_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuControlPlan.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(10)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuFlowChart_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuFlowChart.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(12)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuProcessDesc_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuProcessDesc.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(13)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuStandardsUnification_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuStandardsUnification.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(14)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuSoftwareIdentity_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuSoftwareIdentity.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(26)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuTable_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuTable.ItemClick
+        CloseMenus(sender)
+
         FrmIsoMaster1.GetInfo(27)
         FrmIsoMaster1.ShowDialog()
     End Sub
 
     Private Sub mnuProductDevDocs_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuProductDevDocs.ItemClick
+        CloseMenus(sender)
+
         utility1.OpenFile("\\srv01si\PRODUCTION STANDARDS\SQA & SURVEY PLAN")
     End Sub
 
@@ -364,6 +405,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuTechnicalDocs_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuTechnicalDocs.ItemClick
+        CloseMenus(sender)
+
         Try
             ' Shell("explorer \\srv05si\STANDARDS", AppWinStyle.MaximizedFocus)
 
@@ -373,6 +416,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuBooks_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuBooks.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "كتاب"
         b.Filldgd(1)
@@ -380,6 +425,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuCatalogs_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuCatalogs.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "كاتالوگ"
         b.Filldgd(4)
@@ -387,6 +434,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuStandard_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuStandard.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "استاندارد"
         b.Filldgd(5)
@@ -394,6 +443,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuSoftware_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuSoftware.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "نرم افزار"
         b.Filldgd(6)
@@ -401,6 +452,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuReports_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuReports.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "گزارشات و جزوات"
         b.Filldgd(7)
@@ -408,6 +461,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuGallery_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuGallery.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "آلبوم عكس"
         b.Filldgd(8)
@@ -415,6 +470,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuPanelMap_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuPanelMap.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "نقشه پانل"
         b.Filldgd(9)
@@ -422,6 +479,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuCadData_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuCadData.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "Cad Data"
         b.Filldgd(10)
@@ -429,6 +488,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuOperationSheets_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuOperationSheets.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "Operation Sheet"
         b.Filldgd(11)
@@ -436,6 +497,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuDLMap_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuDLMap.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "نقشه D\L"
         b.Filldgd(12)
@@ -443,6 +506,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuTemplateMap_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuTemplateMap.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "نقشه قالب"
         b.Filldgd(13)
@@ -450,6 +515,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuCadPrograms_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuCadPrograms.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "برنامه هاي Cad"
         b.Filldgd(14)
@@ -457,6 +524,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuCamPrograms_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuCamPrograms.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "برنامه هاي Cam"
         b.Filldgd(15)
@@ -464,6 +533,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuPGMap_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuPGMap.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "نقشه PG"
         b.Filldgd(16)
@@ -471,6 +542,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuCutCard_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuCutCard.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "كارت برش"
         b.Filldgd(17)
@@ -478,6 +551,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuPressCard_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuPressCard.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "كارت پرس"
         b.Filldgd(18)
@@ -485,6 +560,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuSparParts_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuSparParts.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "ليست قطعات يدكي"
         b.Filldgd(19)
@@ -492,6 +569,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuPackagingPlan_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuPackagingPlan.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "طرح بسته بندي"
         b.Filldgd(20)
@@ -499,6 +578,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuPaletMap_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuPaletMap.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "نقشه پالت"
         b.Filldgd(21)
@@ -506,6 +587,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuSurveyPlan_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuSurveyPlan.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "Survey Plan"
         b.Filldgd(23)
@@ -513,6 +596,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuContracts_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuContracts.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "قراردادها"
         b.Filldgd(24)
@@ -520,6 +605,8 @@ Public Class FrmMain
     End Sub
 
     Private Sub mnuSQADocs_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles mnuSQADocs.ItemClick
+        CloseMenus(sender)
+
         Dim b As New FrmIso_TechnicalDoc
         b.Text = "مدارك SQA"
         b.Filldgd(25)
@@ -674,4 +761,12 @@ Public Class FrmMain
         Dim frm1 As New frmKnowledgeBaseview
         frm1.ShowDialog()
     End Sub
+
+    Private Sub CloseMenus(sender As Object)
+        Dim RibbonBarManager As RibbonBarManager = TryCast(sender, RibbonBarManager)
+        RibbonBarManager.CloseMenus()
+    End Sub
+
+
 End Class
+
