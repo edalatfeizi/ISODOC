@@ -19,10 +19,7 @@ namespace IsoDoc.Infrastructure.Repositories
         }
         public async Task<List<SearchResult>> FilterDocs(bool isAdmin, string searchTerm, string userDepId)
         {
-            try
-            {
                 var query = "";
-                connection.Open();
 
                 if (isAdmin) {
                     query = $"SELECT   ROW_NUMBER() OVER (ORDER BY RevisionDate DESC) AS RowId, * FROM  (select DISTINCT  * from VwAllDocument where DocTypeID not in(0,6) and LTRIM(RTRIM(DocumentName)) Like '%{searchTerm}%' or DocumentCode like '%{searchTerm}%'   AND (IsoDocViewID = 1)) as SubQuery ";
@@ -33,15 +30,9 @@ namespace IsoDoc.Infrastructure.Repositories
 
                 }
                 var docs = await connection.QueryAsync<SearchResult>(query);
-                connection.Close();
                 return docs.ToList();
 
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            
         }
 
     }

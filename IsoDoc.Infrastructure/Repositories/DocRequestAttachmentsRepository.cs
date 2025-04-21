@@ -19,41 +19,25 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<DocRequestAttachment>> GetAttachments(int attachmentId)
         {
-            try
-            {
-                connection.Open();
-                var docRequestStepsQuery = $"SELECT a.Id, a.Name, a.ContentType, a.Size, a.CreatedBy,a.CreatedAt, p.FirstName + ' ' + p.LastName as UploadedBy FROM [Isodoc_New].[dbo].[DocRequestAttachments] a " +
-                    $"LEFT JOIN [Personely].[dbo].[Vw_AllPersonWithDepartName] p ON a.CreatedBy = p.PersonCode WHERE a.DocRequestId = '{attachmentId}' AND a.Active = '1' ORDER BY a.Id DESC";
+
+            var docRequestStepsQuery = @"SELECT a.Id, a.Name, a.ContentType, a.Size, a.CreatedBy,a.CreatedAt, p.FirstName + ' ' + p.LastName as UploadedBy FROM [Isodoc_New].[dbo].[DocRequestAttachments] a " +
+                $"LEFT JOIN [Personely].[dbo].[Vw_AllPersonWithDepartName] p ON a.CreatedBy = p.PersonCode WHERE a.DocRequestId = @DocRequestId AND a.Active = '1' ORDER BY a.Id DESC";
 
 
-                var docRequestAttachments = await connection.QueryAsync<DocRequestAttachment>(docRequestStepsQuery);
-                connection.Close();
+            var docRequestAttachments = await connection.QueryAsync<DocRequestAttachment>(docRequestStepsQuery, new { DocRequestId = attachmentId });
 
-                return docRequestAttachments.ToList();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            return docRequestAttachments.ToList();
+
         }
         public async Task<DocRequestAttachment?> GetDocRequestAttachment(int attachmentId)
         {
-            try
-            {
-                connection.Open();
-                var docRequestStepsQuery = $"select * from DocRequestAttachments where Id = '{attachmentId}' and Active = '1' ";
+
+            var docRequestStepsQuery = @"select * from DocRequestAttachments where Id = @Id and Active = '1' ";
 
 
-                var docRequestAttachments = await connection.QueryAsync<DocRequestAttachment>(docRequestStepsQuery);
-                connection.Close();
-                return docRequestAttachments.FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            var docRequestAttachments = await connection.QueryAsync<DocRequestAttachment>(docRequestStepsQuery, new { Id = attachmentId });
+            return docRequestAttachments.FirstOrDefault();
+
         }
     }
 }

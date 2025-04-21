@@ -22,115 +22,152 @@ namespace IsoDoc.Infrastructure.Repositories
         public ManageDocReqRepository(IDbConnection dbConnection)
         {
             connection = dbConnection;
-            //connection = new SqlConnection("Data Source=sqlsrv;Initial Catalog=Isodoc_New;User Id=samane;Password=#@Samane1367!#;Encrypt=False;");
         }
 
         public async Task<DocRequestStep> AddNewDocRequestStepAsync(DocRequestStep docRequestStep)
         {
-            try
-            {
-
-                connection.Open();
-                var docRequestStepQuery = $@"
-                    INSERT INTO DocRequestSteps (DocRequestId, SenderUserPersonCode, SenderUserFullName, SenderUserPost, ReceiverUserPersonCode, ReceiverUserFullName, ReceiverUserPost, Description, IsApproved, {baseEntityInsertProps})
+            const string docRequestStepQuery = @"
+                    INSERT INTO DocRequestSteps (
+                        DocRequestId, 
+                        SenderUserPersonCode, 
+                        SenderUserFullName, 
+                        SenderUserPost, 
+                        ReceiverUserPersonCode, 
+                        ReceiverUserFullName, 
+                        ReceiverUserPost, 
+                        Description, 
+                        IsApproved, 
+                        CreatedBy, 
+                        ModifiedBy, 
+                        CreatedAt, 
+                        ModifiedAt,
+                        Active
+                    )
                     OUTPUT INSERTED.Id
-                    VALUES (@DocRequestId, @SenderUserPersonCode, @SenderUserFullName, @SenderUserPost, @ReceiverUserPersonCode, @ReceiverUserFullName, @ReceiverUserPost, @Description, @IsApproved, {baseEntityInsertPropsValues});";
+                    VALUES (
+                        @DocRequestId, 
+                        @SenderUserPersonCode, 
+                        @SenderUserFullName, 
+                        @SenderUserPost, 
+                        @ReceiverUserPersonCode, 
+                        @ReceiverUserFullName, 
+                        @ReceiverUserPost, 
+                        @Description, 
+                        @IsApproved, 
+                        @CreatedBy, 
+                        @ModifiedBy, 
+                        @CreatedAt, 
+                        @ModifiedAt,
+                        @Active
+                    );";
 
-
-                var newDocReqStepId = await connection.QuerySingleAsync<int>(docRequestStepQuery, docRequestStep);
-                connection.Close();
-                docRequestStep.Id = newDocReqStepId;
-                return docRequestStep;
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
-
+            var newDocReqStepId = await connection.QuerySingleAsync<int>(docRequestStepQuery, docRequestStep);
+            docRequestStep.Id = newDocReqStepId;
+            return docRequestStep;
         }
 
         public async Task<DocRequestAttachment> AttachFileAsync(DocRequestAttachment docRequestAttachment)
         {
-            try
-            {
-                connection.Open();
-                var docRequestAttachmentQuery = $@"
-                    INSERT INTO DocRequestAttachments (DocRequestId, Name, ContentType, FileContent, Size, {baseEntityInsertProps})
+            var docRequestAttachmentQuery = @"
+                    INSERT INTO DocRequestAttachments (
+                        DocRequestId,
+                        Name,
+                        ContentType,
+                        FileContent,
+                        Size,
+                        CreatedBy, 
+                        ModifiedBy, 
+                        CreatedAt, 
+                        ModifiedAt,
+                        Active
+                    )
                     OUTPUT INSERTED.Id
-                    VALUES (@DocRequestId, @Name, @ContentType, @FileContent, @Size, {baseEntityInsertPropsValues});";
+                    VALUES (
+                        @DocRequestId,
+                        @Name,
+                        @ContentType,
+                        @FileContent,
+                        @Size,
+                        @CreatedBy, 
+                        @ModifiedBy, 
+                        @CreatedAt, 
+                        @ModifiedAt,
+                        @Active
+                    );";
 
 
-                var newDocReqAttachmentId = await connection.QuerySingleAsync<int>(docRequestAttachmentQuery, docRequestAttachment);
-                connection.Close();
-                docRequestAttachment.Id = newDocReqAttachmentId;
-                return docRequestAttachment;
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            var newDocReqAttachmentId = await connection.QuerySingleAsync<int>(docRequestAttachmentQuery, docRequestAttachment);
+            docRequestAttachment.Id = newDocReqAttachmentId;
+            return docRequestAttachment;
+
+
 
         }
 
         public async Task<DocRequest> CreateNewDocRequest(DocRequest docRequest)
         {
-            try
-            {
-                connection.Open();
-                var docRequestsQuery = $@"
-                    INSERT INTO DocRequests (DocId, DocOwnerDep, DocCode, Title, KeepDuration, ChangeSummary, CreateReason, DocRequestType,DocRequestStatus, DocType, CreatorDep, {baseEntityInsertProps})
+            var docRequestsQuery = @"
+                    INSERT INTO DocRequests (
+                        DocId,
+                        DocOwnerDep,
+                        DocCode,
+                        Title,
+                        KeepDuration,
+                        ChangeSummary,
+                        CreateReason,
+                        DocRequestType,
+                        DocRequestStatus,
+                        DocType,
+                        CreatorDep,
+                        CreatedBy, 
+                        ModifiedBy, 
+                        CreatedAt, 
+                        ModifiedAt,
+                        Active
+                    )
                     OUTPUT INSERTED.Id
-                    VALUES (@DocId, @DocOwnerDep, @DocCode, @Title, @KeepDuration, @ChangeSummary, @CreateReason, @DocRequestType,@DocRequestStatus, @DocType, @CreatorDep, {baseEntityInsertPropsValues});";
+                    VALUES (
+                        @DocId,
+                        @DocOwnerDep,
+                        @DocCode,
+                        @Title,
+                        @KeepDuration,
+                        @ChangeSummary,
+                        @CreateReason,
+                        @DocRequestType,
+                        @DocRequestStatus,
+                        @DocType,
+                        @CreatorDep,
+                        @CreatedBy, 
+                        @ModifiedBy, 
+                        @CreatedAt, 
+                        @ModifiedAt,
+                        @Active
+                    );";
 
 
-                var newDocReqId = await connection.QuerySingleAsync<int>(docRequestsQuery, docRequest);
-                connection.Close();
-                docRequest.Id = newDocReqId;
-                return docRequest;
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
-
-
+            var newDocReqId = await connection.QuerySingleAsync<int>(docRequestsQuery, docRequest);
+            docRequest.Id = newDocReqId;
+            return docRequest;
 
         }
 
         public async Task<bool> SetDocRequestActive(int docReqId, string deleteDesc, bool isActive)
         {
-            try
-            {
-                connection.Open();
+            var updateQuery = @"
+                    UPDATE DocRequests SET Active = @Active, deleteDesc = @DeleteDesc
+                    WHERE Id = @DocReqId ";
 
-                var updateQuery = @$"
-                                    UPDATE DocRequests
-                                        SET Active = @Active, deleteDesc = @DeleteDesc
-                                        WHERE Id = @DocReqId ";
+            var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, Active = isActive, DeleteDesc = deleteDesc });
 
-                var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, Active = isActive, DeleteDesc = deleteDesc });
+            return affectedRows > 0;
 
-                connection.Close();
-
-                return affectedRows > 0;
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
         }
 
         public async Task<List<DocRequest>> FilterDocRequests(FilterDocRequests filterDocRequests)
         {
-            try
-            {
-                connection.Open();
 
-                var docRequestsQuery = @"
+            var docRequestsQuery = @"
                                         SELECT DISTINCT
                                             DR.*,
                                             CASE 
@@ -142,216 +179,137 @@ namespace IsoDoc.Infrastructure.Repositories
                                             LEFT JOIN 
                                                 DocRequestAttachments DRA ON DR.Id = DRA.DocRequestId
                                            ";
-                docRequestsQuery += filterDocRequests.DocRequestStatus != null ? @" where DR.Active = @Active and DR.DocRequestStatus = @DocRequestStatus " : filterDocRequests.Active != null ? " where DR.Active = @Active" : ""; // DocRequestStatus = 0 is DocRequest is InProgress
+            docRequestsQuery += filterDocRequests.DocRequestStatus != null ? @" where DR.Active = @Active and DR.DocRequestStatus = @DocRequestStatus " : filterDocRequests.Active != null ? " where DR.Active = @Active" : ""; // DocRequestStatus = 0 is DocRequest is InProgress
 
-                if (!string.IsNullOrEmpty(filterDocRequests.CreatorPersonCode))
-                {
-                    docRequestsQuery += " and DR.CreatedBy = @CreatorPersonCode ";
-                }
-                if (!string.IsNullOrEmpty(filterDocRequests.ReceiverPersonCode))
-                {
-                    var receivedDocReqs = $"select DocRequestId from DocRequestSteps where ReceiverUserPersonCode = '{filterDocRequests.ReceiverPersonCode}' and IsApproved = 'false' and active = '1' group by DocRequestId";
-
-                    docRequestsQuery += $" and DR.Id in ({receivedDocReqs}) ";
-                }
-
-                if (!string.IsNullOrEmpty(filterDocRequests.SenderPersonCode))
-                {
-                    var receivedDocReqs = $"select DocRequestId from DocRequestSteps where SenderUserPersonCode = '{filterDocRequests.SenderPersonCode}' and active = '1' group by DocRequestId";
-
-                    docRequestsQuery += $" and DR.Id in ({receivedDocReqs}) ";
-                }
-
-                docRequestsQuery += " ORDER BY DR.Id DESC ";
-
-                var parameters = new
-                {
-                    Active = filterDocRequests.Active,
-                    CreatorPersonCode = filterDocRequests.CreatorPersonCode,
-                    DocRequestStatus = filterDocRequests.DocRequestStatus,
-                };
-
-                var docRequests = await connection.QueryAsync<DocRequest>(docRequestsQuery, parameters);
-
-                connection.Close();
-                return docRequests.ToList();
-            }
-            catch (Exception ex)
+            if (!string.IsNullOrEmpty(filterDocRequests.CreatorPersonCode))
             {
-                connection.Close();
-                throw ex;
+                docRequestsQuery += " and DR.CreatedBy = @CreatorPersonCode ";
             }
+            if (!string.IsNullOrEmpty(filterDocRequests.ReceiverPersonCode))
+            {
+                var receivedDocReqs = @"select DocRequestId from DocRequestSteps where ReceiverUserPersonCode = @ReceiverUserPersonCode and IsApproved = 'false' and active = '1' group by DocRequestId";
+
+                docRequestsQuery += $" and DR.Id in ({receivedDocReqs}) ";
+            }
+
+            if (!string.IsNullOrEmpty(filterDocRequests.SenderPersonCode))
+            {
+                var receivedDocReqs = $"select DocRequestId from DocRequestSteps where SenderUserPersonCode = @SenderUserPersonCode and active = '1' group by DocRequestId";
+
+                docRequestsQuery += $" and DR.Id in ({receivedDocReqs}) ";
+            }
+
+            docRequestsQuery += " ORDER BY DR.Id DESC ";
+
+            var parameters = new
+            {
+                Active = filterDocRequests.Active,
+                CreatorPersonCode = filterDocRequests.CreatorPersonCode,
+                DocRequestStatus = filterDocRequests.DocRequestStatus,
+                ReceiverUserPersonCode = filterDocRequests.ReceiverPersonCode,
+                SenderUserPersonCode = filterDocRequests.SenderPersonCode
+            };
+
+            var docRequests = await connection.QueryAsync<DocRequest>(docRequestsQuery, parameters);
+
+            return docRequests.ToList();
+
         }
 
         public async Task<DocRequest> GetDocRequest(int docReqId)
         {
-            try
-            {
-                connection.Open();
-                var docReqQuery = $"select * from DocRequests where Id = '{docReqId}'";
+            var docReqQuery = @"select * from DocRequests where Id = @Id";
 
-                var docReqs = await connection.QueryAsync<DocRequest>(docReqQuery);
-                connection.Close();
-                return docReqs.First();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
+            var docReqs = await connection.QueryAsync<DocRequest>(docReqQuery, new { Id = docReqId });
+            return docReqs.First();
 
-                throw ex;
-            }
         }
 
 
 
         public async Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId)
         {
-            try
-            {
-                connection.Open();
-                var docRequestStepsQuery = $"select * from DocRequestSteps where DocRequestId = '{docReqId}' and Active = '1' order by Id";
+            var docRequestStepsQuery = @"select * from DocRequestSteps where DocRequestId = @DocRequestId and Active = '1' order by Id";
 
+            var docRequestSteps = await connection.QueryAsync<DocRequestStep>(docRequestStepsQuery, new { DocRequestId = docReqId });
+            return docRequestSteps.ToList();
 
-                var docRequestSteps = await connection.QueryAsync<DocRequestStep>(docRequestStepsQuery);
-                connection.Close();
-                return docRequestSteps.ToList();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
         }
 
         public async Task<List<DocType>> GetDocTypes()
         {
-            try
-            {
-                connection.Open();
-                var docTypesQuery = "select DocId,DocName,KeepDurationRequired from tbISODocName";
+            var docTypesQuery = "select DocId,DocName,KeepDurationRequired from tbISODocName";
 
-                var docTypes = await connection.QueryAsync<DocType>(docTypesQuery);
-                connection.Close();
-                return docTypes.ToList();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            var docTypes = await connection.QueryAsync<DocType>(docTypesQuery);
+            return docTypes.ToList();
+
         }
 
         public async Task<List<Document>> GetDocuments(string depCode)
         {
-            try
-            {
-                connection.Open();
-                var documentsQuery = $"select DISTINCT ROW_NUMBER() OVER (ORDER BY MainId) AS RowNumber, MainId as DocId, DocumentName, DocumentCode, DocName, HistorySave from VwIso_Documents where MdepartID = '{depCode}'";
-                Console.WriteLine(documentsQuery);
-                var documents = await connection.QueryAsync<Document>(documentsQuery);
-                connection.Close();
-                return documents.ToList();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            var documentsQuery = @"select DISTINCT ROW_NUMBER() OVER (ORDER BY MainId) AS RowNumber, MainId as DocId, DocumentName, DocumentCode, DocName, HistorySave from VwIso_Documents where MdepartID = @MdepartID"; //MdepartID in VwIso_Documents has depCode values 
+
+            var documents = await connection.QueryAsync<Document>(documentsQuery, new { MdepartID = depCode });
+            return documents.ToList();
+
 
         }
 
 
         public async Task<int> GetLastDocReqId()
         {
-            try
-            {
-                connection.Open();
-                var maxDocReqIdQuery = "select MAX(Id) as MaxReqId from DocRequests";
 
-                var maxDocReqId = await connection.QueryAsync<int?>(maxDocReqIdQuery);
-                connection.Close();
-                return maxDocReqId.First() != null ? (int)maxDocReqId.First() : 0;
+            var maxDocReqIdQuery = "select MAX(Id) as MaxReqId from DocRequests";
 
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
+            var maxDocReqId = await connection.QueryAsync<int?>(maxDocReqIdQuery);
+            return maxDocReqId.First() != null ? (int)maxDocReqId.First() : 0;
 
-                throw ex;
-            }
         }
 
         public async Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode)
         {
-            try
-            {
-                connection.Open();
 
-                var updateQuery = @"
+            var updateQuery = @"
                                     UPDATE DocRequestSteps
                                         SET IsApproved = 'true'
                                         WHERE DocRequestId = @DocReqId and ReceiverUserPersonCode = @ReceiverUserPersonCode";
 
-                var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, ReceiverUserPersonCode = userPersonCode });
+            var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, ReceiverUserPersonCode = userPersonCode });
 
-                connection.Close();
 
-                return affectedRows > 0;
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            return affectedRows > 0;
+
 
         }
 
         public async Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc)
         {
-            try
-            {
-                connection.Open();
 
-                var updateQuery = @$"
+            var updateQuery = @"
                                     UPDATE DocRequests
-                                        SET DocRequestStatus = @docRequestStatus, CancelDesc = @cancelDesc
+                                        SET DocRequestStatus = @DocRequestStatus, CancelDesc = @CancelDesc
                                         WHERE Id = @DocReqId ";
 
-                var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, DocRequestStatus = docRequestStatus, cancelDesc = cancelDesc });
+            var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, DocRequestStatus = docRequestStatus, CancelDesc = cancelDesc });
 
-                connection.Close();
 
-                return affectedRows > 0;
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            return affectedRows > 0;
+
         }
 
         public async Task<bool> UpdateDocRequestEditOrReviewStatus(int docReqId, EditOrReviewStatus editOrReviewStatus, int editOrReviewNo)
         {
-            try
-            {
-                connection.Open();
 
-                var updateQuery = @$"
+            var updateQuery = @"
                                     UPDATE DocRequests
-                                        SET EditOrReviewStatus = @editOrReviewStatus, EditOrReviewNo = @editOrReviewNo
+                                        SET EditOrReviewStatus = @EditOrReviewStatus, EditOrReviewNo = @EditOrReviewNo
                                         WHERE Id = @DocReqId ";
 
-                var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, EditOrReviewStatus = editOrReviewStatus, EditOrReviewNo = editOrReviewNo });
+            var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, EditOrReviewStatus = editOrReviewStatus, EditOrReviewNo = editOrReviewNo });
 
-                connection.Close();
 
-                return affectedRows > 0;
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            return affectedRows > 0;
+
         }
     }
 }

@@ -21,37 +21,29 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<Department>> GetDepartments()
         {
-            try
-            {
-                connection.Open();
-                var depsQuery = "select MDepartName ,MDepartCode from Personely.dbo.VwHR_MDepart where MDepartCode <> '0'  order by DepartID";
+            const string query = @"
+                                    SELECT MDepartName, MDepartCode 
+                                    FROM Personely.dbo.VwHR_MDepart 
+                                    WHERE MDepartCode <> '0'  
+                                    ORDER BY DepartID";
 
-                var deps = await connection.QueryAsync<Department>(depsQuery);
-                connection.Close();
-                return deps.ToList();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            var departments = await connection.QueryAsync<Department>(query);
+            return departments.ToList();
         }
 
         public async Task<List<Colleague>> GetUserColleagues(string userDepCode = null, string userManagerDepCode = null, bool adminOnly = false, bool sysOfficeOnly = false)
         {
-            try
-            {
-                connection.Open();
                 if (adminOnly)
                 {
-                    var adminsQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PostTypeID in (26,27,3)";
+                    var adminsQuery = "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PostTypeID in (26,27,3)";
                     var admins = await connection.QueryAsync<Person>(adminsQuery);
                     connection.Close();
                     return admins.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
 
-                } else if (sysOfficeOnly)
+                }
+                else if (sysOfficeOnly)
                 {
-                    var sysOfficeQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = 'SI300' or UpperCode ='SI300'";
+                    var sysOfficeQuery = "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = 'SI300' or UpperCode ='SI300'";
                     var sysOfficeEmps = await connection.QueryAsync<Person>(sysOfficeQuery);
                     connection.Close();
                     return sysOfficeEmps.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
@@ -59,25 +51,17 @@ namespace IsoDoc.Infrastructure.Repositories
                 }
                 else
                 {
-                    var userManagerQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = '{userManagerDepCode}'";
-                    var userEmployeesQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where UpperCode = '{userDepCode}'";
+                    var userManagerQuery = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = @CodeEdare";
+                    var userEmployeesQuery = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where UpperCode = @UpperCode";
 
-                    var userManagers = await connection.QueryAsync<Person>(userManagerQuery);
-                    var userEmployees = await connection.QueryAsync<Person>(userEmployeesQuery);
+                    var userManagers = await connection.QueryAsync<Person>(userManagerQuery, new { CodeEdare = userManagerDepCode });
+                    var userEmployees = await connection.QueryAsync<Person>(userEmployeesQuery, new { UpperCode = userDepCode});
                     connection.Close();
 
-                    return userManagers.Union(userEmployees).Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt , PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
+                    return userManagers.Union(userEmployees).Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
 
 
                 }
-
-
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
         }
         //public async Task<Person?> GetUserManager( string userManagerDepCode)
         //{
@@ -101,56 +85,27 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<Person?> GetUserInfoByCardNumber(string userCardNumber)
         {
-            try
-            {
-                connection.Open();
-                var userInfoQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CardNumber = ${userCardNumber}";
+            const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName WHERE CardNumber = @CardNumber";
 
-                var userInfo = await connection.QueryAsync<Person>(userInfoQuery);
-                connection.Close();
-                return userInfo.FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            // Dapper automatically opens/closes the connection if not already open
+            return await connection.QueryFirstOrDefaultAsync<Person>(query, new { CardNumber = userCardNumber });
         }
 
         public async Task<Person> GetUserInfoByPersonCode(string personCode)
         {
-            try
-            {
-                connection.Open();
-                var userInfoQuery = $"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PersonCode = ${personCode}";
 
-                var userInfo = await connection.QueryAsync<Person>(userInfoQuery);
-                connection.Close();
-                return userInfo.FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+            var query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PersonCode = @PersonCode";
+
+            return await connection.QueryFirstOrDefaultAsync<Person>(query, new { PersonCode = personCode });
+
         }
 
         public async Task<string> GetUserPersonCodeByLoginName(string loginName)
         {
-            try
-            {
-                connection.Open();
-                var userPersonCodeQuery = $"SELECT TOP (100) PERCENT PersonID FROM  GeneralObjects.dbo.tbGen_User WHERE   (Is_Active = '1') AND (NetLoginName = '{loginName}')";
+                var query = @"SELECT TOP (100) PERCENT PersonID FROM  GeneralObjects.dbo.tbGen_User WHERE   (Is_Active = '1') AND (NetLoginName = @LoginName)";
 
-                var personCode = await connection.QueryAsync<string>(userPersonCodeQuery);
-                connection.Close();
-                return personCode.FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                throw ex;
-            }
+                return await connection.QueryFirstOrDefaultAsync<string>(query, new { LoginName = loginName });
+
         }
     }
 

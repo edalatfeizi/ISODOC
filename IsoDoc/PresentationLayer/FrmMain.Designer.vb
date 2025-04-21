@@ -129,16 +129,17 @@ Partial Class FrmMain
         '
         'RibbonControl
         '
-        Me.RibbonControl.EmptyAreaImageOptions.ImagePadding = New System.Windows.Forms.Padding(30, 31, 30, 31)
+        Me.RibbonControl.EmptyAreaImageOptions.ImagePadding = New System.Windows.Forms.Padding(30, 21, 30, 21)
         Me.RibbonControl.ExpandCollapseItem.Id = 0
         Me.RibbonControl.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.RibbonControl.SearchEditItem, Me.btnShowDepDocs, Me.BarSubItem1, Me.mnuFormDocs, Me.mnuChartDocs, Me.mnuDutyDesc, Me.btnExecutiveMethods, Me.mnuInstructions, Me.mnuFMEARisks, Me.mnuProcessMap, Me.mnuProcessIdentity, Me.mnuControlPlan, Me.mnuFlowChart, Me.mnuProcessDesc, Me.mnuStandardsUnification, Me.mnuSoftwareIdentity, Me.mnuTable, Me.mnuProductDevDocs, Me.btnImportantDocs, Me.btnStandardCerts, Me.btnStrategicPlans, Me.BarSubItem18, Me.mnuTechnicalDocs, Me.mnuBooks, Me.mnuCatalogs, Me.mnuStandard, Me.mnuSoftware, Me.mnuReports, Me.mnuGallery, Me.mnuPanelMap, Me.mnuCadData, Me.mnuOperationSheets, Me.mnuDLMap, Me.mnuTemplateMap, Me.mnuCadPrograms, Me.mnuCamPrograms, Me.mnuPGMap, Me.mnuCutCard, Me.mnuPressCard, Me.mnuSparParts, Me.mnuPackagingPlan, Me.mnuPaletMap, Me.mnuSurveyPlan, Me.mnuContracts, Me.mnuSQADocs, Me.btnOutDocs, Me.btnOtherDocs, Me.btnShowKartable, Me.btnBaseInfo, Me.btnMainDocs, Me.btnOutsideDocs, Me.BarSubItem41, Me.mnuImportantDocs, Me.mnuCertificates, Me.mnuStrategicConcepts, Me.btnSystemDocs, Me.btnCumulativeDocsReport, Me.btnDocsCountChart, Me.btnDepsDocsCountChart, Me.btnQAReports, Me.btnWishList, Me.btnSearch, Me.btnAppHelp, Me.btnAuditCalendar, Me.btnArchive, Me.btnChangeDocsDep, Me.btnAddLinks, Me.mnuRegulations, Me.mnuPostIdentity, Me.btnTrack, Me.btnPrintableForms, Me.btnAbout, Me.btnAddKnowledgeBaseData, Me.btnShowKnowledgeBase})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonControl.MaxItemId = 85
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage3, Me.RibbonPage4, Me.rpKnowledgeBase, Me.RibbonPage5, Me.RibbonPage6, Me.rpAuditCalendar})
         Me.RibbonControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.RibbonControl.Size = New System.Drawing.Size(1443, 191)
+        Me.RibbonControl.Size = New System.Drawing.Size(1443, 177)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'btnShowDepDocs
@@ -1025,20 +1026,22 @@ Partial Class FrmMain
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 749)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 506)
+        Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(1443, 26)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(1443, 24)
         '
         'PictureEdit1
         '
         Me.PictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureEdit1.EditValue = Global.IsoDoc.My.Resources.Resources.AdobeStock_551800135
-        Me.PictureEdit1.Location = New System.Drawing.Point(0, 191)
+        Me.PictureEdit1.Location = New System.Drawing.Point(0, 177)
+        Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureEdit1.MenuManager = Me.RibbonControl
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
-        Me.PictureEdit1.Size = New System.Drawing.Size(1443, 558)
+        Me.PictureEdit1.Size = New System.Drawing.Size(1443, 329)
         Me.PictureEdit1.TabIndex = 2
         '
         'GalleryDropDown1
@@ -1053,8 +1056,7 @@ Partial Class FrmMain
         Me.LabelControl1.Appearance.Options.UseBackColor = True
         Me.LabelControl1.Appearance.Options.UseFont = True
         Me.LabelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LabelControl1.Location = New System.Drawing.Point(0, 727)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl1.Location = New System.Drawing.Point(0, 484)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(157, 22)
         Me.LabelControl1.TabIndex = 5
@@ -1067,8 +1069,7 @@ Partial Class FrmMain
         Me.LabelControl2.Appearance.Options.UseBackColor = True
         Me.LabelControl2.Appearance.Options.UseFont = True
         Me.LabelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LabelControl2.Location = New System.Drawing.Point(0, 705)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl2.Location = New System.Drawing.Point(0, 462)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(67, 22)
         Me.LabelControl2.TabIndex = 6
@@ -1076,14 +1077,15 @@ Partial Class FrmMain
         '
         'FrmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 19.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1443, 775)
+        Me.ClientSize = New System.Drawing.Size(1443, 530)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.PictureEdit1)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FrmMain"
         Me.Ribbon = Me.RibbonControl
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
