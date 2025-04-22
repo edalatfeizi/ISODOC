@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using IsoDoc.Domain.Enums;
 using IsoDocApp.Helpers;
 using IKIDMagfaSMSClientWin;
+using IsoDocApp.Extensions;
 namespace IsoDocApp.ManageDocRequests
 {
     public partial class FrmNewDocReq : DevExpress.XtraEditors.XtraForm
@@ -140,9 +141,11 @@ namespace IsoDocApp.ManageDocRequests
 
            // cmbDocs.Properties. = false;
             cmbDocs.Properties.ImmediatePopup = true;
+            
 
             cmbDocTypes.Properties.DisplayMember = "DocName";
             cmbDocTypes.Properties.ValueMember = "DocId";
+
 
             cmbUserColleagues.Properties.DisplayMember = "Name";
             cmbUserColleagues.Properties.ValueMember = "PersonCode";
@@ -453,6 +456,11 @@ namespace IsoDocApp.ManageDocRequests
                 var dep = departments.Where(x => x.MDepartCode.ToString() == cmbDocOwnerDep.EditValue.ToString()).FirstOrDefault();
 
                 documents = await manageDocReqsService.GetDocuments(dep.MDepartCode);
+                
+                foreach (var doc in documents)
+                {
+                    doc.DocumentName = doc.DocumentName.NormalizePersian();
+                }
                 cmbDocs.Properties.DataSource = documents;
                 ShowProgressBar(false);
 
