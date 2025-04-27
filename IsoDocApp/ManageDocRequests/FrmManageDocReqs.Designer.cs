@@ -31,9 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageDocReqs));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewDocReq = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnConfirmNewDoc = new DevExpress.XtraBars.BarButtonItem();
             this.tabSentRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tabReceivedRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tabForwardedDocRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tabAllDocRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -55,9 +58,12 @@
             this.stepProgressBarItem10 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.grdUserDocRequests = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.progressBar = new DevExpress.XtraWaitForm.ProgressPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.loading = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
@@ -74,6 +80,7 @@
             this.mnuCancelReq = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeleteReq = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEnableReq = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExecRegulation = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserDocRequests)).BeginInit();
@@ -82,6 +89,9 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
+            this.loading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
@@ -101,10 +111,13 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.barButtonItem1});
+            this.btnNewDocReq,
+            this.barButtonItem2,
+            this.btnConfirmNewDoc,
+            this.btnExecRegulation});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.tabSentRequests,
@@ -118,28 +131,55 @@
             this.ribbonControl1.Size = new System.Drawing.Size(1192, 173);
             this.ribbonControl1.SelectedPageChanged += new System.EventHandler(this.ribbonControl1_SelectedPageChanged);
             // 
-            // barButtonItem1
+            // btnNewDocReq
             // 
-            this.barButtonItem1.Caption = "ثبت درخواست جدید";
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.btnNewDocReq.Caption = " درخواست جدید";
+            this.btnNewDocReq.Id = 5;
+            this.btnNewDocReq.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNewDocReq.ImageOptions.SvgImage")));
+            this.btnNewDocReq.Name = "btnNewDocReq";
+            this.btnNewDocReq.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnNewDocReq.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "ثبت درخواست تایید سند";
+            this.barButtonItem2.Id = 6;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // btnConfirmNewDoc
+            // 
+            this.btnConfirmNewDoc.Caption = "برگه ثبت و تنظیم سند";
+            this.btnConfirmNewDoc.Enabled = false;
+            this.btnConfirmNewDoc.Id = 7;
+            this.btnConfirmNewDoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmNewDoc.ImageOptions.Image")));
+            this.btnConfirmNewDoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmNewDoc.ImageOptions.LargeImage")));
+            this.btnConfirmNewDoc.Name = "btnConfirmNewDoc";
+            this.btnConfirmNewDoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConfirmNewDoc_ItemClick);
             // 
             // tabSentRequests
             // 
             this.tabSentRequests.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup4});
             this.tabSentRequests.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabSentRequests.ImageOptions.Image")));
             this.tabSentRequests.Name = "tabSentRequests";
             this.tabSentRequests.Text = "درخواست های من";
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnNewDocReq);
             this.ribbonPageGroup1.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.TwoRows;
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = " ایجاد/تغییر/حذف سند";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnConfirmNewDoc);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnExecRegulation);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "ثبت و تنظیم سند";
             // 
             // tabReceivedRequests
             // 
@@ -333,35 +373,11 @@
             this.gridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseUp);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
-            // progressBar
-            // 
-            this.progressBar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.progressBar.AnimationElementCount = 50;
-            this.progressBar.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.progressBar.Appearance.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progressBar.Appearance.Options.UseBackColor = true;
-            this.progressBar.Appearance.Options.UseFont = true;
-            this.progressBar.AppearanceCaption.Font = new System.Drawing.Font("Vazirmatn", 10F);
-            this.progressBar.AppearanceCaption.Options.UseFont = true;
-            this.progressBar.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.progressBar.Caption = "در حال دریافت اطلاعات";
-            this.progressBar.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.progressBar.Description = "لطفا کمی صبر کنید...";
-            this.progressBar.LineAnimationElementHeight = 5;
-            this.progressBar.Location = new System.Drawing.Point(262, 204);
-            this.progressBar.Margin = new System.Windows.Forms.Padding(0);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(308, 58);
-            this.progressBar.TabIndex = 32;
-            this.progressBar.Text = "progressPanel1";
-            this.progressBar.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Ring;
-            // 
             // panelControl1
             // 
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl1.Controls.Add(this.progressBar);
             this.panelControl1.Controls.Add(this.panelControl3);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -373,6 +389,7 @@
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.loading);
             this.panelControl3.Controls.Add(this.panelControl4);
             this.panelControl3.Controls.Add(this.grdUserDocRequests);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -380,6 +397,57 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(810, 477);
             this.panelControl3.TabIndex = 33;
+            // 
+            // loading
+            // 
+            this.loading.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.loading.Appearance.BackColor = System.Drawing.Color.White;
+            this.loading.Appearance.Options.UseBackColor = true;
+            this.loading.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.loading.Controls.Add(this.labelControl2);
+            this.loading.Controls.Add(this.labelControl1);
+            this.loading.Controls.Add(this.pictureEdit1);
+            this.loading.Location = new System.Drawing.Point(266, 186);
+            this.loading.Name = "loading";
+            this.loading.Size = new System.Drawing.Size(257, 118);
+            this.loading.TabIndex = 7;
+            this.loading.Visible = false;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Gray;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(55, 61);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(93, 19);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "لطفا کمی صبر کنید ...";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(17, 31);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(131, 24);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "در حال دریافت اطلاعات";
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
+            this.pictureEdit1.Location = new System.Drawing.Point(154, 11);
+            this.pictureEdit1.MenuManager = this.ribbonControl1;
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.pictureEdit1.Size = new System.Drawing.Size(98, 90);
+            this.pictureEdit1.TabIndex = 0;
             // 
             // panelControl4
             // 
@@ -609,6 +677,16 @@
             this.mnuEnableReq.Text = "فعال کردن درخواست";
             this.mnuEnableReq.Click += new System.EventHandler(this.mnuEnableReq_Click);
             // 
+            // btnExecRegulation
+            // 
+            this.btnExecRegulation.Caption = "مجوز اجرای آیین نامه";
+            this.btnExecRegulation.Enabled = false;
+            this.btnExecRegulation.Id = 8;
+            this.btnExecRegulation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnExecRegulation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnExecRegulation.Name = "btnExecRegulation";
+            this.btnExecRegulation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExecRegulation_ItemClick);
+            // 
             // FrmManageDocReqs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
@@ -632,6 +710,10 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.loading)).EndInit();
+            this.loading.ResumeLayout(false);
+            this.loading.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
@@ -655,7 +737,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage tabReceivedRequests;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnNewDocReq;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPage tabReferredRequests;
         private DevExpress.XtraTreeList.Columns.TreeListBand treeListBand1;
@@ -671,7 +753,6 @@
         private DevExpress.XtraEditors.StepProgressBarItem stepProgressBarItem10;
         private DevExpress.XtraGrid.GridControl grdUserDocRequests;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraWaitForm.ProgressPanel progressBar;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
@@ -693,6 +774,14 @@
         private System.Windows.Forms.ToolStripMenuItem mnuDeleteReq;
         private System.Windows.Forms.ToolStripMenuItem mnuEnableReq;
         private DevExpress.XtraEditors.SimpleButton btnAddAttachment;
+        private DevExpress.XtraEditors.PanelControl loading;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnConfirmNewDoc;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem btnExecRegulation;
     }
 }
 

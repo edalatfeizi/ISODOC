@@ -47,23 +47,29 @@ namespace IsoDocApp
                 {
                     case DocRequestStatus.Canceled:
                         lastStep.Options.Indicator.ActiveStateImageOptions.Image = ImageResourceCache.Default.GetImageById("cancel", DevExpress.Utils.Design.ImageSize.Size32x32, DevExpress.Utils.Design.ImageType.Colored);
-                        desc += $"{StringResources.CancelReason} \n {StringResources.Description} {cancelOrDeleteDsc}";
+                        var cancelDesc = $"{StringResources.CancelReason} \n {StringResources.Description} {cancelOrDeleteDsc}";
+                        desc += cancelDesc;
+
                         lastStep.ContentBlock2.Description = desc;
                         break;
 
                     case DocRequestStatus.Deleted:
                         lastStep.Options.Indicator.ActiveStateImageOptions.Image = ImageResourceCache.Default.GetImageById("trash", DevExpress.Utils.Design.ImageSize.Size32x32, DevExpress.Utils.Design.ImageType.Colored);
-                        desc += $"{StringResources.DeleteRequest} \n {StringResources.Description} {cancelOrDeleteDsc}";
+                        var deletedDesc = $"{StringResources.DeleteRequest} \n {StringResources.Description} {cancelOrDeleteDsc}";
+                        desc += deletedDesc;
+
                         lastStep.ContentBlock2.Description = desc;
 
                         break;
                     case DocRequestStatus.Completed:
-                        desc += $"{StringResources.Completed}";
+                        var completedDesc = $"{StringResources.Completed}";
+                        desc += completedDesc;
                         lastStep.ContentBlock2.Description = desc;
                         break;
                     case DocRequestStatus.InProgress:
                         lastStep.State = StepProgressBarItemState.Inactive;
-                        desc += $"{StringResources.InProgress}";
+                         desc = $"{StringResources.ReceiveDateAndTime} {lastStepDateTime} \n \n {StringResources.Status} {StringResources.InProgress}";
+
                         lastStep.ContentBlock2.Description = desc;
 
                         break;

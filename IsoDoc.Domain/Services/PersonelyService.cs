@@ -14,9 +14,19 @@ namespace IsoDoc.Domain.Services
             personelyRepo = personelyRepository;
         }
 
+        public async Task<List<Person>> GetAllEmployees()
+        {
+           return await personelyRepo.GetAllEmployees();
+        }
+
         public async Task<List<Department>> GetDepartments()
         {
             return await personelyRepo.GetDepartments();
+        }
+
+        public async Task<List<Colleague>> GetUnSupervisedBosses()
+        {
+            return await personelyRepo.GetUnSupervisedBosses();
         }
 
         public async Task<List<Colleague>> GetUserColleagues(string userDepCode, string userManagerDepCode, bool adminOnly, bool sysOfficeOnly = false)

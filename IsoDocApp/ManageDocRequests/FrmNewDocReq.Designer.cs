@@ -251,7 +251,6 @@
             this.cmbDocs.Properties.NullText = "";
             this.cmbDocs.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.cmbDocs.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch;
-            this.cmbDocs.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.cmbDocs.Size = new System.Drawing.Size(347, 28);
             this.cmbDocs.TabIndex = 5;
             this.cmbDocs.EditValueChanged += new System.EventHandler(this.cmbDocs_EditValueChanged);

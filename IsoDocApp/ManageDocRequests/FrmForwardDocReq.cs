@@ -75,44 +75,31 @@ namespace IsoDocApp.ManageDocRequests
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
 
-            if (userName.ToLower() == "KREZAEE".ToLower())
+            userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
+
+            // if user is a boss and his/her dep has no admin PostTypeID 50 and 4 is reserved for an office boss and supervisor
+            if (userInfo.PostTypeID == "50" || userInfo.PostTypeID == "4" && !userColleagues.Any(x => x.CodeEdare == userInfo.UpperCode))
             {
-                userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
                 userColleagues.AddRange(admins);
             }
-            else
-            {
-                userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
+            if (userColleagues.Count == 0) // incase if user has no direct colleagues like boss or he/she has no employees  
+                userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
 
-            }
-
-            isAdmin = UserHelper.CheckIsAdmin(userInfo.PostTypeID);
+            var isAdmin = UserHelper.CheckIsAdmin(userInfo.PostTypeID);
             if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
-                grpEditOrReview.Enabled = true;
                 var admins = await personelyService.GetUserColleagues(null, null, true);
                 userColleagues.AddRange(admins);
-                //KREZAEE added temporarily and should be removed
-                var krezaei = new Colleague
-                {
-                    PersonCode = "770265",
-                    CardNumber = "1265",
-                    Name = "کورش رضائی عباسی",
-                    Post = "رئیس برنامه ریزی پروژه ها و کنترل ساخت",
-                    Mobile = "09121017858",
-                    PostTypeID = "4",
-                    UpperCode = "ss0026",
-                    CodeEdare = "ss1031"
-                };
-                userColleagues.Add(krezaei);
+                var unSupervisedBosses = await personelyService.GetUnSupervisedBosses();
+
+                userColleagues.AddRange(unSupervisedBosses);
             }
             else if (isAdmin)
             {
                 userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare);
 
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
-
                 userColleagues.AddRange(admins);
             }
 
@@ -186,7 +173,7 @@ namespace IsoDocApp.ManageDocRequests
                     if (editOrReviewStatus == EditOrReviewStatus.None)
                         await AddNewDocRequestStep(newStep);
 
-                    if (UserHelper.CheckIsAdmin(receiverUserInfo.PostTypeID) || (receiverUserInfo.CodeEdare == "SI300" || receiverUserInfo.UpperCode == "SI300") || receiverUserInfo.PersonCode == "770265") //770265 is KREZAEE added temporarily
+                    if (UserHelper.CheckIsAdmin(receiverUserInfo.PostTypeID) || (receiverUserInfo.CodeEdare == "SI300" || receiverUserInfo.UpperCode == "SI300") )
                     {
                         smsClient.SendSMS(receiverUserInfo.Mobile, $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
 

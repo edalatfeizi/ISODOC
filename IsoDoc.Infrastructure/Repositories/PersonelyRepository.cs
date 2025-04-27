@@ -19,6 +19,13 @@ namespace IsoDoc.Infrastructure.Repositories
             connection = dbConnection;
         }
 
+        public async Task<List<Person>> GetAllEmployees()
+        {
+            const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName";
+
+            return (List<Person>) await connection.QueryAsync<Person>(query);
+        }
+
         public async Task<List<Department>> GetDepartments()
         {
             const string query = @"
@@ -29,6 +36,21 @@ namespace IsoDoc.Infrastructure.Repositories
 
             var departments = await connection.QueryAsync<Department>(query);
             return departments.ToList();
+        }
+
+        public async Task<List<Colleague>> GetUnSupervisedBosses()
+        {
+            const string query = @"
+                                   SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where (PostTypeID = '50' or PostTypeID = '4') and UpperCode in (SELECT UpperCode 
+                                    FROM Personely.dbo.Vw_AllPersonWithDepartName 
+                                    WHERE PostTypeId = '50' OR PostTypeId = '4'
+                                    EXCEPT
+                                    SELECT CodeEdare 
+                                    FROM Personely.dbo.Vw_AllPersonWithDepartName 
+                                    WHERE PostTypeId = '27' OR PostTypeId = '3')";
+
+            var colleagues = await connection.QueryAsync<Colleague>(query);
+            return colleagues.ToList();
         }
 
         public async Task<List<Colleague>> GetUserColleagues(string userDepCode = null, string userManagerDepCode = null, bool adminOnly = false, bool sysOfficeOnly = false)

@@ -69,16 +69,23 @@ Public Class Dac_Document
         If (act1.CheckUserAccess(27, 629, LoginID) Or act1.CheckUserAccess(27, 1098, LoginID)) Then
             SqlStr = "select DISTINCT  * from VwIso_Documents "
         Else
+            If LoginID = 1378 Then 'set alipour access to logistic dep docs
+                SqlStr = "select DISTINCT  * from VwIso_Documents where MdepartID ='" & UserInfo.LoginMDepartID & "' or MdepartID ='TT400'  or personcode='" & UserInfo.LoginPersonID & "' or IsShowPublic=1"
 
+            Else
+                SqlStr = "select DISTINCT  * from VwIso_Documents where MdepartID ='" & UserInfo.LoginMDepartID & "' or personcode='" & UserInfo.LoginPersonID & "' or IsShowPublic=1"
 
-            SqlStr = "select DISTINCT  * from VwIso_Documents where MdepartID ='" & UserInfo.LoginMDepartID & "' or personcode='" & UserInfo.LoginPersonID & "' or IsShowPublic=1"
-            '     MessageBox.Show(SqlStr)
+                '     MessageBox.Show(SqlStr)
+
+            End If
+
+            'If act1.CheckUserAccess(27, 1258, LoginID) Then
+            '    SqlStr = "select DISTINCT  * from VwIso_Documents where MdepartID IN('RE0964','TT400','RR0015','QC000','HC0855','TT500','AM1247') or personcode='" & UserInfo.LoginPersonID & "' or IsShowPublic=1"
+            'End If
+
         End If
-        'If act1.CheckUserAccess(27, 1258, LoginID) Then
-        '    SqlStr = "select DISTINCT  * from VwIso_Documents where MdepartID IN('RE0964','TT400','RR0015','QC000','HC0855','TT500','AM1247') or personcode='" & UserInfo.LoginPersonID & "' or IsShowPublic=1"
-        'End If
-
         GetDocumentInfo = persist1.GetDataTable(CnnString, SqlStr)
+
     End Function
     Friend Function GetALLDocumentInfo(ByVal Filter As String) As DataTable 'Technical+Systems'
         If (act1.CheckUserAccess(27, 629, LoginID) Or act1.CheckUserAccess(27, 1098, LoginID)) Then

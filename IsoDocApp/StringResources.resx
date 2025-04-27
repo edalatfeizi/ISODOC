@@ -252,6 +252,9 @@
   <data name="No" xml:space="preserve">
     <value>خیر</value>
   </data>
+  <data name="ReceiveDateAndTime" xml:space="preserve">
+    <value>تاریخ و زمان دریافت:</value>
+  </data>
   <data name="ReviewNo" xml:space="preserve">
     <value>شماره بازنگری:</value>
   </data>

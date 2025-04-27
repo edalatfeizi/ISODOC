@@ -10,10 +10,13 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<string> GetUserPersonCodeByLoginName(string loginName);
 
         Task<Person?> GetUserInfoByCardNumber(string userCardNumber);
+        Task<List<Person>> GetAllEmployees();
         Task<Person?> GetUserInfoByPersonCode(string personCode);
         Task<List<Department>> GetDepartments();
         Task<List<Colleague>> GetUserColleagues(string userDepCode = null, string userManagerDepCode = null, bool adminOnly = false, bool sysOfficeOnly = false);
-       // Task<Person?> GetUserManager(string userManagerDepCode);
+        Task<List<Colleague>> GetUnSupervisedBosses();
+
+        // Task<Person?> GetUserManager(string userManagerDepCode);
 
 
     }

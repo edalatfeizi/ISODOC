@@ -72,18 +72,14 @@ namespace IsoDocApp.ManageDocRequests
             cmbDocOwnerDep.Properties.DataSource = departments;
             cmbDocTypes.Properties.DataSource = docTypes;
 
-            //this check for user KREZAEE should be removed when somebody assigned as an admin to Planning Control Dep 
-            
-            if (userName.ToLower() == "KREZAEE".ToLower())
+      
+            userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
+
+            // if user is a boss and his/her dep has no admin PostTypeID 50 and 4 is reserved for an office boss and supervisor
+            if (userInfo.PostTypeID == "50" || userInfo.PostTypeID == "4" && !userColleagues.Any(x => x.CodeEdare == userInfo.UpperCode))
             {
-                userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
                 userColleagues.AddRange(admins);
-            }
-            else
-            {
-                userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
-
             }
             if (userColleagues.Count == 0) // incase if user has no direct colleagues like boss or he/she has no employees  
                 userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
@@ -93,19 +89,9 @@ namespace IsoDocApp.ManageDocRequests
             {
                 var admins = await personelyService.GetUserColleagues(null, null, true);
                 userColleagues.AddRange(admins);
-                //KREZAEE added temporarily and should be removed
-                var krezaei = new Colleague
-                {
-                    PersonCode = "770265",
-                    CardNumber = "1265",
-                    Name = "کورش رضائی عباسی",
-                    Post = "رئیس برنامه ریزی پروژه ها و کنترل ساخت",
-                    Mobile = "09121017858",
-                    PostTypeID = "4",
-                    UpperCode = "ss0026",
-                    CodeEdare = "ss1031"
-                };
-                userColleagues.Add(krezaei);
+                var unSupervisedBosses = await personelyService.GetUnSupervisedBosses();
+               
+                userColleagues.AddRange(unSupervisedBosses);
             }
             else if (isAdmin)
             {
@@ -141,7 +127,7 @@ namespace IsoDocApp.ManageDocRequests
 
            // cmbDocs.Properties. = false;
             cmbDocs.Properties.ImmediatePopup = true;
-            
+           
 
             cmbDocTypes.Properties.DisplayMember = "DocName";
             cmbDocTypes.Properties.ValueMember = "DocId";
@@ -354,7 +340,7 @@ namespace IsoDocApp.ManageDocRequests
 
             //toastNotificationsManager1.ShowNotification()
             //if receiver is a top manager or one of sys office staffs then notify them via an sms  
-            if (UserHelper.CheckIsAdmin(receiverColleague.PostTypeID) || receiverColleague.CodeEdare == "SI300" || receiverColleague.UpperCode == "SI300" || receiverColleague.PersonCode == "770265") //770265 is KREZAEE added temporarily
+            if (UserHelper.CheckIsAdmin(receiverColleague.PostTypeID) || receiverColleague.CodeEdare == "SI300" || receiverColleague.UpperCode == "SI300" ) 
             {
                 smsClient.SendSMS(receiverColleague.Mobile, $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
 
@@ -462,6 +448,11 @@ namespace IsoDocApp.ManageDocRequests
                     doc.DocumentName = doc.DocumentName.NormalizePersian();
                 }
                 cmbDocs.Properties.DataSource = documents;
+
+                //cmbDocs.Properties.Columns["RowNumber"].Width = 50;
+                //cmbDocs.Properties.Columns["DocId"].Width = 70;
+                //cmbDocs.Properties.Columns["DocumentCode"].Width = 80;
+
                 ShowProgressBar(false);
 
                 //newDocReq.

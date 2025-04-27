@@ -80,6 +80,8 @@ namespace IsoDocApp
             if (userInfo != null && (userInfo.CardNumber == "3910" || userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
             {
                 tabAllDocRequests.Visible = true;
+                btnConfirmNewDoc.Enabled = true;
+                btnExecRegulation.Enabled = true;
                 //tabDeletedRequests.Visible = true;
             }
             else
@@ -104,9 +106,9 @@ namespace IsoDocApp
 
             ShowProgressBar(false);
         }
-        private void ShowProgressBar(bool isVisible)
+        private void ShowProgressBar(bool visibility)
         {
-            progressBar.Visible = isVisible;
+            loading.Visible = visibility;
         }
 
         private async void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -405,7 +407,7 @@ namespace IsoDocApp
                         }
 
                     }
-                    if (userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys office emp
+                    if (userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys office emp or developer
                     {
 
                         // Show the ContextMenuStrip at the mouse position
@@ -459,6 +461,18 @@ namespace IsoDocApp
                 }
             }
          
+        }
+
+        private void btnConfirmNewDoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frmNewDocReq = new FrmConfirmNewDoc(personelyService);
+            var result = frmNewDocReq.ShowDialog();
+        }
+
+        private void btnExecRegulation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frmExecReq = new FrmExecuteRegulationPermission();
+            var result = frmExecReq.ShowDialog();
         }
     }
 }

@@ -466,6 +466,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ و زمان دریافت:.
+        /// </summary>
+        internal static string ReceiveDateAndTime {
+            get {
+                return ResourceManager.GetString("ReceiveDateAndTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to شماره بازنگری:.
         /// </summary>
         internal static string ReviewNo {
