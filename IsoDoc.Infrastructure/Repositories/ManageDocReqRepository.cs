@@ -282,15 +282,15 @@ namespace IsoDoc.Infrastructure.Repositories
 
         }
 
-        public async Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc)
+        public async Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc, string modifiedBy)
         {
 
             var updateQuery = @"
                                     UPDATE DocRequests
-                                        SET DocRequestStatus = @DocRequestStatus, CancelDesc = @CancelDesc
+                                        SET DocRequestStatus = @DocRequestStatus, CancelDesc = @CancelDesc, ModifiedBy = @ModifiedBy
                                         WHERE Id = @DocReqId ";
 
-            var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, DocRequestStatus = docRequestStatus, CancelDesc = cancelDesc });
+            var affectedRows = await connection.ExecuteAsync(updateQuery, new { DocReqId = docReqId, DocRequestStatus = docRequestStatus, CancelDesc = cancelDesc, ModifiedBy = modifiedBy });
 
 
             return affectedRows > 0;

@@ -75,9 +75,9 @@ namespace IsoDoc.Domain.Services
             return await manageDocReqsRepo.SetDocRequestStepApproved(docReqId, userPersonCode);
         }
 
-        public async Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc)
+        public async Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc, string modifiedBy)
         {
-            return await manageDocReqsRepo.UpdateDocRequestStatus(docReqId,docRequestStatus, cancelDesc);
+            return await manageDocReqsRepo.UpdateDocRequestStatus(docReqId,docRequestStatus, cancelDesc,modifiedBy);
         }
 
         public async Task<bool> UpdateDocRequestEditOrReviewStatus(int docReqId, EditOrReviewStatus editOrReviewStatus, int editOrReviewNo)

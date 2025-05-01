@@ -331,7 +331,7 @@ namespace IsoDocApp
         {
             var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
             ShowProgressBar(true);
-            var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Completed, "");
+            var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Completed, "", userInfo.PersonCode);
             btnReload.PerformClick();
         }
 
@@ -344,7 +344,7 @@ namespace IsoDocApp
             if (!string.IsNullOrEmpty(cancelReason))
             {
                 ShowProgressBar(true);
-                var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Canceled, cancelReason);
+                var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Canceled, cancelReason, userInfo.PersonCode);
                 btnReload.PerformClick();
 
             }
@@ -359,7 +359,7 @@ namespace IsoDocApp
             if (!string.IsNullOrEmpty(deleteReason))
             {
                 ShowProgressBar(true);
-                await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Deleted, "");
+                await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Deleted, "", userInfo.PersonCode);
                 await manageDocReqsService.SetDocRequestActive(docReqId, deleteReason, false);
                 btnReload.PerformClick();
 
@@ -372,7 +372,7 @@ namespace IsoDocApp
 
 
             ShowProgressBar(true);
-            await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.InProgress, "");
+            await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.InProgress, "", userInfo.PersonCode);
             await manageDocReqsService.SetDocRequestActive(docReqId, "", true);
             btnReload.PerformClick();
 

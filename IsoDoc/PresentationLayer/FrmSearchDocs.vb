@@ -33,9 +33,10 @@ Public Class FrmSearchDocs
 
 
         userName = SystemInformation.UserName.ToString()
-        'userName = "3015";
+        'userName = "OMIDVAR"
 
-        userInfo = Await _personelyService.GetUserInfoByCardNumber(userName)
+        Dim personCode = Await _personelyService.GetUserPersonCodeByLoginName(userName)
+        userInfo = Await _personelyService.GetUserInfoByPersonCode(personCode)
 
         If userInfo.CodeEdare = "SI300" Or userInfo.UpperCode = "SI300" Then
             isAdmin = True

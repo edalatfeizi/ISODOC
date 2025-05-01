@@ -89,6 +89,8 @@ namespace IsoDocApp.ManageDocRequests
             var isAdmin = UserHelper.CheckIsAdmin(userInfo.PostTypeID);
             if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
             {
+                grpEditOrReview.Enabled = true;
+
                 var admins = await personelyService.GetUserColleagues(null, null, true);
                 userColleagues.AddRange(admins);
                 var unSupervisedBosses = await personelyService.GetUnSupervisedBosses();
