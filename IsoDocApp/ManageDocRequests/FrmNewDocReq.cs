@@ -43,6 +43,10 @@ namespace IsoDocApp.ManageDocRequests
 
         private async void FrmNewDocReq_Load(object sender, EventArgs e)
         {
+            smsClient.SendSMS("09195424221", $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
+
+
+
             SetupControls();
             lastDocReqId = await manageDocReqsService.GetLastDocReqId();
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";

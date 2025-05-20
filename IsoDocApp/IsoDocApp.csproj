@@ -97,6 +97,7 @@
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\GridViewHelper.cs" />
+    <Compile Include="Helpers\PersianDateParser.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Helpers\Validators.cs" />
     <Compile Include="ManageDocRequests\FrmConfirmNewDoc.cs">
