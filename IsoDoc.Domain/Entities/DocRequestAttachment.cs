@@ -35,11 +35,12 @@ namespace IsoDoc.Domain.Entities
 
         [Display(Name = "زمان آپلود", Order = 5)]
         [Editable(false)]
-        public string UploadDate { get => DateTime.Parse(CreatedAt).FormatDateTime(); }
+        public string UploadDate { get; set; }
         //public int ParentDocRequestId { get; set; }
         //[ForeignKey("ParentDocRequestId")]
         //public virtual DocRequest DocRequest { get; set; }
-
+     
     }
+    
     
 }

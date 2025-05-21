@@ -1,11 +1,14 @@
-﻿using IsoDoc.Domain.Entities;
+﻿using DevExpress.Utils.Extensions;
+using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
+using IsoDocApp.Extensions;
 using IsoDocApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,6 +35,10 @@ namespace IsoDocApp.ManageDocRequests
         {
             ShowProgressBar(true);
             attachments = await docRequestAttachmentsService.GetAttachments(docReqId);
+            foreach (var attachment in attachments)
+            {
+                attachment.UploadDate = attachment.CreatedAt.FormatPersianDate();
+            }
             grdAttachments.DataSource = attachments;
             ShowProgressBar(false);
         }

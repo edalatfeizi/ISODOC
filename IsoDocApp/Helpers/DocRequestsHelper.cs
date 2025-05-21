@@ -4,6 +4,7 @@ using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
+using IsoDocApp.Extensions;
 using IsoDocApp.Helpers;
 using System;
 using System.Collections.Generic;
@@ -22,18 +23,13 @@ namespace IsoDocApp
             {
                 if (steps.Count() > 0)
                 {
-                    DateTime gregorianDate;
-                    string persianDateStr;
                     foreach (var docReqStep in steps)
                     {
                         // Create a new StepItem for each task
                         StepProgressBarItem stepItem = new StepProgressBarItem();
                         stepItem.ContentBlock2.Caption = $"{docReqStep.SenderUserFullName} - {docReqStep.SenderUserPost}";
 
-                        gregorianDate = PersianDateParser.ParsePersianDateTime(docReqStep.CreatedAt);
-                        persianDateStr = PersianDateParser.GetPersianDateParts(gregorianDate);
-
-                        stepItem.ContentBlock2.Description = $"{StringResources.CreateDateAndTime} {persianDateStr} \n \n {docReqStep.Description}";
+                        stepItem.ContentBlock2.Description = $"{StringResources.CreateDateAndTime} {docReqStep.CreatedAt.FormatPersianDate()} \n \n {docReqStep.Description}";
                         stepItem.State = StepProgressBarItemState.Active;
                         //stepItem.ContentBlock1.Caption = "تاریخ ثبت";
                         //stepItem.ContentBlock1.Description = $"{docReqStep.CreatedAt}";
@@ -44,12 +40,8 @@ namespace IsoDocApp
                     StepProgressBarItem lastStep = new StepProgressBarItem();
                     lastStep.ContentBlock2.Caption = $"{steps[steps.Count - 1].ReceiverUserFullName} - {steps[steps.Count - 1].ReceiverUserPost}";
 
-                    gregorianDate = PersianDateParser.ParsePersianDateTime(steps[steps.Count - 1].CreatedAt);
-
-                    persianDateStr = PersianDateParser.GetPersianDateParts(gregorianDate);
-
                     lastStep.State = StepProgressBarItemState.Active;
-                    var desc = $"{StringResources.CreateDateAndTime} {persianDateStr} \n \n {StringResources.Status} ";
+                    var desc = $"{StringResources.CreateDateAndTime} {steps[steps.Count - 1].CreatedAt} \n \n {StringResources.Status} ";
                     switch (docRequestStatus)
                     {
                         case DocRequestStatus.Canceled:
@@ -75,7 +67,7 @@ namespace IsoDocApp
                             break;
                         case DocRequestStatus.InProgress:
                             lastStep.State = StepProgressBarItemState.Inactive;
-                            desc = $"{StringResources.ReceiveDateAndTime} {persianDateStr} \n \n {StringResources.Status} {StringResources.InProgress}";
+                            desc = $"{StringResources.ReceiveDateAndTime} {steps[steps.Count - 1].CreatedAt} \n \n {StringResources.Status} {StringResources.InProgress}";
 
                             lastStep.ContentBlock2.Description = desc;
 
