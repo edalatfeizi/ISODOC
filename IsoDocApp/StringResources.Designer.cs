@@ -358,6 +358,24 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لطفا شماره ویرایش را به صورت صحیح وارد کنید.
+        /// </summary>
+        internal static string ErrorIncorrectEditNo {
+            get {
+                return ResourceManager.GetString("ErrorIncorrectEditNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا شماره بازنگری را به صورت صحیح وارد کنید.
+        /// </summary>
+        internal static string ErrorIncorrectReviewNo {
+            get {
+                return ResourceManager.GetString("ErrorIncorrectReviewNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خطایی در پردازش اطلاعات بوجود آمده است لطفا بعدا دوباره تلاش کنید..
         /// </summary>
         internal static string ErrorInProccessingDataTryAgain {

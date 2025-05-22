@@ -70,14 +70,14 @@ namespace IsoDocApp.ManageDocRequests
             txtDocReqId.Text = docReqId.ToString();
 
             var userName = SystemInformation.UserName.ToString();
-            //userName = "3864";
+            userName = "3864";
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
 
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
 
-            // if user is a boss and his/her dep has no admin PostTypeID 50 and 4 is reserved for an office boss and supervisor
+            // if user is a boss and his/her dep has no admin, PostTypeID 50 and 4 is reserved for an office boss and supervisor
             if (userInfo.PostTypeID == "50" || userInfo.PostTypeID == "4" && !userColleagues.Any(x => x.CodeEdare == userInfo.UpperCode))
             {
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
@@ -149,12 +149,16 @@ namespace IsoDocApp.ManageDocRequests
                         CreatedBy = userInfo.PersonCode,
                         ModifiedBy = userInfo.PersonCode
                     };
+                    var editReviewNo = 0;
 
                     if (editOrReviewStatus != EditOrReviewStatus.None)
                     {
-                        if (Validators.ValidateControls<BaseEdit>(txtEditOrReviewNo))
+                        if(!string.IsNullOrEmpty(txtEditOrReviewNo.Text))
+                            int.TryParse(txtEditOrReviewNo.Text, out editReviewNo);
+
+                        if (editReviewNo >= 0)
                         {
-                            var isUpdated = await manageDocReqsService.UpdateDocRequestEditOrReviewStatus(docReqId, editOrReviewStatus, Convert.ToInt32(txtEditOrReviewNo.Text.Trim()));
+                            var isUpdated = await manageDocReqsService.UpdateDocRequestEditOrReviewStatus(docReqId, editOrReviewStatus, Convert.ToInt32(editReviewNo));
                             if (isUpdated)
                             {
                                 switch (editOrReviewStatus)
@@ -166,20 +170,30 @@ namespace IsoDocApp.ManageDocRequests
                                         newStep.Description += $"\n {StringResources.DoWithReview} \n {StringResources.ReviewNo} ";
                                         break;
                                 }
-                                await AddNewDocRequestStep(newStep);
+                                await AddNewDocRequestStep(newStep, editReviewNo);
 
                             }
+                        }
+                        else
+                        {
+
+                            var frmMsgBox = new FrmMessageBox();
+                            var message = editOrReviewStatus == EditOrReviewStatus.DoWithEdit ? StringResources.ErrorIncorrectEditNo : StringResources.ErrorIncorrectReviewNo;
+                            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+                            {
+                                Title = StringResources.ErrorProccessingData,
+                                Message = message,
+                                ConfirmButtonText = StringResources.Confirm,
+                                DevExpressIconId = "cancel",
+                                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+                            });
+                            frmMsgBox.ShowDialog();
                         }
 
                     }
                     if (editOrReviewStatus == EditOrReviewStatus.None)
-                        await AddNewDocRequestStep(newStep);
+                        await AddNewDocRequestStep(newStep, editReviewNo);
 
-                    if (UserHelper.CheckIsAdmin(receiverUserInfo.PostTypeID) || (receiverUserInfo.CodeEdare == "SI300" || receiverUserInfo.UpperCode == "SI300") )
-                    {
-                        smsClient.SendSMS(receiverUserInfo.Mobile, $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
-
-                    }
 
                 }
             }
@@ -209,12 +223,19 @@ namespace IsoDocApp.ManageDocRequests
             frmMsgBox.ShowDialog();
 
         }
-        private async Task<bool> AddNewDocRequestStep(DocRequestStep newStep)
+        private async Task<bool> AddNewDocRequestStep(DocRequestStep newStep,int editReviewNo)
         {
-            newStep.Description += txtEditOrReviewNo.Text;
+            newStep.Description += editReviewNo.ToString();
 
             var result = await manageDocReqsService.SetDocRequestStepApproved(docReqId, userInfo.PersonCode);
             await manageDocReqsService.AddNewDocRequestStepAsync(newStep);
+
+
+            if (UserHelper.CheckIsAdmin(receiverUserInfo.PostTypeID) || (receiverUserInfo.CodeEdare == "SI300" || receiverUserInfo.UpperCode == "SI300"))
+            {
+                smsClient.SendSMS(receiverUserInfo.Mobile, $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
+
+            }
 
             toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
 

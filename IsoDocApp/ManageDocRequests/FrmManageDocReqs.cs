@@ -66,7 +66,7 @@ namespace IsoDocApp
         {
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName;
-            //userName = "3864";
+            userName = "3864";
 
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);

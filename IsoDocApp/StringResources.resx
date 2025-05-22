@@ -216,6 +216,12 @@
   <data name="ErrorEnterEditOrReviewNo" xml:space="preserve">
     <value>خالی بودن شماره ویرایش/بازنگری</value>
   </data>
+  <data name="ErrorIncorrectEditNo" xml:space="preserve">
+    <value>لطفا شماره ویرایش را به صورت صحیح وارد کنید</value>
+  </data>
+  <data name="ErrorIncorrectReviewNo" xml:space="preserve">
+    <value>لطفا شماره بازنگری را به صورت صحیح وارد کنید</value>
+  </data>
   <data name="ErrorInProccessingDataTryAgain" xml:space="preserve">
     <value>خطایی در پردازش اطلاعات بوجود آمده است لطفا بعدا دوباره تلاش کنید.</value>
   </data>
