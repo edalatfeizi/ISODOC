@@ -41,7 +41,7 @@ namespace IsoDocApp
                     lastStep.ContentBlock2.Caption = $"{steps[steps.Count - 1].ReceiverUserFullName} - {steps[steps.Count - 1].ReceiverUserPost}";
 
                     lastStep.State = StepProgressBarItemState.Active;
-                    var desc = $"{StringResources.CreateDateAndTime} {steps[steps.Count - 1].CreatedAt} \n \n {StringResources.Status} ";
+                    var desc = $"{StringResources.CreateDateAndTime} {steps[steps.Count - 1].CreatedAt.FormatPersianDate()} \n \n {StringResources.Status} ";
                     switch (docRequestStatus)
                     {
                         case DocRequestStatus.Canceled:
@@ -67,7 +67,7 @@ namespace IsoDocApp
                             break;
                         case DocRequestStatus.InProgress:
                             lastStep.State = StepProgressBarItemState.Inactive;
-                            desc = $"{StringResources.ReceiveDateAndTime} {steps[steps.Count - 1].CreatedAt} \n \n {StringResources.Status} {StringResources.InProgress}";
+                            desc = $"{StringResources.ReceiveDateAndTime} {steps[steps.Count - 1].CreatedAt.FormatPersianDate()} \n \n {StringResources.Status} {StringResources.InProgress}";
 
                             lastStep.ContentBlock2.Description = desc;
 

@@ -70,7 +70,9 @@ namespace IsoDocApp.ManageDocRequests
             txtDocReqId.Text = docReqId.ToString();
 
             var userName = SystemInformation.UserName.ToString();
-            userName = "3864";
+            if (Program.DebugMode)
+                userName = "3910";
+
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);

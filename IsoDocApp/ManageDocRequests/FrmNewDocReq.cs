@@ -43,16 +43,15 @@ namespace IsoDocApp.ManageDocRequests
 
         private async void FrmNewDocReq_Load(object sender, EventArgs e)
         {
-            smsClient.SendSMS("09195424221", $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
-
-
 
             SetupControls();
             lastDocReqId = await manageDocReqsService.GetLastDocReqId();
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";
 
             var userName = SystemInformation.UserName.ToString();
-            //userName = "3864";
+            if (Program.DebugMode)
+                userName = "3910";
+
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
