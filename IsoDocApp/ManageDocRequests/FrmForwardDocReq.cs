@@ -227,7 +227,8 @@ namespace IsoDocApp.ManageDocRequests
         }
         private async Task<bool> AddNewDocRequestStep(DocRequestStep newStep,int editReviewNo)
         {
-            newStep.Description += editReviewNo.ToString();
+            if(editOrReviewStatus != EditOrReviewStatus.None)
+                newStep.Description += editReviewNo.ToString();
 
             var result = await manageDocReqsService.SetDocRequestStepApproved(docReqId, userInfo.PersonCode);
             await manageDocReqsService.AddNewDocRequestStepAsync(newStep);
