@@ -279,4 +279,10 @@
   <data name="Yes" xml:space="preserve">
     <value>بله</value>
   </data>
+  <data name="From" xml:space="preserve">
+    <value>از</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>به</value>
+  </data>
 </root>

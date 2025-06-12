@@ -27,7 +27,7 @@ namespace IsoDocApp
                     {
                         // Create a new StepItem for each task
                         StepProgressBarItem stepItem = new StepProgressBarItem();
-                        stepItem.ContentBlock2.Caption = $"{docReqStep.SenderUserFullName} - {docReqStep.SenderUserPost}";
+                        stepItem.ContentBlock2.Caption = $"{StringResources.From}: {docReqStep.SenderUserFullName} - {docReqStep.SenderUserPost} {StringResources.To}: {docReqStep.ReceiverUserFullName} - {docReqStep.ReceiverUserPost}";
 
                         stepItem.ContentBlock2.Description = $"{StringResources.CreateDateAndTime} {docReqStep.CreatedAt.FormatPersianDate()} \n \n {docReqStep.Description}";
                         stepItem.State = StepProgressBarItemState.Active;
