@@ -19,11 +19,11 @@ namespace IsoDoc.Infrastructure.Repositories
             connection = dbConnection;
         }
 
-        public async Task<List<Person>> GetAllEmployees()
+        public async Task<List<Colleague>> GetAllEmployees()
         {
-            const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName";
+            const string query = @"SELECT PersonCode, FirstName + ' ' + LastName as Name, Posttxt as Post  FROM Personely.dbo.Vw_AllPersonWithDepartName";
 
-            return (List<Person>) await connection.QueryAsync<Person>(query);
+            return (List<Colleague>) await connection.QueryAsync<Colleague>(query);
         }
 
         public async Task<List<Department>> GetDepartments()

@@ -9,7 +9,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
 {
     public interface IPersonelyRepository
     {
-        Task<List<Person>> GetAllEmployees();
+        Task<List<Colleague>> GetAllEmployees();
         Task<Person?> GetUserInfoByCardNumber(string userCardNumber);
         Task<string> GetUserPersonCodeByLoginName(string loginName);
         Task<Person> GetUserInfoByPersonCode(string personCode);

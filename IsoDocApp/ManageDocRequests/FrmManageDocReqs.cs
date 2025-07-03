@@ -466,7 +466,7 @@ namespace IsoDocApp
 
         private void btnConfirmNewDoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frmNewDocReq = new FrmConfirmNewDoc(personelyService);
+            var frmNewDocReq = new FrmConfirmNewDoc(personelyService,manageDocReqsService);
             var result = frmNewDocReq.ShowDialog();
         }
 

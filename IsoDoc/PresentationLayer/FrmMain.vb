@@ -48,7 +48,7 @@ Public Class FrmMain
         ' SplashScreen1.Hide()
         Dim c As New FrmIsoMaster
         LogID = SystemInformation.UserDomainName + "\" + SystemInformation.UserName
-        'LogID = "DM_PDC2\3020"
+        'LogID = "DM_PDC2\4892"
         dt = persist1.GetDataTable(CnnString, SqlStr)
         'If dt.Rows.Count = 0 Then
         '    Me.Close()

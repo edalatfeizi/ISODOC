@@ -67,7 +67,8 @@
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(562, 3);
+            this.labelControl11.Location = new System.Drawing.Point(901, 40);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(44, 24);
             this.labelControl11.TabIndex = 182;
@@ -76,12 +77,13 @@
             // memoEdit6
             // 
             this.memoEdit6.EditValue = "";
-            this.memoEdit6.Location = new System.Drawing.Point(296, 2);
+            this.memoEdit6.Location = new System.Drawing.Point(611, 39);
+            this.memoEdit6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memoEdit6.Name = "memoEdit6";
             this.memoEdit6.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.memoEdit6.Properties.Appearance.Options.UseFont = true;
             this.memoEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.memoEdit6.Size = new System.Drawing.Size(255, 84);
+            this.memoEdit6.Size = new System.Drawing.Size(255, 39);
             this.memoEdit6.TabIndex = 181;
             this.memoEdit6.Tag = "";
             // 
@@ -89,7 +91,8 @@
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(557, 449);
+            this.labelControl10.Location = new System.Drawing.Point(873, 290);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(132, 24);
             this.labelControl10.TabIndex = 180;
@@ -98,12 +101,13 @@
             // memoEdit5
             // 
             this.memoEdit5.EditValue = "";
-            this.memoEdit5.Location = new System.Drawing.Point(295, 447);
+            this.memoEdit5.Location = new System.Drawing.Point(611, 289);
+            this.memoEdit5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memoEdit5.Name = "memoEdit5";
             this.memoEdit5.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.memoEdit5.Properties.Appearance.Options.UseFont = true;
             this.memoEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.memoEdit5.Size = new System.Drawing.Size(255, 85);
+            this.memoEdit5.Size = new System.Drawing.Size(255, 58);
             this.memoEdit5.TabIndex = 179;
             this.memoEdit5.Tag = "";
             // 
@@ -111,7 +115,8 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(557, 335);
+            this.labelControl8.Location = new System.Drawing.Point(873, 223);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(118, 24);
             this.labelControl8.TabIndex = 178;
@@ -120,12 +125,13 @@
             // memoEdit4
             // 
             this.memoEdit4.EditValue = "";
-            this.memoEdit4.Location = new System.Drawing.Point(295, 111);
+            this.memoEdit4.Location = new System.Drawing.Point(611, 93);
+            this.memoEdit4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memoEdit4.Name = "memoEdit4";
             this.memoEdit4.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.memoEdit4.Properties.Appearance.Options.UseFont = true;
             this.memoEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.memoEdit4.Size = new System.Drawing.Size(255, 85);
+            this.memoEdit4.Size = new System.Drawing.Size(255, 41);
             this.memoEdit4.TabIndex = 177;
             this.memoEdit4.Tag = "";
             // 
@@ -133,7 +139,8 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(559, 223);
+            this.labelControl7.Location = new System.Drawing.Point(899, 149);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(92, 24);
             this.labelControl7.TabIndex = 176;
@@ -142,12 +149,13 @@
             // memoEdit3
             // 
             this.memoEdit3.EditValue = "";
-            this.memoEdit3.Location = new System.Drawing.Point(295, 334);
+            this.memoEdit3.Location = new System.Drawing.Point(611, 223);
+            this.memoEdit3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memoEdit3.Name = "memoEdit3";
             this.memoEdit3.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.memoEdit3.Properties.Appearance.Options.UseFont = true;
             this.memoEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.memoEdit3.Size = new System.Drawing.Size(255, 84);
+            this.memoEdit3.Size = new System.Drawing.Size(255, 58);
             this.memoEdit3.TabIndex = 175;
             this.memoEdit3.Tag = "";
             // 
@@ -155,7 +163,8 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(559, 113);
+            this.labelControl6.Location = new System.Drawing.Point(899, 94);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(89, 24);
             this.labelControl6.TabIndex = 174;
@@ -164,12 +173,13 @@
             // memoEdit2
             // 
             this.memoEdit2.EditValue = "";
-            this.memoEdit2.Location = new System.Drawing.Point(295, 222);
+            this.memoEdit2.Location = new System.Drawing.Point(611, 148);
+            this.memoEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memoEdit2.Name = "memoEdit2";
             this.memoEdit2.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.memoEdit2.Properties.Appearance.Options.UseFont = true;
             this.memoEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.memoEdit2.Size = new System.Drawing.Size(255, 84);
+            this.memoEdit2.Size = new System.Drawing.Size(255, 52);
             this.memoEdit2.TabIndex = 173;
             this.memoEdit2.Tag = "";
             // 
@@ -181,10 +191,10 @@
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(10, 487);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSave.Location = new System.Drawing.Point(13, 333);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(278, 45);
+            this.btnSave.Size = new System.Drawing.Size(277, 31);
             this.btnSave.TabIndex = 171;
             this.btnSave.Text = "ثبت";
             // 
@@ -192,18 +202,20 @@
             // 
             this.pbAttachFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAttachFile.EditValue = ((object)(resources.GetObject("pbAttachFile.EditValue")));
-            this.pbAttachFile.Location = new System.Drawing.Point(13, 3);
+            this.pbAttachFile.Location = new System.Drawing.Point(13, 2);
+            this.pbAttachFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbAttachFile.Name = "pbAttachFile";
             this.pbAttachFile.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pbAttachFile.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pbAttachFile.Size = new System.Drawing.Size(277, 478);
+            this.pbAttachFile.Size = new System.Drawing.Size(277, 327);
             this.pbAttachFile.TabIndex = 184;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(879, 23);
+            this.labelControl1.Location = new System.Drawing.Point(495, 5);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(103, 24);
             this.labelControl1.TabIndex = 185;
@@ -211,7 +223,7 @@
             // 
             // dateTimePickerX2
             // 
-            this.dateTimePickerX2.AnchorSize = new System.Drawing.Size(181, 38);
+            this.dateTimePickerX2.AnchorSize = new System.Drawing.Size(181, 26);
             this.dateTimePickerX2.BackColor = System.Drawing.Color.White;
             this.dateTimePickerX2.CalendarBoldedDayForeColor = System.Drawing.Color.Blue;
             this.dateTimePickerX2.CalendarBorderColor = System.Drawing.Color.CadetBlue;
@@ -272,12 +284,12 @@
             this.dateTimePickerX2.DropDownClosedWhenSelectedDateChanged = false;
             this.dateTimePickerX2.Format = BehComponents.DateTimePickerX.FormatDate.Long;
             this.dateTimePickerX2.Format4Binding = "yyyy/MM/dd";
-            this.dateTimePickerX2.Location = new System.Drawing.Point(692, 23);
-            this.dateTimePickerX2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.dateTimePickerX2.Location = new System.Drawing.Point(308, 5);
+            this.dateTimePickerX2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePickerX2.Name = "dateTimePickerX2";
             this.dateTimePickerX2.RightToLeftLayout = true;
             this.dateTimePickerX2.ShowClearButton = false;
-            this.dateTimePickerX2.Size = new System.Drawing.Size(181, 38);
+            this.dateTimePickerX2.Size = new System.Drawing.Size(181, 26);
             this.dateTimePickerX2.TabIndex = 188;
             this.dateTimePickerX2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.dateTimePickerX2.TextWhenClearButtonClicked = "";
@@ -286,7 +298,8 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(880, 76);
+            this.labelControl2.Location = new System.Drawing.Point(496, 41);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(102, 24);
             this.labelControl2.TabIndex = 187;
@@ -296,7 +309,8 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(880, 136);
+            this.labelControl3.Location = new System.Drawing.Point(496, 82);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(76, 24);
             this.labelControl3.TabIndex = 191;
@@ -306,7 +320,8 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(880, 185);
+            this.labelControl4.Location = new System.Drawing.Point(496, 116);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(56, 24);
             this.labelControl4.TabIndex = 192;
@@ -314,7 +329,7 @@
             // 
             // dateTimePickerX1
             // 
-            this.dateTimePickerX1.AnchorSize = new System.Drawing.Size(181, 38);
+            this.dateTimePickerX1.AnchorSize = new System.Drawing.Size(181, 26);
             this.dateTimePickerX1.BackColor = System.Drawing.Color.White;
             this.dateTimePickerX1.CalendarBoldedDayForeColor = System.Drawing.Color.Blue;
             this.dateTimePickerX1.CalendarBorderColor = System.Drawing.Color.CadetBlue;
@@ -375,19 +390,19 @@
             this.dateTimePickerX1.DropDownClosedWhenSelectedDateChanged = false;
             this.dateTimePickerX1.Format = BehComponents.DateTimePickerX.FormatDate.Long;
             this.dateTimePickerX1.Format4Binding = "yyyy/MM/dd";
-            this.dateTimePickerX1.Location = new System.Drawing.Point(692, 76);
-            this.dateTimePickerX1.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.dateTimePickerX1.Location = new System.Drawing.Point(308, 41);
+            this.dateTimePickerX1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.dateTimePickerX1.Name = "dateTimePickerX1";
             this.dateTimePickerX1.RightToLeftLayout = true;
             this.dateTimePickerX1.ShowClearButton = false;
-            this.dateTimePickerX1.Size = new System.Drawing.Size(181, 38);
+            this.dateTimePickerX1.Size = new System.Drawing.Size(181, 26);
             this.dateTimePickerX1.TabIndex = 193;
             this.dateTimePickerX1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.dateTimePickerX1.TextWhenClearButtonClicked = "";
             // 
             // dateTimePickerX3
             // 
-            this.dateTimePickerX3.AnchorSize = new System.Drawing.Size(181, 38);
+            this.dateTimePickerX3.AnchorSize = new System.Drawing.Size(181, 26);
             this.dateTimePickerX3.BackColor = System.Drawing.Color.White;
             this.dateTimePickerX3.CalendarBoldedDayForeColor = System.Drawing.Color.Blue;
             this.dateTimePickerX3.CalendarBorderColor = System.Drawing.Color.CadetBlue;
@@ -448,19 +463,19 @@
             this.dateTimePickerX3.DropDownClosedWhenSelectedDateChanged = false;
             this.dateTimePickerX3.Format = BehComponents.DateTimePickerX.FormatDate.Long;
             this.dateTimePickerX3.Format4Binding = "yyyy/MM/dd";
-            this.dateTimePickerX3.Location = new System.Drawing.Point(692, 136);
-            this.dateTimePickerX3.Margin = new System.Windows.Forms.Padding(3, 13, 3, 13);
+            this.dateTimePickerX3.Location = new System.Drawing.Point(308, 82);
+            this.dateTimePickerX3.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.dateTimePickerX3.Name = "dateTimePickerX3";
             this.dateTimePickerX3.RightToLeftLayout = true;
             this.dateTimePickerX3.ShowClearButton = false;
-            this.dateTimePickerX3.Size = new System.Drawing.Size(181, 38);
+            this.dateTimePickerX3.Size = new System.Drawing.Size(181, 26);
             this.dateTimePickerX3.TabIndex = 194;
             this.dateTimePickerX3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.dateTimePickerX3.TextWhenClearButtonClicked = "";
             // 
             // dateTimePickerX4
             // 
-            this.dateTimePickerX4.AnchorSize = new System.Drawing.Size(181, 38);
+            this.dateTimePickerX4.AnchorSize = new System.Drawing.Size(181, 26);
             this.dateTimePickerX4.BackColor = System.Drawing.Color.White;
             this.dateTimePickerX4.CalendarBoldedDayForeColor = System.Drawing.Color.Blue;
             this.dateTimePickerX4.CalendarBorderColor = System.Drawing.Color.CadetBlue;
@@ -521,12 +536,12 @@
             this.dateTimePickerX4.DropDownClosedWhenSelectedDateChanged = false;
             this.dateTimePickerX4.Format = BehComponents.DateTimePickerX.FormatDate.Long;
             this.dateTimePickerX4.Format4Binding = "yyyy/MM/dd";
-            this.dateTimePickerX4.Location = new System.Drawing.Point(692, 185);
-            this.dateTimePickerX4.Margin = new System.Windows.Forms.Padding(3, 19, 3, 19);
+            this.dateTimePickerX4.Location = new System.Drawing.Point(308, 116);
+            this.dateTimePickerX4.Margin = new System.Windows.Forms.Padding(3, 13, 3, 13);
             this.dateTimePickerX4.Name = "dateTimePickerX4";
             this.dateTimePickerX4.RightToLeftLayout = true;
             this.dateTimePickerX4.ShowClearButton = false;
-            this.dateTimePickerX4.Size = new System.Drawing.Size(181, 38);
+            this.dateTimePickerX4.Size = new System.Drawing.Size(181, 26);
             this.dateTimePickerX4.TabIndex = 195;
             this.dateTimePickerX4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.dateTimePickerX4.TextWhenClearButtonClicked = "";
@@ -535,7 +550,8 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(880, 239);
+            this.labelControl5.Location = new System.Drawing.Point(899, 7);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(65, 24);
             this.labelControl5.TabIndex = 196;
@@ -543,16 +559,18 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(773, 236);
+            this.textEdit1.Location = new System.Drawing.Point(807, 7);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 26);
+            this.textEdit1.Size = new System.Drawing.Size(59, 20);
             this.textEdit1.TabIndex = 197;
             // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(880, 283);
+            this.labelControl9.Location = new System.Drawing.Point(718, 8);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(81, 24);
             this.labelControl9.TabIndex = 198;
@@ -561,8 +579,7 @@
             // txtEditOrReviewNo
             // 
             this.txtEditOrReviewNo.EditValue = "";
-            this.txtEditOrReviewNo.Location = new System.Drawing.Point(773, 278);
-            this.txtEditOrReviewNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEditOrReviewNo.Location = new System.Drawing.Point(611, 4);
             this.txtEditOrReviewNo.Name = "txtEditOrReviewNo";
             this.txtEditOrReviewNo.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEditOrReviewNo.Properties.Appearance.Options.UseFont = true;
@@ -578,9 +595,9 @@
             // 
             // FrmExecuteRegulationPermission
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 763);
+            this.ClientSize = new System.Drawing.Size(1016, 398);
             this.Controls.Add(this.txtEditOrReviewNo);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.textEdit1);
@@ -605,6 +622,7 @@
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.memoEdit2);
             this.Controls.Add(this.btnSave);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmExecuteRegulationPermission";

@@ -14,7 +14,7 @@ namespace IsoDoc.Domain.Services
             personelyRepo = personelyRepository;
         }
 
-        public async Task<List<Person>> GetAllEmployees()
+        public async Task<List<Colleague>> GetAllEmployees()
         {
            return await personelyRepo.GetAllEmployees();
         }

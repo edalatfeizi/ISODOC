@@ -33,7 +33,7 @@ Public Class FrmSearchDocs
 
 
         userName = SystemInformation.UserName.ToString()
-        'userName = "OMIDVAR"
+        'userName = "14004892"
 
         Dim personCode = Await _personelyService.GetUserPersonCodeByLoginName(userName)
         userInfo = Await _personelyService.GetUserInfoByPersonCode(personCode)

@@ -60,13 +60,14 @@ namespace IsoDocApp.ManageDocRequests
             // userManagerInfo = await personelyService.GetUserManager(userInfo.DepartCode);
 
             departments = await personelyService.GetDepartments();
+            cmbDeps.Properties.DataSource = departments;
+
             //documents = await manageDocReqsService.GetDocuments("B1100");
             //cmbDocs.Properties.DataSource = documents;
 
             docTypes = await manageDocReqsService.GetDocTypes();
             //departments.ForEach(x => x.MDepartName.Trim());
 
-            cmbDeps.Properties.DataSource = departments;
             //cmbUserColleagues.Properties.DataSource = userColleagues;
 
             //set user dep name as default dep name
