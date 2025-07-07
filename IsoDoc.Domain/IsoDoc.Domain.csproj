@@ -54,6 +54,7 @@
     <Compile Include="Enums\DocRequestStatus.cs" />
     <Compile Include="Enums\DocRequestType.cs" />
     <Compile Include="Enums\EditOrReviewStatus.cs" />
+    <Compile Include="Enums\SignerColleagueType.cs" />
     <Compile Include="Enums\SysOfficeAdmins.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Interfaces\Repositories\IDocRequestAttachmentsRepository.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Interfaces\Services\IDocsService.cs" />
     <Compile Include="Interfaces\Services\IPersonelyService.cs" />
     <Compile Include="Interfaces\Services\IManageDocReqsService.cs" />
+    <Compile Include="Models\SignerColleague.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\DocType.cs" />
     <Compile Include="Models\Document.cs" />

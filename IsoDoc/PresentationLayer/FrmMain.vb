@@ -1,12 +1,15 @@
 ﻿Imports System.IO
 Imports DevExpress.XtraBars
 Imports DevExpress.XtraBars.Ribbon
+Imports IsoDoc.Domain.Interfaces.Services
+Imports IsoDoc.Domain.Models
 
 Public Class FrmMain
     Dim FrmIsoMaster1 As New FrmIsoMaster
     Dim Bus_ImportandDoc1 As New Bus_ImportandDoc
     Private DA1 As New SqlClient.SqlDataAdapter
     Private wstr As String
+    Private _userInfo As Person
 
     Private Sub BarButtonItem10_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
 
@@ -60,13 +63,21 @@ Public Class FrmMain
         UserInfo.GetLoginInfo_ByLogName(SystemInformation.UserDomainName + "\" + SystemInformation.UserName)
         'UserInfo.GetLoginInfo_ByLogName("DM_PDC2\3864")
 
-
         LoginID = getLogID(LogID)
 
-
-
-
         AppID = getApp(LogID)
+
+
+
+        SqlStr =
+            "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CardNumber = '" + SystemInformation.UserName + "'"
+        Dim userInfoDt = persist1.GetDataTable(CnnString, SqlStr)
+
+
+        If userInfoDt.DefaultView.Item(0).Item("CardNumber") = "3910" Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI000" Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI300" Or userInfoDt.DefaultView.Item(0).Item("UpperCode") = "SI300" Then
+            tabEnterData.Visible = True
+
+        End If
 
         ''UserInfo.GetLoginInfo_ByLogName("Dm_Pdc2\3710")
         ''LoginID = 1257

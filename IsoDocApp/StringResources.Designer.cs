@@ -124,6 +124,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تصویب کننده.
+        /// </summary>
+        internal static string Acceptor {
+            get {
+                return ResourceManager.GetString("Acceptor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to پیوست فایل.
         /// </summary>
         internal static string AttachFile {
@@ -205,6 +214,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تایید کننده.
+        /// </summary>
+        internal static string Confirmer {
+            get {
+                return ResourceManager.GetString("Confirmer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ایجاد.
         /// </summary>
         internal static string Create {
@@ -219,6 +237,15 @@ namespace IsoDocApp {
         internal static string CreateDateAndTime {
             get {
                 return ResourceManager.GetString("CreateDateAndTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تهیه کننده.
+        /// </summary>
+        internal static string Creator {
+            get {
+                return ResourceManager.GetString("Creator", resourceCulture);
             }
         }
         
@@ -291,6 +318,24 @@ namespace IsoDocApp {
         internal static string DoWithReview {
             get {
                 return ResourceManager.GetString("DoWithReview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آیتم تکراری.
+        /// </summary>
+        internal static string DuplicateItem {
+            get {
+                return ResourceManager.GetString("DuplicateItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شخص مورد نظر قبلا به لیست اضافه شده است.
+        /// </summary>
+        internal static string DuplicatePerson {
+            get {
+                return ResourceManager.GetString("DuplicatePerson", resourceCulture);
             }
         }
         
@@ -489,6 +534,24 @@ namespace IsoDocApp {
         internal static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عدم انتخاب آیتم از لیست.
+        /// </summary>
+        internal static string NoItemSelected {
+            get {
+                return ResourceManager.GetString("NoItemSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شخص مورد نظر را برای اضافه شدن به لیست انتخاب کنید.
+        /// </summary>
+        internal static string NoPersonSelected {
+            get {
+                return ResourceManager.GetString("NoPersonSelected", resourceCulture);
             }
         }
         

@@ -285,4 +285,25 @@
   <data name="To" xml:space="preserve">
     <value>به</value>
   </data>
+  <data name="Creator" xml:space="preserve">
+    <value>تهیه کننده</value>
+  </data>
+  <data name="Confirmer" xml:space="preserve">
+    <value>تایید کننده</value>
+  </data>
+  <data name="Acceptor" xml:space="preserve">
+    <value>تصویب کننده</value>
+  </data>
+  <data name="DuplicateItem" xml:space="preserve">
+    <value>آیتم تکراری</value>
+  </data>
+  <data name="DuplicatePerson" xml:space="preserve">
+    <value>شخص مورد نظر قبلا به لیست اضافه شده است</value>
+  </data>
+  <data name="NoItemSelected" xml:space="preserve">
+    <value>عدم انتخاب آیتم از لیست</value>
+  </data>
+  <data name="NoPersonSelected" xml:space="preserve">
+    <value>شخص مورد نظر را برای اضافه شدن به لیست انتخاب کنید</value>
+  </data>
 </root>

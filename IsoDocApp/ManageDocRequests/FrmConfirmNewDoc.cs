@@ -1,5 +1,6 @@
 ﻿using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
+using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
 using IsoDoc.Domain.Services;
@@ -10,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +26,8 @@ namespace IsoDocApp.ManageDocRequests
         private List<Colleague> employees = new List<Colleague>();
         private List<Department> departments;
         private List<Document> documents;
+        private List<SignerColleague> signerColleagues = new List<SignerColleague>();
+
         public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService)
         {
             InitializeComponent();
@@ -33,12 +37,12 @@ namespace IsoDocApp.ManageDocRequests
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-    
+
         }
 
         private void panel_Paint(object sender, PaintEventArgs e)
         {
-    
+
         }
 
         private async void FrmConfirmNewDoc_Load(object sender, EventArgs e)
@@ -52,6 +56,9 @@ namespace IsoDocApp.ManageDocRequests
             cmbCreators.Properties.DataSource = employees;
             cmbConfirmers.Properties.DataSource = employees;
             cmbAcceptors.Properties.DataSource = employees;
+
+            gridUsers.DataSource = signerColleagues;
+
             //teCreators.Properties.Tokens.Clear();
             //teAcceptor.Properties.Tokens.Clear();
             //teConfirmers.Properties.Tokens.Clear();
@@ -102,7 +109,7 @@ namespace IsoDocApp.ManageDocRequests
             //Console.WriteLine(personCodes.Count);
         }
 
-        
+
         private async void cmbDocOwnerDep_EditValueChanged_1(object sender, EventArgs e)
         {
             cmbDocs.Enabled = true;
@@ -125,6 +132,97 @@ namespace IsoDocApp.ManageDocRequests
         {
             var doc = documents.Where(x => x.DocumentCode.ToString() == cmbDocs.EditValue.ToString()).FirstOrDefault();
             txtDocCode.Text = doc.DocumentCode.ToString();
+        }
+
+
+        private void peAddCreator_Click(object sender, EventArgs e)
+        {
+            AddSignerColleague(cmbCreators, SignerColleagueType.Creator);
+        }
+
+        private void peAddConfirmer_Click(object sender, EventArgs e)
+        {
+            AddSignerColleague(cmbConfirmers, SignerColleagueType.Confirmer);
+        }
+
+        private void peAddAcceptor_Click(object sender, EventArgs e)
+        {
+            AddSignerColleague(cmbAcceptors, SignerColleagueType.Acceptor);
+        }
+
+
+        private void AddSignerColleague(LookUpEdit cmbColleague, SignerColleagueType signerColleagueType)
+        {
+            if (cmbColleague.EditValue == null)
+            {
+                var frmMsgBox = new FrmMessageBox();
+
+                frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+                {
+                    Title = StringResources.NoItemSelected,
+                    Message = StringResources.NoPersonSelected,
+                    ConfirmButtonText = StringResources.Confirm,
+                    DevExpressIconId = "cancel",
+                    DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+                });
+                frmMsgBox.ShowDialog();
+
+            }
+            else
+            {
+                if (signerColleagues.Any(x => x.PersonCode == cmbColleague.EditValue.ToString()))
+                {
+                    var frmMsgBox = new FrmMessageBox();
+
+                    frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+                    {
+                        Title = StringResources.DuplicateItem,
+                        Message = StringResources.DuplicatePerson,
+                        ConfirmButtonText = StringResources.Confirm,
+                        DevExpressIconId = "cancel",
+                        DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+                    });
+                    frmMsgBox.ShowDialog();
+                }
+                else
+                {
+
+                    var selectedColleague = employees.Where(x => x.PersonCode == cmbColleague.EditValue.ToString()).First();
+                    var signerColleague = new SignerColleague
+                    {
+                        PersonCode = selectedColleague.PersonCode,
+                        CardNumber = selectedColleague.CardNumber,
+                        Name = selectedColleague.Name,
+                        Post = selectedColleague.Post,
+                        Mobile = selectedColleague.Mobile,
+                        PostTypeID = selectedColleague.PostTypeID,
+                        UpperCode = selectedColleague.UpperCode,
+                        CodeEdare = selectedColleague.CodeEdare,
+                        SignerColleagueType = signerColleagueType.ToString(),
+                        Order = signerColleagues.Count + 1
+                    };
+
+                    switch (signerColleagueType)
+                    {
+                        case SignerColleagueType.Creator:
+                            signerColleague.SignerColleagueType = StringResources.Creator;
+                            break;
+                        case SignerColleagueType.Confirmer:
+                            signerColleague.SignerColleagueType = StringResources.Confirmer;
+                            break;
+                        case SignerColleagueType.Acceptor:
+                            signerColleague.SignerColleagueType = StringResources.Acceptor;
+                            break;
+                    }
+
+                    signerColleagues.Add(signerColleague);
+                    //signerColleagues = signerColleagues.OrderBy(x => x.Order).ToList();
+
+                    gridUsers.RefreshDataSource();
+                }
+            }
+
+
         }
     }
 }
