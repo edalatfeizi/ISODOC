@@ -5,6 +5,7 @@ using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
 using IsoDoc.Domain.Services;
 using IsoDocApp.Extensions;
+using IsoDocApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -199,7 +200,6 @@ namespace IsoDocApp.ManageDocRequests
                         UpperCode = selectedColleague.UpperCode,
                         CodeEdare = selectedColleague.CodeEdare,
                         SignerColleagueType = signerColleagueType.ToString(),
-                        Order = signerColleagues.Count + 1
                     };
 
                     switch (signerColleagueType)
@@ -216,12 +216,88 @@ namespace IsoDocApp.ManageDocRequests
                     }
 
                     signerColleagues.Add(signerColleague);
-                    //signerColleagues = signerColleagues.OrderBy(x => x.Order).ToList();
-
+                    //signerColleagues.Sort();
+                    //signerColleagues = orderedList;
                     gridUsers.RefreshDataSource();
+                    //gridUsers.Refresh();
+                    CheckToToggleMoveAndDeleteButtonsState();
                 }
             }
 
+
+        }
+
+        private void peMoveUp_Click(object sender, EventArgs e)
+        {
+
+            MovePersonInList(true);
+
+        }
+
+        private void peMoveDown_Click(object sender, EventArgs e)
+        {
+            MovePersonInList(false);
+
+        }
+
+        private void MovePersonInList(bool isMovingUp)
+        {
+            var selectedPersonCode = GridViewHelper.GetGridViewCellValue(grdUsers, "PersonCode").ToString();
+
+            var signerColleague = signerColleagues.Where(x => x.PersonCode == selectedPersonCode).First();
+            var signerIndex = signerColleagues.IndexOf(signerColleague);
+            if (signerIndex > 0 && isMovingUp)
+            {
+                var prevItem = signerColleagues[signerIndex - 1];
+                signerColleagues[signerIndex] = prevItem;
+                signerColleagues[signerIndex - 1] = signerColleague;
+                grdUsers.FocusedRowHandle = signerIndex - 1;
+
+            }
+            else if (signerIndex < signerColleagues.Count - 1 && !isMovingUp)
+            {
+                var nextItem = signerColleagues[signerIndex + 1];
+                signerColleagues[signerIndex] = nextItem;
+                signerColleagues[signerIndex + 1] = signerColleague;
+                grdUsers.FocusedRowHandle = signerIndex + 1;
+            }
+
+            gridUsers.RefreshDataSource();
+            CheckToToggleMoveAndDeleteButtonsState();
+
+        }
+
+        private void peDeleteSignerPerson_Click(object sender, EventArgs e)
+        {
+            if (signerColleagues.Count > 0)
+            {
+                var selectedPersonCode = GridViewHelper.GetGridViewCellValue(grdUsers, "PersonCode").ToString();
+                var signerColleague = signerColleagues.Where(x => x.PersonCode == selectedPersonCode).First();
+
+                signerColleagues.Remove(signerColleague);
+                gridUsers.RefreshDataSource();
+            }
+
+            CheckToToggleMoveAndDeleteButtonsState();
+        }
+        private void CheckToToggleMoveAndDeleteButtonsState()
+        {
+            switch (signerColleagues.Count)
+            {
+                case 0:
+                    peDeleteSignerPerson.Enabled = false;
+                   
+                    break;
+                case 1:
+                    peDeleteSignerPerson.Enabled = true;
+                    peMoveUp.Enabled = false;
+                    peMoveDown.Enabled = false;
+                    break;
+                case 2:
+                    peMoveUp.Enabled = true;
+                    peMoveDown.Enabled = true;
+                    break;
+            }
 
         }
     }
