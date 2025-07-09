@@ -36,11 +36,6 @@ namespace IsoDocApp.ManageDocRequests
             this.manageDocReqsService = manageDocReqsService;
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel_Paint(object sender, PaintEventArgs e)
         {
 

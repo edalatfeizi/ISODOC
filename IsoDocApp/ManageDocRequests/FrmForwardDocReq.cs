@@ -134,7 +134,8 @@ namespace IsoDocApp.ManageDocRequests
             {
                 if (Validators.ValidateControls<BaseEdit>(cmbUserColleagues, txtDocReqStepDesc))
                 {
-
+                    ShowProgressBar(true);
+                    btnSave.Enabled = false;
                     var newStep = new DocRequestStep
                     {
                         DocRequestId = docReqId,
@@ -203,7 +204,7 @@ namespace IsoDocApp.ManageDocRequests
             {
 
                 ShowExceptionMessage(ex);
-
+                btnSave.Enabled = true;
 
             }
 
@@ -241,7 +242,7 @@ namespace IsoDocApp.ManageDocRequests
             }
 
             toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
-
+            ShowProgressBar(false);
             DialogResult = DialogResult.OK;
             this.Close();
             return result;
