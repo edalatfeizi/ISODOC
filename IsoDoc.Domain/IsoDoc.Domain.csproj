@@ -46,10 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attrs\DisplayAsIsAttribute.cs" />
+    <Compile Include="Dtos\NewDocSignerDto.cs" />
+    <Compile Include="Dtos\NewDocConfirmationDto.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\DocRequest.cs" />
     <Compile Include="Entities\DocRequestAttachment.cs" />
     <Compile Include="Entities\DocRequestStep.cs" />
+    <Compile Include="Entities\NewDocSigner.cs" />
+    <Compile Include="Entities\NewDocConfirmation.cs" />
     <Compile Include="Enums\AdminTypes.cs" />
     <Compile Include="Enums\DocRequestStatus.cs" />
     <Compile Include="Enums\DocRequestType.cs" />
@@ -57,11 +61,13 @@
     <Compile Include="Enums\SignerColleagueType.cs" />
     <Compile Include="Enums\SysOfficeAdmins.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Interfaces\Repositories\IDocConfirmationRepository.cs" />
     <Compile Include="Interfaces\Repositories\IDocRequestAttachmentsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IDocRequestStepsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IDocsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IManageDocReqsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IPersonelyRepository.cs" />
+    <Compile Include="Interfaces\Services\IDocConfirmationService.cs" />
     <Compile Include="Interfaces\Services\IDocRequestAttachmentsService.cs" />
     <Compile Include="Interfaces\Services\IDocRequestStepsService.cs" />
     <Compile Include="Interfaces\Services\IDocsService.cs" />
@@ -78,6 +84,7 @@
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DocRequestAttachmentsService.cs" />
+    <Compile Include="Services\DocConfirmationService.cs" />
     <Compile Include="Services\DocsService.cs" />
     <Compile Include="Services\PersonelyService.cs" />
     <Compile Include="Services\ManageDocReqsService.cs" />

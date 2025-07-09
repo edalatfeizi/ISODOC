@@ -5,6 +5,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
+using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
 using IsoDocApp.Helpers;
@@ -28,17 +29,19 @@ namespace IsoDocApp
         private readonly IManageDocReqsService manageDocReqsService;
         private readonly IPersonelyService personelyService;
         private readonly IDocRequestAttachmentsService docRequestAttachmentsService;
+        private readonly IDocConfirmationService docConfirmationService;
         private List<DocRequest> userDocReqs = new List<DocRequest>();
         private Person userInfo;
         private string userName = "";
         private bool isAdmin = false;
         private List<DocRequestStep> selectedDocReqSteps = new List<DocRequestStep>();
         private MagfaSMSClient magfaSMSClient;
-        public FrmManageDocReqs(IManageDocReqsService manageDocReqsService, IDocRequestAttachmentsService docRequestAttachmentsService, IPersonelyService personelyService)
+        public FrmManageDocReqs(IManageDocReqsService manageDocReqsService, IDocRequestAttachmentsService docRequestAttachmentsService, IPersonelyService personelyService, IDocConfirmationService docConfirmationService)
         {
             this.manageDocReqsService = manageDocReqsService;
             this.personelyService = personelyService;
             this.docRequestAttachmentsService = docRequestAttachmentsService;
+            this.docConfirmationService = docConfirmationService;
             this.magfaSMSClient = new MagfaSMSClient(new SMSConfig("irankhodro", "T0XFCS1KAtVC4TOB", "+9830004607"));
             InitializeComponent();
 
@@ -466,7 +469,7 @@ namespace IsoDocApp
 
         private void btnConfirmNewDoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frmNewDocReq = new FrmConfirmNewDoc(personelyService,manageDocReqsService);
+            var frmNewDocReq = new FrmConfirmNewDoc(personelyService,manageDocReqsService,docConfirmationService);
             var result = frmNewDocReq.ShowDialog();
         }
 

@@ -126,10 +126,12 @@ Public Class FrmUserMessage
         services.AddSingleton(Of IPersonelyRepository, PersonelyRepository)()
         services.AddSingleton(Of IDocRequestAttachmentsRepository, DocRequestAttachmentsRepository)()
         services.AddSingleton(Of IDocsRepository, DocsRepository)()
+        services.AddSingleton(Of IDocConfirmationRepository, DocConfirmationRepository)()
         services.AddSingleton(Of IManageDocReqsService, ManageDocReqsService)()
         services.AddSingleton(Of IPersonelyService, PersonelyService)()
         services.AddSingleton(Of IDocRequestAttachmentsService, DocRequestAttachmentsService)()
         services.AddSingleton(Of IDocsService, DocsService)()
+        services.AddSingleton(Of IDocConfirmationService, DocConfirmationService)()
         services.AddSingleton(Of FrmManageDocReqs)()
         services.AddSingleton(Of FrmSearchDocs)()
     End Sub

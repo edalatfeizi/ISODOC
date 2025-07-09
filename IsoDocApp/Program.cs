@@ -69,10 +69,12 @@ namespace IsoDocApp
             services.AddSingleton<IManageDocReqsRepository, ManageDocReqRepository>();
             services.AddSingleton<IDocRequestAttachmentsRepository, DocRequestAttachmentsRepository>();
             services.AddSingleton<IDocsRepository, DocsRepository>();
+            services.AddSingleton<IDocConfirmationRepository, DocConfirmationRepository>();
 
             services.AddSingleton<IManageDocReqsService, ManageDocReqsService>();
             services.AddSingleton<IDocRequestAttachmentsService, DocRequestAttachmentsService>();
             services.AddSingleton<IDocsService, DocsService>();
+            services.AddSingleton<IDocConfirmationService, DocConfirmationService>();
 
             services.AddSingleton<FrmManageDocReqs>();
             //services.AddSingleton(new MagfaSMSClient(config));

@@ -51,8 +51,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtDocCode = new DevExpress.XtraEditors.TextEdit();
             this.cmbConfirmers = new DevExpress.XtraEditors.LookUpEdit();
-            this.txtEditOrReviewNo = new DevExpress.XtraEditors.TextEdit();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.txtReviewNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtReview = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.gridUsers = new DevExpress.XtraGrid.GridControl();
@@ -72,8 +72,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbCreators.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbConfirmers.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEditOrReviewNo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReviewNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReview.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUsers)).BeginInit();
             this.SuspendLayout();
@@ -185,8 +185,8 @@
             this.groupBox1.Controls.Add(this.labelControl2);
             this.groupBox1.Controls.Add(this.txtDocCode);
             this.groupBox1.Controls.Add(this.cmbConfirmers);
-            this.groupBox1.Controls.Add(this.txtEditOrReviewNo);
-            this.groupBox1.Controls.Add(this.memoEdit1);
+            this.groupBox1.Controls.Add(this.txtReviewNo);
+            this.groupBox1.Controls.Add(this.txtReview);
             this.groupBox1.Controls.Add(this.labelControl1);
             this.groupBox1.Location = new System.Drawing.Point(454, 1);
             this.groupBox1.Name = "groupBox1";
@@ -420,35 +420,35 @@
             this.cmbConfirmers.Size = new System.Drawing.Size(349, 28);
             this.cmbConfirmers.TabIndex = 152;
             // 
-            // txtEditOrReviewNo
+            // txtReviewNo
             // 
-            this.txtEditOrReviewNo.EditValue = "";
-            this.txtEditOrReviewNo.Location = new System.Drawing.Point(71, 159);
-            this.txtEditOrReviewNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtEditOrReviewNo.Name = "txtEditOrReviewNo";
-            this.txtEditOrReviewNo.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEditOrReviewNo.Properties.Appearance.Options.UseFont = true;
-            this.txtEditOrReviewNo.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtEditOrReviewNo.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.txtEditOrReviewNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtEditOrReviewNo.Properties.MaskSettings.Set("mask", "d");
-            this.txtEditOrReviewNo.Properties.ShowNullValuePrompt = ((DevExpress.XtraEditors.ShowNullValuePromptOptions)(((DevExpress.XtraEditors.ShowNullValuePromptOptions.EmptyValue | DevExpress.XtraEditors.ShowNullValuePromptOptions.EditorFocused) 
+            this.txtReviewNo.EditValue = "";
+            this.txtReviewNo.Location = new System.Drawing.Point(71, 159);
+            this.txtReviewNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtReviewNo.Name = "txtReviewNo";
+            this.txtReviewNo.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReviewNo.Properties.Appearance.Options.UseFont = true;
+            this.txtReviewNo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtReviewNo.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txtReviewNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtReviewNo.Properties.MaskSettings.Set("mask", "d");
+            this.txtReviewNo.Properties.ShowNullValuePrompt = ((DevExpress.XtraEditors.ShowNullValuePromptOptions)(((DevExpress.XtraEditors.ShowNullValuePromptOptions.EmptyValue | DevExpress.XtraEditors.ShowNullValuePromptOptions.EditorFocused) 
             | DevExpress.XtraEditors.ShowNullValuePromptOptions.EditorReadOnly)));
-            this.txtEditOrReviewNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtEditOrReviewNo.Size = new System.Drawing.Size(347, 28);
-            this.txtEditOrReviewNo.TabIndex = 141;
+            this.txtReviewNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtReviewNo.Size = new System.Drawing.Size(347, 28);
+            this.txtReviewNo.TabIndex = 141;
             // 
-            // memoEdit1
+            // txtReview
             // 
-            this.memoEdit1.EditValue = "";
-            this.memoEdit1.Location = new System.Drawing.Point(69, 218);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
-            this.memoEdit1.Properties.Appearance.Options.UseFont = true;
-            this.memoEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.memoEdit1.Size = new System.Drawing.Size(347, 167);
-            this.memoEdit1.TabIndex = 142;
-            this.memoEdit1.Tag = "";
+            this.txtReview.EditValue = "";
+            this.txtReview.Location = new System.Drawing.Point(69, 218);
+            this.txtReview.Name = "txtReview";
+            this.txtReview.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.txtReview.Properties.Appearance.Options.UseFont = true;
+            this.txtReview.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtReview.Size = new System.Drawing.Size(347, 167);
+            this.txtReview.TabIndex = 142;
+            this.txtReview.Tag = "";
             // 
             // labelControl1
             // 
@@ -525,8 +525,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbCreators.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbConfirmers.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEditOrReviewNo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReviewNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtReview.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUsers)).EndInit();
             this.ResumeLayout(false);
@@ -544,8 +544,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
-        internal DevExpress.XtraEditors.TextEdit txtEditOrReviewNo;
+        private DevExpress.XtraEditors.MemoEdit txtReview;
+        internal DevExpress.XtraEditors.TextEdit txtReviewNo;
         private DevExpress.XtraGrid.GridControl gridUsers;
         private DevExpress.XtraGrid.Views.Grid.GridView grdUsers;
         private DevExpress.XtraEditors.LookUpEdit cmbCreators;

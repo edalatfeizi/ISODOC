@@ -1,6 +1,9 @@
 ﻿using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
+using IsoDoc.Domain.Dtos;
+using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
+using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
 using IsoDoc.Domain.Services;
@@ -23,17 +26,21 @@ namespace IsoDocApp.ManageDocRequests
     {
         private readonly IPersonelyService personelyService;
         private readonly IManageDocReqsService manageDocReqsService;
+        private readonly IDocConfirmationService docConfirmationService;
 
         private List<Colleague> employees = new List<Colleague>();
         private List<Department> departments;
         private List<Document> documents;
         private List<SignerColleague> signerColleagues = new List<SignerColleague>();
+        //private Person userInfo;
+        private string userPersonCode = "";
 
-        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService)
+        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService)
         {
             InitializeComponent();
             this.personelyService = personelyService;
             this.manageDocReqsService = manageDocReqsService;
+            this.docConfirmationService = docConfirmationService;
         }
 
         private void panel_Paint(object sender, PaintEventArgs e)
@@ -45,6 +52,15 @@ namespace IsoDocApp.ManageDocRequests
         {
             employees.Clear();
             SetupControls();
+
+            var userName = SystemInformation.UserName.ToString();
+            if (Program.DebugMode)
+                userName = "3910";
+
+            userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
+            //userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
+
+
             departments = await personelyService.GetDepartments();
             cmbDocOwnerDep.Properties.DataSource = departments;
 
@@ -99,10 +115,42 @@ namespace IsoDocApp.ManageDocRequests
         {
             progressBar.Visible = isVisible;
         }
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             //var personCodes = teConfirmers.SelectedItems.Select(x => x.Value).ToList();
             //Console.WriteLine(personCodes.Count);
+            if(Validators.ValidateControls<BaseEdit>(cmbDocOwnerDep, cmbDocs, txtDocCode, txtReviewNo, txtReview, cmbCreators, cmbConfirmers, cmbAcceptors))
+            {
+                var doc = documents.Where(x => x.DocumentCode.ToString() == cmbDocs.EditValue.ToString()).FirstOrDefault();
+
+                var newDocConfirmation = new NewDocConfirmationDto
+                {
+                    OwnerDepCode = cmbDocOwnerDep.EditValue.ToString(),
+                    DocCode = doc.DocumentCode,
+                    DocTitle = doc.DocumentName,
+                    ReviewNo = txtReviewNo.Text,
+                    ReviewText = txtReview.Text,
+                    CreatorUserPersonCode = userPersonCode
+                };
+
+                var newDocConfirm = await docConfirmationService.AddNewDocConfirmation(newDocConfirmation);
+                foreach (var signerColleague in signerColleagues)
+                {
+                    var newDocSigner = new NewDocSignerDto
+                    {
+                        NewDocConfirmationId = newDocConfirm.Id,
+                        PersonCode = signerColleague.PersonCode,
+                        Name = signerColleague.Name,
+                        Post = signerColleague.Post,
+                        //SignerType = signerColleague.SignerColleagueType,
+                        SigningOrder = signerColleagues.IndexOf(signerColleague),
+                        IsSigned = false,
+                        CreatorUserPersonCode = userPersonCode
+                    };
+                    await docConfirmationService.AddNewDocSigners(newDocSigner);
+                }
+
+            }
         }
 
 
