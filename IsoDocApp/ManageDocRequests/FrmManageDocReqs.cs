@@ -469,7 +469,7 @@ namespace IsoDocApp
 
         private void btnConfirmNewDoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frmNewDocReq = new FrmConfirmNewDoc(personelyService,manageDocReqsService,docConfirmationService);
+            var frmNewDocReq = new FrmConfirmNewDoc(personelyService,manageDocReqsService,docConfirmationService, magfaSMSClient);
             var result = frmNewDocReq.ShowDialog();
         }
 

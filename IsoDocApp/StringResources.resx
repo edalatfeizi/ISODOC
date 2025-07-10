@@ -306,4 +306,19 @@
   <data name="NoPersonSelected" xml:space="preserve">
     <value>شخص مورد نظر را برای اضافه شدن به لیست انتخاب کنید</value>
   </data>
+  <data name="NewSignDocReqSent" xml:space="preserve">
+    <value>کاربر گرامی درخواست امضاء سند جدید در نرم افزار مستندات نظام کیفیت برای شما ثبت شد.</value>
+  </data>
+  <data name="ErrorShouldSelectAtLeastThreePerson" xml:space="preserve">
+    <value>تعداد افراد انتخاب شده برای امضاء سند جدید باید حداقل 3 نفر باشد</value>
+  </data>
+  <data name="ErrorShouldSelectDocCreators" xml:space="preserve">
+    <value>لطفا تهیه کنندگان سند جدید را انتخاب کنید</value>
+  </data>
+  <data name="ErrorShouldSelectDocConfirmers" xml:space="preserve">
+    <value>لطفا تایید کنندگان سند جدید را انتخاب کنید</value>
+  </data>
+  <data name="ErrorShouldSelectDocAcceptors" xml:space="preserve">
+    <value>لطفا تصویب کنندگان سند جدید را انتخاب کنید</value>
+  </data>
 </root>

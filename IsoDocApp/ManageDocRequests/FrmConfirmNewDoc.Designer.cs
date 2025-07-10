@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfirmNewDoc));
             this.progressBar = new DevExpress.XtraWaitForm.ProgressPanel();
             this.panel = new DevExpress.XtraEditors.PanelControl();
@@ -57,6 +58,7 @@
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.gridUsers = new DevExpress.XtraGrid.GridControl();
             this.grdUsers = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panel)).BeginInit();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peDeleteSignerPerson.Properties)).BeginInit();
@@ -76,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtReview.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // progressBar
@@ -494,6 +497,12 @@
             this.grdUsers.GridControl = this.gridUsers;
             this.grdUsers.Name = "grdUsers";
             // 
+            // toastNotificationsManager1
+            // 
+            this.toastNotificationsManager1.ApplicationId = "336d853b-db33-40b1-b4d4-6bb2b17cc2b8";
+            this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("bba561b0-42d8-408b-9c05-85d9d87f4052", null, "ارجاع درخواست", "ثبت اطلاعات با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
+            // 
             // FrmConfirmNewDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
@@ -529,6 +538,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtReview.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,5 +574,6 @@
         private DevExpress.XtraEditors.PictureEdit peMoveDown;
         private DevExpress.XtraEditors.PictureEdit peMoveUp;
         private DevExpress.XtraEditors.PictureEdit peDeleteSignerPerson;
+        private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
     }
 }

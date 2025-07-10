@@ -1,5 +1,6 @@
 ﻿using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
+using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Dtos;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
@@ -27,6 +28,7 @@ namespace IsoDocApp.ManageDocRequests
         private readonly IPersonelyService personelyService;
         private readonly IManageDocReqsService manageDocReqsService;
         private readonly IDocConfirmationService docConfirmationService;
+        private readonly MagfaSMSClient smsClient;
 
         private List<Colleague> employees = new List<Colleague>();
         private List<Department> departments;
@@ -35,12 +37,13 @@ namespace IsoDocApp.ManageDocRequests
         //private Person userInfo;
         private string userPersonCode = "";
 
-        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService)
+        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService, MagfaSMSClient smsClient)
         {
             InitializeComponent();
             this.personelyService = personelyService;
             this.manageDocReqsService = manageDocReqsService;
             this.docConfirmationService = docConfirmationService;
+            this.smsClient = smsClient;
         }
 
         private void panel_Paint(object sender, PaintEventArgs e)
@@ -91,6 +94,8 @@ namespace IsoDocApp.ManageDocRequests
         }
         private void SetupControls()
         {
+            ShowProgressBar(false);
+
             cmbDocs.Properties.DisplayMember = "DocumentName";
             cmbDocs.Properties.ValueMember = "DocumentCode";
 
@@ -119,41 +124,128 @@ namespace IsoDocApp.ManageDocRequests
         {
             //var personCodes = teConfirmers.SelectedItems.Select(x => x.Value).ToList();
             //Console.WriteLine(personCodes.Count);
-            if(Validators.ValidateControls<BaseEdit>(cmbDocOwnerDep, cmbDocs, txtDocCode, txtReviewNo, txtReview, cmbCreators, cmbConfirmers, cmbAcceptors))
+            try
             {
-                var doc = documents.Where(x => x.DocumentCode.ToString() == cmbDocs.EditValue.ToString()).FirstOrDefault();
-
-                var newDocConfirmation = new NewDocConfirmationDto
+                if (Validators.ValidateControls<BaseEdit>(cmbDocOwnerDep, cmbDocs, txtReviewNo, txtReview, cmbCreators, cmbConfirmers, cmbAcceptors))
                 {
-                    OwnerDepCode = cmbDocOwnerDep.EditValue.ToString(),
-                    DocCode = doc.DocumentCode,
-                    DocTitle = doc.DocumentName,
-                    ReviewNo = txtReviewNo.Text,
-                    ReviewText = txtReview.Text,
-                    CreatorUserPersonCode = userPersonCode
-                };
-
-                var newDocConfirm = await docConfirmationService.AddNewDocConfirmation(newDocConfirmation);
-                foreach (var signerColleague in signerColleagues)
-                {
-                    var newDocSigner = new NewDocSignerDto
+                    if (signerColleagues.Count < 3)
                     {
-                        NewDocConfirmationId = newDocConfirm.Id,
-                        PersonCode = signerColleague.PersonCode,
-                        Name = signerColleague.Name,
-                        Post = signerColleague.Post,
-                        //SignerType = signerColleague.SignerColleagueType,
-                        SigningOrder = signerColleagues.IndexOf(signerColleague),
-                        IsSigned = false,
-                        CreatorUserPersonCode = userPersonCode
-                    };
-                    await docConfirmationService.AddNewDocSigners(newDocSigner);
-                }
+                        ShowErrorMessage(StringResources.ErrorShouldSelectAtLeastThreePerson);
+                    }
+                    else if (signerColleagues.Count() >= 3)
+                    {
+                        if (!signerColleagues.Any(x => x.SignerColleagueType == StringResources.Creator))
+                        {
+                            ShowErrorMessage(StringResources.ErrorShouldSelectDocCreators);
+                        }
+                        else if (!signerColleagues.Any(x => x.SignerColleagueType == StringResources.Confirmer))
+                        {
+                            ShowErrorMessage(StringResources.ErrorShouldSelectDocConfirmers);
+                        }
+                        else if (!signerColleagues.Any(x => x.SignerColleagueType == StringResources.Acceptor))
+                        {
+                            ShowErrorMessage(StringResources.ErrorShouldSelectDocAcceptors);
+                        }
+                        else
+                        {
+                            btnSave.Enabled = false;
+                            ShowProgressBar(true);
+                            var doc = documents.Where(x => x.DocumentCode.ToString() == cmbDocs.EditValue.ToString()).FirstOrDefault();
 
+                            var newDocConfirmation = new NewDocConfirmationDto
+                            {
+                                OwnerDepCode = cmbDocOwnerDep.EditValue.ToString(),
+                                DocCode = doc.DocumentCode,
+                                DocTitle = doc.DocumentName,
+                                ReviewNo = txtReviewNo.Text,
+                                ReviewText = txtReview.Text,
+                                CreatorUserPersonCode = userPersonCode
+                            };
+
+                            var newDocConfirm = await docConfirmationService.AddNewDocConfirmation(newDocConfirmation);
+                            foreach (var signerColleague in signerColleagues)
+                            {
+                                var newDocSigner = new NewDocSignerDto
+                                {
+                                    NewDocConfirmationId = newDocConfirm.Id,
+                                    PersonCode = signerColleague.PersonCode,
+                                    Name = signerColleague.Name,
+                                    Post = signerColleague.Post,
+                                    SigningOrder = signerColleagues.IndexOf(signerColleague),
+                                    IsSigned = false,
+                                    CreatorUserPersonCode = userPersonCode
+                                };
+
+                                switch (signerColleague.SignerColleagueType)
+                                {
+                                    case "تهیه کننده":
+                                        newDocSigner.SignerType = SignerColleagueType.Creator;
+                                        break;
+                                    case "تایید کننده":
+                                        newDocSigner.SignerType = SignerColleagueType.Confirmer;
+                                        break;
+                                    case "تصویب کننده":
+                                        newDocSigner.SignerType = SignerColleagueType.Acceptor;
+                                        break;
+                                }
+
+                                await docConfirmationService.AddNewDocSigners(newDocSigner);
+                                var signerUserInfo = await personelyService.GetUserInfoByPersonCode(signerColleague.PersonCode);
+                                smsClient.SendSMS(signerUserInfo.Mobile, $"{StringResources.NewSignDocReqSent} \n {StringResources.IKID}");
+
+
+                            }
+
+
+                            toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
+                            ShowProgressBar(false);
+                            DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                    }
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                ShowProgressBar(false);
+                ShowExceptionMessage(ex);
             }
         }
+        private void ShowExceptionMessage(Exception ex)
+        {
+            ShowProgressBar(false);
 
+            var frmMsgBox = new FrmMessageBox();
 
+            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+            {
+                Title = StringResources.ErrorProccessingData,
+                Message = $"{ex.Message} \n {ex.InnerException} \n {ex.StackTrace}",
+                ConfirmButtonText = StringResources.Confirm,
+                DevExpressIconId = "cancel",
+                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+            });
+            frmMsgBox.ShowDialog();
+
+        }
+        private void ShowErrorMessage(string message)
+        {
+            var frmMsgBox = new FrmMessageBox();
+
+            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+            {
+                Title = StringResources.ErrorProccessingData,
+                Message = message,
+                ConfirmButtonText = StringResources.Confirm,
+                DevExpressIconId = "cancel",
+                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+            });
+            frmMsgBox.ShowDialog();
+        }
         private async void cmbDocOwnerDep_EditValueChanged_1(object sender, EventArgs e)
         {
             cmbDocs.Enabled = true;
@@ -242,7 +334,6 @@ namespace IsoDocApp.ManageDocRequests
                         PostTypeID = selectedColleague.PostTypeID,
                         UpperCode = selectedColleague.UpperCode,
                         CodeEdare = selectedColleague.CodeEdare,
-                        SignerColleagueType = signerColleagueType.ToString(),
                     };
 
                     switch (signerColleagueType)
@@ -329,7 +420,7 @@ namespace IsoDocApp.ManageDocRequests
             {
                 case 0:
                     peDeleteSignerPerson.Enabled = false;
-                   
+
                     break;
                 case 1:
                     peDeleteSignerPerson.Enabled = true;

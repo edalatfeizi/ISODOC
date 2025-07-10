@@ -439,6 +439,42 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تعداد افراد انتخاب شده برای امضاء سند جدید باید حداقل 3 نفر باشد.
+        /// </summary>
+        internal static string ErrorShouldSelectAtLeastThreePerson {
+            get {
+                return ResourceManager.GetString("ErrorShouldSelectAtLeastThreePerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا تصویب کنندگان سند جدید را انتخاب کنید.
+        /// </summary>
+        internal static string ErrorShouldSelectDocAcceptors {
+            get {
+                return ResourceManager.GetString("ErrorShouldSelectDocAcceptors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا تایید کنندگان سند جدید را انتخاب کنید.
+        /// </summary>
+        internal static string ErrorShouldSelectDocConfirmers {
+            get {
+                return ResourceManager.GetString("ErrorShouldSelectDocConfirmers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا تهیه کنندگان سند جدید را انتخاب کنید.
+        /// </summary>
+        internal static string ErrorShouldSelectDocCreators {
+            get {
+                return ResourceManager.GetString("ErrorShouldSelectDocCreators", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to خطا در پیوست فایل.
         /// </summary>
         internal static string ErrorWhileAttachingFile {
@@ -525,6 +561,15 @@ namespace IsoDocApp {
         internal static string NewRequestSent {
             get {
                 return ResourceManager.GetString("NewRequestSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کاربر گرامی درخواست امضاء سند جدید در نرم افزار مستندات نظام کیفیت برای شما ثبت شد..
+        /// </summary>
+        internal static string NewSignDocReqSent {
+            get {
+                return ResourceManager.GetString("NewSignDocReqSent", resourceCulture);
             }
         }
         
