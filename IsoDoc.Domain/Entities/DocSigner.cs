@@ -3,7 +3,7 @@ using IsoDoc.Domain.Enums;
 
 namespace IsoDoc.Domain.Entities
 {
-    public class NewDocSigner : BaseEntity
+    public class DocSigner : BaseEntity
     {
         public int NewDocConfirmationId { get; set; }
         public string PersonCode { get; set; }

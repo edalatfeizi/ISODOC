@@ -65,9 +65,9 @@ namespace IsoDoc.Infrastructure.Repositories
             return newDocConfirm;
         }
 
-        public async Task<NewDocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode)
+        public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode)
         {
-            var newDocSigner = new NewDocSigner
+            var newDocSigner = new DocSigner
             {
                 NewDocConfirmationId = newDocConfirmationId,
                 PersonCode = personCode,

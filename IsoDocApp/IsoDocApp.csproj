@@ -100,10 +100,10 @@
     <Compile Include="Helpers\GridViewHelper.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Helpers\Validators.cs" />
-    <Compile Include="ManageDocRequests\FrmConfirmNewDoc.cs">
+    <Compile Include="ManageNewDocConfirmations\FrmConfirmNewDoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageDocRequests\FrmConfirmNewDoc.Designer.cs">
+    <Compile Include="ManageNewDocConfirmations\FrmConfirmNewDoc.Designer.cs">
       <DependentUpon>FrmConfirmNewDoc.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageDocRequests\FrmExecuteRegulationPermission.cs">
@@ -130,6 +130,12 @@
     <Compile Include="ManageDocRequests\FrmManageDocReqs.Designer.cs">
       <DependentUpon>FrmManageDocReqs.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageNewDocConfirmations\FrmManageNewDocConfirmations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageNewDocConfirmations\FrmManageNewDocConfirmations.Designer.cs">
+      <DependentUpon>FrmManageNewDocConfirmations.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageDocRequests\FrmNewDocReq.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,10 +152,10 @@
     <EmbeddedResource Include="FrmMessageBox.resx">
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageDocRequests\FrmConfirmNewDoc.fa-IR.resx">
+    <EmbeddedResource Include="ManageNewDocConfirmations\FrmConfirmNewDoc.fa-IR.resx">
       <DependentUpon>FrmConfirmNewDoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageDocRequests\FrmConfirmNewDoc.resx">
+    <EmbeddedResource Include="ManageNewDocConfirmations\FrmConfirmNewDoc.resx">
       <DependentUpon>FrmConfirmNewDoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageDocRequests\FrmExecuteRegulationPermission.resx">
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageDocRequests\FrmManageDocReqs.resx">
       <DependentUpon>FrmManageDocReqs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageNewDocConfirmations\FrmManageNewDocConfirmations.resx">
+      <DependentUpon>FrmManageNewDocConfirmations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageDocRequests\FrmNewDocReq.resx">
       <DependentUpon>FrmNewDocReq.cs</DependentUpon>
