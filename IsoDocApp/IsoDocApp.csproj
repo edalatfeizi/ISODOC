@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\AttachmentsHelper.cs" />
     <Compile Include="Helpers\DocRequestsHelper.cs" />

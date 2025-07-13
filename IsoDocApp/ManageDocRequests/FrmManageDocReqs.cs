@@ -42,7 +42,7 @@ namespace IsoDocApp
             this.personelyService = personelyService;
             this.docRequestAttachmentsService = docRequestAttachmentsService;
             this.docConfirmationService = docConfirmationService;
-            this.magfaSMSClient = new MagfaSMSClient(new SMSConfig("irankhodro", "T0XFCS1KAtVC4TOB", "+9830004607"));
+            this.magfaSMSClient = new MagfaSMSClient(Constants.SMSConfig);
             InitializeComponent();
 
         }
@@ -84,7 +84,6 @@ namespace IsoDocApp
             if (userInfo != null && (userInfo.CardNumber == "3910" || userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
             {
                 tabAllDocRequests.Visible = true;
-                btnConfirmNewDoc.Enabled = true;
                 btnExecRegulation.Enabled = true;
                 //tabDeletedRequests.Visible = true;
             }
@@ -467,12 +466,7 @@ namespace IsoDocApp
          
         }
 
-        private void btnConfirmNewDoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            var frmNewDocReq = new FrmConfirmNewDoc(personelyService,manageDocReqsService,docConfirmationService, magfaSMSClient);
-            var result = frmNewDocReq.ShowDialog();
-        }
-
+      
         private void btnExecRegulation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frmExecReq = new FrmExecuteRegulationPermission();

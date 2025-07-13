@@ -154,7 +154,7 @@ namespace IsoDocApp.ManageDocRequests
 
                             var newDocConfirmation = new NewDocConfirmationDto
                             {
-                                OwnerDepCode = cmbDocOwnerDep.EditValue.ToString(),
+                                DocOwnerDepCode = cmbDocOwnerDep.EditValue.ToString(),
                                 DocCode = doc.DocumentCode,
                                 DocTitle = doc.DocumentName,
                                 ReviewNo = txtReviewNo.Text,

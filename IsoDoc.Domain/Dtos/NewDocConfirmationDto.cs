@@ -1,9 +1,9 @@
 ﻿
 namespace IsoDoc.Domain.Dtos
 {
-    public class NewDocConfirmationDto
+    public class NewDocConfirmationDto : BaseDto
     {
-        public string OwnerDepCode { get; set; }
+        public string DocOwnerDepCode { get; set; }
         public string DocTitle { get; set; }
         public string DocCode { get; set; }
         public string ReviewNo { get; set; }

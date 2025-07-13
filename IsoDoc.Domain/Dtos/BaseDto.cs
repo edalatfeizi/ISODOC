@@ -7,6 +7,9 @@ namespace IsoDoc.Domain.Dtos
 {
     public class BaseDto
     {
+        [Browsable(false)]
+        public int Index { get; set; }
+
         [Display(Name = "شناسه", Order = 0)]
         [Editable(false)]
         public int Id { get; set; }

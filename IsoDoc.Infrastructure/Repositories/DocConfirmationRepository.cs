@@ -2,9 +2,11 @@
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Repositories;
+using IsoDoc.Domain.Models;
 using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Reflection.Emit;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace IsoDoc.Infrastructure.Repositories
@@ -117,6 +119,26 @@ namespace IsoDoc.Infrastructure.Repositories
             var newDocSignerId = await connection.QuerySingleAsync<int>(newDocSignerQuery, newDocSigner);
             newDocSigner.Id = newDocSignerId;
             return newDocSigner;
+        }
+
+        public async Task<List<NewDocConfirmation>> GetAllDocConfirmations()
+        {
+            const string query = @"SELECT * FROM tb_NewDocConfirmations where Active = 'true'";
+
+            // Dapper automatically opens/closes the connection if not already open
+            var result = await connection.QueryAsync<NewDocConfirmation>(query);
+
+            return result.ToList();
+        }
+
+        public async Task<List<DocSigner>> GetDocConfirmationSigners(int docConfirmationId)
+        {
+            const string query = @"SELECT * FROM tb_NewDocSigners where NewDocConfirmationId = @NewDocConfirmationId";
+
+            // Dapper automatically opens/closes the connection if not already open
+            var result = await connection.QueryAsync<DocSigner>(query, new { NewDocConfirmationId = docConfirmationId });
+
+            return result.ToList();
         }
     }
 }
