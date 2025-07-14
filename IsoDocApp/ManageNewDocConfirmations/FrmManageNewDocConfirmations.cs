@@ -1,4 +1,6 @@
-﻿using IKIDMagfaSMSClientWin;
+﻿using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraGrid.Columns;
+using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Dtos;
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
@@ -63,14 +65,82 @@ namespace IsoDocApp.ManageDocRequests
             //    tabDeletedRequests.Visible = false;
             //FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
 
-            docConfirms = await docConfirmationService.GetAllDocConfirmations();
+            docConfirms = await docConfirmationService.GetUserDocConfirmationsAsync(userPersonCode);
             gridDocConfirms.DataSource = docConfirms;
+
+            gridView1.Columns["Id"].BestFit();
+            //gridView1.Columns["ReviewNo"].BestFit();
+            gridView1.Columns["DocCode"].BestFit();
+            //gridView1.Columns["DocTitle"].BestFit();
+            //gridView1.Columns["ReviewText"].BestFit();
+
+
+
         }
 
         private void btnAddNewConfirmDoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, smsClient);
             var result = frmNewDocReq.ShowDialog();
+        }
+
+        private void ribbonControl1_SelectedPageChanged(object sender, EventArgs e)
+        {
+            GetDocConfirmations();
+        }
+        private async void GetDocConfirmations()
+        {
+            RibbonPage selectedPage = ribbonControl1.SelectedPage;
+            if (selectedPage != null)
+            {
+                //docReqSteps.Items.Clear();
+                //docReqSteps.Items.Clear();
+                gridDocConfirms.DataSource = null;
+                // Check which page was clicked using the Name or Text property
+                switch (selectedPage.Name)
+                {
+                    case "tabReceivedRequests":
+                        if (userInfo != null)
+                        {
+                            // docReqSteps.Items.Clear();
+                            docConfirms = await docConfirmationService.GetUserDocConfirmationsAsync(userInfo.PersonCode);
+                            gridDocConfirms.DataSource = docConfirms;
+
+                            btnForwardDocReq.Enabled = true;
+                            btnAddAttachment.Enabled = true;
+
+                            ShowDocConfirmations(true);
+
+                        }
+
+                        break;
+                    case "tabAllRequests":
+                        if (userInfo != null)
+                        {
+                            //docReqSteps.Items.Clear();
+                            docConfirms = await docConfirmationService.GetAllDocConfirmationsAsync();
+                            gridDocConfirms.DataSource = docConfirms;
+                            btnForwardDocReq.Enabled = false;
+                            btnAddAttachment.Enabled = false;
+                            ShowDocConfirmations(true);
+
+                        }
+
+                        break;
+                    case "tabNewDocConfirmation":
+                        ShowDocConfirmations(false);
+                        break;
+
+                }
+            }
+        }
+
+        private void ShowDocConfirmations(bool visibility)
+        {
+            gridDocConfirms.Visible = visibility;
+            panelStates.Visible = visibility;
+            panelOperations.Visible = visibility;
+            confirmationSteps.Visible = visibility;
         }
     }
 }

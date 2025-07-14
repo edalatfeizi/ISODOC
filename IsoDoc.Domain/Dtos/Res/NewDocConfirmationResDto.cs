@@ -9,11 +9,11 @@ namespace IsoDoc.Domain.Dtos.Res
         [Browsable(false)]
         public string DocOwnerDepCode { get; set; }
 
-        [Display(Name = "عنوان سند", Order = 1)]
+        [Display(Name = "عنوان سند", Order = 2)]
         [Editable(false)]
         public string DocTitle { get; set; }
 
-        [Display(Name = "کد سند", Order = 2)]
+        [Display(Name = "کد سند", Order = 1)]
         [Editable(false)]
         public string DocCode { get; set; }
 

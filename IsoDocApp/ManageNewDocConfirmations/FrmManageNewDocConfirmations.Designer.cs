@@ -37,13 +37,12 @@
             this.btnAddNewConfirmDoc = new DevExpress.XtraBars.BarButtonItem();
             this.tabReceivedRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tabAllRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tabNewDocConfirmation = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.panelStates = new DevExpress.XtraEditors.PanelControl();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
@@ -51,7 +50,7 @@
             this.gridDocConfirms = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.panelOperations = new DevExpress.XtraEditors.PanelControl();
             this.btnAddAttachment = new DevExpress.XtraEditors.SimpleButton();
             this.btnReload = new DevExpress.XtraEditors.SimpleButton();
             this.btnForwardDocReq = new DevExpress.XtraEditors.SimpleButton();
@@ -59,10 +58,10 @@
             this.loading = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.docReqSteps = new DevExpress.XtraEditors.StepProgressBar();
+            this.confirmationSteps = new DevExpress.XtraEditors.StepProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelStates)).BeginInit();
+            this.panelStates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
@@ -70,11 +69,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridDocConfirms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelOperations)).BeginInit();
+            this.panelOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
             this.loading.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationSteps)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -99,6 +98,7 @@
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ribbonControl1.Size = new System.Drawing.Size(1297, 152);
+            this.ribbonControl1.SelectedPageChanged += new System.EventHandler(this.ribbonControl1_SelectedPageChanged);
             // 
             // btnNewDocReq
             // 
@@ -148,16 +148,9 @@
             // 
             // tabAllRequests
             // 
-            this.tabAllRequests.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
             this.tabAllRequests.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabAllRequests.ImageOptions.Image")));
             this.tabAllRequests.Name = "tabAllRequests";
             this.tabAllRequests.Text = "همه درخواست ها";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // tabNewDocConfirmation
             // 
@@ -199,19 +192,19 @@
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // panelControl4
+            // panelStates
             // 
-            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl4.Controls.Add(this.textEdit4);
-            this.panelControl4.Controls.Add(this.textEdit3);
-            this.panelControl4.Controls.Add(this.textEdit2);
-            this.panelControl4.Controls.Add(this.textEdit1);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(382, 152);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(915, 29);
-            this.panelControl4.TabIndex = 12;
+            this.panelStates.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelStates.Controls.Add(this.textEdit4);
+            this.panelStates.Controls.Add(this.textEdit3);
+            this.panelStates.Controls.Add(this.textEdit2);
+            this.panelStates.Controls.Add(this.textEdit1);
+            this.panelStates.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStates.Location = new System.Drawing.Point(382, 152);
+            this.panelStates.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelStates.Name = "panelStates";
+            this.panelStates.Size = new System.Drawing.Size(915, 29);
+            this.panelStates.TabIndex = 12;
             // 
             // textEdit4
             // 
@@ -327,21 +320,21 @@
             this.pictureEdit1.Size = new System.Drawing.Size(98, 62);
             this.pictureEdit1.TabIndex = 0;
             // 
-            // panelControl2
+            // panelOperations
             // 
-            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelControl2.Appearance.Options.UseBackColor = true;
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl2.Controls.Add(this.btnAddAttachment);
-            this.panelControl2.Controls.Add(this.btnReload);
-            this.panelControl2.Controls.Add(this.btnForwardDocReq);
-            this.panelControl2.Controls.Add(this.btnShowAttachments);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(382, 581);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(915, 60);
-            this.panelControl2.TabIndex = 13;
+            this.panelOperations.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelOperations.Appearance.Options.UseBackColor = true;
+            this.panelOperations.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelOperations.Controls.Add(this.btnAddAttachment);
+            this.panelOperations.Controls.Add(this.btnReload);
+            this.panelOperations.Controls.Add(this.btnForwardDocReq);
+            this.panelOperations.Controls.Add(this.btnShowAttachments);
+            this.panelOperations.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelOperations.Location = new System.Drawing.Point(382, 581);
+            this.panelOperations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelOperations.Name = "panelOperations";
+            this.panelOperations.Size = new System.Drawing.Size(915, 60);
+            this.panelOperations.TabIndex = 13;
             // 
             // btnAddAttachment
             // 
@@ -453,67 +446,67 @@
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "در حال دریافت اطلاعات";
             // 
-            // docReqSteps
+            // confirmationSteps
             // 
-            this.docReqSteps.AllowHtmlText = DevExpress.Utils.DefaultBoolean.False;
-            this.docReqSteps.Appearances.CommonActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.docReqSteps.Appearances.CommonInactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.Caption.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.Description.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseFont = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseFont = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
-            this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Dock = System.Windows.Forms.DockStyle.Left;
-            this.docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image")));
-            this.docReqSteps.Location = new System.Drawing.Point(0, 152);
-            this.docReqSteps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.docReqSteps.Name = "docReqSteps";
-            this.docReqSteps.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.docReqSteps.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.docReqSteps.Size = new System.Drawing.Size(382, 489);
-            this.docReqSteps.TabIndex = 10;
+            this.confirmationSteps.AllowHtmlText = DevExpress.Utils.DefaultBoolean.False;
+            this.confirmationSteps.Appearances.CommonActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.confirmationSteps.Appearances.CommonInactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.Caption.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.Description.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseFont = true;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseFont = true;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
+            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSteps.Dock = System.Windows.Forms.DockStyle.Left;
+            this.confirmationSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image")));
+            this.confirmationSteps.Location = new System.Drawing.Point(0, 152);
+            this.confirmationSteps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirmationSteps.Name = "confirmationSteps";
+            this.confirmationSteps.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.confirmationSteps.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.confirmationSteps.Size = new System.Drawing.Size(382, 489);
+            this.confirmationSteps.TabIndex = 10;
             // 
             // FrmManageNewDocConfirmations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 641);
-            this.Controls.Add(this.panelControl4);
+            this.Controls.Add(this.panelStates);
             this.Controls.Add(this.gridDocConfirms);
-            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.panelOperations);
             this.Controls.Add(this.loading);
-            this.Controls.Add(this.docReqSteps);
+            this.Controls.Add(this.confirmationSteps);
             this.Controls.Add(this.ribbonControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmManageNewDocConfirmations";
             this.Text = "مدیریت ثبت و تنظیم اسناد جدید";
             this.Load += new System.EventHandler(this.FrmManageNewDocConfirmations_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelStates)).EndInit();
+            this.panelStates.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
@@ -521,12 +514,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridDocConfirms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelOperations)).EndInit();
+            this.panelOperations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.loading)).EndInit();
             this.loading.ResumeLayout(false);
             this.loading.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationSteps)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,8 +539,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.Ribbon.RibbonPage tabAllRequests;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.PanelControl panelStates;
         private DevExpress.XtraEditors.TextEdit textEdit4;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit2;
@@ -555,7 +547,7 @@
         private DevExpress.XtraGrid.GridControl gridDocConfirms;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.PanelControl panelOperations;
         private DevExpress.XtraEditors.SimpleButton btnAddAttachment;
         private DevExpress.XtraEditors.SimpleButton btnReload;
         private DevExpress.XtraEditors.SimpleButton btnForwardDocReq;
@@ -563,6 +555,6 @@
         private DevExpress.XtraEditors.PanelControl loading;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.StepProgressBar docReqSteps;
+        private DevExpress.XtraEditors.StepProgressBar confirmationSteps;
     }
 }

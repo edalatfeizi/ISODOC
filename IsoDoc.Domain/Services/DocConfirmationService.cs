@@ -17,32 +17,39 @@ namespace IsoDoc.Domain.Services
             this.docConfirmationRepo = docConfirmationRepo;
         }
 
-        public async Task<NewDocConfirmation> AddNewDocConfirmation(NewDocConfirmationDto dto)
+        public async Task<NewDocConfirmation> AddNewDocConfirmationAsync(NewDocConfirmationDto dto)
         {
             var newDocConfirmation = await docConfirmationRepo.AddNewDocConfirmation(dto.DocOwnerDepCode, dto.DocTitle, dto.DocCode, dto.ReviewNo, dto.ReviewText, dto.CreatorUserPersonCode);
             
             return newDocConfirmation;
         }
 
-        public async Task<DocSigner> AddNewDocSigners(NewDocSignerDto dto)
+        public async Task<DocSigner> AddNewDocSignersAsync(NewDocSignerDto dto)
         {
             var newDocSigner = await docConfirmationRepo.AddNewDocSigner(dto.NewDocConfirmationId,dto.PersonCode,dto.Name,dto.Post,dto.SignerType,dto.SigningOrder,dto.IsSigned, dto.CreatorUserPersonCode);
 
             return newDocSigner;
         }
 
-        public async Task<List<NewDocConfirmationResDto>> GetAllDocConfirmations()
+        public async Task<List<NewDocConfirmationResDto>> GetAllDocConfirmationsAsync()
         {
             var result = await docConfirmationRepo.GetAllDocConfirmations();
 
             return result.MapToNewDocConfirmationDtos();
         }
 
-        public async Task<List<DocSignerResDto>> GetDocConfirmationSigners(int docConfirmationId)
+        public async Task<List<DocSignerResDto>> GetDocConfirmationSignersAsync(int docConfirmationId)
         {
            var result = await docConfirmationRepo.GetDocConfirmationSigners(docConfirmationId);
 
            return result.MapToDocSignerResDtos();
+        }
+
+        public async Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode)
+        {
+            var result = await docConfirmationRepo.GetUserDocConfirmations(personCode);
+
+            return result.MapToNewDocConfirmationDtos();
         }
     }
 }

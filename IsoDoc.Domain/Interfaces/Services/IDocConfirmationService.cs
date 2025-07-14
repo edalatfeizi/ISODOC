@@ -9,10 +9,10 @@ namespace IsoDoc.Domain.Interfaces.Services
 {
     public interface IDocConfirmationService
     {
-        Task<NewDocConfirmation> AddNewDocConfirmation(NewDocConfirmationDto dto);
-        Task<DocSigner> AddNewDocSigners(NewDocSignerDto dto);
-        Task<List<NewDocConfirmationResDto>> GetAllDocConfirmations();
-        Task<List<DocSignerResDto>> GetDocConfirmationSigners(int docConfirmationId);
-
+        Task<NewDocConfirmation> AddNewDocConfirmationAsync(NewDocConfirmationDto dto);
+        Task<DocSigner> AddNewDocSignersAsync(NewDocSignerDto dto);
+        Task<List<NewDocConfirmationResDto>> GetAllDocConfirmationsAsync();
+        Task<List<DocSignerResDto>> GetDocConfirmationSignersAsync(int docConfirmationId);
+        Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode);
     }
 }

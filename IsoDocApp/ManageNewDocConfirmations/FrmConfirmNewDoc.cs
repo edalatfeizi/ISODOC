@@ -162,7 +162,7 @@ namespace IsoDocApp.ManageDocRequests
                                 CreatorUserPersonCode = userPersonCode
                             };
 
-                            var newDocConfirm = await docConfirmationService.AddNewDocConfirmation(newDocConfirmation);
+                            var newDocConfirm = await docConfirmationService.AddNewDocConfirmationAsync(newDocConfirmation);
                             foreach (var signerColleague in signerColleagues)
                             {
                                 var newDocSigner = new NewDocSignerDto
@@ -189,7 +189,7 @@ namespace IsoDocApp.ManageDocRequests
                                         break;
                                 }
 
-                                await docConfirmationService.AddNewDocSigners(newDocSigner);
+                                await docConfirmationService.AddNewDocSignersAsync(newDocSigner);
                                 var signerUserInfo = await personelyService.GetUserInfoByPersonCode(signerColleague.PersonCode);
                                 smsClient.SendSMS(signerUserInfo.Mobile, $"{StringResources.NewSignDocReqSent} \n {StringResources.IKID}");
 

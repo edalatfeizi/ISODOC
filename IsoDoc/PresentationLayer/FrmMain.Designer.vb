@@ -119,6 +119,7 @@ Partial Class FrmMain
         Me.RibbonPageGroup6 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpAuditCalendar = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rpReportBug = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         Me.GalleryDropDown1 = New DevExpress.XtraBars.Ribbon.GalleryDropDown(Me.components)
@@ -139,7 +140,7 @@ Partial Class FrmMain
         Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonControl.MaxItemId = 86
         Me.RibbonControl.Name = "RibbonControl"
-        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.tabEnterData, Me.RibbonPage3, Me.RibbonPage4, Me.rpKnowledgeBase, Me.RibbonPage5, Me.RibbonPage6, Me.rpAuditCalendar})
+        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.tabEnterData, Me.RibbonPage3, Me.RibbonPage4, Me.rpKnowledgeBase, Me.RibbonPage5, Me.RibbonPage6, Me.rpAuditCalendar, Me.rpReportBug})
         Me.RibbonControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.RibbonControl.Size = New System.Drawing.Size(1443, 177)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
@@ -1041,6 +1042,12 @@ Partial Class FrmMain
         Me.RibbonPageGroup7.ItemLinks.Add(Me.btnAuditCalendar)
         Me.RibbonPageGroup7.Name = "RibbonPageGroup7"
         '
+        'rpReportBug
+        '
+        Me.rpReportBug.ImageOptions.Image = CType(resources.GetObject("rpReportBug.ImageOptions.Image"), System.Drawing.Image)
+        Me.rpReportBug.Name = "rpReportBug"
+        Me.rpReportBug.Text = "گزارش خطا"
+        '
         'RibbonStatusBar
         '
         Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 506)
@@ -1221,4 +1228,5 @@ Partial Class FrmMain
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnManageNewDocConfirmations As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btnManageNewDocConfirms As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rpReportBug As DevExpress.XtraBars.Ribbon.RibbonPage
 End Class

@@ -125,7 +125,6 @@ namespace IsoDoc.Infrastructure.Repositories
         {
             const string query = @"SELECT * FROM tb_NewDocConfirmations where Active = 'true'";
 
-            // Dapper automatically opens/closes the connection if not already open
             var result = await connection.QueryAsync<NewDocConfirmation>(query);
 
             return result.ToList();
@@ -135,8 +134,16 @@ namespace IsoDoc.Infrastructure.Repositories
         {
             const string query = @"SELECT * FROM tb_NewDocSigners where NewDocConfirmationId = @NewDocConfirmationId";
 
-            // Dapper automatically opens/closes the connection if not already open
             var result = await connection.QueryAsync<DocSigner>(query, new { NewDocConfirmationId = docConfirmationId });
+
+            return result.ToList();
+        }
+
+        public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode)
+        {
+            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true') and Active = 'true'";
+
+            var result = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
 
             return result.ToList();
         }
