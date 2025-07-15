@@ -321,4 +321,25 @@
   <data name="ErrorShouldSelectDocAcceptors" xml:space="preserve">
     <value>لطفا تصویب کنندگان سند جدید را انتخاب کنید</value>
   </data>
+  <data name="SigningDate" xml:space="preserve">
+    <value>زمان ثبت امضاء</value>
+  </data>
+  <data name="Signed" xml:space="preserve">
+    <value>امضاء شده</value>
+  </data>
+  <data name="NotSigned" xml:space="preserve">
+    <value>امضاء نشده</value>
+  </data>
+  <data name="SigningStatus" xml:space="preserve">
+    <value>وضعیت امضاء</value>
+  </data>
+  <data name="SignRequestSent" xml:space="preserve">
+    <value>درخواست امضاء ارسال شده</value>
+  </data>
+  <data name="SignRequestNotSent" xml:space="preserve">
+    <value>درخواست امضاء ارسال نشده</value>
+  </data>
+  <data name="SignRequestSentDate" xml:space="preserve">
+    <value>زمان ارسال درخواست امضاء</value>
+  </data>
 </root>

@@ -188,6 +188,8 @@ namespace IsoDocApp.ManageDocRequests
                                         newDocSigner.SignerType = SignerColleagueType.Acceptor;
                                         break;
                                 }
+                                newDocSigner.Active = newDocSigner.SigningOrder == 0 ? true : false;
+                           
 
                                 await docConfirmationService.AddNewDocSignersAsync(newDocSigner);
                                 var signerUserInfo = await personelyService.GetUserInfoByPersonCode(signerColleague.PersonCode);

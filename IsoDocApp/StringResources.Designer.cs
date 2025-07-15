@@ -601,6 +601,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to امضاء نشده.
+        /// </summary>
+        internal static string NotSigned {
+            get {
+                return ResourceManager.GetString("NotSigned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تاریخ و زمان دریافت:.
         /// </summary>
         internal static string ReceiveDateAndTime {
@@ -633,6 +642,60 @@ namespace IsoDocApp {
         internal static string SelectDocKeepDuration {
             get {
                 return ResourceManager.GetString("SelectDocKeepDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to امضاء شده.
+        /// </summary>
+        internal static string Signed {
+            get {
+                return ResourceManager.GetString("Signed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان ثبت امضاء.
+        /// </summary>
+        internal static string SigningDate {
+            get {
+                return ResourceManager.GetString("SigningDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وضعیت امضاء.
+        /// </summary>
+        internal static string SigningStatus {
+            get {
+                return ResourceManager.GetString("SigningStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درخواست امضاء ارسال نشده.
+        /// </summary>
+        internal static string SignRequestNotSent {
+            get {
+                return ResourceManager.GetString("SignRequestNotSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درخواست امضاء ارسال شده.
+        /// </summary>
+        internal static string SignRequestSent {
+            get {
+                return ResourceManager.GetString("SignRequestSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان ارسال درخواست امضاء.
+        /// </summary>
+        internal static string SignRequestSentDate {
+            get {
+                return ResourceManager.GetString("SignRequestSentDate", resourceCulture);
             }
         }
         

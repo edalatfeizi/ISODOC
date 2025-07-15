@@ -1,5 +1,6 @@
 ﻿using DevExpress.Images;
 using DevExpress.XtraEditors;
+using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace IsoDocApp
 {
-    public static class DocRequestsHelper
+    public static class StepsProgressBarHelper
     {
         public static async Task<List<StepProgressBarItem>> GetDocRequestProgressBarSteps(List<DocRequestStep> steps, DocRequestStatus docRequestStatus, string cancelOrDeleteDsc)
         {
@@ -76,6 +77,55 @@ namespace IsoDocApp
                     }
 
                     items.Add(lastStep);
+                }
+            }
+            catch (Exception ex)
+            {
+                var frmMsgBox = new FrmMessageBox();
+                frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+                {
+                    Title = StringResources.ErrorProccessingData,
+                    Message = $"{ex.Message} \n {ex.InnerException}",
+                    ConfirmButtonText = StringResources.Confirm,
+                    DevExpressIconId = "cancel",
+                    DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+                });
+                frmMsgBox.ShowDialog();
+            }
+
+            return items;
+
+        }
+
+        public static async Task<List<StepProgressBarItem>> GetDocConfirmationSignersSteps(List<DocSignerResDto> signers)
+        {
+            var items = new List<StepProgressBarItem>();
+            try
+            {
+                var desc = "";
+                if (signers.Count() > 0)
+                {
+                    foreach (var signer in signers)
+                    {
+                        // Create a new StepItem for each task
+                        StepProgressBarItem stepItem = new StepProgressBarItem();
+                        stepItem.ContentBlock2.Caption = $"{signer.Name} - {signer.Post} \n {signer.SignerType}";
+                        if(signer.IsSigned && signer.Active)
+                            stepItem.ContentBlock2.Description =  $"{StringResources.Status} {StringResources.Signed} \n {StringResources.SigningDate}: {signer.SigningDate.FormatPersianDate()}";
+                        else if(signer.Active && !signer.IsSigned)
+                        {
+                            stepItem.ContentBlock2.Description = $"{StringResources.Status} {StringResources.SignRequestSent} \n {StringResources.SignRequestSentDate}: {signer.SignRequestSentDate.FormatPersianDate()}";
+                        }else if(!signer.Active && !signer.IsSigned)
+                        {
+                            stepItem.ContentBlock2.Description = $"{StringResources.Status} {StringResources.SignRequestNotSent}";
+
+                        }
+                        stepItem.State = signer.IsSigned ? StepProgressBarItemState.Active : StepProgressBarItemState.Inactive;
+
+                        items.Add(stepItem);
+                    }
+
+  
                 }
             }
             catch (Exception ex)

@@ -28,8 +28,6 @@ namespace IsoDoc.Infrastructure.Repositories
                 DocCode = docCode,
                 ReviewNo = reviewNo,
                 ReviewText = reviewText,
-                CreatedAt = DateTime.UtcNow.ToString(),
-                ModifiedAt = DateTime.UtcNow.ToString(),
                 CreatedBy = creatorUserPersonCode,
                 ModifiedBy = creatorUserPersonCode,
                 Active = true,
@@ -67,7 +65,7 @@ namespace IsoDoc.Infrastructure.Repositories
             return newDocConfirm;
         }
 
-        public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode)
+        public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode, bool active)
         {
             var newDocSigner = new DocSigner
             {
@@ -82,7 +80,7 @@ namespace IsoDoc.Infrastructure.Repositories
                 ModifiedAt = DateTime.UtcNow.ToString(),
                 CreatedBy = creatorUserPersonCode,
                 ModifiedBy = creatorUserPersonCode,
-                Active = true,
+                Active = active,
             };
             var newDocSignerQuery = @"
                     INSERT INTO tb_NewDocSigners (
@@ -141,7 +139,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode)
         {
-            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true') and Active = 'true'";
+            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true' and IsSigned = 'false') and Active = 'true'";
 
             var result = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
 

@@ -89,7 +89,8 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\AttachmentsHelper.cs" />
-    <Compile Include="Helpers\DocRequestsHelper.cs" />
+    <Compile Include="Helpers\DocConfirmationsHelper.cs" />
+    <Compile Include="Helpers\StepsProgressBarHelper.cs" />
     <Compile Include="Extensions\StepProgressBarExtension.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="FrmMessageBox.cs">

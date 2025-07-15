@@ -12,6 +12,8 @@ namespace IsoDoc.Domain.Entities
         public SignerColleagueType SignerType { get; set; }
         public int SigningOrder { get; set; }
         public bool IsSigned { get; set; }
+        public string SigningDate { get; set; }
+        public string SignRequestSentDate { get; set; }
 
     }
 }

@@ -54,6 +54,8 @@ namespace IsoDoc.Domain.Extensions
                 SignerType = signerType,
                 SigningOrder = docSigner.SigningOrder,
                 IsSigned = docSigner.IsSigned,
+                SigningDate = docSigner.SigningDate,
+                SignRequestSentDate = docSigner.SignRequestSentDate,
                 CreatedBy = docSigner.CreatedBy,
                 ModifiedBy = docSigner.ModifiedBy,
                 CreatedAt = docSigner.CreatedAt,

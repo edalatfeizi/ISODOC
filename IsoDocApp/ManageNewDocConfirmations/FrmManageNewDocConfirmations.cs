@@ -7,9 +7,11 @@ using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
+using IsoDocApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -22,6 +24,7 @@ namespace IsoDocApp.ManageDocRequests
         private readonly IDocConfirmationService docConfirmationService;
         private readonly MagfaSMSClient smsClient;
         private List<NewDocConfirmationResDto> docConfirms = new List<NewDocConfirmationResDto>();
+        private List<DocSignerResDto> docSigners = new List<DocSignerResDto>();
         private Person userInfo;
         private string userName = "";
         private bool isAdmin = false;
@@ -77,7 +80,10 @@ namespace IsoDocApp.ManageDocRequests
 
 
         }
-
+        private void ShowProgressBar(bool visibility)
+        {
+            loading.Visible = visibility;
+        }
         private void btnAddNewConfirmDoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, smsClient);
@@ -94,7 +100,6 @@ namespace IsoDocApp.ManageDocRequests
             if (selectedPage != null)
             {
                 //docReqSteps.Items.Clear();
-                //docReqSteps.Items.Clear();
                 gridDocConfirms.DataSource = null;
                 // Check which page was clicked using the Name or Text property
                 switch (selectedPage.Name)
@@ -103,6 +108,7 @@ namespace IsoDocApp.ManageDocRequests
                         if (userInfo != null)
                         {
                             // docReqSteps.Items.Clear();
+                            ShowProgressBar(true);
                             docConfirms = await docConfirmationService.GetUserDocConfirmationsAsync(userInfo.PersonCode);
                             gridDocConfirms.DataSource = docConfirms;
 
@@ -110,6 +116,7 @@ namespace IsoDocApp.ManageDocRequests
                             btnAddAttachment.Enabled = true;
 
                             ShowDocConfirmations(true);
+                            ShowProgressBar(false);
 
                         }
 
@@ -118,11 +125,15 @@ namespace IsoDocApp.ManageDocRequests
                         if (userInfo != null)
                         {
                             //docReqSteps.Items.Clear();
+                            ShowProgressBar(true);
+
                             docConfirms = await docConfirmationService.GetAllDocConfirmationsAsync();
                             gridDocConfirms.DataSource = docConfirms;
                             btnForwardDocReq.Enabled = false;
                             btnAddAttachment.Enabled = false;
+
                             ShowDocConfirmations(true);
+                            ShowProgressBar(false);
 
                         }
 
@@ -140,7 +151,44 @@ namespace IsoDocApp.ManageDocRequests
             gridDocConfirms.Visible = visibility;
             panelStates.Visible = visibility;
             panelOperations.Visible = visibility;
-            confirmationSteps.Visible = visibility;
+            confirmationSigners.Visible = visibility;
+        }
+
+        private async void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            int rowHandle = gridView1.FocusedRowHandle;
+            if (rowHandle >= 0)
+            {
+                var idValue = gridView1.GetRowCellValue(rowHandle, "Id");
+                var docConfirmId = idValue != null ? int.Parse(idValue.ToString()) : 0;
+                var docConfirm = docConfirms.Where(x => x.Id == docConfirmId).FirstOrDefault();
+
+
+                await GetDocConfirmSigners(docConfirmId);
+                //var attachment = GridViewHelper.GetGridViewCellValue(gridView1, "HasAttachments");
+                //var hasAttachments = attachment != null ? attachment.ToString() : null;
+                //if (!string.IsNullOrEmpty(hasAttachments) && hasAttachments.ToString() == "دارد")
+                //    btnShowAttachments.Enabled = true;
+                //else
+                //    btnShowAttachments.Enabled = false;
+
+            }
+        }
+
+        private async Task<bool> GetDocConfirmSigners(int docConfirmId)
+        {
+            ShowProgressBar(true);
+            confirmationSigners.Items.Clear();
+            docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmId);
+
+            var steps = await StepsProgressBarHelper.GetDocConfirmationSignersSteps(docSigners);
+            foreach (var step in steps)
+            {
+                confirmationSigners.Items.Add(step);
+            }
+
+            ShowProgressBar(false);
+            return true;
         }
     }
 }

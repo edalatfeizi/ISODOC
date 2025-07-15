@@ -58,7 +58,7 @@
             this.loading = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.confirmationSteps = new DevExpress.XtraEditors.StepProgressBar();
+            this.confirmationSigners = new DevExpress.XtraEditors.StepProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelStates)).BeginInit();
             this.panelStates.SuspendLayout();
@@ -73,7 +73,7 @@
             this.panelOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
             this.loading.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.confirmationSteps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationSigners)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -304,6 +304,7 @@
             this.gridView1.DetailHeight = 239;
             this.gridView1.GridControl = this.gridDocConfirms;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // pictureEdit1
             // 
@@ -446,48 +447,49 @@
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "در حال دریافت اطلاعات";
             // 
-            // confirmationSteps
+            // confirmationSigners
             // 
-            this.confirmationSteps.AllowHtmlText = DevExpress.Utils.DefaultBoolean.False;
-            this.confirmationSteps.Appearances.CommonActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.confirmationSteps.Appearances.CommonInactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.Caption.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.Description.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.FirstContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseFont = true;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseFont = true;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
-            this.confirmationSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.confirmationSteps.Dock = System.Windows.Forms.DockStyle.Left;
-            this.confirmationSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image")));
-            this.confirmationSteps.Location = new System.Drawing.Point(0, 152);
-            this.confirmationSteps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.confirmationSteps.Name = "confirmationSteps";
-            this.confirmationSteps.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.confirmationSteps.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.confirmationSteps.Size = new System.Drawing.Size(382, 489);
-            this.confirmationSteps.TabIndex = 10;
+            this.confirmationSigners.AllowHtmlText = DevExpress.Utils.DefaultBoolean.False;
+            this.confirmationSigners.Appearances.CommonActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.confirmationSigners.Appearances.CommonInactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.Caption.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.Description.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseFont = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Description.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseFont = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Dock = System.Windows.Forms.DockStyle.Left;
+            this.confirmationSigners.ItemOptions.Indicator.ActiveStateImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("confirmationSigners.ItemOptions.Indicator.ActiveStateImageOptions.Image")));
+            this.confirmationSigners.Location = new System.Drawing.Point(0, 152);
+            this.confirmationSigners.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirmationSigners.Name = "confirmationSigners";
+            this.confirmationSigners.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.confirmationSigners.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.confirmationSigners.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.confirmationSigners.Size = new System.Drawing.Size(382, 489);
+            this.confirmationSigners.TabIndex = 10;
             // 
             // FrmManageNewDocConfirmations
             // 
@@ -498,11 +500,11 @@
             this.Controls.Add(this.gridDocConfirms);
             this.Controls.Add(this.panelOperations);
             this.Controls.Add(this.loading);
-            this.Controls.Add(this.confirmationSteps);
+            this.Controls.Add(this.confirmationSigners);
             this.Controls.Add(this.ribbonControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmManageNewDocConfirmations";
-            this.Text = "مدیریت ثبت و تنظیم اسناد جدید";
+            this.Text = "تایید اسناد جدید";
             this.Load += new System.EventHandler(this.FrmManageNewDocConfirmations_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelStates)).EndInit();
@@ -519,7 +521,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.loading)).EndInit();
             this.loading.ResumeLayout(false);
             this.loading.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.confirmationSteps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationSigners)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,6 +557,6 @@
         private DevExpress.XtraEditors.PanelControl loading;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.StepProgressBar confirmationSteps;
+        private DevExpress.XtraEditors.StepProgressBar confirmationSigners;
     }
 }

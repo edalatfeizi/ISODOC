@@ -156,7 +156,7 @@ namespace IsoDocApp
             docReqSteps.Items.Clear();
             selectedDocReqSteps = await manageDocReqsService.GetDocRequestSteps(docReqId);
 
-            var steps = await DocRequestsHelper.GetDocRequestProgressBarSteps(selectedDocReqSteps, docRequestStatus, docReqStatusDsc);
+            var steps = await StepsProgressBarHelper.GetDocRequestProgressBarSteps(selectedDocReqSteps, docRequestStatus, docReqStatusDsc);
             foreach (var step in steps)
             {
                 docReqSteps.Items.Add(step);

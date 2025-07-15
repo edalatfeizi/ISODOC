@@ -861,7 +861,7 @@ Partial Class FrmMain
         '
         'btnManageNewDocConfirms
         '
-        Me.btnManageNewDocConfirms.Caption = " ثبت و تنظیم اسناد جدید"
+        Me.btnManageNewDocConfirms.Caption = " تایید اسناد جدید"
         Me.btnManageNewDocConfirms.Id = 85
         Me.btnManageNewDocConfirms.ImageOptions.Image = CType(resources.GetObject("btnManageNewDocConfirms.ImageOptions.Image"), System.Drawing.Image)
         Me.btnManageNewDocConfirms.ImageOptions.LargeImage = CType(resources.GetObject("btnManageNewDocConfirms.ImageOptions.LargeImage"), System.Drawing.Image)
@@ -1050,7 +1050,7 @@ Partial Class FrmMain
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 506)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 584)
         Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
@@ -1065,7 +1065,7 @@ Partial Class FrmMain
         Me.PictureEdit1.MenuManager = Me.RibbonControl
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
-        Me.PictureEdit1.Size = New System.Drawing.Size(1443, 329)
+        Me.PictureEdit1.Size = New System.Drawing.Size(1443, 407)
         Me.PictureEdit1.TabIndex = 2
         '
         'GalleryDropDown1
@@ -1080,7 +1080,7 @@ Partial Class FrmMain
         Me.LabelControl1.Appearance.Options.UseBackColor = True
         Me.LabelControl1.Appearance.Options.UseFont = True
         Me.LabelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LabelControl1.Location = New System.Drawing.Point(0, 484)
+        Me.LabelControl1.Location = New System.Drawing.Point(0, 562)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(157, 22)
         Me.LabelControl1.TabIndex = 5
@@ -1093,7 +1093,7 @@ Partial Class FrmMain
         Me.LabelControl2.Appearance.Options.UseBackColor = True
         Me.LabelControl2.Appearance.Options.UseFont = True
         Me.LabelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LabelControl2.Location = New System.Drawing.Point(0, 462)
+        Me.LabelControl2.Location = New System.Drawing.Point(0, 540)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(74, 22)
         Me.LabelControl2.TabIndex = 6
@@ -1103,7 +1103,7 @@ Partial Class FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1443, 530)
+        Me.ClientSize = New System.Drawing.Size(1443, 608)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.PictureEdit1)
