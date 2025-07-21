@@ -19,7 +19,7 @@ namespace IsoDoc.Domain.Services
 
         public async Task<NewDocConfirmation> AddNewDocConfirmationAsync(NewDocConfirmationDto dto)
         {
-            var newDocConfirmation = await docConfirmationRepo.AddNewDocConfirmation(dto.DocOwnerDepCode, dto.DocTitle, dto.DocCode, dto.ReviewNo, dto.ReviewText, dto.CreatorUserPersonCode);
+            var newDocConfirmation = await docConfirmationRepo.AddNewDocConfirmation(dto.DocReqId, dto.DocOwnerDepCode, dto.DocTitle, dto.DocCode, dto.ReviewNo, dto.ReviewText, dto.CreatorUserPersonCode);
             
             return newDocConfirmation;
         }
@@ -36,6 +36,15 @@ namespace IsoDoc.Domain.Services
             var result = await docConfirmationRepo.GetAllDocConfirmations();
 
             return result.MapToNewDocConfirmationDtos();
+        }
+
+        public async Task<NewDocConfirmationResDto> GetDocConfirmationByDocReqIdAsync(int docReqId)
+        {
+            var result = await docConfirmationRepo.GetDocConfirmationByDocReqIdAsync(docReqId);
+            if (result == null)
+                return null;
+
+            return result.MapToNewDocConfirmationDto();
         }
 
         public async Task<List<DocSignerResDto>> GetDocConfirmationSignersAsync(int docConfirmationId)

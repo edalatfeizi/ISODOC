@@ -19,10 +19,11 @@ namespace IsoDoc.Infrastructure.Repositories
             connection = dbConnection;
         }
 
-        public async Task<NewDocConfirmation> AddNewDocConfirmation(string ownerDepCode, string docTitle, string docCode, string reviewNo, string reviewText, string creatorUserPersonCode)
+        public async Task<NewDocConfirmation> AddNewDocConfirmation(int docReqId, string ownerDepCode, string docTitle, string docCode, string reviewNo, string reviewText, string creatorUserPersonCode)
         {
             var newDocConfirm = new NewDocConfirmation
             {
+                DocReqId = docReqId,
                 DocOwnerDepCode = ownerDepCode,
                 DocTitle = docTitle,
                 DocCode = docCode,
@@ -34,6 +35,7 @@ namespace IsoDoc.Infrastructure.Repositories
             };
             var newConfirmDocQuery = @"
                     INSERT INTO tb_NewDocConfirmations (
+                        DocReqId,
                         DocOwnerDepCode,
                         DocTitle,
                         DocCode,
@@ -47,6 +49,7 @@ namespace IsoDoc.Infrastructure.Repositories
                     )
                     OUTPUT INSERTED.Id
                     VALUES (
+                        @DocReqId,
                         @DocOwnerDepCode,
                         @DocTitle,
                         @DocCode,
@@ -126,6 +129,13 @@ namespace IsoDoc.Infrastructure.Repositories
             var result = await connection.QueryAsync<NewDocConfirmation>(query);
 
             return result.ToList();
+        }
+
+        public async Task<NewDocConfirmation> GetDocConfirmationByDocReqIdAsync(int docReqId)
+        {
+            const string query = @"SELECT * FROM tb_NewDocConfirmations where DocReqId = @DocReqId and Active = 'true'";
+
+            return await connection.QueryFirstOrDefaultAsync<NewDocConfirmation>(query, new { DocReqId = docReqId });
         }
 
         public async Task<List<DocSigner>> GetDocConfirmationSigners(int docConfirmationId)

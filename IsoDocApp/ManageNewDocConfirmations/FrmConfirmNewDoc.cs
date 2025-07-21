@@ -36,14 +36,15 @@ namespace IsoDocApp.ManageDocRequests
         private List<SignerColleague> signerColleagues = new List<SignerColleague>();
         //private Person userInfo;
         private string userPersonCode = "";
-
-        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService, MagfaSMSClient smsClient)
+        private int docReqId = 0;
+        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService, MagfaSMSClient smsClient, int docReqId)
         {
             InitializeComponent();
             this.personelyService = personelyService;
             this.manageDocReqsService = manageDocReqsService;
             this.docConfirmationService = docConfirmationService;
             this.smsClient = smsClient;
+            this.docReqId = docReqId;
         }
 
         private void panel_Paint(object sender, PaintEventArgs e)
@@ -154,6 +155,7 @@ namespace IsoDocApp.ManageDocRequests
 
                             var newDocConfirmation = new NewDocConfirmationDto
                             {
+                                DocReqId = docReqId,
                                 DocOwnerDepCode = cmbDocOwnerDep.EditValue.ToString(),
                                 DocCode = doc.DocumentCode,
                                 DocTitle = doc.DocumentName,

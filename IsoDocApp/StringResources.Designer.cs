@@ -709,6 +709,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تایم لاین.
+        /// </summary>
+        internal static string TimeLine {
+            get {
+                return ResourceManager.GetString("TimeLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to به.
         /// </summary>
         internal static string To {

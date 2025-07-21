@@ -3,6 +3,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using IKIDMagfaSMSClientWin;
+using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Repositories;
@@ -18,6 +19,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,12 +32,14 @@ namespace IsoDocApp
         private readonly IPersonelyService personelyService;
         private readonly IDocRequestAttachmentsService docRequestAttachmentsService;
         private readonly IDocConfirmationService docConfirmationService;
+
         private List<DocRequest> userDocReqs = new List<DocRequest>();
         private Person userInfo;
         private string userName = "";
         private bool isAdmin = false;
         private List<DocRequestStep> selectedDocReqSteps = new List<DocRequestStep>();
         private MagfaSMSClient magfaSMSClient;
+        private NewDocConfirmationResDto docConfirmation;
         public FrmManageDocReqs(IManageDocReqsService manageDocReqsService, IDocRequestAttachmentsService docRequestAttachmentsService, IPersonelyService personelyService, IDocConfirmationService docConfirmationService)
         {
             this.manageDocReqsService = manageDocReqsService;
@@ -49,7 +53,7 @@ namespace IsoDocApp
 
         private async void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frmNewDocReq = new FrmNewDocReq(manageDocReqsService, personelyService,magfaSMSClient);
+            var frmNewDocReq = new FrmNewDocReq(manageDocReqsService, personelyService, magfaSMSClient);
             var result = frmNewDocReq.ShowDialog();
 
 
@@ -85,6 +89,7 @@ namespace IsoDocApp
             {
                 tabAllDocRequests.Visible = true;
                 btnExecRegulation.Enabled = true;
+                //mnuConfirmDoc.Enabled = true;
                 //tabDeletedRequests.Visible = true;
             }
             else
@@ -97,6 +102,14 @@ namespace IsoDocApp
                 tabDeletedRequests.Visible = false;
             FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
 
+
+
+            //RibbonPage page1 = new RibbonPage("Tab 1");
+            //RibbonPage page2 = new RibbonPage("Tab 2");
+            //ribbonControl2.Pages.Add(page1);
+            //ribbonControl2.Pages.Add(page2);
+
+           // ribbonControl2.AllowMinimizeRibbon = true;
         }
         private async void FilterDocRequests(FilterDocRequests filter)
         {
@@ -123,6 +136,20 @@ namespace IsoDocApp
                 var docId = idValue != null ? int.Parse(idValue.ToString()) : 0;
                 var docRequest = userDocReqs.Where(x => x.Id == docId).FirstOrDefault();
 
+                switch (docRequest.DocRequestType)
+                {
+                    case DocRequestType.Create:
+                        tabDocReqTimeLine.Text = $"{StringResources.TimeLine} {StringResources.NewCreateDocReq}";
+                        break;
+                    case DocRequestType.Update:
+                        tabDocReqTimeLine.Text = $"{StringResources.TimeLine} {StringResources.ChangeDocReq}";
+                        break;
+                    case DocRequestType.Delete:
+                        tabDocReqTimeLine.Text = $"{StringResources.TimeLine} {StringResources.DeleteDocReq}";
+                        break;
+                    default:
+                        break;
+                }
 
                 await GetDocReqSteps(docId, docRequest.DocRequestStatus, GetDocRequestStatusDsc(docRequest));
                 var attachment = GridViewHelper.GetGridViewCellValue(gridView1, "HasAttachments");
@@ -131,6 +158,21 @@ namespace IsoDocApp
                     btnShowAttachments.Enabled = true;
                 else
                     btnShowAttachments.Enabled = false;
+
+                docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docId);
+                if (docRequest.DocRequestStatus == DocRequestStatus.Completed && docConfirmation != null)
+                {
+                    if (docConfirmation != null)
+                        await GetDocConfirmSigners(docConfirmation.Id);
+                }else if(docRequest.DocRequestStatus == DocRequestStatus.Completed && docConfirmation == null)
+                {
+                    mnuConfirmDoc.Enabled = false;
+                    confirmationSigners.Items.Clear();
+                }
+
+
+
+             
 
             }
         }
@@ -165,7 +207,21 @@ namespace IsoDocApp
             ShowProgressBar(false);
             return true;
         }
+        private async Task<bool> GetDocConfirmSigners(int docConfirmId)
+        {
+            //ShowProgressBar(true);
+            confirmationSigners.Items.Clear();
+            var docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmId);
 
+            var steps = await StepsProgressBarHelper.GetDocConfirmationSignersSteps(docSigners);
+            foreach (var step in steps)
+            {
+                confirmationSigners.Items.Add(step);
+            }
+
+            //ShowProgressBar(false);
+            return true;
+        }
         private void btnDownloadAttachment_Click(object sender, EventArgs e)
         {
             RibbonPage selectedPage = ribbonControl1.SelectedPage;
@@ -206,10 +262,10 @@ namespace IsoDocApp
                             // docReqSteps.Items.Clear();
                             FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
 
-                          
-                                btnForwardDocReq.Enabled = true;
-                                btnAddAttachment.Enabled = true;
-                            
+
+                            btnForwardDocReq.Enabled = true;
+                            btnAddAttachment.Enabled = true;
+
 
                         }
 
@@ -309,7 +365,7 @@ namespace IsoDocApp
                 var lastDocReqStepId = selectedDocReqSteps.Last().Id;
                 var docRequest = userDocReqs.Where(x => x.Id == docReqId).FirstOrDefault();
 
-                var frmForwardDocReq = new FrmForwardDocReq(manageDocReqsService, personelyService, docReqId, lastDocReqStepId, docRequest.DocRequestStatus, GetDocRequestStatusDsc(docRequest),magfaSMSClient);
+                var frmForwardDocReq = new FrmForwardDocReq(manageDocReqsService, personelyService, docReqId, lastDocReqStepId, docRequest.DocRequestStatus, GetDocRequestStatusDsc(docRequest), magfaSMSClient);
                 var result = frmForwardDocReq.ShowDialog();
 
 
@@ -391,14 +447,14 @@ namespace IsoDocApp
             // Check if the row handle is valid (not the group row or empty space)
             if (userDocReqs.Count > 0)
             {
+                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                var docReq = await manageDocReqsService.GetDocRequest(docReqId);
                 RibbonPage selectedPage = ribbonControl1.SelectedPage;
 
                 if (selectedPage.Name == "tabReceivedRequests" && e.Button == MouseButtons.Right)
                 {
                     if (isAdmin)
                     {
-                        var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                        var docReq = await manageDocReqsService.GetDocRequest(docReqId);
                         var creatorUser = await personelyService.GetUserInfoByPersonCode(docReq.CreatedBy);
 
                         if (userInfo.DepartCode == creatorUser.DepartCode)
@@ -439,6 +495,20 @@ namespace IsoDocApp
                     mnuDeleteReq.Enabled = false;
                     mnuEnableReq.Enabled = true;
                 }
+
+                if (selectedPage.Name == tabAllDocRequests.Name && e.Button == MouseButtons.Right && userInfo != null && (userInfo.CardNumber == "3910" || userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
+                {
+                    contextMenuStrip2.Show(grdUserDocRequests, e.Location);
+                    if(docReq.DocRequestStatus == DocRequestStatus.Completed && docConfirmation == null)
+                        mnuConfirmDoc.Enabled = true;
+                    else
+                    {
+                        mnuConfirmDoc.Enabled = false;
+
+                    }
+
+                }
+                //if(userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.CodeEdare == "SI000" || userInfo.)
             }
 
 
@@ -463,14 +533,32 @@ namespace IsoDocApp
 
                 }
             }
-         
+
         }
 
-      
+
         private void btnExecRegulation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frmExecReq = new FrmExecuteRegulationPermission();
             var result = frmExecReq.ShowDialog();
+        }
+
+        private void ribbonControl2_SelectedPageChanged(object sender, EventArgs e)
+        {
+            //if (ribbonControl2.SelectedPage != null)
+            //{
+            //    foreach (RibbonPageGroup group in ribbonControl2.SelectedPage.Groups)
+            //    {
+            //        group.Visible = false; // Hide the group
+            //    }
+            //}
+        }
+
+        private void mnuConfirmDoc_Click(object sender, EventArgs e)
+        {
+            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+            var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, magfaSMSClient, docReqId);
+            var result = frmNewDocReq.ShowDialog();
         }
     }
 }

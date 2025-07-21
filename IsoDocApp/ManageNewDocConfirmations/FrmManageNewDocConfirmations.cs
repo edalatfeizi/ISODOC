@@ -86,8 +86,7 @@ namespace IsoDocApp.ManageDocRequests
         }
         private void btnAddNewConfirmDoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, smsClient);
-            var result = frmNewDocReq.ShowDialog();
+            
         }
 
         private void ribbonControl1_SelectedPageChanged(object sender, EventArgs e)

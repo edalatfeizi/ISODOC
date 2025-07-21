@@ -342,4 +342,7 @@
   <data name="SignRequestSentDate" xml:space="preserve">
     <value>زمان ارسال درخواست امضاء</value>
   </data>
+  <data name="TimeLine" xml:space="preserve">
+    <value>تایم لاین</value>
+  </data>
 </root>

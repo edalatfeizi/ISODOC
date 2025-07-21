@@ -59,16 +59,15 @@
             this.grdUserDocRequests = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.loading = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.loading = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnAddAttachment = new DevExpress.XtraEditors.SimpleButton();
             this.btnReload = new DevExpress.XtraEditors.SimpleButton();
@@ -80,27 +79,38 @@
             this.mnuCancelReq = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeleteReq = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEnableReq = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuConfirmDoc = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.tabDocReqTimeLine = new DevExpress.XtraTab.XtraTabPage();
+            this.tabDocConfirmTimeLine = new DevExpress.XtraTab.XtraTabPage();
+            this.confirmationSigners = new DevExpress.XtraEditors.StepProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserDocRequests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
-            this.loading.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loading)).BeginInit();
+            this.loading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.tabDocReqTimeLine.SuspendLayout();
+            this.tabDocConfirmTimeLine.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationSigners)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -124,7 +134,7 @@
             this.ribbonControl1.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Right;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ribbonControl1.Size = new System.Drawing.Size(1192, 160);
+            this.ribbonControl1.Size = new System.Drawing.Size(1335, 160);
             this.ribbonControl1.SelectedPageChanged += new System.EventHandler(this.ribbonControl1_SelectedPageChanged);
             // 
             // btnNewDocReq
@@ -263,14 +273,14 @@
             this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
             this.docReqSteps.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.docReqSteps.Dock = System.Windows.Forms.DockStyle.Left;
+            this.docReqSteps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("docReqSteps.ItemOptions.Indicator.ActiveStateImageOptions.Image")));
-            this.docReqSteps.Location = new System.Drawing.Point(0, 160);
+            this.docReqSteps.Location = new System.Drawing.Point(0, 0);
             this.docReqSteps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.docReqSteps.Name = "docReqSteps";
             this.docReqSteps.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.docReqSteps.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.docReqSteps.Size = new System.Drawing.Size(382, 345);
+            this.docReqSteps.Size = new System.Drawing.Size(380, 566);
             this.docReqSteps.TabIndex = 3;
             // 
             // stepProgressBarItem3
@@ -354,7 +364,7 @@
             this.grdUserDocRequests.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdUserDocRequests.MenuManager = this.ribbonControl1;
             this.grdUserDocRequests.Name = "grdUserDocRequests";
-            this.grdUserDocRequests.Size = new System.Drawing.Size(810, 285);
+            this.grdUserDocRequests.Size = new System.Drawing.Size(953, 610);
             this.grdUserDocRequests.TabIndex = 5;
             this.grdUserDocRequests.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -377,27 +387,106 @@
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl1.Controls.Add(this.panelControl3);
+            this.panelControl1.Controls.Add(this.panelControl4);
+            this.panelControl1.Controls.Add(this.loading);
             this.panelControl1.Controls.Add(this.panelControl2);
+            this.panelControl1.Controls.Add(this.grdUserDocRequests);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(382, 160);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(810, 345);
+            this.panelControl1.Size = new System.Drawing.Size(953, 610);
             this.panelControl1.TabIndex = 34;
             // 
-            // panelControl3
+            // panelControl4
             // 
-            this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl3.Controls.Add(this.loading);
-            this.panelControl3.Controls.Add(this.panelControl4);
-            this.panelControl3.Controls.Add(this.grdUserDocRequests);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(0, 0);
-            this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(810, 285);
-            this.panelControl3.TabIndex = 33;
+            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl4.Controls.Add(this.textEdit4);
+            this.panelControl4.Controls.Add(this.textEdit3);
+            this.panelControl4.Controls.Add(this.textEdit2);
+            this.panelControl4.Controls.Add(this.textEdit1);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl4.Location = new System.Drawing.Point(0, 0);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(953, 29);
+            this.panelControl4.TabIndex = 6;
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textEdit4.EditValue = "حذف شده";
+            this.textEdit4.Enabled = false;
+            this.textEdit4.Location = new System.Drawing.Point(114, 5);
+            this.textEdit4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textEdit4.MenuManager = this.ribbonControl1;
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Salmon;
+            this.textEdit4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.textEdit4.Properties.Appearance.Options.UseBackColor = true;
+            this.textEdit4.Properties.Appearance.Options.UseForeColor = true;
+            this.textEdit4.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEdit4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.textEdit4.Size = new System.Drawing.Size(95, 18);
+            this.textEdit4.TabIndex = 3;
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textEdit3.EditValue = "لغو شده";
+            this.textEdit3.Enabled = false;
+            this.textEdit3.Location = new System.Drawing.Point(297, 5);
+            this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textEdit3.MenuManager = this.ribbonControl1;
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.textEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.textEdit3.Properties.Appearance.Options.UseBackColor = true;
+            this.textEdit3.Properties.Appearance.Options.UseForeColor = true;
+            this.textEdit3.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEdit3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.textEdit3.Size = new System.Drawing.Size(95, 18);
+            this.textEdit3.TabIndex = 2;
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textEdit2.EditValue = "تکمیل شده";
+            this.textEdit2.Enabled = false;
+            this.textEdit2.Location = new System.Drawing.Point(499, 5);
+            this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textEdit2.MenuManager = this.ribbonControl1;
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.Appearance.BackColor = System.Drawing.Color.YellowGreen;
+            this.textEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.textEdit2.Properties.Appearance.Options.UseBackColor = true;
+            this.textEdit2.Properties.Appearance.Options.UseForeColor = true;
+            this.textEdit2.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEdit2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.textEdit2.Size = new System.Drawing.Size(95, 18);
+            this.textEdit2.TabIndex = 1;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textEdit1.EditValue = "در حال بررسی";
+            this.textEdit1.Enabled = false;
+            this.textEdit1.Location = new System.Drawing.Point(677, 5);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textEdit1.MenuManager = this.ribbonControl1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
+            this.textEdit1.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEdit1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.textEdit1.Size = new System.Drawing.Size(95, 18);
+            this.textEdit1.TabIndex = 0;
             // 
             // loading
             // 
@@ -408,7 +497,7 @@
             this.loading.Controls.Add(this.labelControl2);
             this.loading.Controls.Add(this.labelControl1);
             this.loading.Controls.Add(this.pictureEdit1);
-            this.loading.Location = new System.Drawing.Point(266, 106);
+            this.loading.Location = new System.Drawing.Point(337, 249);
             this.loading.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loading.Name = "loading";
             this.loading.Size = new System.Drawing.Size(257, 81);
@@ -454,96 +543,6 @@
             this.pictureEdit1.Size = new System.Drawing.Size(98, 62);
             this.pictureEdit1.TabIndex = 0;
             // 
-            // panelControl4
-            // 
-            this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl4.Controls.Add(this.textEdit4);
-            this.panelControl4.Controls.Add(this.textEdit3);
-            this.panelControl4.Controls.Add(this.textEdit2);
-            this.panelControl4.Controls.Add(this.textEdit1);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl4.Location = new System.Drawing.Point(0, 0);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(810, 29);
-            this.panelControl4.TabIndex = 6;
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit4.EditValue = "حذف شده";
-            this.textEdit4.Enabled = false;
-            this.textEdit4.Location = new System.Drawing.Point(43, 5);
-            this.textEdit4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textEdit4.MenuManager = this.ribbonControl1;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Salmon;
-            this.textEdit4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.textEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit4.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit4.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit4.Size = new System.Drawing.Size(95, 18);
-            this.textEdit4.TabIndex = 3;
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit3.EditValue = "لغو شده";
-            this.textEdit3.Enabled = false;
-            this.textEdit3.Location = new System.Drawing.Point(226, 5);
-            this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textEdit3.MenuManager = this.ribbonControl1;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.textEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.textEdit3.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit3.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit3.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit3.Size = new System.Drawing.Size(95, 18);
-            this.textEdit3.TabIndex = 2;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit2.EditValue = "تکمیل شده";
-            this.textEdit2.Enabled = false;
-            this.textEdit2.Location = new System.Drawing.Point(428, 5);
-            this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textEdit2.MenuManager = this.ribbonControl1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.BackColor = System.Drawing.Color.YellowGreen;
-            this.textEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.textEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit2.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit2.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit2.Size = new System.Drawing.Size(95, 18);
-            this.textEdit2.TabIndex = 1;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit1.EditValue = "در حال بررسی";
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(606, 5);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textEdit1.MenuManager = this.ribbonControl1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEdit1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit1.Size = new System.Drawing.Size(95, 18);
-            this.textEdit1.TabIndex = 0;
-            // 
             // panelControl2
             // 
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -554,10 +553,10 @@
             this.panelControl2.Controls.Add(this.btnForwardDocReq);
             this.panelControl2.Controls.Add(this.btnShowAttachments);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 285);
+            this.panelControl2.Location = new System.Drawing.Point(0, 550);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(810, 60);
+            this.panelControl2.Size = new System.Drawing.Size(953, 60);
             this.panelControl2.TabIndex = 6;
             // 
             // btnAddAttachment
@@ -572,7 +571,7 @@
             this.btnAddAttachment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddAttachment.Enabled = false;
             this.btnAddAttachment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAttachment.ImageOptions.Image")));
-            this.btnAddAttachment.Location = new System.Drawing.Point(206, 12);
+            this.btnAddAttachment.Location = new System.Drawing.Point(277, 12);
             this.btnAddAttachment.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddAttachment.Name = "btnAddAttachment";
             this.btnAddAttachment.Size = new System.Drawing.Size(191, 45);
@@ -589,7 +588,7 @@
             this.btnReload.Appearance.Options.UseFont = true;
             this.btnReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
-            this.btnReload.Location = new System.Drawing.Point(7, 12);
+            this.btnReload.Location = new System.Drawing.Point(78, 12);
             this.btnReload.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(191, 45);
@@ -607,7 +606,7 @@
             this.btnForwardDocReq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnForwardDocReq.Enabled = false;
             this.btnForwardDocReq.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnForwardDocReq.ImageOptions.Image")));
-            this.btnForwardDocReq.Location = new System.Drawing.Point(411, 12);
+            this.btnForwardDocReq.Location = new System.Drawing.Point(482, 12);
             this.btnForwardDocReq.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnForwardDocReq.Name = "btnForwardDocReq";
             this.btnForwardDocReq.Size = new System.Drawing.Size(191, 45);
@@ -626,7 +625,7 @@
             this.btnShowAttachments.Appearance.Options.UseFont = true;
             this.btnShowAttachments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAttachments.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowAttachments.ImageOptions.Image")));
-            this.btnShowAttachments.Location = new System.Drawing.Point(615, 12);
+            this.btnShowAttachments.Location = new System.Drawing.Point(686, 12);
             this.btnShowAttachments.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnShowAttachments.Name = "btnShowAttachments";
             this.btnShowAttachments.Size = new System.Drawing.Size(191, 45);
@@ -647,17 +646,18 @@
             this.mnuCompleteReq,
             this.mnuCancelReq,
             this.mnuDeleteReq,
-            this.mnuEnableReq});
+            this.mnuEnableReq,
+            this.mnuConfirmDoc});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip2.Size = new System.Drawing.Size(180, 108);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(196, 134);
             // 
             // mnuCompleteReq
             // 
             this.mnuCompleteReq.Enabled = false;
             this.mnuCompleteReq.Image = global::IsoDocApp.Properties.Resources.Yes;
             this.mnuCompleteReq.Name = "mnuCompleteReq";
-            this.mnuCompleteReq.Size = new System.Drawing.Size(179, 26);
+            this.mnuCompleteReq.Size = new System.Drawing.Size(195, 26);
             this.mnuCompleteReq.Text = "تکمیل درخواست";
             this.mnuCompleteReq.Click += new System.EventHandler(this.mnuCompleteReq_Click);
             // 
@@ -666,7 +666,7 @@
             this.mnuCancelReq.Enabled = false;
             this.mnuCancelReq.Image = global::IsoDocApp.Properties.Resources.No;
             this.mnuCancelReq.Name = "mnuCancelReq";
-            this.mnuCancelReq.Size = new System.Drawing.Size(179, 26);
+            this.mnuCancelReq.Size = new System.Drawing.Size(195, 26);
             this.mnuCancelReq.Text = "لغو درخواست";
             this.mnuCancelReq.Click += new System.EventHandler(this.mnuCancelReq_Click);
             // 
@@ -675,7 +675,7 @@
             this.mnuDeleteReq.Enabled = false;
             this.mnuDeleteReq.Image = global::IsoDocApp.Properties.Resources._1231;
             this.mnuDeleteReq.Name = "mnuDeleteReq";
-            this.mnuDeleteReq.Size = new System.Drawing.Size(179, 26);
+            this.mnuDeleteReq.Size = new System.Drawing.Size(195, 26);
             this.mnuDeleteReq.Text = "حذف درخواست";
             this.mnuDeleteReq.Click += new System.EventHandler(this.mnuDeleteReq_Click);
             // 
@@ -684,17 +684,111 @@
             this.mnuEnableReq.Enabled = false;
             this.mnuEnableReq.Image = global::IsoDocApp.Properties.Resources.CheckBox_32x32;
             this.mnuEnableReq.Name = "mnuEnableReq";
-            this.mnuEnableReq.Size = new System.Drawing.Size(179, 26);
+            this.mnuEnableReq.Size = new System.Drawing.Size(195, 26);
             this.mnuEnableReq.Text = "فعال کردن درخواست";
             this.mnuEnableReq.Click += new System.EventHandler(this.mnuEnableReq_Click);
+            // 
+            // mnuConfirmDoc
+            // 
+            this.mnuConfirmDoc.Enabled = false;
+            this.mnuConfirmDoc.Image = global::IsoDocApp.Properties.Resources.Yes;
+            this.mnuConfirmDoc.Name = "mnuConfirmDoc";
+            this.mnuConfirmDoc.Size = new System.Drawing.Size(195, 26);
+            this.mnuConfirmDoc.Text = "ثبت درخواست تایید سند";
+            this.mnuConfirmDoc.Click += new System.EventHandler(this.mnuConfirmDoc_Click);
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl5.Controls.Add(this.xtraTabControl1);
+            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl5.Location = new System.Drawing.Point(0, 160);
+            this.panelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(382, 610);
+            this.panelControl5.TabIndex = 7;
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xtraTabControl1.Appearance.Options.UseFont = true;
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.tabDocReqTimeLine;
+            this.xtraTabControl1.Size = new System.Drawing.Size(382, 610);
+            this.xtraTabControl1.TabIndex = 4;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabDocReqTimeLine,
+            this.tabDocConfirmTimeLine});
+            // 
+            // tabDocReqTimeLine
+            // 
+            this.tabDocReqTimeLine.Controls.Add(this.docReqSteps);
+            this.tabDocReqTimeLine.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabDocReqTimeLine.ImageOptions.Image")));
+            this.tabDocReqTimeLine.Name = "tabDocReqTimeLine";
+            this.tabDocReqTimeLine.Size = new System.Drawing.Size(380, 566);
+            this.tabDocReqTimeLine.Text = "تایم لاین درخواست سند";
+            // 
+            // tabDocConfirmTimeLine
+            // 
+            this.tabDocConfirmTimeLine.Controls.Add(this.confirmationSigners);
+            this.tabDocConfirmTimeLine.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabDocConfirmTimeLine.ImageOptions.Image")));
+            this.tabDocConfirmTimeLine.Name = "tabDocConfirmTimeLine";
+            this.tabDocConfirmTimeLine.Size = new System.Drawing.Size(380, 566);
+            this.tabDocConfirmTimeLine.Text = "تایم لاین تایید سند";
+            // 
+            // confirmationSigners
+            // 
+            this.confirmationSigners.AllowHtmlText = DevExpress.Utils.DefaultBoolean.False;
+            this.confirmationSigners.Appearances.CommonActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.confirmationSigners.Appearances.CommonInactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.Caption.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.Description.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.FirstContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseFont = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Caption.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Caption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.CaptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.CaptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Description.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseFont = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Description.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.Description.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionActive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
+            this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.confirmationSigners.Dock = System.Windows.Forms.DockStyle.Left;
+            this.confirmationSigners.ItemOptions.Indicator.ActiveStateImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("confirmationSigners.ItemOptions.Indicator.ActiveStateImageOptions.Image")));
+            this.confirmationSigners.Location = new System.Drawing.Point(0, 0);
+            this.confirmationSigners.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirmationSigners.Name = "confirmationSigners";
+            this.confirmationSigners.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.confirmationSigners.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.confirmationSigners.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.confirmationSigners.Size = new System.Drawing.Size(382, 566);
+            this.confirmationSigners.TabIndex = 11;
             // 
             // FrmManageDocReqs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 505);
+            this.ClientSize = new System.Drawing.Size(1335, 770);
             this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.docReqSteps);
+            this.Controls.Add(this.panelControl5);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "FrmManageDocReqs";
             this.Ribbon = this.ribbonControl1;
@@ -708,22 +802,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.loading)).EndInit();
-            this.loading.ResumeLayout(false);
-            this.loading.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loading)).EndInit();
+            this.loading.ResumeLayout(false);
+            this.loading.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.tabDocReqTimeLine.ResumeLayout(false);
+            this.tabDocConfirmTimeLine.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.confirmationSigners)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -761,7 +860,6 @@
         private DevExpress.XtraEditors.SimpleButton btnForwardDocReq;
         private DevExpress.XtraBars.Ribbon.RibbonPage tabForwardedDocRequests;
         private DevExpress.XtraBars.Ribbon.RibbonPage tabAllDocRequests;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit2;
@@ -781,6 +879,12 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btnExecRegulation;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage tabDocReqTimeLine;
+        private DevExpress.XtraTab.XtraTabPage tabDocConfirmTimeLine;
+        private System.Windows.Forms.ToolStripMenuItem mnuConfirmDoc;
+        private DevExpress.XtraEditors.StepProgressBar confirmationSigners;
     }
 }
 
