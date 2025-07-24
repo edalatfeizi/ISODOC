@@ -16,7 +16,7 @@ namespace IsoDocApp.Extensions
             int month = pc.GetMonth(now);
             int day = pc.GetDayOfMonth(now);
 
-            return $"{year}/{month.ToString("00")}/{day.ToString("00")}T{now.Hour}:{now.Minute}:{now.Second}";
+            return $"{year}/{month.ToString("00")}/{day.ToString("00")} {now.Hour}:{now.Minute}:{now.Second}";
         }
     }
 }

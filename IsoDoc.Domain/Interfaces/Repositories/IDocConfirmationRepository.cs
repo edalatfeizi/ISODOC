@@ -9,7 +9,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
     public interface IDocConfirmationRepository
     {
         Task<NewDocConfirmation> AddNewDocConfirmation(int docReqId, string ownerDepCode, string docTitle, string docCode, string reviewNo, string reviewText, string creatorUserPersonCode);
-        Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode, bool active);
+        Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode, string signRequestSentDate, bool active);
         Task<List<NewDocConfirmation>> GetAllDocConfirmations();
         Task<List<DocSigner>> GetDocConfirmationSigners(int docConfirmationId);
         Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode);

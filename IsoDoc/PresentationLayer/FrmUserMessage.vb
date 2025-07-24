@@ -74,7 +74,7 @@ Public Class FrmUserMessage
             MdlMain.isoDocCnnStr = IsodocCS.value
 
             MdlMain.CnnStringArchiveNew = ArchiveCS.Value
-            MdlMain.CnnString = IsodocCS.Value
+            MdlMain.CnnString = IsodocCS.Value '+ "MultipleActiveResultSets=True;"
             MdlMain.CnnStringProduction = ProductionCS.Value
             MdlMain.CnnStringTraining = TrainingCS.Value
             MdlMain.CnnStringGeneralObject = GeneralCs.Value

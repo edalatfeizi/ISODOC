@@ -102,6 +102,12 @@
     <Compile Include="Helpers\GridViewHelper.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Helpers\Validators.cs" />
+    <Compile Include="ManageNewDocConfirmations\FrmAddUserSignature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageNewDocConfirmations\FrmAddUserSignature.Designer.cs">
+      <DependentUpon>FrmAddUserSignature.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageNewDocConfirmations\FrmConfirmNewDoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\carpeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\handwritten-signature.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

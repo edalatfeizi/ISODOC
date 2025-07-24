@@ -68,7 +68,7 @@ namespace IsoDoc.Infrastructure.Repositories
             return newDocConfirm;
         }
 
-        public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode, bool active)
+        public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode, string signRequestSentDate, bool active)
         {
             var newDocSigner = new DocSigner
             {
@@ -78,9 +78,8 @@ namespace IsoDoc.Infrastructure.Repositories
                 Post = post,
                 SignerType = signerType,
                 SigningOrder = signingOrder,
+                SignRequestSentDate = signRequestSentDate,
                 IsSigned = isSigned,
-                CreatedAt = DateTime.UtcNow.ToString(),
-                ModifiedAt = DateTime.UtcNow.ToString(),
                 CreatedBy = creatorUserPersonCode,
                 ModifiedBy = creatorUserPersonCode,
                 Active = active,
@@ -98,6 +97,7 @@ namespace IsoDoc.Infrastructure.Repositories
                         ModifiedBy, 
                         CreatedAt, 
                         ModifiedAt,
+                        SignRequestSentDate,
                         Active
                     )
                     OUTPUT INSERTED.Id
@@ -113,6 +113,7 @@ namespace IsoDoc.Infrastructure.Repositories
                         @ModifiedBy,
                         @CreatedAt,
                         @ModifiedAt,
+                        @SignRequestSentDate,
                         @Active
                     );";
 
@@ -135,7 +136,9 @@ namespace IsoDoc.Infrastructure.Repositories
         {
             const string query = @"SELECT * FROM tb_NewDocConfirmations where DocReqId = @DocReqId and Active = 'true'";
 
-            return await connection.QueryFirstOrDefaultAsync<NewDocConfirmation>(query, new { DocReqId = docReqId });
+            var result = await connection.QueryFirstOrDefaultAsync<NewDocConfirmation>(query, new { DocReqId = docReqId });
+
+            return result;
         }
 
         public async Task<List<DocSigner>> GetDocConfirmationSigners(int docConfirmationId)

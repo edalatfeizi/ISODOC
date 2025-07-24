@@ -12,5 +12,7 @@ namespace IsoDoc.Domain.Models
 
         [Browsable(false)]
         public int Order { get; set; }
+
+        public string HasSignature { get; set; }
     }
 }

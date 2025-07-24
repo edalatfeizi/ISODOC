@@ -31,6 +31,7 @@ namespace IsoDoc.Domain.Extensions
             {
                 Index = index ?? 0,
                 Id = docConfirmation.Id,
+                DocReqId = docConfirmation.DocReqId,
                 DocOwnerDepCode = docConfirmation.DocOwnerDepCode,
                 DocTitle = docConfirmation.DocTitle,
                 DocCode = docConfirmation.DocCode,

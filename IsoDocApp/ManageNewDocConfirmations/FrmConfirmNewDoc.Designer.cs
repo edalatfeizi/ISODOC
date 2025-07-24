@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfirmNewDoc));
             this.progressBar = new DevExpress.XtraWaitForm.ProgressPanel();
             this.panel = new DevExpress.XtraEditors.PanelControl();
+            this.peAddSignature = new DevExpress.XtraEditors.PictureEdit();
             this.peDeleteSignerPerson = new DevExpress.XtraEditors.PictureEdit();
             this.peMoveDown = new DevExpress.XtraEditors.PictureEdit();
             this.peMoveUp = new DevExpress.XtraEditors.PictureEdit();
@@ -61,6 +62,7 @@
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panel)).BeginInit();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.peAddSignature.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peDeleteSignerPerson.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peMoveDown.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peMoveUp.Properties)).BeginInit();
@@ -101,7 +103,7 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.ShowCaption = false;
             this.progressBar.ShowDescription = false;
-            this.progressBar.Size = new System.Drawing.Size(1000, 10);
+            this.progressBar.Size = new System.Drawing.Size(1000, 15);
             this.progressBar.TabIndex = 31;
             this.progressBar.Text = "progressPanel1";
             this.progressBar.WaitAnimationType = DevExpress.Utils.Animation.WaitingAnimatorType.Bar;
@@ -109,6 +111,7 @@
             // panel
             // 
             this.panel.AutoSize = true;
+            this.panel.Controls.Add(this.peAddSignature);
             this.panel.Controls.Add(this.peDeleteSignerPerson);
             this.panel.Controls.Add(this.peMoveDown);
             this.panel.Controls.Add(this.peMoveUp);
@@ -116,27 +119,43 @@
             this.panel.Controls.Add(this.btnSave);
             this.panel.Controls.Add(this.gridUsers);
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 10);
-            this.panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel.Location = new System.Drawing.Point(0, 15);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1000, 419);
+            this.panel.Size = new System.Drawing.Size(1000, 612);
             this.panel.TabIndex = 10;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            // 
+            // peAddSignature
+            // 
+            this.peAddSignature.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.peAddSignature.EditValue = ((object)(resources.GetObject("peAddSignature.EditValue")));
+            this.peAddSignature.Enabled = false;
+            this.peAddSignature.Location = new System.Drawing.Point(13, 429);
+            this.peAddSignature.Name = "peAddSignature";
+            this.peAddSignature.Properties.AllowFocused = false;
+            this.peAddSignature.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.peAddSignature.Properties.Appearance.Options.UseBackColor = true;
+            this.peAddSignature.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.peAddSignature.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.peAddSignature.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.peAddSignature.Size = new System.Drawing.Size(43, 44);
+            this.peAddSignature.TabIndex = 170;
+            this.peAddSignature.ToolTipTitle = "ثبت امضاء";
+            this.peAddSignature.Click += new System.EventHandler(this.peAddSignature_Click);
             // 
             // peDeleteSignerPerson
             // 
             this.peDeleteSignerPerson.Cursor = System.Windows.Forms.Cursors.Hand;
             this.peDeleteSignerPerson.EditValue = ((object)(resources.GetObject("peDeleteSignerPerson.EditValue")));
             this.peDeleteSignerPerson.Enabled = false;
-            this.peDeleteSignerPerson.Location = new System.Drawing.Point(13, 334);
-            this.peDeleteSignerPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.peDeleteSignerPerson.Location = new System.Drawing.Point(13, 488);
             this.peDeleteSignerPerson.Name = "peDeleteSignerPerson";
             this.peDeleteSignerPerson.Properties.AllowFocused = false;
             this.peDeleteSignerPerson.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peDeleteSignerPerson.Properties.Appearance.Options.UseBackColor = true;
             this.peDeleteSignerPerson.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peDeleteSignerPerson.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.peDeleteSignerPerson.Size = new System.Drawing.Size(43, 30);
+            this.peDeleteSignerPerson.Size = new System.Drawing.Size(43, 44);
             this.peDeleteSignerPerson.TabIndex = 169;
             this.peDeleteSignerPerson.Click += new System.EventHandler(this.peDeleteSignerPerson_Click);
             // 
@@ -145,15 +164,14 @@
             this.peMoveDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.peMoveDown.EditValue = ((object)(resources.GetObject("peMoveDown.EditValue")));
             this.peMoveDown.Enabled = false;
-            this.peMoveDown.Location = new System.Drawing.Point(13, 179);
-            this.peMoveDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.peMoveDown.Location = new System.Drawing.Point(13, 262);
             this.peMoveDown.Name = "peMoveDown";
             this.peMoveDown.Properties.AllowFocused = false;
             this.peMoveDown.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peMoveDown.Properties.Appearance.Options.UseBackColor = true;
             this.peMoveDown.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peMoveDown.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.peMoveDown.Size = new System.Drawing.Size(43, 30);
+            this.peMoveDown.Size = new System.Drawing.Size(43, 44);
             this.peMoveDown.TabIndex = 168;
             this.peMoveDown.Click += new System.EventHandler(this.peMoveDown_Click);
             // 
@@ -162,15 +180,14 @@
             this.peMoveUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.peMoveUp.EditValue = ((object)(resources.GetObject("peMoveUp.EditValue")));
             this.peMoveUp.Enabled = false;
-            this.peMoveUp.Location = new System.Drawing.Point(13, 145);
-            this.peMoveUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.peMoveUp.Location = new System.Drawing.Point(13, 212);
             this.peMoveUp.Name = "peMoveUp";
             this.peMoveUp.Properties.AllowFocused = false;
             this.peMoveUp.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peMoveUp.Properties.Appearance.Options.UseBackColor = true;
             this.peMoveUp.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peMoveUp.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.peMoveUp.Size = new System.Drawing.Size(43, 30);
+            this.peMoveUp.Size = new System.Drawing.Size(43, 44);
             this.peMoveUp.TabIndex = 167;
             this.peMoveUp.Click += new System.EventHandler(this.peMoveUp_Click);
             // 
@@ -196,10 +213,8 @@
             this.groupBox1.Controls.Add(this.txtReview);
             this.groupBox1.Controls.Add(this.labelControl1);
             this.groupBox1.Location = new System.Drawing.Point(454, 1);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(532, 405);
+            this.groupBox1.Size = new System.Drawing.Size(532, 592);
             this.groupBox1.TabIndex = 161;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اطلاعات سند جدید";
@@ -207,8 +222,7 @@
             // cmbDocOwnerDep
             // 
             this.cmbDocOwnerDep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbDocOwnerDep.Location = new System.Drawing.Point(71, 16);
-            this.cmbDocOwnerDep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDocOwnerDep.Location = new System.Drawing.Point(71, 23);
             this.cmbDocOwnerDep.Name = "cmbDocOwnerDep";
             this.cmbDocOwnerDep.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.cmbDocOwnerDep.Properties.Appearance.Options.UseFont = true;
@@ -227,8 +241,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(434, 19);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl7.Location = new System.Drawing.Point(434, 28);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(91, 24);
             this.labelControl7.TabIndex = 166;
@@ -238,15 +251,14 @@
             // 
             this.peAddConfirmer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.peAddConfirmer.EditValue = ((object)(resources.GetObject("peAddConfirmer.EditValue")));
-            this.peAddConfirmer.Location = new System.Drawing.Point(20, 311);
-            this.peAddConfirmer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.peAddConfirmer.Location = new System.Drawing.Point(20, 455);
             this.peAddConfirmer.Name = "peAddConfirmer";
             this.peAddConfirmer.Properties.AllowFocused = false;
             this.peAddConfirmer.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peAddConfirmer.Properties.Appearance.Options.UseBackColor = true;
             this.peAddConfirmer.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peAddConfirmer.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.peAddConfirmer.Size = new System.Drawing.Size(43, 30);
+            this.peAddConfirmer.Size = new System.Drawing.Size(43, 44);
             this.peAddConfirmer.TabIndex = 162;
             this.peAddConfirmer.Click += new System.EventHandler(this.peAddConfirmer_Click);
             // 
@@ -254,22 +266,22 @@
             // 
             this.peAddAcceptor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.peAddAcceptor.EditValue = ((object)(resources.GetObject("peAddAcceptor.EditValue")));
-            this.peAddAcceptor.Location = new System.Drawing.Point(20, 346);
-            this.peAddAcceptor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.peAddAcceptor.Location = new System.Drawing.Point(20, 506);
             this.peAddAcceptor.Name = "peAddAcceptor";
             this.peAddAcceptor.Properties.AllowFocused = false;
             this.peAddAcceptor.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peAddAcceptor.Properties.Appearance.Options.UseBackColor = true;
             this.peAddAcceptor.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peAddAcceptor.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.peAddAcceptor.Size = new System.Drawing.Size(43, 30);
+            this.peAddAcceptor.Size = new System.Drawing.Size(43, 44);
             this.peAddAcceptor.TabIndex = 161;
             this.peAddAcceptor.Click += new System.EventHandler(this.peAddAcceptor_Click);
             // 
             // cmbDocs
             // 
             this.cmbDocs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbDocs.Location = new System.Drawing.Point(71, 47);
+            this.cmbDocs.Location = new System.Drawing.Point(71, 69);
+            this.cmbDocs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbDocs.Name = "cmbDocs";
             this.cmbDocs.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.cmbDocs.Properties.Appearance.Options.UseFont = true;
@@ -288,15 +300,14 @@
             // 
             this.peAddCreator.Cursor = System.Windows.Forms.Cursors.Hand;
             this.peAddCreator.EditValue = ((object)(resources.GetObject("peAddCreator.EditValue")));
-            this.peAddCreator.Location = new System.Drawing.Point(20, 277);
-            this.peAddCreator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.peAddCreator.Location = new System.Drawing.Point(20, 405);
             this.peAddCreator.Name = "peAddCreator";
             this.peAddCreator.Properties.AllowFocused = false;
             this.peAddCreator.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peAddCreator.Properties.Appearance.Options.UseBackColor = true;
             this.peAddCreator.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peAddCreator.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.peAddCreator.Size = new System.Drawing.Size(43, 30);
+            this.peAddCreator.Size = new System.Drawing.Size(43, 44);
             this.peAddCreator.TabIndex = 160;
             this.peAddCreator.Click += new System.EventHandler(this.peAddCreator_Click);
             // 
@@ -304,8 +315,7 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(428, 278);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl9.Location = new System.Drawing.Point(428, 406);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(73, 24);
             this.labelControl9.TabIndex = 135;
@@ -315,8 +325,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(428, 314);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl4.Location = new System.Drawing.Point(428, 459);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(76, 24);
             this.labelControl4.TabIndex = 11;
@@ -326,8 +335,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(428, 348);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Location = new System.Drawing.Point(428, 509);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(77, 24);
             this.labelControl3.TabIndex = 146;
@@ -336,7 +344,8 @@
             // cmbAcceptors
             // 
             this.cmbAcceptors.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbAcceptors.Location = new System.Drawing.Point(69, 347);
+            this.cmbAcceptors.Location = new System.Drawing.Point(69, 507);
+            this.cmbAcceptors.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbAcceptors.Name = "cmbAcceptors";
             this.cmbAcceptors.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.cmbAcceptors.Properties.Appearance.Options.UseFont = true;
@@ -354,8 +363,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(434, 49);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl6.Location = new System.Drawing.Point(434, 72);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(69, 24);
             this.labelControl6.TabIndex = 156;
@@ -364,7 +372,8 @@
             // cmbCreators
             // 
             this.cmbCreators.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbCreators.Location = new System.Drawing.Point(69, 278);
+            this.cmbCreators.Location = new System.Drawing.Point(69, 406);
+            this.cmbCreators.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCreators.Name = "cmbCreators";
             this.cmbCreators.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.cmbCreators.Properties.Appearance.Options.UseFont = true;
@@ -382,8 +391,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(434, 79);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl5.Location = new System.Drawing.Point(434, 115);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(65, 24);
             this.labelControl5.TabIndex = 154;
@@ -393,8 +401,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(432, 151);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Location = new System.Drawing.Point(432, 221);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(71, 24);
             this.labelControl2.TabIndex = 143;
@@ -404,7 +411,8 @@
             // 
             this.txtDocCode.EditValue = "";
             this.txtDocCode.Enabled = false;
-            this.txtDocCode.Location = new System.Drawing.Point(71, 78);
+            this.txtDocCode.Location = new System.Drawing.Point(71, 114);
+            this.txtDocCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDocCode.Name = "txtDocCode";
             this.txtDocCode.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocCode.Properties.Appearance.Options.UseFont = true;
@@ -421,7 +429,8 @@
             // cmbConfirmers
             // 
             this.cmbConfirmers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbConfirmers.Location = new System.Drawing.Point(69, 313);
+            this.cmbConfirmers.Location = new System.Drawing.Point(69, 457);
+            this.cmbConfirmers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbConfirmers.Name = "cmbConfirmers";
             this.cmbConfirmers.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.cmbConfirmers.Properties.Appearance.Options.UseFont = true;
@@ -438,7 +447,8 @@
             // txtReviewNo
             // 
             this.txtReviewNo.EditValue = "";
-            this.txtReviewNo.Location = new System.Drawing.Point(71, 109);
+            this.txtReviewNo.Location = new System.Drawing.Point(71, 159);
+            this.txtReviewNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtReviewNo.Name = "txtReviewNo";
             this.txtReviewNo.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReviewNo.Properties.Appearance.Options.UseFont = true;
@@ -455,13 +465,12 @@
             // txtReview
             // 
             this.txtReview.EditValue = "";
-            this.txtReview.Location = new System.Drawing.Point(69, 149);
-            this.txtReview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtReview.Location = new System.Drawing.Point(69, 218);
             this.txtReview.Name = "txtReview";
             this.txtReview.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.txtReview.Properties.Appearance.Options.UseFont = true;
             this.txtReview.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtReview.Size = new System.Drawing.Size(347, 114);
+            this.txtReview.Size = new System.Drawing.Size(347, 167);
             this.txtReview.TabIndex = 142;
             this.txtReview.Tag = "";
             // 
@@ -469,8 +478,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(434, 111);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Location = new System.Drawing.Point(434, 162);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(80, 24);
             this.labelControl1.TabIndex = 8;
@@ -484,28 +492,32 @@
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(59, 369);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnSave.Location = new System.Drawing.Point(59, 539);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(388, 37);
+            this.btnSave.Size = new System.Drawing.Size(388, 54);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "ثبت ";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // gridUsers
             // 
-            this.gridUsers.Location = new System.Drawing.Point(59, 8);
+            this.gridUsers.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridUsers.Location = new System.Drawing.Point(59, 12);
             this.gridUsers.MainView = this.grdUsers;
+            this.gridUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridUsers.Name = "gridUsers";
-            this.gridUsers.Size = new System.Drawing.Size(388, 356);
+            this.gridUsers.Size = new System.Drawing.Size(388, 520);
             this.gridUsers.TabIndex = 148;
             this.gridUsers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdUsers});
             // 
             // grdUsers
             // 
+            this.grdUsers.DetailHeight = 512;
             this.grdUsers.GridControl = this.gridUsers;
             this.grdUsers.Name = "grdUsers";
+            this.grdUsers.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdUsers_FocusedRowChanged);
             // 
             // toastNotificationsManager1
             // 
@@ -515,12 +527,11 @@
             // 
             // FrmConfirmNewDoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 429);
+            this.ClientSize = new System.Drawing.Size(1000, 627);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.progressBar);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmConfirmNewDoc";
@@ -531,6 +542,7 @@
             this.Load += new System.EventHandler(this.FrmConfirmNewDoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panel)).EndInit();
             this.panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.peAddSignature.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peDeleteSignerPerson.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peMoveDown.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peMoveUp.Properties)).EndInit();
@@ -586,5 +598,6 @@
         private DevExpress.XtraEditors.PictureEdit peMoveUp;
         private DevExpress.XtraEditors.PictureEdit peDeleteSignerPerson;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
+        private DevExpress.XtraEditors.PictureEdit peAddSignature;
     }
 }

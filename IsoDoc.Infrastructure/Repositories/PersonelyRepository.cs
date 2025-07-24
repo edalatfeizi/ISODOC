@@ -21,7 +21,18 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<Colleague>> GetAllEmployees()
         {
-            const string query = @"SELECT PersonCode, FirstName + ' ' + LastName as Name, Posttxt as Post  FROM Personely.dbo.Vw_AllPersonWithDepartName";
+            const string query = @"SELECT 
+                    p.PersonCode, 
+                    p.FirstName + ' ' + p.LastName as Name, 
+                    p.Posttxt as Post,
+                    CASE 
+                        WHEN s.PersonCode IS NOT NULL AND s.IsActive = 'true' THEN 'دارد'
+                        ELSE 'ندارد'
+                    END as HasSignature
+                        FROM 
+                            Personely.dbo.Vw_AllPersonWithDepartName p
+                        LEFT JOIN 
+                    Personely.dbo.tbHR_PersonSignatures s ON p.PersonCode = s.PersonCode AND s.IsActive = 'true'";
 
             return (List<Colleague>) await connection.QueryAsync<Colleague>(query);
         }

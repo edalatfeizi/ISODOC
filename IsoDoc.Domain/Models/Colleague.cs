@@ -33,5 +33,9 @@ namespace IsoDoc.Domain.Models
         [Browsable(false)]
         public string CodeEdare { get; set; }
 
+        [Display(Name = "امضاء", Order = 4)]
+        [Editable(false)]
+        public string HasSignature { get; set; }
+
     }
 }

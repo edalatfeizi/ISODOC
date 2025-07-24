@@ -345,4 +345,7 @@
   <data name="TimeLine" xml:space="preserve">
     <value>تایم لاین</value>
   </data>
+  <data name="SignerType" xml:space="preserve">
+    <value>نوع امضاء کننده</value>
+  </data>
 </root>

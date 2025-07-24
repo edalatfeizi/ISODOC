@@ -9,6 +9,9 @@ namespace IsoDoc.Domain.Dtos.Res
         [Browsable(false)]
         public string DocOwnerDepCode { get; set; }
 
+        [Browsable(false)]
+        public int DocReqId { get; set; }
+
         [Display(Name = "عنوان سند", Order = 2)]
         [Editable(false)]
         public string DocTitle { get; set; }

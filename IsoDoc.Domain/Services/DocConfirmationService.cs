@@ -26,7 +26,7 @@ namespace IsoDoc.Domain.Services
 
         public async Task<DocSigner> AddNewDocSignersAsync(NewDocSignerDto dto)
         {
-            var newDocSigner = await docConfirmationRepo.AddNewDocSigner(dto.NewDocConfirmationId,dto.PersonCode,dto.Name,dto.Post,dto.SignerType,dto.SigningOrder,dto.IsSigned, dto.CreatorUserPersonCode, dto.Active);
+            var newDocSigner = await docConfirmationRepo.AddNewDocSigner(dto.NewDocConfirmationId,dto.PersonCode,dto.Name,dto.Post,dto.SignerType,dto.SigningOrder,dto.IsSigned, dto.CreatorUserPersonCode, dto.SignRequestSentDate, dto.Active);
 
             return newDocSigner;
         }

@@ -163,7 +163,7 @@ namespace IsoDocApp.ManageDocRequests
                 var docConfirm = docConfirms.Where(x => x.Id == docConfirmId).FirstOrDefault();
 
 
-                await GetDocConfirmSigners(docConfirmId);
+                //await GetDocConfirmSigners(docConfirmId);
                 //var attachment = GridViewHelper.GetGridViewCellValue(gridView1, "HasAttachments");
                 //var hasAttachments = attachment != null ? attachment.ToString() : null;
                 //if (!string.IsNullOrEmpty(hasAttachments) && hasAttachments.ToString() == "دارد")

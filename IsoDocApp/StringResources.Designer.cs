@@ -655,6 +655,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نوع امضاء کننده.
+        /// </summary>
+        internal static string SignerType {
+            get {
+                return ResourceManager.GetString("SignerType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to زمان ثبت امضاء.
         /// </summary>
         internal static string SigningDate {

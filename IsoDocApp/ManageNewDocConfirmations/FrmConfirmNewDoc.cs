@@ -10,6 +10,7 @@ using IsoDoc.Domain.Models;
 using IsoDoc.Domain.Services;
 using IsoDocApp.Extensions;
 using IsoDocApp.Helpers;
+using IsoDocApp.ManageNewDocConfirmations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -175,6 +176,7 @@ namespace IsoDocApp.ManageDocRequests
                                     Post = signerColleague.Post,
                                     SigningOrder = signerColleagues.IndexOf(signerColleague),
                                     IsSigned = false,
+                                    SignRequestSentDate = signerColleagues.IndexOf(signerColleague) == 0 ? DateTime.Now.ToPersianDateTime() : null,
                                     CreatorUserPersonCode = userPersonCode
                                 };
 
@@ -194,14 +196,16 @@ namespace IsoDocApp.ManageDocRequests
                            
 
                                 await docConfirmationService.AddNewDocSignersAsync(newDocSigner);
-                                var signerUserInfo = await personelyService.GetUserInfoByPersonCode(signerColleague.PersonCode);
-                                smsClient.SendSMS(signerUserInfo.Mobile, $"{StringResources.NewSignDocReqSent} \n {StringResources.IKID}");
+                         
 
 
                             }
 
+                            var signerUserInfo = await personelyService.GetUserInfoByPersonCode(signerColleagues[0].PersonCode);
+                            smsClient.SendSMS(signerUserInfo.Mobile, $"{StringResources.NewSignDocReqSent} \n {StringResources.IKID}");
 
                             toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
+
                             ShowProgressBar(false);
                             DialogResult = DialogResult.OK;
                             this.Close();
@@ -334,6 +338,7 @@ namespace IsoDocApp.ManageDocRequests
                         CardNumber = selectedColleague.CardNumber,
                         Name = selectedColleague.Name,
                         Post = selectedColleague.Post,
+                        HasSignature = selectedColleague.HasSignature,
                         Mobile = selectedColleague.Mobile,
                         PostTypeID = selectedColleague.PostTypeID,
                         UpperCode = selectedColleague.UpperCode,
@@ -357,6 +362,7 @@ namespace IsoDocApp.ManageDocRequests
                     //signerColleagues.Sort();
                     //signerColleagues = orderedList;
                     gridUsers.RefreshDataSource();
+              
                     //gridUsers.Refresh();
                     CheckToToggleMoveAndDeleteButtonsState();
                 }
@@ -437,6 +443,24 @@ namespace IsoDocApp.ManageDocRequests
                     break;
             }
 
+        }
+
+        private void grdUsers_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            var signature = GridViewHelper.GetGridViewCellValue(grdUsers, "HasSignature");
+            var hasSignature = signature != null ? signature.ToString() : null;
+            if (!string.IsNullOrEmpty(hasSignature) && hasSignature.ToString() == "دارد")
+                peAddSignature.Enabled = false;
+            else
+                peAddSignature.Enabled = true;
+        }
+
+        private void peAddSignature_Click(object sender, EventArgs e)
+        {
+            var personCode = GridViewHelper.GetGridViewCellValue(grdUsers, "PersonCode").ToString();
+
+            var frmNewDocReq = new FrmAddUserSignature(personelyService, personCode);
+            var result = frmNewDocReq.ShowDialog();
         }
     }
 }

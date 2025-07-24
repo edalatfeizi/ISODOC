@@ -109,15 +109,15 @@ namespace IsoDocApp
                     {
                         // Create a new StepItem for each task
                         StepProgressBarItem stepItem = new StepProgressBarItem();
-                        stepItem.ContentBlock2.Caption = $"{signer.Name} - {signer.Post} \n {signer.SignerType}";
+                        stepItem.ContentBlock2.Caption = $"{signer.Name} - {signer.Post}";
                         if(signer.IsSigned && signer.Active)
-                            stepItem.ContentBlock2.Description =  $"{StringResources.Status} {StringResources.Signed} \n {StringResources.SigningDate}: {signer.SigningDate.FormatPersianDate()}";
+                            stepItem.ContentBlock2.Description =  $"{StringResources.SignerType}: {signer.SignerType} \n {StringResources.Status} {StringResources.Signed} \n {StringResources.SigningDate}: {signer.SigningDate.FormatPersianDate()}";
                         else if(signer.Active && !signer.IsSigned)
                         {
-                            stepItem.ContentBlock2.Description = $"{StringResources.Status} {StringResources.SignRequestSent} \n {StringResources.SignRequestSentDate}: {signer.SignRequestSentDate.FormatPersianDate()}";
+                            stepItem.ContentBlock2.Description = $"{StringResources.SignerType}: {signer.SignerType} \n {StringResources.Status} {StringResources.SignRequestSent} \n {StringResources.SignRequestSentDate}: {signer.SignRequestSentDate.FormatPersianDate()}";
                         }else if(!signer.Active && !signer.IsSigned)
                         {
-                            stepItem.ContentBlock2.Description = $"{StringResources.Status} {StringResources.SignRequestNotSent}";
+                            stepItem.ContentBlock2.Description = $"{StringResources.SignerType}: {signer.SignerType} \n{StringResources.Status} {StringResources.SignRequestNotSent}";
 
                         }
                         stepItem.State = signer.IsSigned ? StepProgressBarItemState.Active : StepProgressBarItemState.Inactive;
