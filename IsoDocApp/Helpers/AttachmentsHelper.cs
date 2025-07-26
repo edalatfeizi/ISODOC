@@ -12,13 +12,13 @@ namespace IsoDocApp.Helpers
 {
     public static class AttachmentsHelper
     {
-        public static DocRequestAttachment AttachFile()
+        public static FileAttachment AttachFile(string filterFileTypes)
         {
             try
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    openFileDialog.Filter = "Word Files|*.docx;*.doc|Excel Files|*.xlsx;*.xls|PDF Files|*.pdf";
+                    openFileDialog.Filter = filterFileTypes;
                     openFileDialog.Title = StringResources.SelectAttachment;
 
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -28,14 +28,14 @@ namespace IsoDocApp.Helpers
                         string fileExtension = Path.GetExtension(filePath);
 
 
-                        var docReqAttachment = new DocRequestAttachment
+                        var fileAttachment = new FileAttachment
                         {
                             Name = openFileDialog.SafeFileName,
                             ContentType = fileExtension,
                             Size = file.Length,
                             FileContent = file
                         };
-                        return docReqAttachment;
+                        return fileAttachment;
                     }
                     else
                         return null;
@@ -72,5 +72,6 @@ namespace IsoDocApp.Helpers
             return null;
 
         }
+
     }
 }

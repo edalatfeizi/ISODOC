@@ -150,7 +150,7 @@ namespace IsoDocApp.ManageDocRequests
         }
         private void AttachFile()
         {
-            docReqAttachment = AttachmentsHelper.AttachFile();
+            docReqAttachment = AttachmentsHelper.AttachFile(Constants.DocReqAttachmentFileTypes).MapToDocRequestAttachment(0);
             if (docReqAttachment != null)
             {
                 btnFileName.Visible = true;

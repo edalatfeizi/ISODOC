@@ -804,13 +804,13 @@
             this.btnConfirm.Appearance.Options.UseFont = true;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.Enabled = false;
-            this.btnConfirm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.ImageOptions.Image")));
+            this.btnConfirm.ImageOptions.Image = global::IsoDocApp.Properties.Resources.signature;
             this.btnConfirm.Location = new System.Drawing.Point(194, 15);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(160, 66);
             this.btnConfirm.TabIndex = 27;
-            this.btnConfirm.Text = "تایید سند";
+            this.btnConfirm.Text = "امضاء سند";
             // 
             // btnPrintConfirmationDoc
             // 

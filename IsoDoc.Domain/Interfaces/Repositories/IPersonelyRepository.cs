@@ -1,8 +1,6 @@
-﻿using IsoDoc.Domain.Models;
-using System;
+﻿using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace IsoDoc.Domain.Interfaces.Repositories
@@ -17,6 +15,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         //Task<Person?> GetUserManager(string userManagerDepCode);
         Task<List<Department>> GetDepartments();
         Task<List<Colleague>> GetUnSupervisedBosses();
+        Task<PersonSignature> SavePersonSignature(PersonSignature personSignature);
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using IsoDoc.Domain.Interfaces.Repositories;
+﻿using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace IsoDoc.Domain.Services
         {
             personelyRepo = personelyRepository;
         }
+
+      
 
         public async Task<List<Colleague>> GetAllEmployees()
         {
@@ -48,6 +51,11 @@ namespace IsoDoc.Domain.Services
         public async Task<string> GetUserPersonCodeByLoginName(string loginName)
         {
             return await personelyRepo.GetUserPersonCodeByLoginName(loginName);
+        }
+
+        public async Task<PersonSignature> SavePersonSignature(PersonSignature personSignature)
+        {
+            return await personelyRepo.SavePersonSignature(personSignature);
         }
 
         //public async Task<Person?> GetUserManager(string userManagerDepCode)

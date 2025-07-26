@@ -533,7 +533,9 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.progressBar);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1002, 659);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1002, 659);
             this.Name = "FrmConfirmNewDoc";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ShowInTaskbar = false;

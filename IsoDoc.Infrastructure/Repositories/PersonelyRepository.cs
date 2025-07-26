@@ -26,13 +26,13 @@ namespace IsoDoc.Infrastructure.Repositories
                     p.FirstName + ' ' + p.LastName as Name, 
                     p.Posttxt as Post,
                     CASE 
-                        WHEN s.PersonCode IS NOT NULL AND s.IsActive = 'true' THEN 'دارد'
+                        WHEN s.PersonCode IS NOT NULL AND s.Active = 'true' THEN 'دارد'
                         ELSE 'ندارد'
                     END as HasSignature
                         FROM 
                             Personely.dbo.Vw_AllPersonWithDepartName p
                         LEFT JOIN 
-                    Personely.dbo.tbHR_PersonSignatures s ON p.PersonCode = s.PersonCode AND s.IsActive = 'true'";
+                    Personely.dbo.tbHR_PersonSignatures s ON p.PersonCode = s.PersonCode AND s.Active = 'true'";
 
             return (List<Colleague>) await connection.QueryAsync<Colleague>(query);
         }
@@ -139,6 +139,41 @@ namespace IsoDoc.Infrastructure.Repositories
 
                 return await connection.QueryFirstOrDefaultAsync<string>(query, new { LoginName = loginName });
 
+        }
+
+        public async Task<PersonSignature> SavePersonSignature(PersonSignature personSignature)
+        {
+            var newSignatureQuery = @"
+                    INSERT INTO Personely.dbo.tbHR_PersonSignatures (
+                        PersonCode,
+                        Name,
+                        ContentType,
+                        FileContent,
+                        Size,
+                        CreatedBy, 
+                        ModifiedBy, 
+                        CreatedAt, 
+                        ModifiedAt,
+                        Active
+                    )
+                    OUTPUT INSERTED.Id
+                    VALUES (
+                        @PersonCode,
+                        @Name,
+                        @ContentType,
+                        @FileContent,
+                        @Size,
+                        @CreatedBy, 
+                        @ModifiedBy, 
+                        @CreatedAt, 
+                        @ModifiedAt,
+                        @Active
+                    );";
+
+
+            var newSignatureId = await connection.QuerySingleAsync<int>(newSignatureQuery, personSignature);
+            personSignature.Id = newSignatureId;
+            return personSignature;
         }
     }
 

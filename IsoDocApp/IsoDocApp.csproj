@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Extensions\FileAttachmentExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\AttachmentsHelper.cs" />
     <Compile Include="Helpers\DocConfirmationsHelper.cs" />
@@ -159,6 +160,9 @@
     </Compile>
     <EmbeddedResource Include="FrmMessageBox.resx">
       <DependentUpon>FrmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageNewDocConfirmations\FrmAddUserSignature.resx">
+      <DependentUpon>FrmAddUserSignature.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageNewDocConfirmations\FrmConfirmNewDoc.fa-IR.resx">
       <DependentUpon>FrmConfirmNewDoc.cs</DependentUpon>
@@ -250,6 +254,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\handwritten-signature.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signature %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Businessman signing contract.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Businessmansigningcontract.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Businessman signing contract1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
