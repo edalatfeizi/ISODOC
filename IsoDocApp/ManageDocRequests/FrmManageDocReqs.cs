@@ -572,7 +572,7 @@ namespace IsoDocApp
             if (selectedPage.Name == tabReceivedRequests.Name && userDocReqs.Count > 0)
             {
                 var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                var docReqAttachment =  AttachmentsHelper.AttachFile(Constants.DocReqAttachmentFileTypes).MapToDocRequestAttachment(docReqId);
+                var docReqAttachment =  AttachmentsHelper.AttachFile(Constants.DocReqAttachmentFileTypes, false)?.MapToDocRequestAttachment(docReqId);
                 if (docReqAttachment != null)
                 {
                     docReqAttachment.DocRequestId = docReqId;

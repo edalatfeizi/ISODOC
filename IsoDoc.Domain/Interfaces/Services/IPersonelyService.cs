@@ -16,6 +16,8 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<List<Colleague>> GetUserColleagues(string userDepCode = null, string userManagerDepCode = null, bool adminOnly = false, bool sysOfficeOnly = false);
         Task<List<Colleague>> GetUnSupervisedBosses();
         Task<PersonSignature> SavePersonSignature(PersonSignature personSignature);
+        Task<PersonSignature> GetPersonSignature(string personCode);
+        Task<bool> DeletePersonSignature(string personCode);
 
 
         // Task<Person?> GetUserManager(string userManagerDepCode);

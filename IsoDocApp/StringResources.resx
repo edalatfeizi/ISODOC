@@ -211,7 +211,7 @@
     <value>لطفا شماره ویرایش یا بازنگری را وارد نمایید.</value>
   </data>
   <data name="ErrorAttachFile" xml:space="preserve">
-    <value>لطفا سند مورد نظر خود را پیوست کنید.</value>
+    <value>لطفا فایل مورد نظر خود را پیوست کنید.</value>
   </data>
   <data name="ErrorEnterEditOrReviewNo" xml:space="preserve">
     <value>خالی بودن شماره ویرایش/بازنگری</value>
@@ -347,5 +347,8 @@
   </data>
   <data name="SignerType" xml:space="preserve">
     <value>نوع امضاء کننده</value>
+  </data>
+  <data name="ErrorFileSizeLimit300K" xml:space="preserve">
+    <value>حجم فایل انتخاب شده نباید بیشتر از 300 کیلوبایت باشد.</value>
   </data>
 </root>

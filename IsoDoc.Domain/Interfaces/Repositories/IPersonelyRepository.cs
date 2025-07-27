@@ -16,6 +16,8 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         Task<List<Department>> GetDepartments();
         Task<List<Colleague>> GetUnSupervisedBosses();
         Task<PersonSignature> SavePersonSignature(PersonSignature personSignature);
+        Task<PersonSignature> GetPersonSignature(string personCode);
 
+        Task<bool> DeletePersonSignature(string personCode);
     }
 }

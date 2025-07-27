@@ -12,7 +12,7 @@ namespace IsoDocApp.Helpers
 {
     public static class AttachmentsHelper
     {
-        public static FileAttachment AttachFile(string filterFileTypes)
+        public static FileAttachment AttachFile(string filterFileTypes, bool isSignatureAttachment)
         {
             try
             {
@@ -35,7 +35,10 @@ namespace IsoDocApp.Helpers
                             Size = file.Length,
                             FileContent = file
                         };
-                        return fileAttachment;
+                        if (isSignatureAttachment && (fileAttachment.Size / 1024) > 300)
+                            throw new Exception(StringResources.ErrorFileSizeLimit300K);
+                        else
+                            return fileAttachment;
                     }
                     else
                         return null;

@@ -49,6 +49,7 @@ namespace IsoDoc.Infrastructure.Repositories
             return departments.ToList();
         }
 
+
         public async Task<List<Colleague>> GetUnSupervisedBosses()
         {
             const string query = @"
@@ -174,6 +175,22 @@ namespace IsoDoc.Infrastructure.Repositories
             var newSignatureId = await connection.QuerySingleAsync<int>(newSignatureQuery, personSignature);
             personSignature.Id = newSignatureId;
             return personSignature;
+        }
+
+        public async Task<PersonSignature> GetPersonSignature(string personCode)
+        {
+            var query = @"SELECT * FROM Personely.dbo.tbHR_PersonSignatures where PersonCode = @PersonCode and Active='true'";
+
+            return await connection.QueryFirstOrDefaultAsync<PersonSignature>(query, new { PersonCode = personCode });
+        }
+        public async Task<bool> DeletePersonSignature(string personCode)
+        {
+            var query = @"UPDATE Personely.dbo.tbHR_PersonSignatures 
+                  SET Active = 'false' 
+                  WHERE PersonCode = @PersonCode AND Active = 'true'";
+
+            int rowsAffected = await connection.ExecuteAsync(query, new { PersonCode = personCode });
+            return rowsAffected > 0;
         }
     }
 

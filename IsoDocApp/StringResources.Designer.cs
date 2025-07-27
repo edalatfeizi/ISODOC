@@ -385,7 +385,7 @@ namespace IsoDocApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to لطفا سند مورد نظر خود را پیوست کنید..
+        ///   Looks up a localized string similar to لطفا فایل مورد نظر خود را پیوست کنید..
         /// </summary>
         internal static string ErrorAttachFile {
             get {
@@ -399,6 +399,15 @@ namespace IsoDocApp {
         internal static string ErrorEnterEditOrReviewNo {
             get {
                 return ResourceManager.GetString("ErrorEnterEditOrReviewNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حجم فایل انتخاب شده نباید بیشتر از 300 کیلوبایت باشد..
+        /// </summary>
+        internal static string ErrorFileSizeLimit300K {
+            get {
+                return ResourceManager.GetString("ErrorFileSizeLimit300K", resourceCulture);
             }
         }
         

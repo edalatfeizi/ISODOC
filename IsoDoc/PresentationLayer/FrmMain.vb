@@ -778,8 +778,8 @@ Public Class FrmMain
         RibbonBarManager.CloseMenus()
     End Sub
 
-    Private Sub btnManageNewDocConfirms_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btnManageNewDocConfirms.ItemClick
-        MdlMain.frmManageNewDocConfirmations.ShowDialog()
+    Private Sub btnManageNewDocConfirms_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btnManageSignatures.ItemClick
+        MdlMain.frmManageSignatures.ShowDialog()
 
     End Sub
 End Class

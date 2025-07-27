@@ -19,7 +19,6 @@ Partial Class FrmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btnShowDepDocs = New DevExpress.XtraBars.BarButtonItem()
@@ -95,7 +94,7 @@ Partial Class FrmMain
         Me.btnAbout = New DevExpress.XtraBars.BarButtonItem()
         Me.btnAddKnowledgeBaseData = New DevExpress.XtraBars.BarButtonItem()
         Me.btnShowKnowledgeBase = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnManageNewDocConfirms = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnManageSignatures = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup11 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.btnManageNewDocConfirmations = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -122,7 +121,7 @@ Partial Class FrmMain
         Me.rpReportBug = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
-        Me.GalleryDropDown1 = New DevExpress.XtraBars.Ribbon.GalleryDropDown(Me.components)
+        Me.GalleryDropDown1 = New DevExpress.XtraBars.Ribbon.GalleryDropDown()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,17 +131,16 @@ Partial Class FrmMain
         '
         'RibbonControl
         '
-        Me.RibbonControl.EmptyAreaImageOptions.ImagePadding = New System.Windows.Forms.Padding(30, 21, 30, 21)
+        Me.RibbonControl.EmptyAreaImageOptions.ImagePadding = New System.Windows.Forms.Padding(30, 31, 30, 31)
         Me.RibbonControl.ExpandCollapseItem.Id = 0
         Me.RibbonControl.Font = New System.Drawing.Font("Vazirmatn SemiBold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.RibbonControl.SearchEditItem, Me.btnShowDepDocs, Me.BarSubItem1, Me.mnuFormDocs, Me.mnuChartDocs, Me.mnuDutyDesc, Me.btnExecutiveMethods, Me.mnuInstructions, Me.mnuFMEARisks, Me.mnuProcessMap, Me.mnuProcessIdentity, Me.mnuControlPlan, Me.mnuFlowChart, Me.mnuProcessDesc, Me.mnuStandardsUnification, Me.mnuSoftwareIdentity, Me.mnuTable, Me.mnuProductDevDocs, Me.btnImportantDocs, Me.btnStandardCerts, Me.btnStrategicPlans, Me.BarSubItem18, Me.mnuTechnicalDocs, Me.mnuBooks, Me.mnuCatalogs, Me.mnuStandard, Me.mnuSoftware, Me.mnuReports, Me.mnuGallery, Me.mnuPanelMap, Me.mnuCadData, Me.mnuOperationSheets, Me.mnuDLMap, Me.mnuTemplateMap, Me.mnuCadPrograms, Me.mnuCamPrograms, Me.mnuPGMap, Me.mnuCutCard, Me.mnuPressCard, Me.mnuSparParts, Me.mnuPackagingPlan, Me.mnuPaletMap, Me.mnuSurveyPlan, Me.mnuContracts, Me.mnuSQADocs, Me.btnOutDocs, Me.btnOtherDocs, Me.btnShowKartable, Me.btnBaseInfo, Me.btnMainDocs, Me.btnOutsideDocs, Me.BarSubItem41, Me.mnuImportantDocs, Me.mnuCertificates, Me.mnuStrategicConcepts, Me.btnSystemDocs, Me.btnCumulativeDocsReport, Me.btnDocsCountChart, Me.btnDepsDocsCountChart, Me.btnQAReports, Me.btnWishList, Me.btnSearch, Me.btnAppHelp, Me.btnAuditCalendar, Me.btnArchive, Me.btnChangeDocsDep, Me.btnAddLinks, Me.mnuRegulations, Me.mnuPostIdentity, Me.btnTrack, Me.btnPrintableForms, Me.btnAbout, Me.btnAddKnowledgeBaseData, Me.btnShowKnowledgeBase, Me.btnManageNewDocConfirms})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.RibbonControl.SearchEditItem, Me.btnShowDepDocs, Me.BarSubItem1, Me.mnuFormDocs, Me.mnuChartDocs, Me.mnuDutyDesc, Me.btnExecutiveMethods, Me.mnuInstructions, Me.mnuFMEARisks, Me.mnuProcessMap, Me.mnuProcessIdentity, Me.mnuControlPlan, Me.mnuFlowChart, Me.mnuProcessDesc, Me.mnuStandardsUnification, Me.mnuSoftwareIdentity, Me.mnuTable, Me.mnuProductDevDocs, Me.btnImportantDocs, Me.btnStandardCerts, Me.btnStrategicPlans, Me.BarSubItem18, Me.mnuTechnicalDocs, Me.mnuBooks, Me.mnuCatalogs, Me.mnuStandard, Me.mnuSoftware, Me.mnuReports, Me.mnuGallery, Me.mnuPanelMap, Me.mnuCadData, Me.mnuOperationSheets, Me.mnuDLMap, Me.mnuTemplateMap, Me.mnuCadPrograms, Me.mnuCamPrograms, Me.mnuPGMap, Me.mnuCutCard, Me.mnuPressCard, Me.mnuSparParts, Me.mnuPackagingPlan, Me.mnuPaletMap, Me.mnuSurveyPlan, Me.mnuContracts, Me.mnuSQADocs, Me.btnOutDocs, Me.btnOtherDocs, Me.btnShowKartable, Me.btnBaseInfo, Me.btnMainDocs, Me.btnOutsideDocs, Me.BarSubItem41, Me.mnuImportantDocs, Me.mnuCertificates, Me.mnuStrategicConcepts, Me.btnSystemDocs, Me.btnCumulativeDocsReport, Me.btnDocsCountChart, Me.btnDepsDocsCountChart, Me.btnQAReports, Me.btnWishList, Me.btnSearch, Me.btnAppHelp, Me.btnAuditCalendar, Me.btnArchive, Me.btnChangeDocsDep, Me.btnAddLinks, Me.mnuRegulations, Me.mnuPostIdentity, Me.btnTrack, Me.btnPrintableForms, Me.btnAbout, Me.btnAddKnowledgeBaseData, Me.btnShowKnowledgeBase, Me.btnManageSignatures})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RibbonControl.MaxItemId = 86
+        Me.RibbonControl.MaxItemId = 87
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.tabEnterData, Me.RibbonPage3, Me.RibbonPage4, Me.rpKnowledgeBase, Me.RibbonPage5, Me.RibbonPage6, Me.rpAuditCalendar, Me.rpReportBug})
         Me.RibbonControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.RibbonControl.Size = New System.Drawing.Size(1443, 177)
+        Me.RibbonControl.Size = New System.Drawing.Size(1443, 191)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'btnShowDepDocs
@@ -859,13 +857,13 @@ Partial Class FrmMain
         Me.btnShowKnowledgeBase.ImageOptions.SvgImage = CType(resources.GetObject("btnShowKnowledgeBase.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btnShowKnowledgeBase.Name = "btnShowKnowledgeBase"
         '
-        'btnManageNewDocConfirms
+        'btnManageSignatures
         '
-        Me.btnManageNewDocConfirms.Caption = " تایید اسناد جدید"
-        Me.btnManageNewDocConfirms.Id = 85
-        Me.btnManageNewDocConfirms.ImageOptions.Image = CType(resources.GetObject("btnManageNewDocConfirms.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnManageNewDocConfirms.ImageOptions.LargeImage = CType(resources.GetObject("btnManageNewDocConfirms.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.btnManageNewDocConfirms.Name = "btnManageNewDocConfirms"
+        Me.btnManageSignatures.Caption = "مدیریت امضاء پرسنل"
+        Me.btnManageSignatures.Id = 85
+        Me.btnManageSignatures.ImageOptions.Image = CType(resources.GetObject("btnManageNewDocConfirms.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnManageSignatures.ImageOptions.LargeImage = CType(resources.GetObject("btnManageNewDocConfirms.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnManageSignatures.Name = "btnManageSignatures"
         '
         'RibbonPage1
         '
@@ -884,7 +882,7 @@ Partial Class FrmMain
         'btnManageNewDocConfirmations
         '
         Me.btnManageNewDocConfirmations.ImageOptions.Image = CType(resources.GetObject("btnManageNewDocConfirmations.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnManageNewDocConfirmations.ItemLinks.Add(Me.btnManageNewDocConfirms)
+        Me.btnManageNewDocConfirmations.ItemLinks.Add(Me.btnManageSignatures)
         Me.btnManageNewDocConfirmations.Name = "btnManageNewDocConfirmations"
         '
         'tabEnterData
@@ -1050,22 +1048,20 @@ Partial Class FrmMain
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 584)
-        Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 863)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(1443, 24)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(1443, 26)
         '
         'PictureEdit1
         '
         Me.PictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureEdit1.EditValue = Global.IsoDoc.My.Resources.Resources.AdobeStock_551800135
-        Me.PictureEdit1.Location = New System.Drawing.Point(0, 177)
-        Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureEdit1.Location = New System.Drawing.Point(0, 191)
         Me.PictureEdit1.MenuManager = Me.RibbonControl
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
-        Me.PictureEdit1.Size = New System.Drawing.Size(1443, 407)
+        Me.PictureEdit1.Size = New System.Drawing.Size(1443, 672)
         Me.PictureEdit1.TabIndex = 2
         '
         'GalleryDropDown1
@@ -1080,7 +1076,8 @@ Partial Class FrmMain
         Me.LabelControl1.Appearance.Options.UseBackColor = True
         Me.LabelControl1.Appearance.Options.UseFont = True
         Me.LabelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LabelControl1.Location = New System.Drawing.Point(0, 562)
+        Me.LabelControl1.Location = New System.Drawing.Point(0, 841)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(157, 22)
         Me.LabelControl1.TabIndex = 5
@@ -1093,7 +1090,8 @@ Partial Class FrmMain
         Me.LabelControl2.Appearance.Options.UseBackColor = True
         Me.LabelControl2.Appearance.Options.UseFont = True
         Me.LabelControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LabelControl2.Location = New System.Drawing.Point(0, 540)
+        Me.LabelControl2.Location = New System.Drawing.Point(0, 819)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(74, 22)
         Me.LabelControl2.TabIndex = 6
@@ -1101,15 +1099,14 @@ Partial Class FrmMain
         '
         'FrmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1443, 608)
+        Me.ClientSize = New System.Drawing.Size(1443, 889)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.PictureEdit1)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FrmMain"
         Me.Ribbon = Me.RibbonControl
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -1227,6 +1224,6 @@ Partial Class FrmMain
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnManageNewDocConfirmations As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents btnManageNewDocConfirms As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnManageSignatures As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpReportBug As DevExpress.XtraBars.Ribbon.RibbonPage
 End Class

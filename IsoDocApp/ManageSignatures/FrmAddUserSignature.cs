@@ -5,6 +5,7 @@ using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
 using IsoDocApp.Extensions;
 using IsoDocApp.Helpers;
+using IsoDocApp.Properties;
 using System;
 using System.Drawing;
 using System.IO;
@@ -72,7 +73,7 @@ namespace IsoDocApp.ManageNewDocConfirmations
 
         private void AttachFile()
         {
-            personSignature = AttachmentsHelper.AttachFile(Constants.PersonSignatureFileTypes).MapToPersonSignature(personCode);
+            personSignature = AttachmentsHelper.AttachFile(Constants.PersonSignatureFileTypes, true)?.MapToPersonSignature(personCode);
             if (personSignature != null)
             {
                 btnFileName.Visible = true;
@@ -101,6 +102,7 @@ namespace IsoDocApp.ManageNewDocConfirmations
             {
                 personSignature = null;
                 btnFileName.Visible = false;
+                pictureEdit1.Image = Resources.Businessman_signing_contract1;
                 ToggleAttachFileButtonView("attachment", StringResources.AttachFile);
 
             }

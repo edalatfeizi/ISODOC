@@ -20,6 +20,7 @@ Imports IsoDoc.Domain.Services
 Imports IsoDoc.Infrastructure.Repositories
 Imports IKIDMagfaSMSClientWin
 Imports IsoDocApp.ManageDocRequests
+Imports IsoDocApp.ManageSignatures
 
 Public Class FrmUserMessage
     Private Bus_UserMessage1 As New Bus_UserMessage
@@ -103,7 +104,7 @@ Public Class FrmUserMessage
         Dim serviceProvider As IServiceProvider = services.BuildServiceProvider()
         MdlMain.frmManageDocReqs = serviceProvider.GetRequiredService(Of FrmManageDocReqs)()
         MdlMain.frmSearchDocs = serviceProvider.GetRequiredService(Of FrmSearchDocs)()
-        MdlMain.frmManageNewDocConfirmations = serviceProvider.GetRequiredService(Of FrmManageNewDocConfirmations)()
+        MdlMain.frmManageSignatures = serviceProvider.GetRequiredService(Of FrmManageSignatures)()
         'End configure DI
 
         My.Settings.Archive_NewConnectionString = MdlMain.CnnStringArchiveNew
@@ -136,7 +137,7 @@ Public Class FrmUserMessage
         services.AddSingleton(Of IDocConfirmationService, DocConfirmationService)()
         services.AddSingleton(Of FrmManageDocReqs)()
         services.AddSingleton(Of FrmSearchDocs)()
-        services.AddSingleton(Of FrmManageNewDocConfirmations)()
+        services.AddSingleton(Of FrmManageSignatures)()
     End Sub
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         PicShow.Visible = True

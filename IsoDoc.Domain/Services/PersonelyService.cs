@@ -27,6 +27,8 @@ namespace IsoDoc.Domain.Services
             return await personelyRepo.GetDepartments();
         }
 
+   
+
         public async Task<List<Colleague>> GetUnSupervisedBosses()
         {
             return await personelyRepo.GetUnSupervisedBosses();
@@ -57,7 +59,17 @@ namespace IsoDoc.Domain.Services
         {
             return await personelyRepo.SavePersonSignature(personSignature);
         }
+        public async Task<PersonSignature> GetPersonSignature(string personCode)
+        {
+            return await personelyRepo.GetPersonSignature(personCode);
 
+        }
+
+        public async Task<bool> DeletePersonSignature(string personCode)
+        {
+            return await personelyRepo.DeletePersonSignature(personCode);
+
+        }
         //public async Task<Person?> GetUserManager(string userManagerDepCode)
         //{
         //    return await personelyRepo.GetUserManager(userManagerDepCode);

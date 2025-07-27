@@ -1,9 +1,10 @@
 Imports IsoDocApp
 Imports IsoDocApp.ManageDocRequests
+Imports IsoDocApp.ManageSignatures
 
 Module MdlMain
     Public frmManageDocReqs As FrmManageDocReqs
-    Public frmManageNewDocConfirmations As FrmManageNewDocConfirmations
+    Public frmManageSignatures As FrmManageSignatures
     Public frmSearchDocs As FrmSearchDocs
 
     Public dt As New DataTable

@@ -164,7 +164,9 @@
             this.ClientSize = new System.Drawing.Size(583, 634);
             this.Controls.Add(this.panelControl1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(585, 666);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(585, 666);
             this.Name = "FrmAddUserSignature";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "آپلود تصویر امضاء";
