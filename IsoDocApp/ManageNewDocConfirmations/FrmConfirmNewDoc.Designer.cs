@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfirmNewDoc));
             this.progressBar = new DevExpress.XtraWaitForm.ProgressPanel();
             this.panel = new DevExpress.XtraEditors.PanelControl();
-            this.peAddSignature = new DevExpress.XtraEditors.PictureEdit();
             this.peDeleteSignerPerson = new DevExpress.XtraEditors.PictureEdit();
             this.peMoveDown = new DevExpress.XtraEditors.PictureEdit();
             this.peMoveUp = new DevExpress.XtraEditors.PictureEdit();
@@ -60,9 +59,12 @@
             this.gridUsers = new DevExpress.XtraGrid.GridControl();
             this.grdUsers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuShowSignature = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAddSignature = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDeleteSignature = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.panel)).BeginInit();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.peAddSignature.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peDeleteSignerPerson.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peMoveDown.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peMoveUp.Properties)).BeginInit();
@@ -81,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // progressBar
@@ -111,7 +114,6 @@
             // panel
             // 
             this.panel.AutoSize = true;
-            this.panel.Controls.Add(this.peAddSignature);
             this.panel.Controls.Add(this.peDeleteSignerPerson);
             this.panel.Controls.Add(this.peMoveDown);
             this.panel.Controls.Add(this.peMoveUp);
@@ -120,28 +122,11 @@
             this.panel.Controls.Add(this.gridUsers);
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel.Location = new System.Drawing.Point(0, 15);
+            this.panel.MinimumSize = new System.Drawing.Size(1000, 712);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1000, 612);
+            this.panel.Size = new System.Drawing.Size(1000, 712);
             this.panel.TabIndex = 10;
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
-            // 
-            // peAddSignature
-            // 
-            this.peAddSignature.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.peAddSignature.EditValue = ((object)(resources.GetObject("peAddSignature.EditValue")));
-            this.peAddSignature.Enabled = false;
-            this.peAddSignature.Location = new System.Drawing.Point(13, 429);
-            this.peAddSignature.Name = "peAddSignature";
-            this.peAddSignature.Properties.AllowFocused = false;
-            this.peAddSignature.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.peAddSignature.Properties.Appearance.Options.UseBackColor = true;
-            this.peAddSignature.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.peAddSignature.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.peAddSignature.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.peAddSignature.Size = new System.Drawing.Size(43, 44);
-            this.peAddSignature.TabIndex = 170;
-            this.peAddSignature.ToolTipTitle = "ثبت امضاء";
-            this.peAddSignature.Click += new System.EventHandler(this.peAddSignature_Click);
             // 
             // peDeleteSignerPerson
             // 
@@ -518,12 +503,48 @@
             this.grdUsers.GridControl = this.gridUsers;
             this.grdUsers.Name = "grdUsers";
             this.grdUsers.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdUsers_FocusedRowChanged);
+            this.grdUsers.MouseUp += new System.Windows.Forms.MouseEventHandler(this.grdUsers_MouseUp);
             // 
             // toastNotificationsManager1
             // 
             this.toastNotificationsManager1.ApplicationId = "336d853b-db33-40b1-b4d4-6bb2b17cc2b8";
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("bba561b0-42d8-408b-9c05-85d9d87f4052", null, "ارجاع درخواست", "ثبت اطلاعات با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuShowSignature,
+            this.mnuAddSignature,
+            this.mnuDeleteSignature});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(150, 82);
+            // 
+            // mnuShowSignature
+            // 
+            this.mnuShowSignature.Image = global::IsoDocApp.Properties.Resources.full_screen;
+            this.mnuShowSignature.Name = "mnuShowSignature";
+            this.mnuShowSignature.Size = new System.Drawing.Size(149, 26);
+            this.mnuShowSignature.Text = "مشاهده امضاء";
+            this.mnuShowSignature.Click += new System.EventHandler(this.mnuShowSignature_Click);
+            // 
+            // mnuAddSignature
+            // 
+            this.mnuAddSignature.Image = global::IsoDocApp.Properties.Resources.signature;
+            this.mnuAddSignature.Name = "mnuAddSignature";
+            this.mnuAddSignature.Size = new System.Drawing.Size(149, 26);
+            this.mnuAddSignature.Text = "افزودن امضاء";
+            this.mnuAddSignature.Click += new System.EventHandler(this.mnuAddSignature_Click);
+            // 
+            // mnuDeleteSignature
+            // 
+            this.mnuDeleteSignature.Image = global::IsoDocApp.Properties.Resources.No;
+            this.mnuDeleteSignature.Name = "mnuDeleteSignature";
+            this.mnuDeleteSignature.Size = new System.Drawing.Size(149, 26);
+            this.mnuDeleteSignature.Text = "حذف امضاء";
+            this.mnuDeleteSignature.Click += new System.EventHandler(this.mnuDeleteSignature_Click);
             // 
             // FrmConfirmNewDoc
             // 
@@ -544,7 +565,6 @@
             this.Load += new System.EventHandler(this.FrmConfirmNewDoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panel)).EndInit();
             this.panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.peAddSignature.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peDeleteSignerPerson.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peMoveDown.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peMoveUp.Properties)).EndInit();
@@ -564,6 +584,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -600,6 +621,9 @@
         private DevExpress.XtraEditors.PictureEdit peMoveUp;
         private DevExpress.XtraEditors.PictureEdit peDeleteSignerPerson;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
-        private DevExpress.XtraEditors.PictureEdit peAddSignature;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuShowSignature;
+        private System.Windows.Forms.ToolStripMenuItem mnuAddSignature;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeleteSignature;
     }
 }

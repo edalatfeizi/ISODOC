@@ -351,4 +351,22 @@
   <data name="ErrorFileSizeLimit300K" xml:space="preserve">
     <value>حجم فایل انتخاب شده نباید بیشتر از 300 کیلوبایت باشد.</value>
   </data>
+  <data name="Has" xml:space="preserve">
+    <value>دارد</value>
+  </data>
+  <data name="HasNot" xml:space="preserve">
+    <value>ندارد</value>
+  </data>
+  <data name="DeleteSignature" xml:space="preserve">
+    <value>حذف امضاء</value>
+  </data>
+  <data name="DeleteSignaturePrompt1" xml:space="preserve">
+    <value>آیا برای حذف امضاء </value>
+  </data>
+  <data name="DeleteSignaturePrompt2" xml:space="preserve">
+    <value> مطمئن هستید؟</value>
+  </data>
+  <data name="SetSignatureForAllPeople" xml:space="preserve">
+    <value>لطفا نمونه امضاء همه افراد انتخاب شده را ثبت نمایید</value>
+  </data>
 </root>

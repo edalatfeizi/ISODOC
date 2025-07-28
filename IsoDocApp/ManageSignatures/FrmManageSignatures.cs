@@ -30,9 +30,8 @@ namespace IsoDocApp.ManageSignatures
 
         private async void FrmManageSignatures_Load(object sender, EventArgs e)
         {
-            employees.Clear();
-            employees = await personelyService.GetAllEmployees();
-            gridUsers.DataSource = employees;
+            LoadData();
+
         }
 
         private async void grdUsers_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -44,12 +43,8 @@ namespace IsoDocApp.ManageSignatures
 
                 var personCode = GridViewHelper.GetGridViewCellValue(grdUsers, "PersonCode");
 
-                var personSignature = await personelyService.GetPersonSignature(personCode.ToString());
-                using (MemoryStream ms = new MemoryStream(personSignature.FileContent))
-                {
-                    Image img = Image.FromStream(ms);
-                    peSignature.Image = img;
-                }
+                await GetSignature(personCode.ToString());
+
                 btnAddSignature.Enabled = false;
                 btnDeleteSignature.Enabled = true;
             }
@@ -61,22 +56,44 @@ namespace IsoDocApp.ManageSignatures
             }
         }
 
-        private void btnAddSignature_Click(object sender, EventArgs e)
+        private async void btnAddSignature_Click(object sender, EventArgs e)
         {
             var personCode = GridViewHelper.GetGridViewCellValue(grdUsers, "PersonCode").ToString();
 
             var frmNewDocReq = new FrmAddUserSignature(personelyService, personCode);
             var result = frmNewDocReq.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+                var emp = employees.Where(x => x.PersonCode == personCode).First();
+                emp.HasSignature = StringResources.Has;
+                gridUsers.RefreshDataSource();
+
+                await GetSignature(personCode);
+            }
+
 
         }
 
         private async void btnDeleteSignature_Click(object sender, EventArgs e)
         {
-            var signature = GridViewHelper.GetGridViewCellValue(grdUsers, "HasSignature");
-            var hasSignature = signature != null ? signature.ToString() : null;
-            if (!string.IsNullOrEmpty(hasSignature) && hasSignature.ToString() == "دارد")
-            {
+            var frmMsgBox = new FrmMessageBox();
+            var empName = GridViewHelper.GetGridViewCellValue(grdUsers, "Name").ToString();
 
+            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+            {
+                Title = StringResources.DeleteSignature,
+                Message = $"{StringResources.DeleteSignaturePrompt1} {empName}  {StringResources.DeleteSignaturePrompt2}",
+                ShowCancelButton = true,
+                ShowConfirmButton = true,
+                ConfirmButtonText = StringResources.Yes,
+                CancelButtonText = StringResources.No,
+                DevExpressIconId = "cancel",
+                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+            });
+            var result = frmMsgBox.ShowDialog();
+            if (result == DialogResult.OK)
+            {
                 var personCode = GridViewHelper.GetGridViewCellValue(grdUsers, "PersonCode");
 
                 var isDeleted = await personelyService.DeletePersonSignature(personCode.ToString());
@@ -87,10 +104,30 @@ namespace IsoDocApp.ManageSignatures
 
                     peSignature.Image = Resources.Businessman_signing_contract1;
 
+                    var emp = employees.Where(x => x.PersonCode == personCode).First();
+                    emp.HasSignature = StringResources.HasNot;
+                    gridUsers.RefreshDataSource();
+
                 }
             }
-           
+
+
         }
-     
+        private async void LoadData()
+        {
+            employees.Clear();
+            employees = await personelyService.GetAllEmployees();
+            gridUsers.DataSource = employees;
+        }
+
+        private async Task GetSignature(string personCode)
+        {
+            var personSignature = await personelyService.GetPersonSignature(personCode.ToString());
+            using (MemoryStream ms = new MemoryStream(personSignature.FileContent))
+            {
+                Image img = Image.FromStream(ms);
+                peSignature.Image = img;
+            }
+        }
     }
 }

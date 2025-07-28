@@ -1,25 +1,18 @@
-﻿using DevExpress.Utils.Extensions;
+﻿
 using DevExpress.XtraEditors;
 using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Dtos;
-using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
-using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
-using IsoDoc.Domain.Services;
 using IsoDocApp.Extensions;
 using IsoDocApp.Helpers;
 using IsoDocApp.ManageNewDocConfirmations;
+using IsoDocApp.ManageSignatures;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IsoDocApp.ManageDocRequests
@@ -76,23 +69,6 @@ namespace IsoDocApp.ManageDocRequests
 
             gridUsers.DataSource = signerColleagues;
 
-            //teCreators.Properties.Tokens.Clear();
-            //teAcceptor.Properties.Tokens.Clear();
-            //teConfirmers.Properties.Tokens.Clear();
-            //foreach (Person employee in employees)
-            //{
-            //    teCreators.Properties.Tokens.AddToken($"{employee.FirstName} {employee.LastName} - {employee.Posttxt}", employee.PersonCode);
-            //    teAcceptor.Properties.Tokens.AddToken($"{employee.FirstName} {employee.LastName} - {employee.Posttxt}", employee.PersonCode);
-            //    teConfirmers.Properties.Tokens.AddToken($"{employee.FirstName} {employee.LastName} - {employee.Posttxt}", employee.PersonCode);
-
-            //}
-
-            //tokenEdit1.RightToLeft = RightToLeft.Yes;
-            //tokenEdit1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            //tokenEdit1.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-
-            //teConfirmers.Properties.Tokens.AddToken("TEST1", "TEST1");
-
         }
         private void SetupControls()
         {
@@ -128,7 +104,7 @@ namespace IsoDocApp.ManageDocRequests
             //Console.WriteLine(personCodes.Count);
             try
             {
-                if (Validators.ValidateControls<BaseEdit>(cmbDocOwnerDep, cmbDocs, txtReviewNo, txtReview, cmbCreators, cmbConfirmers, cmbAcceptors))
+                if (Validators.ValidateControls<BaseEdit>(cmbDocOwnerDep, cmbDocs, txtReview, cmbCreators, cmbConfirmers, cmbAcceptors))
                 {
                     if (signerColleagues.Count < 3)
                     {
@@ -147,6 +123,10 @@ namespace IsoDocApp.ManageDocRequests
                         else if (!signerColleagues.Any(x => x.SignerColleagueType == StringResources.Acceptor))
                         {
                             ShowErrorMessage(StringResources.ErrorShouldSelectDocAcceptors);
+                        }
+                        else if (signerColleagues.Any(x => x.HasSignature == StringResources.HasNot))
+                        {
+                            ShowErrorMessage(StringResources.SetSignatureForAllPeople);
                         }
                         else
                         {
@@ -193,10 +173,10 @@ namespace IsoDocApp.ManageDocRequests
                                         break;
                                 }
                                 newDocSigner.Active = newDocSigner.SigningOrder == 0 ? true : false;
-                           
+
 
                                 await docConfirmationService.AddNewDocSignersAsync(newDocSigner);
-                         
+
 
 
                             }
@@ -362,7 +342,7 @@ namespace IsoDocApp.ManageDocRequests
                     //signerColleagues.Sort();
                     //signerColleagues = orderedList;
                     gridUsers.RefreshDataSource();
-              
+
                     //gridUsers.Refresh();
                     CheckToToggleMoveAndDeleteButtonsState();
                 }
@@ -449,18 +429,97 @@ namespace IsoDocApp.ManageDocRequests
         {
             var signature = GridViewHelper.GetGridViewCellValue(grdUsers, "HasSignature");
             var hasSignature = signature != null ? signature.ToString() : null;
-            if (!string.IsNullOrEmpty(hasSignature) && hasSignature.ToString() == "دارد")
-                peAddSignature.Enabled = false;
+            if (!string.IsNullOrEmpty(hasSignature) && hasSignature.ToString() == StringResources.Has)
+            {
+                mnuAddSignature.Enabled = false;
+                mnuDeleteSignature.Enabled = true;
+                mnuShowSignature.Enabled = true;
+            }
             else
-                peAddSignature.Enabled = true;
+            {
+                mnuAddSignature.Enabled = true;
+                mnuDeleteSignature.Enabled = false;
+                mnuShowSignature.Enabled = false;
+            }
+
+
         }
 
-        private void peAddSignature_Click(object sender, EventArgs e)
+        private void mnuAddSignature_Click(object sender, EventArgs e)
         {
             var personCode = GridViewHelper.GetGridViewCellValue(grdUsers, "PersonCode").ToString();
 
             var frmNewDocReq = new FrmAddUserSignature(personelyService, personCode);
             var result = frmNewDocReq.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                var signerColleague = signerColleagues.Where(x => x.PersonCode == personCode).First();
+                signerColleague.HasSignature = StringResources.Has;
+                gridUsers.RefreshDataSource();
+
+                mnuDeleteSignature.Enabled = true;
+                mnuShowSignature.Enabled = true;
+                mnuAddSignature.Enabled = false;
+            }
+
+        }
+
+        private void mnuShowSignature_Click(object sender, EventArgs e)
+        {
+            var personCode = GridViewHelper.GetGridViewCellValue(grdUsers, "PersonCode").ToString();
+
+            var frmShowSignature = new FrmShowSignature(personelyService, personCode);
+            var result = frmShowSignature.ShowDialog();
+        }
+
+        private void grdUsers_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (signerColleagues.Count > 0)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    contextMenuStrip1.Show(gridUsers, e.Location);
+                }
+            }
+        }
+
+        private async void mnuDeleteSignature_Click(object sender, EventArgs e)
+        {
+            var frmMsgBox = new FrmMessageBox();
+            var empName = GridViewHelper.GetGridViewCellValue(grdUsers, "Name").ToString();
+
+            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+            {
+                Title = StringResources.DeleteSignature,
+                Message = $"{StringResources.DeleteSignaturePrompt1} {empName}  {StringResources.DeleteSignaturePrompt2}",
+                ShowCancelButton = true,
+                ShowConfirmButton = true,
+                ConfirmButtonText = StringResources.Yes,
+                CancelButtonText = StringResources.No,
+                DevExpressIconId = "cancel",
+                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+            });
+            var result = frmMsgBox.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                var personCode = GridViewHelper.GetGridViewCellValue(grdUsers, "PersonCode");
+
+                var isDeleted = await personelyService.DeletePersonSignature(personCode.ToString());
+                if (isDeleted)
+                {
+                    var signerColleague = signerColleagues.Where(x => x.PersonCode == personCode).First();
+                    signerColleague.HasSignature = StringResources.HasNot;
+                    mnuDeleteSignature.Enabled = false;
+                    mnuAddSignature.Enabled = true;
+                    mnuShowSignature.Enabled = false;
+                    gridUsers.RefreshDataSource();
+                }
+            }
+
+            //else
+            //{
+
+            //}
         }
     }
 }

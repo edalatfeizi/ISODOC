@@ -286,6 +286,33 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to حذف امضاء.
+        /// </summary>
+        internal static string DeleteSignature {
+            get {
+                return ResourceManager.GetString("DeleteSignature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آیا برای حذف امضاء .
+        /// </summary>
+        internal static string DeleteSignaturePrompt1 {
+            get {
+                return ResourceManager.GetString("DeleteSignaturePrompt1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  مطمئن هستید؟.
+        /// </summary>
+        internal static string DeleteSignaturePrompt2 {
+            get {
+                return ResourceManager.GetString("DeleteSignaturePrompt2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to واحد.
         /// </summary>
         internal static string Dep {
@@ -538,6 +565,24 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to دارد.
+        /// </summary>
+        internal static string Has {
+            get {
+                return ResourceManager.GetString("Has", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ندارد.
+        /// </summary>
+        internal static string HasNot {
+            get {
+                return ResourceManager.GetString("HasNot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to شرکت قالب های صنعتی ایران خودرو - آیکید.
         /// </summary>
         internal static string IKID {
@@ -651,6 +696,15 @@ namespace IsoDocApp {
         internal static string SelectDocKeepDuration {
             get {
                 return ResourceManager.GetString("SelectDocKeepDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا نمونه امضاء همه افراد انتخاب شده را ثبت نمایید.
+        /// </summary>
+        internal static string SetSignatureForAllPeople {
+            get {
+                return ResourceManager.GetString("SetSignatureForAllPeople", resourceCulture);
             }
         }
         

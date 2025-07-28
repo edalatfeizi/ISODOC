@@ -118,52 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="peAddSignature.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
   <data name="peDeleteSignerPerson.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
@@ -493,5 +447,8 @@
   </data>
   <metadata name="toastNotificationsManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>218, 17</value>
   </metadata>
 </root>
