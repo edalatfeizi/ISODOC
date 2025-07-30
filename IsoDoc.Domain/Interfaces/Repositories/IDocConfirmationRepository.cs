@@ -1,4 +1,5 @@
 ﻿
+using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using System.Collections.Generic;
@@ -14,5 +15,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         Task<List<DocSigner>> GetDocConfirmationSigners(int docConfirmationId);
         Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode);
         Task<NewDocConfirmation> GetDocConfirmationByDocReqIdAsync(int docReqId);
+        Task<bool> SignDocConfirmationAsync(int newDocSignersId);
+        Task<bool> UpdateSendSignRequestDate(int newDocSignerId, string personCode);
     }
 }

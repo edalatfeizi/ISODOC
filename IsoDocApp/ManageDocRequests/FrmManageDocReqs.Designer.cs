@@ -669,7 +669,9 @@
             // 
             this.toastNotificationsManager1.ApplicationId = "336d853b-db33-40b1-b4d4-6bb2b17cc2b8";
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("5064271b-6465-45af-93b2-6ba6b8d55777", null, "پیوست فایل جدید", "پیوست فایل جدید با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("5064271b-6465-45af-93b2-6ba6b8d55777", null, "پیوست فایل جدید", "پیوست فایل جدید با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01),
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("26c3bf6a-4aca-447c-88f0-3c9cf31d4f40", global::IsoDocApp.Properties.Resources.signature, "ثبت امضاء", "امضاء سند جدید با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("e5fccdcd-e3f2-4915-a1e4-1520593ca5f0", global::IsoDocApp.Properties.Resources.No, "خطا در انجام عملیات", "امضاء سند جدید با خطا مواجه شد لطفا دوباره تلاش کنید", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
             // 
             // contextMenuStrip2
             // 
@@ -811,6 +813,7 @@
             this.btnConfirm.Size = new System.Drawing.Size(160, 66);
             this.btnConfirm.TabIndex = 27;
             this.btnConfirm.Text = "امضاء سند";
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnPrintConfirmationDoc
             // 

@@ -15,6 +15,7 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<List<DocSignerResDto>> GetDocConfirmationSignersAsync(int docConfirmationId);
         Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode);
         Task<NewDocConfirmationResDto> GetDocConfirmationByDocReqIdAsync(int docReqId);
-
+        Task<bool> SignDocConfirmationAsync(int newDocSignersId);
+        Task<bool> UpdateSendSignRequestDate(int newDocSignerId, string personCode);
     }
 }

@@ -76,7 +76,7 @@ Public Class FrmMain
 
         If userInfoDt.DefaultView.Item(0).Item("CardNumber") = "3910" Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI000" Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI300" Or userInfoDt.DefaultView.Item(0).Item("UpperCode") = "SI300" Then
             tabEnterData.Visible = True
-
+            btnManageSignatures.Enabled = True
         End If
 
         ''UserInfo.GetLoginInfo_ByLogName("Dm_Pdc2\3710")

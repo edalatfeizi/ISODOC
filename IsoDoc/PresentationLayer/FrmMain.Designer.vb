@@ -19,6 +19,7 @@ Partial Class FrmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btnShowDepDocs = New DevExpress.XtraBars.BarButtonItem()
@@ -97,7 +98,7 @@ Partial Class FrmMain
         Me.btnManageSignatures = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup11 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.btnManageNewDocConfirmations = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rpgManageSignatures = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.tabEnterData = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup12 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -121,7 +122,7 @@ Partial Class FrmMain
         Me.rpReportBug = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
-        Me.GalleryDropDown1 = New DevExpress.XtraBars.Ribbon.GalleryDropDown()
+        Me.GalleryDropDown1 = New DevExpress.XtraBars.Ribbon.GalleryDropDown(Me.components)
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -860,16 +861,17 @@ Partial Class FrmMain
         'btnManageSignatures
         '
         Me.btnManageSignatures.Caption = "مدیریت امضاء پرسنل"
+        Me.btnManageSignatures.Enabled = False
         Me.btnManageSignatures.Id = 85
-        Me.btnManageSignatures.ImageOptions.Image = CType(resources.GetObject("btnManageNewDocConfirms.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnManageSignatures.ImageOptions.LargeImage = CType(resources.GetObject("btnManageNewDocConfirms.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.btnManageSignatures.ImageOptions.Image = CType(resources.GetObject("btnManageSignatures.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnManageSignatures.ImageOptions.LargeImage = CType(resources.GetObject("btnManageSignatures.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.btnManageSignatures.Name = "btnManageSignatures"
         '
         'RibbonPage1
         '
         Me.RibbonPage1.Appearance.Font = New System.Drawing.Font("Vazirmatn SemiBold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RibbonPage1.Appearance.Options.UseFont = True
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup11, Me.btnManageNewDocConfirmations})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup11, Me.rpgManageSignatures})
         Me.RibbonPage1.ImageOptions.Image = CType(resources.GetObject("RibbonPage1.ImageOptions.Image"), System.Drawing.Image)
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "کارتابل من"
@@ -879,11 +881,11 @@ Partial Class FrmMain
         Me.RibbonPageGroup11.ItemLinks.Add(Me.btnShowKartable)
         Me.RibbonPageGroup11.Name = "RibbonPageGroup11"
         '
-        'btnManageNewDocConfirmations
+        'rpgManageSignatures
         '
-        Me.btnManageNewDocConfirmations.ImageOptions.Image = CType(resources.GetObject("btnManageNewDocConfirmations.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnManageNewDocConfirmations.ItemLinks.Add(Me.btnManageSignatures)
-        Me.btnManageNewDocConfirmations.Name = "btnManageNewDocConfirmations"
+        Me.rpgManageSignatures.ImageOptions.Image = CType(resources.GetObject("btnManageNewDocConfirmations.ImageOptions.Image"), System.Drawing.Image)
+        Me.rpgManageSignatures.ItemLinks.Add(Me.btnManageSignatures)
+        Me.rpgManageSignatures.Name = "rpgManageSignatures"
         '
         'tabEnterData
         '
@@ -1223,7 +1225,7 @@ Partial Class FrmMain
     Friend WithEvents btnShowKnowledgeBase As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents btnManageNewDocConfirmations As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents rpgManageSignatures As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btnManageSignatures As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpReportBug As DevExpress.XtraBars.Ribbon.RibbonPage
 End Class

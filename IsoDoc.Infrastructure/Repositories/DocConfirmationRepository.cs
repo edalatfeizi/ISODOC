@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
+using IsoDoc.Domain.Extensions;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Models;
 using System;
@@ -152,11 +153,31 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode)
         {
-            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true' and IsSigned = 'false') and Active = 'true'";
+            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true') and Active = 'true'";
 
             var result = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
 
             return result.ToList();
+        }
+
+        public async Task<bool> SignDocConfirmationAsync(int newDocSignersId)
+        {
+            var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
+                  SET IsSigned = 'true', SigningDate = @SigningDate 
+                  WHERE Id = @NewDocSignersId";
+
+            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = newDocSignersId , SigningDate = DateTime.Now.ToPersianDateTime() });
+            return rowsAffected > 0;
+        }
+
+        public async Task<bool> UpdateSendSignRequestDate(int newDocSignersId, string personCode)
+        {
+            var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
+                  SET SignRequestSentDate = @SignRequestSentDate , Active = 'true'
+                  WHERE Id = @NewDocSignersId and PersonCode = @PersonCode";
+
+            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = newDocSignersId, SignRequestSentDate = DateTime.Now.ToPersianDateTime(), PersonCode = personCode });
+            return rowsAffected > 0;
         }
     }
 }
