@@ -655,6 +655,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تصویب نشده.
+        /// </summary>
+        internal static string NotConfirmed {
+            get {
+                return ResourceManager.GetString("NotConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to امضاء نشده.
         /// </summary>
         internal static string NotSigned {

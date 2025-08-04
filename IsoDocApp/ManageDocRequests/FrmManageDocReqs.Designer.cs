@@ -829,6 +829,7 @@
             this.btnPrintConfirmationDoc.Size = new System.Drawing.Size(160, 66);
             this.btnPrintConfirmationDoc.TabIndex = 26;
             this.btnPrintConfirmationDoc.Text = " چاپ برگه تایید سند";
+            this.btnPrintConfirmationDoc.Click += new System.EventHandler(this.btnPrintConfirmationDoc_Click);
             // 
             // confirmationSigners
             // 

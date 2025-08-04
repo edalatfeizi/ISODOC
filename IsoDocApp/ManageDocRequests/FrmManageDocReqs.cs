@@ -3,6 +3,7 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
 using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
@@ -13,6 +14,7 @@ using IsoDoc.Domain.Models;
 using IsoDocApp.Extensions;
 using IsoDocApp.Helpers;
 using IsoDocApp.ManageDocRequests;
+using IsoDocApp.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,7 +82,6 @@ namespace IsoDocApp
             userName = SystemInformation.UserName;
             if (Program.DebugMode)
                 userName = "3910";
-
 
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
@@ -332,7 +333,7 @@ namespace IsoDocApp
 
 
                         }
-
+                        ToggleConfirmationTanButtonsState(true);
                         break;
                     case "tabSentRequests":
                         if (userInfo != null)
@@ -343,7 +344,7 @@ namespace IsoDocApp
                             btnAddAttachment.Enabled = false;
 
                         }
-
+                        ToggleConfirmationTanButtonsState(false);
                         break;
                     case "tabForwardedDocRequests":
                         if (userInfo != null)
@@ -354,6 +355,8 @@ namespace IsoDocApp
                             btnAddAttachment.Enabled = false;
 
                         }
+                        ToggleConfirmationTanButtonsState(false);
+
                         break;
 
                     case "tabAllDocRequests":
@@ -365,6 +368,8 @@ namespace IsoDocApp
                             btnAddAttachment.Enabled = false;
 
                         }
+                        ToggleConfirmationTanButtonsState(false);
+
                         break;
                     case "tabDeletedRequests":
                         if (userInfo != null && (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || isAdmin))
@@ -373,6 +378,8 @@ namespace IsoDocApp
                             //docReqSteps.Items.Clear();
                             FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, Active = false });
                         }
+                        ToggleConfirmationTanButtonsState(false);
+
                         break;
                 }
             }
@@ -382,7 +389,11 @@ namespace IsoDocApp
         {
             ForwardDocRequest();
         }
-
+        private void ToggleConfirmationTanButtonsState(bool state)
+        {
+            btnConfirm.Enabled = state;
+            btnPrintConfirmationDoc.Enabled = state;
+        }
         private void btnReload_Click(object sender, EventArgs e)
         {
             if (showDocRequests)
@@ -682,15 +693,17 @@ namespace IsoDocApp
         private void timeLineTabsContainer_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
 
-            //if (timeLineTabsContainer.SelectedTabPage == tabDocConfirmTimeLine && (docSigners != null && docSigners.Count == 0))
-            //{
-            //    confirmationSigners.Items.Clear();
-            //    btnPrintConfirmationDoc.Enabled = false;
-            //    if(ribbonControl1.SelectedPage == tabReceivedRequests)
-            //        btnConfirm.Enabled = true;
-            //    else
-            //        btnConfirm.Enabled = false;
-            //}
+            if (timeLineTabsContainer.SelectedTabPage == tabDocConfirmTimeLine && (docSigners != null && docSigners.Count == 0))
+            {
+                //confirmationSigners.Items.Clear();
+                btnPrintConfirmationDoc.Enabled = false;
+                //if (ribbonControl1.SelectedPage == tabReceivedRequests)
+                //    btnConfirm.Enabled = true;
+                //else
+                //    btnConfirm.Enabled = false;
+            }else
+                btnPrintConfirmationDoc.Enabled = true;
+
         }
 
         private async void btnConfirm_Click(object sender, EventArgs e)
@@ -737,5 +750,60 @@ namespace IsoDocApp
             }
             ShowProgressBar(false);
         }
+
+        private async void btnPrintConfirmationDoc_Click(object sender, EventArgs e)
+        {
+            // Create report instance
+            ShowProgressBar(true);
+            btnPrintConfirmationDoc.Enabled = false;
+            string confirmDate = null;
+            foreach (var signer in docSigners)
+            {
+                if (signer.IsSigned)
+                {
+                    var signerSignature = await personelyService.GetPersonSignature(signer.PersonCode);
+                    signer.Signature = signerSignature.FileContent;
+                }
+                
+                
+            }
+            var lastSigner = docSigners.OrderByDescending(x => x.SigningOrder).FirstOrDefault();
+            if (lastSigner != null && lastSigner.IsSigned)
+                confirmDate = lastSigner.SigningDate;
+
+            var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+
+            var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
+
+            XtraReport report = new RptNewDocConfirmation();
+
+            // Create data source
+            //var reportData = new NewDocConfirmationReport(docConfirmation, docSigners);
+            var newDocConfirmationReport = new NewDocConfirmationReport(docConfirmation, docSigners)
+            {
+                UserName = $"{userInfo.FirstName} {userInfo.LastName} - {userInfo.Posttxt}",
+                PersonCode = userInfo.PersonCode,
+                Environment = Environment.MachineName,
+                IpAddress = Utils.GetIpAddress(),
+                IpPCName = $"{Environment.MachineName} - {Utils.GetIpAddress()}",
+                ConfirmDate = confirmDate != null ? confirmDate : StringResources.NotConfirmed,
+            };
+            var reportData = new List<NewDocConfirmationReport>
+                {
+                    newDocConfirmationReport
+                };
+            // Assign data source
+            report.DataSource = reportData;
+
+            // Show the report
+            using (ReportPrintTool printTool = new ReportPrintTool(report))
+            {
+                printTool.ShowPreviewDialog();
+            }
+
+            ShowProgressBar(false);
+            btnPrintConfirmationDoc.Enabled = true;
+        }
     }
+
 }

@@ -369,4 +369,7 @@
   <data name="SetSignatureForAllPeople" xml:space="preserve">
     <value>لطفا نمونه امضاء همه افراد انتخاب شده را ثبت نمایید</value>
   </data>
+  <data name="NotConfirmed" xml:space="preserve">
+    <value>تصویب نشده</value>
+  </data>
 </root>

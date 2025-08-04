@@ -37,5 +37,7 @@ namespace IsoDoc.Domain.Dtos.Res
         [Display(Name = "زمان ارسال درخواست امضاء", Order = 6)]
         [Editable(false)]
         public string SignRequestSentDate { get; set; }
+
+        public byte[] Signature { get; set; }
     }
 }

@@ -883,7 +883,7 @@ Partial Class FrmMain
         '
         'rpgManageSignatures
         '
-        Me.rpgManageSignatures.ImageOptions.Image = CType(resources.GetObject("btnManageNewDocConfirmations.ImageOptions.Image"), System.Drawing.Image)
+        Me.rpgManageSignatures.ImageOptions.Image = CType(resources.GetObject("rpgManageSignatures.ImageOptions.Image"), System.Drawing.Image)
         Me.rpgManageSignatures.ItemLinks.Add(Me.btnManageSignatures)
         Me.rpgManageSignatures.Name = "rpgManageSignatures"
         '

@@ -80,6 +80,7 @@
     <Compile Include="Interfaces\Services\IDocsService.cs" />
     <Compile Include="Interfaces\Services\IPersonelyService.cs" />
     <Compile Include="Interfaces\Services\IManageDocReqsService.cs" />
+    <Compile Include="Models\NewDocConfirmationReport.cs" />
     <Compile Include="Models\SignerColleague.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\DocType.cs" />
