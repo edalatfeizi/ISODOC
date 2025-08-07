@@ -556,6 +556,7 @@
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 78.45834F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
             this.xrLabel2.SizeF = new System.Drawing.SizeF(767.0001F, 31.95833F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
@@ -591,6 +592,7 @@
             this.xrTableCell13.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
+            this.xrTableCell13.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
             this.xrTableCell13.StylePriority.UseFont = false;
             this.xrTableCell13.StylePriority.UseTextAlignment = false;
             this.xrTableCell13.Text = "xrTableCell13";
@@ -605,6 +607,7 @@
             this.xrTableCell15.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
+            this.xrTableCell15.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
             this.xrTableCell15.StylePriority.UseFont = false;
             this.xrTableCell15.StylePriority.UseTextAlignment = false;
             this.xrTableCell15.Text = "xrTableCell15";
@@ -612,7 +615,7 @@
             this.xrTableCell15.TextFormatString = "{0} : کد سند";
             this.xrTableCell15.Weight = 1.5563218509681438D;
             // 
-            // XtraReport4
+            // RptNewDocConfirmation
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.TopMargin,

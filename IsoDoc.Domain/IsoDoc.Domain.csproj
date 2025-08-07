@@ -53,6 +53,7 @@
     <Compile Include="Dtos\Res\NewDocConfirmationResDto.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\DocRequest.cs" />
+    <Compile Include="Entities\DocRequestChatMessage.cs" />
     <Compile Include="Entities\FileAttachment.cs" />
     <Compile Include="Entities\PersonSignature.cs" />
     <Compile Include="Entities\DocRequestAttachment.cs" />

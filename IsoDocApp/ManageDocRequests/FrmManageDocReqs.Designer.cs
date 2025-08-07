@@ -30,6 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageDocReqs));
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            this.SenderUser = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.ReceiverUser = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.Message = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.SendDateTime = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnNewDocReq = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -77,6 +92,8 @@
             this.btnReload = new DevExpress.XtraEditors.SimpleButton();
             this.btnForwardDocReq = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAttachments = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuCompleteReq = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,6 +110,23 @@
             this.btnConfirm = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintConfirmationDoc = new DevExpress.XtraEditors.SimpleButton();
             this.confirmationSigners = new DevExpress.XtraEditors.StepProgressBar();
+            this.tabReqChatRoom = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.pcChatLoading = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
+            this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
+            this.btnReceivedMessages = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSentMessages = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAllMessages = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtMessage = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.cmbReceiverUser = new DevExpress.XtraEditors.LookUpEdit();
+            this.btnSendMessage = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserDocRequests)).BeginInit();
@@ -110,6 +144,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -123,7 +159,59 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.confirmationSigners)).BeginInit();
+            this.tabReqChatRoom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
+            this.panelControl7.SuspendLayout();
+            this.xtraScrollableControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcChatLoading)).BeginInit();
+            this.pcChatLoading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
+            this.panelControl9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
+            this.panelControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMessage.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbReceiverUser.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SenderUser
+            // 
+            this.SenderUser.Caption = "فرستنده";
+            this.SenderUser.FieldName = "SenderUser";
+            this.SenderUser.Name = "SenderUser";
+            this.SenderUser.OptionsEditForm.StartNewRow = true;
+            this.SenderUser.Visible = true;
+            this.SenderUser.VisibleIndex = 2;
+            this.SenderUser.Width = 100;
+            // 
+            // ReceiverUser
+            // 
+            this.ReceiverUser.Caption = "گیرنده";
+            this.ReceiverUser.FieldName = "ReceiverUser";
+            this.ReceiverUser.Name = "ReceiverUser";
+            this.ReceiverUser.OptionsEditForm.StartNewRow = true;
+            this.ReceiverUser.Visible = true;
+            this.ReceiverUser.VisibleIndex = 3;
+            // 
+            // Message
+            // 
+            this.Message.Caption = "متن پیام";
+            this.Message.FieldName = "Message";
+            this.Message.Name = "Message";
+            this.Message.OptionsEditForm.StartNewRow = true;
+            this.Message.Visible = true;
+            this.Message.VisibleIndex = 0;
+            this.Message.Width = 200;
+            // 
+            // SendDateTime
+            // 
+            this.SendDateTime.Caption = "تاریخ ارسال";
+            this.SendDateTime.FieldName = "SendDateTime";
+            this.SendDateTime.Name = "SendDateTime";
+            this.SendDateTime.OptionsEditForm.StartNewRow = true;
+            this.SendDateTime.Visible = true;
+            this.SendDateTime.VisibleIndex = 1;
+            this.SendDateTime.Width = 100;
             // 
             // ribbonControl1
             // 
@@ -665,6 +753,107 @@
             this.btnShowAttachments.Text = "مشاهده فایل های پیوست";
             this.btnShowAttachments.Click += new System.EventHandler(this.btnDownloadAttachment_Click);
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 87);
+            this.gridControl1.MainView = this.tileView1;
+            this.gridControl1.MenuManager = this.ribbonControl1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.gridControl1.Size = new System.Drawing.Size(376, 495);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.tileView1});
+            // 
+            // tileView1
+            // 
+            this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.SenderUser,
+            this.Message,
+            this.ReceiverUser,
+            this.SendDateTime});
+            this.tileView1.GridControl = this.gridControl1;
+            this.tileView1.Name = "tileView1";
+            this.tileView1.OptionsEditForm.AllowHtmlCaptions = true;
+            this.tileView1.OptionsTiles.GroupTextPadding = new System.Windows.Forms.Padding(12, 8, 12, 8);
+            this.tileView1.OptionsTiles.IndentBetweenGroups = 0;
+            this.tileView1.OptionsTiles.IndentBetweenItems = 0;
+            this.tileView1.OptionsTiles.ItemPadding = new System.Windows.Forms.Padding(7);
+            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(360, 120);
+            this.tileView1.OptionsTiles.LayoutMode = DevExpress.XtraGrid.Views.Tile.TileViewLayoutMode.List;
+            this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileView1.OptionsTiles.Padding = new System.Windows.Forms.Padding(0);
+            this.tileView1.OptionsTiles.RowCount = 0;
+            tableColumnDefinition2.Length.Value = 0D;
+            tableColumnDefinition3.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
+            tableColumnDefinition3.Length.Value = 0D;
+            this.tileView1.TileColumns.Add(tableColumnDefinition1);
+            this.tileView1.TileColumns.Add(tableColumnDefinition2);
+            this.tileView1.TileColumns.Add(tableColumnDefinition3);
+            tableRowDefinition1.AutoHeight = true;
+            tableRowDefinition1.Length.Value = 23D;
+            tableRowDefinition2.AutoHeight = true;
+            tableRowDefinition2.Length.Value = 23D;
+            tableRowDefinition3.AutoHeight = true;
+            tableRowDefinition3.Length.Value = 24D;
+            tableRowDefinition4.AutoHeight = true;
+            tableRowDefinition4.Length.Value = 23D;
+            this.tileView1.TileRows.Add(tableRowDefinition1);
+            this.tileView1.TileRows.Add(tableRowDefinition2);
+            this.tileView1.TileRows.Add(tableRowDefinition3);
+            this.tileView1.TileRows.Add(tableRowDefinition4);
+            tileViewItemElement1.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement1.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileViewItemElement1.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement1.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement1.Appearance.Normal.Options.UseTextOptions = true;
+            tileViewItemElement1.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileViewItemElement1.Column = this.SenderUser;
+            tileViewItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement1.Text = "SenderUser";
+            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement2.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement2.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileViewItemElement2.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement2.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement2.Appearance.Normal.Options.UseTextOptions = true;
+            tileViewItemElement2.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileViewItemElement2.Column = this.ReceiverUser;
+            tileViewItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement2.MaxLineCount = 5;
+            tileViewItemElement2.RowIndex = 1;
+            tileViewItemElement2.Text = "ReceiverUser";
+            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement3.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement3.Appearance.Normal.ForeColor = System.Drawing.Color.DimGray;
+            tileViewItemElement3.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement3.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement3.Appearance.Normal.Options.UseTextOptions = true;
+            tileViewItemElement3.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileViewItemElement3.Column = this.Message;
+            tileViewItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement3.RowIndex = 2;
+            tileViewItemElement3.Text = "Message";
+            tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement4.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement4.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileViewItemElement4.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement4.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement4.Column = this.SendDateTime;
+            tileViewItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement4.RowIndex = 3;
+            tileViewItemElement4.Text = "SendDateTime";
+            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            this.tileView1.TileTemplate.Add(tileViewItemElement1);
+            this.tileView1.TileTemplate.Add(tileViewItemElement2);
+            this.tileView1.TileTemplate.Add(tileViewItemElement3);
+            this.tileView1.TileTemplate.Add(tileViewItemElement4);
+            // 
             // toastNotificationsManager1
             // 
             this.toastNotificationsManager1.ApplicationId = "336d853b-db33-40b1-b4d4-6bb2b17cc2b8";
@@ -754,7 +943,8 @@
             this.timeLineTabsContainer.TabIndex = 4;
             this.timeLineTabsContainer.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabDocReqTimeLine,
-            this.tabDocConfirmTimeLine});
+            this.tabDocConfirmTimeLine,
+            this.tabReqChatRoom});
             this.timeLineTabsContainer.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.timeLineTabsContainer_SelectedPageChanged);
             // 
             // tabDocReqTimeLine
@@ -764,7 +954,7 @@
             this.tabDocReqTimeLine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabDocReqTimeLine.Name = "tabDocReqTimeLine";
             this.tabDocReqTimeLine.Size = new System.Drawing.Size(380, 884);
-            this.tabDocReqTimeLine.Text = "تایم لاین درخواست سند";
+            this.tabDocReqTimeLine.Text = "درخواست سند";
             // 
             // tabDocConfirmTimeLine
             // 
@@ -773,7 +963,7 @@
             this.tabDocConfirmTimeLine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabDocConfirmTimeLine.Name = "tabDocConfirmTimeLine";
             this.tabDocConfirmTimeLine.Size = new System.Drawing.Size(380, 884);
-            this.tabDocConfirmTimeLine.Text = "تایم لاین تایید سند";
+            this.tabDocConfirmTimeLine.Text = "تایید سند";
             // 
             // panelControl3
             // 
@@ -873,6 +1063,232 @@
             this.confirmationSigners.Size = new System.Drawing.Size(376, 880);
             this.confirmationSigners.TabIndex = 11;
             // 
+            // tabReqChatRoom
+            // 
+            this.tabReqChatRoom.Controls.Add(this.panelControl7);
+            this.tabReqChatRoom.ImageOptions.Image = global::IsoDocApp.Properties.Resources.chatting_8021762;
+            this.tabReqChatRoom.Name = "tabReqChatRoom";
+            this.tabReqChatRoom.Size = new System.Drawing.Size(380, 884);
+            this.tabReqChatRoom.Text = "اتاق گفتگو";
+            // 
+            // panelControl7
+            // 
+            this.panelControl7.Controls.Add(this.xtraScrollableControl1);
+            this.panelControl7.Controls.Add(this.panelControl8);
+            this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl7.Location = new System.Drawing.Point(0, 0);
+            this.panelControl7.Name = "panelControl7";
+            this.panelControl7.Size = new System.Drawing.Size(380, 884);
+            this.panelControl7.TabIndex = 0;
+            // 
+            // xtraScrollableControl1
+            // 
+            this.xtraScrollableControl1.Controls.Add(this.pcChatLoading);
+            this.xtraScrollableControl1.Controls.Add(this.gridControl1);
+            this.xtraScrollableControl1.Controls.Add(this.panelControl9);
+            this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(2, 2);
+            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(376, 582);
+            this.xtraScrollableControl1.TabIndex = 10;
+            // 
+            // pcChatLoading
+            // 
+            this.pcChatLoading.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pcChatLoading.Appearance.BackColor = System.Drawing.Color.White;
+            this.pcChatLoading.Appearance.Options.UseBackColor = true;
+            this.pcChatLoading.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pcChatLoading.Controls.Add(this.labelControl4);
+            this.pcChatLoading.Controls.Add(this.labelControl5);
+            this.pcChatLoading.Controls.Add(this.pictureEdit2);
+            this.pcChatLoading.Location = new System.Drawing.Point(63, 275);
+            this.pcChatLoading.Name = "pcChatLoading";
+            this.pcChatLoading.Size = new System.Drawing.Size(257, 118);
+            this.pcChatLoading.TabIndex = 8;
+            this.pcChatLoading.Visible = false;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Gray;
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseForeColor = true;
+            this.labelControl4.Location = new System.Drawing.Point(55, 61);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(93, 19);
+            this.labelControl4.TabIndex = 2;
+            this.labelControl4.Text = "لطفا کمی صبر کنید ...";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(17, 31);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(131, 24);
+            this.labelControl5.TabIndex = 1;
+            this.labelControl5.Text = "در حال دریافت اطلاعات";
+            // 
+            // pictureEdit2
+            // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
+            this.pictureEdit2.Location = new System.Drawing.Point(154, 12);
+            this.pictureEdit2.MenuManager = this.ribbonControl1;
+            this.pictureEdit2.Name = "pictureEdit2";
+            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.pictureEdit2.Size = new System.Drawing.Size(98, 91);
+            this.pictureEdit2.TabIndex = 0;
+            // 
+            // panelControl9
+            // 
+            this.panelControl9.Controls.Add(this.btnReceivedMessages);
+            this.panelControl9.Controls.Add(this.btnSentMessages);
+            this.panelControl9.Controls.Add(this.btnAllMessages);
+            this.panelControl9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl9.Location = new System.Drawing.Point(0, 0);
+            this.panelControl9.Name = "panelControl9";
+            this.panelControl9.Size = new System.Drawing.Size(376, 87);
+            this.panelControl9.TabIndex = 0;
+            // 
+            // btnReceivedMessages
+            // 
+            this.btnReceivedMessages.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReceivedMessages.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.btnReceivedMessages.Appearance.Options.UseBackColor = true;
+            this.btnReceivedMessages.Appearance.Options.UseFont = true;
+            this.btnReceivedMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReceivedMessages.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_inbox;
+            this.btnReceivedMessages.Location = new System.Drawing.Point(144, 17);
+            this.btnReceivedMessages.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
+            this.btnReceivedMessages.Name = "btnReceivedMessages";
+            this.btnReceivedMessages.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnReceivedMessages.Size = new System.Drawing.Size(109, 46);
+            this.btnReceivedMessages.TabIndex = 29;
+            this.btnReceivedMessages.Text = "دریافتی";
+            this.btnReceivedMessages.Click += new System.EventHandler(this.btnReceivedMessages_Click_1);
+            // 
+            // btnSentMessages
+            // 
+            this.btnSentMessages.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSentMessages.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.btnSentMessages.Appearance.Options.UseBackColor = true;
+            this.btnSentMessages.Appearance.Options.UseFont = true;
+            this.btnSentMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSentMessages.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_outbox;
+            this.btnSentMessages.Location = new System.Drawing.Point(27, 17);
+            this.btnSentMessages.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
+            this.btnSentMessages.Name = "btnSentMessages";
+            this.btnSentMessages.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSentMessages.Size = new System.Drawing.Size(109, 46);
+            this.btnSentMessages.TabIndex = 28;
+            this.btnSentMessages.Text = "ارسالی";
+            this.btnSentMessages.Click += new System.EventHandler(this.btnSentMessages_Click);
+            // 
+            // btnAllMessages
+            // 
+            this.btnAllMessages.Appearance.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAllMessages.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.btnAllMessages.Appearance.Options.UseBackColor = true;
+            this.btnAllMessages.Appearance.Options.UseFont = true;
+            this.btnAllMessages.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAllMessages.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_archived;
+            this.btnAllMessages.Location = new System.Drawing.Point(261, 17);
+            this.btnAllMessages.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
+            this.btnAllMessages.Name = "btnAllMessages";
+            this.btnAllMessages.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnAllMessages.Size = new System.Drawing.Size(109, 46);
+            this.btnAllMessages.TabIndex = 27;
+            this.btnAllMessages.Text = "همه پیام ها";
+            this.btnAllMessages.Click += new System.EventHandler(this.btnAllMessages_Click);
+            // 
+            // panelControl8
+            // 
+            this.panelControl8.Appearance.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panelControl8.Appearance.Options.UseBackColor = true;
+            this.panelControl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl8.Controls.Add(this.labelControl3);
+            this.panelControl8.Controls.Add(this.txtMessage);
+            this.panelControl8.Controls.Add(this.labelControl9);
+            this.panelControl8.Controls.Add(this.cmbReceiverUser);
+            this.panelControl8.Controls.Add(this.btnSendMessage);
+            this.panelControl8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl8.Location = new System.Drawing.Point(2, 584);
+            this.panelControl8.Name = "panelControl8";
+            this.panelControl8.Size = new System.Drawing.Size(376, 298);
+            this.panelControl8.TabIndex = 9;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(312, 67);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(52, 24);
+            this.labelControl3.TabIndex = 151;
+            this.labelControl3.Text = "متن پیام:";
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.EditValue = "";
+            this.txtMessage.Location = new System.Drawing.Point(10, 66);
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.txtMessage.Properties.Appearance.Options.UseFont = true;
+            this.txtMessage.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtMessage.Size = new System.Drawing.Size(285, 134);
+            this.txtMessage.TabIndex = 150;
+            this.txtMessage.Tag = "";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(297, 21);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(76, 24);
+            this.labelControl9.TabIndex = 148;
+            this.labelControl9.Text = "ارسال پیام به:";
+            // 
+            // cmbReceiverUser
+            // 
+            this.cmbReceiverUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbReceiverUser.Location = new System.Drawing.Point(10, 18);
+            this.cmbReceiverUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbReceiverUser.Name = "cmbReceiverUser";
+            this.cmbReceiverUser.Properties.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.cmbReceiverUser.Properties.Appearance.Options.UseFont = true;
+            this.cmbReceiverUser.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.cmbReceiverUser.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cmbReceiverUser.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbReceiverUser.Properties.NullText = "";
+            this.cmbReceiverUser.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.cmbReceiverUser.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cmbReceiverUser.Size = new System.Drawing.Size(284, 28);
+            this.cmbReceiverUser.TabIndex = 149;
+            this.cmbReceiverUser.EditValueChanged += new System.EventHandler(this.cmbReceiverUser_EditValueChanged);
+            // 
+            // btnSendMessage
+            // 
+            this.btnSendMessage.Appearance.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSendMessage.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.btnSendMessage.Appearance.Options.UseBackColor = true;
+            this.btnSendMessage.Appearance.Options.UseFont = true;
+            this.btnSendMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSendMessage.ImageOptions.Image = global::IsoDocApp.Properties.Resources.send_mail_4698736;
+            this.btnSendMessage.Location = new System.Drawing.Point(10, 220);
+            this.btnSendMessage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
+            this.btnSendMessage.Name = "btnSendMessage";
+            this.btnSendMessage.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnSendMessage.Size = new System.Drawing.Size(140, 58);
+            this.btnSendMessage.TabIndex = 26;
+            this.btnSendMessage.Text = "ارسال پیام";
+            this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
+            // 
             // FrmManageDocReqs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
@@ -886,7 +1302,6 @@
             this.Ribbon = this.ribbonControl1;
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "مدیریت درخواست ها";
             this.Load += new System.EventHandler(this.FrmManageDocReqs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).EndInit();
@@ -906,6 +1321,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
@@ -919,6 +1336,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.confirmationSigners)).EndInit();
+            this.tabReqChatRoom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
+            this.panelControl7.ResumeLayout(false);
+            this.xtraScrollableControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcChatLoading)).EndInit();
+            this.pcChatLoading.ResumeLayout(false);
+            this.pcChatLoading.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
+            this.panelControl9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
+            this.panelControl8.ResumeLayout(false);
+            this.panelControl8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMessage.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbReceiverUser.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -989,6 +1421,29 @@
         private DevExpress.XtraBars.BarButtonItem btnShowDocConfirmations;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraEditors.SimpleButton btnConfirm;
+        private DevExpress.XtraTab.XtraTabPage tabReqChatRoom;
+        private DevExpress.XtraEditors.PanelControl panelControl7;
+        private DevExpress.XtraEditors.PanelControl panelControl8;
+        private DevExpress.XtraEditors.SimpleButton btnSendMessage;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LookUpEdit cmbReceiverUser;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.MemoEdit txtMessage;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
+        private DevExpress.XtraGrid.Columns.TileViewColumn Message;
+        private DevExpress.XtraGrid.Columns.TileViewColumn SendDateTime;
+        private DevExpress.XtraGrid.Columns.TileViewColumn SenderUser;
+        private DevExpress.XtraEditors.PanelControl panelControl9;
+        private DevExpress.XtraEditors.SimpleButton btnAllMessages;
+        private DevExpress.XtraEditors.SimpleButton btnSentMessages;
+        private DevExpress.XtraGrid.Columns.TileViewColumn ReceiverUser;
+        private DevExpress.XtraEditors.PanelControl pcChatLoading;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit2;
+        private DevExpress.XtraEditors.SimpleButton btnReceivedMessages;
     }
 }
 

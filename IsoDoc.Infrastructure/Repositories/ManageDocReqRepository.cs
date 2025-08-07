@@ -17,8 +17,6 @@ namespace IsoDoc.Infrastructure.Repositories
     public class ManageDocReqRepository : IManageDocReqsRepository
     {
         private readonly IDbConnection connection;
-        private readonly string baseEntityInsertProps = "CreatedBy,ModifiedBy,CreatedAt,ModifiedAt,Active";
-        private readonly string baseEntityInsertPropsValues = "@CreatedBy,@ModifiedBy,@CreatedAt,@ModifiedAt,@Active";
         public ManageDocReqRepository(IDbConnection dbConnection)
         {
             connection = dbConnection;
@@ -310,6 +308,84 @@ namespace IsoDoc.Infrastructure.Repositories
 
             return affectedRows > 0;
 
+        }
+
+        public async Task<List<Colleague>> GetDocRequestActivePeopleAsync(int docReqId)
+        {
+            var docRequestPeopleQuery = @"SELECT  p.PersonCode,
+                                        p.Name,p.Post
+                                        FROM    dbo.Vw_DocRequestPeople      AS p
+                                        JOIN    Personely.dbo.VwHR_Employee  AS e   ON  e.PersonCode = p.PersonCode
+                                        WHERE   p.DocRequestId = @DocReqId
+                                          AND   e.Active = 1; ";
+
+            var docRequestPeople = await connection.QueryAsync<Colleague>(docRequestPeopleQuery, new { DocReqId = docReqId });
+            return docRequestPeople.ToList();
+        }
+
+        public async Task<List<DocRequestChatMessage>> GetDocRequestChatMessagesAsync(int docReqId)
+        {
+            var docRequestChatMessagesQuery = @"select * from DocRequestChatMessages where DocRequestId = @DocRequestId and Active = '1' order by Id desc";
+
+            var docRequestChatMessages = await connection.QueryAsync<DocRequestChatMessage>(docRequestChatMessagesQuery, new { DocRequestId = docReqId });
+            return docRequestChatMessages.ToList();
+        }
+
+        public async Task<List<DocRequestChatMessage>> GetDocRequestUserReceivedChatMessagesAsync(int docReqId, string userPersonCode)
+        {
+            var docRequestChatMessagesQuery = @"select * from DocRequestChatMessages where DocRequestId = @DocRequestId and ReceiverUserPersonCode = @ReceiverUserPersonCode and Active = '1' order by Id desc";
+
+            var docRequestChatMessages = await connection.QueryAsync<DocRequestChatMessage>(docRequestChatMessagesQuery, new { DocRequestId = docReqId, ReceiverUserPersonCode = userPersonCode });
+            return docRequestChatMessages.ToList();
+        }
+
+        public async Task<List<DocRequestChatMessage>> GetDocRequestUserSentChatMessagesAsync(int docReqId, string userPersonCode)
+        {
+            var docRequestChatMessagesQuery = @"select * from DocRequestChatMessages where DocRequestId = @DocRequestId and SenderUserPersonCode = @SenderUserPersonCode and Active = '1' order by Id desc";
+
+            var docRequestChatMessages = await connection.QueryAsync<DocRequestChatMessage>(docRequestChatMessagesQuery, new { DocRequestId = docReqId, SenderUserPersonCode = userPersonCode });
+            return docRequestChatMessages.ToList();
+        }
+
+        public async Task<DocRequestChatMessage> SendMessageAsync(DocRequestChatMessage message)
+        {
+            var docChatMessageQuery = @"
+                    INSERT INTO DocRequestChatMessages (
+                        DocRequestId,
+                        SenderUserPersonCode,
+                        SenderUserFullName,
+                        SenderUserPost,
+                        ReceiverUserPersonCode,
+                        ReceiverUserFullName,
+                        ReceiverUserPost,
+                        Message,
+                        CreatedBy, 
+                        ModifiedBy, 
+                        CreatedAt, 
+                        ModifiedAt,
+                        Active
+                    )
+                    OUTPUT INSERTED.Id
+                    VALUES (
+                        @DocRequestId,
+                        @SenderUserPersonCode,
+                        @SenderUserFullName,
+                        @SenderUserPost,
+                        @ReceiverUserPersonCode,
+                        @ReceiverUserFullName,
+                        @ReceiverUserPost,
+                        @Message,
+                        @CreatedBy, 
+                        @ModifiedBy, 
+                        @CreatedAt, 
+                        @ModifiedAt,
+                        @Active
+                    );";
+
+
+            var newDocReqMessageId = await connection.QuerySingleAsync<int>(docChatMessageQuery, message);
+            message.Id = newDocReqMessageId;
+            return message;
         }
     }
 }

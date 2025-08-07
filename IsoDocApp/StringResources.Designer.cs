@@ -610,6 +610,24 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کاربر گرامی پیام جدیدی برای درخواست شماره.
+        /// </summary>
+        internal static string NewDocReqMessageReceived1 {
+            get {
+                return ResourceManager.GetString("NewDocReqMessageReceived1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to برای شما در نرم افزار مستندات نظام کیفیت ارسال شد..
+        /// </summary>
+        internal static string NewDocReqMessageReceived2 {
+            get {
+                return ResourceManager.GetString("NewDocReqMessageReceived2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to کاربر گرامی درخواست جدیدی در نرم افزار مستندات نظام کیفیت برای شما ارجاع شده است. .
         /// </summary>
         internal static string NewRequestSent {
@@ -682,6 +700,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to گیرنده:.
+        /// </summary>
+        internal static string Receiver {
+            get {
+                return ResourceManager.GetString("Receiver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to شماره بازنگری:.
         /// </summary>
         internal static string ReviewNo {
@@ -705,6 +732,24 @@ namespace IsoDocApp {
         internal static string SelectDocKeepDuration {
             get {
                 return ResourceManager.GetString("SelectDocKeepDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان ارسال:.
+        /// </summary>
+        internal static string SendDateTime {
+            get {
+                return ResourceManager.GetString("SendDateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ارسال کننده:.
+        /// </summary>
+        internal static string Sender {
+            get {
+                return ResourceManager.GetString("Sender", resourceCulture);
             }
         }
         

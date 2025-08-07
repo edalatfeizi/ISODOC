@@ -372,4 +372,19 @@
   <data name="NotConfirmed" xml:space="preserve">
     <value>تصویب نشده</value>
   </data>
+  <data name="Sender" xml:space="preserve">
+    <value>ارسال کننده:</value>
+  </data>
+  <data name="Receiver" xml:space="preserve">
+    <value>گیرنده:</value>
+  </data>
+  <data name="SendDateTime" xml:space="preserve">
+    <value>زمان ارسال:</value>
+  </data>
+  <data name="NewDocReqMessageReceived1" xml:space="preserve">
+    <value>کاربر گرامی پیام جدیدی برای درخواست شماره</value>
+  </data>
+  <data name="NewDocReqMessageReceived2" xml:space="preserve">
+    <value>برای شما در نرم افزار مستندات نظام کیفیت ارسال شد.</value>
+  </data>
 </root>

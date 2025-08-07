@@ -84,5 +84,31 @@ namespace IsoDoc.Domain.Services
         {
             return await manageDocReqsRepo.UpdateDocRequestEditOrReviewStatus(docReqId,editOrReviewStatus,editOrReviewNo);
         }
+
+        public async Task<List<Colleague>> GetDocRequestActivePeopleAsync(int docReqId)
+        {
+            return await manageDocReqsRepo.GetDocRequestActivePeopleAsync(docReqId);
+        }
+
+        public async Task<List<DocRequestChatMessage>> GetDocRequestAllChatMessagesAsync(int docReqId)
+        {
+            return await manageDocReqsRepo.GetDocRequestChatMessagesAsync(docReqId);
+        }
+
+        public async Task<List<DocRequestChatMessage>> GetDocRequestUserReceivedChatMessagesAsync(int docReqId, string userPersonCode)
+        {
+            return await manageDocReqsRepo.GetDocRequestUserReceivedChatMessagesAsync(docReqId, userPersonCode);
+        }
+
+        public async Task<List<DocRequestChatMessage>> GetDocRequestUserSentChatMessagesAsync(int docReqId, string userPersonCode)
+        {
+            return await manageDocReqsRepo.GetDocRequestUserSentChatMessagesAsync(docReqId, userPersonCode);
+
+        }
+
+        public async Task<DocRequestChatMessage> SendMessageAsync(DocRequestChatMessage message)
+        {
+            return await manageDocReqsRepo.SendMessageAsync(message);
+        }
     }
 }

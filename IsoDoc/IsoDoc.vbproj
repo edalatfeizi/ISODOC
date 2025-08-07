@@ -31,7 +31,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.9.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -54,6 +54,9 @@
     <DocumentationFile>IsoDoc.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Text</OptionCompare>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Activities">
@@ -158,7 +161,7 @@
       <HintPath>C:\IkidSystem+\Janus.Windows.ExplorerBar.v2.dll</HintPath>
     </Reference>
     <Reference Include="Janus.Windows.GridEX.v2">
-      <HintPath>C:\IkidSystem+\Janus.Windows.GridEX.v2.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\IkidSystems\Janus.Windows.GridEX.v2.dll</HintPath>
     </Reference>
     <Reference Include="Janus.Windows.UI.v2">
       <HintPath>C:\IkidSystem+\Janus.Windows.UI.v2.dll</HintPath>
