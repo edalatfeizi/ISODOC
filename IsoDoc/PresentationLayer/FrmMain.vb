@@ -74,7 +74,7 @@ Public Class FrmMain
         Dim userInfoDt = persist1.GetDataTable(CnnString, SqlStr)
 
 
-        If userInfoDt.DefaultView.Item(0).Item("CardNumber") = "3910" Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI000" Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI300" Or userInfoDt.DefaultView.Item(0).Item("UpperCode") = "SI300" Then
+        If userInfoDt.DefaultView.Item(0).Item("PersonCode").ToString().IsDeveloper() Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI000" Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI300" Or userInfoDt.DefaultView.Item(0).Item("UpperCode") = "SI300" Then
             tabEnterData.Visible = True
             btnManageSignatures.Enabled = True
         End If

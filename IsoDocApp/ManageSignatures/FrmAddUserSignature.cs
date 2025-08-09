@@ -30,9 +30,8 @@ namespace IsoDocApp.ManageNewDocConfirmations
         }
         private async void FrmAddUserSignature_Load(object sender, EventArgs e)
         {
-            var userName = SystemInformation.UserName.ToString();
-            if (Program.DebugMode)
-                userName = "3910";
+            var userName = SystemInformation.UserName;
+        
 
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);

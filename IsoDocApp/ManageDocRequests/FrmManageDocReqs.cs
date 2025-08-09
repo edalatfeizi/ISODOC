@@ -87,10 +87,7 @@ namespace IsoDocApp
         {
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName;
-            if (Program.DebugMode)
-                userName = "3910";
-
-
+        
             cmbReceiverUser.Properties.DisplayMember = "Name";
             cmbReceiverUser.Properties.ValueMember = "PersonCode";
 
@@ -103,7 +100,7 @@ namespace IsoDocApp
             //if(userInfo != null)
             //GetUserDocRequests();
 
-            if (userInfo != null && (userInfo.CardNumber == "3910" || userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
+            if (userInfo != null && (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
             {
                 tabAllDocRequests.Visible = true;
                 btnExecRegulation.Enabled = true;
@@ -114,7 +111,7 @@ namespace IsoDocApp
                 tabAllDocRequests.Visible = false;
 
             isAdmin = AdminTypes.GetAdminTypes().Any(x => x == ((AdminType)Convert.ToInt32(userInfo.PostTypeID)));
-            if (isAdmin || (userInfo != null && (userInfo.CardNumber == "3910" || userInfo.CodeEdare == "SI000")))
+            if (isAdmin || (userInfo != null && userInfo.PersonCode.IsDeveloper()))
                 tabDeletedRequests.Visible = true;
             else
                 tabDeletedRequests.Visible = false;
@@ -406,7 +403,7 @@ namespace IsoDocApp
                         break;
 
                     case "tabAllDocRequests":
-                        if (userInfo != null && (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
+                        if (userInfo != null && (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
                         {
                             //docReqSteps.Items.Clear();
                             FilterDocRequests(new FilterDocRequests { });
@@ -418,7 +415,7 @@ namespace IsoDocApp
 
                         break;
                     case "tabDeletedRequests":
-                        if (userInfo != null && (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || isAdmin))
+                        if (userInfo != null && (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || isAdmin || userInfo.PersonCode.IsDeveloper()))
                         {
 
                             //docReqSteps.Items.Clear();
@@ -592,7 +589,7 @@ namespace IsoDocApp
                         }
 
                     }
-                    if (userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys office emp or developer
+                    if (userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()) // if user is sys office emp or developer
                     {
 
                         // Show the ContextMenuStrip at the mouse position
@@ -604,7 +601,7 @@ namespace IsoDocApp
 
                         //}
                     }
-                    else if (userInfo.CodeEdare == "SI000") //if user is sys dep admin
+                    else if (userInfo.CodeEdare == "SI000" || userInfo.PersonCode.IsDeveloper()) //if user is sys dep admin
                     {
 
                         // Show the ContextMenuStrip at the mouse position
@@ -622,7 +619,7 @@ namespace IsoDocApp
                     mnuEnableReq.Enabled = true;
                 }
 
-                if (selectedPage.Name == tabAllDocRequests.Name && e.Button == MouseButtons.Right && userInfo != null && (userInfo.CardNumber == "3910" || userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300"))
+                if (selectedPage.Name == tabAllDocRequests.Name && e.Button == MouseButtons.Right && userInfo != null && ( userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
                 {
                     contextMenuStrip2.Show(grdUserDocRequests, e.Location);
                     if (selectedDocReq.DocRequestStatus == DocRequestStatus.Completed)
@@ -901,61 +898,75 @@ namespace IsoDocApp
      
         private async void btnSentMessages_Click(object sender, EventArgs e)
         {
-            btnSentMessages.Appearance.BackColor = Color.SteelBlue;
-            btnReceivedMessages.Appearance.BackColor = Color.WhiteSmoke;
-            btnAllMessages.Appearance.BackColor = Color.WhiteSmoke;
-            ShowChatLoading(true);
+            int rowHandle = gridView1.FocusedRowHandle;
 
-            if (showDocRequests)
+            if (rowHandle >= 0)
             {
-                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                var docReqMessages = await manageDocReqsService
-                    .GetDocRequestUserSentChatMessagesAsync(docReqId, userInfo.PersonCode);
-                SetChatMessages(docReqMessages);
+                btnSentMessages.Appearance.BackColor = Color.SteelBlue;
+                btnReceivedMessages.Appearance.BackColor = Color.WhiteSmoke;
+                btnAllMessages.Appearance.BackColor = Color.WhiteSmoke;
+                ShowChatLoading(true);
+
+                if (showDocRequests)
+                {
+                    var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                    var docReqMessages = await manageDocReqsService
+                        .GetDocRequestUserSentChatMessagesAsync(docReqId, userInfo.PersonCode);
+                    SetChatMessages(docReqMessages);
+                }
+                else
+                {
+                    var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                    var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
+                    var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
+
+                    var docReqMessages = await manageDocReqsService
+                        .GetDocRequestUserSentChatMessagesAsync(docRequest.Id, userInfo.PersonCode);
+
+                    SetChatMessages(docReqMessages);
+
+                }
+                ShowChatLoading(false);
             }
-            else
-            {
-                var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
-                var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
-
-                var docReqMessages = await manageDocReqsService
-                    .GetDocRequestUserSentChatMessagesAsync(docRequest.Id, userInfo.PersonCode);
-
-                SetChatMessages(docReqMessages);
-
-            }
-            ShowChatLoading(false);
+                
 
         }
       
         private async void btnReceivedMessages_Click_1(object sender, EventArgs e)
         {
-            btnSentMessages.Appearance.BackColor = Color.WhiteSmoke;
-            btnReceivedMessages.Appearance.BackColor = Color.SteelBlue;
-            btnAllMessages.Appearance.BackColor = Color.WhiteSmoke;
-            ShowChatLoading(true);
 
-            if (showDocRequests)
+            int rowHandle = gridView1.FocusedRowHandle;
+
+            if (rowHandle >= 0)
             {
-                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                var docReqMessages = await manageDocReqsService
-                    .GetDocRequestUserReceivedChatMessagesAsync(docReqId, userInfo.PersonCode);
-                SetChatMessages(docReqMessages);
+                btnSentMessages.Appearance.BackColor = Color.WhiteSmoke;
+                btnReceivedMessages.Appearance.BackColor = Color.SteelBlue;
+                btnAllMessages.Appearance.BackColor = Color.WhiteSmoke;
+                ShowChatLoading(true);
+
+                if (showDocRequests)
+                {
+                    var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                    var docReqMessages = await manageDocReqsService
+                        .GetDocRequestUserReceivedChatMessagesAsync(docReqId, userInfo.PersonCode);
+                    SetChatMessages(docReqMessages);
+                }
+                else
+                {
+                    var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                    var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
+                    var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
+
+                    var docReqMessages = await manageDocReqsService
+                        .GetDocRequestUserReceivedChatMessagesAsync(docRequest.Id, userInfo.PersonCode);
+
+                    SetChatMessages(docReqMessages);
+
+                }
+                ShowChatLoading(false);
             }
-            else
-            {
-                var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
-                var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
 
-                var docReqMessages = await manageDocReqsService
-                    .GetDocRequestUserReceivedChatMessagesAsync(docRequest.Id, userInfo.PersonCode);
-
-                SetChatMessages(docReqMessages);
-
-            }
-            ShowChatLoading(false);
+            
         }
         private void ShowChatLoading(bool isLoading)
         {

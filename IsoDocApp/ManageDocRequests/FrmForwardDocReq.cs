@@ -5,6 +5,7 @@ using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
+using IsoDocApp.Extensions;
 using IsoDocApp.Helpers;
 using System;
 using System.Collections.Generic;
@@ -69,10 +70,8 @@ namespace IsoDocApp.ManageDocRequests
             SetupControls();
             txtDocReqId.Text = docReqId.ToString();
 
-            var userName = SystemInformation.UserName.ToString();
-            if (Program.DebugMode)
-                userName = "3910";
-
+            var userName = SystemInformation.UserName;
+            
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
@@ -89,7 +88,7 @@ namespace IsoDocApp.ManageDocRequests
                 userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
 
             var isAdmin = UserHelper.CheckIsAdmin(userInfo.PostTypeID);
-            if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
+            if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()) // if user is sys dep admin
             {
                 grpEditOrReview.Enabled = true;
 
@@ -235,7 +234,7 @@ namespace IsoDocApp.ManageDocRequests
             await manageDocReqsService.AddNewDocRequestStepAsync(newStep);
 
 
-            if (UserHelper.CheckIsAdmin(receiverUserInfo.PostTypeID) || (receiverUserInfo.CodeEdare == "SI300" || receiverUserInfo.UpperCode == "SI300"))
+            if (UserHelper.CheckIsAdmin(receiverUserInfo.PostTypeID) || (receiverUserInfo.CodeEdare == "SI300" || receiverUserInfo.UpperCode == "SI300") || userInfo.PersonCode.IsDeveloper())
             {
                 smsClient.SendSMS(receiverUserInfo.Mobile, $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
 

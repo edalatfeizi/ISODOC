@@ -48,10 +48,8 @@ namespace IsoDocApp.ManageDocRequests
             lastDocReqId = await manageDocReqsService.GetLastDocReqId();
             txtNewDocReqId.Text = $"{lastDocReqId + 1}";
 
-            var userName = SystemInformation.UserName.ToString();
-            if (Program.DebugMode)
-                userName = "3910";
-
+            var userName = SystemInformation.UserName;
+           
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
@@ -89,7 +87,7 @@ namespace IsoDocApp.ManageDocRequests
                 userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
 
             var isAdmin = UserHelper.CheckIsAdmin(userInfo.PostTypeID);
-            if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300") // if user is sys dep admin
+            if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()) // if user is sys dep admin
             {
                 var admins = await personelyService.GetUserColleagues(null, null, true);
                 userColleagues.AddRange(admins);
@@ -344,7 +342,7 @@ namespace IsoDocApp.ManageDocRequests
 
             //toastNotificationsManager1.ShowNotification()
             //if receiver is a top manager or one of sys office staffs then notify them via an sms  
-            if (UserHelper.CheckIsAdmin(receiverColleague.PostTypeID) || receiverColleague.CodeEdare == "SI300" || receiverColleague.UpperCode == "SI300" ) 
+            if (UserHelper.CheckIsAdmin(receiverColleague.PostTypeID) || receiverColleague.CodeEdare == "SI300" || receiverColleague.UpperCode == "SI300") 
             {
                 smsClient.SendSMS(receiverColleague.Mobile, $"{StringResources.NewRequestSent} \n {StringResources.IKID}");
 

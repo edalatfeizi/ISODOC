@@ -38,7 +38,7 @@ Public Class FrmSearchDocs
         Dim personCode = Await _personelyService.GetUserPersonCodeByLoginName(userName)
         userInfo = Await _personelyService.GetUserInfoByPersonCode(personCode)
 
-        If userInfo.CardNumber = "3910" Or userInfo.CodeEdare = "SI000" Or userInfo.CodeEdare = "SI300" Or userInfo.UpperCode = "SI300" Then
+        If userInfo.PersonCode.IsDeveloper() Or userInfo.CodeEdare = "SI000" Or userInfo.CodeEdare = "SI300" Or userInfo.UpperCode = "SI300" Then
             isAdmin = True
 
         End If

@@ -51,9 +51,8 @@ namespace IsoDocApp.ManageDocRequests
             employees.Clear();
             SetupControls();
 
-            var userName = SystemInformation.UserName.ToString();
-            if (Program.DebugMode)
-                userName = "3910";
+            var userName = SystemInformation.UserName;
+           
 
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             //userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);

@@ -316,6 +316,7 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Enums\UserTypes.vb" />
+    <Compile Include="Extensions\StringExtensions.vb" />
     <Compile Include="Helpers\DataGridHelper.vb" />
     <Compile Include="Models\DocRequest.vb" />
     <Compile Include="PresentationLayer\FrmISORoozshomar.Designer.vb">
@@ -558,6 +559,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PublicClasses\Cls_JanusGrid.vb" />
+    <Compile Include="PublicClasses\Constants.vb" />
     <Compile Include="PublicClasses\StartSystem.vb" />
     <Compile Include="Reports\RptChartKoli.vb">
       <AutoGen>True</AutoGen>

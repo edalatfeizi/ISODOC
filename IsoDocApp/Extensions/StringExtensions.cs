@@ -41,5 +41,10 @@ namespace IsoDocApp.Extensions
 
             return $"{hour:00}:{minute:00}:{second:00} {year}/{month:00}/{day:00}";
         }
+     
+        public static bool IsDeveloper(this string personCode)
+        {
+            return Constants.DeveloperPersonCodes.Any(x => x == personCode);
+        }
     }
 }
