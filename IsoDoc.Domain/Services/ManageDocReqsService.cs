@@ -110,5 +110,11 @@ namespace IsoDoc.Domain.Services
         {
             return await manageDocReqsRepo.SendMessageAsync(message);
         }
+
+        public async Task<bool> HasAttachmentsAsync(int docReqId)
+        {
+            return await manageDocReqsRepo.HasAttachmentsAsync(docReqId);
+
+        }
     }
 }

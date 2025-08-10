@@ -1,4 +1,6 @@
 ﻿
+using IsoDoc.Domain.Enums;
+
 namespace IsoDoc.Domain.Entities
 {
     public class NewDocConfirmation : BaseEntity
@@ -9,5 +11,6 @@ namespace IsoDoc.Domain.Entities
         public string DocCode { get; set; }
         public string ReviewNo { get; set; }
         public string ReviewText { get; set; }
+        public DocConfirmStatus ConfirmationStatus { get; set; }
     }
 }

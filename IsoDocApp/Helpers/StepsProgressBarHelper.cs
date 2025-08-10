@@ -3,14 +3,11 @@ using DevExpress.XtraEditors;
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
-using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
 using IsoDocApp.Extensions;
-using IsoDocApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace IsoDocApp
@@ -46,7 +43,7 @@ namespace IsoDocApp
                     switch (docRequestStatus)
                     {
                         case DocRequestStatus.Canceled:
-                            lastStep.Options.Indicator.ActiveStateImageOptions.Image = ImageResourceCache.Default.GetImageById("cancel", DevExpress.Utils.Design.ImageSize.Size32x32, DevExpress.Utils.Design.ImageType.Colored);
+                            SetStepItemIcon(lastStep, "cancel");
                             var cancelDesc = $"{StringResources.CancelReason} \n {StringResources.Description} {cancelOrDeleteDsc}";
                             desc += cancelDesc;
 
@@ -54,7 +51,8 @@ namespace IsoDocApp
                             break;
 
                         case DocRequestStatus.Deleted:
-                            lastStep.Options.Indicator.ActiveStateImageOptions.Image = ImageResourceCache.Default.GetImageById("trash", DevExpress.Utils.Design.ImageSize.Size32x32, DevExpress.Utils.Design.ImageType.Colored);
+                            SetStepItemIcon(lastStep, "trash");
+
                             var deletedDesc = $"{StringResources.DeleteRequest} \n {StringResources.Description} {cancelOrDeleteDsc}";
                             desc += deletedDesc;
 
@@ -110,18 +108,37 @@ namespace IsoDocApp
                         // Create a new StepItem for each task
                         StepProgressBarItem stepItem = new StepProgressBarItem();
                         stepItem.ContentBlock2.Caption = $"{signer.Name} - {signer.Post}";
-                        if(signer.IsSigned && signer.Active)
-                            stepItem.ContentBlock2.Description =  $"{StringResources.SignerType}: {signer.SignerType} \n {StringResources.Status} {StringResources.Signed} \n {StringResources.SigningDate}: {signer.SigningDate.FormatPersianDate()}";
-                        else if(signer.Active && !signer.IsSigned)
-                        {
-                            stepItem.ContentBlock2.Description = $"{StringResources.SignerType}: {signer.SignerType} \n {StringResources.Status} {StringResources.SignRequestSent} \n {StringResources.SignRequestSentDate}: {signer.SignRequestSentDate.FormatPersianDate()}";
-                        }else if(!signer.Active && !signer.IsSigned)
-                        {
-                            stepItem.ContentBlock2.Description = $"{StringResources.SignerType}: {signer.SignerType} \n{StringResources.Status} {StringResources.SignRequestNotSent}";
-
-                        }
                         stepItem.State = signer.IsSigned ? StepProgressBarItemState.Active : StepProgressBarItemState.Inactive;
 
+                        if (signer.IsCanceled)
+                        {
+                            desc = $"{StringResources.Status} : {StringResources.CancelSigningDoc} \n {StringResources.CancelSigningReason} : {signer.CancelReason} \n {StringResources.CancelSigningDate} : {signer.CreatedAt.FormatPersianDate()}";
+                            stepItem.State = StepProgressBarItemState.Active;
+                            SetStepItemIcon(stepItem, "cancel");
+                            stepItem.ContentBlock2.Description = desc;
+
+                        }
+                        else if (signer.IsSigned && signer.Active)
+                        {
+                            desc = $"{StringResources.SignerType}: {signer.SignerType} \n {StringResources.Status} : {StringResources.Signed} \n {StringResources.SigningDate}: {signer.SigningDate.FormatPersianDate()}";
+
+                            stepItem.ContentBlock2.Description = desc;
+
+
+                        }
+                        else if (signer.Active && !signer.IsSigned)
+                        {
+                            desc = $"{StringResources.SignerType}: {signer.SignerType} \n {StringResources.Status} : {StringResources.SignRequestSent} \n {StringResources.SignRequestSentDate}: {signer.SignRequestSentDate.FormatPersianDate()}";
+                            stepItem.ContentBlock2.Description = desc;
+
+                        }
+                        else if (!signer.Active && !signer.IsSigned)
+                        {
+                            desc = $"{StringResources.SignerType}: {signer.SignerType} \n{StringResources.Status} : {StringResources.SignRequestNotSent}";
+                            stepItem.ContentBlock2.Description = desc ;
+
+
+                        }
                         items.Add(stepItem);
                     }
 
@@ -143,6 +160,11 @@ namespace IsoDocApp
             }
 
             return items;
+
+        }
+        private static void SetStepItemIcon(StepProgressBarItem stepItem, string iconName)
+        {
+            stepItem.Options.Indicator.ActiveStateImageOptions.Image = ImageResourceCache.Default.GetImageById(iconName, DevExpress.Utils.Design.ImageSize.Size32x32, DevExpress.Utils.Design.ImageType.Colored);
 
         }
     }

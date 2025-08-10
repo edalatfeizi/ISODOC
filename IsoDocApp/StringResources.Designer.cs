@@ -169,6 +169,33 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to زمان لغو امضاء سند.
+        /// </summary>
+        internal static string CancelSigningDate {
+            get {
+                return ResourceManager.GetString("CancelSigningDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لغو امضاء سند.
+        /// </summary>
+        internal static string CancelSigningDoc {
+            get {
+                return ResourceManager.GetString("CancelSigningDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to علت لغو امضاء سند.
+        /// </summary>
+        internal static string CancelSigningReason {
+            get {
+                return ResourceManager.GetString("CancelSigningReason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تغییر.
         /// </summary>
         internal static string Change {
@@ -390,6 +417,15 @@ namespace IsoDocApp {
         internal static string EnterCancelReason {
             get {
                 return ResourceManager.GetString("EnterCancelReason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to علت لغو امضاء سند را وارد کنید.
+        /// </summary>
+        internal static string EnterCancelSigningReason {
+            get {
+                return ResourceManager.GetString("EnterCancelSigningReason", resourceCulture);
             }
         }
         
@@ -660,6 +696,33 @@ namespace IsoDocApp {
         internal static string NoItemSelected {
             get {
                 return ResourceManager.GetString("NoItemSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هنوز پیامی در این اتاق ارسال نشده است، اولین پیام را شما ارسال کنید.
+        /// </summary>
+        internal static string NoMessageInRoom {
+            get {
+                return ResourceManager.GetString("NoMessageInRoom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to پیامی دریافت نکرده اید!.
+        /// </summary>
+        internal static string NoMessageReceived {
+            get {
+                return ResourceManager.GetString("NoMessageReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to پیامی ارسال نکرده اید!.
+        /// </summary>
+        internal static string NoMessageSent {
+            get {
+                return ResourceManager.GetString("NoMessageSent", resourceCulture);
             }
         }
         

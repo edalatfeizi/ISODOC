@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Dtos;
+using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
@@ -31,7 +32,9 @@ namespace IsoDocApp.ManageDocRequests
         //private Person userInfo;
         private string userPersonCode = "";
         private int docReqId = 0;
-        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService, MagfaSMSClient smsClient, int docReqId)
+        private int? lastDocConfirmationId = null;
+        private NewDocConfirmationResDto lastNewDocConfirmation;
+        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService, MagfaSMSClient smsClient, int docReqId, int? lastDocConfirmationId = null)
         {
             InitializeComponent();
             this.personelyService = personelyService;
@@ -39,6 +42,7 @@ namespace IsoDocApp.ManageDocRequests
             this.docConfirmationService = docConfirmationService;
             this.smsClient = smsClient;
             this.docReqId = docReqId;
+            this.lastDocConfirmationId = lastDocConfirmationId;
         }
 
         private void panel_Paint(object sender, PaintEventArgs e)
@@ -57,7 +61,6 @@ namespace IsoDocApp.ManageDocRequests
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             //userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
 
-
             departments = await personelyService.GetDepartments();
             cmbDocOwnerDep.Properties.DataSource = departments;
 
@@ -67,6 +70,32 @@ namespace IsoDocApp.ManageDocRequests
             cmbAcceptors.Properties.DataSource = employees;
 
             gridUsers.DataSource = signerColleagues;
+
+            if (lastDocConfirmationId != null)
+            {
+                lastNewDocConfirmation = await docConfirmationService.GetDocConfirmationByIdAsync((int)lastDocConfirmationId);
+                var dep = departments.Where(x => x.MDepartCode == lastNewDocConfirmation.DocOwnerDepCode).First();
+                
+                documents = await manageDocReqsService.GetDocuments(dep.MDepartCode);
+                var doc = documents.Where(x => x.DocumentCode == lastNewDocConfirmation.DocCode).First();
+
+                cmbDocs.Properties.DataSource = documents;
+
+                cmbDocOwnerDep.Text = dep.MDepartName.ToString();
+                cmbDocOwnerDep.Enabled = false;
+
+                cmbDocs.Text = doc.DocumentName;
+                cmbDocs.Enabled = false;
+
+                txtDocCode.Text = lastNewDocConfirmation.DocCode;
+                txtDocCode.Enabled = false;
+
+                txtReviewNo.Text = lastNewDocConfirmation.ReviewNo;
+                txtReviewNo.Enabled = false;
+
+                txtReview.Text = lastNewDocConfirmation.ReviewText;
+                txtReview.Enabled = false;
+            }
 
         }
         private void SetupControls()
@@ -131,25 +160,29 @@ namespace IsoDocApp.ManageDocRequests
                         {
                             btnSave.Enabled = false;
                             ShowProgressBar(true);
-                            var doc = documents.Where(x => x.DocumentCode.ToString() == cmbDocs.EditValue.ToString()).FirstOrDefault();
+                            if (lastNewDocConfirmation == null) {
+                                var doc = documents.Where(x => x.DocumentCode.ToString() == cmbDocs.EditValue.ToString()).FirstOrDefault();
 
-                            var newDocConfirmation = new NewDocConfirmationDto
-                            {
-                                DocReqId = docReqId,
-                                DocOwnerDepCode = cmbDocOwnerDep.EditValue.ToString(),
-                                DocCode = doc.DocumentCode,
-                                DocTitle = doc.DocumentName,
-                                ReviewNo = txtReviewNo.Text,
-                                ReviewText = txtReview.Text,
-                                CreatorUserPersonCode = userPersonCode
-                            };
+                                var newDocConfirmation = new NewDocConfirmationDto
+                                {
+                                    DocReqId = docReqId,
+                                    DocOwnerDepCode = cmbDocOwnerDep.EditValue.ToString(),
+                                    DocCode = doc.DocumentCode,
+                                    DocTitle = doc.DocumentName,
+                                    ReviewNo = txtReviewNo.Text,
+                                    ReviewText = txtReview.Text,
+                                    CreatorUserPersonCode = userPersonCode
+                                };
 
-                            var newDocConfirm = await docConfirmationService.AddNewDocConfirmationAsync(newDocConfirmation);
+                                var newDocConfirm = await docConfirmationService.AddNewDocConfirmationAsync(newDocConfirmation);
+                                lastDocConfirmationId = newDocConfirm.Id;
+                            }
+                         
                             foreach (var signerColleague in signerColleagues)
                             {
                                 var newDocSigner = new NewDocSignerDto
                                 {
-                                    NewDocConfirmationId = newDocConfirm.Id,
+                                    NewDocConfirmationId = (int)lastDocConfirmationId,
                                     PersonCode = signerColleague.PersonCode,
                                     Name = signerColleague.Name,
                                     Post = signerColleague.Post,
@@ -235,26 +268,33 @@ namespace IsoDocApp.ManageDocRequests
         }
         private async void cmbDocOwnerDep_EditValueChanged_1(object sender, EventArgs e)
         {
-            cmbDocs.Enabled = true;
-            //filter docs by dep
-            ShowProgressBar(true);
-            var dep = departments.Where(x => x.MDepartCode.ToString() == cmbDocOwnerDep.EditValue.ToString()).FirstOrDefault();
-
-            documents = await manageDocReqsService.GetDocuments(dep.MDepartCode);
-
-            foreach (var doc in documents)
+            if(lastNewDocConfirmation == null)
             {
-                doc.DocumentName = doc.DocumentName.NormalizePersian();
-            }
-            cmbDocs.Properties.DataSource = documents;
+                cmbDocs.Enabled = true;
+                //filter docs by dep
+                ShowProgressBar(true);
+                var dep = departments.Where(x => x.MDepartCode.ToString() == cmbDocOwnerDep.EditValue.ToString()).FirstOrDefault();
 
-            ShowProgressBar(false);
+                documents = await manageDocReqsService.GetDocuments(dep.MDepartCode);
+
+                foreach (var doc in documents)
+                {
+                    doc.DocumentName = doc.DocumentName.NormalizePersian();
+                }
+                cmbDocs.Properties.DataSource = documents;
+
+                ShowProgressBar(false);
+            }
+           
         }
 
         private void cmbDocs_EditValueChanged(object sender, EventArgs e)
         {
-            var doc = documents.Where(x => x.DocumentCode.ToString() == cmbDocs.EditValue.ToString()).FirstOrDefault();
-            txtDocCode.Text = doc.DocumentCode.ToString();
+            if(lastNewDocConfirmation == null)
+            {
+                var doc = documents.Where(x => x.DocumentCode.ToString() == cmbDocs.EditValue.ToString()).FirstOrDefault();
+                txtDocCode.Text = doc.DocumentCode.ToString();
+            }
         }
 
 

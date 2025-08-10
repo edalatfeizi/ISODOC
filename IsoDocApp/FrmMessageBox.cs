@@ -1,6 +1,7 @@
 ﻿using DevExpress.Images;
 using IsoDoc.Domain.Models;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace IsoDocApp
@@ -8,6 +9,7 @@ namespace IsoDocApp
     public partial class FrmMessageBox : DevExpress.XtraEditors.XtraForm
     {
 
+        public string InputText { get; private set; }
 
         public FrmMessageBox()
         {
@@ -20,8 +22,17 @@ namespace IsoDocApp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (txtMessage.Enabled && txtMessage.Text.Trim() != "")
+            {
+                InputText = txtMessage.Text;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else if (txtMessage.Enabled == false)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -43,6 +54,10 @@ namespace IsoDocApp
             btnCancel.Visible = options.ShowCancelButton;
             btnCancel.Text = options.CancelButtonText;
 
+            txtMessage.Enabled = options.IsInputBox;
+            if(options.IsInputBox)
+                txtMessage.Properties.Appearance.BackColor = Color.White;
+          
 
             btnCancel.Focus();
         }

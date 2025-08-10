@@ -387,4 +387,25 @@
   <data name="NewDocReqMessageReceived2" xml:space="preserve">
     <value>برای شما در نرم افزار مستندات نظام کیفیت ارسال شد.</value>
   </data>
+  <data name="NoMessageInRoom" xml:space="preserve">
+    <value>هنوز پیامی در این اتاق ارسال نشده است، اولین پیام را شما ارسال کنید</value>
+  </data>
+  <data name="NoMessageReceived" xml:space="preserve">
+    <value>پیامی دریافت نکرده اید!</value>
+  </data>
+  <data name="NoMessageSent" xml:space="preserve">
+    <value>پیامی ارسال نکرده اید!</value>
+  </data>
+  <data name="EnterCancelSigningReason" xml:space="preserve">
+    <value>علت لغو امضاء سند را وارد کنید</value>
+  </data>
+  <data name="CancelSigningDoc" xml:space="preserve">
+    <value>لغو امضاء سند</value>
+  </data>
+  <data name="CancelSigningDate" xml:space="preserve">
+    <value>زمان لغو امضاء سند</value>
+  </data>
+  <data name="CancelSigningReason" xml:space="preserve">
+    <value>علت لغو امضاء سند</value>
+  </data>
 </root>

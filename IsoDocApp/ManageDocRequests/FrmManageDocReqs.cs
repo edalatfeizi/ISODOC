@@ -1,18 +1,15 @@
-﻿using DevExpress.Utils.Helpers;
-using DevExpress.XtraBars.Ribbon;
+﻿using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Tile;
-using DevExpress.XtraReports.Templates;
 using DevExpress.XtraReports.UI;
 using IKIDMagfaSMSClientWin;
+using IsoDoc.Domain.Dtos;
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
-using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
+using IsoDocApp.Enums;
 using IsoDocApp.Extensions;
 using IsoDocApp.Helpers;
 using IsoDocApp.ManageDocRequests;
@@ -20,15 +17,9 @@ using IsoDocApp.Models;
 using IsoDocApp.Reports;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Net.Mail;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -77,7 +68,7 @@ namespace IsoDocApp
                 //RibbonPage selectedPage = ribbonControl1.Pages[1];
                 //ribbonControl1.SelectedPage = selectedPage;
 
-                FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
+                await FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
             }
 
 
@@ -87,11 +78,12 @@ namespace IsoDocApp
         {
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName;
-        
+
             cmbReceiverUser.Properties.DisplayMember = "Name";
             cmbReceiverUser.Properties.ValueMember = "PersonCode";
 
             tabReqChatRoom.PageEnabled = true;
+
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
 
@@ -99,6 +91,8 @@ namespace IsoDocApp
             // ribbonControl1.SelectedPage = selectedPage;
             //if(userInfo != null)
             //GetUserDocRequests();
+
+            
 
             if (userInfo != null && (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
             {
@@ -116,7 +110,7 @@ namespace IsoDocApp
             else
                 tabDeletedRequests.Visible = false;
 
-            FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
+           await FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
 
 
 
@@ -127,7 +121,7 @@ namespace IsoDocApp
 
             // ribbonControl2.AllowMinimizeRibbon = true;
         }
-        private async void FilterDocRequests(FilterDocRequests filter)
+        private async Task FilterDocRequests(FilterDocRequests filter)
         {
             ShowProgressBar(true);
             ClearGridView();
@@ -175,11 +169,14 @@ namespace IsoDocApp
                         btnShowAttachments.Enabled = true;
                     else
                         btnShowAttachments.Enabled = false;
-
                     docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docId);
+
                     if (selectedDocReq.DocRequestStatus == DocRequestStatus.Completed && docConfirmation != null)
                     {
+
                         mnuConfirmDoc.Enabled = false;
+
+
                         await GetDocConfirmSigners(docConfirmation.Id, docId);
                     }
                     else
@@ -188,7 +185,7 @@ namespace IsoDocApp
                         docSigners?.Clear();
                     }
                     var docReqMessages = await manageDocReqsService.GetDocRequestAllChatMessagesAsync(docId);
-                    SetChatMessages(docReqMessages);
+                    SetChatMessages(docReqMessages, MessageTypes.All);
                     receiverUsersList = await GetDocRequestPeopleAsync(docId);
                     cmbReceiverUser.Properties.DataSource = receiverUsersList;
                     //else if (selectedDocReq.DocRequestStatus == DocRequestStatus.Completed && docConfirmation == null)
@@ -197,11 +194,15 @@ namespace IsoDocApp
                     //    confirmationSigners.Items.Clear();
                     //    docSigners.Clear();
                     //}
+                   // if(sdf)
                 }
                 else
                 {
                     var docConfirmation = docConfirmations.Where(x => x.Id == int.Parse(idValue.ToString())).FirstOrDefault();
                     var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
+                    var docReqHasAttachments = await manageDocReqsService.HasAttachmentsAsync(docRequest.Id);
+                    if(docReqHasAttachments)
+                        btnShowAttachments.Enabled = true;
 
                     //SetTimeLineTabsTitle(docRequest);
 
@@ -212,7 +213,7 @@ namespace IsoDocApp
                     cmbReceiverUser.Properties.DataSource = receiverUsersList;
 
                     var docReqMessages = await manageDocReqsService.GetDocRequestAllChatMessagesAsync(docRequest.Id);
-                    SetChatMessages(docReqMessages);
+                    SetChatMessages(docReqMessages, MessageTypes.All);
                 }
 
 
@@ -221,8 +222,20 @@ namespace IsoDocApp
 
 
             }
+            else
+            {
+                SetBottomBarControlEnabled(false);
+            }
 
 
+        }
+        private void SetBottomBarControlEnabled(bool enabled)
+        {
+            btnShowAttachments.Enabled = enabled;
+            btnAddAttachment.Enabled = enabled;
+            btnForwardDocReq.Enabled = enabled;
+            btnAddAttachment.Enabled = enabled;
+            btnPrintConfirmationDoc.Enabled = enabled;
         }
         private void SetTimeLineTabsTitle(DocRequest docRequest)
         {
@@ -278,21 +291,27 @@ namespace IsoDocApp
             docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmId);
 
             UpdateDocSignersStepsTimeLine();
-            if (docSigners.Any(x => x.PersonCode == userInfo.PersonCode && !x.IsSigned))
+            if (ribbonControl1.SelectedPage == tabReceivedRequests && docSigners.Any(x => x.PersonCode == userInfo.PersonCode && !x.IsSigned))
                 btnConfirm.Enabled = true;
             else
                 btnConfirm.Enabled = false;
 
             btnPrintConfirmationDoc.Enabled = true;
+            var lastSigner = docSigners.LastOrDefault();
+            if(lastSigner != null && !lastSigner.IsCanceled)
+            {
+                if (userInfo.CodeEdare == "SI000" || userInfo.PersonCode.IsDeveloper())
+                    btnCancelSigning.Visible = true;
+            }
             
             //ShowProgressBar(false);
             return true;
         }
-      
+
         private async Task<List<DocRequestPeople>> GetDocRequestPeopleAsync(int docReqId)
         {
             var docReqPeople = await manageDocReqsService.GetDocRequestActivePeopleAsync(docReqId);
-            var docSignersReceiverUsers = new List<DocRequestPeople>(); 
+            var docSignersReceiverUsers = new List<DocRequestPeople>();
             if (docSigners != null && docSigners.Count > 0)
             {
                 docSignersReceiverUsers = docSigners.Select(signer => new DocRequestPeople { PersonCode = signer.PersonCode, Name = signer.Name, Post = signer.Post }).ToList();
@@ -306,7 +325,7 @@ namespace IsoDocApp
                 .ToList();
 
             var userItself = receiverUsersList.Where(x => x.PersonCode == userInfo.PersonCode).FirstOrDefault();
-            if(userItself != null) 
+            if (userItself != null)
                 receiverUsersList.Remove(userItself);
 
             return receiverUsersList;
@@ -320,7 +339,7 @@ namespace IsoDocApp
                 confirmationSigners.Items.Add(step);
             }
         }
-        private void btnDownloadAttachment_Click(object sender, EventArgs e)
+        private async void btnDownloadAttachment_Click(object sender, EventArgs e)
         {
             RibbonPage selectedPage = ribbonControl1.SelectedPage;
             if (userDocReqs.Count > 0)
@@ -333,27 +352,31 @@ namespace IsoDocApp
 
                 if (result == DialogResult.OK)
                 {
-                    FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
+                   await FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
                 }
             }
-            else if (docConfirmations.Count > 0)
+            else if (docConfirmations != null && docConfirmations.Count > 0)
             {
-                var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-
-                var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
-                var frmManageAttachments = new FrmManageAttachments(docRequestAttachmentsService, docConfirmation.DocReqId);
-                frmManageAttachments.ShowDialog();
+                var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString(),0);
+                if(docConfirmId != 0)
+                {
+                    var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
+                    var frmManageAttachments = new FrmManageAttachments(docRequestAttachmentsService, docConfirmation.DocReqId);
+                    frmManageAttachments.ShowDialog();
+                }
+                
             }
 
 
         }
 
-        private void ribbonControl1_SelectedPageChanged(object sender, EventArgs e)
+        private async void ribbonControl1_SelectedPageChanged(object sender, EventArgs e)
         {
-            GetDocRequests();
+            await GetDocRequests();
         }
-        private void GetDocRequests()
+        private async Task GetDocRequests()
         {
+            SetBottomBarControlEnabled(false);
             RibbonPage selectedPage = ribbonControl1.SelectedPage;
             if (selectedPage != null)
             {
@@ -368,37 +391,37 @@ namespace IsoDocApp
                         if (userInfo != null)
                         {
                             docReqSteps.Items.Clear();
-                            FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
+                            await FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
 
 
-                            btnForwardDocReq.Enabled = true;
-                            btnAddAttachment.Enabled = true;
+                            //btnForwardDocReq.Enabled = true;
+                            //btnAddAttachment.Enabled = true;
 
 
                         }
-                        ToggleConfirmationTanButtonsState(true);
+                        //ToggleConfirmationButtonsState(false);
                         break;
                     case "tabSentRequests":
                         if (userInfo != null)
                         {
                             //docReqSteps.Items.Clear();
-                            FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
-                            btnForwardDocReq.Enabled = false;
-                            btnAddAttachment.Enabled = false;
+                            await FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
+                            //btnForwardDocReq.Enabled = false;
+                            //btnAddAttachment.Enabled = false;
 
                         }
-                        ToggleConfirmationTanButtonsState(false);
+                        //ToggleConfirmationButtonsState(false);
                         break;
                     case "tabForwardedDocRequests":
                         if (userInfo != null)
                         {
                             //docReqSteps.Items.Clear();
-                            FilterDocRequests(new FilterDocRequests { SenderPersonCode = userInfo.PersonCode, Active = true });
-                            btnForwardDocReq.Enabled = false;
-                            btnAddAttachment.Enabled = false;
+                            await FilterDocRequests(new FilterDocRequests { SenderPersonCode = userInfo.PersonCode, Active = true });
+                            //btnForwardDocReq.Enabled = false;
+                            //btnAddAttachment.Enabled = false;
 
                         }
-                        ToggleConfirmationTanButtonsState(false);
+                        //ToggleConfirmationButtonsState(false);
 
                         break;
 
@@ -406,12 +429,12 @@ namespace IsoDocApp
                         if (userInfo != null && (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
                         {
                             //docReqSteps.Items.Clear();
-                            FilterDocRequests(new FilterDocRequests { });
-                            btnForwardDocReq.Enabled = false;
-                            btnAddAttachment.Enabled = false;
+                            await FilterDocRequests(new FilterDocRequests { });
+                            //btnForwardDocReq.Enabled = false;
+                            //btnAddAttachment.Enabled = false;
 
                         }
-                        ToggleConfirmationTanButtonsState(false);
+                        //ToggleConfirmationButtonsState(false);
 
                         break;
                     case "tabDeletedRequests":
@@ -419,74 +442,73 @@ namespace IsoDocApp
                         {
 
                             //docReqSteps.Items.Clear();
-                            FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, Active = false });
+                            await FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, Active = false });
                         }
-                        ToggleConfirmationTanButtonsState(false);
+                        //ToggleConfirmationButtonsState(false);
 
                         break;
                 }
             }
         }
 
-        private void btnForwardDocReq_Click(object sender, EventArgs e)
+        private async void btnForwardDocReq_Click(object sender, EventArgs e)
         {
-            ForwardDocRequest();
+           await ForwardDocRequest();
         }
-        private void ToggleConfirmationTanButtonsState(bool state)
+        private void ToggleConfirmationButtonsState(bool state)
         {
             btnConfirm.Enabled = state;
             btnPrintConfirmationDoc.Enabled = state;
         }
-        private void btnReload_Click(object sender, EventArgs e)
+        private async void btnReload_Click(object sender, EventArgs e)
         {
-            if (showDocRequests)
-            {
-                GetDocRequests();
-
-            }
-            else
-            {
-                LoadDocConfirmations();
-            }
+           await Reload();
         }
-
+        
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
+            GridView view = sender as GridView;
+            string status = "";
             if (showDocRequests)
             {
-                GridView view = sender as GridView;
-
                 if (e.Column.FieldName == "DocRequestStatus") // Replace "Status" with your column's field name
                 {
                     // Get the value of the cell
-                    string status = view.GetRowCellValue(e.RowHandle, "DocRequestStatus").ToString();
-                    if (status == DocRequestStatus.InProgress.ToString())
-                    {
-                        e.Appearance.BackColor = Color.Gold;
-                    }
-                    else if (status == DocRequestStatus.Completed.ToString())
-                    {
-                        e.Appearance.BackColor = Color.YellowGreen;
-                    }
-                    else if (status == DocRequestStatus.Canceled.ToString())
-                    {
-                        e.Appearance.BackColor = Color.Lavender;
-                    }
-                    else if (status == DocRequestStatus.Deleted.ToString())
-                    {
-                        e.Appearance.BackColor = Color.Salmon;
-                    }
+                     status = view.GetRowCellValue(e.RowHandle, "DocRequestStatus").ToString();
+                }
+            }
+            else
+            {
+                if (e.Column.FieldName == "ConfirmationStatus")
+                {
+                     status = view.GetRowCellValue(e.RowHandle, "ConfirmationStatus").ToString();
                 }
             }
 
+            if (status == DocRequestStatus.InProgress.ToString())
+            {
+                e.Appearance.BackColor = Color.Gold;
+            }
+            else if (status == DocRequestStatus.Completed.ToString())
+            {
+                e.Appearance.BackColor = Color.YellowGreen;
+            }
+            else if (status == DocRequestStatus.Canceled.ToString())
+            {
+                e.Appearance.BackColor = Color.Lavender;
+            }
+            else if (status == DocRequestStatus.Deleted.ToString())
+            {
+                e.Appearance.BackColor = Color.Salmon;
+            }
         }
 
-        private void gridView1_DoubleClick(object sender, EventArgs e)
+        private async void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            ForwardDocRequest();
+            await ForwardDocRequest();
         }
 
-        private void ForwardDocRequest()
+        private async Task ForwardDocRequest()
         {
 
             RibbonPage selectedPage = ribbonControl1.SelectedPage;
@@ -502,7 +524,7 @@ namespace IsoDocApp
 
                 if (result == DialogResult.OK)
                 {
-                    FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
+                    await FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
                 }
             }
 
@@ -519,7 +541,7 @@ namespace IsoDocApp
             var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
             ShowProgressBar(true);
             var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Completed, "", userInfo.PersonCode);
-            btnReload.PerformClick();
+            await Reload();
         }
 
         private async void mnuCancelReq_Click(object sender, EventArgs e)
@@ -532,7 +554,7 @@ namespace IsoDocApp
             {
                 ShowProgressBar(true);
                 var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Canceled, cancelReason, userInfo.PersonCode);
-                btnReload.PerformClick();
+                await Reload();
 
             }
         }
@@ -548,7 +570,7 @@ namespace IsoDocApp
                 ShowProgressBar(true);
                 await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Deleted, "", userInfo.PersonCode);
                 await manageDocReqsService.SetDocRequestActive(docReqId, deleteReason, false);
-                btnReload.PerformClick();
+                await Reload();
 
             }
         }
@@ -561,7 +583,7 @@ namespace IsoDocApp
             ShowProgressBar(true);
             await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.InProgress, "", userInfo.PersonCode);
             await manageDocReqsService.SetDocRequestActive(docReqId, "", true);
-            btnReload.PerformClick();
+            await Reload();
 
         }
 
@@ -619,11 +641,23 @@ namespace IsoDocApp
                     mnuEnableReq.Enabled = true;
                 }
 
-                if (selectedPage.Name == tabAllDocRequests.Name && e.Button == MouseButtons.Right && userInfo != null && ( userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
+                if (selectedPage.Name == tabAllDocRequests.Name && e.Button == MouseButtons.Right && userInfo != null && (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
                 {
                     contextMenuStrip2.Show(grdUserDocRequests, e.Location);
                     if (selectedDocReq.DocRequestStatus == DocRequestStatus.Completed)
-                        mnuConfirmDoc.Enabled = true;
+                    {
+                        var idValue = GridViewHelper.GetGridViewCellValue(gridView1,"Id");
+
+                        var docId = idValue != null ? int.Parse(idValue.ToString()) : 0;
+                        var docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docId);
+                        var docConfirmSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmation.Id);
+                        if (docConfirmSigners.Count == 0 || docConfirmSigners.Last().IsCanceled)
+                        {
+                            mnuConfirmDoc.Enabled = true;
+
+                        }
+                    }
+                        
                     else
                     {
                         mnuConfirmDoc.Enabled = false;
@@ -678,16 +712,39 @@ namespace IsoDocApp
             //}
         }
 
-        private void mnuConfirmDoc_Click(object sender, EventArgs e)
+        private async void mnuConfirmDoc_Click(object sender, EventArgs e)
         {
             var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-            var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, smsClient, docReqId);
-            var result = frmNewDocReq.ShowDialog();
+
+            var docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docReqId);
+            if (docConfirmation != null)
+            {
+                var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, smsClient, docReqId,docConfirmation.Id);
+                var result  = frmNewDocReq.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmation.Id);
+                    UpdateDocSignersStepsTimeLine();
+                }
+            }
+            else
+            {
+                var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, smsClient, docReqId);
+                var result = frmNewDocReq.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmation.Id);
+                    UpdateDocSignersStepsTimeLine();
+                }
+            }
+           
+          
+       
         }
 
         private async void btnShowDocConfirmations_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadDocConfirmations();
+            await LoadDocConfirmations();
         }
 
         private void ClearGridView()
@@ -698,7 +755,7 @@ namespace IsoDocApp
                 gridView1.Columns.Clear();
             }
         }
-        private async void LoadDocConfirmations()
+        private async Task LoadDocConfirmations()
         {
             ClearGridView();
             showDocRequests = false;
@@ -709,23 +766,23 @@ namespace IsoDocApp
             //gridView1.Columns["ReviewNo"].BestFit();
             gridView1.Columns["DocCode"].BestFit();
 
-            btnForwardDocReq.Enabled = false;
-            btnAddAttachment.Enabled = false;
+            //btnForwardDocReq.Enabled = false;
+            //btnAddAttachment.Enabled = false;
         }
-        private void btnShowDocReqs_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async void btnShowDocReqs_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (userInfo != null)
             {
                 // docReqSteps.Items.Clear();
-                FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
+                await FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
 
 
-                btnForwardDocReq.Enabled = true;
-                btnAddAttachment.Enabled = true;
+                //btnForwardDocReq.Enabled = true;
+                //btnAddAttachment.Enabled = true;
 
 
-                btnForwardDocReq.Enabled = true;
-                btnAddAttachment.Enabled = true;
+                //btnForwardDocReq.Enabled = true;
+                //btnAddAttachment.Enabled = true;
             }
 
         }
@@ -795,62 +852,78 @@ namespace IsoDocApp
         private async void btnPrintConfirmationDoc_Click(object sender, EventArgs e)
         {
             // Create report instance
-            ShowProgressBar(true);
-            btnPrintConfirmationDoc.Enabled = false;
-            string confirmDate = null;
-            foreach (var signer in docSigners)
+            if(docSigners != null)
             {
-                if (signer.IsSigned)
+                ShowProgressBar(true);
+                btnPrintConfirmationDoc.Enabled = false;
+                string confirmDate = null;
+                var newSigners = new List<DocSignerResDto>();
+                if (docSigners.Any(x => x.IsCanceled))
                 {
-                    var signerSignature = await personelyService.GetPersonSignature(signer.PersonCode);
-                    signer.Signature = signerSignature.FileContent;
+                    var canceledSigner = docSigners.Where(x => x.IsCanceled).First();
+
+                    var isCanceledIndex = docSigners.IndexOf(canceledSigner);
+                    newSigners = docSigners.Skip(isCanceledIndex + 1).ToList();
                 }
+                else
+                    newSigners = docSigners;
 
 
-            }
-            var lastSigner = docSigners.OrderByDescending(x => x.SigningOrder).FirstOrDefault();
-            if (lastSigner != null && lastSigner.IsSigned)
-                confirmDate = lastSigner.SigningDate;
+                foreach (var signer in newSigners)
+                {
+                    if (signer.IsSigned)
+                    {
+                        var signerSignature = await personelyService.GetPersonSignature(signer.PersonCode);
+                        signer.Signature = signerSignature.FileContent;
+                    }
 
-            var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
 
-            var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
+                }
+                var lastSigner = newSigners.OrderByDescending(x => x.SigningOrder).FirstOrDefault();
+                if (lastSigner != null && lastSigner.IsSigned)
+                    confirmDate = lastSigner.SigningDate;
 
-            XtraReport report = new RptNewDocConfirmation();
+                var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
 
-            // Create data source
-            //var reportData = new NewDocConfirmationReport(docConfirmation, docSigners);
-            var newDocConfirmationReport = new NewDocConfirmationReport(docConfirmation, docSigners)
-            {
-                UserName = $"{userInfo.FirstName} {userInfo.LastName} - {userInfo.Posttxt}",
-                PersonCode = userInfo.PersonCode,
-                Environment = Environment.MachineName,
-                IpAddress = Utils.GetIpAddress(),
-                IpPCName = $"{Environment.MachineName} - {Utils.GetIpAddress()}",
-                ConfirmDate = confirmDate != null ? confirmDate : StringResources.NotConfirmed,
-            };
-            var reportData = new List<NewDocConfirmationReport>
+                var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
+
+                XtraReport report = new RptNewDocConfirmation();
+
+                // Create data source
+                //var reportData = new NewDocConfirmationReport(docConfirmation, docSigners);
+                var newDocConfirmationReport = new NewDocConfirmationReport(docConfirmation, newSigners)
+                {
+                    UserName = $"{userInfo.FirstName} {userInfo.LastName} - {userInfo.Posttxt}",
+                    PersonCode = userInfo.PersonCode,
+                    Environment = Environment.MachineName,
+                    IpAddress = Utils.GetIpAddress(),
+                    IpPCName = $"{Environment.MachineName} - {Utils.GetIpAddress()}",
+                    ConfirmDate = confirmDate != null ? confirmDate : StringResources.NotConfirmed,
+                };
+                var reportData = new List<NewDocConfirmationReport>
                 {
                     newDocConfirmationReport
                 };
-            // Assign data source
-            report.DataSource = reportData;
+                // Assign data source
+                report.DataSource = reportData;
 
-            // Show the report
-            using (ReportPrintTool printTool = new ReportPrintTool(report))
-            {
-                printTool.ShowPreviewDialog();
+                // Show the report
+                using (ReportPrintTool printTool = new ReportPrintTool(report))
+                {
+                    printTool.ShowPreviewDialog();
+                }
+
+                ShowProgressBar(false);
+                btnPrintConfirmationDoc.Enabled = true;
             }
-
-            ShowProgressBar(false);
-            btnPrintConfirmationDoc.Enabled = true;
+            
         }
 
-        private void SetChatMessages(List<DocRequestChatMessage> chatMessages)
+        private void SetChatMessages(List<DocRequestChatMessage> chatMessages, MessageTypes messageType)
         {
-          
+
             gridControl1.DataSource = null;
-            var messages = chatMessages.Select( msg=> 
+            var messages = chatMessages.Select(msg =>
                              new ChatMessage
                              {
                                  SenderUser = $"{StringResources.Sender} {msg.SenderUserFullName} - {msg.SenderUserPost}",
@@ -860,42 +933,40 @@ namespace IsoDocApp
                              }
                          ).ToList();
 
-       
+            if (messages.Count > 0)
+            {
+                gridControl1.Visible = true;
+                pcChatMsg.Visible = false;
+                gridControl1.DataSource = messages;
 
-            gridControl1.DataSource = messages;
-            
+            }
+            else
+            {
+                gridControl1.Visible = false;
+                pcChatMsg.Visible = true;
+                switch (messageType)
+                {
+                    case MessageTypes.All:
+                        lblChatMessage.Text = StringResources.NoMessageInRoom;
+                        break;
+                    case MessageTypes.Sent:
+                        lblChatMessage.Text = StringResources.NoMessageSent;
+                        break;
+
+                    case MessageTypes.Received:
+                        lblChatMessage.Text = StringResources.NoMessageReceived;
+                        break;
+                }
+            }
         }
 
         private async void btnAllMessages_Click(object sender, EventArgs e)
         {
-            btnSentMessages.Appearance.BackColor = Color.WhiteSmoke;
-            btnReceivedMessages.Appearance.BackColor = Color.WhiteSmoke;
-            btnAllMessages.Appearance.BackColor = Color.SteelBlue;
-            ShowChatLoading(true);
 
-            if (showDocRequests)
-            {
-                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                var docReqMessages = await manageDocReqsService
-                    .GetDocRequestAllChatMessagesAsync(docReqId);
-                SetChatMessages(docReqMessages);
-            }
-            else
-            {
-                var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
-                var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
-
-                var docReqMessages = await manageDocReqsService
-                    .GetDocRequestAllChatMessagesAsync(docRequest.Id);
-                SetChatMessages(docReqMessages);
-
-            }
-            ShowChatLoading(false);
-
+            await GetAllMessagesAsync();
         }
 
-     
+
         private async void btnSentMessages_Click(object sender, EventArgs e)
         {
             int rowHandle = gridView1.FocusedRowHandle;
@@ -912,7 +983,7 @@ namespace IsoDocApp
                     var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
                     var docReqMessages = await manageDocReqsService
                         .GetDocRequestUserSentChatMessagesAsync(docReqId, userInfo.PersonCode);
-                    SetChatMessages(docReqMessages);
+                    SetChatMessages(docReqMessages, MessageTypes.Sent);
                 }
                 else
                 {
@@ -923,50 +994,48 @@ namespace IsoDocApp
                     var docReqMessages = await manageDocReqsService
                         .GetDocRequestUserSentChatMessagesAsync(docRequest.Id, userInfo.PersonCode);
 
-                    SetChatMessages(docReqMessages);
+                    SetChatMessages(docReqMessages, MessageTypes.Sent);
 
                 }
                 ShowChatLoading(false);
             }
-                
+
 
         }
-      
+
         private async void btnReceivedMessages_Click_1(object sender, EventArgs e)
         {
 
-            int rowHandle = gridView1.FocusedRowHandle;
-
-            if (rowHandle >= 0)
-            {
-                btnSentMessages.Appearance.BackColor = Color.WhiteSmoke;
-                btnReceivedMessages.Appearance.BackColor = Color.SteelBlue;
-                btnAllMessages.Appearance.BackColor = Color.WhiteSmoke;
-                ShowChatLoading(true);
-
-                if (showDocRequests)
-                {
-                    var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    var docReqMessages = await manageDocReqsService
-                        .GetDocRequestUserReceivedChatMessagesAsync(docReqId, userInfo.PersonCode);
-                    SetChatMessages(docReqMessages);
-                }
-                else
-                {
-                    var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
-                    var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
-
-                    var docReqMessages = await manageDocReqsService
-                        .GetDocRequestUserReceivedChatMessagesAsync(docRequest.Id, userInfo.PersonCode);
-
-                    SetChatMessages(docReqMessages);
-
-                }
-                ShowChatLoading(false);
-            }
-
             
+
+
+        }
+        private async Task GetAllMessagesAsync()
+        {
+            btnSentMessages.Appearance.BackColor = Color.WhiteSmoke;
+            btnReceivedMessages.Appearance.BackColor = Color.WhiteSmoke;
+            btnAllMessages.Appearance.BackColor = Color.SteelBlue;
+            ShowChatLoading(true);
+
+            if (showDocRequests)
+            {
+                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                var docReqMessages = await manageDocReqsService
+                    .GetDocRequestAllChatMessagesAsync(docReqId);
+                SetChatMessages(docReqMessages, MessageTypes.All);
+            }
+            else
+            {
+                var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
+                var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
+
+                var docReqMessages = await manageDocReqsService
+                    .GetDocRequestAllChatMessagesAsync(docRequest.Id);
+                SetChatMessages(docReqMessages, MessageTypes.All);
+
+            }
+            ShowChatLoading(false);
         }
         private void ShowChatLoading(bool isLoading)
         {
@@ -985,7 +1054,7 @@ namespace IsoDocApp
                 if (showDocRequests)
                 {
                     docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    
+
                 }
                 else
                 {
@@ -1012,7 +1081,7 @@ namespace IsoDocApp
                 await manageDocReqsService.SendMessageAsync(newMessage);
                 ShowChatLoading(false);
 
-                btnAllMessages.PerformClick();
+                await GetAllMessagesAsync();
 
                 var receiverUserInfo = await personelyService.GetUserInfoByPersonCode(receiverUser.PersonCode);
                 var mobile = receiverUserInfo.Mobile;
@@ -1028,6 +1097,123 @@ namespace IsoDocApp
         {
             receiverUser = receiverUsersList.Where(x => x.PersonCode.ToString() == cmbReceiverUser.EditValue.ToString()).FirstOrDefault();
 
+        }
+
+        private async void btnCancelSigning_Click(object sender, EventArgs e)
+        {
+            var frmMsgBox = new FrmMessageBox();
+
+            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+            {
+                Title = StringResources.EnterCancelSigningReason,
+                ShowCancelButton = true,
+                ShowConfirmButton = true,
+                IsInputBox = true,
+                ConfirmButtonText = StringResources.Confirm,
+                CancelButtonText = StringResources.Cancel,
+                DevExpressIconId = "cancel",
+                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+            });
+            var result = frmMsgBox.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+                ShowProgressBar(true);
+                var newDocSigner = new NewDocSignerDto
+                {
+                    PersonCode = userInfo.PersonCode,
+                    Name = $"{userInfo.FirstName} {userInfo.LastName}",
+                    Post = userInfo.Posttxt,
+                    SigningOrder = docSigners.Last().SigningOrder + 1,
+                    IsSigned = false,
+                    IsCanceled = true,
+                    CancelReason = frmMsgBox.InputText,
+                    SignRequestSentDate = DateTime.Now.ToPersianDateTime(),
+                    CreatorUserPersonCode = userInfo.PersonCode
+                };
+                newDocSigner.Active = newDocSigner.SigningOrder == 0 ? true : false;
+
+
+                if (showDocRequests)
+                {
+                    var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                    var docConfirm = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docReqId);
+                    newDocSigner.NewDocConfirmationId = docConfirm.Id;
+
+
+                }
+                else
+                {
+                    var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                    var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
+                    newDocSigner.NewDocConfirmationId = docConfirmation.Id;
+
+                }
+                await docConfirmationService.AddNewDocSignersAsync(newDocSigner);
+
+                //var isCanceled = docConfirmationService.CancelDocSigning(docConfirmId, frmMsgBox.InputText, userInfo.PersonCode);
+                ShowProgressBar(false);
+                toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[3]);
+                var newDocSignerResDto = new DocSignerResDto
+                {
+                    NewDocConfirmationId = newDocSigner.NewDocConfirmationId,
+                    PersonCode = newDocSigner.PersonCode,
+                    Name = newDocSigner.Name,
+                    Post = newDocSigner.Post,
+                    IsCanceled = true,
+                    CancelReason = frmMsgBox.InputText,
+                };
+                docSigners.Add(newDocSignerResDto);
+                UpdateDocSignersStepsTimeLine();
+                btnCancelSigning.Enabled = false;
+            }
+            
+        }
+        private async Task Reload()
+        {
+            if (showDocRequests)
+            {
+                await GetDocRequests();
+
+            }
+            else
+            {
+                await LoadDocConfirmations();
+            }
+        }
+
+        private async void btnReceivedMessages_Click(object sender, EventArgs e)
+        {
+            int rowHandle = gridView1.FocusedRowHandle;
+
+            if (rowHandle >= 0)
+            {
+                btnSentMessages.Appearance.BackColor = Color.WhiteSmoke;
+                btnReceivedMessages.Appearance.BackColor = Color.SteelBlue;
+                btnAllMessages.Appearance.BackColor = Color.WhiteSmoke;
+                ShowChatLoading(true);
+
+                if (showDocRequests)
+                {
+                    var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                    var docReqMessages = await manageDocReqsService
+                        .GetDocRequestUserReceivedChatMessagesAsync(docReqId, userInfo.PersonCode);
+                    SetChatMessages(docReqMessages, MessageTypes.Received);
+                }
+                else
+                {
+                    var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                    var docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
+                    var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
+
+                    var docReqMessages = await manageDocReqsService
+                        .GetDocRequestUserReceivedChatMessagesAsync(docRequest.Id, userInfo.PersonCode);
+
+                    SetChatMessages(docReqMessages, MessageTypes.Received);
+
+                }
+                ShowChatLoading(false);
+            }
         }
     }
 

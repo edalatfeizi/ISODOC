@@ -56,6 +56,8 @@ namespace IsoDoc.Domain.Extensions
                 IsSigned = docSigner.IsSigned,
                 SigningDate = docSigner.SigningDate,
                 SignRequestSentDate = docSigner.SignRequestSentDate,
+                IsCanceled = docSigner.IsCanceled,
+                CancelReason = docSigner.CancelReason,
                 CreatedBy = docSigner.CreatedBy,
                 ModifiedBy = docSigner.ModifiedBy,
                 CreatedAt = docSigner.CreatedAt,

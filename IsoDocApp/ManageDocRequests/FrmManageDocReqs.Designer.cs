@@ -51,6 +51,7 @@
             this.btnExecRegulation = new DevExpress.XtraBars.BarButtonItem();
             this.btnShowDocReqs = new DevExpress.XtraBars.BarButtonItem();
             this.btnShowDocConfirmations = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.tabSentRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -90,6 +91,7 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnAddAttachment = new DevExpress.XtraEditors.SimpleButton();
             this.btnReload = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrintConfirmationDoc = new DevExpress.XtraEditors.SimpleButton();
             this.btnForwardDocReq = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAttachments = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -106,13 +108,17 @@
             this.tabDocReqTimeLine = new DevExpress.XtraTab.XtraTabPage();
             this.tabDocConfirmTimeLine = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.btnCancelSigning = new DevExpress.XtraEditors.SimpleButton();
             this.btnConfirm = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPrintConfirmationDoc = new DevExpress.XtraEditors.SimpleButton();
             this.confirmationSigners = new DevExpress.XtraEditors.StepProgressBar();
             this.tabReqChatRoom = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.pcChatMsg = new DevExpress.XtraEditors.PanelControl();
+            this.lblChatMessage = new DevExpress.XtraEditors.LabelControl();
+            this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
             this.pcChatLoading = new DevExpress.XtraEditors.PanelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -127,6 +133,9 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.cmbReceiverUser = new DevExpress.XtraEditors.LookUpEdit();
             this.btnSendMessage = new DevExpress.XtraEditors.SimpleButton();
+            this.pcMessageBox = new DevExpress.XtraEditors.PanelControl();
+            this.lblMessageBox = new DevExpress.XtraEditors.LabelControl();
+            this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docReqSteps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserDocRequests)).BeginInit();
@@ -156,6 +165,8 @@
             this.tabDocConfirmTimeLine.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
+            this.panelControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.confirmationSigners)).BeginInit();
@@ -163,6 +174,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
             this.panelControl7.SuspendLayout();
             this.xtraScrollableControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcChatMsg)).BeginInit();
+            this.pcChatMsg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcChatLoading)).BeginInit();
             this.pcChatLoading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
@@ -172,6 +186,9 @@
             this.panelControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMessage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbReceiverUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcMessageBox)).BeginInit();
+            this.pcMessageBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // SenderUser
@@ -228,6 +245,7 @@
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 11;
+            this.ribbonControl1.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.tabSentRequests,
@@ -285,6 +303,10 @@
             this.btnShowDocConfirmations.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnShowDocConfirmations.ImageOptions.LargeImage")));
             this.btnShowDocConfirmations.Name = "btnShowDocConfirmations";
             this.btnShowDocConfirmations.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShowDocConfirmations_ItemClick);
+            // 
+            // ribbonMiniToolbar1
+            // 
+            this.ribbonMiniToolbar1.ParentControl = this;
             // 
             // tabSentRequests
             // 
@@ -671,6 +693,7 @@
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.btnAddAttachment);
             this.panelControl2.Controls.Add(this.btnReload);
+            this.panelControl2.Controls.Add(this.btnPrintConfirmationDoc);
             this.panelControl2.Controls.Add(this.btnForwardDocReq);
             this.panelControl2.Controls.Add(this.btnShowAttachments);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -690,13 +713,13 @@
             this.btnAddAttachment.Appearance.Options.UseFont = true;
             this.btnAddAttachment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddAttachment.Enabled = false;
-            this.btnAddAttachment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAttachment.ImageOptions.Image")));
-            this.btnAddAttachment.Location = new System.Drawing.Point(277, 18);
+            this.btnAddAttachment.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_add_attachment;
+            this.btnAddAttachment.Location = new System.Drawing.Point(354, 18);
             this.btnAddAttachment.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddAttachment.Name = "btnAddAttachment";
-            this.btnAddAttachment.Size = new System.Drawing.Size(191, 66);
+            this.btnAddAttachment.Size = new System.Drawing.Size(162, 66);
             this.btnAddAttachment.TabIndex = 15;
-            this.btnAddAttachment.Text = "اضافه کردن فایل پیوست";
+            this.btnAddAttachment.Text = "افزودن فایل پیوست";
             this.btnAddAttachment.Click += new System.EventHandler(this.btnAddAttachment_Click);
             // 
             // btnReload
@@ -707,14 +730,32 @@
             this.btnReload.Appearance.Options.UseBackColor = true;
             this.btnReload.Appearance.Options.UseFont = true;
             this.btnReload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
-            this.btnReload.Location = new System.Drawing.Point(78, 18);
+            this.btnReload.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_refresh_database_png;
+            this.btnReload.Location = new System.Drawing.Point(18, 18);
             this.btnReload.Margin = new System.Windows.Forms.Padding(4);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(191, 66);
+            this.btnReload.Size = new System.Drawing.Size(151, 66);
             this.btnReload.TabIndex = 14;
             this.btnReload.Text = "بروزرسانی اطلاعات";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // btnPrintConfirmationDoc
+            // 
+            this.btnPrintConfirmationDoc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrintConfirmationDoc.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrintConfirmationDoc.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.btnPrintConfirmationDoc.Appearance.Options.UseBackColor = true;
+            this.btnPrintConfirmationDoc.Appearance.Options.UseFont = true;
+            this.btnPrintConfirmationDoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrintConfirmationDoc.Enabled = false;
+            this.btnPrintConfirmationDoc.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_printer2;
+            this.btnPrintConfirmationDoc.Location = new System.Drawing.Point(186, 18);
+            this.btnPrintConfirmationDoc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
+            this.btnPrintConfirmationDoc.Name = "btnPrintConfirmationDoc";
+            this.btnPrintConfirmationDoc.Size = new System.Drawing.Size(160, 66);
+            this.btnPrintConfirmationDoc.TabIndex = 26;
+            this.btnPrintConfirmationDoc.Text = " چاپ برگه تایید سند";
+            this.btnPrintConfirmationDoc.Click += new System.EventHandler(this.btnPrintConfirmationDoc_Click);
             // 
             // btnForwardDocReq
             // 
@@ -725,8 +766,8 @@
             this.btnForwardDocReq.Appearance.Options.UseFont = true;
             this.btnForwardDocReq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnForwardDocReq.Enabled = false;
-            this.btnForwardDocReq.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnForwardDocReq.ImageOptions.Image")));
-            this.btnForwardDocReq.Location = new System.Drawing.Point(482, 18);
+            this.btnForwardDocReq.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_send_mail;
+            this.btnForwardDocReq.Location = new System.Drawing.Point(534, 18);
             this.btnForwardDocReq.Margin = new System.Windows.Forms.Padding(4);
             this.btnForwardDocReq.Name = "btnForwardDocReq";
             this.btnForwardDocReq.Size = new System.Drawing.Size(191, 66);
@@ -744,8 +785,9 @@
             this.btnShowAttachments.Appearance.Options.UseBorderColor = true;
             this.btnShowAttachments.Appearance.Options.UseFont = true;
             this.btnShowAttachments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShowAttachments.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowAttachments.ImageOptions.Image")));
-            this.btnShowAttachments.Location = new System.Drawing.Point(686, 18);
+            this.btnShowAttachments.Enabled = false;
+            this.btnShowAttachments.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_documents;
+            this.btnShowAttachments.Location = new System.Drawing.Point(733, 18);
             this.btnShowAttachments.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAttachments.Name = "btnShowAttachments";
             this.btnShowAttachments.Size = new System.Drawing.Size(191, 66);
@@ -860,7 +902,8 @@
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("5064271b-6465-45af-93b2-6ba6b8d55777", null, "پیوست فایل جدید", "پیوست فایل جدید با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01),
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("26c3bf6a-4aca-447c-88f0-3c9cf31d4f40", global::IsoDocApp.Properties.Resources.signature, "ثبت امضاء", "امضاء سند جدید با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("e5fccdcd-e3f2-4915-a1e4-1520593ca5f0", global::IsoDocApp.Properties.Resources.No, "خطا در انجام عملیات", "امضاء سند جدید با خطا مواجه شد لطفا دوباره تلاش کنید", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("e5fccdcd-e3f2-4915-a1e4-1520593ca5f0", global::IsoDocApp.Properties.Resources.No, "خطا در انجام عملیات", "امضاء سند جدید با خطا مواجه شد لطفا دوباره تلاش کنید", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("c5a00164-c408-43a3-9070-57d0cce932b9", global::IsoDocApp.Properties.Resources.Yes, "لغو امضاء سند", "لغو امضاء سند با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
             // 
             // contextMenuStrip2
             // 
@@ -967,26 +1010,53 @@
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.panelControl6);
-            this.panelControl3.Controls.Add(this.confirmationSigners);
+            this.panelControl3.Controls.Add(this.panelControl10);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(380, 884);
             this.panelControl3.TabIndex = 0;
             // 
+            // panelControl10
+            // 
+            this.panelControl10.Controls.Add(this.panelControl6);
+            this.panelControl10.Controls.Add(this.confirmationSigners);
+            this.panelControl10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl10.Location = new System.Drawing.Point(2, 2);
+            this.panelControl10.Name = "panelControl10";
+            this.panelControl10.Size = new System.Drawing.Size(376, 880);
+            this.panelControl10.TabIndex = 0;
+            // 
             // panelControl6
             // 
             this.panelControl6.Appearance.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panelControl6.Appearance.Options.UseBackColor = true;
             this.panelControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl6.Controls.Add(this.btnCancelSigning);
             this.panelControl6.Controls.Add(this.btnConfirm);
-            this.panelControl6.Controls.Add(this.btnPrintConfirmationDoc);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl6.Location = new System.Drawing.Point(2, 797);
+            this.panelControl6.Location = new System.Drawing.Point(2, 720);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(376, 85);
+            this.panelControl6.Size = new System.Drawing.Size(372, 158);
             this.panelControl6.TabIndex = 8;
+            // 
+            // btnCancelSigning
+            // 
+            this.btnCancelSigning.Appearance.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelSigning.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.btnCancelSigning.Appearance.Options.UseBackColor = true;
+            this.btnCancelSigning.Appearance.Options.UseFont = true;
+            this.btnCancelSigning.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelSigning.Enabled = false;
+            this.btnCancelSigning.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelSigning.ImageOptions.Image")));
+            this.btnCancelSigning.Location = new System.Drawing.Point(4, 9);
+            this.btnCancelSigning.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
+            this.btnCancelSigning.Name = "btnCancelSigning";
+            this.btnCancelSigning.Size = new System.Drawing.Size(368, 66);
+            this.btnCancelSigning.TabIndex = 28;
+            this.btnCancelSigning.Text = "لغو امضاء سند";
+            this.btnCancelSigning.Visible = false;
+            this.btnCancelSigning.Click += new System.EventHandler(this.btnCancelSigning_Click);
             // 
             // btnConfirm
             // 
@@ -997,29 +1067,13 @@
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.Enabled = false;
             this.btnConfirm.ImageOptions.Image = global::IsoDocApp.Properties.Resources.signature;
-            this.btnConfirm.Location = new System.Drawing.Point(194, 15);
+            this.btnConfirm.Location = new System.Drawing.Point(4, 82);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(160, 66);
+            this.btnConfirm.Size = new System.Drawing.Size(368, 66);
             this.btnConfirm.TabIndex = 27;
             this.btnConfirm.Text = "امضاء سند";
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnPrintConfirmationDoc
-            // 
-            this.btnPrintConfirmationDoc.Appearance.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPrintConfirmationDoc.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
-            this.btnPrintConfirmationDoc.Appearance.Options.UseBackColor = true;
-            this.btnPrintConfirmationDoc.Appearance.Options.UseFont = true;
-            this.btnPrintConfirmationDoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrintConfirmationDoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintConfirmationDoc.ImageOptions.Image")));
-            this.btnPrintConfirmationDoc.Location = new System.Drawing.Point(4, 15);
-            this.btnPrintConfirmationDoc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
-            this.btnPrintConfirmationDoc.Name = "btnPrintConfirmationDoc";
-            this.btnPrintConfirmationDoc.Size = new System.Drawing.Size(160, 66);
-            this.btnPrintConfirmationDoc.TabIndex = 26;
-            this.btnPrintConfirmationDoc.Text = " چاپ برگه تایید سند";
-            this.btnPrintConfirmationDoc.Click += new System.EventHandler(this.btnPrintConfirmationDoc_Click);
             // 
             // confirmationSigners
             // 
@@ -1059,8 +1113,9 @@
             this.confirmationSigners.Location = new System.Drawing.Point(2, 2);
             this.confirmationSigners.Name = "confirmationSigners";
             this.confirmationSigners.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.confirmationSigners.Padding = new System.Windows.Forms.Padding(10, 10, 10, 158);
             this.confirmationSigners.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.confirmationSigners.Size = new System.Drawing.Size(376, 880);
+            this.confirmationSigners.Size = new System.Drawing.Size(372, 876);
             this.confirmationSigners.TabIndex = 11;
             // 
             // tabReqChatRoom
@@ -1075,6 +1130,7 @@
             // 
             this.panelControl7.Controls.Add(this.xtraScrollableControl1);
             this.panelControl7.Controls.Add(this.panelControl8);
+            this.panelControl7.Controls.Add(this.pcMessageBox);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl7.Location = new System.Drawing.Point(0, 0);
             this.panelControl7.Name = "panelControl7";
@@ -1083,6 +1139,7 @@
             // 
             // xtraScrollableControl1
             // 
+            this.xtraScrollableControl1.Controls.Add(this.pcChatMsg);
             this.xtraScrollableControl1.Controls.Add(this.pcChatLoading);
             this.xtraScrollableControl1.Controls.Add(this.gridControl1);
             this.xtraScrollableControl1.Controls.Add(this.panelControl9);
@@ -1091,6 +1148,51 @@
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
             this.xtraScrollableControl1.Size = new System.Drawing.Size(376, 582);
             this.xtraScrollableControl1.TabIndex = 10;
+            // 
+            // pcChatMsg
+            // 
+            this.pcChatMsg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pcChatMsg.Appearance.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pcChatMsg.Appearance.Options.UseBackColor = true;
+            this.pcChatMsg.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pcChatMsg.Controls.Add(this.lblChatMessage);
+            this.pcChatMsg.Controls.Add(this.pictureEdit4);
+            this.pcChatMsg.Location = new System.Drawing.Point(0, 226);
+            this.pcChatMsg.Name = "pcChatMsg";
+            this.pcChatMsg.Size = new System.Drawing.Size(376, 152);
+            this.pcChatMsg.TabIndex = 9;
+            this.pcChatMsg.Visible = false;
+            // 
+            // lblChatMessage
+            // 
+            this.lblChatMessage.Appearance.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChatMessage.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.lblChatMessage.Appearance.Options.UseFont = true;
+            this.lblChatMessage.Appearance.Options.UseForeColor = true;
+            this.lblChatMessage.Appearance.Options.UseTextOptions = true;
+            this.lblChatMessage.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblChatMessage.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.lblChatMessage.Location = new System.Drawing.Point(0, 109);
+            this.lblChatMessage.MaximumSize = new System.Drawing.Size(376, 0);
+            this.lblChatMessage.MinimumSize = new System.Drawing.Size(376, 0);
+            this.lblChatMessage.Name = "lblChatMessage";
+            this.lblChatMessage.Size = new System.Drawing.Size(376, 21);
+            this.lblChatMessage.TabIndex = 2;
+            this.lblChatMessage.Text = "لطفا کمی صبر کنید ...";
+            // 
+            // pictureEdit4
+            // 
+            this.pictureEdit4.EditValue = global::IsoDocApp.Properties.Resources.img_empty_box;
+            this.pictureEdit4.Location = new System.Drawing.Point(134, 3);
+            this.pictureEdit4.MenuManager = this.ribbonControl1;
+            this.pictureEdit4.Name = "pictureEdit4";
+            this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.pictureEdit4.Size = new System.Drawing.Size(98, 91);
+            this.pictureEdit4.TabIndex = 0;
             // 
             // pcChatLoading
             // 
@@ -1169,7 +1271,7 @@
             this.btnReceivedMessages.Size = new System.Drawing.Size(109, 46);
             this.btnReceivedMessages.TabIndex = 29;
             this.btnReceivedMessages.Text = "دریافتی";
-            this.btnReceivedMessages.Click += new System.EventHandler(this.btnReceivedMessages_Click_1);
+            this.btnReceivedMessages.Click += new System.EventHandler(this.btnReceivedMessages_Click);
             // 
             // btnSentMessages
             // 
@@ -1289,6 +1391,48 @@
             this.btnSendMessage.Text = "ارسال پیام";
             this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
+            // pcMessageBox
+            // 
+            this.pcMessageBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pcMessageBox.Appearance.BackColor = System.Drawing.Color.White;
+            this.pcMessageBox.Appearance.Options.UseBackColor = true;
+            this.pcMessageBox.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pcMessageBox.Controls.Add(this.lblMessageBox);
+            this.pcMessageBox.Controls.Add(this.pictureEdit3);
+            this.pcMessageBox.Location = new System.Drawing.Point(1, 259);
+            this.pcMessageBox.Name = "pcMessageBox";
+            this.pcMessageBox.Size = new System.Drawing.Size(380, 136);
+            this.pcMessageBox.TabIndex = 9;
+            this.pcMessageBox.Visible = false;
+            // 
+            // lblMessageBox
+            // 
+            this.lblMessageBox.Appearance.Font = new System.Drawing.Font("Vazirmatn", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessageBox.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.lblMessageBox.Appearance.Options.UseFont = true;
+            this.lblMessageBox.Appearance.Options.UseForeColor = true;
+            this.lblMessageBox.Appearance.Options.UseTextOptions = true;
+            this.lblMessageBox.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.lblMessageBox.Location = new System.Drawing.Point(135, 87);
+            this.lblMessageBox.Name = "lblMessageBox";
+            this.lblMessageBox.Size = new System.Drawing.Size(104, 21);
+            this.lblMessageBox.TabIndex = 2;
+            this.lblMessageBox.Text = "لطفا کمی صبر کنید ...";
+            // 
+            // pictureEdit3
+            // 
+            this.pictureEdit3.EditValue = global::IsoDocApp.Properties.Resources.img_empty_box;
+            this.pictureEdit3.Location = new System.Drawing.Point(156, 3);
+            this.pictureEdit3.MenuManager = this.ribbonControl1;
+            this.pictureEdit3.Name = "pictureEdit3";
+            this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.pictureEdit3.Size = new System.Drawing.Size(73, 78);
+            this.pictureEdit3.TabIndex = 0;
+            // 
             // FrmManageDocReqs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
@@ -1333,6 +1477,8 @@
             this.tabDocConfirmTimeLine.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
+            this.panelControl10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.confirmationSigners)).EndInit();
@@ -1340,6 +1486,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
             this.panelControl7.ResumeLayout(false);
             this.xtraScrollableControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcChatMsg)).EndInit();
+            this.pcChatMsg.ResumeLayout(false);
+            this.pcChatMsg.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcChatLoading)).EndInit();
             this.pcChatLoading.ResumeLayout(false);
             this.pcChatLoading.PerformLayout();
@@ -1351,6 +1501,10 @@
             this.panelControl8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMessage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbReceiverUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcMessageBox)).EndInit();
+            this.pcMessageBox.ResumeLayout(false);
+            this.pcMessageBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1444,6 +1598,15 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.SimpleButton btnReceivedMessages;
+        private DevExpress.XtraEditors.PanelControl pcMessageBox;
+        private DevExpress.XtraEditors.LabelControl lblMessageBox;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit3;
+        private DevExpress.XtraBars.Ribbon.RibbonMiniToolbar ribbonMiniToolbar1;
+        private DevExpress.XtraEditors.PanelControl pcChatMsg;
+        private DevExpress.XtraEditors.LabelControl lblChatMessage;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit4;
+        private DevExpress.XtraEditors.SimpleButton btnCancelSigning;
+        private DevExpress.XtraEditors.PanelControl panelControl10;
     }
 }
 

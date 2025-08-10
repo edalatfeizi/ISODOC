@@ -26,10 +26,12 @@ namespace IsoDoc.Domain.Services
 
         public async Task<DocSigner> AddNewDocSignersAsync(NewDocSignerDto dto)
         {
-            var newDocSigner = await docConfirmationRepo.AddNewDocSigner(dto.NewDocConfirmationId,dto.PersonCode,dto.Name,dto.Post,dto.SignerType,dto.SigningOrder,dto.IsSigned, dto.CreatorUserPersonCode, dto.SignRequestSentDate, dto.Active);
+            var newDocSigner = await docConfirmationRepo.AddNewDocSigner(dto.NewDocConfirmationId,dto.PersonCode,dto.Name,dto.Post,dto.SignerType,dto.SigningOrder,dto.IsSigned, dto.CreatorUserPersonCode, dto.SignRequestSentDate,dto.IsCanceled, dto.CancelReason, dto.Active);
 
             return newDocSigner;
         }
+
+        
 
         public async Task<List<NewDocConfirmationResDto>> GetAllDocConfirmationsAsync()
         {
@@ -57,7 +59,7 @@ namespace IsoDoc.Domain.Services
         public async Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode)
         {
             var result = await docConfirmationRepo.GetUserDocConfirmations(personCode);
-
+            
             return result.MapToNewDocConfirmationDtos();
         }
 
@@ -72,6 +74,18 @@ namespace IsoDoc.Domain.Services
             var result = await docConfirmationRepo.UpdateSendSignRequestDate(newDocSignerId, personCode);
 
             return result;
+        }
+        public async Task<bool> CancelDocSigning(int docConfirmationId, string cancelReason, string canceledByUserPersonCode)
+        {
+            var result = await docConfirmationRepo.CancelDocSigning(docConfirmationId, cancelReason, canceledByUserPersonCode);
+
+            return result;
+        }
+
+        public async Task<NewDocConfirmationResDto> GetDocConfirmationByIdAsync(int docConfirmId)
+        {
+            var result = await docConfirmationRepo.GetDocConfirmationByIdAsync(docConfirmId);
+            return result.MapToNewDocConfirmationDto();
         }
     }
 }

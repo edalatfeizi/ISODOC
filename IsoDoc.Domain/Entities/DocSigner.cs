@@ -14,6 +14,7 @@ namespace IsoDoc.Domain.Entities
         public bool IsSigned { get; set; }
         public string SigningDate { get; set; }
         public string SignRequestSentDate { get; set; }
-
+        public bool IsCanceled { get; set; }
+        public string CancelReason { get; set; }
     }
 }

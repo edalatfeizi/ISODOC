@@ -114,12 +114,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Enums\MessageTypes.cs" />
     <Compile Include="Extensions\FileAttachmentExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\AttachmentsHelper.cs" />
-    <Compile Include="Helpers\DocConfirmationsHelper.cs" />
     <Compile Include="Helpers\StepsProgressBarHelper.cs" />
-    <Compile Include="Extensions\StepProgressBarExtension.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="FrmMessageBox.cs">
       <SubType>Form</SubType>
@@ -354,6 +353,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\img_inbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_empty_box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_no_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_send_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_printer2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_attachment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_attachment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_attachment %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_documents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_add_attachment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_refresh_database.png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

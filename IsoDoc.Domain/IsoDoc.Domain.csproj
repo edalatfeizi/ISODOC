@@ -61,6 +61,7 @@
     <Compile Include="Entities\DocSigner.cs" />
     <Compile Include="Entities\NewDocConfirmation.cs" />
     <Compile Include="Enums\AdminTypes.cs" />
+    <Compile Include="Enums\DocConfirmStatus.cs" />
     <Compile Include="Enums\DocRequestStatus.cs" />
     <Compile Include="Enums\DocRequestType.cs" />
     <Compile Include="Enums\EditOrReviewStatus.cs" />

@@ -3,7 +3,6 @@ using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Extensions;
 using IsoDoc.Domain.Interfaces.Repositories;
-using IsoDoc.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -30,6 +29,7 @@ namespace IsoDoc.Infrastructure.Repositories
                 DocCode = docCode,
                 ReviewNo = reviewNo,
                 ReviewText = reviewText,
+                ConfirmationStatus = DocConfirmStatus.InProgress,
                 CreatedBy = creatorUserPersonCode,
                 ModifiedBy = creatorUserPersonCode,
                 Active = true,
@@ -42,6 +42,7 @@ namespace IsoDoc.Infrastructure.Repositories
                         DocCode,
                         ReviewNo,
                         ReviewText,
+                        ConfirmationStatus,
                         CreatedBy, 
                         ModifiedBy, 
                         CreatedAt, 
@@ -56,6 +57,7 @@ namespace IsoDoc.Infrastructure.Repositories
                         @DocCode,
                         @ReviewNo,
                         @ReviewText,
+                        @ConfirmationStatus,
                         @CreatedBy,
                         @ModifiedBy,
                         @CreatedAt,
@@ -69,7 +71,7 @@ namespace IsoDoc.Infrastructure.Repositories
             return newDocConfirm;
         }
 
-        public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode, string signRequestSentDate, bool active)
+        public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode, string signRequestSentDate, bool isCanceled, string cancelReason, bool active)
         {
             var newDocSigner = new DocSigner
             {
@@ -81,6 +83,8 @@ namespace IsoDoc.Infrastructure.Repositories
                 SigningOrder = signingOrder,
                 SignRequestSentDate = signRequestSentDate,
                 IsSigned = isSigned,
+                IsCanceled = isCanceled,
+                CancelReason = cancelReason,
                 CreatedBy = creatorUserPersonCode,
                 ModifiedBy = creatorUserPersonCode,
                 Active = active,
@@ -94,6 +98,8 @@ namespace IsoDoc.Infrastructure.Repositories
                         SignerType,
                         SigningOrder,
                         IsSigned,
+                        IsCanceled,
+                        CancelReason,
                         CreatedBy, 
                         ModifiedBy, 
                         CreatedAt, 
@@ -110,6 +116,8 @@ namespace IsoDoc.Infrastructure.Repositories
                         @SignerType,
                         @SigningOrder,
                         @IsSigned,
+                        @IsCanceled,
+                        @CancelReason,
                         @CreatedBy,
                         @ModifiedBy,
                         @CreatedAt,
@@ -178,6 +186,26 @@ namespace IsoDoc.Infrastructure.Repositories
 
             int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = newDocSignersId, SignRequestSentDate = DateTime.Now.ToPersianDateTime(), PersonCode = personCode });
             return rowsAffected > 0;
+        }
+
+        public async Task<bool> CancelDocSigning(int docConfirmationId, string cancelReason, string canceledByUserPersonCode)
+        {
+
+            var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
+                  SET IsCanceled = 'true', CancelReason = @CancelReason, ModifiedBy = @ModifiedBy, ModifiedAt = @ModifiedAt
+                  WHERE NewDocConfirmationId = @NewDocConfirmationId ";
+
+            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocConfirmationId = docConfirmationId, CancelReason = cancelReason, ModifiedBy = canceledByUserPersonCode, ModifiedAt = DateTime.Now.ToPersianDateTime() });
+            return rowsAffected > 0;
+        }
+
+        public async Task<NewDocConfirmation> GetDocConfirmationByIdAsync(int docConfirmId)
+        {
+            const string query = @"SELECT * FROM tb_NewDocConfirmations where Id = @DocConfirmId and Active = 'true'";
+
+            var result = await connection.QueryFirstOrDefaultAsync<NewDocConfirmation>(query, new { DocConfirmId = docConfirmId });
+
+            return result;
         }
     }
 }

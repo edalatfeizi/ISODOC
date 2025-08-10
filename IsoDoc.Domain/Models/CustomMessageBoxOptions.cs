@@ -16,5 +16,6 @@ namespace IsoDoc.Domain.Models
         public string CancelButtonText { get; set; }
         public string DevExpressIconId { get; set; }
         public int DevExpressImageType { get; set; } //DevExpress.Utils.Design.ImageType.Colored
+        public bool IsInputBox { get; set; } = false;
     }
 }

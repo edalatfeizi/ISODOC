@@ -34,10 +34,12 @@ namespace IsoDoc.Domain.Dtos.Res
         public string SigningDate { get; set; }
 
 
-        [Display(Name = "زمان ارسال درخواست امضاء", Order = 6)]
+        [Display(Name = "زمان ارسال درخواست امضاء", Order = 7)]
         [Editable(false)]
         public string SignRequestSentDate { get; set; }
 
+        public bool IsCanceled { get; set; }
+        public string CancelReason { get; set; }
         public byte[] Signature { get; set; }
     }
 }

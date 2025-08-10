@@ -29,6 +29,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         Task<List<DocRequestChatMessage>> GetDocRequestUserReceivedChatMessagesAsync(int docReqId, string userPersonCode);
         Task<List<DocRequestChatMessage>> GetDocRequestUserSentChatMessagesAsync(int docReqId, string userPersonCode);
         Task<DocRequestChatMessage> SendMessageAsync(DocRequestChatMessage message);
+        Task<bool> HasAttachmentsAsync(int docReqId);
         //Task<DocRequest> UpdateDocRequest(int docReqId);
 
 

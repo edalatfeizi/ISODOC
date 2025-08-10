@@ -37,6 +37,7 @@ namespace IsoDoc.Domain.Extensions
                 DocCode = docConfirmation.DocCode,
                 ReviewNo = docConfirmation.ReviewNo,
                 ReviewText = docConfirmation.ReviewText,
+
                 CreatedBy = docConfirmation.CreatedBy,
                 ModifiedBy = docConfirmation.ModifiedBy,
                 CreatedAt = docConfirmation.CreatedAt,

@@ -387,5 +387,24 @@ namespace IsoDoc.Infrastructure.Repositories
             message.Id = newDocReqMessageId;
             return message;
         }
+
+        public async Task<bool> HasAttachmentsAsync(int docReqId)
+        {
+            var hasAttachmentsQuery = @"SELECT 
+                                    CASE 
+                                        WHEN EXISTS (
+                                            SELECT 1
+                                            FROM [Isodoc_New].[dbo].[DocRequestAttachments]
+                                            WHERE DocRequestId = @DocRequestId
+                                              AND Active = 'true'
+                                        ) 
+                                        THEN CAST(1 AS BIT) 
+                                        ELSE CAST(0 AS BIT) 
+                                    END AS HasRecords;
+                               ";
+
+            var hasAttachments = await connection.ExecuteScalarAsync<bool>(hasAttachmentsQuery, new { DocRequestId = docReqId });
+            return hasAttachments;
+        }
     }
 }
