@@ -29,7 +29,7 @@ namespace IsoDoc.Infrastructure.Repositories
                 DocCode = docCode,
                 ReviewNo = reviewNo,
                 ReviewText = reviewText,
-                ConfirmationStatus = DocConfirmStatus.InProgress,
+                ConfirmationStatus = DocRequestStatus.InProgress,
                 CreatedBy = creatorUserPersonCode,
                 ModifiedBy = creatorUserPersonCode,
                 Active = true,
@@ -159,11 +159,18 @@ namespace IsoDoc.Infrastructure.Repositories
             return result.ToList();
         }
 
-        public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode)
+        public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode, bool isSysOfficeStaff)
         {
             const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true') and Active = 'true'";
+            const string canceledDocConfirmsQuery = @"select * from tb_NewDocConfirmations where ConfirmationStatus = '2' and Active = 'true'";
 
-            var result = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
+            var userConfirmationsQuery = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
+            var result = userConfirmationsQuery.ToList();
+            if(isSysOfficeStaff)
+            {
+                var canceledConfirmations = await connection.QueryAsync<NewDocConfirmation>(canceledDocConfirmsQuery);
+                result.AddRange(canceledConfirmations.ToList());
+            }
 
             return result.ToList();
         }
@@ -188,17 +195,26 @@ namespace IsoDoc.Infrastructure.Repositories
             return rowsAffected > 0;
         }
 
-        public async Task<bool> CancelDocSigning(int docConfirmationId, string cancelReason, string canceledByUserPersonCode)
+        public async Task<bool> UpdateDocConfirmStatusAsync(int docConfirmationId,DocRequestStatus status, string modifiedByUserPersonCode)
+        {
+
+            var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocConfirmations]
+                  SET ConfirmationStatus = @ConfirmationStatus,ModifiedBy = @ModifiedBy, ModifiedAt = @ModifiedAt
+                  WHERE Id = @NewDocConfirmationId ";
+
+            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocConfirmationId = docConfirmationId, ConfirmationStatus = status, ModifiedBy = modifiedByUserPersonCode, ModifiedAt = DateTime.Now.ToPersianDateTime() });
+            return rowsAffected > 0;
+        }
+        public async Task<bool> CancelSigningAsync(int docConfirmationId, string canceledByUserPersonCode)
         {
 
             var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
-                  SET IsCanceled = 'true', CancelReason = @CancelReason, ModifiedBy = @ModifiedBy, ModifiedAt = @ModifiedAt
+                  SET Active = 'false',ModifiedBy = @ModifiedBy, ModifiedAt = @ModifiedAt
                   WHERE NewDocConfirmationId = @NewDocConfirmationId ";
 
-            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocConfirmationId = docConfirmationId, CancelReason = cancelReason, ModifiedBy = canceledByUserPersonCode, ModifiedAt = DateTime.Now.ToPersianDateTime() });
+            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocConfirmationId = docConfirmationId, ModifiedBy = canceledByUserPersonCode, ModifiedAt = DateTime.Now.ToPersianDateTime() });
             return rowsAffected > 0;
         }
-
         public async Task<NewDocConfirmation> GetDocConfirmationByIdAsync(int docConfirmId)
         {
             const string query = @"SELECT * FROM tb_NewDocConfirmations where Id = @DocConfirmId and Active = 'true'";

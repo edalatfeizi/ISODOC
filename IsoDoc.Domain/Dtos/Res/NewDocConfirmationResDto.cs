@@ -10,28 +10,29 @@ namespace IsoDoc.Domain.Dtos.Res
         [Browsable(false)]
         public string DocOwnerDepCode { get; set; }
 
-        [Browsable(false)]
+        [Display(Name = "شماره درخواست", Order = 1)]
+        [Editable(false)]
         public int DocReqId { get; set; }
 
-        [Display(Name = "کد سند", Order = 1)]
+        [Display(Name = "کد سند", Order = 2)]
         [Editable(false)]
         public string DocCode { get; set; }
 
-        [Display(Name = "عنوان سند", Order = 2)]
+        [Display(Name = "عنوان سند", Order = 3)]
         [Editable(false)]
         public string DocTitle { get; set; }
 
-        [Display(Name = "شماره بازنگری", Order = 3)]
+        [Display(Name = "شماره بازنگری", Order = 4)]
         [Editable(false)]
         public string ReviewNo { get; set; }
 
-        [Display(Name = "شرح بازنگری", Order = 4)]
+        [Display(Name = "شرح بازنگری", Order = 5)]
         [Editable(false)]
         public string ReviewText { get; set; }
 
-        [Display(Name = "وضعیت امضاء سند", Order = 5)]
+        [Display(Name = "وضعیت امضاء سند", Order = 6)]
         [Editable(false)]
-        public DocConfirmStatus ConfirmationStatus { get; set; }
+        public DocRequestStatus ConfirmationStatus { get; set; }
 
     }
 }

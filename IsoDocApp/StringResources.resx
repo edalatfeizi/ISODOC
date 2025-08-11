@@ -408,4 +408,28 @@
   <data name="CancelSigningReason" xml:space="preserve">
     <value>علت لغو امضاء سند</value>
   </data>
+  <data name="DocReqSigningCanceled1" xml:space="preserve">
+    <value>کاربر گرامی فرآیند امضاء درخواست شماره</value>
+  </data>
+  <data name="DocReqSigningCanceled2" xml:space="preserve">
+    <value>توسط مدیر سیستم ها و انفورماتیک لغو شد</value>
+  </data>
+  <data name="StartingDocSigningProcess" xml:space="preserve">
+    <value>شروع فرآیند امضاء سند</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>زمان شروع</value>
+  </data>
+  <data name="DocTitle" xml:space="preserve">
+    <value>عنوان سند</value>
+  </data>
+  <data name="DocCode" xml:space="preserve">
+    <value>کد سند</value>
+  </data>
+  <data name="EndSigningDocProcess" xml:space="preserve">
+    <value>پایان فرآیند امضاء سند</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>زمان پایان</value>
+  </data>
 </root>

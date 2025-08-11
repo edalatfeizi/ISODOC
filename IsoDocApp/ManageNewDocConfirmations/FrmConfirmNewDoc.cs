@@ -177,6 +177,10 @@ namespace IsoDocApp.ManageDocRequests
                                 var newDocConfirm = await docConfirmationService.AddNewDocConfirmationAsync(newDocConfirmation);
                                 lastDocConfirmationId = newDocConfirm.Id;
                             }
+                            else
+                            {
+                                await docConfirmationService.UpdateDocConfirmStatusAsync((int)lastDocConfirmationId, DocRequestStatus.InProgress, userPersonCode);
+                            }
                          
                             foreach (var signerColleague in signerColleagues)
                             {

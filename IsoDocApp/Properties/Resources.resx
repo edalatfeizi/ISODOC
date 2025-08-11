@@ -139,6 +139,9 @@
   <data name="img_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="close_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="img_printer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_printer2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,6 +150,12 @@
   </data>
   <data name="1231" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1231.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_refresh_database.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_refresh_database.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_send_mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_send_mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add_attachment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_attachment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +166,8 @@
   <data name="full-screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\full-screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img_send_mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img_send_mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="apply_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apply_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="signature (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\signature (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +205,9 @@
   <data name="img_all_messages" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_all_messages.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_inactive_state" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_inactive_state.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="img_outbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_outbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,7 +235,7 @@
   <data name="Yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img_refresh_database.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img_refresh_database.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="apply_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apply_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -126,7 +126,22 @@ namespace IsoDoc.Infrastructure.Repositories
             // Dapper automatically opens/closes the connection if not already open
             return await connection.QueryFirstOrDefaultAsync<Person>(query, new { CardNumber = userCardNumber });
         }
+        public async Task<Person> GetPersonByDepCode(string depCode)
+        {
+            const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName WHERE CodeEdare = @DepCode ";
 
+            // Dapper automatically opens/closes the connection if not already open
+            var result = await connection.QuerySingleAsync<Person>(query, new { DepCode = depCode });
+            return result;
+        }
+        public async Task<List<Person>> GetColleaguesByDepCode(string depCode)
+        {
+            const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName WHERE CodeEdare = @DepCode || UpperCode =@DepCode ";
+
+            // Dapper automatically opens/closes the connection if not already open
+            var result = await connection.QueryAsync<Person>(query, new { DepCode = depCode });
+            return result.ToList();
+        }
         public async Task<Person> GetUserInfoByPersonCode(string personCode)
         {
 

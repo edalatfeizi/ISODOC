@@ -113,6 +113,26 @@ namespace IsoDocApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap apply_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("apply_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap apply_32x321 {
+            get {
+                object obj = ResourceManager.GetObject("apply_32x321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Businessman_signing_contract {
             get {
                 object obj = ResourceManager.GetObject("Businessman signing contract", resourceCulture);
@@ -166,6 +186,16 @@ namespace IsoDocApp.Properties {
         internal static System.Drawing.Bitmap CheckBox_32x32 {
             get {
                 object obj = ResourceManager.GetObject("CheckBox_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("close_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +296,16 @@ namespace IsoDocApp.Properties {
         internal static System.Drawing.Bitmap img_empty_box {
             get {
                 object obj = ResourceManager.GetObject("img_empty_box", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_inactive_state {
+            get {
+                object obj = ResourceManager.GetObject("img_inactive_state", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

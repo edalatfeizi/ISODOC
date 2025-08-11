@@ -70,6 +70,16 @@ namespace IsoDoc.Domain.Services
             return await personelyRepo.DeletePersonSignature(personCode);
 
         }
+
+        public async Task<Person> GetPersonByDepCode(string depCode)
+        {
+            return await personelyRepo.GetPersonByDepCode(depCode);
+        }
+
+        public async Task<List<Person>> GetColleaguesByDepCode(string depCode)
+        {
+           return await personelyRepo.GetColleaguesByDepCode(depCode);
+        }
         //public async Task<Person?> GetUserManager(string userManagerDepCode)
         //{
         //    return await personelyRepo.GetUserManager(userManagerDepCode);

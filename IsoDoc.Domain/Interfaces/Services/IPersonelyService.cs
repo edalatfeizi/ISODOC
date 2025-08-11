@@ -18,7 +18,8 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<PersonSignature> SavePersonSignature(PersonSignature personSignature);
         Task<PersonSignature> GetPersonSignature(string personCode);
         Task<bool> DeletePersonSignature(string personCode);
-
+        Task<Person> GetPersonByDepCode(string depCode);
+        Task<List<Person>> GetColleaguesByDepCode(string depCode);
 
         // Task<Person?> GetUserManager(string userManagerDepCode);
 

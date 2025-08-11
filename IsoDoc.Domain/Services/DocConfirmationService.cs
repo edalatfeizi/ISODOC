@@ -1,6 +1,7 @@
 ﻿using IsoDoc.Domain.Dtos;
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Extensions;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
@@ -56,9 +57,9 @@ namespace IsoDoc.Domain.Services
            return result.MapToDocSignerResDtos();
         }
 
-        public async Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode)
+        public async Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode, bool isSysOfficeStaff)
         {
-            var result = await docConfirmationRepo.GetUserDocConfirmations(personCode);
+            var result = await docConfirmationRepo.GetUserDocConfirmations(personCode, isSysOfficeStaff);
             
             return result.MapToNewDocConfirmationDtos();
         }
@@ -75,9 +76,9 @@ namespace IsoDoc.Domain.Services
 
             return result;
         }
-        public async Task<bool> CancelDocSigning(int docConfirmationId, string cancelReason, string canceledByUserPersonCode)
+        public async Task<bool> UpdateDocConfirmStatusAsync(int docConfirmationId,DocRequestStatus status, string modifiedByUserPersonCode)
         {
-            var result = await docConfirmationRepo.CancelDocSigning(docConfirmationId, cancelReason, canceledByUserPersonCode);
+            var result = await docConfirmationRepo.UpdateDocConfirmStatusAsync(docConfirmationId, status, modifiedByUserPersonCode);
 
             return result;
         }
@@ -86,6 +87,11 @@ namespace IsoDoc.Domain.Services
         {
             var result = await docConfirmationRepo.GetDocConfirmationByIdAsync(docConfirmId);
             return result.MapToNewDocConfirmationDto();
+        }
+
+        public async Task<bool> CancelSigningAsync(int docConfirmationId, string canceledByUserPersonCode)
+        {
+           return await docConfirmationRepo.CancelSigningAsync(docConfirmationId, canceledByUserPersonCode);
         }
     }
 }

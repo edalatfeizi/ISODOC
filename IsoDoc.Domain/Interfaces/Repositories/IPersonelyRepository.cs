@@ -19,5 +19,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         Task<PersonSignature> GetPersonSignature(string personCode);
 
         Task<bool> DeletePersonSignature(string personCode);
+        Task<Person> GetPersonByDepCode(string depCode);
+        Task<List<Person>> GetColleaguesByDepCode(string depCode);
     }
 }

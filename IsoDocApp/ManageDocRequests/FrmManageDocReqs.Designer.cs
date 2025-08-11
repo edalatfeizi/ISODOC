@@ -903,7 +903,8 @@
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("5064271b-6465-45af-93b2-6ba6b8d55777", null, "پیوست فایل جدید", "پیوست فایل جدید با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01),
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("26c3bf6a-4aca-447c-88f0-3c9cf31d4f40", global::IsoDocApp.Properties.Resources.signature, "ثبت امضاء", "امضاء سند جدید با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("e5fccdcd-e3f2-4915-a1e4-1520593ca5f0", global::IsoDocApp.Properties.Resources.No, "خطا در انجام عملیات", "امضاء سند جدید با خطا مواجه شد لطفا دوباره تلاش کنید", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("c5a00164-c408-43a3-9070-57d0cce932b9", global::IsoDocApp.Properties.Resources.Yes, "لغو امضاء سند", "لغو امضاء سند با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01)});
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("c5a00164-c408-43a3-9070-57d0cce932b9", global::IsoDocApp.Properties.Resources.Yes, "لغو امضاء سند", "لغو امضاء سند با موفقیت انجام شد", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText01),
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("8a1fc570-3b76-4ff6-b3e8-e93f602787c3", global::IsoDocApp.Properties.Resources.signature, "عملیات ناموفق", "خطا در لغو امضاء سند، لطفا دوباره تلاش کنید", "", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText02)});
             // 
             // contextMenuStrip2
             // 
@@ -1047,7 +1048,6 @@
             this.btnCancelSigning.Appearance.Options.UseBackColor = true;
             this.btnCancelSigning.Appearance.Options.UseFont = true;
             this.btnCancelSigning.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelSigning.Enabled = false;
             this.btnCancelSigning.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelSigning.ImageOptions.Image")));
             this.btnCancelSigning.Location = new System.Drawing.Point(4, 9);
             this.btnCancelSigning.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
@@ -1109,7 +1109,8 @@
             this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.Options.UseTextOptions = true;
             this.confirmationSigners.Appearances.ItemAppearance.ContentBlockAppearance.DescriptionInactive.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.confirmationSigners.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.confirmationSigners.ItemOptions.Indicator.ActiveStateImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("confirmationSigners.ItemOptions.Indicator.ActiveStateImageOptions.Image")));
+            this.confirmationSigners.ItemOptions.Indicator.ActiveStateImageOptions.Image = global::IsoDocApp.Properties.Resources.apply_32x321;
+            this.confirmationSigners.ItemOptions.Indicator.InactiveStateImageOptions.Image = global::IsoDocApp.Properties.Resources.img_inactive_state;
             this.confirmationSigners.Location = new System.Drawing.Point(2, 2);
             this.confirmationSigners.Name = "confirmationSigners";
             this.confirmationSigners.Orientation = System.Windows.Forms.Orientation.Vertical;

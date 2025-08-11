@@ -358,6 +358,42 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to کد سند.
+        /// </summary>
+        internal static string DocCode {
+            get {
+                return ResourceManager.GetString("DocCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کاربر گرامی فرآیند امضاء درخواست شماره.
+        /// </summary>
+        internal static string DocReqSigningCanceled1 {
+            get {
+                return ResourceManager.GetString("DocReqSigningCanceled1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to توسط مدیر سیستم ها و انفورماتیک لغو شد.
+        /// </summary>
+        internal static string DocReqSigningCanceled2 {
+            get {
+                return ResourceManager.GetString("DocReqSigningCanceled2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عنوان سند.
+        /// </summary>
+        internal static string DocTitle {
+            get {
+                return ResourceManager.GetString("DocTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to با ویرایش انجام شود.
         /// </summary>
         internal static string DoWithEdit {
@@ -408,6 +444,24 @@ namespace IsoDocApp {
         internal static string EmptyValues {
             get {
                 return ResourceManager.GetString("EmptyValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to پایان فرآیند امضاء سند.
+        /// </summary>
+        internal static string EndSigningDocProcess {
+            get {
+                return ResourceManager.GetString("EndSigningDocProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان پایان.
+        /// </summary>
+        internal static string EndTime {
+            get {
+                return ResourceManager.GetString("EndTime", resourceCulture);
             }
         }
         
@@ -885,6 +939,24 @@ namespace IsoDocApp {
         internal static string SignRequestSentDate {
             get {
                 return ResourceManager.GetString("SignRequestSentDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شروع فرآیند امضاء سند.
+        /// </summary>
+        internal static string StartingDocSigningProcess {
+            get {
+                return ResourceManager.GetString("StartingDocSigningProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان شروع.
+        /// </summary>
+        internal static string StartTime {
+            get {
+                return ResourceManager.GetString("StartTime", resourceCulture);
             }
         }
         
