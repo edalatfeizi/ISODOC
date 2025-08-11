@@ -17,5 +17,8 @@ namespace IsoDocApp
             "14023910",
             "903015"
         };
+
+        public static readonly string SysAdminCode = "SI000";
+        public static readonly string SysOfficeCode = "SI300"; //
     }
 }

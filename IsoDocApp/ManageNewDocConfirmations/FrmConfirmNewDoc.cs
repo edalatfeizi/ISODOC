@@ -554,11 +554,6 @@ namespace IsoDocApp.ManageDocRequests
                     gridUsers.RefreshDataSource();
                 }
             }
-
-            //else
-            //{
-
-            //}
         }
     }
 }

@@ -94,7 +94,7 @@ namespace IsoDocApp
 
             
 
-            if (userInfo != null && (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
+            if (userInfo != null && (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || userInfo.PersonCode.IsDeveloper()))
             {
                 tabAllDocRequests.Visible = true;
                 btnExecRegulation.Enabled = true;
@@ -300,7 +300,7 @@ namespace IsoDocApp
             var lastSigner = docSigners.LastOrDefault();
             if(lastSigner != null && !lastSigner.IsCanceled)
             {
-                if (userInfo.CodeEdare == "SI000" || userInfo.PersonCode.IsDeveloper())
+                if (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.PersonCode.IsDeveloper())
                     btnCancelSigning.Visible = true;
             }
             
@@ -426,7 +426,7 @@ namespace IsoDocApp
                         break;
 
                     case "tabAllDocRequests":
-                        if (userInfo != null && (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
+                        if (userInfo != null && (userInfo.DepartCode == Constants.SysAdminCode || userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || userInfo.PersonCode.IsDeveloper()))
                         {
                             //docReqSteps.Items.Clear();
                             await FilterDocRequests(new FilterDocRequests { });
@@ -438,7 +438,7 @@ namespace IsoDocApp
 
                         break;
                     case "tabDeletedRequests":
-                        if (userInfo != null && (userInfo.DepartCode == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || isAdmin || userInfo.PersonCode.IsDeveloper()))
+                        if (userInfo != null && (userInfo.DepartCode == Constants.SysAdminCode || userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || isAdmin || userInfo.PersonCode.IsDeveloper()))
                         {
 
                             //docReqSteps.Items.Clear();
@@ -611,7 +611,7 @@ namespace IsoDocApp
                         }
 
                     }
-                    if (userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()) // if user is sys office emp or developer
+                    if (userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || userInfo.PersonCode.IsDeveloper()) // if user is sys office emp or developer
                     {
 
                         // Show the ContextMenuStrip at the mouse position
@@ -623,7 +623,7 @@ namespace IsoDocApp
 
                         //}
                     }
-                    else if (userInfo.CodeEdare == "SI000" || userInfo.PersonCode.IsDeveloper()) //if user is sys dep admin
+                    else if (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.PersonCode.IsDeveloper()) //if user is sys dep admin
                     {
 
                         // Show the ContextMenuStrip at the mouse position
@@ -641,7 +641,7 @@ namespace IsoDocApp
                     mnuEnableReq.Enabled = true;
                 }
 
-                if (selectedPage.Name == tabAllDocRequests.Name && e.Button == MouseButtons.Right && userInfo != null && (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()))
+                if (selectedPage.Name == tabAllDocRequests.Name && e.Button == MouseButtons.Right && userInfo != null && (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || userInfo.PersonCode.IsDeveloper()))
                 {
                     contextMenuStrip2.Show(grdUserDocRequests, e.Location);
                     if (selectedDocReq.DocRequestStatus == DocRequestStatus.Completed)

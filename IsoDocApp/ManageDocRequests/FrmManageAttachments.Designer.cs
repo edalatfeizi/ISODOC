@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageAttachments));
             this.grdAttachments = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelDownload = new DevExpress.XtraEditors.PanelControl();
@@ -86,9 +85,9 @@
             this.btnDownloadAttachment.Appearance.Options.UseBorderColor = true;
             this.btnDownloadAttachment.Appearance.Options.UseFont = true;
             this.btnDownloadAttachment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDownloadAttachment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDownloadAttachment.ImageOptions.Image")));
+            this.btnDownloadAttachment.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_documents;
             this.btnDownloadAttachment.Location = new System.Drawing.Point(259, 13);
-            this.btnDownloadAttachment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDownloadAttachment.Margin = new System.Windows.Forms.Padding(4);
             this.btnDownloadAttachment.Name = "btnDownloadAttachment";
             this.btnDownloadAttachment.Size = new System.Drawing.Size(141, 66);
             this.btnDownloadAttachment.TabIndex = 12;

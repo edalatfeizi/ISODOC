@@ -1,9 +1,14 @@
 ﻿using DevExpress.DataAccess.Native.EntityFramework;
 using DevExpress.Images;
 using DevExpress.XtraEditors;
+using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
+using IsoDocApp.Enums;
+using IsoDocApp.Extensions;
+using IsoDocApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,10 +16,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using IsoDoc.Domain.Enums;
-using IsoDocApp.Helpers;
-using IKIDMagfaSMSClientWin;
-using IsoDocApp.Extensions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace IsoDocApp.ManageDocRequests
 {
     public partial class FrmNewDocReq : DevExpress.XtraEditors.XtraForm
@@ -77,8 +79,10 @@ namespace IsoDocApp.ManageDocRequests
       
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
 
-            // if user is a boss and his/her dep has no admin PostTypeID 50 and 4 is reserved for an office boss and supervisor
-            if (userInfo.PostTypeID == "50" || userInfo.PostTypeID == "4" && !userColleagues.Any(x => x.CodeEdare == userInfo.UpperCode))
+            // if user is a boss and his/her dep has no admin, PostTypeID 50 and 4 is reserved for an office boss and supervisor
+            if (string.Equals(userInfo.PostTypeID, PostTypes.OfficeSupervisor.ToString(), StringComparison.OrdinalIgnoreCase) 
+                || string.Equals(userInfo.PostTypeID, PostTypes.Boss.ToString(), StringComparison.OrdinalIgnoreCase)
+                && !userColleagues.Any(x => x.CodeEdare == userInfo.UpperCode))
             {
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
                 userColleagues.AddRange(admins);
@@ -87,7 +91,7 @@ namespace IsoDocApp.ManageDocRequests
                 userColleagues = await personelyService.GetUserColleagues("", userInfo.DepartCode);
 
             var isAdmin = UserHelper.CheckIsAdmin(userInfo.PostTypeID);
-            if (userInfo.CodeEdare == "SI000" || userInfo.CodeEdare == "SI300" || userInfo.UpperCode == "SI300" || userInfo.PersonCode.IsDeveloper()) // if user is sys dep admin
+            if (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || userInfo.PersonCode.IsDeveloper()) // if user is sys office employee or sys dep admin
             {
                 var admins = await personelyService.GetUserColleagues(null, null, true);
                 userColleagues.AddRange(admins);

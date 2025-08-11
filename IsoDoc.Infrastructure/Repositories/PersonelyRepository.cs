@@ -52,6 +52,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<Colleague>> GetUnSupervisedBosses()
         {
+            //50,4 => سرپرست یا رئیس اداره
+            //3,26,27 => مدیر،جانشین مدیر، سرپرست واحد
             const string query = @"
                                    SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where (PostTypeID = '50' or PostTypeID = '4') and UpperCode in (SELECT UpperCode 
                                     FROM Personely.dbo.Vw_AllPersonWithDepartName 
@@ -59,7 +61,7 @@ namespace IsoDoc.Infrastructure.Repositories
                                     EXCEPT
                                     SELECT CodeEdare 
                                     FROM Personely.dbo.Vw_AllPersonWithDepartName 
-                                    WHERE PostTypeId = '27' OR PostTypeId = '3')";
+                                    WHERE PostTypeId = '27' OR PostTypeId = '3' OR PostTypeId = '26')";
 
             var colleagues = await connection.QueryAsync<Colleague>(query);
             return colleagues.ToList();
@@ -69,15 +71,15 @@ namespace IsoDoc.Infrastructure.Repositories
         {
                 if (adminOnly)
                 {
-                    var adminsQuery = "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PostTypeID in (26,27,3)";
-                    var admins = await connection.QueryAsync<Person>(adminsQuery);
+                    var adminsQuery = "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PostTypeID in (26,27,3)";//26,27,3 => مدیر،جانشین مدیر،سرپرست واحد
+                var admins = await connection.QueryAsync<Person>(adminsQuery);
                     connection.Close();
                     return admins.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
 
                 }
                 else if (sysOfficeOnly)
                 {
-                    var sysOfficeQuery = "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = 'SI300' or UpperCode ='SI300'";
+                    var sysOfficeQuery = "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = 'SI300' or UpperCode ='SI300'";//SI300 => کد اداره تضمین کیفیت
                     var sysOfficeEmps = await connection.QueryAsync<Person>(sysOfficeQuery);
                     connection.Close();
                     return sysOfficeEmps.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();

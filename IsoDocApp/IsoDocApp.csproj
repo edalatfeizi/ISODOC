@@ -115,6 +115,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Enums\MessageTypes.cs" />
+    <Compile Include="Enums\PostTypes.cs" />
     <Compile Include="Extensions\FileAttachmentExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\AttachmentsHelper.cs" />
