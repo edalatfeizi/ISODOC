@@ -84,7 +84,7 @@ namespace IsoDocApp
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName;
             //userName = "3134";
-            userName = "3864";
+            //userName = "3864";
             //userName = "3815";
             cmbReceiverUser.Properties.DisplayMember = "Name";
             cmbReceiverUser.Properties.ValueMember = "PersonCode";
@@ -1242,10 +1242,10 @@ namespace IsoDocApp
                         gridView1.RefreshData();
                     }
                     //send signing canceled sms
-                    //var sysOfficeBoss =  await personelyService.GetPersonByDepCode(Constants.SysOfficeCode);
-                    //var mobile = sysOfficeBoss.Mobile;
-                    //var text = $"{StringResources.DocReqSigningCanceled1}: {docReqId} {StringResources.DocReqSigningCanceled2} \n {StringResources.IKID}";
-                    //smsClient.SendSMS(mobile, text);
+                    var sysOfficeBoss = await personelyService.GetPersonByDepCode(Constants.SysOfficeCode);
+                    var mobile = sysOfficeBoss.Mobile;
+                    var text = $"{StringResources.DocReqSigningCanceled1}: {selectedDocReq.Id} {StringResources.DocReqSigningCanceled2} \n {StringResources.IKID}";
+                    smsClient.SendSMS(mobile, text);
 
                 }
                 else
