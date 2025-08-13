@@ -84,7 +84,7 @@ namespace IsoDocApp
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName;
             //userName = "3134";
-            //userName = "3864";
+            userName = "3864";
             //userName = "3815";
             cmbReceiverUser.Properties.DisplayMember = "Name";
             cmbReceiverUser.Properties.ValueMember = "PersonCode";
@@ -149,7 +149,7 @@ namespace IsoDocApp
         {
 
             cmbReceiverUser.Properties.DataSource = null;
-
+            txtMessage.Text = "";
             //if (timeLineTabsContainer.SelectedTabPage == tabDocConfirmTimeLine)
             //{
             //    btnPrintConfirmationDoc.Enabled = false;
@@ -856,7 +856,7 @@ namespace IsoDocApp
             var result = frmNewDocReq.ShowDialog();
             if (result == DialogResult.OK)
             {
-                docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmation.Id);
+                docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(lastDocConfirmId);
                 UpdateDocSignersStepsTimeLine();
             }
 
