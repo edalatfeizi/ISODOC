@@ -128,7 +128,7 @@ Public Class FrmSearchDocs
                         fileType = Bus_MessageHandler1.GetFileExtension(docPath)
                         If fileType = "" Then
                             ''''MsgBox("دسترسي به سند مورد نظر امكان پذير نمي باشد", MsgBoxStyle.Critical)
-                            MessageBox.Show("دسترسي به سند مورد نظر امكان پذير نمي باشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign)
+                            MessageBox.Show("امکان دسترسی به سند مورد نظر توسط نرم افزار وجود ندارد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign)
                         Else
                             MsgBox("داريد " + fileType + " براي مشاهده اين سند نياز به نرم افزار", MsgBoxStyle.Critical)
 

@@ -1,6 +1,8 @@
 ﻿
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Enums;
+using IsoDoc.Domain.Models;
 using IsoDoc.Domain.Resources;
 using System.Collections.Generic;
 
@@ -56,8 +58,6 @@ namespace IsoDoc.Domain.Extensions
                 IsSigned = docSigner.IsSigned,
                 SigningDate = docSigner.SigningDate,
                 SignRequestSentDate = docSigner.SignRequestSentDate,
-                IsCanceled = docSigner.IsCanceled,
-                CancelReason = docSigner.CancelReason,
                 CreatedBy = docSigner.CreatedBy,
                 ModifiedBy = docSigner.ModifiedBy,
                 CreatedAt = docSigner.CreatedAt,
@@ -67,7 +67,7 @@ namespace IsoDoc.Domain.Extensions
             };
             return docSignerResDto;
         }
-
+      
     }
 
 }

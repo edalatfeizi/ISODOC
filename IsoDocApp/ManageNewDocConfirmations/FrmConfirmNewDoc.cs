@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Dtos;
+using IsoDoc.Domain.Dtos.Req;
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
@@ -14,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IsoDocApp.ManageDocRequests
@@ -32,9 +34,10 @@ namespace IsoDocApp.ManageDocRequests
         //private Person userInfo;
         private string userPersonCode = "";
         private int docReqId = 0;
-        private int? lastDocConfirmationId = null;
+        private int lastDocConfirmationId = 0;
         private NewDocConfirmationResDto lastNewDocConfirmation;
-        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService, MagfaSMSClient smsClient, int docReqId, int? lastDocConfirmationId = null)
+        private Person userInfo, sysAdmin;
+        public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService, MagfaSMSClient smsClient, int docReqId, int lastDocConfirmationId = 0)
         {
             InitializeComponent();
             this.personelyService = personelyService;
@@ -56,11 +59,13 @@ namespace IsoDocApp.ManageDocRequests
             SetupControls();
 
             var userName = SystemInformation.UserName;
-           
+            //userName = "3134";
+            userName = "3864";
+            //userName = "3815";
 
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
-            //userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
-
+            userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
+            sysAdmin = await personelyService.GetPersonByDepCode(Constants.SysAdminCode);
             departments = await personelyService.GetDepartments();
             cmbDocOwnerDep.Properties.DataSource = departments;
 
@@ -71,7 +76,7 @@ namespace IsoDocApp.ManageDocRequests
 
             gridUsers.DataSource = signerColleagues;
 
-            if (lastDocConfirmationId != null)
+            if (lastDocConfirmationId != 0)
             {
                 lastNewDocConfirmation = await docConfirmationService.GetDocConfirmationByIdAsync((int)lastDocConfirmationId);
                 var dep = departments.Where(x => x.MDepartCode == lastNewDocConfirmation.DocOwnerDepCode).First();
@@ -176,55 +181,55 @@ namespace IsoDocApp.ManageDocRequests
 
                                 var newDocConfirm = await docConfirmationService.AddNewDocConfirmationAsync(newDocConfirmation);
                                 lastDocConfirmationId = newDocConfirm.Id;
+                                await AddSigners();
                             }
                             else
                             {
-                                await docConfirmationService.UpdateDocConfirmStatusAsync((int)lastDocConfirmationId, DocRequestStatus.InProgress, userPersonCode);
+                                var frmMsgBox = new FrmMessageBox();
+
+                                frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+                                {
+                                    Title = StringResources.EnterDocConfirmActivationDesc,
+                                    ShowCancelButton = true,
+                                    ShowConfirmButton = true,
+                                    IsInputBox = true,
+                                    ConfirmButtonText = StringResources.Confirm,
+                                    CancelButtonText = StringResources.Cancel,
+                                    DevExpressIconId = "cancel",
+                                    DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+                                });
+                                var result = frmMsgBox.ShowDialog();
+                                if (result == DialogResult.OK)
+                                {
+                                    var isUpdated = await docConfirmationService.UpdateDocConfirmStatusAsync(lastDocConfirmationId, DocRequestStatus.InProgress, userPersonCode);
+                                    if (isUpdated)
+                                    {
+                                        var newDocStateChange = new DocConfirmationStateChangeReqDto
+                                        {
+                                            DocConfirmationId = lastDocConfirmationId,
+                                            SenderUserPersonCode = userInfo.PersonCode,
+                                            SenderUserFullName = $"{userInfo.FirstName} {userInfo.LastName}",
+                                            SenderUserPost = userInfo.Posttxt,
+                                            ReceiverUserPersonCode = sysAdmin.PersonCode,
+                                            ReceiverUserFullName = $"{sysAdmin.FirstName} {sysAdmin.LastName}",
+                                            ReceiverUserPost = sysAdmin.Posttxt,
+                                            Description = frmMsgBox.InputText,
+                                            CreatedBy = userInfo.PersonCode,
+                                            ModifiedBy = userInfo.PersonCode,
+                                            Status = DocConfirmationStatus.Completed
+                                        };
+                                        var res = await docConfirmationService.AddDocConfirmationStateChangeAsync(newDocStateChange);
+                                        if (res != null)
+                                        {
+                                            await AddSigners();
+                                        }
+                                    }
+                                }
+
                             }
                          
-                            foreach (var signerColleague in signerColleagues)
-                            {
-                                var newDocSigner = new NewDocSignerDto
-                                {
-                                    NewDocConfirmationId = (int)lastDocConfirmationId,
-                                    PersonCode = signerColleague.PersonCode,
-                                    Name = signerColleague.Name,
-                                    Post = signerColleague.Post,
-                                    SigningOrder = signerColleagues.IndexOf(signerColleague),
-                                    IsSigned = false,
-                                    SignRequestSentDate = signerColleagues.IndexOf(signerColleague) == 0 ? DateTime.Now.ToPersianDateTime() : null,
-                                    CreatorUserPersonCode = userPersonCode
-                                };
 
-                                switch (signerColleague.SignerColleagueType)
-                                {
-                                    case "تهیه کننده":
-                                        newDocSigner.SignerType = SignerColleagueType.Creator;
-                                        break;
-                                    case "تایید کننده":
-                                        newDocSigner.SignerType = SignerColleagueType.Confirmer;
-                                        break;
-                                    case "تصویب کننده":
-                                        newDocSigner.SignerType = SignerColleagueType.Acceptor;
-                                        break;
-                                }
-                                newDocSigner.Active = newDocSigner.SigningOrder == 0 ? true : false;
-
-
-                                await docConfirmationService.AddNewDocSignersAsync(newDocSigner);
-
-
-
-                            }
-
-                            var signerUserInfo = await personelyService.GetUserInfoByPersonCode(signerColleagues[0].PersonCode);
-                            smsClient.SendSMS(signerUserInfo.Mobile, $"{StringResources.NewSignDocReqSent} \n {StringResources.IKID}");
-
-                            toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
-
-                            ShowProgressBar(false);
-                            DialogResult = DialogResult.OK;
-                            this.Close();
+                         
                         }
                     }
 
@@ -238,6 +243,51 @@ namespace IsoDocApp.ManageDocRequests
                 ShowProgressBar(false);
                 ShowExceptionMessage(ex);
             }
+        }
+        private async Task AddSigners()
+        {
+            foreach (var signerColleague in signerColleagues)
+            {
+                var newDocSigner = new NewDocSignerDto
+                {
+                    NewDocConfirmationId = lastDocConfirmationId,
+                    PersonCode = signerColleague.PersonCode,
+                    Name = signerColleague.Name,
+                    Post = signerColleague.Post,
+                    SigningOrder = signerColleagues.IndexOf(signerColleague),
+                    IsSigned = false,
+                    SignRequestSentDate = signerColleagues.IndexOf(signerColleague) == 0 ? DateTime.Now.ConvertToPersianDateTime() : null,
+                    CreatorUserPersonCode = userPersonCode
+                };
+
+                switch (signerColleague.SignerColleagueType)
+                {
+                    case "تهیه کننده":
+                        newDocSigner.SignerType = SignerColleagueType.Creator;
+                        break;
+                    case "تایید کننده":
+                        newDocSigner.SignerType = SignerColleagueType.Confirmer;
+                        break;
+                    case "تصویب کننده":
+                        newDocSigner.SignerType = SignerColleagueType.Acceptor;
+                        break;
+                }
+                //newDocSigner.Active = newDocSigner.SigningOrder == 0 ? true : false;
+
+
+                await docConfirmationService.AddNewDocSignersAsync(newDocSigner);
+
+
+
+            }
+            var signerUserInfo = await personelyService.GetUserInfoByPersonCode(signerColleagues[0].PersonCode);
+            smsClient.SendSMS(signerUserInfo.Mobile, $"{StringResources.NewSignDocReqSent} \n {StringResources.IKID}");
+
+            toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
+
+            ShowProgressBar(false);
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
         private void ShowExceptionMessage(Exception ex)
         {

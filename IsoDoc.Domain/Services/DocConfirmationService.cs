@@ -1,4 +1,5 @@
 ﻿using IsoDoc.Domain.Dtos;
+using IsoDoc.Domain.Dtos.Req;
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
@@ -27,7 +28,7 @@ namespace IsoDoc.Domain.Services
 
         public async Task<DocSigner> AddNewDocSignersAsync(NewDocSignerDto dto)
         {
-            var newDocSigner = await docConfirmationRepo.AddNewDocSigner(dto.NewDocConfirmationId,dto.PersonCode,dto.Name,dto.Post,dto.SignerType,dto.SigningOrder,dto.IsSigned, dto.CreatorUserPersonCode, dto.SignRequestSentDate,dto.IsCanceled, dto.CancelReason, dto.Active);
+            var newDocSigner = await docConfirmationRepo.AddNewDocSigner(dto.NewDocConfirmationId,dto.PersonCode,dto.Name,dto.Post,dto.SignerType,dto.SigningOrder, dto.CreatorUserPersonCode, dto.SignRequestSentDate);
 
             return newDocSigner;
         }
@@ -64,9 +65,9 @@ namespace IsoDoc.Domain.Services
             return result.MapToNewDocConfirmationDtos();
         }
 
-        public async Task<bool> SignDocConfirmationAsync(int newDocSignersId)
+        public async Task<bool> SignDocConfirmationAsync(int docSignerId)
         {
-            var result = await docConfirmationRepo.SignDocConfirmationAsync(newDocSignersId);
+            var result = await docConfirmationRepo.SignDocConfirmationAsync(docSignerId);
             return result;
         }
 
@@ -92,6 +93,18 @@ namespace IsoDoc.Domain.Services
         public async Task<bool> CancelSigningAsync(int docConfirmationId, string canceledByUserPersonCode)
         {
            return await docConfirmationRepo.CancelSigningAsync(docConfirmationId, canceledByUserPersonCode);
+        }
+        public async Task<DocConfirmationStateChangeResDto> AddDocConfirmationStateChangeAsync(DocConfirmationStateChangeReqDto dto)
+        {
+            var result = await docConfirmationRepo.AddDocConfirmationStateChangeAsync(dto.DocConfirmationId, dto.SenderUserPersonCode, dto.SenderUserFullName, dto.SenderUserPost, dto.ReceiverUserPersonCode, dto.ReceiverUserFullName, dto.ReceiverUserPost, dto.Description,dto.Status);
+            return result.MapToDocConfirmationStateChangeResDto();
+        }
+
+        public async Task<List<DocConfirmationStateChangeResDto>> GetDocConfirmationStateChangesAsync(int docConfirmationId)
+        {
+            var result = await docConfirmationRepo.GetDocConfirmationStateChangesAsync(docConfirmationId);
+
+            return result.MapToDocConfirmationStateChangeResDtos();
         }
     }
 }

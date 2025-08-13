@@ -70,6 +70,51 @@ namespace IsoDoc.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لغو درخواست.
+        /// </summary>
+        internal static string CancelRequest {
+            get {
+                return ResourceManager.GetString("CancelRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان لغو امضاء سند.
+        /// </summary>
+        internal static string CancelSigningDate {
+            get {
+                return ResourceManager.GetString("CancelSigningDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لغو امضاء سند.
+        /// </summary>
+        internal static string CancelSigningDoc {
+            get {
+                return ResourceManager.GetString("CancelSigningDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to علت لغو امضاء سند.
+        /// </summary>
+        internal static string CancelSigningReason {
+            get {
+                return ResourceManager.GetString("CancelSigningReason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تکمیل شده.
+        /// </summary>
+        internal static string Completed {
+            get {
+                return ResourceManager.GetString("Completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تایید کننده.
         /// </summary>
         internal static string Confirmer {
@@ -79,11 +124,164 @@ namespace IsoDoc.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تاریخ و زمان ثبت:.
+        /// </summary>
+        internal static string CreateDateAndTime {
+            get {
+                return ResourceManager.GetString("CreateDateAndTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تهیه کننده.
         /// </summary>
         internal static string Creator {
             get {
                 return ResourceManager.GetString("Creator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حذف درخواست.
+        /// </summary>
+        internal static string DeleteRequest {
+            get {
+                return ResourceManager.GetString("DeleteRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to توضیحات.
+        /// </summary>
+        internal static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to از.
+        /// </summary>
+        internal static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درحال بررسی.
+        /// </summary>
+        internal static string InProgress {
+            get {
+                return ResourceManager.GetString("InProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ و زمان دریافت:.
+        /// </summary>
+        internal static string ReceiveDateAndTime {
+            get {
+                return ResourceManager.GetString("ReceiveDateAndTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to امضاء شده.
+        /// </summary>
+        internal static string Signed {
+            get {
+                return ResourceManager.GetString("Signed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نوع امضاء کننده.
+        /// </summary>
+        internal static string SignerType {
+            get {
+                return ResourceManager.GetString("SignerType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان ثبت امضاء.
+        /// </summary>
+        internal static string SigningDate {
+            get {
+                return ResourceManager.GetString("SigningDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وضعیت امضاء.
+        /// </summary>
+        internal static string SigningStatus {
+            get {
+                return ResourceManager.GetString("SigningStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درخواست امضاء ارسال نشده.
+        /// </summary>
+        internal static string SignRequestNotSent {
+            get {
+                return ResourceManager.GetString("SignRequestNotSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درخواست امضاء ارسال شده.
+        /// </summary>
+        internal static string SignRequestSent {
+            get {
+                return ResourceManager.GetString("SignRequestSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان ارسال درخواست امضاء.
+        /// </summary>
+        internal static string SignRequestSentDate {
+            get {
+                return ResourceManager.GetString("SignRequestSentDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شروع فرآیند امضاء سند.
+        /// </summary>
+        internal static string StartingDocSigningProcess {
+            get {
+                return ResourceManager.GetString("StartingDocSigningProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to زمان شروع.
+        /// </summary>
+        internal static string StartTime {
+            get {
+                return ResourceManager.GetString("StartTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وضعیت:.
+        /// </summary>
+        internal static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to به.
+        /// </summary>
+        internal static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
             }
         }
     }

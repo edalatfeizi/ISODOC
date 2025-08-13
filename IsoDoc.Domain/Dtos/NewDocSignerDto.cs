@@ -12,8 +12,6 @@ namespace IsoDoc.Domain.Dtos
         public SignerColleagueType SignerType { get; set; }
         public int SigningOrder { get; set; }
         public bool IsSigned { get; set; }
-        public bool IsCanceled { get; set; }
-        public string CancelReason { get; set; }
         public string CreatorUserPersonCode { get; set; }
         public string SigningDate { get; set; }
         public string SignRequestSentDate { get; set; } 

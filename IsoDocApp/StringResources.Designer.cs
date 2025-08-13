@@ -268,6 +268,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ایجاد سند.
+        /// </summary>
+        internal static string CreateDoc {
+            get {
+                return ResourceManager.GetString("CreateDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تهیه کننده.
         /// </summary>
         internal static string Creator {
@@ -291,6 +300,15 @@ namespace IsoDocApp {
         internal static string DeleteAttachedFile {
             get {
                 return ResourceManager.GetString("DeleteAttachedFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to حذف سند.
+        /// </summary>
+        internal static string DeleteDoc {
+            get {
+                return ResourceManager.GetString("DeleteDoc", resourceCulture);
             }
         }
         
@@ -448,6 +466,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to پایان فرآیند درخواست.
+        /// </summary>
+        internal static string EndRequestProcess {
+            get {
+                return ResourceManager.GetString("EndRequestProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to پایان فرآیند امضاء سند.
         /// </summary>
         internal static string EndSigningDocProcess {
@@ -489,6 +516,15 @@ namespace IsoDocApp {
         internal static string EnterDeleteReason {
             get {
                 return ResourceManager.GetString("EnterDeleteReason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا توضیحات خود را در خصوص فعال سازی دوباره تایید سند وارد کنید.
+        /// </summary>
+        internal static string EnterDocConfirmActivationDesc {
+            get {
+                return ResourceManager.GetString("EnterDocConfirmActivationDesc", resourceCulture);
             }
         }
         
@@ -952,6 +988,24 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to شروع فرآیند.
+        /// </summary>
+        internal static string StartProcess {
+            get {
+                return ResourceManager.GetString("StartProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to شروع فرآیند درخواست.
+        /// </summary>
+        internal static string StartRequestProcess {
+            get {
+                return ResourceManager.GetString("StartRequestProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to زمان شروع.
         /// </summary>
         internal static string StartTime {
@@ -984,6 +1038,15 @@ namespace IsoDocApp {
         internal static string To {
             get {
                 return ResourceManager.GetString("To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تغییر سند.
+        /// </summary>
+        internal static string UpdateDoc {
+            get {
+                return ResourceManager.GetString("UpdateDoc", resourceCulture);
             }
         }
         

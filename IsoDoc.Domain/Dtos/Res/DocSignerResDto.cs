@@ -38,8 +38,8 @@ namespace IsoDoc.Domain.Dtos.Res
         [Editable(false)]
         public string SignRequestSentDate { get; set; }
 
-        public bool IsCanceled { get; set; }
-        public string CancelReason { get; set; }
         public byte[] Signature { get; set; }
+
+        public bool IsDocConfirmStateChanged { get; set; } 
     }
 }

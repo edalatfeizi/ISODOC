@@ -9,7 +9,7 @@ namespace IsoDocApp.Extensions
 {
     public static class DateTimeExtension
     {
-        public static string ToPersianDateTime(this DateTime now)
+        public static string ConvertToPersianDateTime(this DateTime now)
         {
             var pc = new PersianCalendar();
             int year = pc.GetYear(now);

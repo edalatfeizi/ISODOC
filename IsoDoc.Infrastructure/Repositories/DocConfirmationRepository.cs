@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace IsoDoc.Infrastructure.Repositories
@@ -71,7 +72,7 @@ namespace IsoDoc.Infrastructure.Repositories
             return newDocConfirm;
         }
 
-        public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, bool isSigned, string creatorUserPersonCode, string signRequestSentDate, bool isCanceled, string cancelReason, bool active)
+        public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, string creatorUserPersonCode, string signRequestSentDate)
         {
             var newDocSigner = new DocSigner
             {
@@ -81,13 +82,10 @@ namespace IsoDoc.Infrastructure.Repositories
                 Post = post,
                 SignerType = signerType,
                 SigningOrder = signingOrder,
+                IsSigned = false,
                 SignRequestSentDate = signRequestSentDate,
-                IsSigned = isSigned,
-                IsCanceled = isCanceled,
-                CancelReason = cancelReason,
                 CreatedBy = creatorUserPersonCode,
                 ModifiedBy = creatorUserPersonCode,
-                Active = active,
             };
             var newDocSignerQuery = @"
                     INSERT INTO tb_NewDocSigners (
@@ -98,8 +96,6 @@ namespace IsoDoc.Infrastructure.Repositories
                         SignerType,
                         SigningOrder,
                         IsSigned,
-                        IsCanceled,
-                        CancelReason,
                         CreatedBy, 
                         ModifiedBy, 
                         CreatedAt, 
@@ -116,8 +112,6 @@ namespace IsoDoc.Infrastructure.Repositories
                         @SignerType,
                         @SigningOrder,
                         @IsSigned,
-                        @IsCanceled,
-                        @CancelReason,
                         @CreatedBy,
                         @ModifiedBy,
                         @CreatedAt,
@@ -162,7 +156,7 @@ namespace IsoDoc.Infrastructure.Repositories
         public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode, bool isSysOfficeStaff)
         {
             const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true') and Active = 'true'";
-            const string canceledDocConfirmsQuery = @"select * from tb_NewDocConfirmations where ConfirmationStatus = '2' and Active = 'true'";
+            const string canceledDocConfirmsQuery = @"select * from tb_NewDocConfirmations where ConfirmationStatus = '2' and Active = 'true'";//2 DocRequestStatus.Canceled
 
             var userConfirmationsQuery = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
             var result = userConfirmationsQuery.ToList();
@@ -175,20 +169,20 @@ namespace IsoDoc.Infrastructure.Repositories
             return result.ToList();
         }
 
-        public async Task<bool> SignDocConfirmationAsync(int newDocSignersId)
+        public async Task<bool> SignDocConfirmationAsync(int docSignerId)
         {
             var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
                   SET IsSigned = 'true', SigningDate = @SigningDate 
                   WHERE Id = @NewDocSignersId";
 
-            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = newDocSignersId , SigningDate = DateTime.Now.ToPersianDateTime() });
+            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = docSignerId , SigningDate = DateTime.Now.ToPersianDateTime() });
             return rowsAffected > 0;
         }
 
         public async Task<bool> UpdateSendSignRequestDate(int newDocSignersId, string personCode)
         {
             var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
-                  SET SignRequestSentDate = @SignRequestSentDate , Active = 'true'
+                  SET SignRequestSentDate = @SignRequestSentDate
                   WHERE Id = @NewDocSignersId and PersonCode = @PersonCode";
 
             int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = newDocSignersId, SignRequestSentDate = DateTime.Now.ToPersianDateTime(), PersonCode = personCode });
@@ -222,6 +216,72 @@ namespace IsoDoc.Infrastructure.Repositories
             var result = await connection.QueryFirstOrDefaultAsync<NewDocConfirmation>(query, new { DocConfirmId = docConfirmId });
 
             return result;
+        }
+
+        public async Task<DocConfirmationStateChange> AddDocConfirmationStateChangeAsync(int docConfirmationId, string senderUserPersonCode, string senderUserFullName, string senderUserPost, string receiverUserPersonCode, string receiverUserFullName, string receiverUserPost, string description, DocConfirmationStatus state)
+        {
+            var cancelHistory = new DocConfirmationStateChange
+            {
+                DocConfirmationId = docConfirmationId,
+                SenderUserPersonCode = senderUserPersonCode,
+                SenderUserFullName = senderUserFullName,
+                SenderUserPost = senderUserPost,
+                ReceiverUserPersonCode = receiverUserPersonCode,
+                ReceiverUserFullName = receiverUserFullName,
+                ReceiverUserPost = receiverUserPost,
+                Description = description,
+                Status = state,
+                CreatedBy = senderUserPersonCode,
+                ModifiedBy = senderUserPersonCode,
+            };
+            var cancelHistoryQuery = @"
+                    INSERT INTO tb_DocConfirmationStateChanges (
+                        DocConfirmationId,
+                        SenderUserPersonCode,
+                        SenderUserFullName,
+                        SenderUserPost,
+                        ReceiverUserPersonCode,
+                        ReceiverUserFullName,
+                        ReceiverUserPost,
+                        Description,
+                        Status,
+                        CreatedBy, 
+                        ModifiedBy, 
+                        CreatedAt, 
+                        ModifiedAt,
+                        Active
+                    )
+                    OUTPUT INSERTED.Id
+                    VALUES (
+                        @DocConfirmationId,
+                        @SenderUserPersonCode,
+                        @SenderUserFullName,
+                        @SenderUserPost,
+                        @ReceiverUserPersonCode,
+                        @ReceiverUserFullName,
+                        @ReceiverUserPost,
+                        @Description,
+                        @Status,
+                        @CreatedBy,
+                        @ModifiedBy,
+                        @CreatedAt,
+                        @ModifiedAt,
+                        @Active
+                    );";
+
+
+            var newCancelHistoryId = await connection.QuerySingleAsync<int>(cancelHistoryQuery, cancelHistory);
+            cancelHistory.Id = newCancelHistoryId;
+            return cancelHistory;
+        }
+
+        public async Task<List<DocConfirmationStateChange>> GetDocConfirmationStateChangesAsync(int docConfirmationId)
+        {
+            const string query = @"SELECT * FROM tb_DocConfirmationStateChanges where DocConfirmationId = @DocConfirmationId and Active = 'true' order by Id";
+
+            var result = await connection.QueryAsync<DocConfirmationStateChange>(query, new { DocConfirmationId = docConfirmationId });
+
+            return result.ToList();
         }
     }
 }

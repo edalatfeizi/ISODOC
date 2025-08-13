@@ -1,5 +1,6 @@
 ﻿
 using IsoDoc.Domain.Dtos;
+using IsoDoc.Domain.Dtos.Req;
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
@@ -17,10 +18,12 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<List<DocSignerResDto>> GetDocConfirmationSignersAsync(int docConfirmationId);
         Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode, bool isSysOfficeStaff);
         Task<NewDocConfirmationResDto> GetDocConfirmationByDocReqIdAsync(int docReqId);
-        Task<bool> SignDocConfirmationAsync(int newDocSignersId);
+        Task<bool> SignDocConfirmationAsync(int docSignerId);
         Task<bool> UpdateSendSignRequestDate(int newDocSignerId, string personCode);
         Task<bool> UpdateDocConfirmStatusAsync(int docConfirmationId,DocRequestStatus status, string canceledByUserPersonCode);
         Task<bool> CancelSigningAsync(int docConfirmationId, string canceledByUserPersonCode);
+        Task<DocConfirmationStateChangeResDto> AddDocConfirmationStateChangeAsync(DocConfirmationStateChangeReqDto dto);
+        Task<List<DocConfirmationStateChangeResDto>> GetDocConfirmationStateChangesAsync(int docConfirmationId);
 
     }
 }

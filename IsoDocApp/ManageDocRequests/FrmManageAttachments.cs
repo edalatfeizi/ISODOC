@@ -1,5 +1,6 @@
 ﻿using DevExpress.Utils.Extensions;
 using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Extensions;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
 using IsoDocApp.Extensions;
@@ -45,7 +46,7 @@ namespace IsoDocApp.ManageDocRequests
 
         private async Task<bool> OpenAttachment()
         {
-            var attachmentId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+            var attachmentId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1,"Id").ToString());
             var attachment = await docRequestAttachmentsService.GetDocRequestAttachment(attachmentId);
 
             try

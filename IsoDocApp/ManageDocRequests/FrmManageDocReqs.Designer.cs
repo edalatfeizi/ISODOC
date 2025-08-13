@@ -297,9 +297,9 @@
             // 
             // btnShowDocConfirmations
             // 
-            this.btnShowDocConfirmations.Caption = "تایید سند";
+            this.btnShowDocConfirmations.Caption = "امضاء سند";
             this.btnShowDocConfirmations.Id = 10;
-            this.btnShowDocConfirmations.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowDocConfirmations.ImageOptions.Image")));
+            this.btnShowDocConfirmations.ImageOptions.Image = global::IsoDocApp.Properties.Resources.signature;
             this.btnShowDocConfirmations.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnShowDocConfirmations.ImageOptions.LargeImage")));
             this.btnShowDocConfirmations.Name = "btnShowDocConfirmations";
             this.btnShowDocConfirmations.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShowDocConfirmations_ItemClick);
@@ -754,7 +754,7 @@
             this.btnPrintConfirmationDoc.Name = "btnPrintConfirmationDoc";
             this.btnPrintConfirmationDoc.Size = new System.Drawing.Size(160, 66);
             this.btnPrintConfirmationDoc.TabIndex = 26;
-            this.btnPrintConfirmationDoc.Text = " چاپ برگه تایید سند";
+            this.btnPrintConfirmationDoc.Text = " گزارش تایید سند";
             this.btnPrintConfirmationDoc.Click += new System.EventHandler(this.btnPrintConfirmationDoc_Click);
             // 
             // btnForwardDocReq
@@ -990,6 +990,7 @@
             this.tabDocConfirmTimeLine,
             this.tabReqChatRoom});
             this.timeLineTabsContainer.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.timeLineTabsContainer_SelectedPageChanged);
+            this.timeLineTabsContainer.Click += new System.EventHandler(this.timeLineTabsContainer_Click);
             // 
             // tabDocReqTimeLine
             // 
@@ -1003,11 +1004,11 @@
             // tabDocConfirmTimeLine
             // 
             this.tabDocConfirmTimeLine.Controls.Add(this.panelControl3);
-            this.tabDocConfirmTimeLine.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabDocConfirmTimeLine.ImageOptions.Image")));
+            this.tabDocConfirmTimeLine.ImageOptions.Image = global::IsoDocApp.Properties.Resources.signature;
             this.tabDocConfirmTimeLine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabDocConfirmTimeLine.Name = "tabDocConfirmTimeLine";
             this.tabDocConfirmTimeLine.Size = new System.Drawing.Size(380, 884);
-            this.tabDocConfirmTimeLine.Text = "تایید سند";
+            this.tabDocConfirmTimeLine.Text = "امضاء سند";
             // 
             // panelControl3
             // 

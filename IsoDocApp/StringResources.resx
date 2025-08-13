@@ -432,4 +432,25 @@
   <data name="EndTime" xml:space="preserve">
     <value>زمان پایان</value>
   </data>
+  <data name="EnterDocConfirmActivationDesc" xml:space="preserve">
+    <value>لطفا توضیحات خود را در خصوص فعال سازی دوباره تایید سند وارد کنید</value>
+  </data>
+  <data name="StartRequestProcess" xml:space="preserve">
+    <value>شروع فرآیند درخواست</value>
+  </data>
+  <data name="CreateDoc" xml:space="preserve">
+    <value>ایجاد سند</value>
+  </data>
+  <data name="UpdateDoc" xml:space="preserve">
+    <value>تغییر سند</value>
+  </data>
+  <data name="DeleteDoc" xml:space="preserve">
+    <value>حذف سند</value>
+  </data>
+  <data name="StartProcess" xml:space="preserve">
+    <value>شروع فرآیند</value>
+  </data>
+  <data name="EndRequestProcess" xml:space="preserve">
+    <value>پایان فرآیند درخواست</value>
+  </data>
 </root>

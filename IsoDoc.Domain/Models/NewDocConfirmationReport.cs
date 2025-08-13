@@ -17,7 +17,7 @@ namespace IsoDoc.Domain.Models
         public string PersonCode { get; set; }
         public string Environment { get; set; }
         public string IpAddress { get; set; }
-        public string IpPCName { get; set; }
+        public string FormName { get; set; }
         public string PrintDate { get; set; } = DateTime.Now.ToPersianDateTime();
         public string ConfirmDate { get; set; } 
         public NewDocConfirmationReport(NewDocConfirmationResDto doc, List<DocSignerResDto> signers)

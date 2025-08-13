@@ -1,12 +1,16 @@
 ﻿using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.TextEditController.Win32;
+using DevExpress.XtraExport.Helpers;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
 using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Dtos;
+using IsoDoc.Domain.Dtos.Req;
 using IsoDoc.Domain.Dtos.Res;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
+using IsoDoc.Domain.Extensions;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
 using IsoDocApp.Enums;
@@ -20,9 +24,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace IsoDocApp
 {
@@ -33,7 +37,7 @@ namespace IsoDocApp
         private readonly IDocRequestAttachmentsService docRequestAttachmentsService;
         private readonly IDocConfirmationService docConfirmationService;
         private List<DocRequest> userDocReqs = new List<DocRequest>();
-        private Person userInfo,sysAdmin,sysOfficeBoss;
+        private Person userInfo, sysOfficeBoss;
         private string userName = "";
         private bool isAdmin = false;
         private List<DocRequestStep> selectedDocReqSteps = new List<DocRequestStep>();
@@ -46,6 +50,7 @@ namespace IsoDocApp
         private List<DocSignerResDto> docSigners;
         private DocRequestPeople receiverUser;
         private List<DocRequestPeople> receiverUsersList;
+        private List<DocConfirmationStateChangeResDto> docConfirmCancelHistories = new List<DocConfirmationStateChangeResDto>();
         public FrmManageDocReqs(IManageDocReqsService manageDocReqsService, IDocRequestAttachmentsService docRequestAttachmentsService, IPersonelyService personelyService, IDocConfirmationService docConfirmationService)
         {
             InitializeComponent();
@@ -79,6 +84,8 @@ namespace IsoDocApp
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName;
             //userName = "3134";
+            userName = "3864";
+            //userName = "3815";
             cmbReceiverUser.Properties.DisplayMember = "Name";
             cmbReceiverUser.Properties.ValueMember = "PersonCode";
 
@@ -86,13 +93,13 @@ namespace IsoDocApp
 
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
-            sysAdmin = await personelyService.GetPersonByDepCode(Constants.SysAdminCode);
             sysOfficeBoss = await personelyService.GetPersonByDepCode(Constants.SysOfficeCode);
             // RibbonPage selectedPage = ribbonControl1.Pages[0];
             // ribbonControl1.SelectedPage = selectedPage;
             //if(userInfo != null)
             //GetUserDocRequests();
 
+            btnShowDocConfirmations.ImageOptions.LargeImage = Properties.Resources.signature;
 
 
             if (userInfo != null && (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || userInfo.PersonCode.IsDeveloper()))
@@ -111,7 +118,7 @@ namespace IsoDocApp
             else
                 tabDeletedRequests.Visible = false;
 
-           await FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
+            await FilterDocRequests(new FilterDocRequests { CreatorPersonCode = userInfo.PersonCode, Active = true });
 
 
 
@@ -141,20 +148,20 @@ namespace IsoDocApp
         private async void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
 
+            cmbReceiverUser.Properties.DataSource = null;
+
+            //if (timeLineTabsContainer.SelectedTabPage == tabDocConfirmTimeLine)
+            //{
+            //    btnPrintConfirmationDoc.Enabled = false;
+            //    btnConfirm.Enabled = false;
+            //    confirmationSigners.Items.Clear();
+
+            //}
             int rowHandle = gridView1.FocusedRowHandle;
+
             if (rowHandle >= 0)
             {
-                cmbReceiverUser.Properties.DataSource = null;
-
-                if (timeLineTabsContainer.SelectedTabPage == tabDocConfirmTimeLine)
-                {
-                    btnPrintConfirmationDoc.Enabled = false;
-                    btnConfirm.Enabled = false;
-                    confirmationSigners.Items.Clear();
-
-                }
-
-                var idValue = gridView1.GetRowCellValue(rowHandle, "Id");
+                var idValue = GridViewHelper.GetGridViewCellValue(gridView1, "Id");
 
                 if (showDocRequests)
                 {
@@ -163,7 +170,7 @@ namespace IsoDocApp
 
                     //SetTimeLineTabsTitle(selectedDocReq);
 
-                    await GetDocReqSteps(selectedDocReq.Id, selectedDocReq.DocRequestStatus, GetDocRequestStatusDsc(selectedDocReq));
+                    await GetDocReqSteps(selectedDocReq);
                     var attachment = GridViewHelper.GetGridViewCellValue(gridView1, "HasAttachments");
                     var hasAttachments = attachment != null ? attachment.ToString() : null;
                     if (!string.IsNullOrEmpty(hasAttachments) && hasAttachments.ToString() == "دارد")
@@ -171,7 +178,8 @@ namespace IsoDocApp
                     else
                         btnShowAttachments.Enabled = false;
                     docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docId);
-
+                    if (docConfirmation != null)
+                        docConfirmCancelHistories = await docConfirmationService.GetDocConfirmationStateChangesAsync(docConfirmation.Id);
                     if (selectedDocReq.DocRequestStatus == DocRequestStatus.Completed && docConfirmation != null)
                     {
 
@@ -195,38 +203,31 @@ namespace IsoDocApp
                     //    confirmationSigners.Items.Clear();
                     //    docSigners.Clear();
                     //}
-                   // if(sdf)
+                    // if(sdf)
                 }
                 else
                 {
                     docConfirmation = docConfirmations.Where(x => x.Id == int.Parse(idValue.ToString())).FirstOrDefault();
-                    var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
-                    var docReqHasAttachments = await manageDocReqsService.HasAttachmentsAsync(docRequest.Id);
-                    if(docReqHasAttachments)
+                    docConfirmCancelHistories = await docConfirmationService.GetDocConfirmationStateChangesAsync(docConfirmation.Id);
+
+                    selectedDocReq = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
+                    var docReqHasAttachments = await manageDocReqsService.HasAttachmentsAsync(selectedDocReq.Id);
+                    if (docReqHasAttachments)
                         btnShowAttachments.Enabled = true;
 
                     //SetTimeLineTabsTitle(docRequest);
 
-                    await GetDocReqSteps(docRequest.Id, docRequest.DocRequestStatus, GetDocRequestStatusDsc(docRequest));
-                    await GetDocConfirmSigners(docConfirmation.Id, docRequest.Id);
+                    await GetDocReqSteps(selectedDocReq);
+                    await GetDocConfirmSigners(docConfirmation.Id, selectedDocReq.Id);
 
-                    receiverUsersList = await GetDocRequestPeopleAsync(docRequest.Id);
+                    receiverUsersList = await GetDocRequestPeopleAsync(selectedDocReq.Id);
                     cmbReceiverUser.Properties.DataSource = receiverUsersList;
 
-                    var docReqMessages = await manageDocReqsService.GetDocRequestAllChatMessagesAsync(docRequest.Id);
+                    var docReqMessages = await manageDocReqsService.GetDocRequestAllChatMessagesAsync(selectedDocReq.Id);
                     SetChatMessages(docReqMessages, MessageTypes.All);
                 }
-
-
-
-
-
-
             }
-            else
-            {
-                SetBottomBarControlEnabled(false);
-            }
+
 
 
         }
@@ -271,13 +272,54 @@ namespace IsoDocApp
 
             return docStatusDsc;
         }
-        private async Task<bool> GetDocReqSteps(int docReqId, DocRequestStatus docRequestStatus, string docReqStatusDsc)
+        private async Task<bool> GetDocReqSteps(DocRequest docRequest)
         {
             ShowProgressBar(true);
             docReqSteps.Items.Clear();
-            selectedDocReqSteps = await manageDocReqsService.GetDocRequestSteps(docReqId);
+            var docSigningSteps = new List<ProcessStep>();
+            var startStepTitle = "";
+            var endStepTitle = "";
 
-            var steps = await StepsProgressBarHelper.GetDocRequestProgressBarSteps(selectedDocReqSteps, docRequestStatus, docReqStatusDsc);
+            switch (docRequest.DocRequestType)
+            {
+                case DocRequestType.Create:
+                    startStepTitle = $"{StringResources.StartRequestProcess} {StringResources.CreateDoc}";
+                    endStepTitle = $"{StringResources.EndRequestProcess} {StringResources.CreateDoc}";
+                    break;
+                case DocRequestType.Update:
+                    startStepTitle = $"{StringResources.StartRequestProcess} {StringResources.UpdateDoc}";
+                    endStepTitle = $"{StringResources.EndRequestProcess} {StringResources.UpdateDoc}";
+
+                    break;
+                case DocRequestType.Delete:
+                    startStepTitle = $"{StringResources.StartRequestProcess} {StringResources.DeleteDoc}";
+                    endStepTitle = $"{StringResources.EndRequestProcess} {StringResources.DeleteDoc}";
+
+                    break;
+            }
+            var startStep = new ProcessStep
+            {
+                Title = startStepTitle,
+                Description = $"{StringResources.DocTitle} : {docRequest.Title.Split(':')[1].Trim()} \n {StringResources.StartTime} : {docRequest.CreatedAt.FormatPersianDate()}",
+                Status = ProcessStepStatus.Inactive,
+            };
+            var endStep = new ProcessStep
+            {
+                Title = endStepTitle,
+                Description = docRequest.DocRequestStatus == DocRequestStatus.Completed ? $"{StringResources.EndTime} : {docRequest.ModifiedAt.FormatPersianDate()}" : "",
+                Status = docRequest.DocRequestStatus == DocRequestStatus.Completed ? ProcessStepStatus.Completed : ProcessStepStatus.Inactive,
+                CreatedAt = DateTime.Now.ToPersianDateTime()
+            };
+            selectedDocReqSteps = await manageDocReqsService.GetDocRequestSteps(docRequest.Id);
+
+            var docReqProcessSteps = new List<ProcessStep>();
+            docReqProcessSteps.Add(startStep);
+            docReqProcessSteps.AddRange(selectedDocReqSteps.MapToProcessSteps(docRequest));
+            docReqProcessSteps.Add(endStep);
+
+        
+
+            var steps = await StepsProgressBarHelper.GetProcessSteps(docReqProcessSteps);
             foreach (var step in steps)
             {
                 docReqSteps.Items.Add(step);
@@ -286,29 +328,44 @@ namespace IsoDocApp
             ShowProgressBar(false);
             return true;
         }
+
         private async Task<bool> GetDocConfirmSigners(int docConfirmId, int docReqId)
         {
             //ShowProgressBar(true);
             docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmId);
+            UpdateDocSignersStepsTimeLine();
+            if (docSigners.Count > 0)
+            {
+                if (docSigners.Any(x => x.PersonCode == userInfo.PersonCode && (x.SignerType == StringResources.Confirmer || x.SignerType == StringResources.Acceptor)))
+                    btnPrintConfirmationDoc.Enabled = true;
 
-            UpdateDocSignersStepsTimeLine(docConfirmId);
-            if (ribbonControl1.SelectedPage == tabReceivedRequests && docSigners.Any(x => x.PersonCode == userInfo.PersonCode && !x.IsSigned))
-                btnConfirm.Enabled = true;
-            else
-                btnConfirm.Enabled = false;
+                if (ribbonControl1.SelectedPage == tabReceivedRequests && docSigners.Any(x => x.PersonCode == userInfo.PersonCode && !x.IsSigned && x.Active))
+                    btnConfirm.Enabled = true;
+                else
+                    btnConfirm.Enabled = false;
+                if (docSigners.Any(x => x.PersonCode == userInfo.PersonCode))
+                    btnConfirm.Visible = true;
+            }
 
-            btnPrintConfirmationDoc.Enabled = true;
+
             var lastSigner = docSigners.LastOrDefault();
-            if(lastSigner != null && !lastSigner.IsCanceled)
+            if (lastSigner != null && lastSigner.Active)
             {
                 if (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.PersonCode.IsDeveloper())
                 {
                     btnCancelSigning.Visible = true;
-                }else
-                    btnCancelSigning.Visible = true;
+                    btnCancelSigning.Enabled = true;
+                }
+                else
+                {
+                    btnCancelSigning.Visible = false;
+                    btnCancelSigning.Enabled = false;
 
-            }else
-                btnCancelSigning.Visible = true;
+                }
+
+            }
+            else
+                btnCancelSigning.Visible = false;
 
 
             //ShowProgressBar(false);
@@ -337,16 +394,39 @@ namespace IsoDocApp
 
             return receiverUsersList;
         }
-        private async void UpdateDocSignersStepsTimeLine(int docConfirmId)
+        private async void UpdateDocSignersStepsTimeLine()
         {
             confirmationSigners.Items.Clear();
-            docConfirmation = docConfirmations.Single(x=> x.Id == docConfirmId);
-          
+            //docConfirmation = docConfirmations.Single(x=> x.Id == docConfirmId);
+
             //var sysStaff = new List<Person>();
             //sysStaff.Add(sysAdmin.First());
             //sysStaff.Add(sysOfficeBoss.First());
-                
-            var steps = await StepsProgressBarHelper.GetDocConfirmationSignersSteps(docSigners, docConfirmation,sysAdmin,sysOfficeBoss);
+       
+            var docSigningSteps = new List<ProcessStep>();
+            var startStep = new ProcessStep
+            {
+                Title = StringResources.StartingDocSigningProcess,
+                Description = $"{StringResources.DocTitle} : {docConfirmation.DocTitle} \n {StringResources.StartTime} : {docConfirmation.CreatedAt.FormatPersianDate()}",
+                Status = ProcessStepStatus.Inactive,
+            };
+            var endStep = new ProcessStep
+            {
+                Title = StringResources.EndSigningDocProcess,
+                Description = docConfirmation.ConfirmationStatus == DocRequestStatus.Completed ? $"{StringResources.EndTime} : {docConfirmation.ModifiedAt}" : "",
+                Status = docConfirmation.ConfirmationStatus == DocRequestStatus.Completed ? ProcessStepStatus.Completed : ProcessStepStatus.Inactive,
+                CreatedAt = DateTime.Now.ToPersianDateTime()
+            };
+
+            docSigningSteps.AddRange(docSigners.MapToProcessSteps());
+            docSigningSteps.AddRange(docConfirmCancelHistories.MapToProcessSteps());
+
+            var newSteps = new List<ProcessStep>();
+            newSteps.Add(startStep);
+            newSteps.AddRange(docSigningSteps.OrderBy(x => x.CreatedAt.ToPersianDateTime()));
+            newSteps.Add(endStep);
+
+            var steps = await StepsProgressBarHelper.GetProcessSteps(newSteps);
             foreach (var step in steps)
             {
                 confirmationSigners.Items.Add(step);
@@ -354,30 +434,24 @@ namespace IsoDocApp
         }
         private async void btnDownloadAttachment_Click(object sender, EventArgs e)
         {
-            RibbonPage selectedPage = ribbonControl1.SelectedPage;
-            if (userDocReqs.Count > 0)
+            //RibbonPage selectedPage = ribbonControl1.SelectedPage;
+            if (showDocRequests)
             {
-                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
 
-                var frmManageAttachments = new FrmManageAttachments(docRequestAttachmentsService, docReqId);
-                var result = frmManageAttachments.ShowDialog();
+                var frmManageAttachments = new FrmManageAttachments(docRequestAttachmentsService, selectedDocReq.Id);
+                frmManageAttachments.ShowDialog();
 
 
-                if (result == DialogResult.OK)
-                {
-                   await FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
-                }
+                //if (result == DialogResult.OK)
+                //{
+                //   await FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
+                //}
             }
             else if (docConfirmations != null && docConfirmations.Count > 0)
             {
-                var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString(),0);
-                if(docConfirmId != 0)
-                {
-                    docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
-                    var frmManageAttachments = new FrmManageAttachments(docRequestAttachmentsService, docConfirmation.DocReqId);
-                    frmManageAttachments.ShowDialog();
-                }
-                
+                var frmManageAttachments = new FrmManageAttachments(docRequestAttachmentsService, docConfirmation.DocReqId);
+                frmManageAttachments.ShowDialog();
+
             }
 
 
@@ -396,14 +470,18 @@ namespace IsoDocApp
                 //docReqSteps.Items.Clear();
                 confirmationSigners.Items.Clear();
                 docReqSteps.Items.Clear();
+                userDocReqs.Clear();
                 grdUserDocRequests.DataSource = null;
+
+                btnConfirm.Visible = false;
+                btnCancelSigning.Visible = false;
+
                 // Check which page was clicked using the Name or Text property
                 switch (selectedPage.Name)
                 {
                     case "tabReceivedRequests":
                         if (userInfo != null)
                         {
-                            docReqSteps.Items.Clear();
                             await FilterDocRequests(new FilterDocRequests { ReceiverPersonCode = userInfo.PersonCode, DocRequestStatus = DocRequestStatus.InProgress, Active = true });
 
 
@@ -466,7 +544,7 @@ namespace IsoDocApp
 
         private async void btnForwardDocReq_Click(object sender, EventArgs e)
         {
-           await ForwardDocRequest();
+            await ForwardDocRequest();
         }
         private void ToggleConfirmationButtonsState(bool state)
         {
@@ -475,9 +553,9 @@ namespace IsoDocApp
         }
         private async void btnReload_Click(object sender, EventArgs e)
         {
-           await Reload();
+            await Reload();
         }
-        
+
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView view = sender as GridView;
@@ -487,14 +565,14 @@ namespace IsoDocApp
                 if (e.Column.FieldName == "DocRequestStatus") // Replace "Status" with your column's field name
                 {
                     // Get the value of the cell
-                     status = view.GetRowCellValue(e.RowHandle, "DocRequestStatus").ToString();
+                    status = view.GetRowCellValue(e.RowHandle, "DocRequestStatus").ToString();
                 }
             }
             else
             {
                 if (e.Column.FieldName == "ConfirmationStatus")
                 {
-                     status = view.GetRowCellValue(e.RowHandle, "ConfirmationStatus").ToString();
+                    status = view.GetRowCellValue(e.RowHandle, "ConfirmationStatus").ToString();
                 }
             }
 
@@ -527,11 +605,11 @@ namespace IsoDocApp
             RibbonPage selectedPage = ribbonControl1.SelectedPage;
             if (selectedPage.Name == tabReceivedRequests.Name && userDocReqs.Count > 0)
             {
-                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                //var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
                 var lastDocReqStepId = selectedDocReqSteps.Last().Id;
-                var docRequest = userDocReqs.Where(x => x.Id == docReqId).FirstOrDefault();
+                //var docRequest = userDocReqs.Where(x => x.Id == docReqId).FirstOrDefault();
 
-                var frmForwardDocReq = new FrmForwardDocReq(manageDocReqsService, personelyService, docReqId, lastDocReqStepId, docRequest.DocRequestStatus, GetDocRequestStatusDsc(docRequest), smsClient);
+                var frmForwardDocReq = new FrmForwardDocReq(manageDocReqsService, personelyService, selectedDocReq.Id, lastDocReqStepId, selectedDocReq.DocRequestStatus, GetDocRequestStatusDsc(selectedDocReq), smsClient);
                 var result = frmForwardDocReq.ShowDialog();
 
 
@@ -551,51 +629,74 @@ namespace IsoDocApp
 
         private async void mnuCompleteReq_Click(object sender, EventArgs e)
         {
-            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+            //var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
             ShowProgressBar(true);
-            var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Completed, "", userInfo.PersonCode);
+            var result = await manageDocReqsService.UpdateDocRequestStatus(selectedDocReq.Id, DocRequestStatus.Completed, "", userInfo.PersonCode);
             await Reload();
         }
 
         private async void mnuCancelReq_Click(object sender, EventArgs e)
         {
-            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-            string cancelReason = XtraInputBox.Show(StringResources.EnterCancelReason, StringResources.CancelReason, "");
 
-            // Check if the user clicked OK and the input is not empty
-            if (!string.IsNullOrEmpty(cancelReason))
+            var frmMsgBox = new FrmMessageBox();
+
+            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+            {
+                Title = StringResources.EnterCancelReason,
+                ShowCancelButton = true,
+                ShowConfirmButton = true,
+                IsInputBox = true,
+                ConfirmButtonText = StringResources.Confirm,
+                CancelButtonText = StringResources.Cancel,
+                DevExpressIconId = "cancel",
+                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+            });
+            var result = frmMsgBox.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 ShowProgressBar(true);
-                var result = await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Canceled, cancelReason, userInfo.PersonCode);
+                await manageDocReqsService.UpdateDocRequestStatus(selectedDocReq.Id, DocRequestStatus.Canceled, frmMsgBox.InputText, userInfo.PersonCode);
                 await Reload();
-
             }
+
         }
 
         private async void mnuDeleteReq_Click(object sender, EventArgs e)
         {
-            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-            string deleteReason = XtraInputBox.Show(StringResources.EnterDeleteReason, StringResources.DeleteRequest, "");
+            //var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+            //string deleteReason = XtraInputBox.Show(StringResources.EnterDeleteReason, StringResources.DeleteRequest, "");
 
-            // Check if the user clicked OK and the input is not empty
-            if (!string.IsNullOrEmpty(deleteReason))
+            var frmMsgBox = new FrmMessageBox();
+
+            frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
+            {
+                Title = StringResources.EnterDeleteReason,
+                ShowCancelButton = true,
+                ShowConfirmButton = true,
+                IsInputBox = true,
+                ConfirmButtonText = StringResources.Confirm,
+                CancelButtonText = StringResources.Cancel,
+                DevExpressIconId = "cancel",
+                DevExpressImageType = (int)DevExpress.Utils.Design.ImageType.Colored
+            });
+            var result = frmMsgBox.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 ShowProgressBar(true);
-                await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.Deleted, "", userInfo.PersonCode);
-                await manageDocReqsService.SetDocRequestActive(docReqId, deleteReason, false);
+                await manageDocReqsService.UpdateDocRequestStatus(selectedDocReq.Id, DocRequestStatus.Deleted, "", userInfo.PersonCode);
+                await manageDocReqsService.SetDocRequestActive(selectedDocReq.Id, frmMsgBox.InputText, false);
                 await Reload();
-
             }
         }
 
         private async void mnuEnableReq_Click(object sender, EventArgs e)
         {
-            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+            //var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
 
 
             ShowProgressBar(true);
-            await manageDocReqsService.UpdateDocRequestStatus(docReqId, DocRequestStatus.InProgress, "", userInfo.PersonCode);
-            await manageDocReqsService.SetDocRequestActive(docReqId, "", true);
+            await manageDocReqsService.UpdateDocRequestStatus(selectedDocReq.Id, DocRequestStatus.InProgress, "", userInfo.PersonCode);
+            await manageDocReqsService.SetDocRequestActive(selectedDocReq.Id, "", true);
             await Reload();
 
         }
@@ -645,6 +746,12 @@ namespace IsoDocApp
                             mnuCompleteReq.Enabled = true;
 
                     }
+
+                    if (docConfirmation != null && docConfirmation.ConfirmationStatus == DocRequestStatus.Canceled && (userInfo.CodeEdare == Constants.SysOfficeCode))
+                    {
+                        mnuConfirmDoc.Enabled = true;
+
+                    }
                 }
 
                 if (isAdmin && selectedPage.Name == tabDeletedRequests.Name && e.Button == MouseButtons.Right)
@@ -659,18 +766,20 @@ namespace IsoDocApp
                     contextMenuStrip2.Show(grdUserDocRequests, e.Location);
                     if (selectedDocReq.DocRequestStatus == DocRequestStatus.Completed)
                     {
-                        var idValue = GridViewHelper.GetGridViewCellValue(gridView1,"Id");
+                        //var idValue = GridViewHelper.GetGridViewCellValue(gridView1,"Id");
 
-                        var docId = idValue != null ? int.Parse(idValue.ToString()) : 0;
-                        docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docId);
-                        var docConfirmSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmation.Id);
-                        if (docConfirmSigners.Count == 0 || docConfirmSigners.Last().IsCanceled)
+                        //var docId = idValue != null ? int.Parse(idValue.ToString()) : 0;
+                        //docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docId);
+                        if(docConfirmation == null)
+                            mnuConfirmDoc.Enabled = true;
+
+                        else if (docConfirmation.ConfirmationStatus == DocRequestStatus.Canceled && (userInfo.CodeEdare == Constants.SysOfficeCode))
                         {
                             mnuConfirmDoc.Enabled = true;
 
                         }
                     }
-                        
+
                     else
                     {
                         mnuConfirmDoc.Enabled = false;
@@ -688,21 +797,22 @@ namespace IsoDocApp
         private async void btnAddAttachment_Click(object sender, EventArgs e)
         {
             RibbonPage selectedPage = ribbonControl1.SelectedPage;
-            var docReqId = 0;
-            if (showDocRequests)
-            {
-                if (selectedPage.Name == tabReceivedRequests.Name && userDocReqs.Count > 0)
-                {
-                     docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                   
-                }
-            }
-            else
-            {
-                var idValue = GridViewHelper.GetGridViewCellValue(gridView1,"Id");
-                docConfirmation = docConfirmations.Where(x => x.Id == int.Parse(idValue.ToString())).FirstOrDefault();
-                docReqId = docConfirmation.DocReqId;
-            }
+            var docReqId = showDocRequests ? selectedDocReq.Id : docConfirmation.DocReqId;
+            //if (showDocRequests)
+            //{
+            //    if (selectedPage.Name == tabReceivedRequests.Name && userDocReqs.Count > 0)
+            //    {
+            //         docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+
+            //    }
+
+            //}
+            //else
+            //{
+            //    var idValue = GridViewHelper.GetGridViewCellValue(gridView1,"Id");
+            //    docConfirmation = docConfirmations.Where(x => x.Id == int.Parse(idValue.ToString())).FirstOrDefault();
+            //    docReqId = docConfirmation.DocReqId;
+            //}
             var docReqAttachment = AttachmentsHelper.AttachFile(Constants.DocReqAttachmentFileTypes, false)?.MapToDocRequestAttachment(docReqId);
             if (docReqAttachment != null)
             {
@@ -738,32 +848,18 @@ namespace IsoDocApp
 
         private async void mnuConfirmDoc_Click(object sender, EventArgs e)
         {
-            var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+            //var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
 
-            docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docReqId);
-            if (docConfirmation != null)
+            //docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docReqId);
+            var lastDocConfirmId = docConfirmation != null ? docConfirmation.Id : 0;
+            var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, smsClient, selectedDocReq.Id, lastDocConfirmId);
+            var result = frmNewDocReq.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, smsClient, docReqId,docConfirmation.Id);
-                var result  = frmNewDocReq.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmation.Id);
-                    UpdateDocSignersStepsTimeLine(docConfirmation.Id);
-                }
+                docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmation.Id);
+                UpdateDocSignersStepsTimeLine();
             }
-            else
-            {
-                var frmNewDocReq = new FrmConfirmNewDoc(personelyService, manageDocReqsService, docConfirmationService, smsClient, docReqId);
-                var result = frmNewDocReq.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    docSigners = await docConfirmationService.GetDocConfirmationSignersAsync(docConfirmation.Id);
-                    UpdateDocSignersStepsTimeLine(docConfirmation.Id);
-                }
-            }
-           
-          
-       
+
         }
 
         private async void btnShowDocConfirmations_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -783,7 +879,7 @@ namespace IsoDocApp
         {
             ClearGridView();
             showDocRequests = false;
-            if(userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode)
+            if (userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode)
             {
                 docConfirmations = await docConfirmationService.GetUserDocConfirmationsAsync(userPersonCode, true);
                 btnAddAttachment.Enabled = true;
@@ -821,17 +917,17 @@ namespace IsoDocApp
         private void timeLineTabsContainer_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
 
-            if (timeLineTabsContainer.SelectedTabPage == tabDocConfirmTimeLine && (docSigners != null && docSigners.Count == 0))
-            {
-                //confirmationSigners.Items.Clear();
-                btnPrintConfirmationDoc.Enabled = false;
-                //if (ribbonControl1.SelectedPage == tabReceivedRequests)
-                //    btnConfirm.Enabled = true;
-                //else
-                //    btnConfirm.Enabled = false;
-            }
-            else
-                btnPrintConfirmationDoc.Enabled = true;
+            // if (timeLineTabsContainer.SelectedTabPage == tabDocConfirmTimeLine && (docSigners != null && docSigners.Count == 0))
+            // {
+            //confirmationSigners.Items.Clear();
+            // btnPrintConfirmationDoc.Enabled = false;
+            //if (ribbonControl1.SelectedPage == tabReceivedRequests)
+            //    btnConfirm.Enabled = true;
+            //else
+            //    btnConfirm.Enabled = false;
+            //}
+            // else
+            // btnPrintConfirmationDoc.Enabled = true;
 
         }
 
@@ -839,9 +935,9 @@ namespace IsoDocApp
         {
             ShowProgressBar(true);
 
-            var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+            //var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
 
-            docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
+            //docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
 
             var docSigner = docSigners.Where(x => x.PersonCode == userInfo.PersonCode && !x.IsSigned).First();
 
@@ -859,7 +955,7 @@ namespace IsoDocApp
                 if (nextDocSigner != null)
                 {
                     nextDocSigner.SignRequestSentDate = DateTime.Now.ToPersianDateTime();
-                    nextDocSigner.Active = true;
+                    //nextDocSigner.Active = true;
 
                     await docConfirmationService.UpdateSendSignRequestDate(nextDocSigner.Id, nextDocSigner.PersonCode);
 
@@ -869,7 +965,7 @@ namespace IsoDocApp
 
                     smsClient.SendSMS(mobile, text);
                 }
-                UpdateDocSignersStepsTimeLine(docConfirmation.Id);
+                UpdateDocSignersStepsTimeLine();
 
             }
             else
@@ -883,24 +979,24 @@ namespace IsoDocApp
         private async void btnPrintConfirmationDoc_Click(object sender, EventArgs e)
         {
             // Create report instance
-            if(docSigners != null)
+            if (docConfirmation != null && (docConfirmation.ConfirmationStatus == DocRequestStatus.InProgress || docConfirmation.ConfirmationStatus == DocRequestStatus.Completed))
             {
                 ShowProgressBar(true);
                 btnPrintConfirmationDoc.Enabled = false;
                 string confirmDate = null;
-                var newSigners = new List<DocSignerResDto>();
-                if (docSigners.Any(x => x.IsCanceled))
-                {
-                    var canceledSigner = docSigners.Where(x => x.IsCanceled).First();
+                //var newSigners = new List<DocSignerResDto>();
+                //if (docConfirmation.ConfirmationStatus == DocRequestStatus.InProgress || docConfirmation.ConfirmationStatus == DocRequestStatus.Completed)
+                //{
+                //    var canceledSigner = docSigners.Where(x => x.IsCanceled).First();
 
-                    var isCanceledIndex = docSigners.IndexOf(canceledSigner);
-                    newSigners = docSigners.Skip(isCanceledIndex + 1).ToList();
-                }
-                else
-                    newSigners = docSigners;
+                //    var isCanceledIndex = docSigners.IndexOf(canceledSigner);
+                //    newSigners = docSigners.Skip(isCanceledIndex + 1).ToList();
+                //}
+                //else
+                //    newSigners = docSigners;
 
-
-                foreach (var signer in newSigners)
+                var signers = docSigners.Where(x => x.Active).ToList();
+                foreach (var signer in signers)
                 {
                     if (signer.IsSigned)
                     {
@@ -910,25 +1006,25 @@ namespace IsoDocApp
 
 
                 }
-                var lastSigner = newSigners.OrderByDescending(x => x.SigningOrder).FirstOrDefault();
+                var lastSigner = signers.LastOrDefault();
                 if (lastSigner != null && lastSigner.IsSigned)
                     confirmDate = lastSigner.SigningDate;
 
-                var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
+                //var docConfirmId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
 
-                docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
+                //docConfirmation = docConfirmations.Where(x => x.Id == docConfirmId).FirstOrDefault();
 
                 XtraReport report = new RptNewDocConfirmation();
 
                 // Create data source
                 //var reportData = new NewDocConfirmationReport(docConfirmation, docSigners);
-                var newDocConfirmationReport = new NewDocConfirmationReport(docConfirmation, newSigners)
+                var newDocConfirmationReport = new NewDocConfirmationReport(docConfirmation, signers)
                 {
                     UserName = $"{userInfo.FirstName} {userInfo.LastName} - {userInfo.Posttxt}",
                     PersonCode = userInfo.PersonCode,
                     Environment = Environment.MachineName,
                     IpAddress = Utils.GetIpAddress(),
-                    IpPCName = $"{Environment.MachineName} - {Utils.GetIpAddress()}",
+                    FormName = "SI-FO-01",
                     ConfirmDate = confirmDate != null ? confirmDate : StringResources.NotConfirmed,
                 };
                 var reportData = new List<NewDocConfirmationReport>
@@ -947,7 +1043,7 @@ namespace IsoDocApp
                 ShowProgressBar(false);
                 btnPrintConfirmationDoc.Enabled = true;
             }
-            
+
         }
 
         private void SetChatMessages(List<DocRequestChatMessage> chatMessages, MessageTypes messageType)
@@ -1009,63 +1105,29 @@ namespace IsoDocApp
                 btnAllMessages.Appearance.BackColor = Color.WhiteSmoke;
                 ShowChatLoading(true);
 
-                if (showDocRequests)
-                {
-                    var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    var docReqMessages = await manageDocReqsService
-                        .GetDocRequestUserSentChatMessagesAsync(docReqId, userInfo.PersonCode);
-                    SetChatMessages(docReqMessages, MessageTypes.Sent);
-                }
-                else
-                {
-                    var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
-                    var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
+                var docReqId = showDocRequests ? selectedDocReq.Id : docConfirmation.DocReqId;
+                var docReqMessages = await manageDocReqsService.GetDocRequestUserSentChatMessagesAsync(docReqId, userInfo.PersonCode);
 
-                    var docReqMessages = await manageDocReqsService
-                        .GetDocRequestUserSentChatMessagesAsync(docRequest.Id, userInfo.PersonCode);
+                SetChatMessages(docReqMessages, MessageTypes.Sent);
 
-                    SetChatMessages(docReqMessages, MessageTypes.Sent);
-
-                }
                 ShowChatLoading(false);
             }
 
 
         }
 
-        private async void btnReceivedMessages_Click_1(object sender, EventArgs e)
-        {
-
-            
-
-
-        }
         private async Task GetAllMessagesAsync()
         {
             btnSentMessages.Appearance.BackColor = Color.WhiteSmoke;
             btnReceivedMessages.Appearance.BackColor = Color.WhiteSmoke;
             btnAllMessages.Appearance.BackColor = Color.SteelBlue;
+
             ShowChatLoading(true);
 
-            if (showDocRequests)
-            {
-                var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                var docReqMessages = await manageDocReqsService
-                    .GetDocRequestAllChatMessagesAsync(docReqId);
-                SetChatMessages(docReqMessages, MessageTypes.All);
-            }
-            else
-            {
-                var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
-                var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
+            var docReqId = showDocRequests ? selectedDocReq.Id : docConfirmation.DocReqId;
+            var docReqMessages = await manageDocReqsService.GetDocRequestAllChatMessagesAsync(selectedDocReq.Id);
 
-                var docReqMessages = await manageDocReqsService
-                    .GetDocRequestAllChatMessagesAsync(docRequest.Id);
-                SetChatMessages(docReqMessages, MessageTypes.All);
-
-            }
+            SetChatMessages(docReqMessages, MessageTypes.All);
             ShowChatLoading(false);
         }
         private void ShowChatLoading(bool isLoading)
@@ -1081,19 +1143,7 @@ namespace IsoDocApp
 
             if (Validators.ValidateControls<BaseEdit>(cmbReceiverUser, txtMessage))
             {
-                var docReqId = 0;
-                if (showDocRequests)
-                {
-                    docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-
-                }
-                else
-                {
-                    var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
-                    docReqId = docConfirmation.DocReqId;
-                }
-
+                var docReqId = showDocRequests ? selectedDocReq.Id : docConfirmation.DocReqId;
                 var newMessage = new DocRequestChatMessage
                 {
                     DocRequestId = docReqId,
@@ -1132,6 +1182,7 @@ namespace IsoDocApp
 
         private async void btnCancelSigning_Click(object sender, EventArgs e)
         {
+
             var frmMsgBox = new FrmMessageBox();
 
             frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
@@ -1150,67 +1201,51 @@ namespace IsoDocApp
             {
                 btnCancelSigning.Enabled = false;
                 ShowProgressBar(true);
-                var newDocSigner = new NewDocSignerDto
+                var newDocConfirmCancel = new DocConfirmationStateChangeReqDto
                 {
-                    PersonCode = userInfo.PersonCode,
-                    Name = $"{userInfo.FirstName} {userInfo.LastName}",
-                    Post = userInfo.Posttxt,
-                    SigningOrder = docSigners.Last().SigningOrder + 1,
-                    IsSigned = false,
-                    IsCanceled = true,
-                    CancelReason = frmMsgBox.InputText,
-                    SignRequestSentDate = DateTime.Now.ToPersianDateTime(),
-                    CreatorUserPersonCode = userInfo.PersonCode
+                    DocConfirmationId = docConfirmation.Id,
+                    SenderUserPersonCode = userInfo.PersonCode,
+                    SenderUserFullName = $"{userInfo.FirstName} {userInfo.LastName}",
+                    SenderUserPost = userInfo.Posttxt,
+                    ReceiverUserPersonCode = sysOfficeBoss.PersonCode,
+                    ReceiverUserFullName = $"{sysOfficeBoss.FirstName} {sysOfficeBoss.LastName}",
+                    ReceiverUserPost = sysOfficeBoss.Posttxt,
+                    Description = frmMsgBox.InputText,
+                    CreatedBy = userInfo.PersonCode,
+                    ModifiedBy = userInfo.PersonCode,
+                    Status = DocConfirmationStatus.Canceled
                 };
-                newDocSigner.Active = newDocSigner.SigningOrder == 0 ? true : false;
-                var docReqId = 0;
-                if (showDocRequests)
-                {
-                    docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    docConfirmation = await docConfirmationService.GetDocConfirmationByDocReqIdAsync(docReqId);
-                    newDocSigner.NewDocConfirmationId = docConfirmation.Id;
 
-
-                }
-                else
-                {
-                    var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
-                    docReqId = docConfirmation.DocReqId;
-                    newDocSigner.NewDocConfirmationId = docConfirmation.Id;
-
-                }
-                var isCanceled = await docConfirmationService.UpdateDocConfirmStatusAsync(newDocSigner.NewDocConfirmationId, DocRequestStatus.Canceled, userInfo.PersonCode);
+                var isCanceled = await docConfirmationService.UpdateDocConfirmStatusAsync(docConfirmation.Id, DocRequestStatus.Canceled, userInfo.PersonCode);
                 if (isCanceled)
                 {
-                    await docConfirmationService.CancelSigningAsync(newDocSigner.NewDocConfirmationId, userInfo.PersonCode);
-                    await docConfirmationService.AddNewDocSignersAsync(newDocSigner);
-                    var newDocSignerResDto = new DocSignerResDto
-                    {
-                        NewDocConfirmationId = newDocSigner.NewDocConfirmationId,
-                        PersonCode = newDocSigner.PersonCode,
-                        Name = newDocSigner.Name,
-                        Post = newDocSigner.Post,
-                        IsCanceled = true,
-                        CancelReason = frmMsgBox.InputText,
-                    };
-                    docSigners.Add(newDocSignerResDto);
-                    UpdateDocSignersStepsTimeLine(docConfirmation.Id);
+                    await docConfirmationService.CancelSigningAsync(docConfirmation.Id, userInfo.PersonCode);
+                    var res = await docConfirmationService.AddDocConfirmationStateChangeAsync(newDocConfirmCancel);
+                    docConfirmCancelHistories.Add(res);
+
+                    //var newDocSignerResDto = new DocSignerResDto
+                    //{
+                    //    NewDocConfirmationId = docConfirmation.Id,
+                    //    PersonCode = userInfo.PersonCode,
+                    //    Name = $"{StringResources.From}: {res.SenderUserFullName} - {res.SenderUserPost} \n {StringResources.To}: {res.ReceiverUserFullName} - {res.ReceiverUserPost}",
+                    //    Post = res.Description,
+                    //    IsDocConfirmStateChanged = true,
+                    //    CreatedAt = res.CreatedAt,
+                    //};
+                    //docSigners.Add(newDocSignerResDto);
+
+                    UpdateDocSignersStepsTimeLine();
                     toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[3]);
                     if (!showDocRequests) // if showing doc confirmations then reload with new state
                     {
-                        docConfirmations.Where(x => x.Id == newDocSigner.NewDocConfirmationId).First().ConfirmationStatus = DocRequestStatus.Canceled;
+                        docConfirmations.Where(x => x.Id == docConfirmation.Id).First().ConfirmationStatus = DocRequestStatus.Canceled;
                         gridView1.RefreshData();
                     }
                     //send signing canceled sms
-                    var sysOfficeEmps =  await personelyService.GetColleaguesByDepCode(Constants.SysOfficeCode);
-                    foreach (var emp in sysOfficeEmps)
-                    {
-                        var mobile = emp.Mobile;
-                        var text = $"{StringResources.DocReqSigningCanceled1}: {docReqId} {StringResources.DocReqSigningCanceled2} \n {StringResources.IKID}";
-                        smsClient.SendSMS(mobile, text);
-
-                    }
+                    //var sysOfficeBoss =  await personelyService.GetPersonByDepCode(Constants.SysOfficeCode);
+                    //var mobile = sysOfficeBoss.Mobile;
+                    //var text = $"{StringResources.DocReqSigningCanceled1}: {docReqId} {StringResources.DocReqSigningCanceled2} \n {StringResources.IKID}";
+                    //smsClient.SendSMS(mobile, text);
 
                 }
                 else
@@ -1220,11 +1255,17 @@ namespace IsoDocApp
                 }
 
                 ShowProgressBar(false);
-              
-                
+
+
             }
-            
+
         }
+
+        private void timeLineTabsContainer_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private async Task Reload()
         {
             if (showDocRequests)
@@ -1249,25 +1290,10 @@ namespace IsoDocApp
                 btnAllMessages.Appearance.BackColor = Color.WhiteSmoke;
                 ShowChatLoading(true);
 
-                if (showDocRequests)
-                {
-                    var docReqId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    var docReqMessages = await manageDocReqsService
-                        .GetDocRequestUserReceivedChatMessagesAsync(docReqId, userInfo.PersonCode);
-                    SetChatMessages(docReqMessages, MessageTypes.Received);
-                }
-                else
-                {
-                    var docConfirmationId = int.Parse(GridViewHelper.GetGridViewCellValue(gridView1, "Id").ToString());
-                    docConfirmation = docConfirmations.Where(x => x.Id == docConfirmationId).FirstOrDefault();
-                    var docRequest = await manageDocReqsService.GetDocRequest(docConfirmation.DocReqId);
+                var docReqId = showDocRequests ? selectedDocReq.Id : docConfirmation.DocReqId;
+                var docReqMessages = await manageDocReqsService.GetDocRequestUserReceivedChatMessagesAsync(docReqId, userInfo.PersonCode);
 
-                    var docReqMessages = await manageDocReqsService
-                        .GetDocRequestUserReceivedChatMessagesAsync(docRequest.Id, userInfo.PersonCode);
-
-                    SetChatMessages(docReqMessages, MessageTypes.Received);
-
-                }
+                SetChatMessages(docReqMessages, MessageTypes.Received);
                 ShowChatLoading(false);
             }
         }

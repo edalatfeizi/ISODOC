@@ -136,7 +136,7 @@ namespace IsoDoc.Infrastructure.Repositories
         }
         public async Task<List<Person>> GetColleaguesByDepCode(string depCode)
         {
-            const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName WHERE CodeEdare = @DepCode || UpperCode =@DepCode ";
+            const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName WHERE CodeEdare = @DepCode or UpperCode =@DepCode ";
 
             // Dapper automatically opens/closes the connection if not already open
             var result = await connection.QueryAsync<Person>(query, new { DepCode = depCode });

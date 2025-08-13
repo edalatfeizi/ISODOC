@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IsoDocApp.Extensions
+namespace IsoDoc.Domain.Extensions
 {
     public static class StringExtensions
     {
@@ -23,7 +23,7 @@ namespace IsoDocApp.Extensions
                 .Replace("ئ", "ی"); // Arabic Yeh with Hamza to Yeh
         }
 
-        public static string FormatPersianDate1(this string input)
+        public static string FormatPersianDate(this string input)
         {
             PersianCalendar PersianCal = new PersianCalendar();
             CultureInfo PersianCulture = new CultureInfo("fa-IR")
@@ -41,10 +41,17 @@ namespace IsoDocApp.Extensions
 
             return $"{hour:00}:{minute:00}:{second:00} {year}/{month:00}/{day:00}";
         }
-     
-        public static bool IsDeveloper(this string personCode)
+
+        public static DateTime ToPersianDateTime(this string input)
         {
-            return Constants.DeveloperPersonCodes.Any(x => x == personCode);
+            PersianCalendar PersianCal = new PersianCalendar();
+            CultureInfo PersianCulture = new CultureInfo("fa-IR")
+            {
+                DateTimeFormat = { Calendar = PersianCal }
+            };
+            var date = DateTime.Parse(input, PersianCulture);
+
+            return date;
         }
     }
 }

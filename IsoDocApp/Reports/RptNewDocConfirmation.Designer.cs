@@ -66,19 +66,19 @@
             this.tableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.GroupHeader2 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -176,6 +176,7 @@
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel5,
             this.xrTable2});
             this.BottomMargin.HeightF = 209F;
             this.BottomMargin.Name = "BottomMargin";
@@ -190,7 +191,7 @@
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(765.0002F, 111.4583F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(765.0002F, 86.4583F);
             this.xrTable2.StylePriority.UseBorders = false;
             // 
             // xrTableRow2
@@ -220,7 +221,6 @@
             // 
             this.xrTableCell5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel6,
-            this.xrLabel5,
             this.xrLabel4,
             this.xrLabel3});
             this.xrTableCell5.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -249,15 +249,15 @@
             // 
             this.xrLabel5.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[IpPCName]")});
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(10.00002F, 79.00003F);
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FormName]")});
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(1.999895F, 147.9167F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(373.0756F, 23F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(183.4381F, 23F);
             this.xrLabel5.StylePriority.UseBorders = false;
             this.xrLabel5.Text = "xrLabel3";
-            this.xrLabel5.TextFormatString = "{0} : شماره و آی پی سیستم";
+            this.xrLabel5.TextFormatString = "{0}:شماره فرم";
             // 
             // xrLabel4
             // 
@@ -535,11 +535,6 @@
             this.tableCell15.Text = "امضا کننده";
             this.tableCell15.Weight = 0.18153363579333726D;
             // 
-            // objectDataSource1
-            // 
-            this.objectDataSource1.DataSource = typeof(IsoDoc.Domain.Models.NewDocConfirmationReport);
-            this.objectDataSource1.Name = "objectDataSource1";
-            // 
             // GroupHeader2
             // 
             this.GroupHeader2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -615,6 +610,11 @@
             this.xrTableCell15.TextFormatString = "{0} : کد سند";
             this.xrTableCell15.Weight = 1.5563218509681438D;
             // 
+            // objectDataSource1
+            // 
+            this.objectDataSource1.DataSource = typeof(IsoDoc.Domain.Models.NewDocConfirmationReport);
+            this.objectDataSource1.Name = "objectDataSource1";
+            // 
             // RptNewDocConfirmation
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -639,8 +639,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

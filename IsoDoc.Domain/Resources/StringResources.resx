@@ -120,10 +120,76 @@
   <data name="Acceptor" xml:space="preserve">
     <value>تصویب کننده</value>
   </data>
+  <data name="CancelRequest" xml:space="preserve">
+    <value>لغو درخواست</value>
+  </data>
+  <data name="CancelSigningDate" xml:space="preserve">
+    <value>زمان لغو امضاء سند</value>
+  </data>
+  <data name="CancelSigningDoc" xml:space="preserve">
+    <value>لغو امضاء سند</value>
+  </data>
+  <data name="CancelSigningReason" xml:space="preserve">
+    <value>علت لغو امضاء سند</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>تکمیل شده</value>
+  </data>
   <data name="Confirmer" xml:space="preserve">
     <value>تایید کننده</value>
   </data>
+  <data name="CreateDateAndTime" xml:space="preserve">
+    <value>تاریخ و زمان ثبت:</value>
+  </data>
   <data name="Creator" xml:space="preserve">
     <value>تهیه کننده</value>
+  </data>
+  <data name="DeleteRequest" xml:space="preserve">
+    <value>حذف درخواست</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>از</value>
+  </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>درحال بررسی</value>
+  </data>
+  <data name="ReceiveDateAndTime" xml:space="preserve">
+    <value>تاریخ و زمان دریافت:</value>
+  </data>
+  <data name="Signed" xml:space="preserve">
+    <value>امضاء شده</value>
+  </data>
+  <data name="SignerType" xml:space="preserve">
+    <value>نوع امضاء کننده</value>
+  </data>
+  <data name="SigningDate" xml:space="preserve">
+    <value>زمان ثبت امضاء</value>
+  </data>
+  <data name="SigningStatus" xml:space="preserve">
+    <value>وضعیت امضاء</value>
+  </data>
+  <data name="SignRequestNotSent" xml:space="preserve">
+    <value>درخواست امضاء ارسال نشده</value>
+  </data>
+  <data name="SignRequestSent" xml:space="preserve">
+    <value>درخواست امضاء ارسال شده</value>
+  </data>
+  <data name="SignRequestSentDate" xml:space="preserve">
+    <value>زمان ارسال درخواست امضاء</value>
+  </data>
+  <data name="StartingDocSigningProcess" xml:space="preserve">
+    <value>شروع فرآیند امضاء سند</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>زمان شروع</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>وضعیت:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>به</value>
   </data>
 </root>

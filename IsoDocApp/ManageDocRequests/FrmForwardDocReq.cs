@@ -2,6 +2,7 @@
 using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
+using IsoDoc.Domain.Extensions;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
@@ -54,9 +55,10 @@ namespace IsoDocApp.ManageDocRequests
         {
             ShowProgressBar(true);
             docReqSteps.Items.Clear();
+            var docRequest = await manageDocReqsService.GetDocRequest(docReqId);
             selectedDocReqSteps = await manageDocReqsService.GetDocRequestSteps(docReqId);
-
-            var steps = await StepsProgressBarHelper.GetDocRequestProgressBarSteps(selectedDocReqSteps, requestStatus, docReqStatusDsc);
+            var docReqProcessSteps = selectedDocReqSteps.MapToProcessSteps(docRequest);
+            var steps = await StepsProgressBarHelper.GetProcessSteps(docReqProcessSteps);
             foreach (var step in steps)
             {
                 docReqSteps.Items.Add(step);
