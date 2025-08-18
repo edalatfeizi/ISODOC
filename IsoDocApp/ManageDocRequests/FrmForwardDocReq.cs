@@ -74,7 +74,8 @@ namespace IsoDocApp.ManageDocRequests
             txtDocReqId.Text = docReqId.ToString();
 
             var userName = SystemInformation.UserName;
-            
+            //userName = "3864";
+
             var userPersonCode = "";
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
             userInfo = await personelyService.GetUserInfoByPersonCode(userPersonCode);
@@ -82,9 +83,9 @@ namespace IsoDocApp.ManageDocRequests
             userColleagues = await personelyService.GetUserColleagues(userInfo.CodeEdare, userInfo.UpperCode);
 
             // if user is a boss and his/her dep has no admin, PostTypeID 50 and 4 is reserved for an office boss and supervisor
-            if (string.Equals(userInfo.PostTypeID, PostTypes.OfficeSupervisor.ToString(), StringComparison.OrdinalIgnoreCase) 
-                || string.Equals(userInfo.PostTypeID, PostTypes.Boss.ToString(), StringComparison.OrdinalIgnoreCase)
-                && !userColleagues.Any(x => x.CodeEdare == userInfo.UpperCode))
+            if (int.Parse(userInfo.PostTypeID) == (int)PostTypes.OfficeSupervisor ||
+               int.Parse(userInfo.PostTypeID) == (int)PostTypes.Boss
+               && !userColleagues.Any(x => x.CodeEdare == userInfo.UpperCode))
             {
                 var admins = await personelyService.GetUserColleagues(null, null, false, true);
                 userColleagues.AddRange(admins);

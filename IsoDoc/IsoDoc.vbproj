@@ -128,10 +128,7 @@
       <HintPath>C:\IkidSystem+\DevExpress.Utils.v21.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\IkidSystem+\DevExpress.XtraBars.v21.2.dll</HintPath>
-    </Reference>
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\IkidSystem+\DevExpress.XtraEditors.v21.2.dll</HintPath>

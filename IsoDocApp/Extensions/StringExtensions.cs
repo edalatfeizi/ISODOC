@@ -30,7 +30,9 @@ namespace IsoDocApp.Extensions
             {
                 DateTimeFormat = { Calendar = PersianCal }
             };
-            var date =  DateTime.Parse(input, PersianCulture);
+            var inputDate = input.Split('.')[0] != null ? input.Split('.')[0] : input;
+
+            var date = DateTime.Parse(inputDate, PersianCulture);
 
             int year = PersianCal.GetYear(date);
             int month = PersianCal.GetMonth(date);

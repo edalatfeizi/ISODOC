@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageDocReqs));
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition5 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition6 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition7 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition8 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement5 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement6 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement7 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement8 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             this.SenderUser = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.ReceiverUser = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.Message = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -743,18 +743,18 @@
             // 
             this.btnPrintConfirmationDoc.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrintConfirmationDoc.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPrintConfirmationDoc.Appearance.Font = new System.Drawing.Font("Vazirmatn", 10F);
+            this.btnPrintConfirmationDoc.Appearance.Font = new System.Drawing.Font("Vazirmatn", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintConfirmationDoc.Appearance.Options.UseBackColor = true;
             this.btnPrintConfirmationDoc.Appearance.Options.UseFont = true;
             this.btnPrintConfirmationDoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrintConfirmationDoc.Enabled = false;
-            this.btnPrintConfirmationDoc.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_printer2;
+            this.btnPrintConfirmationDoc.ImageOptions.Image = global::IsoDocApp.Properties.Resources.signature;
             this.btnPrintConfirmationDoc.Location = new System.Drawing.Point(186, 18);
             this.btnPrintConfirmationDoc.Margin = new System.Windows.Forms.Padding(4, 3, 4, 4);
             this.btnPrintConfirmationDoc.Name = "btnPrintConfirmationDoc";
             this.btnPrintConfirmationDoc.Size = new System.Drawing.Size(160, 66);
             this.btnPrintConfirmationDoc.TabIndex = 26;
-            this.btnPrintConfirmationDoc.Text = " گزارش تایید سند";
+            this.btnPrintConfirmationDoc.Text = " گزارش امضاء سند";
             this.btnPrintConfirmationDoc.Click += new System.EventHandler(this.btnPrintConfirmationDoc_Click);
             // 
             // btnForwardDocReq
@@ -827,74 +827,74 @@
             this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.tileView1.OptionsTiles.Padding = new System.Windows.Forms.Padding(0);
             this.tileView1.OptionsTiles.RowCount = 0;
-            tableColumnDefinition5.Length.Value = 0D;
-            tableColumnDefinition6.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
-            tableColumnDefinition6.Length.Value = 0D;
-            this.tileView1.TileColumns.Add(tableColumnDefinition4);
-            this.tileView1.TileColumns.Add(tableColumnDefinition5);
-            this.tileView1.TileColumns.Add(tableColumnDefinition6);
-            tableRowDefinition5.AutoHeight = true;
-            tableRowDefinition5.Length.Value = 23D;
-            tableRowDefinition6.AutoHeight = true;
-            tableRowDefinition6.Length.Value = 23D;
-            tableRowDefinition7.AutoHeight = true;
-            tableRowDefinition7.Length.Value = 24D;
-            tableRowDefinition8.AutoHeight = true;
-            tableRowDefinition8.Length.Value = 23D;
-            this.tileView1.TileRows.Add(tableRowDefinition5);
-            this.tileView1.TileRows.Add(tableRowDefinition6);
-            this.tileView1.TileRows.Add(tableRowDefinition7);
-            this.tileView1.TileRows.Add(tableRowDefinition8);
-            tileViewItemElement5.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileViewItemElement5.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
-            tileViewItemElement5.Appearance.Normal.Options.UseFont = true;
-            tileViewItemElement5.Appearance.Normal.Options.UseForeColor = true;
-            tileViewItemElement5.Appearance.Normal.Options.UseTextOptions = true;
-            tileViewItemElement5.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileViewItemElement5.Column = this.SenderUser;
-            tileViewItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileViewItemElement5.Text = "SenderUser";
-            tileViewItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileViewItemElement6.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
-            tileViewItemElement6.Appearance.Normal.Options.UseFont = true;
-            tileViewItemElement6.Appearance.Normal.Options.UseForeColor = true;
-            tileViewItemElement6.Appearance.Normal.Options.UseTextOptions = true;
-            tileViewItemElement6.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileViewItemElement6.Column = this.ReceiverUser;
-            tileViewItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileViewItemElement6.MaxLineCount = 5;
-            tileViewItemElement6.RowIndex = 1;
-            tileViewItemElement6.Text = "ReceiverUser";
-            tileViewItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileViewItemElement7.Appearance.Normal.ForeColor = System.Drawing.Color.DimGray;
-            tileViewItemElement7.Appearance.Normal.Options.UseFont = true;
-            tileViewItemElement7.Appearance.Normal.Options.UseForeColor = true;
-            tileViewItemElement7.Appearance.Normal.Options.UseTextOptions = true;
-            tileViewItemElement7.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            tileViewItemElement7.Column = this.Message;
-            tileViewItemElement7.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement7.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileViewItemElement7.RowIndex = 2;
-            tileViewItemElement7.Text = "Message";
-            tileViewItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement8.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileViewItemElement8.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
-            tileViewItemElement8.Appearance.Normal.Options.UseFont = true;
-            tileViewItemElement8.Appearance.Normal.Options.UseForeColor = true;
-            tileViewItemElement8.Column = this.SendDateTime;
-            tileViewItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement8.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileViewItemElement8.RowIndex = 3;
-            tileViewItemElement8.Text = "SendDateTime";
-            tileViewItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            this.tileView1.TileTemplate.Add(tileViewItemElement5);
-            this.tileView1.TileTemplate.Add(tileViewItemElement6);
-            this.tileView1.TileTemplate.Add(tileViewItemElement7);
-            this.tileView1.TileTemplate.Add(tileViewItemElement8);
+            tableColumnDefinition2.Length.Value = 0D;
+            tableColumnDefinition3.Length.Type = DevExpress.XtraEditors.TableLayout.TableDefinitionLengthType.Pixel;
+            tableColumnDefinition3.Length.Value = 0D;
+            this.tileView1.TileColumns.Add(tableColumnDefinition1);
+            this.tileView1.TileColumns.Add(tableColumnDefinition2);
+            this.tileView1.TileColumns.Add(tableColumnDefinition3);
+            tableRowDefinition1.AutoHeight = true;
+            tableRowDefinition1.Length.Value = 23D;
+            tableRowDefinition2.AutoHeight = true;
+            tableRowDefinition2.Length.Value = 23D;
+            tableRowDefinition3.AutoHeight = true;
+            tableRowDefinition3.Length.Value = 24D;
+            tableRowDefinition4.AutoHeight = true;
+            tableRowDefinition4.Length.Value = 23D;
+            this.tileView1.TileRows.Add(tableRowDefinition1);
+            this.tileView1.TileRows.Add(tableRowDefinition2);
+            this.tileView1.TileRows.Add(tableRowDefinition3);
+            this.tileView1.TileRows.Add(tableRowDefinition4);
+            tileViewItemElement1.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement1.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileViewItemElement1.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement1.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement1.Appearance.Normal.Options.UseTextOptions = true;
+            tileViewItemElement1.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileViewItemElement1.Column = this.SenderUser;
+            tileViewItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement1.Text = "SenderUser";
+            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement2.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement2.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileViewItemElement2.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement2.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement2.Appearance.Normal.Options.UseTextOptions = true;
+            tileViewItemElement2.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileViewItemElement2.Column = this.ReceiverUser;
+            tileViewItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement2.MaxLineCount = 5;
+            tileViewItemElement2.RowIndex = 1;
+            tileViewItemElement2.Text = "ReceiverUser";
+            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement3.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement3.Appearance.Normal.ForeColor = System.Drawing.Color.DimGray;
+            tileViewItemElement3.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement3.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement3.Appearance.Normal.Options.UseTextOptions = true;
+            tileViewItemElement3.Appearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            tileViewItemElement3.Column = this.Message;
+            tileViewItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement3.RowIndex = 2;
+            tileViewItemElement3.Text = "Message";
+            tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileViewItemElement4.Appearance.Normal.Font = new System.Drawing.Font("Vazirmatn SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement4.Appearance.Normal.ForeColor = System.Drawing.Color.Black;
+            tileViewItemElement4.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement4.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement4.Column = this.SendDateTime;
+            tileViewItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
+            tileViewItemElement4.RowIndex = 3;
+            tileViewItemElement4.Text = "SendDateTime";
+            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            this.tileView1.TileTemplate.Add(tileViewItemElement1);
+            this.tileView1.TileTemplate.Add(tileViewItemElement2);
+            this.tileView1.TileTemplate.Add(tileViewItemElement3);
+            this.tileView1.TileTemplate.Add(tileViewItemElement4);
             // 
             // toastNotificationsManager1
             // 
@@ -917,14 +917,14 @@
             this.mnuConfirmDoc});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip2.Size = new System.Drawing.Size(196, 134);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(202, 134);
             // 
             // mnuCompleteReq
             // 
             this.mnuCompleteReq.Enabled = false;
             this.mnuCompleteReq.Image = global::IsoDocApp.Properties.Resources.Yes;
             this.mnuCompleteReq.Name = "mnuCompleteReq";
-            this.mnuCompleteReq.Size = new System.Drawing.Size(195, 26);
+            this.mnuCompleteReq.Size = new System.Drawing.Size(201, 26);
             this.mnuCompleteReq.Text = "تکمیل درخواست";
             this.mnuCompleteReq.Click += new System.EventHandler(this.mnuCompleteReq_Click);
             // 
@@ -933,7 +933,7 @@
             this.mnuCancelReq.Enabled = false;
             this.mnuCancelReq.Image = global::IsoDocApp.Properties.Resources.No;
             this.mnuCancelReq.Name = "mnuCancelReq";
-            this.mnuCancelReq.Size = new System.Drawing.Size(195, 26);
+            this.mnuCancelReq.Size = new System.Drawing.Size(201, 26);
             this.mnuCancelReq.Text = "لغو درخواست";
             this.mnuCancelReq.Click += new System.EventHandler(this.mnuCancelReq_Click);
             // 
@@ -942,7 +942,7 @@
             this.mnuDeleteReq.Enabled = false;
             this.mnuDeleteReq.Image = global::IsoDocApp.Properties.Resources._1231;
             this.mnuDeleteReq.Name = "mnuDeleteReq";
-            this.mnuDeleteReq.Size = new System.Drawing.Size(195, 26);
+            this.mnuDeleteReq.Size = new System.Drawing.Size(201, 26);
             this.mnuDeleteReq.Text = "حذف درخواست";
             this.mnuDeleteReq.Click += new System.EventHandler(this.mnuDeleteReq_Click);
             // 
@@ -951,17 +951,17 @@
             this.mnuEnableReq.Enabled = false;
             this.mnuEnableReq.Image = global::IsoDocApp.Properties.Resources.CheckBox_32x32;
             this.mnuEnableReq.Name = "mnuEnableReq";
-            this.mnuEnableReq.Size = new System.Drawing.Size(195, 26);
+            this.mnuEnableReq.Size = new System.Drawing.Size(201, 26);
             this.mnuEnableReq.Text = "فعال کردن درخواست";
             this.mnuEnableReq.Click += new System.EventHandler(this.mnuEnableReq_Click);
             // 
             // mnuConfirmDoc
             // 
             this.mnuConfirmDoc.Enabled = false;
-            this.mnuConfirmDoc.Image = global::IsoDocApp.Properties.Resources.Yes;
+            this.mnuConfirmDoc.Image = global::IsoDocApp.Properties.Resources.signature;
             this.mnuConfirmDoc.Name = "mnuConfirmDoc";
-            this.mnuConfirmDoc.Size = new System.Drawing.Size(195, 26);
-            this.mnuConfirmDoc.Text = "ثبت درخواست تایید سند";
+            this.mnuConfirmDoc.Size = new System.Drawing.Size(201, 26);
+            this.mnuConfirmDoc.Text = "ثبت درخواست امضاء سند";
             this.mnuConfirmDoc.Click += new System.EventHandler(this.mnuConfirmDoc_Click);
             // 
             // panelControl5

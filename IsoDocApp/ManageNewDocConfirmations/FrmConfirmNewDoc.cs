@@ -1,9 +1,11 @@
 ﻿
+using DevExpress.Data.Helpers;
 using DevExpress.XtraEditors;
 using IKIDMagfaSMSClientWin;
 using IsoDoc.Domain.Dtos;
 using IsoDoc.Domain.Dtos.Req;
 using IsoDoc.Domain.Dtos.Res;
+using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
@@ -11,6 +13,7 @@ using IsoDocApp.Extensions;
 using IsoDocApp.Helpers;
 using IsoDocApp.ManageNewDocConfirmations;
 using IsoDocApp.ManageSignatures;
+using IsoDocApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -37,6 +40,7 @@ namespace IsoDocApp.ManageDocRequests
         private int lastDocConfirmationId = 0;
         private NewDocConfirmationResDto lastNewDocConfirmation;
         private Person userInfo, sysAdmin;
+        private DocRequest docRequest;
         public FrmConfirmNewDoc(IPersonelyService personelyService, IManageDocReqsService manageDocReqsService, IDocConfirmationService docConfirmationService, MagfaSMSClient smsClient, int docReqId, int lastDocConfirmationId = 0)
         {
             InitializeComponent();
@@ -60,7 +64,7 @@ namespace IsoDocApp.ManageDocRequests
 
             var userName = SystemInformation.UserName;
             //userName = "3134";
-            userName = "3864";
+            //userName = "3864";
             //userName = "3815";
 
             userPersonCode = await personelyService.GetUserPersonCodeByLoginName(userName);
@@ -68,6 +72,7 @@ namespace IsoDocApp.ManageDocRequests
             sysAdmin = await personelyService.GetPersonByDepCode(Constants.SysAdminCode);
             departments = await personelyService.GetDepartments();
             cmbDocOwnerDep.Properties.DataSource = departments;
+
 
             employees = await personelyService.GetAllEmployees();
             cmbCreators.Properties.DataSource = employees;
@@ -79,29 +84,55 @@ namespace IsoDocApp.ManageDocRequests
             if (lastDocConfirmationId != 0)
             {
                 lastNewDocConfirmation = await docConfirmationService.GetDocConfirmationByIdAsync((int)lastDocConfirmationId);
-                var dep = departments.Where(x => x.MDepartCode == lastNewDocConfirmation.DocOwnerDepCode).First();
-                
-                documents = await manageDocReqsService.GetDocuments(dep.MDepartCode);
-                var doc = documents.Where(x => x.DocumentCode == lastNewDocConfirmation.DocCode).First();
+                var formData = new NewDocConfirmInfo
+                {
+                    Department = departments.Where(x => x.MDepartCode == lastNewDocConfirmation.DocOwnerDepCode).First(),
+                    DocCode = lastNewDocConfirmation.DocCode,
+                    ReviewNo = lastNewDocConfirmation.ReviewNo,
+                    ReviewText = lastNewDocConfirmation.ReviewText,
+                };
+                await SetInputValues(formData);
 
-                cmbDocs.Properties.DataSource = documents;
 
-                cmbDocOwnerDep.Text = dep.MDepartName.ToString();
-                cmbDocOwnerDep.Enabled = false;
+            }
+            else
+            {
+                docRequest = await manageDocReqsService.GetDocRequest(docReqId);
 
-                cmbDocs.Text = doc.DocumentName;
-                cmbDocs.Enabled = false;
-
-                txtDocCode.Text = lastNewDocConfirmation.DocCode;
-                txtDocCode.Enabled = false;
-
-                txtReviewNo.Text = lastNewDocConfirmation.ReviewNo;
-                txtReviewNo.Enabled = false;
-
-                txtReview.Text = lastNewDocConfirmation.ReviewText;
-                txtReview.Enabled = false;
+                var formData = new NewDocConfirmInfo
+                {
+                    Department = departments.Where(x => x.MDepartName == docRequest.DocOwnerDep).First(),
+                    DocCode = docRequest.DocCode,
+                    ReviewNo = docRequest.EditOrReviewNo.ToString(),
+                    ReviewText = "",
+                };
+                await SetInputValues(formData);
             }
 
+        }
+        private async Task SetInputValues(NewDocConfirmInfo formData)
+        {
+
+            documents = await manageDocReqsService.GetDocuments(formData.Department.MDepartCode);
+            var doc = documents.Where(x => x.DocumentCode == formData.DocCode).First();
+
+            cmbDocs.Properties.DataSource = documents;
+
+            cmbDocOwnerDep.Text = formData.Department.MDepartName.ToString();
+            cmbDocOwnerDep.Enabled = false;
+
+            cmbDocs.Text = doc.DocumentName;
+            cmbDocs.Enabled = false;
+
+            txtDocCode.Text = doc.DocumentCode;
+            txtDocCode.Enabled = false;
+
+            txtReviewNo.Text = formData.ReviewNo;
+            txtReviewNo.Enabled = false;
+
+            txtReview.Text = formData.ReviewText;
+            if (formData.ReviewText != "")
+                txtReview.Enabled = false;
         }
         private void SetupControls()
         {
@@ -253,7 +284,7 @@ namespace IsoDocApp.ManageDocRequests
                     NewDocConfirmationId = lastDocConfirmationId,
                     PersonCode = signerColleague.PersonCode,
                     Name = signerColleague.Name,
-                    Post = signerColleague.Post,
+                    Post = signerColleague.Posttxt,
                     SigningOrder = signerColleagues.IndexOf(signerColleague),
                     IsSigned = false,
                     SignRequestSentDate = signerColleagues.IndexOf(signerColleague) == 0 ? DateTime.Now.ConvertToPersianDateTime() : null,
@@ -410,7 +441,7 @@ namespace IsoDocApp.ManageDocRequests
                         PersonCode = selectedColleague.PersonCode,
                         CardNumber = selectedColleague.CardNumber,
                         Name = selectedColleague.Name,
-                        Post = selectedColleague.Post,
+                        Posttxt = selectedColleague.Posttxt,
                         HasSignature = selectedColleague.HasSignature,
                         Mobile = selectedColleague.Mobile,
                         PostTypeID = selectedColleague.PostTypeID,

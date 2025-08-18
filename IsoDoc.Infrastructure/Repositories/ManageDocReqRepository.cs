@@ -313,7 +313,7 @@ namespace IsoDoc.Infrastructure.Repositories
         public async Task<List<Colleague>> GetDocRequestActivePeopleAsync(int docReqId)
         {
             var docRequestPeopleQuery = @"SELECT  p.PersonCode,
-                                        p.Name,p.Post
+                                        p.Name,p.Post as Posttxt
                                         FROM    dbo.Vw_DocRequestPeople      AS p
                                         JOIN    Personely.dbo.VwHR_Employee  AS e   ON  e.PersonCode = p.PersonCode
                                         WHERE   p.DocRequestId = @DocReqId

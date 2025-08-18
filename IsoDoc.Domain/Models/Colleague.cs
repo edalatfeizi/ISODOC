@@ -19,7 +19,7 @@ namespace IsoDoc.Domain.Models
 
         [Display(Name = "پست", Order =3)]
         [Editable(false)]
-        public string Post { get; set; }
+        public string Posttxt { get; set; }
 
         [Browsable(false)]
         public string Mobile { get; set; }

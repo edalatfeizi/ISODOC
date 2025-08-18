@@ -1097,7 +1097,7 @@ Partial Class FrmMain
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(67, 22)
         Me.LabelControl2.TabIndex = 6
-        Me.LabelControl2.Text = "نسخه: 2.0.0"
+        Me.LabelControl2.Text = "نسخه: 2.1.8"
         '
         'FrmMain
         '

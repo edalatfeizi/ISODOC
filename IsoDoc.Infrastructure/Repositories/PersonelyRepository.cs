@@ -24,7 +24,7 @@ namespace IsoDoc.Infrastructure.Repositories
             const string query = @"SELECT 
                     p.PersonCode, 
                     p.FirstName + ' ' + p.LastName as Name, 
-                    p.Posttxt as Post,
+                    p.Posttxt,
                     CASE 
                         WHEN s.PersonCode IS NOT NULL AND s.Active = 'true' THEN 'دارد'
                         ELSE 'ندارد'
@@ -74,7 +74,7 @@ namespace IsoDoc.Infrastructure.Repositories
                     var adminsQuery = "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PostTypeID in (26,27,3)";//26,27,3 => مدیر،جانشین مدیر،سرپرست واحد
                 var admins = await connection.QueryAsync<Person>(adminsQuery);
                     connection.Close();
-                    return admins.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
+                    return admins.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Posttxt = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
 
                 }
                 else if (sysOfficeOnly)
@@ -82,7 +82,7 @@ namespace IsoDoc.Infrastructure.Repositories
                     var sysOfficeQuery = "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CodeEdare = 'SI300' or UpperCode ='SI300'";//SI300 => کد اداره تضمین کیفیت
                     var sysOfficeEmps = await connection.QueryAsync<Person>(sysOfficeQuery);
                     connection.Close();
-                    return sysOfficeEmps.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
+                    return sysOfficeEmps.Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Posttxt = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
 
                 }
                 else
@@ -94,7 +94,7 @@ namespace IsoDoc.Infrastructure.Repositories
                     var userEmployees = await connection.QueryAsync<Person>(userEmployeesQuery, new { UpperCode = userDepCode});
                     connection.Close();
 
-                    return userManagers.Union(userEmployees).Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Post = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
+                    return userManagers.Union(userEmployees).Select(x => new Colleague { PersonCode = x.PersonCode, CardNumber = x.CardNumber, Name = $"{x.FirstName + " " + x.LastName}", Posttxt = x.Posttxt, PostTypeID = x.PostTypeID, Mobile = x.Mobile, CodeEdare = x.CodeEdare, UpperCode = x.UpperCode }).ToList();
 
 
                 }

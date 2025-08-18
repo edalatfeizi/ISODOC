@@ -20,7 +20,7 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<NewDocConfirmationResDto> GetDocConfirmationByDocReqIdAsync(int docReqId);
         Task<bool> SignDocConfirmationAsync(int docSignerId);
         Task<bool> UpdateSendSignRequestDate(int newDocSignerId, string personCode);
-        Task<bool> UpdateDocConfirmStatusAsync(int docConfirmationId,DocRequestStatus status, string canceledByUserPersonCode);
+        Task<bool> UpdateDocConfirmStatusAsync(int docConfirmationId,DocRequestStatus status, string updatedByUserPersonCode);
         Task<bool> CancelSigningAsync(int docConfirmationId, string canceledByUserPersonCode);
         Task<DocConfirmationStateChangeResDto> AddDocConfirmationStateChangeAsync(DocConfirmationStateChangeReqDto dto);
         Task<List<DocConfirmationStateChangeResDto>> GetDocConfirmationStateChangesAsync(int docConfirmationId);

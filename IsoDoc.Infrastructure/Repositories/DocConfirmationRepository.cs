@@ -155,8 +155,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode, bool isSysOfficeStaff)
         {
-            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true') and Active = 'true'";
-            const string canceledDocConfirmsQuery = @"select * from tb_NewDocConfirmations where ConfirmationStatus = '2' and Active = 'true'";//2 DocRequestStatus.Canceled
+            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true') and ConfirmationStatus = 0 and Active = 'true' order by CreatedAt desc";
+            const string canceledDocConfirmsQuery = @"select * from tb_NewDocConfirmations where ConfirmationStatus = '2' and Active = 'true' order by CreatedAt desc";//2 DocRequestStatus.Canceled
 
             var userConfirmationsQuery = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
             var result = userConfirmationsQuery.ToList();
@@ -183,7 +183,7 @@ namespace IsoDoc.Infrastructure.Repositories
         {
             var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
                   SET SignRequestSentDate = @SignRequestSentDate
-                  WHERE Id = @NewDocSignersId and PersonCode = @PersonCode";
+                  WHERE Id = @NewDocSignersId and PersonCode = @PersonCode and Active ='true'";
 
             int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = newDocSignersId, SignRequestSentDate = DateTime.Now.ToPersianDateTime(), PersonCode = personCode });
             return rowsAffected > 0;
