@@ -133,6 +133,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to فایل های پیوست شده.
+        /// </summary>
+        internal static string AttachedFiles {
+            get {
+                return ResourceManager.GetString("AttachedFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to پیوست فایل.
         /// </summary>
         internal static string AttachFile {
@@ -295,11 +304,11 @@ namespace IsoDocApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to حذف فایل پیوست.
+        ///   Looks up a localized string similar to حذف فایل های پیوست.
         /// </summary>
-        internal static string DeleteAttachedFile {
+        internal static string DeleteAttachedFiles {
             get {
-                return ResourceManager.GetString("DeleteAttachedFile", resourceCulture);
+                return ResourceManager.GetString("DeleteAttachedFiles", resourceCulture);
             }
         }
         

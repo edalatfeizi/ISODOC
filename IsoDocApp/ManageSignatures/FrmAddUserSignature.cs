@@ -77,7 +77,7 @@ namespace IsoDocApp.ManageNewDocConfirmations
             {
                 btnFileName.Visible = true;
                 btnFileName.Text = personSignature.Name;
-                ToggleAttachFileButtonView("cancel", StringResources.DeleteAttachedFile);
+                ToggleAttachFileButtonView("cancel", StringResources.DeleteAttachedFiles);
                 using (MemoryStream ms = new MemoryStream(personSignature.FileContent))
                 {
                     Image img = Image.FromStream(ms);

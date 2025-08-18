@@ -86,7 +86,7 @@ namespace IsoDocApp
             //userName = "3134";
             //userName = "3864";
             //userName = "3815";
-            userName = "3015";
+            //userName = "3015";
             cmbReceiverUser.Properties.DisplayMember = "Name";
             cmbReceiverUser.Properties.ValueMember = "PersonCode";
 

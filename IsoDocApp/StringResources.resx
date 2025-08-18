@@ -174,8 +174,8 @@
   <data name="Delete" xml:space="preserve">
     <value>حذف</value>
   </data>
-  <data name="DeleteAttachedFile" xml:space="preserve">
-    <value>حذف فایل پیوست</value>
+  <data name="DeleteAttachedFiles" xml:space="preserve">
+    <value>حذف فایل های پیوست</value>
   </data>
   <data name="DeleteDocReq" xml:space="preserve">
     <value>درخواست حذف سند </value>
@@ -452,5 +452,8 @@
   </data>
   <data name="EndRequestProcess" xml:space="preserve">
     <value>پایان فرآیند درخواست</value>
+  </data>
+  <data name="AttachedFiles" xml:space="preserve">
+    <value>فایل های پیوست شده</value>
   </data>
 </root>

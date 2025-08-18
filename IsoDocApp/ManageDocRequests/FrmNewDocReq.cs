@@ -152,19 +152,24 @@ namespace IsoDocApp.ManageDocRequests
         }
         private void AttachFile()
         {
-            docReqAttachments = AttachmentsHelper.AttachFiles(Constants.DocReqAttachmentFileTypes, false)?.MapToDocRequestAttachments(0);
-            btnFileName.Visible = true;
-
-            foreach (var attachment in docReqAttachments)
+            var attachments = AttachmentsHelper.AttachFiles(Constants.DocReqAttachmentFileTypes, false)?.MapToDocRequestAttachments(0);
+            if(attachments != null)
             {
-                btnFileName.Text += $" {attachment.Name}";
+                docReqAttachments = attachments;
+                btnFileName.Visible = true;
+                btnFileName.Text = $"{StringResources.AttachedFiles}:";
+                foreach (var attachment in docReqAttachments)
+                {
+                    btnFileName.Text += $"{attachment.Name}, ";
 
-            }
-            if (docReqAttachments.Count > 0)
-            {
-                ToggleAttachFileButtonView("cancel", StringResources.DeleteAttachedFile);
+                }
+                if (docReqAttachments.Count > 0)
+                {
+                    ToggleAttachFileButtonView("cancel", StringResources.DeleteAttachedFiles);
 
+                }
             }
+          
 
         }
 
@@ -363,7 +368,7 @@ namespace IsoDocApp.ManageDocRequests
 
         private bool CheckAttachment()
         {
-            if (docReqAttachments == null && docReqAttachments.Count == 0)
+            if (docReqAttachments == null)
             {
                 var frmMsgBox = new FrmMessageBox();
                 frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
