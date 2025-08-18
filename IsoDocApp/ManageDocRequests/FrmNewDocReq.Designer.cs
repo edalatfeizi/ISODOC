@@ -282,7 +282,7 @@
             this.btnFileName.Name = "btnFileName";
             this.btnFileName.Size = new System.Drawing.Size(294, 53);
             this.btnFileName.TabIndex = 127;
-            this.btnFileName.Text = "نام فایل";
+            this.btnFileName.Text = "فایل های پیوست شده: ";
             this.btnFileName.Visible = false;
             this.btnFileName.Click += new System.EventHandler(this.btnFileName_Click);
             // 

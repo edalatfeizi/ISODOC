@@ -30,7 +30,7 @@ namespace IsoDocApp.ManageDocRequests
         private List<DocType> docTypes;
         private DocRequest newDocReq = new DocRequest();
         private DocRequestStep docRequestStep;
-        private DocRequestAttachment docReqAttachment;
+        private List<DocRequestAttachment> docReqAttachments;
         private List<Colleague> userColleagues;
         private Colleague receiverColleague;
         private int lastDocReqId = 0;
@@ -152,11 +152,16 @@ namespace IsoDocApp.ManageDocRequests
         }
         private void AttachFile()
         {
-            docReqAttachment = AttachmentsHelper.AttachFile(Constants.DocReqAttachmentFileTypes, false)?.MapToDocRequestAttachment(0);
-            if (docReqAttachment != null)
+            docReqAttachments = AttachmentsHelper.AttachFiles(Constants.DocReqAttachmentFileTypes, false)?.MapToDocRequestAttachments(0);
+            btnFileName.Visible = true;
+
+            foreach (var attachment in docReqAttachments)
             {
-                btnFileName.Visible = true;
-                btnFileName.Text = docReqAttachment.Name;
+                btnFileName.Text += $" {attachment.Name}";
+
+            }
+            if (docReqAttachments.Count > 0)
+            {
                 ToggleAttachFileButtonView("cancel", StringResources.DeleteAttachedFile);
 
             }
@@ -191,9 +196,9 @@ namespace IsoDocApp.ManageDocRequests
 
         private void btnAttachFile_Click(object sender, EventArgs e)
         {
-            if (docReqAttachment != null)
+            if (docReqAttachments != null)
             {
-                docReqAttachment = null;
+                docReqAttachments = null;
                 btnFileName.Visible = false;
                 ToggleAttachFileButtonView("attachment", StringResources.AttachFile);
 
@@ -332,17 +337,16 @@ namespace IsoDocApp.ManageDocRequests
             };
 
             var docReqStep = await manageDocReqsService.AddNewDocRequestStepAsync(docRequestStep);
-
-            if (docReqAttachment != null)
+            foreach (var attachment in docReqAttachments)
             {
-                docReqAttachment.DocRequestId = docReq.Id;
-                docReqAttachment.CreatedBy = userInfo.PersonCode;
-                docReqAttachment.ModifiedBy = userInfo.PersonCode;
+                attachment.DocRequestId = docReq.Id;
+                attachment.CreatedBy = userInfo.PersonCode;
+                attachment.ModifiedBy = userInfo.PersonCode;
 
-                await manageDocReqsService.AttachFileAsync(docReqAttachment);
+                await manageDocReqsService.AttachFileAsync(attachment);
             }
+
             ShowProgressBar(false);
-            //TODO: send sms to receiver user
 
             //toastNotificationsManager1.ShowNotification()
             //if receiver is a top manager or one of sys office staffs then notify them via an sms  
@@ -359,7 +363,7 @@ namespace IsoDocApp.ManageDocRequests
 
         private bool CheckAttachment()
         {
-            if (docReqAttachment == null)
+            if (docReqAttachments == null && docReqAttachments.Count == 0)
             {
                 var frmMsgBox = new FrmMessageBox();
                 frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()

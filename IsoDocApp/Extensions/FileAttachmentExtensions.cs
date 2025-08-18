@@ -31,9 +31,19 @@ namespace IsoDocApp.Extensions
             };
             return personSignature;
         }
+        public static List<DocRequestAttachment> MapToDocRequestAttachments(this List<FileAttachment> fileAttachments, int docReqId)
+        {
+            var result = new List<DocRequestAttachment>();
+            foreach (var fileAttachment in fileAttachments)
+            {
+             
+                result.Add(fileAttachment.MapToDocRequestAttachment(docReqId));
+            }
+         
+            return result;
+        }
         public static DocRequestAttachment MapToDocRequestAttachment(this FileAttachment fileAttachment, int docReqId)
         {
-
             var docRequestAttachment = new DocRequestAttachment()
             {
                 Id = fileAttachment.Id,

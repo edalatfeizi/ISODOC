@@ -12,7 +12,7 @@ namespace IsoDocApp.Helpers
 {
     public static class AttachmentsHelper
     {
-        public static FileAttachment AttachFile(string filterFileTypes, bool isSignatureAttachment)
+        public static List<FileAttachment> AttachFiles(string filterFileTypes, bool isSignatureAttachment)
         {
             try
             {
@@ -20,34 +20,39 @@ namespace IsoDocApp.Helpers
                 {
                     openFileDialog.Filter = filterFileTypes;
                     openFileDialog.Title = StringResources.SelectAttachment;
+                    openFileDialog.Multiselect = true; // ⬅️ allow multiple files
 
-                    if (openFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        string filePath = openFileDialog.FileName;
-                        var file = File.ReadAllBytes(filePath);
-                        string fileExtension = Path.GetExtension(filePath);
-
-
-                        var fileAttachment = new FileAttachment
-                        {
-                            Name = openFileDialog.SafeFileName,
-                            ContentType = fileExtension,
-                            Size = file.Length,
-                            FileContent = file
-                        };
-                        if (isSignatureAttachment && (fileAttachment.Size / 1024) > 300)
-                            throw new Exception(StringResources.ErrorFileSizeLimit300K);
-                        else
-                            return fileAttachment;
-                    }
-                    else
+                    if (openFileDialog.ShowDialog() != DialogResult.OK)
                         return null;
+
+                    var attachments = new List<FileAttachment>();
+
+                    foreach (var filePath in openFileDialog.FileNames)
+                    {
+                        // size check first (so we can error out before reading big files into memory)
+                        var fi = new FileInfo(filePath);
+                        long sizeBytes = fi.Length;
+
+                        if (isSignatureAttachment && (sizeBytes / 1024) > 300)
+                            throw new Exception(StringResources.ErrorFileSizeLimit300K);
+
+                        byte[] fileBytes = File.ReadAllBytes(filePath);
+
+                        attachments.Add(new FileAttachment
+                        {
+                            Name = Path.GetFileName(filePath),
+                            ContentType = GetMimeTypeFromExtension(filePath), // better than just ".pdf"
+                            Size = fileBytes.Length,
+                            FileContent = fileBytes
+                        });
+                    }
+
+                    return attachments;
                 }
             }
             catch (IOException ex)
             {
                 var frmMsgBox = new FrmMessageBox();
-
                 frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
                 {
                     Title = StringResources.ErrorWhileAttachingFile,
@@ -61,7 +66,6 @@ namespace IsoDocApp.Helpers
             catch (Exception ex)
             {
                 var frmMsgBox = new FrmMessageBox();
-
                 frmMsgBox.SetMessageOptions(new CustomMessageBoxOptions()
                 {
                     Title = StringResources.ErrorWhileAttachingFile,
@@ -74,6 +78,33 @@ namespace IsoDocApp.Helpers
             }
             return null;
 
+        }
+
+        public static FileAttachment AttachFile(string filterFileTypes, bool isSignatureAttachment)
+        {
+            var list = AttachFiles(filterFileTypes, isSignatureAttachment);
+            return list?.FirstOrDefault();
+        }
+
+        // Minimal MIME helper for common office/PDF types used in your filter.
+        // If you're on .NET Framework, you could also use System.Web.MimeMapping.GetMimeMapping(path).
+        private static string GetMimeTypeFromExtension(string path)
+        {
+            switch (Path.GetExtension(path).ToLowerInvariant())
+            {
+                case ".pdf": return "PDF Document";
+                case ".doc": return "Word Document";
+                case ".docx": return "Word Document";
+                case ".xls": return "Excel Spreadsheet";
+                case ".xlsx": return "Excel Spreadsheet";
+                case ".png": return "PNG Image";
+                case ".jpg":
+                case ".jpeg": return "JPEG Image";
+                case ".gif": return "GIF Image";
+                case ".txt": return "Text File";
+                case ".zip": return "ZIP Archive";
+                default: return "Unknown File Type";
+            }
         }
 
     }

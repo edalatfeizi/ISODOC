@@ -84,9 +84,9 @@ namespace IsoDocApp
             this.WindowState = FormWindowState.Maximized;
             userName = SystemInformation.UserName;
             //userName = "3134";
-            userName = "3864";
+            //userName = "3864";
             //userName = "3815";
-            //userName = "1495";
+            userName = "3015";
             cmbReceiverUser.Properties.DisplayMember = "Name";
             cmbReceiverUser.Properties.ValueMember = "PersonCode";
 
@@ -864,18 +864,18 @@ namespace IsoDocApp
             //    docConfirmation = docConfirmations.Where(x => x.Id == int.Parse(idValue.ToString())).FirstOrDefault();
             //    docReqId = docConfirmation.DocReqId;
             //}
-            var docReqAttachment = AttachmentsHelper.AttachFile(Constants.DocReqAttachmentFileTypes, false)?.MapToDocRequestAttachment(docReqId);
-            if (docReqAttachment != null)
-            {
-                docReqAttachment.DocRequestId = docReqId;
-                docReqAttachment.CreatedBy = userInfo.PersonCode;
-                docReqAttachment.ModifiedBy = userInfo.PersonCode;
-                ShowProgressBar(true);
-                await manageDocReqsService.AttachFileAsync(docReqAttachment);
-                ShowProgressBar(false);
-                toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
+            var docReqAttachments = AttachmentsHelper.AttachFiles(Constants.DocReqAttachmentFileTypes, false).MapToDocRequestAttachments(docReqId);
+            ShowProgressBar(true);
 
+            foreach (var attachment in docReqAttachments)
+            {
+                attachment.DocRequestId = docReqId;
+                attachment.CreatedBy = userInfo.PersonCode;
+                attachment.ModifiedBy = userInfo.PersonCode;
+                await manageDocReqsService.AttachFileAsync(attachment);
+                toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
             }
+            ShowProgressBar(false);
 
         }
 
