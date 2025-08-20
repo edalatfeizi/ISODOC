@@ -322,15 +322,15 @@ namespace IsoDocApp
                 Description = $"{StringResources.DocTitle} : {docRequest.Title.Split(':')[1].Trim()} \n {StringResources.StartTime} : {docRequest.CreatedAt.FormatPersianDate()}",
                 Status = ProcessStepStatus.Inactive,
             };
+       
+            selectedDocReqSteps = await manageDocReqsService.GetDocRequestSteps(docRequest.Id);
             var endStep = new ProcessStep
             {
                 Title = endStepTitle,
-                Description = docRequest.DocRequestStatus == DocRequestStatus.Completed ? $"{StringResources.EndTime} : {docRequest.ModifiedAt.FormatPersianDate()}" : "",
+                Description = docRequest.DocRequestStatus == DocRequestStatus.Completed ? $"{StringResources.EndTime} : {selectedDocReqSteps.Last().CreatedAt.FormatPersianDate()}" : "",
                 Status = docRequest.DocRequestStatus == DocRequestStatus.Completed ? ProcessStepStatus.Completed : ProcessStepStatus.Inactive,
-                CreatedAt = DateTime.Now.ToPersianDateTime()
+                CreatedAt = DateTime.Now.ToString(),
             };
-            selectedDocReqSteps = await manageDocReqsService.GetDocRequestSteps(docRequest.Id);
-
             var docReqProcessSteps = new List<ProcessStep>();
             docReqProcessSteps.Add(startStep);
             docReqProcessSteps.AddRange(selectedDocReqSteps.MapToProcessSteps(docRequest));
