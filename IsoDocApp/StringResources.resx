@@ -456,4 +456,7 @@
   <data name="AttachedFiles" xml:space="preserve">
     <value>فایل های پیوست شده</value>
   </data>
+  <data name="Starter" xml:space="preserve">
+    <value>شروع کننده</value>
+  </data>
 </root>

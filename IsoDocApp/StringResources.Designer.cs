@@ -988,6 +988,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to شروع کننده.
+        /// </summary>
+        internal static string Starter {
+            get {
+                return ResourceManager.GetString("Starter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to شروع فرآیند امضاء سند.
         /// </summary>
         internal static string StartingDocSigningProcess {

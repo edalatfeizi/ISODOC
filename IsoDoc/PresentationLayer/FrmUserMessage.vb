@@ -1,26 +1,27 @@
 
-Imports System.Windows.Forms.MenuStrip
 Imports System
-Imports System.Drawing
-Imports System.ComponentModel
-Imports System.Windows.Forms
-Imports System.Data.SqlClient
-Imports System.IO
-Imports System.Windows.Forms.Clipboard
-Imports System.Windows.Forms.Form
 Imports System.Collections
-Imports IKIDCSHelper.Models
+Imports System.ComponentModel
+Imports System.Data.SqlClient
+Imports System.Drawing
+Imports System.IO
 Imports System.Linq
 Imports System.Threading.Tasks
-Imports IsoDocApp
-Imports Microsoft.Extensions.DependencyInjection
+Imports System.Windows.Forms
+Imports System.Windows.Forms.Clipboard
+Imports System.Windows.Forms.Form
+Imports System.Windows.Forms.MenuStrip
+Imports IKIDCSHelper.Models
+Imports IKIDMagfaSMSClientWin
+Imports IsoDoc.Domain.Interfaces
 Imports IsoDoc.Domain.Interfaces.Repositories
 Imports IsoDoc.Domain.Interfaces.Services
 Imports IsoDoc.Domain.Services
 Imports IsoDoc.Infrastructure.Repositories
-Imports IKIDMagfaSMSClientWin
+Imports IsoDocApp
 Imports IsoDocApp.ManageDocRequests
 Imports IsoDocApp.ManageSignatures
+Imports Microsoft.Extensions.DependencyInjection
 
 Public Class FrmUserMessage
     Private Bus_UserMessage1 As New Bus_UserMessage
@@ -124,7 +125,8 @@ Public Class FrmUserMessage
     End Sub
     Private Sub ConfigureServices(services As IServiceCollection, connStr As String)
         ' Register your dependencies here
-        services.AddScoped(Of IDbConnection)(Function(sp) New SqlConnection(connStr))
+        'services.AddScoped(Of IDbConnection)(Function(sp) New SqlConnection(connStr))
+        services.AddSingleton(Of IDbConnectionFactory)(Function(sp) New SqlConnectionFactory(connStr))
         services.AddSingleton(Of IManageDocReqsRepository, ManageDocReqRepository)()
         services.AddSingleton(Of IPersonelyRepository, PersonelyRepository)()
         services.AddSingleton(Of IDocRequestAttachmentsRepository, DocRequestAttachmentsRepository)()

@@ -2,6 +2,7 @@
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Extensions;
+using IsoDoc.Domain.Interfaces;
 using IsoDoc.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,17 @@ namespace IsoDoc.Infrastructure.Repositories
 {
     public class DocConfirmationRepository : IDocConfirmationRepository
     {
-        private readonly IDbConnection connection;
-        public DocConfirmationRepository(IDbConnection dbConnection)
-        {
-            connection = dbConnection;
-        }
+        //private readonly IDbConnection connection;
+        private readonly IDbConnectionFactory _factory;
+        public DocConfirmationRepository(IDbConnectionFactory factory) => _factory = factory;
+        //public DocConfirmationRepository(IDbConnection dbConnection)
+        //{
+        //    connection = dbConnection;
+        //}
 
         public async Task<NewDocConfirmation> AddNewDocConfirmation(int docReqId, string ownerDepCode, string docTitle, string docCode, string reviewNo, string reviewText, string creatorUserPersonCode)
         {
+            using var connection = _factory.Create();
             var newDocConfirm = new NewDocConfirmation
             {
                 DocReqId = docReqId,
@@ -74,6 +78,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<DocSigner> AddNewDocSigner(int newDocConfirmationId, string personCode, string name, string post, SignerColleagueType signerType, int signingOrder, string creatorUserPersonCode, string signRequestSentDate)
         {
+            using var connection = _factory.Create();
+
             var newDocSigner = new DocSigner
             {
                 NewDocConfirmationId = newDocConfirmationId,
@@ -128,6 +134,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<NewDocConfirmation>> GetAllDocConfirmations()
         {
+            using var connection = _factory.Create();
+
             const string query = @"SELECT * FROM tb_NewDocConfirmations where Active = 'true'";
 
             var result = await connection.QueryAsync<NewDocConfirmation>(query);
@@ -137,6 +145,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<NewDocConfirmation> GetDocConfirmationByDocReqIdAsync(int docReqId)
         {
+            using var connection = _factory.Create();
+
             const string query = @"SELECT * FROM tb_NewDocConfirmations where DocReqId = @DocReqId and Active = 'true'";
 
             var result = await connection.QueryFirstOrDefaultAsync<NewDocConfirmation>(query, new { DocReqId = docReqId });
@@ -146,6 +156,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<DocSigner>> GetDocConfirmationSigners(int docConfirmationId)
         {
+            using var connection = _factory.Create();
+
             const string query = @"SELECT * FROM tb_NewDocSigners where NewDocConfirmationId = @NewDocConfirmationId";
 
             var result = await connection.QueryAsync<DocSigner>(query, new { NewDocConfirmationId = docConfirmationId });
@@ -155,6 +167,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode, bool isSysOfficeStaff)
         {
+            using var connection = _factory.Create();
+
             const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true') and ConfirmationStatus = 0 and Active = 'true' order by CreatedAt desc";
             const string canceledDocConfirmsQuery = @"select * from tb_NewDocConfirmations where ConfirmationStatus = '2' and Active = 'true' order by CreatedAt desc";//2 DocRequestStatus.Canceled
 
@@ -171,6 +185,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<bool> SignDocConfirmationAsync(int docSignerId)
         {
+            using var connection = _factory.Create();
+
             var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
                   SET IsSigned = 'true', SigningDate = @SigningDate 
                   WHERE Id = @NewDocSignersId";
@@ -181,6 +197,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<bool> UpdateSendSignRequestDate(int newDocSignersId, string personCode)
         {
+            using var connection = _factory.Create();
+
             var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
                   SET SignRequestSentDate = @SignRequestSentDate
                   WHERE Id = @NewDocSignersId and PersonCode = @PersonCode and Active ='true'";
@@ -191,6 +209,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<bool> UpdateDocConfirmStatusAsync(int docConfirmationId,DocRequestStatus status, string modifiedByUserPersonCode)
         {
+            using var connection = _factory.Create();
 
             var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocConfirmations]
                   SET ConfirmationStatus = @ConfirmationStatus,ModifiedBy = @ModifiedBy, ModifiedAt = @ModifiedAt
@@ -201,6 +220,7 @@ namespace IsoDoc.Infrastructure.Repositories
         }
         public async Task<bool> CancelSigningAsync(int docConfirmationId, string canceledByUserPersonCode)
         {
+            using var connection = _factory.Create();
 
             var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
                   SET Active = 'false',ModifiedBy = @ModifiedBy, ModifiedAt = @ModifiedAt
@@ -211,6 +231,8 @@ namespace IsoDoc.Infrastructure.Repositories
         }
         public async Task<NewDocConfirmation> GetDocConfirmationByIdAsync(int docConfirmId)
         {
+            using var connection = _factory.Create();
+
             const string query = @"SELECT * FROM tb_NewDocConfirmations where Id = @DocConfirmId and Active = 'true'";
 
             var result = await connection.QueryFirstOrDefaultAsync<NewDocConfirmation>(query, new { DocConfirmId = docConfirmId });
@@ -220,6 +242,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<DocConfirmationStateChange> AddDocConfirmationStateChangeAsync(int docConfirmationId, string senderUserPersonCode, string senderUserFullName, string senderUserPost, string receiverUserPersonCode, string receiverUserFullName, string receiverUserPost, string description, DocConfirmationStatus state)
         {
+            using var connection = _factory.Create();
+
             var cancelHistory = new DocConfirmationStateChange
             {
                 DocConfirmationId = docConfirmationId,
@@ -277,6 +301,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<DocConfirmationStateChange>> GetDocConfirmationStateChangesAsync(int docConfirmationId)
         {
+            using var connection = _factory.Create();
+
             const string query = @"SELECT * FROM tb_DocConfirmationStateChanges where DocConfirmationId = @DocConfirmationId and Active = 'true' order by Id";
 
             var result = await connection.QueryAsync<DocConfirmationStateChange>(query, new { DocConfirmationId = docConfirmationId });

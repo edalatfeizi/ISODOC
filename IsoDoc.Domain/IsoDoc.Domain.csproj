@@ -78,6 +78,7 @@
     <Compile Include="Extensions\DocSignersExtensions.cs" />
     <Compile Include="Extensions\NewDocConfirmationExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Interfaces\IDbConnectionFactory.cs" />
     <Compile Include="Interfaces\Repositories\IDocConfirmationRepository.cs" />
     <Compile Include="Interfaces\Repositories\IDocRequestAttachmentsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IDocRequestStepsRepository.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Interfaces\Services\IDocsService.cs" />
     <Compile Include="Interfaces\Services\IPersonelyService.cs" />
     <Compile Include="Interfaces\Services\IManageDocReqsService.cs" />
+    <Compile Include="Interfaces\SqlConnectionFactory.cs" />
     <Compile Include="Models\NewDocConfirmationReport.cs" />
     <Compile Include="Models\ProcessStep.cs" />
     <Compile Include="Models\SignerColleague.cs" />

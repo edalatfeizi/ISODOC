@@ -86,7 +86,7 @@ namespace IsoDocApp
             //userName = "3134";
             //userName = "3864";
             //userName = "3815";
-            //userName = "3015";
+            //userName = "3038";
             cmbReceiverUser.Properties.DisplayMember = "Name";
             cmbReceiverUser.Properties.ValueMember = "PersonCode";
 
@@ -356,10 +356,10 @@ namespace IsoDocApp
             {
 
                 UpdateDocSignersStepsTimeLine();
-
+                var signer = docSigners.Where(x => x.PersonCode == userInfo.PersonCode && x.Active).FirstOrDefault();
                 if (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || userInfo.PersonCode.IsDeveloper())
                     btnPrintConfirmationDoc.Enabled = true;
-                else if (docSigners.Any(x => x.PersonCode == userInfo.PersonCode && x.Active && x.SignerType == StringResources.Confirmer || x.SignerType == StringResources.Acceptor))
+                else if (signer != null && (signer.SignerType == StringResources.Confirmer || signer.SignerType == StringResources.Acceptor))
                     btnPrintConfirmationDoc.Enabled = true;
                 else
                     btnPrintConfirmationDoc.Enabled = false;
@@ -443,34 +443,38 @@ namespace IsoDocApp
                 confirmationSigners.Items.Clear();
 
                 var docSigningSteps = new List<ProcessStep>();
-                var startStep = new ProcessStep
+                var starterPerson = await personelyService.GetUserInfoByPersonCode(docConfirmation.CreatedBy);
+                if (starterPerson != null)
                 {
-                    Title = StringResources.StartingDocSigningProcess,
-                    Description = $"{StringResources.DocTitle} : {docConfirmation.DocTitle} \n {StringResources.StartTime} : {docConfirmation.CreatedAt.FormatPersianDate()}",
-                    Status = ProcessStepStatus.Inactive,
-                };
-                var endStep = new ProcessStep
-                {
-                    Title = StringResources.EndSigningDocProcess,
-                    Description = docConfirmation.ConfirmationStatus == DocRequestStatus.Completed ? $"{StringResources.EndTime} : {docConfirmation.ModifiedAt}" : "",
-                    Status = docConfirmation.ConfirmationStatus == DocRequestStatus.Completed ? ProcessStepStatus.Completed : ProcessStepStatus.Inactive,
-                    CreatedAt = DateTime.Now.ToPersianDateTime()
-                };
+                    var startStep = new ProcessStep
+                    {
+                        Title = StringResources.StartingDocSigningProcess,
+                        Description = $"{StringResources.DocTitle} : {docConfirmation.DocTitle} \n {StringResources.StartTime} : {docConfirmation.CreatedAt.FormatPersianDate()} \n {StringResources.Starter} : {starterPerson.FirstName} {starterPerson.LastName} - {starterPerson.Posttxt}",
+                        Status = ProcessStepStatus.Inactive,
+                    };
+                    var endStep = new ProcessStep
+                    {
+                        Title = StringResources.EndSigningDocProcess,
+                        Description = docConfirmation.ConfirmationStatus == DocRequestStatus.Completed ? $"{StringResources.EndTime} : {docConfirmation.ModifiedAt}" : "",
+                        Status = docConfirmation.ConfirmationStatus == DocRequestStatus.Completed ? ProcessStepStatus.Completed : ProcessStepStatus.Inactive,
+                        CreatedAt = DateTime.Now.ToPersianDateTime()
+                    };
 
-                docSigningSteps.AddRange(docSigners.MapToProcessSteps());
-                docSigningSteps.AddRange(docConfirmCancelHistories.MapToProcessSteps());
+                    docSigningSteps.AddRange(docSigners.MapToProcessSteps());
+                    docSigningSteps.AddRange(docConfirmCancelHistories.MapToProcessSteps());
 
-                var newSteps = new List<ProcessStep>();
-                newSteps.Add(startStep);
-                newSteps.AddRange(docSigningSteps.OrderBy(x => x.CreatedAt.ToPersianDateTime()));
-                newSteps.Add(endStep);
+                    var newSteps = new List<ProcessStep>();
+                    newSteps.Add(startStep);
+                    newSteps.AddRange(docSigningSteps.OrderBy(x => x.CreatedAt.ToPersianDateTime()));
+                    newSteps.Add(endStep);
 
-                var steps = await StepsProgressBarHelper.GetProcessSteps(newSteps);
-                foreach (var step in steps)
-                {
-                    confirmationSigners.Items.Add(step);
+                    var steps = await StepsProgressBarHelper.GetProcessSteps(newSteps);
+                    foreach (var step in steps)
+                    {
+                        confirmationSigners.Items.Add(step);
+                    }
+
                 }
-             
 
             }
 
@@ -1074,8 +1078,8 @@ namespace IsoDocApp
                 var signers = docSigners.Where(x => x.Active).ToList();
                 foreach (var signer in signers)
                 {
-                    signer.SignRequestSentDate = signer.SignRequestSentDate != null ? signer.SignRequestSentDate.FormatPersianDate() : "";
-                    signer.SigningDate = signer.SigningDate != null ? signer.SigningDate.FormatPersianDate() : "";
+                    signer.SignRequestSentDate =  !string.IsNullOrEmpty(signer.SignRequestSentDate) ? signer.SignRequestSentDate.FormatPersianDate() : "";
+                    signer.SigningDate = !string.IsNullOrEmpty(signer.SigningDate)  ? signer.SigningDate.FormatPersianDate() : "";
                     if (signer.IsSigned)
                     {
                        

@@ -3,6 +3,7 @@ using DevExpress.UserSkins;
 using DevExpress.XtraWaitForm;
 using IKIDCSHelper.Models;
 using IKIDMagfaSMSClientWin;
+using IsoDoc.Domain.Interfaces;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Services;
@@ -64,8 +65,8 @@ namespace IsoDocApp
         private static void ConfigureServices(IServiceCollection services, string connStr/*, SMSConfig config*/)
         {
             //services.AddSingleton(new SqlConnection(connStr));
-            services.AddScoped<IDbConnection>(sp => new SqlConnection(connStr));
-
+            //services.AddScoped<IDbConnection>(sp => new SqlConnection(connStr));
+            services.AddSingleton<IDbConnectionFactory>(sp=> new SqlConnectionFactory(connStr));
             services.AddSingleton<IManageDocReqsRepository, ManageDocReqRepository>();
             services.AddSingleton<IDocRequestAttachmentsRepository, DocRequestAttachmentsRepository>();
             services.AddSingleton<IDocsRepository, DocsRepository>();

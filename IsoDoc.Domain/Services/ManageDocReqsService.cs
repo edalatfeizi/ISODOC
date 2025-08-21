@@ -92,7 +92,8 @@ namespace IsoDoc.Domain.Services
 
         public async Task<List<DocRequestChatMessage>> GetDocRequestAllChatMessagesAsync(int docReqId)
         {
-            return await manageDocReqsRepo.GetDocRequestChatMessagesAsync(docReqId);
+            var result = await manageDocReqsRepo.GetDocRequestChatMessagesAsync(docReqId);
+            return result;
         }
 
         public async Task<List<DocRequestChatMessage>> GetDocRequestUserReceivedChatMessagesAsync(int docReqId, string userPersonCode)

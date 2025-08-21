@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using IsoDoc.Domain.Entities;
+using IsoDoc.Domain.Interfaces;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Models;
 using System;
@@ -13,14 +14,18 @@ namespace IsoDoc.Infrastructure.Repositories
 {
     public class PersonelyRepository : IPersonelyRepository
     {
-        private readonly IDbConnection connection;
-        public PersonelyRepository(IDbConnection dbConnection)
-        {
-            connection = dbConnection;
-        }
+        //private readonly IDbConnection connection;
+        private readonly IDbConnectionFactory _factory;
+        public PersonelyRepository(IDbConnectionFactory factory) => _factory = factory;
+        //public PersonelyRepository(IDbConnection dbConnection)
+        //{
+        //    connection = dbConnection;
+        //}
 
         public async Task<List<Colleague>> GetAllEmployees()
         {
+            using var connection = _factory.Create();
+
             const string query = @"SELECT 
                     p.PersonCode, 
                     p.FirstName + ' ' + p.LastName as Name, 
@@ -39,6 +44,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<Department>> GetDepartments()
         {
+            using var connection = _factory.Create();
+
             const string query = @"
                                     SELECT MDepartName, MDepartCode 
                                     FROM Personely.dbo.VwHR_MDepart 
@@ -52,6 +59,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<Colleague>> GetUnSupervisedBosses()
         {
+            using var connection = _factory.Create();
+
             //50,4 => سرپرست یا رئیس اداره
             //3,26,27 => مدیر،جانشین مدیر، سرپرست واحد
             const string query = @"
@@ -69,7 +78,9 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<Colleague>> GetUserColleagues(string userDepCode = null, string userManagerDepCode = null, bool adminOnly = false, bool sysOfficeOnly = false)
         {
-                if (adminOnly)
+            using var connection = _factory.Create();
+
+            if (adminOnly)
                 {
                     var adminsQuery = "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PostTypeID in (26,27,3)";//26,27,3 => مدیر،جانشین مدیر،سرپرست واحد
                 var admins = await connection.QueryAsync<Person>(adminsQuery);
@@ -121,6 +132,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<Person?> GetUserInfoByCardNumber(string userCardNumber)
         {
+            using var connection = _factory.Create();
+
             const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName WHERE CardNumber = @CardNumber";
 
             // Dapper automatically opens/closes the connection if not already open
@@ -128,6 +141,8 @@ namespace IsoDoc.Infrastructure.Repositories
         }
         public async Task<Person> GetPersonByDepCode(string depCode)
         {
+            using var connection = _factory.Create();
+
             const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName WHERE CodeEdare = @DepCode ";
 
             // Dapper automatically opens/closes the connection if not already open
@@ -136,6 +151,8 @@ namespace IsoDoc.Infrastructure.Repositories
         }
         public async Task<List<Person>> GetColleaguesByDepCode(string depCode)
         {
+            using var connection = _factory.Create();
+
             const string query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName WHERE CodeEdare = @DepCode or UpperCode =@DepCode ";
 
             // Dapper automatically opens/closes the connection if not already open
@@ -144,6 +161,7 @@ namespace IsoDoc.Infrastructure.Repositories
         }
         public async Task<Person> GetUserInfoByPersonCode(string personCode)
         {
+            using var connection = _factory.Create();
 
             var query = @"SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where PersonCode = @PersonCode";
 
@@ -153,7 +171,9 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<string> GetUserPersonCodeByLoginName(string loginName)
         {
-                var query = @"SELECT TOP (100) PERCENT PersonID FROM  GeneralObjects.dbo.tbGen_User WHERE   (Is_Active = '1') AND (NetLoginName = @LoginName)";
+            using var connection = _factory.Create();
+
+            var query = @"SELECT TOP (100) PERCENT PersonID FROM  GeneralObjects.dbo.tbGen_User WHERE   (Is_Active = '1') AND (NetLoginName = @LoginName)";
 
                 return await connection.QueryFirstOrDefaultAsync<string>(query, new { LoginName = loginName });
 
@@ -161,6 +181,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<PersonSignature> SavePersonSignature(PersonSignature personSignature)
         {
+            using var connection = _factory.Create();
+
             var newSignatureQuery = @"
                     INSERT INTO Personely.dbo.tbHR_PersonSignatures (
                         PersonCode,
@@ -196,12 +218,16 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<PersonSignature> GetPersonSignature(string personCode)
         {
+            using var connection = _factory.Create();
+
             var query = @"SELECT * FROM Personely.dbo.tbHR_PersonSignatures where PersonCode = @PersonCode and Active='true'";
 
             return await connection.QueryFirstOrDefaultAsync<PersonSignature>(query, new { PersonCode = personCode });
         }
         public async Task<bool> DeletePersonSignature(string personCode)
         {
+            using var connection = _factory.Create();
+
             var query = @"UPDATE Personely.dbo.tbHR_PersonSignatures 
                   SET Active = 'false' 
                   WHERE PersonCode = @PersonCode AND Active = 'true'";

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
+using IsoDoc.Domain.Interfaces;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Models;
 using System;
@@ -16,14 +17,18 @@ namespace IsoDoc.Infrastructure.Repositories
 {
     public class ManageDocReqRepository : IManageDocReqsRepository
     {
-        private readonly IDbConnection connection;
-        public ManageDocReqRepository(IDbConnection dbConnection)
-        {
-            connection = dbConnection;
-        }
+        //private readonly IDbConnection connection;
+        private readonly IDbConnectionFactory _factory;
+        public ManageDocReqRepository(IDbConnectionFactory factory) => _factory = factory;
+        //public ManageDocReqRepository(IDbConnection dbConnection)
+        //{
+        //    connection = dbConnection;
+        //}
 
         public async Task<DocRequestStep> AddNewDocRequestStepAsync(DocRequestStep docRequestStep)
         {
+            using var connection = _factory.Create(); 
+
             const string docRequestStepQuery = @"
                     INSERT INTO DocRequestSteps (
                         DocRequestId, 
@@ -66,6 +71,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<DocRequestAttachment> AttachFileAsync(DocRequestAttachment docRequestAttachment)
         {
+            using var connection = _factory.Create();
+
             var docRequestAttachmentQuery = @"
                     INSERT INTO DocRequestAttachments (
                         DocRequestId,
@@ -104,6 +111,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<DocRequest> CreateNewDocRequest(DocRequest docRequest)
         {
+            using var connection = _factory.Create();
+
             var docRequestsQuery = @"
                     INSERT INTO DocRequests (
                         DocId,
@@ -152,6 +161,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<bool> SetDocRequestActive(int docReqId, string deleteDesc, bool isActive)
         {
+            using var connection = _factory.Create();
+
             var updateQuery = @"
                     UPDATE DocRequests SET Active = @Active, deleteDesc = @DeleteDesc
                     WHERE Id = @DocReqId ";
@@ -164,6 +175,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<DocRequest>> FilterDocRequests(FilterDocRequests filterDocRequests)
         {
+            using var connection = _factory.Create();
 
             var docRequestsQuery = @"
                                         SELECT DISTINCT
@@ -216,6 +228,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<DocRequest> GetDocRequest(int docReqId)
         {
+            using var connection = _factory.Create();
+
             var docReqQuery = @"select * from DocRequests where Id = @Id";
 
             var docReqs = await connection.QueryAsync<DocRequest>(docReqQuery, new { Id = docReqId });
@@ -227,6 +241,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId)
         {
+            using var connection = _factory.Create();
+
             var docRequestStepsQuery = @"select * from DocRequestSteps where DocRequestId = @DocRequestId and Active = '1' order by Id";
 
             var docRequestSteps = await connection.QueryAsync<DocRequestStep>(docRequestStepsQuery, new { DocRequestId = docReqId });
@@ -236,6 +252,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<DocType>> GetDocTypes()
         {
+            using var connection = _factory.Create();
+
             var docTypesQuery = "select DocId,DocName,KeepDurationRequired from tbISODocName";
 
             var docTypes = await connection.QueryAsync<DocType>(docTypesQuery);
@@ -245,6 +263,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<Document>> GetDocuments(string depCode)
         {
+            using var connection = _factory.Create();
+
             var documentsQuery = @"select DISTINCT ROW_NUMBER() OVER (ORDER BY MainId) AS RowNumber, MainId as DocId, DocumentName, DocumentCode, DocName, HistorySave from VwIso_Documents where MdepartID = @MdepartID"; //MdepartID in VwIso_Documents has depCode values 
 
             var documents = await connection.QueryAsync<Document>(documentsQuery, new { MdepartID = depCode });
@@ -256,6 +276,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<int> GetLastDocReqId()
         {
+            using var connection = _factory.Create();
+
 
             var maxDocReqIdQuery = "select MAX(Id) as MaxReqId from DocRequests";
 
@@ -266,6 +288,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode)
         {
+            using var connection = _factory.Create();
 
             var updateQuery = @"
                                     UPDATE DocRequestSteps
@@ -282,6 +305,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<bool> UpdateDocRequestStatus(int docReqId, DocRequestStatus docRequestStatus, string cancelDesc, string modifiedBy)
         {
+            using var connection = _factory.Create();
 
             var updateQuery = @"
                                     UPDATE DocRequests
@@ -297,6 +321,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<bool> UpdateDocRequestEditOrReviewStatus(int docReqId, EditOrReviewStatus editOrReviewStatus, int editOrReviewNo)
         {
+            using var connection = _factory.Create();
 
             var updateQuery = @"
                                     UPDATE DocRequests
@@ -312,6 +337,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<Colleague>> GetDocRequestActivePeopleAsync(int docReqId)
         {
+            using var connection = _factory.Create();
+
             var docRequestPeopleQuery = @"SELECT  p.PersonCode,
                                         p.Name,p.Post as Posttxt
                                         FROM    dbo.Vw_DocRequestPeople      AS p
@@ -325,6 +352,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<DocRequestChatMessage>> GetDocRequestChatMessagesAsync(int docReqId)
         {
+            using var connection = _factory.Create();
+
             var docRequestChatMessagesQuery = @"select * from DocRequestChatMessages where DocRequestId = @DocRequestId and Active = '1' order by Id desc";
 
             var docRequestChatMessages = await connection.QueryAsync<DocRequestChatMessage>(docRequestChatMessagesQuery, new { DocRequestId = docReqId });
@@ -333,6 +362,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<DocRequestChatMessage>> GetDocRequestUserReceivedChatMessagesAsync(int docReqId, string userPersonCode)
         {
+            using var connection = _factory.Create();
+
             var docRequestChatMessagesQuery = @"select * from DocRequestChatMessages where DocRequestId = @DocRequestId and ReceiverUserPersonCode = @ReceiverUserPersonCode and Active = '1' order by Id desc";
 
             var docRequestChatMessages = await connection.QueryAsync<DocRequestChatMessage>(docRequestChatMessagesQuery, new { DocRequestId = docReqId, ReceiverUserPersonCode = userPersonCode });
@@ -341,6 +372,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<List<DocRequestChatMessage>> GetDocRequestUserSentChatMessagesAsync(int docReqId, string userPersonCode)
         {
+            using var connection = _factory.Create();
+
             var docRequestChatMessagesQuery = @"select * from DocRequestChatMessages where DocRequestId = @DocRequestId and SenderUserPersonCode = @SenderUserPersonCode and Active = '1' order by Id desc";
 
             var docRequestChatMessages = await connection.QueryAsync<DocRequestChatMessage>(docRequestChatMessagesQuery, new { DocRequestId = docReqId, SenderUserPersonCode = userPersonCode });
@@ -349,6 +382,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<DocRequestChatMessage> SendMessageAsync(DocRequestChatMessage message)
         {
+            using var connection = _factory.Create();
+
             var docChatMessageQuery = @"
                     INSERT INTO DocRequestChatMessages (
                         DocRequestId,
@@ -390,6 +425,8 @@ namespace IsoDoc.Infrastructure.Repositories
 
         public async Task<bool> HasAttachmentsAsync(int docReqId)
         {
+            using var connection = _factory.Create();
+
             var hasAttachmentsQuery = @"SELECT 
                                     CASE 
                                         WHEN EXISTS (

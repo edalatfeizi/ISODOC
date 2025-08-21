@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
+using IsoDoc.Domain.Interfaces;
 using IsoDoc.Domain.Interfaces.Repositories;
 using IsoDoc.Domain.Interfaces.Services;
 using IsoDoc.Domain.Models;
@@ -17,14 +18,17 @@ namespace IsoDoc.Infrastructure.Repositories
 {
     public class DocRequestStepsRepository : IDocRequestStepsRepository
     {
-        private readonly IDbConnection connection;
+        //private readonly IDbConnection connection;
+
+        private readonly IDbConnectionFactory _factory;
+        public DocRequestStepsRepository(IDbConnectionFactory factory) => _factory = factory;
         private readonly string baseEntityInsertProps = "CreatedBy,ModifiedBy,CreatedAt,ModifiedAt,Active";
         private readonly string baseEntityInsertPropsValues = "@CreatedBy,@ModifiedBy,@CreatedAt,@ModifiedAt,@Active";
-        public DocRequestStepsRepository(IDbConnection dbConnection)
-        {
-            connection = dbConnection;
-            //connection = new SqlConnection("Data Source=sqlsrv;Initial Catalog=Isodoc_New;User Id=samane;Password=#@Samane1367!#;Encrypt=False;");
-        }
+        //public DocRequestStepsRepository(IDbConnection dbConnection)
+        //{
+        //    connection = dbConnection;
+        //    //connection = new SqlConnection("Data Source=sqlsrv;Initial Catalog=Isodoc_New;User Id=samane;Password=#@Samane1367!#;Encrypt=False;");
+        //}
 
         public Task<DocRequestStep> SetDocRequestStepApproved(int docReqStepId)
         {
