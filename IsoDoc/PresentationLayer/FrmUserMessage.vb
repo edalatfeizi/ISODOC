@@ -106,6 +106,7 @@ Public Class FrmUserMessage
         MdlMain.frmManageDocReqs = serviceProvider.GetRequiredService(Of FrmManageDocReqs)()
         MdlMain.frmSearchDocs = serviceProvider.GetRequiredService(Of FrmSearchDocs)()
         MdlMain.frmManageSignatures = serviceProvider.GetRequiredService(Of FrmManageSignatures)()
+        MdlMain.personelyService = serviceProvider.GetRequiredService(Of IPersonelyService)()
         'End configure DI
 
         My.Settings.Archive_NewConnectionString = MdlMain.CnnStringArchiveNew

@@ -1,6 +1,11 @@
 ﻿Imports System.IO
+Imports System.Linq
+Imports System.Web.Configuration
+Imports DevComponents.DotNetBar
+Imports DevExpress.Utils.Svg
 Imports DevExpress.XtraBars
 Imports DevExpress.XtraBars.Ribbon
+Imports DevExpress.XtraBars.Ribbon.ViewInfo
 Imports IsoDoc.Domain.Interfaces.Services
 Imports IsoDoc.Domain.Models
 
@@ -10,6 +15,7 @@ Public Class FrmMain
     Private DA1 As New SqlClient.SqlDataAdapter
     Private wstr As String
     Private _userInfo As Person
+    Private topManagers As List(Of Person) = New List(Of Person)
 
     Private Sub BarButtonItem10_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs)
 
@@ -44,7 +50,7 @@ Public Class FrmMain
         btnImportantDocs.PerformClick()
     End Sub
 
-    Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Async Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DeletePdfs()
         Dim dt As New DataTable
         Dim Bus_UserMessage1 As New Bus_UserMessage
@@ -57,6 +63,19 @@ Public Class FrmMain
         '    Me.Close()
         '    Exit Sub
         'End If
+        Dim userName = SystemInformation.UserName
+        Dim userPersonCode As String = Await MdlMain.personelyService.GetUserPersonCodeByLoginName(userName)
+        Dim personUserInfo As Person = Await personelyService.GetUserInfoByPersonCode(userPersonCode)
+
+        If personUserInfo.CodeEdare = Constants.CEOOfficeBossDepCode Or personUserInfo.CodeEdare = Constants.CEOOfficeSecretaryDepCode Then
+            BuildRunAsPopupMenu()
+
+        Else
+
+            btnShowKartable.ActAsDropDown = False
+            btnShowKartable.ButtonStyle = BarButtonStyle.Default
+        End If
+
 
 
 
@@ -780,6 +799,83 @@ Public Class FrmMain
 
     Private Sub btnManageNewDocConfirms_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btnManageSignatures.ItemClick
         MdlMain.frmManageSignatures.ShowDialog()
+
+    End Sub
+
+    Private Async Sub BuildRunAsPopupMenu()
+        ' Make sure the PopupMenu uses the same manager as the Ribbon
+        PopupMenu2.Manager = RibbonControl.Manager
+
+        ' (Optional) start fresh
+        PopupMenu2.ClearLinks()
+
+        Dim ceo As Person = Await MdlMain.personelyService.GetPersonByDepCode(Constants.CEODepCode)
+        Dim deputy As Person = Await MdlMain.personelyService.GetPersonByDepCode(Constants.DeputyDepCode)
+        Dim boardOfDirectors As List(Of Person) = Await MdlMain.personelyService.GetColleaguesByDepCode(Constants.BoardOfDirectorsDepCode)
+
+
+        topManagers.Add(ceo)
+        topManagers.Add(deputy)
+        topManagers.AddRange(boardOfDirectors)
+
+        If boardOfDirectors IsNot Nothing Then
+            For Each manager As Person In topManagers
+                ' Add items
+                AddPopupItem($"{manager.FirstName} {manager.LastName} - {manager.Posttxt}", manager.PersonCode,
+                         iconPng:=My.Resources.namemanager_16x16, fontSize:=9.0F)
+            Next
+        End If
+
+    End Sub
+
+    ' Helper: creates an item, styles it, wires click, and adds it to PopupMenu1
+    Private Sub AddPopupItem(caption As String,
+                         tag As String,
+                         Optional iconPng As Image = Nothing,
+                         Optional iconSvg As SvgImage = Nothing,
+                         Optional fontName As String = "Vazirmatn",
+                         Optional fontSize As Single = 9.0F,
+                         Optional bold As Boolean = False,
+                         Optional beginGroup As Boolean = False)
+
+        Dim item As New BarButtonItem(RibbonControl.Manager, caption) With {
+        .Tag = tag
+    }
+
+        ' Icon (use either PNG or SVG)
+        If iconSvg IsNot Nothing Then
+            item.ImageOptions.SvgImage = iconSvg
+        ElseIf iconPng IsNot Nothing Then
+            item.ImageOptions.Image = iconPng
+        End If
+
+        ' Per-item font (apply to all visual states)
+        Dim style As FontStyle = If(bold, FontStyle.Bold, FontStyle.Regular)
+        Dim f As New Font(fontName, fontSize, style)
+
+        item.ItemAppearance.Normal.Font = f
+        item.ItemAppearance.Normal.Options.UseFont = True
+        item.ItemAppearance.Hovered.Font = f
+        item.ItemAppearance.Hovered.Options.UseFont = True
+        item.ItemAppearance.Pressed.Font = f
+        item.ItemAppearance.Pressed.Options.UseFont = True
+
+        ' Click handler
+        AddHandler item.ItemClick, AddressOf PopupMenuItem_ItemClick
+
+        ' Add to popup (with optional separator before it)
+        Dim link = PopupMenu2.AddItem(item)
+        link.BeginGroup = beginGroup
+    End Sub
+
+    ' One place to handle all popup item clicks
+    Private Sub PopupMenuItem_ItemClick(sender As Object, e As ItemClickEventArgs)
+
+        Dim manager As Person = topManagers.Where(Function(x) x.PersonCode = CStr(e.Item.Tag)).FirstOrDefault()
+        If manager IsNot Nothing Then
+            MdlMain.frmManageDocReqs.runAsUserPersonCode = manager.CardNumber
+            MdlMain.frmManageDocReqs.ShowDialog()
+        End If
 
     End Sub
 End Class

@@ -822,6 +822,14 @@
   <ItemGroup>
     <Content Include="Edit.ico" />
     <Content Include="icon1.ico" />
+    <None Include="Resources\namemanager_16x162.png" />
+    <None Include="Resources\namemanager_32x322.png" />
+    <None Include="Resources\grouprows_16x16.png" />
+    <None Include="Resources\grouprows_32x32.png" />
+    <None Include="Resources\namemanager_16x161.png" />
+    <None Include="Resources\namemanager_32x321.png" />
+    <None Include="Resources\namemanager_16x16.png" />
+    <None Include="Resources\namemanager_32x32.png" />
     <None Include="Resources\signature.png" />
     <None Include="Resources\organised-documents-references_23-2149396678.jpg" />
     <None Include="Resources\organised-documents-references_23-2149396678 %281%29.jpg" />

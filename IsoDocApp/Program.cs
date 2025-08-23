@@ -67,11 +67,13 @@ namespace IsoDocApp
             //services.AddSingleton(new SqlConnection(connStr));
             //services.AddScoped<IDbConnection>(sp => new SqlConnection(connStr));
             services.AddSingleton<IDbConnectionFactory>(sp=> new SqlConnectionFactory(connStr));
+            services.AddSingleton<IPersonelyRepository, PersonelyRepository>();
             services.AddSingleton<IManageDocReqsRepository, ManageDocReqRepository>();
             services.AddSingleton<IDocRequestAttachmentsRepository, DocRequestAttachmentsRepository>();
             services.AddSingleton<IDocsRepository, DocsRepository>();
             services.AddSingleton<IDocConfirmationRepository, DocConfirmationRepository>();
 
+            services.AddSingleton<IPersonelyService, PersonelyService>();
             services.AddSingleton<IManageDocReqsService, ManageDocReqsService>();
             services.AddSingleton<IDocRequestAttachmentsService, DocRequestAttachmentsService>();
             services.AddSingleton<IDocsService, DocsService>();

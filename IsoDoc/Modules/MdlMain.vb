@@ -1,3 +1,4 @@
+Imports IsoDoc.Domain.Services
 Imports IsoDocApp
 Imports IsoDocApp.ManageDocRequests
 Imports IsoDocApp.ManageSignatures
@@ -6,6 +7,7 @@ Module MdlMain
     Public frmManageDocReqs As FrmManageDocReqs
     Public frmManageSignatures As FrmManageSignatures
     Public frmSearchDocs As FrmSearchDocs
+    Public personelyService As PersonelyService
 
     Public dt As New DataTable
     Public DocumentCode As String

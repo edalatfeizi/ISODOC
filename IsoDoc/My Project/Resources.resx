@@ -121,11 +121,23 @@
   <data name="office-files" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\office-files.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="namemanager_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\namemanager_32x322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grouprows_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grouprows_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="organised-documents-references_23-2149396678-original" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\organised-documents-references_23-2149396678-original.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AdobeStock_551800135" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AdobeStock_551800135.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="signature" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\signature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="namemanager_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\namemanager_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="attach-files" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\attach-files.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,14 +148,20 @@
   <data name="organised-documents-references_23-2149396678 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\organised-documents-references_23-2149396678 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="organised-documents-references_23-2149396678" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\organised-documents-references_23-2149396678.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="namemanager_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\namemanager_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="namemanager_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\namemanager_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="attach-files2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\attach-files2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DeleteLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeleteLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grouprows_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grouprows_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="attachment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\attachment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,6 +171,9 @@
   </data>
   <data name="Download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="namemanager_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\namemanager_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Learn-More" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Learn-More.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,7 +187,10 @@
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="signature" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\signature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="organised-documents-references_23-2149396678" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\organised-documents-references_23-2149396678.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="namemanager_16x162" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\namemanager_16x162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

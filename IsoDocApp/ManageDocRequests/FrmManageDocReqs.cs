@@ -39,6 +39,7 @@ namespace IsoDocApp
         private List<DocRequest> userDocReqs = new List<DocRequest>();
         private Person userInfo, sysOfficeBoss;
         private string userName = "";
+        public string runAsUserPersonCode = null;
         private bool isAdmin = false;
         private List<DocRequestStep> selectedDocReqSteps = new List<DocRequestStep>();
         private MagfaSMSClient smsClient;
@@ -87,6 +88,13 @@ namespace IsoDocApp
             //userName = "3864";
             //userName = "3815";
             //userName = "3038";
+
+            if (!string.IsNullOrEmpty(runAsUserPersonCode))
+            {
+                userName = runAsUserPersonCode;
+
+            }
+
             cmbReceiverUser.Properties.DisplayMember = "Name";
             cmbReceiverUser.Properties.ValueMember = "PersonCode";
 
@@ -449,7 +457,9 @@ namespace IsoDocApp
                     var startStep = new ProcessStep
                     {
                         Title = StringResources.StartingDocSigningProcess,
-                        Description = $"{StringResources.DocTitle} : {docConfirmation.DocTitle} \n {StringResources.StartTime} : {docConfirmation.CreatedAt.FormatPersianDate()} \n {StringResources.Starter} : {starterPerson.FirstName} {starterPerson.LastName} - {starterPerson.Posttxt}",
+                        Description = $"{StringResources.DocTitle} : {docConfirmation.DocTitle} \n {StringResources.Starter} :" +
+                        $" {starterPerson.FirstName} {starterPerson.LastName} - {starterPerson.Posttxt} \n {StringResources.StartTime}" +
+                        $" : {docConfirmation.CreatedAt.FormatPersianDate()}",
                         Status = ProcessStepStatus.Inactive,
                     };
                     var endStep = new ProcessStep

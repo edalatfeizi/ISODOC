@@ -169,7 +169,8 @@ namespace IsoDoc.Infrastructure.Repositories
         {
             using var connection = _factory.Create();
 
-            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true') and ConfirmationStatus = 0 and Active = 'true' order by CreatedAt desc";
+            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true' AND NULLIF(LTRIM(RTRIM(SignRequestSentDate)), '') IS NOT NULL
+                                   AND SigningDate IS NULL) and ConfirmationStatus = 0 and Active = 'true' order by CreatedAt desc";
             const string canceledDocConfirmsQuery = @"select * from tb_NewDocConfirmations where ConfirmationStatus = '2' and Active = 'true' order by CreatedAt desc";//2 DocRequestStatus.Canceled
 
             var userConfirmationsQuery = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
