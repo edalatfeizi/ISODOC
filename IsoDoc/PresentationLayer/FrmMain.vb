@@ -65,7 +65,6 @@ Public Class FrmMain
         '    Exit Sub
         'End If
         Dim userName = SystemInformation.UserName
-        userName = "3022"
         Dim userPersonCode As String = Await MdlMain.personelyService.GetUserPersonCodeByLoginName(userName)
         Dim personUserInfo As Person = Await personelyService.GetUserInfoByPersonCode(userPersonCode)
 
