@@ -14,7 +14,7 @@ namespace IsoDoc.Domain.Interfaces.Repositories
         Task<List<DocSigner>> GetDocConfirmationSigners(int docConfirmationId);
         Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode, bool showCancelledDocConfirms, bool showAllDocConfirms);
         Task<NewDocConfirmation> GetDocConfirmationByDocReqIdAsync(int docReqId);
-        Task<bool> SignDocConfirmationAsync(int docSignerId);
+        Task<bool> SignDocConfirmationAsync(int docSignerId, string modifiedByPersonCode);
         Task<bool> UpdateSendSignRequestDate(int newDocSignerId, string personCode);
         Task<bool> UpdateDocConfirmStatusAsync(int docConfirmationId, DocRequestStatus status, string modifiedByUserPersonCode);
         Task<NewDocConfirmation> GetDocConfirmationByIdAsync(int docConfirmId);

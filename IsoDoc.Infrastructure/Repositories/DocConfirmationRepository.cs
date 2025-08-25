@@ -195,15 +195,15 @@ namespace IsoDoc.Infrastructure.Repositories
 
         }
 
-        public async Task<bool> SignDocConfirmationAsync(int docSignerId)
+        public async Task<bool> SignDocConfirmationAsync(int docSignerId, string modifiedByPersonCode)
         {
             using var connection = _factory.Create();
 
             var query = @"UPDATE [Isodoc_New].[dbo].[tb_NewDocSigners]
-                  SET IsSigned = 'true', SigningDate = @SigningDate 
+                  SET IsSigned = 'true', SigningDate = @SigningDate, ModifiedBy = @ModifiedBy, ModifiedAt = @ModifiedAt
                   WHERE Id = @NewDocSignersId";
 
-            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = docSignerId, SigningDate = DateTime.Now.ToPersianDateTime() });
+            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = docSignerId, ModifiedBy = modifiedByPersonCode, ModifiedAt = DateTime.Now.ToPersianDateTime(),  SigningDate = DateTime.Now.ToPersianDateTime() });
             return rowsAffected > 0;
         }
 

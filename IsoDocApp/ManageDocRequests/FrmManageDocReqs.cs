@@ -86,7 +86,6 @@ namespace IsoDocApp
             //userName = "3134";
             //userName = "3864";
             //userName = "3815";
-            //userName = "3263";
 
             if (!string.IsNullOrEmpty(runAsUserPersonCode))
             {
@@ -890,7 +889,7 @@ namespace IsoDocApp
 
                 var docSigner = docSigners.Where(x => x.PersonCode == userInfo.PersonCode && !x.IsSigned && x.Active).First();
 
-                var result = await docConfirmationService.SignDocConfirmationAsync(docSigner.Id);
+                var result = await docConfirmationService.SignDocConfirmationAsync(docSigner.Id, userInfo.PersonCode);
                 if (result)
                 {
                     btnConfirm.Enabled = false;
