@@ -46,7 +46,11 @@ namespace IsoDocApp
             //lblMsgTitle.Text = options.Title;
             txtMessage.Text = options.Message;
             grpMessage.Text = options.Title;
-            grpMessage.CaptionImageOptions.Image = ImageResourceCache.Default.GetImageById(options.DevExpressIconId, DevExpress.Utils.Design.ImageSize.Size32x32, (DevExpress.Utils.Design.ImageType) options.DevExpressImageType);
+
+            if (!string.IsNullOrEmpty(options.CustomTitleIconName))
+                grpMessage.CaptionImageOptions.Image = Properties.Resources.ResourceManager.GetObject(options.CustomTitleIconName) as Image;
+            else
+                grpMessage.CaptionImageOptions.Image = ImageResourceCache.Default.GetImageById(options.DevExpressIconId, DevExpress.Utils.Design.ImageSize.Size32x32, (DevExpress.Utils.Design.ImageType)options.DevExpressImageType);
 
             btnConfirm.Visible = options.ShowConfirmButton;
             btnConfirm.Text = options.ConfirmButtonText;
@@ -55,9 +59,9 @@ namespace IsoDocApp
             btnCancel.Text = options.CancelButtonText;
 
             txtMessage.Enabled = options.IsInputBox;
-            if(options.IsInputBox)
+            if (options.IsInputBox)
                 txtMessage.Properties.Appearance.BackColor = Color.White;
-          
+
 
             btnCancel.Focus();
         }

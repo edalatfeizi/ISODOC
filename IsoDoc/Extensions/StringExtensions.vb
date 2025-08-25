@@ -1,6 +1,6 @@
 ﻿Imports System.Linq
 Imports System.Runtime.CompilerServices
-
+Imports IsoDoc.Domain.Common
 Module StringExtensions
 
     <Extension()>

@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using IKIDMagfaSMSClientWin;
+using IsoDoc.Domain.Common;
 using IsoDoc.Domain.Entities;
 using IsoDoc.Domain.Enums;
 using IsoDoc.Domain.Extensions;

@@ -556,7 +556,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PublicClasses\Cls_JanusGrid.vb" />
-    <Compile Include="PublicClasses\Constants.vb" />
     <Compile Include="PublicClasses\StartSystem.vb" />
     <Compile Include="Reports\RptChartKoli.vb">
       <AutoGen>True</AutoGen>

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attrs\DisplayAsIsAttribute.cs" />
+    <Compile Include="Common\Constants.cs" />
     <Compile Include="Dtos\BaseDto.cs" />
     <Compile Include="Dtos\NewDocSignerDto.cs" />
     <Compile Include="Dtos\NewDocConfirmationDto.cs" />

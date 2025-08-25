@@ -133,6 +133,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to اطمینان دارید؟.
+        /// </summary>
+        internal static string AreYouSure {
+            get {
+                return ResourceManager.GetString("AreYouSure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to فایل های پیوست شده.
         /// </summary>
         internal static string AttachedFiles {
@@ -291,6 +300,15 @@ namespace IsoDocApp {
         internal static string Creator {
             get {
                 return ResourceManager.GetString("Creator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to کاربر گرامی.
+        /// </summary>
+        internal static string DearUser {
+            get {
+                return ResourceManager.GetString("DearUser", resourceCulture);
             }
         }
         
@@ -772,6 +790,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to درخواست امضاء سند جدید.
+        /// </summary>
+        internal static string NewSignDocReq {
+            get {
+                return ResourceManager.GetString("NewSignDocReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to کاربر گرامی درخواست امضاء سند جدید در نرم افزار مستندات نظام کیفیت برای شما ثبت شد..
         /// </summary>
         internal static string NewSignDocReqSent {
@@ -916,6 +943,15 @@ namespace IsoDocApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ارسال شد.
+        /// </summary>
+        internal static string Sent {
+            get {
+                return ResourceManager.GetString("Sent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to لطفا نمونه امضاء همه افراد انتخاب شده را ثبت نمایید.
         /// </summary>
         internal static string SetSignatureForAllPeople {
@@ -948,6 +984,24 @@ namespace IsoDocApp {
         internal static string SigningDate {
             get {
                 return ResourceManager.GetString("SigningDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to امضاء سند.
+        /// </summary>
+        internal static string SigningDoc {
+            get {
+                return ResourceManager.GetString("SigningDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آیا برای امضاء این سند.
+        /// </summary>
+        internal static string SigningDocConfirm {
+            get {
+                return ResourceManager.GetString("SigningDocConfirm", resourceCulture);
             }
         }
         

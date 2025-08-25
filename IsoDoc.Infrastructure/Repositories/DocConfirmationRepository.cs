@@ -165,23 +165,34 @@ namespace IsoDoc.Infrastructure.Repositories
             return result.ToList();
         }
 
-        public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode, bool isSysOfficeStaff)
+        public async Task<List<NewDocConfirmation>> GetUserDocConfirmations(string personCode, bool showCancelledDocConfirms, bool showAllDocConfirms)
         {
             using var connection = _factory.Create();
 
             const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true' AND NULLIF(LTRIM(RTRIM(SignRequestSentDate)), '') IS NOT NULL
                                    AND SigningDate IS NULL) and ConfirmationStatus = 0 and Active = 'true' order by CreatedAt desc";
             const string canceledDocConfirmsQuery = @"select * from tb_NewDocConfirmations where ConfirmationStatus = '2' and Active = 'true' order by CreatedAt desc";//2 DocRequestStatus.Canceled
-
+            const string allDocConfirms = @"select * from tb_NewDocConfirmations where Active = 'true' order by CreatedAt desc";
             var userConfirmationsQuery = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
-            var result = userConfirmationsQuery.ToList();
-            if(isSysOfficeStaff)
+
+            if (showAllDocConfirms)
             {
-                var canceledConfirmations = await connection.QueryAsync<NewDocConfirmation>(canceledDocConfirmsQuery);
-                result.AddRange(canceledConfirmations.ToList());
+                var result = await connection.QueryAsync<NewDocConfirmation>(allDocConfirms);
+                return result.ToList();
+            }
+            else
+            {
+                var result = userConfirmationsQuery.ToList();
+                if (showCancelledDocConfirms)
+                {
+                    var canceledConfirmations = await connection.QueryAsync<NewDocConfirmation>(canceledDocConfirmsQuery);
+                    result.AddRange(canceledConfirmations.ToList());
+                }
+
+                return result.ToList();
             }
 
-            return result.ToList();
+
         }
 
         public async Task<bool> SignDocConfirmationAsync(int docSignerId)
@@ -192,7 +203,7 @@ namespace IsoDoc.Infrastructure.Repositories
                   SET IsSigned = 'true', SigningDate = @SigningDate 
                   WHERE Id = @NewDocSignersId";
 
-            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = docSignerId , SigningDate = DateTime.Now.ToPersianDateTime() });
+            int rowsAffected = await connection.ExecuteAsync(query, new { NewDocSignersId = docSignerId, SigningDate = DateTime.Now.ToPersianDateTime() });
             return rowsAffected > 0;
         }
 
@@ -208,7 +219,7 @@ namespace IsoDoc.Infrastructure.Repositories
             return rowsAffected > 0;
         }
 
-        public async Task<bool> UpdateDocConfirmStatusAsync(int docConfirmationId,DocRequestStatus status, string modifiedByUserPersonCode)
+        public async Task<bool> UpdateDocConfirmStatusAsync(int docConfirmationId, DocRequestStatus status, string modifiedByUserPersonCode)
         {
             using var connection = _factory.Create();
 

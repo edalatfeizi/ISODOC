@@ -16,7 +16,7 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<DocSigner> AddNewDocSignersAsync(NewDocSignerDto dto);
         Task<List<NewDocConfirmationResDto>> GetAllDocConfirmationsAsync();
         Task<List<DocSignerResDto>> GetDocConfirmationSignersAsync(int docConfirmationId);
-        Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode, bool isSysOfficeStaff);
+        Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode, bool showCancelledDocConfirms, bool showAllDocConfirms);
         Task<NewDocConfirmationResDto> GetDocConfirmationByDocReqIdAsync(int docReqId);
         Task<bool> SignDocConfirmationAsync(int docSignerId);
         Task<bool> UpdateSendSignRequestDate(int newDocSignerId, string personCode);

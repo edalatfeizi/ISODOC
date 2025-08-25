@@ -459,4 +459,22 @@
   <data name="Starter" xml:space="preserve">
     <value>شروع کننده</value>
   </data>
+  <data name="SigningDocConfirm" xml:space="preserve">
+    <value>آیا برای امضاء این سند</value>
+  </data>
+  <data name="SigningDoc" xml:space="preserve">
+    <value>امضاء سند</value>
+  </data>
+  <data name="NewSignDocReq" xml:space="preserve">
+    <value>درخواست امضاء سند جدید</value>
+  </data>
+  <data name="Sent" xml:space="preserve">
+    <value>ارسال شد</value>
+  </data>
+  <data name="DearUser" xml:space="preserve">
+    <value>کاربر گرامی</value>
+  </data>
+  <data name="AreYouSure" xml:space="preserve">
+    <value>اطمینان دارید؟</value>
+  </data>
 </root>

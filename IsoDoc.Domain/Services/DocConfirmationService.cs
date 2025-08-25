@@ -58,9 +58,9 @@ namespace IsoDoc.Domain.Services
            return result.MapToDocSignerResDtos();
         }
 
-        public async Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode, bool isSysOfficeStaff)
+        public async Task<List<NewDocConfirmationResDto>> GetUserDocConfirmationsAsync(string personCode, bool showCancelledDocConfirms, bool showAllDocConfirms)
         {
-            var result = await docConfirmationRepo.GetUserDocConfirmations(personCode, isSysOfficeStaff);
+            var result = await docConfirmationRepo.GetUserDocConfirmations(personCode, showCancelledDocConfirms, showAllDocConfirms);
             
             return result.MapToNewDocConfirmationDtos();
         }

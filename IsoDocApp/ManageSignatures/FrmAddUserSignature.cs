@@ -11,7 +11,7 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using IsoDoc.Domain.Common;
 namespace IsoDocApp.ManageNewDocConfirmations
 {
     public partial class FrmAddUserSignature : DevExpress.XtraEditors.XtraForm

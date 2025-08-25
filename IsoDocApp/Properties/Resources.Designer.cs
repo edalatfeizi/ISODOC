@@ -223,6 +223,26 @@ namespace IsoDocApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap finishmerge_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("finishmerge_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap finishmerge_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("finishmerge_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap full_screen {
             get {
                 object obj = ResourceManager.GetObject("full-screen", resourceCulture);
@@ -446,6 +466,26 @@ namespace IsoDocApp.Properties {
         internal static System.Drawing.Bitmap signature__1_ {
             get {
                 object obj = ResourceManager.GetObject("signature (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trackingchanges_trackchanges_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("trackingchanges_trackchanges_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trackingchanges_trackchanges_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("trackingchanges_trackchanges_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

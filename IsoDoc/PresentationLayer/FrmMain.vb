@@ -8,6 +8,7 @@ Imports DevExpress.XtraBars.Ribbon
 Imports DevExpress.XtraBars.Ribbon.ViewInfo
 Imports IsoDoc.Domain.Interfaces.Services
 Imports IsoDoc.Domain.Models
+Imports IsoDoc.Domain.Common
 
 Public Class FrmMain
     Dim FrmIsoMaster1 As New FrmIsoMaster
@@ -64,6 +65,7 @@ Public Class FrmMain
         '    Exit Sub
         'End If
         Dim userName = SystemInformation.UserName
+        userName = "3022"
         Dim userPersonCode As String = Await MdlMain.personelyService.GetUserPersonCodeByLoginName(userName)
         Dim personUserInfo As Person = Await personelyService.GetUserInfoByPersonCode(userPersonCode)
 
@@ -88,12 +90,14 @@ Public Class FrmMain
 
 
 
-        SqlStr =
-            "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CardNumber = '" + SystemInformation.UserName + "'"
-        Dim userInfoDt = persist1.GetDataTable(CnnString, SqlStr)
+        'SqlStr =
+        '    "SELECT * FROM Personely.dbo.Vw_AllPersonWithDepartName where CardNumber = '" + SystemInformation.UserName + "'"
+        'Dim userInfoDt = persist1.GetDataTable(CnnString, SqlStr)
 
-
-        If userInfoDt.DefaultView.Item(0).Item("PersonCode").ToString().IsDeveloper() Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI000" Or userInfoDt.DefaultView.Item(0).Item("CodeEdare") = "SI300" Or userInfoDt.DefaultView.Item(0).Item("UpperCode") = "SI300" Then
+        'Dim userDepCode = userInfoDt.DefaultView.Item(0).Item("CodeEdare")
+        'Dim userUpperDepCode = userInfoDt.DefaultView.Item(0).Item("UpperCode")
+        'Dim userPersonCode = userInfoDt.DefaultView.Item(0).Item("PersonCode").ToString()
+        If personUserInfo.PersonCode.IsDeveloper() Or personUserInfo.CodeEdare = Constants.SysAdminCode Or personUserInfo.CodeEdare = Constants.SysOfficeCode Or personUserInfo.UpperCode = Constants.SysOfficeCode Then
             tabEnterData.Visible = True
             btnManageSignatures.Enabled = True
         End If

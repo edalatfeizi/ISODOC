@@ -2,6 +2,7 @@
 using DevExpress.Data.Helpers;
 using DevExpress.XtraEditors;
 using IKIDMagfaSMSClientWin;
+using IsoDoc.Domain.Common;
 using IsoDoc.Domain.Dtos;
 using IsoDoc.Domain.Dtos.Req;
 using IsoDoc.Domain.Dtos.Res;

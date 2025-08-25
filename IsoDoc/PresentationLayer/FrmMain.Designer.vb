@@ -72,8 +72,6 @@ Partial Class FrmMain
         Me.btnOtherDocs = New DevExpress.XtraBars.BarButtonItem()
         Me.btnShowKartable = New DevExpress.XtraBars.BarButtonItem()
         Me.PopupMenu2 = New DevExpress.XtraBars.PopupMenu(Me.components)
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.btnBaseInfo = New DevExpress.XtraBars.BarButtonItem()
         Me.btnMainDocs = New DevExpress.XtraBars.BarButtonItem()
         Me.btnOutsideDocs = New DevExpress.XtraBars.BarButtonItem()
@@ -102,6 +100,8 @@ Partial Class FrmMain
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarSubItem2 = New DevExpress.XtraBars.BarSubItem()
         Me.BarSubItem3 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup11 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpgManageSignatures = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -681,22 +681,6 @@ Partial Class FrmMain
         Me.PopupMenu2.Name = "PopupMenu2"
         Me.PopupMenu2.Ribbon = Me.RibbonControl
         '
-        'BarButtonItem2
-        '
-        Me.BarButtonItem2.Caption = "دسترسی 1"
-        Me.BarButtonItem2.Id = 90
-        Me.BarButtonItem2.ImageOptions.Image = Global.IsoDoc.My.Resources.Resources.namemanager_16x161
-        Me.BarButtonItem2.ImageOptions.LargeImage = Global.IsoDoc.My.Resources.Resources.namemanager_32x321
-        Me.BarButtonItem2.Name = "BarButtonItem2"
-        '
-        'BarButtonItem3
-        '
-        Me.BarButtonItem3.Caption = "دسترسی 2"
-        Me.BarButtonItem3.Id = 91
-        Me.BarButtonItem3.ImageOptions.Image = Global.IsoDoc.My.Resources.Resources.namemanager_16x162
-        Me.BarButtonItem3.ImageOptions.LargeImage = Global.IsoDoc.My.Resources.Resources.namemanager_32x322
-        Me.BarButtonItem3.Name = "BarButtonItem3"
-        '
         'btnBaseInfo
         '
         Me.btnBaseInfo.Caption = "ثبت اطلاعات پایه"
@@ -919,6 +903,22 @@ Partial Class FrmMain
         Me.BarSubItem3.Caption = "BarSubItem3"
         Me.BarSubItem3.Id = 89
         Me.BarSubItem3.Name = "BarSubItem3"
+        '
+        'BarButtonItem2
+        '
+        Me.BarButtonItem2.Caption = "دسترسی 1"
+        Me.BarButtonItem2.Id = 90
+        Me.BarButtonItem2.ImageOptions.Image = Global.IsoDoc.My.Resources.Resources.namemanager_16x161
+        Me.BarButtonItem2.ImageOptions.LargeImage = Global.IsoDoc.My.Resources.Resources.namemanager_32x321
+        Me.BarButtonItem2.Name = "BarButtonItem2"
+        '
+        'BarButtonItem3
+        '
+        Me.BarButtonItem3.Caption = "دسترسی 2"
+        Me.BarButtonItem3.Id = 91
+        Me.BarButtonItem3.ImageOptions.Image = Global.IsoDoc.My.Resources.Resources.namemanager_16x162
+        Me.BarButtonItem3.ImageOptions.LargeImage = Global.IsoDoc.My.Resources.Resources.namemanager_32x322
+        Me.BarButtonItem3.Name = "BarButtonItem3"
         '
         'RibbonPage1
         '
@@ -1150,7 +1150,7 @@ Partial Class FrmMain
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(67, 22)
         Me.LabelControl2.TabIndex = 6
-        Me.LabelControl2.Text = "نسخه: 2.2.4"
+        Me.LabelControl2.Text = "نسخه: 2.2.5"
         '
         'PopupMenu1
         '
