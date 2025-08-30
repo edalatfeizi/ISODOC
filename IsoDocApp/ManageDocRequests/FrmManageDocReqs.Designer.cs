@@ -68,6 +68,7 @@
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tabDeletedRequests = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.tabSignedDocs = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -264,6 +265,7 @@
             this.tabSentRequests,
             this.tabReceivedRequests,
             this.tabForwardedDocRequests,
+            this.tabSignedDocs,
             this.tabAllDocRequests,
             this.tabDeletedRequests});
             this.ribbonControl1.RibbonCaptionAlignment = DevExpress.XtraBars.Ribbon.RibbonCaptionAlignment.Right;
@@ -428,8 +430,15 @@
             // 
             // tabDeletedRequests
             // 
+            this.tabDeletedRequests.ImageOptions.Image = global::IsoDocApp.Properties.Resources.trash_32x32;
             this.tabDeletedRequests.Name = "tabDeletedRequests";
             this.tabDeletedRequests.Text = "درخواست های حذف شده";
+            // 
+            // tabSignedDocs
+            // 
+            this.tabSignedDocs.ImageOptions.Image = global::IsoDocApp.Properties.Resources.signature;
+            this.tabSignedDocs.Name = "tabSignedDocs";
+            this.tabSignedDocs.Text = "اسناد امضاء شده";
             // 
             // ribbonPageGroup3
             // 
@@ -780,7 +789,7 @@
             this.btnAddAttachment.Enabled = false;
             this.btnAddAttachment.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_add_attachment;
             this.btnAddAttachment.Location = new System.Drawing.Point(354, 18);
-            this.btnAddAttachment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddAttachment.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddAttachment.Name = "btnAddAttachment";
             this.btnAddAttachment.Size = new System.Drawing.Size(162, 66);
             this.btnAddAttachment.TabIndex = 15;
@@ -797,7 +806,7 @@
             this.btnReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReload.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_refresh_database_png;
             this.btnReload.Location = new System.Drawing.Point(18, 18);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(4);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(151, 66);
             this.btnReload.TabIndex = 14;
@@ -833,7 +842,7 @@
             this.btnForwardDocReq.Enabled = false;
             this.btnForwardDocReq.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_send_mail;
             this.btnForwardDocReq.Location = new System.Drawing.Point(534, 18);
-            this.btnForwardDocReq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnForwardDocReq.Margin = new System.Windows.Forms.Padding(4);
             this.btnForwardDocReq.Name = "btnForwardDocReq";
             this.btnForwardDocReq.Size = new System.Drawing.Size(191, 66);
             this.btnForwardDocReq.TabIndex = 13;
@@ -853,7 +862,7 @@
             this.btnShowAttachments.Enabled = false;
             this.btnShowAttachments.ImageOptions.Image = global::IsoDocApp.Properties.Resources.img_documents;
             this.btnShowAttachments.Location = new System.Drawing.Point(733, 18);
-            this.btnShowAttachments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAttachments.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAttachments.Name = "btnShowAttachments";
             this.btnShowAttachments.Size = new System.Drawing.Size(191, 66);
             this.btnShowAttachments.TabIndex = 12;
@@ -868,7 +877,7 @@
             this.gridControl1.MenuManager = this.ribbonControl1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gridControl1.Size = new System.Drawing.Size(376, 433);
+            this.gridControl1.Size = new System.Drawing.Size(376, 494);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -1191,7 +1200,7 @@
             this.tabReqChatRoom.Controls.Add(this.panelControl7);
             this.tabReqChatRoom.ImageOptions.Image = global::IsoDocApp.Properties.Resources.chatting_8021762;
             this.tabReqChatRoom.Name = "tabReqChatRoom";
-            this.tabReqChatRoom.Size = new System.Drawing.Size(380, 823);
+            this.tabReqChatRoom.Size = new System.Drawing.Size(380, 884);
             this.tabReqChatRoom.Text = "اتاق گفتگو";
             // 
             // panelControl7
@@ -1202,7 +1211,7 @@
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl7.Location = new System.Drawing.Point(0, 0);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(380, 823);
+            this.panelControl7.Size = new System.Drawing.Size(380, 884);
             this.panelControl7.TabIndex = 0;
             // 
             // xtraScrollableControl1
@@ -1214,7 +1223,7 @@
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(2, 2);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(376, 521);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(376, 582);
             this.xtraScrollableControl1.TabIndex = 10;
             // 
             // pcChatMsg
@@ -1225,7 +1234,7 @@
             this.pcChatMsg.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pcChatMsg.Controls.Add(this.lblChatMessage);
             this.pcChatMsg.Controls.Add(this.pictureEdit4);
-            this.pcChatMsg.Location = new System.Drawing.Point(0, 196);
+            this.pcChatMsg.Location = new System.Drawing.Point(0, 227);
             this.pcChatMsg.Name = "pcChatMsg";
             this.pcChatMsg.Size = new System.Drawing.Size(376, 152);
             this.pcChatMsg.TabIndex = 9;
@@ -1271,7 +1280,7 @@
             this.pcChatLoading.Controls.Add(this.labelControl4);
             this.pcChatLoading.Controls.Add(this.labelControl5);
             this.pcChatLoading.Controls.Add(this.pictureEdit2);
-            this.pcChatLoading.Location = new System.Drawing.Point(63, 244);
+            this.pcChatLoading.Location = new System.Drawing.Point(63, 275);
             this.pcChatLoading.Name = "pcChatLoading";
             this.pcChatLoading.Size = new System.Drawing.Size(257, 118);
             this.pcChatLoading.TabIndex = 8;
@@ -1386,7 +1395,7 @@
             this.panelControl8.Controls.Add(this.cmbReceiverUser);
             this.panelControl8.Controls.Add(this.btnSendMessage);
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl8.Location = new System.Drawing.Point(2, 523);
+            this.panelControl8.Location = new System.Drawing.Point(2, 584);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Size = new System.Drawing.Size(376, 298);
             this.panelControl8.TabIndex = 9;
@@ -1467,7 +1476,7 @@
             this.pcMessageBox.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pcMessageBox.Controls.Add(this.lblMessageBox);
             this.pcMessageBox.Controls.Add(this.pictureEdit3);
-            this.pcMessageBox.Location = new System.Drawing.Point(1, 229);
+            this.pcMessageBox.Location = new System.Drawing.Point(1, 260);
             this.pcMessageBox.Name = "pcMessageBox";
             this.pcMessageBox.Size = new System.Drawing.Size(380, 136);
             this.pcMessageBox.TabIndex = 9;
@@ -1691,6 +1700,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem btnFilterDocConfirms;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.Ribbon.RibbonPage tabSignedDocs;
     }
 }
 

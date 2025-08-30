@@ -64,7 +64,12 @@ namespace IsoDoc.Domain.Services
             
             return result.MapToNewDocConfirmationDtos();
         }
+        public async Task<List<NewDocConfirmationResDto>> GetUserSignedDocs(string personCode)
+        {
+            var result = await docConfirmationRepo.GetUserSignedDocs(personCode);
 
+            return result.MapToNewDocConfirmationDtos();
+        }
         public async Task<bool> SignDocConfirmationAsync(int docSignerId, string modifiedByPersonCode)
         {
             var result = await docConfirmationRepo.SignDocConfirmationAsync(docSignerId, modifiedByPersonCode);
@@ -106,5 +111,7 @@ namespace IsoDoc.Domain.Services
 
             return result.MapToDocConfirmationStateChangeResDtos();
         }
+
+ 
     }
 }

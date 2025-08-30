@@ -128,15 +128,11 @@ Partial Class FrmMain
         Me.rpReportBug = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
-        Me.GalleryDropDown1 = New DevExpress.XtraBars.Ribbon.GalleryDropDown(Me.components)
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.PopupMenu1 = New DevExpress.XtraBars.PopupMenu(Me.components)
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GalleryDropDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
@@ -1118,11 +1114,6 @@ Partial Class FrmMain
         Me.PictureEdit1.Size = New System.Drawing.Size(1443, 672)
         Me.PictureEdit1.TabIndex = 2
         '
-        'GalleryDropDown1
-        '
-        Me.GalleryDropDown1.Name = "GalleryDropDown1"
-        Me.GalleryDropDown1.Ribbon = Me.RibbonControl
-        '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.BackColor = System.Drawing.SystemColors.Window
@@ -1149,14 +1140,7 @@ Partial Class FrmMain
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(67, 22)
         Me.LabelControl2.TabIndex = 6
-        Me.LabelControl2.Text = "نسخه: 2.2.6"
-        '
-        'PopupMenu1
-        '
-        Me.PopupMenu1.ItemLinks.Add(Me.BarSubItem2)
-        Me.PopupMenu1.ItemLinks.Add(Me.BarSubItem3)
-        Me.PopupMenu1.Name = "PopupMenu1"
-        Me.PopupMenu1.Ribbon = Me.RibbonControl
+        Me.LabelControl2.Text = "نسخه: 2.2.8"
         '
         'FrmMain
         '
@@ -1178,8 +1162,6 @@ Partial Class FrmMain
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PopupMenu2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GalleryDropDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PopupMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1203,7 +1185,6 @@ Partial Class FrmMain
     Friend WithEvents PictureEdit1 As DevExpress.XtraEditors.PictureEdit
     Friend WithEvents btnShowDepDocs As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup9 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents GalleryDropDown1 As DevExpress.XtraBars.Ribbon.GalleryDropDown
     Friend WithEvents BarSubItem1 As DevExpress.XtraBars.BarSubItem
     Friend WithEvents mnuFormDocs As DevExpress.XtraBars.BarSubItem
     Friend WithEvents mnuChartDocs As DevExpress.XtraBars.BarSubItem
@@ -1290,7 +1271,6 @@ Partial Class FrmMain
     Friend WithEvents btnManageSignatures As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpReportBug As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents PopupMenu1 As DevExpress.XtraBars.PopupMenu
     Friend WithEvents BarSubItem2 As DevExpress.XtraBars.BarSubItem
     Friend WithEvents BarSubItem3 As DevExpress.XtraBars.BarSubItem
     Friend WithEvents PopupMenu2 As DevExpress.XtraBars.PopupMenu

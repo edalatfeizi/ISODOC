@@ -1,7 +1,7 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
-    <PublishUrlHistory>http://localhost/IsoDoc/|publish\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Users\3910\Desktop\ISoDOC Pub\|http://localhost/IsoDoc/|publish\</PublishUrlHistory>
     <InstallUrlHistory>
     </InstallUrlHistory>
     <SupportUrlHistory>

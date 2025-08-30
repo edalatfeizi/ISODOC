@@ -195,6 +195,16 @@ namespace IsoDoc.Infrastructure.Repositories
 
         }
 
+        public async Task<List<NewDocConfirmation>> GetUserSignedDocs(string personCode)
+        {
+            using var connection = _factory.Create();
+
+            const string query = @"select * from tb_NewDocConfirmations where Id in (select NewDocConfirmationId from [tb_NewDocSigners] where PersonCode = @PersonCode and Active = 'true' AND NULLIF(LTRIM(RTRIM(SigningDate)), '') IS NOT NULL)  and Active = 'true' order by CreatedAt desc";
+           
+            var result = await connection.QueryAsync<NewDocConfirmation>(query, new { PersonCode = personCode });
+
+            return result.ToList();
+        }
         public async Task<bool> SignDocConfirmationAsync(int docSignerId, string modifiedByPersonCode)
         {
             using var connection = _factory.Create();
@@ -321,5 +331,6 @@ namespace IsoDoc.Infrastructure.Repositories
 
             return result.ToList();
         }
+
     }
 }
