@@ -59,11 +59,14 @@ namespace IsoDoc.Domain.Services
             return await manageDocReqsRepo.GetDocTypes();
         }
 
-        public async Task<List<Document>> GetDocuments(string depCode)
+        public async Task<List<Document>> GetDocumentsByDepCode(string depCode)
         {
-            return await manageDocReqsRepo.GetDocuments(depCode);  
+            return await manageDocReqsRepo.GetDocumentsByDepCode(depCode);  
         }
-
+        public async Task<List<Document>> GetDocumentsByType(DocumentType documentType)
+        {
+            return await manageDocReqsRepo.GetDocumentsByType(documentType);
+        }
         public async Task<int> GetLastDocReqId()
         {
             return await manageDocReqsRepo.GetLastDocReqId();

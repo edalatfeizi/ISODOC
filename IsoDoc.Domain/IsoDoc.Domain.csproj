@@ -68,6 +68,7 @@
     <Compile Include="Enums\DocConfirmationStatus.cs" />
     <Compile Include="Enums\DocRequestStatus.cs" />
     <Compile Include="Enums\DocRequestType.cs" />
+    <Compile Include="Enums\DocumentType.cs" />
     <Compile Include="Enums\EditOrReviewStatus.cs" />
     <Compile Include="Enums\ProcessStepStatus.cs" />
     <Compile Include="Enums\SignerColleagueType.cs" />

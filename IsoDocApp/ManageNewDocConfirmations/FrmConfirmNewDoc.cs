@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -113,8 +114,31 @@ namespace IsoDocApp.ManageDocRequests
         }
         private async Task SetInputValues(NewDocConfirmInfo formData)
         {
+            
+            documents = await manageDocReqsService.GetDocumentsByDepCode(formData.Department.MDepartCode);
 
-            documents = await manageDocReqsService.GetDocuments(formData.Department.MDepartCode);
+            if (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || userInfo.PersonCode.IsDeveloper()) // if user is sys office employee or sys dep admin
+            {
+                var importantDocs = await manageDocReqsService.GetDocumentsByType(DocumentType.Important);
+                var strategicDocs = await manageDocReqsService.GetDocumentsByType(DocumentType.Strategic);
+                //var certificateDocs = await manageDocReqsService.GetDocumentsByType(DocumentType.Certificate);
+        
+
+                var lastDocRowIndex = documents.Last().RowNumber;
+                for (int i = 0; i < importantDocs.Count; i++)
+                {
+                    importantDocs[i].RowNumber = lastDocRowIndex++;
+                }
+                lastDocRowIndex += importantDocs.Count;
+                for (int i = 0; i < strategicDocs.Count; i++)
+                {
+                    strategicDocs[i].RowNumber = lastDocRowIndex++;
+                }
+                documents.AddRange(importantDocs);
+                documents.AddRange(strategicDocs);
+                //documents.AddRange(certificateDocs);
+            }
+
             var doc = documents.Where(x => x.DocumentCode == formData.DocCode).First();
 
             cmbDocs.Properties.DataSource = documents;
@@ -361,7 +385,28 @@ namespace IsoDocApp.ManageDocRequests
                 ShowProgressBar(true);
                 var dep = departments.Where(x => x.MDepartCode.ToString() == cmbDocOwnerDep.EditValue.ToString()).FirstOrDefault();
 
-                documents = await manageDocReqsService.GetDocuments(dep.MDepartCode);
+                documents = await manageDocReqsService.GetDocumentsByDepCode(dep.MDepartCode);
+
+                if (userInfo.CodeEdare == Constants.SysAdminCode || userInfo.CodeEdare == Constants.SysOfficeCode || userInfo.UpperCode == Constants.SysOfficeCode || userInfo.PersonCode.IsDeveloper()) // if user is sys office employee or sys dep admin
+                {
+                    var importantDocs = await manageDocReqsService.GetDocumentsByType(DocumentType.Important);
+                    var strategicDocs = await manageDocReqsService.GetDocumentsByType(DocumentType.Strategic);
+                    //var certificateDocs = await manageDocReqsService.GetDocumentsByType(DocumentType.Certificate);
+                    var lastDocRowIndex = documents.Last().RowNumber;
+                    for (int i = 0; i < importantDocs.Count; i++)
+                    {
+                        importantDocs[i].RowNumber = lastDocRowIndex++;
+                    }
+                    lastDocRowIndex += importantDocs.Count;
+                    for (int i = 0; i < strategicDocs.Count; i++)
+                    {
+                        strategicDocs[i].RowNumber = lastDocRowIndex++;
+                    }
+
+                    documents.AddRange(importantDocs);
+                    documents.AddRange(strategicDocs);
+                    //documents.AddRange(certificateDocs);
+                }
 
                 foreach (var doc in documents)
                 {

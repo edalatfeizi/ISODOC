@@ -157,13 +157,13 @@
     <value>درحال بررسی</value>
   </data>
   <data name="ReceiveDateAndTime" xml:space="preserve">
-    <value>تاریخ و زمان دریافت:</value>
+    <value>تاریخ و زمان دریافت</value>
   </data>
   <data name="Signed" xml:space="preserve">
     <value>امضاء شده</value>
   </data>
-  <data name="SignerType" xml:space="preserve">
-    <value>نوع امضاء کننده</value>
+  <data name="SigningDocAs" xml:space="preserve">
+    <value>امضاء سند به عنوان</value>
   </data>
   <data name="SigningDate" xml:space="preserve">
     <value>زمان ثبت امضاء</value>

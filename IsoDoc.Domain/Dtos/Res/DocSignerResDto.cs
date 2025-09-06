@@ -18,7 +18,7 @@ namespace IsoDoc.Domain.Dtos.Res
         [Editable(false)]
         public string Post { get; set; }
 
-        [Display(Name = "نوع امضاء کننده", Order = 4)]
+        [Display(Name = "امضاء سند به عنوان", Order = 4)]
         [Editable(false)]
         public string SignerType { get; set; }
 

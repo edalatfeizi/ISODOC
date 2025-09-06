@@ -178,7 +178,7 @@ namespace IsoDoc.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to تاریخ و زمان دریافت:.
+        ///   Looks up a localized string similar to تاریخ و زمان دریافت.
         /// </summary>
         internal static string ReceiveDateAndTime {
             get {
@@ -196,20 +196,20 @@ namespace IsoDoc.Domain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to نوع امضاء کننده.
-        /// </summary>
-        internal static string SignerType {
-            get {
-                return ResourceManager.GetString("SignerType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to زمان ثبت امضاء.
         /// </summary>
         internal static string SigningDate {
             get {
                 return ResourceManager.GetString("SigningDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to امضاء سند به عنوان.
+        /// </summary>
+        internal static string SigningDocAs {
+            get {
+                return ResourceManager.GetString("SigningDocAs", resourceCulture);
             }
         }
         

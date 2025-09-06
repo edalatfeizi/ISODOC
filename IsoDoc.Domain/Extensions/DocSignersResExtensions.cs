@@ -40,18 +40,18 @@ namespace IsoDoc.Domain.Extensions
             if (signer.IsSigned)
             {
                 processStep.Status = ProcessStepStatus.Completed;
-                processStep.Description = $"{StringResources.SignerType}: {signer.SignerType} \n {StringResources.Status} {StringResources.Signed} \n {StringResources.SigningDate}: {signer.SigningDate.FormatPersianDate()}";
+                processStep.Description = $"{StringResources.SigningDocAs}: {signer.SignerType} \n {StringResources.Status} {StringResources.Signed} \n {StringResources.SigningDate}: {signer.SigningDate.FormatPersianDate()}";
             }
             else if (!signer.IsSigned && signer.SignRequestSentDate != null) //sign request sent
             {
                 processStep.Status = ProcessStepStatus.Inactive;
-                processStep.Description = $"{StringResources.SignerType}: {signer.SignerType} \n {StringResources.Status} {StringResources.SignRequestSent} \n {StringResources.SignRequestSentDate}: {signer.SignRequestSentDate.FormatPersianDate()}";
+                processStep.Description = $"{StringResources.SigningDocAs}: {signer.SignerType} \n {StringResources.Status} {StringResources.SignRequestSent} \n {StringResources.SignRequestSentDate}: {signer.SignRequestSentDate.FormatPersianDate()}";
 
             }
             else if (!signer.IsSigned && signer.SignRequestSentDate == null) // sign request not sent
             {
                 processStep.Status = ProcessStepStatus.Inactive;
-                processStep.Description = $"{StringResources.SignerType}: {signer.SignerType} \n{StringResources.Status} {StringResources.SignRequestNotSent}";
+                processStep.Description = $"{StringResources.SigningDocAs}: {signer.SignerType} \n{StringResources.Status} {StringResources.SignRequestNotSent}";
 
             }
             return processStep;

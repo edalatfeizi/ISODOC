@@ -567,7 +567,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1002, 659);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1002, 659);
+            this.MinimumSize = new System.Drawing.Size(1002, 463);
             this.Name = "FrmConfirmNewDoc";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ShowInTaskbar = false;

@@ -261,7 +261,7 @@ namespace IsoDoc.Infrastructure.Repositories
 
         }
 
-        public async Task<List<Document>> GetDocuments(string depCode)
+        public async Task<List<Document>> GetDocumentsByDepCode(string depCode)
         {
             using var connection = _factory.Create();
 
@@ -272,7 +272,32 @@ namespace IsoDoc.Infrastructure.Repositories
 
 
         }
+        public async Task<List<Document>> GetDocumentsByType(DocumentType docType)
+        {
 
+            using var connection = _factory.Create();
+            var documentsQuery = "";
+
+            switch (docType)
+            {
+                case DocumentType.Important:
+                    documentsQuery = "select DISTINCT ROW_NUMBER() OVER (ORDER BY StrategicID) AS RowNumber, StrategicID as DocId, DocName as DocumentName, DocCode as DocumentCode from tbISOImportandDoc";
+                    break;
+
+                case DocumentType.Strategic:
+                    documentsQuery = "select DISTINCT ROW_NUMBER() OVER (ORDER BY MainId) AS RowNumber, MainId as DocId,DocCode as DocumentCode,DocName as DocumentName  from VwIso_StartegicPlan ";
+                    break;
+
+                case DocumentType.Certificate:
+                    documentsQuery = "select * from Vw_ISO_Certificate";
+                    break;
+            }
+
+            var documents = await connection.QueryAsync<Document>(documentsQuery);
+            return documents.ToList();
+
+
+        }
 
         public async Task<int> GetLastDocReqId()
         {

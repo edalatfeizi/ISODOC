@@ -17,7 +17,8 @@ namespace IsoDoc.Domain.Interfaces.Services
         Task<DocRequestAttachment> AttachFileAsync(DocRequestAttachment docRequestAttachment);
         Task<List<DocRequest>> FilterDocRequests(FilterDocRequests filterDocRequests);
         Task<int> GetLastDocReqId();
-        Task<List<Document>> GetDocuments(string depCode);
+        Task<List<Document>> GetDocumentsByDepCode(string depCode);
+        Task<List<Document>> GetDocumentsByType(DocumentType documentType);
         Task<List<DocType>> GetDocTypes();
         Task<List<DocRequestStep>> GetDocRequestSteps(int docReqId);
         Task<bool> SetDocRequestStepApproved(int docReqId, string userPersonCode);

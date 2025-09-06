@@ -345,9 +345,6 @@
   <data name="TimeLine" xml:space="preserve">
     <value>تایم لاین</value>
   </data>
-  <data name="SignerType" xml:space="preserve">
-    <value>نوع امضاء کننده</value>
-  </data>
   <data name="ErrorFileSizeLimit300K" xml:space="preserve">
     <value>حجم فایل انتخاب شده نباید بیشتر از 300 کیلوبایت باشد.</value>
   </data>
@@ -476,5 +473,8 @@
   </data>
   <data name="AreYouSure" xml:space="preserve">
     <value>اطمینان دارید؟</value>
+  </data>
+  <data name="SigningDocAs" xml:space="preserve">
+    <value>امضاء سند به عنوان</value>
   </data>
 </root>

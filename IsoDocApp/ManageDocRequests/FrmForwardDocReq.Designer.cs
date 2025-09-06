@@ -322,7 +322,7 @@
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.docReqSteps);
             this.Font = new System.Drawing.Font("Vazirmatn", 10F);
-            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmForwardDocReq.IconOptions.Image")));
+            this.IconOptions.Image = global::IsoDocApp.Properties.Resources.img_send_mail;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(800, 582);
